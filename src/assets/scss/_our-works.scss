@@ -1,0 +1,57 @@
+@import "./variables";
+
+@media (any-hover: hover) {
+}
+
+.our-works {
+  .gallery {
+    padding: 6% 0;
+    h2 {
+      margin-bottom: 3.75%;
+    }
+    .clearfix {
+      &::after {
+        display: block;
+        content: "";
+        clear:   both;
+      }
+    }
+    #grid[data-columns]::before {
+      content: '4 .column.size-1of4';
+    }
+    .grid-item {
+      padding: 10px;
+    }
+
+    /* These are the classes that are going to be applied: */
+    .column {
+      float: left;
+    }
+    .size-1of1 {
+      width: 100%;
+    }
+    .size-1of2 {
+      width: 50%;
+    }
+    .size-1of3 {
+      width: 33.333%;
+    }
+    .size-1of4 {
+      width: 24%;
+    }
+  }
+}
+
+@media screen and (max-width: 1150px) {
+  .our-works {
+    .gallery {
+      #grid[data-columns]::before {
+        content: '3 .column.size-1of3';
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 767px) {
+
+}

@@ -2,22 +2,83 @@
 
 @media (any-hover: hover) {
   .footer {
-
+    .socials .socials-image:hover {
+      opacity: .7;
+    }
+    &-contact a:hover {
+      opacity: .7;
+    }
   }
 }
 
 .footer {
-  background: $primaryColor;
+  background: $bgColor;
   color:      $black;
+  a {
+    color: $black;
+  }
+  h5 {
+    margin-bottom:  30px;
+    text-transform: uppercase;
+  }
+  li {
+    margin-bottom: 15px;
+    font-size:     24px;
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
+  &-center {
+    border-bottom: 1px solid $black;
+    padding:       4.8% 0;
+    &-inner {
+      display:         flex;
+      justify-content: space-between;
+    }
+  }
+  &-logo {
+    font-size:  93px;
+    align-self: center;
+  }
+  &-menu {
+    max-width: 550px;
+    width:     40%;
+    &-lists {
+      display:         flex;
+      justify-content: space-between;
+    }
+  }
+  &-contact {
+    a, p {
+      font-size: 20px;
+    }
+    a {
+      margin-bottom: 20px;
+    }
+  }
+  .socials {
+    &-image {
+      margin-right: 7px;
+      width:        54px;
+      height:       54px;
+    }
+  }
+  &-bottom {
+    text-align: center;
+    padding:    27px 20px;
+    p {
+      font-size: 20px;
+    }
+  }
 }
 
-@media screen and (max-width: 991.98px) {
+@media screen and (max-width: 1100px) {
   .footer {
 
   }
 }
 
-@media screen and (max-width: 567px) {
+@media screen and (max-width: 767px) {
   .footer {
 
   }

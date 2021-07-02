@@ -1,7 +1,19 @@
+@import "variables";
 
 @media (any-hover: hover) {
-  .button:hover {
-    background-color: #825c10;
+  .btn:hover {
+    background: $bgColor;
+    color:      $black;
+  }
+  .btn-contour:hover {
+    color:  $primaryColor;
+    border: 2px solid $primaryColor;
+  }
+  .swiper-button-next:hover, .swiper-button-prev:hover {
+    color: $bgColor !important;
+  }
+  .basket .quantity button:hover {
+    color: $primaryColor;
   }
 }
 
@@ -10,14 +22,19 @@
   box-sizing:  border-box;
   margin:      0;
   padding:     0;
-  font-family: 'Apercu', sans-serif; // TODO: for example
+  font-family: 'Roboto', sans-serif;
   transition:  all linear 0.3s;
+  color:       $black;
 }
 
 html,
 body {
   height: 100%;
   width:  100%;
+}
+
+body {
+  background: #F8F8FA;
 }
 
 section {
@@ -34,7 +51,8 @@ ul {
 }
 
 img {
-  width: 100%;
+  width:   100%;
+  display: flex;
 }
 
 body {
@@ -48,10 +66,73 @@ main {
   position: relative;
 }
 
+h2 {
+  font-size:      34px;
+  font-weight:    500;
+  text-transform: uppercase;
+}
+
+h3 {
+  font-size: 28px;
+}
+
+h4 {
+  font-size: 26px;
+}
+
+h5 {
+  font-size: 24px;
+}
+
+p, a {
+  font-size: 20px;
+}
+
+button {
+  border: none;
+}
+
+.btn {
+  display:        inline-block;
+  background:     $primaryColor;
+  color:          $white;
+  padding:        19px;
+  font-size:      20px;
+  font-weight:    500;
+  max-width:      187px;
+  width:          100%;
+  text-align:     center;
+  text-transform: uppercase;
+  border-radius:  5px;
+  cursor:         pointer;
+  &:active {
+    background: $bgColor;
+    color:      $black;
+  }
+}
+
+.btn-second {
+  background: $secondaryColor;
+  color:      $black;
+}
+
+.btn-contour {
+  color:         #464646;
+  background:    transparent;
+  border-radius: 5px;
+  border:        2px solid #464646;
+  padding:       9px 23px;
+  cursor:        pointer;
+  &.active {
+    background: $primaryColor;
+    color:      $white;
+    border:     2px solid $primaryColor;
+  }
+}
+
 .footer {
   flex: 0 0 auto;
 }
-
 
 .d-none {
   display: none !important;
@@ -59,17 +140,153 @@ main {
 
 .container {
   width:     100%;
-  max-width: 1450px;
-  padding:   0 15px;
+  max-width: 1640px;
+  padding:   0 20px;
   margin:    0 auto;
   position:  relative;
 }
 
+form {
+  display:         flex;
+  justify-content: space-between;
+  flex-wrap:       wrap;
+  label {
+    position: relative;
+    height:   60px;
+    span {
+      position:   absolute;
+      top:        0;
+      left:       25px;
+      font-size:  24px;
+      padding:    0 10px;
+      background: #F8F8FA;
+      //color:      rgba(37, 37, 37, 0.78);
+      color:      #252525;
+      transform:  translate(0, -50%);
+    }
+  }
+  textarea {
+    resize: none;
+  }
+  input:not([type="radio"]), textarea {
+    width:      100%;
+    height:     100%;
+    background: transparent;
+    border:     1px solid $bgColor;
+    font-size:  24px;
+    padding:    15px;
+    &:focus {
+      border: 2px solid $primaryColor;
+    }
+  }
+  .textarea {
+    width: 100%;
+  }
+}
 
-@media screen and (max-width: 991.98px) {
+.swiper-button-prev, .swiper-button-next {
+  color: $primaryColor !important;
+}
+
+.swiper-container {
+  .swiper-pagination-bullets {
+    bottom: 0 !important;
+    .swiper-pagination-bullet {
+      width:      18px;
+      height:     18px;
+      background: transparent;
+      border:     2px solid $primaryColor;
+      opacity:    1;
+      &-active {
+        background: $primaryColor;
+      }
+    }
+  }
+}
+
+.email, .call, .address {
+  svg, img {
+    width:        20px;
+    margin-right: 15px;
+    color:        $primaryColor;
+  }
+}
+
+.email {
+  display:     flex;
+  align-items: center;
+}
+
+.call {
+  display:     flex;
+  align-items: flex-start;
+  .call-description {
+    display:        flex;
+    flex-direction: column;
+  }
+}
+
+.address {
+  display: flex;
+}
+
+.socials {
+  .socials-images {
+    display: flex;
+  }
+}
+
+.more {
+  display:         flex;
+  justify-content: flex-end;
+  color:           $primaryColor;
+  position:        relative;
+  padding-right:   25px;
+  font-size:       24px;
+  &:after {
+    content:       "";
+    position:      absolute;
+    top:           50%;
+    right:         0;
+    border-left:   7px solid transparent;
+    border-right:  7px solid transparent;
+    border-bottom: 12px solid $primaryColor;
+    transform:     translate(0, -50%) rotate(90deg);
+  }
+}
+
+.quantity, .quantity-buttons {
+  display: flex;
+  button, input {
+    font-size:   24px;
+    font-weight: 500;
+  }
+  button {
+    cursor:     pointer;
+    background: none;
+    &:active {
+      color: $primaryColor;
+    }
+  }
+  label {
+    max-width: 50px;
+  }
+  input {
+    width:      100%;
+    text-align: center;
+    border:     none;
+  }
+}
+
+@media screen and (max-width: 1100px) {
 
 }
 
-@media screen and (max-width: 567px) {
-
+@media screen and (max-width: 767px) {
+  h2 {
+    font-size: 16px;
+  }
+  p {
+    font-size: 12px;
+  }
 }

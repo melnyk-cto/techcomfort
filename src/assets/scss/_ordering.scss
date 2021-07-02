@@ -1,0 +1,186 @@
+@import "./variables";
+
+@media (any-hover: hover) {
+}
+
+.ordering {
+  .contact {
+    padding: 6.2% 0 3%;
+    h2 {
+      margin-bottom: 5.65%;
+    }
+    h5 {
+      text-transform: uppercase;
+      font-weight:    400;
+      margin-bottom:  25px;
+    }
+    .btn {
+      width:     initial;
+      max-width: initial;
+      padding:   19px 23px;
+    }
+    &-inner {
+      align-items: flex-start;
+    }
+    &-form {
+      max-width:     694px;
+      margin-bottom: 0;
+      form {
+        > label {
+          margin-bottom: 32px;
+          width:         47.6%;
+          height:        50px;
+        }
+        label {
+          font-size:   20px;
+          display:     flex;
+          align-items: center;
+          height:      initial;
+          span {
+            font-size: 20px;
+          }
+        }
+        input, textarea {
+          font-size: 20px;
+        }
+        input[type="radio"] {
+          width:        17px;
+          height:       17px;
+          margin-right: 10px;
+        }
+        .address, .textarea {
+          height: 97px;
+        }
+        .address {
+          width:         100%;
+          margin-bottom: 24px;
+        }
+      }
+      .installation-required {
+        width:         100%;
+        margin-bottom: 30px;
+        h5 {
+          text-transform: initial;
+          margin-bottom:  15px;
+        }
+        label {
+          margin-bottom: 10px;
+          &:nth-child(3) {
+            margin-bottom: 5.5%;
+          }
+        }
+      }
+      .delivery-service {
+        margin-bottom: 25px;
+        width:         100%;
+        label {
+          width: 100%;
+          span {
+            font-size:  18px;
+            background: $white;
+            padding:    0 6px;
+          }
+        }
+        &-item {
+          background:    $white;
+          border-radius: 5px;
+          box-shadow:    0 3px 20px rgba(56, 69, 249, 0.13);
+          margin-bottom: 20px;
+          padding:       12px 15px;
+          p {
+            font-size:   18px;
+            color:       #707070;
+            margin-left: 4%;
+          }
+          label {
+            margin-bottom: 15px;
+            &:last-child {
+              margin-bottom: 0;
+            }
+          }
+          .courier {
+            margin-bottom: 8px;
+          }
+          .new-mail {
+            margin-bottom: 25px;
+          }
+        }
+      }
+      .payment-method {
+        margin-bottom: 4.1%;
+        width:         100%;
+        label {
+          width:         100%;
+          background:    $white;
+          border-radius: 5px;
+          padding:       12px 15px;
+          box-shadow:    0 3px 20px rgba(56, 69, 249, 0.13);
+          margin-bottom: 20px;
+        }
+        input {
+          margin-right: 10px;
+        }
+      }
+    }
+  }
+  .ordering-basket {
+    max-width: 766px;
+    width:     100%;
+    h2 {
+      margin-bottom: 0;
+    }
+    span {
+      font-size:      24px;
+      text-transform: uppercase;
+    }
+    &-item {
+      border-radius: 10px;
+      box-shadow:    0 3px 10px 0 rgba(56, 69, 249, 0.14);
+      margin-bottom: 5.25%;
+      h5 {
+        font-size:     20px;
+        margin-bottom: 10px;
+      }
+      p {
+        font-size: 18px;
+      }
+      .item-title {
+        background:      $secondaryColor;
+        position:        relative;
+        padding:         15px 8%;
+        border-radius:   10px 10px 0 0;
+        display:         flex;
+        justify-content: space-between;
+        align-items:     center;
+      }
+      .item-inner {
+        display:         flex;
+        justify-content: space-between;
+        align-items:     center;
+        padding:         6.3% 8% 10.7%;
+      }
+      .item-image {
+        width: 27.1%;
+      }
+      .item-description {
+        width: 35%;
+      }
+    }
+    .price {
+      text-align:   right;
+      margin-right: 8%;
+      span {
+        color: $primaryColor;
+      }
+    }
+  }
+}
+
+
+@media screen and (max-width: 1100px) {
+
+}
+
+@media screen and (max-width: 767px) {
+
+}
