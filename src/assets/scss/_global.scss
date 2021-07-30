@@ -34,7 +34,16 @@ body {
 }
 
 body {
-  background: #F8F8FA;
+  display:        flex;
+  flex-direction: column;
+  min-height:     100%;
+  background:     #F8F8FA;
+}
+
+main {
+  flex:        1 0 auto;
+  position:    relative;
+  padding-top: 232px;
 }
 
 section {
@@ -53,17 +62,6 @@ ul {
 img {
   width:   100%;
   display: flex;
-}
-
-body {
-  display:        flex;
-  flex-direction: column;
-  min-height:     100%;
-}
-
-main {
-  flex:     1 0 auto;
-  position: relative;
 }
 
 h2 {
@@ -130,6 +128,31 @@ button {
   }
 }
 
+.close {
+  width:      27px;
+  height:     27px;
+  cursor:     pointer;
+  position:   relative;
+  transition: 0.3s linear;
+  &:after, &:before {
+    content:       "";
+    width:         100%;
+    height:        3px;
+    position:      absolute;
+    top:           50%;
+    left:          0;
+    background:    $black;
+    border-radius: 3px;
+    z-index:       10;
+  }
+  &:after, &:before {
+    transform: rotate(-45deg);
+  }
+  &:before {
+    transform: rotate(45deg);
+  }
+}
+
 .footer {
   flex: 0 0 auto;
 }
@@ -140,8 +163,8 @@ button {
 
 .container {
   width:     100%;
-  max-width: 1640px;
-  padding:   0 20px;
+  max-width: 1690px;
+  padding:   0 45px;
   margin:    0 auto;
   position:  relative;
 }
@@ -160,7 +183,6 @@ form {
       font-size:  24px;
       padding:    0 10px;
       background: #F8F8FA;
-      //color:      rgba(37, 37, 37, 0.78);
       color:      #252525;
       transform:  translate(0, -50%);
     }
@@ -186,6 +208,9 @@ form {
 
 .swiper-button-prev, .swiper-button-next {
   color: $primaryColor !important;
+  &:after {
+    font-size: 44px !important;
+  }
 }
 
 .swiper-container {
@@ -205,10 +230,9 @@ form {
 }
 
 .email, .call, .address {
-  svg, img {
+  svg {
     width:        20px;
     margin-right: 15px;
-    color:        $primaryColor;
   }
 }
 
@@ -227,12 +251,21 @@ form {
 }
 
 .address {
-  display: flex;
+  display:     flex;
+  align-items: center;
+  svg {
+    width: 14px;
+  }
 }
 
 .socials {
-  .socials-images {
+  &-images {
     display: flex;
+  }
+  &-image {
+    margin-right: 7px;
+    width:        45px;
+    height:       45px;
   }
 }
 
@@ -255,8 +288,28 @@ form {
   }
 }
 
+.header-profile, .header-comparison, .header-favorites, .header-basket, .header-reviews, .header-viewed, .header-ordering {
+  display:     flex;
+  align-items: center;
+  cursor:      pointer;
+  p {
+    font-size:   18px;
+    font-weight: 500;
+  }
+  svg {
+    width: 30px;
+  }
+}
+
+.header-profile {
+  svg {
+    margin-right: 5px;
+  }
+}
+
 .quantity, .quantity-buttons {
-  display: flex;
+  display:     flex;
+  align-items: center;
   button, input {
     font-size:   24px;
     font-weight: 500;
@@ -278,15 +331,199 @@ form {
   }
 }
 
-@media screen and (max-width: 1100px) {
-
+@media screen and (max-width: 1150px) {
+  h2 {
+    font-size: 26px;
+  }
+  h3 {
+    font-size: 22px;
+  }
+  h4 {
+    font-size: 20px;
+  }
+  h5 {
+    font-size: 18px;
+  }
+  p {
+    font-size: 16px;
+  }
+  main {
+    padding-top: 55px;
+  }
+  .btn {
+    font-size: 16px;
+    max-width: 130px;
+    padding:   14px;
+  }
+  .btn-contour {
+    border-radius: 5px;
+    border:        1px solid #464646;
+    padding:       9px 23px;
+    &.active {
+      border: 1px solid $primaryColor;
+    }
+  }
+  .email, .call {
+    svg {
+      width:        14px;
+      margin-right: 10px;
+    }
+  }
+  .address {
+    svg {
+      width: 10px;
+    }
+  }
+  .more {
+    padding-right: 15px;
+    font-size:     16px;
+    &:after {
+      border-left:   5px solid transparent;
+      border-right:  4px solid transparent;
+      border-bottom: 9px solid $primaryColor;
+    }
+  }
+  .quantity, .quantity-buttons {
+    button, input {
+      font-size: 14px;
+    }
+    label {
+      max-width: 25px;
+    }
+  }
+  .socials {
+    &-image {
+      margin-right: 5px;
+      width:        32px;
+      height:       32px;
+    }
+  }
+  form {
+    label {
+      height: 45px;
+      span {
+        left:      15px;
+        font-size: 16px;
+        padding:   0 8px;
+      }
+    }
+    textarea {
+      font-size: 16px;
+    }
+    input:not([type="radio"]), textarea {
+      font-size: 16px;
+    }
+  }
+  .close {
+    width:  20px;
+    height: 20px;
+    &:after, &:before {
+      height:        2px;
+      border-radius: 2px;
+    }
+  }
+  .swiper-container {
+    .swiper-pagination-bullets {
+      .swiper-pagination-bullet {
+        width:  12px;
+        height: 12px;
+      }
+    }
+  }
+  .swiper-button-prev, .swiper-button-next {
+    color: $primaryColor !important;
+    &:after {
+      font-size: 25px !important;
+    }
+  }
 }
 
 @media screen and (max-width: 767px) {
+  .container {
+    padding: 0 20px;
+  }
+  main {
+    padding-top: 41px;
+  }
   h2 {
+    font-size: 20px;
+  }
+  h3 {
     font-size: 16px;
   }
   p {
     font-size: 12px;
+  }
+  .btn {
+    padding:       13px;
+    font-size:     14px;
+    font-weight:   400;
+    border-radius: 3px;
+  }
+  .more {
+    padding-right: 10px;
+    font-size:     12px;
+    &:after {
+      border-left:   3px solid transparent;
+      border-right:  3px solid transparent;
+      border-bottom: 5px solid $primaryColor;
+    }
+  }
+  form {
+    label {
+      height: 40px;
+      span {
+        font-size: 14px;
+        padding:   0 5px;
+      }
+    }
+    textarea {
+      font-size: 14px;
+    }
+    input:not([type="radio"]), textarea {
+      font-size: 14px;
+    }
+  }
+  .email, .call {
+    svg {
+      width:        10px;
+      margin-right: 6px;
+    }
+  }
+  .address {
+    svg {
+      width: 7px;
+    }
+  }
+  .close {
+    width:  17px;
+    height: 17px;
+    &:after, &:before {
+      height: 1px;
+    }
+  }
+  .socials {
+    &-image {
+      margin-right: 5px;
+      width:        27px;
+      height:       27px;
+    }
+  }
+  .swiper-container {
+    .swiper-pagination-bullets {
+      .swiper-pagination-bullet {
+        width:  8px;
+        height: 8px;
+        border: 1px solid $primaryColor;
+      }
+    }
+  }
+  .quantity, .quantity-buttons {
+    button, input {
+      font-size: 12px;
+    }
+    label {
+      max-width: 20px;
+    }
   }
 }

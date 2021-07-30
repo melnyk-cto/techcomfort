@@ -21,10 +21,10 @@ if (buttonGrid) {
 }
 
 // filter price
-var keypressSlider = document.querySelector(".slider-keypress");
-var input0 = document.querySelector(".input-with-keypress-0");
-var input1 = document.querySelector(".input-with-keypress-1");
-var inputs = [input0, input1];
+const keypressSlider = document.querySelector(".slider-keypress");
+const input0 = document.querySelector(".input-with-keypress-0");
+const input1 = document.querySelector(".input-with-keypress-1");
+const inputs = [input0, input1];
 
 noUiSlider.create(keypressSlider, {
     start: [0, 30000],
@@ -35,6 +35,21 @@ noUiSlider.create(keypressSlider, {
         max: [30000]
     }
 });
+
+//filter
+const filterClose = document.getElementsByClassName("close-filter")[0];
+const filter = document.getElementsByClassName("filter")[0];
+const btnFilter = document.getElementsByClassName("btn-filter")[0];
+
+btnFilter.addEventListener("click", function () {
+   filter.style.visibility = "visible";
+   filter.style.opacity = "1";
+});
+filterClose.addEventListener("click", function () {
+    filter.style.visibility = "hidden";
+    filter.style.opacity = "0";
+});
+
 keypressSlider.noUiSlider.on("update", function (values, handle) {
     inputs[handle].value = values[handle];
 
@@ -103,4 +118,25 @@ keypressSlider.noUiSlider.on("update", function (values, handle) {
         });
     });
     /* end Listen to keypress on the input */
+});
+
+//swiper
+const mySwiperCatalogProducts = new Swiper('.swiper-products', {
+    slidesPerView: 1,
+    breakpoints: {
+        768: {
+            slidesPerView: 3,
+        },
+        1151: {
+            slidesPerView: 3,
+        }
+    },
+    pagination: {
+        el: ".swiper-pagination",
+        clickable: true,
+    },
+    navigation: {
+        nextEl: ".swiper-button-next",
+        prevEl: ".swiper-button-prev",
+    },
 });

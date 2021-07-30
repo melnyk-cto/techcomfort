@@ -9,6 +9,9 @@
     h2 {
       margin-bottom: 3.75%;
     }
+    &-item {
+      padding: 10px;
+    }
     .clearfix {
       &::after {
         display: block;
@@ -19,16 +22,9 @@
     #grid[data-columns]::before {
       content: '4 .column.size-1of4';
     }
-    .grid-item {
-      padding: 10px;
-    }
-
     /* These are the classes that are going to be applied: */
     .column {
       float: left;
-    }
-    .size-1of1 {
-      width: 100%;
     }
     .size-1of2 {
       width: 50%;
@@ -37,7 +33,7 @@
       width: 33.333%;
     }
     .size-1of4 {
-      width: 24%;
+      width: 25%;
     }
   }
 }
@@ -45,6 +41,13 @@
 @media screen and (max-width: 1150px) {
   .our-works {
     .gallery {
+      padding: 50px 0 45px;
+      h2 {
+        margin-bottom: 45px;
+      }
+      &-item {
+        padding: 5px;
+      }
       #grid[data-columns]::before {
         content: '3 .column.size-1of3';
       }
@@ -53,5 +56,21 @@
 }
 
 @media screen and (max-width: 767px) {
-
+  .our-works {
+    .gallery {
+      padding: 50px 0;
+      .container {
+        padding: 0 15px;
+      }
+      h2 {
+        margin-bottom: 20px;
+      }
+      &-item {
+        padding: 4px;
+      }
+      #grid[data-columns]::before {
+        content: '2 .column.size-1of2';
+      }
+    }
+  }
 }

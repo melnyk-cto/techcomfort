@@ -1,10 +1,18 @@
 const swiperProduct = new Swiper('.swiper-product', {
     // Optional parameters
-    spaceBetween: 10,
-    slidesPerView: 4,
     freeMode: true,
     watchSlidesVisibility: true,
     watchSlidesProgress: true,
+    breakpoints: {
+        768: {
+            slidesPerView: 3,
+            spaceBetween: 10,
+        },
+        1151: {
+            slidesPerView: 4,
+            spaceBetween: 15,
+        }
+    },
 });
 
 const swiperProductTop = new Swiper('.swiper-product-top', {
@@ -14,6 +22,10 @@ const swiperProductTop = new Swiper('.swiper-product-top', {
     spaceBetween: 10,
     thumbs: {
         swiper: swiperProduct
+    },
+    pagination: {
+        el: ".swiper-pagination",
+        clickable: true,
     },
     navigation: {
         nextEl: '.swiper-button-next',

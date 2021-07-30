@@ -1,13 +1,10 @@
 const mySwiper = new Swiper('.swiper-reviews', {
-    // breakpoints: {
-    //     768: {
-    //         slidesPerView: 2,
-    //     },
-    //     1100: {
-    //         slidesPerView: 2,
-    //     }
-    // },
-    slidesPerView: 2,
+    slidesPerView: 1,
+    breakpoints: {
+        768: {
+            slidesPerView: 2,
+        },
+    },
     pagination: {
         el: ".swiper-pagination",
         clickable: true,
@@ -19,12 +16,26 @@ const mySwiper = new Swiper('.swiper-reviews', {
 });
 
 const swiperBanner = new Swiper('.swiper-banner', {
-    spaceBetween: 70,
-    slidesPerView: 3,
+    spaceBetween: 15,
+    slidesPerView: 2,
     freeMode: true,
     loop: true,
     watchSlidesVisibility: true,
     watchSlidesProgress: true,
+    breakpoints: {
+        768: {
+            slidesPerView: 3,
+            spaceBetween: 25,
+        },
+        1151: {
+            slidesPerView: 3,
+            spaceBetween: 70,
+        }
+    },
+    pagination: {
+        el: ".swiper-pagination",
+        clickable: true,
+    },
     navigation: {
         nextEl: '.swiper-button-next',
         prevEl: '.swiper-button-prev',
