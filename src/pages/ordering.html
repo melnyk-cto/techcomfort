@@ -472,11 +472,11 @@
     </div>
 </header>
 <main class='ordering'>
-    <div class='basket'>
-        <div class='basket-inner'>
-            <div class='basket-title'>
+    <div class='popup basket'>
+        <div class='popup-inner basket-inner'>
+            <div class='popup-title basket-title'>
                 <h2>Корзина</h2>
-                <div class='close'></div>
+                <div class='basket-close close'></div>
             </div>
             <div class='basket-list'>
                 <h4 class='no-products'>Корзина пуста</h4>
@@ -544,6 +544,79 @@
                     </p>
                 </div>
                 <a href='#' class='btn'>Заказать</a>
+            </div>
+        </div>
+    </div>
+    <div class='popup login'>
+        <div class='popup-inner login-inner'>
+            <div class='popup-title login-title'>
+                <h2>Вход</h2>
+                <div class='login-close close'></div>
+            </div>
+            <div class='popup-content login-content'>
+                <form action=''>
+                    <label for=''>
+                        <span>Эл. почта или телефон</span>
+                        <input type='tel'>
+                    </label>
+                    <label for=''>
+                        <span>Пароль</span>
+                        <input type='password'>
+                    </label>
+                    <div class='checkbox'>
+                        <label>
+                            <input type='checkbox'>
+                            Запомнить меня
+                        </label>
+                        <a href='#' class='forgot-password'>Напомнить пароль</a>
+                    </div>
+                    <a href='#' class='btn'>Войти</a>
+                    <p class='register-now'>Зарегистрироваться</p>
+                </form>
+            </div>
+        </div>
+    </div>
+    <div class='popup registration'>
+        <div class='popup-inner registration-inner'>
+            <div class='popup-title registration-title'>
+                <h2>Регистрация</h2>
+                <div class='registration-close close'></div>
+            </div>
+            <div class='popup-content registration-content'>
+                <form action=''>
+                    <label>
+                        <span>Имя</span>
+                        <input type='text'>
+                    </label>
+                    <label>
+                        <span>Фамилия</span>
+                        <input type='text'>
+                    </label>
+                    <label>
+                        <span>Номер телефона</span>
+                        <input type='tel'>
+                    </label>
+                    <label>
+                        <span>Эл. почта</span>
+                        <input type='email'>
+                    </label>
+                    <label>
+                        <span>Пароль</span>
+                        <input type='password'>
+                    </label>
+                    <label>
+                        <span>Повторите пароль</span>
+                        <input type='password'>
+                    </label>
+                    <div class='checkbox'>
+                        <label>
+                            <input type='checkbox'>
+                            Регистрируясь, вы соглашаетесь с пользовательским соглашением
+                        </label>
+                    </div>
+                    <a href='#' class='btn'>Зарегистрировать</a>
+                    <p class='registered'>Я уже зарегистрирован</p>
+                </form>
             </div>
         </div>
     </div>

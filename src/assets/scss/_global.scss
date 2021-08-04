@@ -128,6 +128,87 @@ button {
   }
 }
 
+.popup {
+  position:        fixed;
+  top:             0;
+  left:            0;
+  width:           100%;
+  height:          100%;
+  display:         flex;
+  justify-content: center;
+  align-items:     center;
+  z-index:         1000;
+  background:      rgba(70, 70, 70, 0.54);
+  opacity:         0;
+  visibility:      hidden;
+  h2 {
+    margin-bottom: 0 !important;
+  }
+  &.show {
+    visibility: visible;
+    opacity:    1;
+  }
+  &-inner {
+    max-width:      828px;
+    width:          100%;
+    background:     $white;
+    border-radius:  10px;
+    display:        flex;
+    flex-direction: column;
+  }
+  &-content {
+    padding:  4.9% 8.5%;
+    overflow: auto;
+    form {
+      label {
+        height: 65px;
+        span {
+          background: $white;
+        }
+        input {
+          border-radius: 5px;
+        }
+        span, input {
+          font-size: 20px;
+        }
+      }
+      .btn {
+        max-width:     initial;
+        font-size:     16px;
+        padding:       17px;
+        margin-bottom: 15px;
+      }
+      .registered, .register-now, .forgot-password {
+        color: $primaryColor;
+      }
+      .checkbox {
+        display:         flex;
+        justify-content: space-between;
+        align-items:     center;
+        label {
+          display:       flex;
+          height:        initial;
+          margin-bottom: 0;
+        }
+        input {
+          width:        18px;
+          height:       18px;
+          margin-right: 15px;
+        }
+      }
+    }
+  }
+  &-title {
+    background:      $secondaryColor;
+    position:        relative;
+    border-radius:   10px 10px 0 0;
+    display:         flex;
+    justify-content: space-between;
+    align-items:     center;
+    padding:         25px 8%;
+  }
+}
+
 .close {
   width:      27px;
   height:     27px;
@@ -414,6 +495,49 @@ form {
       font-size: 16px;
     }
   }
+  .popup {
+    h2 {
+      font-size: 20px;
+    }
+    &-inner {
+      border-radius: 8px;
+      max-width:     678px;
+    }
+    &-title {
+      padding:       18px 25px;
+      border-radius: 8px 8px 0 0;
+    }
+    &-content {
+      form {
+        label {
+          height: 50px;
+          span {
+            background: $white;
+          }
+          input {
+            border-radius: 3px;
+          }
+          span, input {
+            font-size: 16px;
+          }
+        }
+        .btn {
+          padding:       13px;
+          margin-bottom: 10px;
+        }
+        .forgot-password, .register-now {
+          font-size: 16px;
+        }
+        .checkbox {
+          input {
+            width:        15px;
+            height:       15px;
+            margin-right: 10px;
+          }
+        }
+      }
+    }
+  }
   .close {
     width:  20px;
     height: 20px;
@@ -493,6 +617,46 @@ form {
   .address {
     svg {
       width: 7px;
+    }
+  }
+  .popup {
+    h2 {
+      font-size: 16px;
+    }
+    &-inner {
+      border-radius: 0;
+      height:        100%;
+      background:    #F8F8FA;
+    }
+    &-title {
+      border-radius: 0;
+      padding:       14px 20px;
+    }
+    &-content {
+      form {
+        label {
+          height: 40px;
+          span {
+            background: #F8F8FA;
+          }
+          input {
+            border-radius: 2px;
+          }
+          span, input {
+            font-size: 14px;
+          }
+        }
+        .btn {
+          padding: 12px;
+        }
+        .checkbox {
+          input {
+            width:        14px;
+            height:       14px;
+            margin-right: 5px;
+          }
+        }
+      }
     }
   }
   .close {

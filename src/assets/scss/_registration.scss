@@ -1,0 +1,90 @@
+@import "./variables";
+
+@media (any-hover: hover) {
+  .login {
+    .forgot-password:hover, .register-now:hover {
+      opacity: .7;
+    }
+  }
+}
+
+.registration {
+  &-inner {
+    height: 577px;
+  }
+  &-content {
+    form {
+      flex-direction: row;
+      flex-wrap:      wrap;
+      label {
+        width:         49%;
+        margin-bottom: 15px;
+      }
+      .registered {
+        font-size: 16px;
+        margin:    0 auto;
+      }
+      .checkbox {
+        margin: 5px 0 50px;
+        label {
+          width:     100%;
+          font-size: 18px;
+        }
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 1150px) {
+  .registration {
+    &-inner {
+      height: 405px;
+    }
+    &-content {
+      padding: 20px 25px 30px;
+      form {
+        label {
+          width:         48.8%;
+          height:        40px;
+          margin-bottom: 20px;
+        }
+        .registered {
+          font-size: 16px;
+        }
+        .checkbox {
+          margin: 0 0 20px;
+          label {
+            font-size: 14px;
+          }
+        }
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 767px) {
+  .registration {
+    &-inner {
+      max-width: initial;
+      height:    100%;
+    }
+    &-content {
+      padding: 30px 20px;
+      form {
+        flex-direction: column;
+        label {
+          width:  100%;
+          height: 40px;
+        }
+        .registered {
+          font-size: 12px;
+        }
+        .checkbox {
+          label {
+            font-size: 12px;
+          }
+        }
+      }
+    }
+  }
+}

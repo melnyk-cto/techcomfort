@@ -1,24 +1,45 @@
-const close = document.getElementsByClassName("close");
-const basket = document.getElementsByClassName("basket")[0];
+const burger = document.getElementsByClassName("burger")[0];
+const headerMobilesBottom = document.getElementsByClassName("header-mobiles-bottom")[0];
+const headerClose = document.getElementsByClassName("header-close-js")[0];
+const basketClose = document.querySelectorAll(".basket-close");
+const loginClose = document.querySelector(".login-close");
+const registrationClose = document.querySelector(".registration-close");
+const basket = document.querySelector(".basket");
 const headerBasket = document.getElementsByClassName("header-basket");
+const noProducts = document.getElementsByClassName("no-products")[0];
 const itemClose = document.getElementsByClassName("item-close");
+const headerCatalog = document.getElementById("header-catalog-js");
+const catalogSubmenu = document.getElementById("catalog-submenu-js");
+const minusBtn = document.getElementsByClassName("reduce");
+const plusBtn = document.getElementsByClassName("enlarge");
+const favorites = document.getElementsByClassName("favorites");
+const headerProfile = document.querySelector(".header-profile");
+const login = document.querySelector(".login");
+const registration = document.querySelector(".registration");
+const registerNow = document.querySelector(".register-now");
+const registered = document.querySelector(".registered");
 
+// Burger menu
+burger.addEventListener("click", function () {
+    headerMobilesBottom.style.visibility = "visible";
+    headerMobilesBottom.style.opacity = "1";
+});
+
+//basket show
 for (let i = 0; i < headerBasket.length; i++) {
     headerBasket[i].addEventListener("click", function () {
-        basket.style.opacity = "1";
-        basket.style.visibility = "visible";
+        basket.classList.add("show")
     });
 }
 
-for (let i = 0; i < close.length; i++) {
-    close[i].addEventListener("click", function () {
-        basket.style.opacity = "0";
-        basket.style.visibility = "hidden"
+//basket close
+for (let i = 0; i < basketClose.length; i++) {
+    basketClose[i].addEventListener("click", function () {
+        basket.classList.remove("show")
     });
 }
 
 // basket item close
-const noProducts = document.getElementsByClassName("no-products")[0];
 for (let i = 0; i < itemClose.length; i++) {
     itemClose[i].addEventListener("click", function () {
         this.parentElement.remove();
@@ -29,32 +50,43 @@ for (let i = 0; i < itemClose.length; i++) {
     });
 }
 
-// Burger menu
-const burger = document.getElementsByClassName("burger")[0];
-const headerMobilesBottom = document.getElementsByClassName("header-mobiles-bottom")[0];
-const headerClose = document.getElementsByClassName("header-close-js")[0];
-
-burger.addEventListener("click", function () {
-    headerMobilesBottom.style.visibility = "visible";
-    headerMobilesBottom.style.opacity = "1";
-});
-
+//close header mobiles
 headerClose.addEventListener("click", function () {
     headerMobilesBottom.style.visibility = "hidden";
     headerMobilesBottom.style.opacity = "0";
 });
 
-//header catalog
-const headerCatalog = document.getElementById("header-catalog-js");
-const catalogSubmenu =  document.getElementById("catalog-submenu-js");
+//login show
+headerProfile.addEventListener("click", function () {
+    login.classList.add("show")
+});
 
+//login hidden
+loginClose.addEventListener("click", function () {
+    login.classList.remove("show")
+});
+
+//registration show
+registerNow.addEventListener("click", function () {
+    login.classList.remove("show");
+    registration.classList.add("show")
+});
+
+//registration hidden
+registrationClose.addEventListener("click", function () {
+    registration.classList.remove("show")
+});
+registered.addEventListener("click", function () {
+    registration.classList.remove("show");
+    login.classList.add("show")
+});
+
+//header catalog
 headerCatalog.addEventListener("click", function () {
     catalogSubmenu.classList.toggle("show")
 });
 
 // quantity
-const minusBtn = document.getElementsByClassName("reduce");
-const plusBtn = document.getElementsByClassName("enlarge");
 for (let i = 0; i < minusBtn.length; i++) {
     let input = plusBtn[i].parentElement.querySelector(".quantity-input");
     plusBtn[i].addEventListener("click", function () {
@@ -70,7 +102,6 @@ for (let i = 0; i < minusBtn.length; i++) {
 }
 
 //favorites
-const favorites = document.getElementsByClassName("favorites");
 for (let i = 0; i < favorites.length; i++) {
     favorites[i].addEventListener("click", function (e) {
         e.preventDefault();
