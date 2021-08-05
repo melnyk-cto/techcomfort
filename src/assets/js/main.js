@@ -1,12 +1,16 @@
-const burger = document.getElementsByClassName("burger")[0];
-const headerMobilesBottom = document.getElementsByClassName("header-mobiles-bottom")[0];
-const headerClose = document.getElementsByClassName("header-close-js")[0];
+const header = document.querySelector(".header");
+const headerMenu = document.querySelector(".header-menu");
+const headerMobilesBottom = document.querySelector(".header-mobiles-bottom");
+const headerMobilesInner = document.querySelector(".bottom-inner");
+const swiperProducts = document.querySelector(".swiper-products");
+const burger = document.querySelector(".burger");
+const headerClose = document.querySelector(".header-close-js");
 const basketClose = document.querySelectorAll(".basket-close");
 const loginClose = document.querySelector(".login-close");
 const registrationClose = document.querySelector(".registration-close");
 const basket = document.querySelector(".basket");
 const headerBasket = document.getElementsByClassName("header-basket");
-const noProducts = document.getElementsByClassName("no-products")[0];
+const noProducts = document.querySelector(".no-products");
 const itemClose = document.getElementsByClassName("item-close");
 const headerCatalog = document.getElementById("header-catalog-js");
 const catalogSubmenu = document.getElementById("catalog-submenu-js");
@@ -21,9 +25,20 @@ const registered = document.querySelector(".registered");
 
 // Burger menu
 burger.addEventListener("click", function () {
-    headerMobilesBottom.style.visibility = "visible";
-    headerMobilesBottom.style.opacity = "1";
+    headerMobilesBottom.classList.add("show");
 });
+
+//close header mobiles
+headerClose.addEventListener("click", function () {
+    headerMobilesBottom.classList.remove("show");
+});
+//
+// //outside click
+// window.addEventListener('click', function (e) {
+//     if (!headerMobilesInner.contains(e.target) && !headerClose.contains(e.target)) {
+//         headerMobilesBottom.classList.remove("show")
+//     }
+// });
 
 //basket show
 for (let i = 0; i < headerBasket.length; i++) {
@@ -49,12 +64,6 @@ for (let i = 0; i < itemClose.length; i++) {
         }
     });
 }
-
-//close header mobiles
-headerClose.addEventListener("click", function () {
-    headerMobilesBottom.style.visibility = "hidden";
-    headerMobilesBottom.style.opacity = "0";
-});
 
 //login show
 headerProfile.addEventListener("click", function () {
@@ -83,7 +92,12 @@ registered.addEventListener("click", function () {
 
 //header catalog
 headerCatalog.addEventListener("click", function () {
-    catalogSubmenu.classList.toggle("show")
+    catalogSubmenu.classList.toggle("show");
+    if (catalogSubmenu.classList.contains("show")) {
+        headerMenu.style.display = "none";
+    } else {
+        headerMenu.style.display = "block"
+    }
 });
 
 // quantity
@@ -109,22 +123,50 @@ for (let i = 0; i < favorites.length; i++) {
     })
 }
 
-const mySwiperProducts = new Swiper('.swiper-products', {
-    slidesPerView: 1,
-    breakpoints: {
-        768: {
-            slidesPerView: 3,
-        },
-        1151: {
-            slidesPerView: 4,
+// button active
+const btnContour = document.querySelectorAll(".btn-contour");
+const buttonsContainer = document.querySelector(".buttons-container-js");
+buttonsContainer.addEventListener("click", (event) => {
+    const elem = event.target.closest('.btn-contour');
+    if (!elem) {
+        return;
+    }
+
+    btnContour.forEach((item) => {
+        if (item.classList.contains('active')) {
+            item.classList.remove('active');
         }
-    },
-    pagination: {
-        el: ".swiper-pagination",
-        clickable: true,
-    },
-    navigation: {
-        nextEl: ".swiper-button-next",
-        prevEl: ".swiper-button-prev",
-    },
+    });
+
+    elem.classList.add('active');
+});
+
+if (swiperProducts) {
+    const mySwiperProducts = new Swiper('.swiper-products', {
+        slidesPerView: 1,
+        breakpoints: {
+            768: {
+                slidesPerView: 3,
+            },
+            1151: {
+                slidesPerView: 4,
+            }
+        },
+        pagination: {
+            el: ".swiper-pagination",
+            clickable: true,
+        },
+        navigation: {
+            nextEl: ".swiper-button-next",
+            prevEl: ".swiper-button-prev",
+        },
+    });
+}
+
+window.addEventListener('scroll', function () {
+    if (window.pageYOffset > 163) {
+        header.classList.add("fixed")
+    } else {
+        header.classList.remove("fixed")
+    }
 });

@@ -1,10 +1,6 @@
 @import "./variables";
 
 @media (any-hover: hover) {
-  .products-buttons button:hover {
-    color:  $primaryColor;
-    border: 2px solid $primaryColor;
-  }
 }
 
 .product-page {

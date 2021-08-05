@@ -5,7 +5,7 @@
     background: $bgColor;
     color:      $black;
   }
-  .btn-contour:hover {
+  .btn-contour:not(.active):hover {
     color:  $primaryColor;
     border: 2px solid $primaryColor;
   }
@@ -27,6 +27,10 @@
   color:       $black;
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
 html,
 body {
   height: 100%;
@@ -41,9 +45,8 @@ body {
 }
 
 main {
-  flex:        1 0 auto;
-  position:    relative;
-  padding-top: 232px;
+  flex:     1 0 auto;
+  position: relative;
 }
 
 section {
@@ -428,9 +431,6 @@ form {
   p {
     font-size: 16px;
   }
-  main {
-    padding-top: 55px;
-  }
   .btn {
     font-size: 16px;
     max-width: 130px;
@@ -565,9 +565,6 @@ form {
 @media screen and (max-width: 767px) {
   .container {
     padding: 0 20px;
-  }
-  main {
-    padding-top: 41px;
   }
   h2 {
     font-size: 20px;
