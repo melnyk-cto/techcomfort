@@ -17,7 +17,7 @@
     <!-- End Of Social Graph Protocol Meta Data -->
     <?php wp_head(); ?>
 </head>
-<body <?php body_class(); ?>>
+<body>
 <header id="header" class='header <?php if (is_page_template('pages/home.php')) echo "transparent"; ?>'>
     <div class='header-top'>
         <div class='container'>
