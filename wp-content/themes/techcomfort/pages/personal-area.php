@@ -1,0 +1,2328 @@
+<!doctype html>
+<html lang='en'>
+<head>
+    <meta charset='UTF-8'>
+    <meta name='viewport'
+          content='width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0'>
+    <!-- <link rel="shortcut icon" href="assets/images/favicon.ico" type="image/x-icon">-->
+    <meta name="theme-color" content="#e4a11b">
+    <meta http-equiv='X-UA-Compatible' content='ie=edge'>
+    <title>Личный кабинет</title>
+    <!-- Start Of Social Graph Protocol Meta Data -->
+    <meta property="og:locale" content="en_US" />
+    <!-- <meta property="og:url" content="http://example.com/"/>-->
+    <meta property="og:type" content="website" />
+    <!-- <meta property="og:title" content="Name Website"/>-->
+    <!-- End Of Social Graph Protocol Meta Data -->
+    <link rel='stylesheet' href='../assets/css/main.css'>
+</head>
+<body>
+<header class='header'>
+    <div class='header-top'>
+        <div class='container'>
+            <div class='header-top-inner'>
+                <nav class='header-menu'>
+                    <ul class='menu-list'>
+                        <li class='menu-item'>
+                            <a href='<?php echo home_url( '/' ); ?>'>Главная</a>
+                        </li>
+                        <li class='menu-item'>
+                            <a href='<?php echo home_url( '/' ); ?>catalog'>Каталог</a>
+                        </li>
+                        <li class='menu-item'>
+                            <a href='<?php echo home_url( '/' ); ?>installation-and-assembly'>Установка и монтаж</a>
+                        </li>
+                        <li class='menu-item'>
+                            <a href='<?php echo home_url( '/' ); ?>services'>Сервис</a>
+                        </li>
+                        <li class='menu-item'>
+                            <a href='<?php echo home_url( '/' ); ?>payment-and-delivery'>Оплата и доствка</a>
+                        </li>
+                        <li class='menu-item'>
+                            <a href='<?php echo home_url( '/' ); ?>our-works'>Наши роботы</a>
+                        </li>
+                        <li class='menu-item'>
+                            <a href='<?php echo home_url( '/' ); ?>reviews'>Отзывы</a>
+                        </li>
+                        <li class='menu-item'>
+                            <a href='<?php echo home_url( '/' ); ?>blog'>Блог</a>
+                        </li>
+                        <li class='menu-item'>
+                            <a href='<?php echo home_url( '/' ); ?>contacts'>Контакты</a>
+                        </li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+    </div>
+    <div class='header-center'>
+        <div class='container'>
+            <div class='header-center-inner'>
+                <a href='<?php echo home_url( '/' ); ?>' class='logo'>
+                    <img src='<?php echo get_template_directory_uri() ?>/assets/images/icons/logo.svg' alt='logo'>
+                </a>
+                <div class='header-center-content'>
+                    <div class='address'>
+                        <svg xmlns="http://www.w3.org/2000/svg" width="14.016" height="20.162"
+                             viewBox="0 0 14.016 20.162">
+                            <path id="placeholder_3_" data-name="placeholder (3)"
+                                  d="M6.774,0A7.016,7.016,0,0,0-.234,7.008c0,4.857,7.015,13.154,7.015,13.154s7-8.535,7-13.154A7.016,7.016,0,0,0,6.774,0ZM8.888,9.06a2.99,2.99,0,1,1,0-4.229A2.981,2.981,0,0,1,8.888,9.06Zm0,0"
+                                  transform="translate(0.234)" fill="#6b92b0" />
+                        </svg>
+                        <p>г. Киев</p>
+                    </div>
+                    <div class='call'>
+                        <a href='tel:38(097) 107 25 25'>38(097) 107 25 25</a>
+                        <a href='tel:38(097) 125 95 95'>38(097) 125 95 95</a>
+                    </div>
+                    <div class='socials'>
+                        <a href='#' class='socials-image'>
+                            <img src='<?php echo get_template_directory_uri() ?>/assets/images/icons/viber.svg' alt='Viber'>
+                        </a>
+                        <a href='#' class='socials-image'>
+                            <img src='<?php echo get_template_directory_uri() ?>/assets/images/icons/whatsapp.svg' alt='WhatsApp'>
+                        </a>
+                        <a href='#' class='socials-image'>
+                            <img src='<?php echo get_template_directory_uri() ?>/assets/images/icons/telegram.svg' alt='Telegram'>
+                        </a>
+                    </div>
+                    <select name='' id='' class='language'>
+                        <option value=''>Ru</option>
+                        <option value=''>En</option>
+                        <option value=''>Un</option>
+                    </select>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class='header-bottom'>
+        <div class='container'>
+            <div class='header-bottom-inner'>
+                <div class='header-catalog'>
+                    <svg xmlns="http://www.w3.org/2000/svg" width="19.999" height="20" viewBox="0 0 19.999 20">
+                        <g id="Сгруппировать_2553" data-name="Сгруппировать 2553" transform="translate(-1 0.003)">
+                            <path id="Объединение_3" data-name="Объединение 3"
+                                  d="M15.116,20a1,1,0,0,1-1-1V15.117a1,1,0,0,1,1-1H19a1,1,0,0,1,1,1V19a1,1,0,0,1-1,1ZM8.058,20a1,1,0,0,1-1-1V15.118a1,1,0,0,1,1-1h3.882a1,1,0,0,1,1,1V19a1,1,0,0,1-1,1ZM1,20a1,1,0,0,1-1-1V15.117a1,1,0,0,1,1-1H4.882a1,1,0,0,1,1,1V19a1,1,0,0,1-1,1Zm14.117-7.059a1,1,0,0,1-1-1V8.059a1,1,0,0,1,1-1H19a1,1,0,0,1,1,1v3.883a1,1,0,0,1-1,1Zm-7.059,0a1,1,0,0,1-1-1V8.059a1,1,0,0,1,1-1H11.94a1,1,0,0,1,1,1v3.882a1,1,0,0,1-1,1ZM1,12.941a1,1,0,0,1-1-1V8.059a1,1,0,0,1,1-1H4.882a1,1,0,0,1,1,1v3.883a1,1,0,0,1-1,1ZM15.116,5.882a1,1,0,0,1-1-1V1a1,1,0,0,1,1-1H19a1,1,0,0,1,1,1V4.883a1,1,0,0,1-1,1Zm-7.058,0a1,1,0,0,1-1-1V1a1,1,0,0,1,1-1H11.94a1,1,0,0,1,1,1V4.883a1,1,0,0,1-1,1ZM1,5.882a1,1,0,0,1-1-1V1A1,1,0,0,1,1,0H4.882a1,1,0,0,1,1,1V4.883a1,1,0,0,1-1,1Z"
+                                  transform="translate(1 -0.003)" fill="#fff" />
+                        </g>
+                    </svg>
+                    <p>Каталог Товаров</p>
+                    <div class='catalog-submenu'>
+                        <a href='<?php echo home_url( '/' ); ?>product-page' class='submenu-item'>
+                            <div class='item-image'>
+                                <img src='<?php echo get_template_directory_uri() ?>/assets/images/product-item.png' alt='Кондиционер'>
+                            </div>
+                            <p>Настенные кондиционеры</p>
+                        </a>
+                        <a href='<?php echo home_url( '/' ); ?>product-page' class='submenu-item'>
+                            <div class='item-image'>
+                                <img src='<?php echo get_template_directory_uri() ?>/assets/images/product-item.png' alt='Кондиционер'>
+                            </div>
+                            <p>Готовые решения мультисистем</p>
+                        </a>
+                        <a href='<?php echo home_url( '/' ); ?>product-page' class='submenu-item'>
+                            <div class='item-image'>
+                                <img src='<?php echo get_template_directory_uri() ?>/assets/images/product-item.png' alt='Кондиционер'>
+                            </div>
+                            <p>Мультисплит-системы</p>
+                        </a>
+                        <a href='<?php echo home_url( '/' ); ?>product-page' class='submenu-item'>
+                            <div class='item-image'>
+                                <img src='<?php echo get_template_directory_uri() ?>/assets/images/product-item.png' alt='Кондиционер'>
+                            </div>
+                            <p>Напольно-потолочные кондиционеры</p>
+                        </a>
+                        <a href='<?php echo home_url( '/' ); ?>product-page' class='submenu-item'>
+                            <div class='item-image'>
+                                <img src='<?php echo get_template_directory_uri() ?>/assets/images/product-item.png' alt='Кондиционер'>
+                            </div>
+                            <p>Кассетные кондиционеры</p>
+                        </a>
+                        <a href='<?php echo home_url( '/' ); ?>product-page' class='submenu-item'>
+                            <div class='item-image'>
+                                <img src='<?php echo get_template_directory_uri() ?>/assets/images/product-item.png' alt='Кондиционер'>
+                            </div>
+                            <p>Канальные кондиционеры</p>
+                        </a>
+                        <a href='<?php echo home_url( '/' ); ?>product-page' class='submenu-item'>
+                            <div class='item-image'>
+                                <img src='<?php echo get_template_directory_uri() ?>/assets/images/product-item.png' alt='Кондиционер'>
+                            </div>
+                            <p>Колонные кондиционеры</p>
+                        </a>
+                        <a href='<?php echo home_url( '/' ); ?>product-page' class='submenu-item'>
+                            <div class='item-image'>
+                                <img src='<?php echo get_template_directory_uri() ?>/assets/images/product-item.png' alt='Кондиционер'>
+                            </div>
+                            <p>Мобильные кондиционеры</p>
+                        </a>
+                        <a href='<?php echo home_url( '/' ); ?>product-page' class='submenu-item'>
+                            <div class='item-image'>
+                                <img src='<?php echo get_template_directory_uri() ?>/assets/images/product-item.png' alt='Кондиционер'>
+                            </div>
+                            <p>Компрессорно-конденсаторный блок (ККБ)</p>
+                        </a>
+                    </div>
+                </div>
+                <div class='header-action'>
+                    <a  class='header-profile'>
+                        <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="21"
+                             height="21" viewBox="0 0 21 21">
+                            <defs>
+                                <clipPath id="clip-path">
+                                    <rect id="Прямоугольник_2160" data-name="Прямоугольник 2160" width="21" height="21"
+                                          transform="translate(113 369)" stroke="#707070" stroke-width="1" />
+                                </clipPath>
+                            </defs>
+                            <g id="Группа_масок_381" data-name="Группа масок 381" transform="translate(-113 -369)"
+                               clip-path="url(#clip-path)">
+                                <g id="user" transform="translate(113 369)">
+                                    <g id="Сгруппировать_2994" data-name="Сгруппировать 2994">
+                                        <path id="Контур_860" data-name="Контур 860"
+                                              d="M17.925,13.575a10.46,10.46,0,0,0-3.99-2.5,6.07,6.07,0,1,0-6.869,0A10.517,10.517,0,0,0,0,21H1.641a8.859,8.859,0,0,1,17.719,0H21A10.432,10.432,0,0,0,17.925,13.575ZM10.5,10.5a4.43,4.43,0,1,1,4.43-4.43A4.435,4.435,0,0,1,10.5,10.5Z" />
+                                    </g>
+                                </g>
+                            </g>
+                        </svg>
+                        <p>Мой Профиль</p>
+                    </a>
+                    <a href='<?php echo home_url( '/' ); ?>comparison' class='header-comparison'>
+                        <svg id="Сгруппировать_2793" data-name="Сгруппировать 2793" xmlns="http://www.w3.org/2000/svg"
+                             width="31.918" height="24.554" viewBox="0 0 31.918 24.554">
+                            <path id="Контур_724" data-name="Контур 724"
+                                  d="M31.461,67.082,27.419,58.54h1.687a.7.7,0,1,0,0-1.406H18.947a3.058,3.058,0,0,0-5.976,0H2.812a.7.7,0,1,0,0,1.406H4.5L.457,67.082A.7.7,0,0,0,0,67.715a5.554,5.554,0,0,0,5.554,5.554h.035a5.7,5.7,0,0,0,5.624-5.589.6.6,0,0,0-.492-.6L6.679,58.54h6.292a3.093,3.093,0,0,0,2.285,2.144V73.832a4.781,4.781,0,0,0-4.148,4.781.668.668,0,0,0,.667.669h8.332a.668.668,0,0,0,.7-.632c0-.012,0-.024,0-.036a4.781,4.781,0,0,0-4.148-4.781V60.685a3.093,3.093,0,0,0,2.285-2.144h6.292L21.2,67.082a.633.633,0,0,0-.492.633,5.554,5.554,0,0,0,5.554,5.554h.035a5.66,5.66,0,0,0,5.624-5.554A.738.738,0,0,0,31.461,67.082ZM5.589,71.863h0a4.148,4.148,0,0,1-4.113-3.48H9.737A4.289,4.289,0,0,1,5.589,71.863Zm3.55-4.886h-7.1l3.55-7.628Zm10.194,10.9H12.585a3.621,3.621,0,0,1,3.375-2.742A3.621,3.621,0,0,1,19.334,77.874ZM15.959,59.349A1.652,1.652,0,1,1,17.611,57.7,1.652,1.652,0,0,1,15.959,59.349Zm10.37,0,3.55,7.628h-7.1Zm-.035,12.514a4.148,4.148,0,0,1-4.113-3.48h8.261A4.289,4.289,0,0,1,26.294,71.863Z"
+                                  transform="translate(0 -54.727)" />
+                        </svg>
+                        <p>Сравнение</p>
+                    </a>
+                    <a href='<?php echo home_url( '/' ); ?>personal-area' class='header-favorites'>
+                        <svg xmlns="http://www.w3.org/2000/svg" width="26.93" height="23.95" viewBox="0 0 26.93 23.95">
+                            <path id="Контур_723" data-name="Контур 723"
+                                  d="M18.675,1.465a6.021,6.021,0,0,0-3.76,1.3,8.566,8.566,0,0,0-2.2,2.646,8.565,8.565,0,0,0-2.2-2.646,6.021,6.021,0,0,0-3.76-1.3C2.9,1.465,0,4.615,0,8.792c0,4.513,3.623,7.6,9.108,12.274.931.794,1.987,1.693,3.084,2.653a.795.795,0,0,0,1.046,0c1.1-.96,2.153-1.859,3.085-2.654C21.807,16.392,25.43,13.3,25.43,8.792,25.43,4.615,22.526,1.465,18.675,1.465Z"
+                                  transform="translate(0.75 -0.715)" fill="none" stroke="#000" stroke-width="1.5" />
+                        </svg>
+                        <p>Избранные</p>
+                    </a>
+                    <div class='header-basket'>
+                        <div class='basket-image'>
+                            <svg id="shopping-cart-empty-side-view" xmlns="http://www.w3.org/2000/svg" width="33"
+                                 height="31.058" viewBox="0 0 33 31.058">
+                                <path id="Контур_100" data-name="Контур 100"
+                                      d="M32.81,7.012a1.058,1.058,0,0,0-.823-.452l-20.47-.882a1.059,1.059,0,0,0-.091,2.116l19.084.823L26.757,20.324h-16.7L7.042,3.9A1.059,1.059,0,0,0,6.387,3.1L1.446,1.162A1.059,1.059,0,1,0,.672,3.133L5.065,4.859l3.07,16.715a1.059,1.059,0,0,0,1.042.867h.509l-1.163,3.23a.882.882,0,0,0,.83,1.181h.816a3.176,3.176,0,1,0,4.722,0h6.925a3.176,3.176,0,1,0,4.722,0h.992a.882.882,0,1,0,0-1.765H10.609l.953-2.647H27.529a1.058,1.058,0,0,0,1.008-.736L32.949,7.941A1.057,1.057,0,0,0,32.81,7.012ZM12.53,30.382a1.412,1.412,0,1,1,1.412-1.412A1.413,1.413,0,0,1,12.53,30.382Zm11.647,0a1.412,1.412,0,1,1,1.412-1.412A1.413,1.413,0,0,1,24.176,30.382Z"
+                                      transform="translate(0 -1.089)" />
+                            </svg>
+                        </div>
+                        <p>Товары</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class='header-mobiles'>
+        <div class='header-mobiles-top'>
+            <div class='container'>
+                <div class='top-inner'>
+                    <div class='burger'>
+                        <span></span>
+                    </div>
+                    <a href='<?php echo home_url( '/' ); ?>' class='logo'>
+                        <img src='<?php echo get_template_directory_uri() ?>/assets/images/icons/logo.svg' alt='logo'>
+                    </a>
+                    <div class='header-basket'>
+                        <div class='basket-image'>
+                            <svg id="shopping-cart-empty-side-view" xmlns="http://www.w3.org/2000/svg" width="33"
+                                 height="31.058" viewBox="0 0 33 31.058">
+                                <path id="Контур_100" data-name="Контур 100"
+                                      d="M32.81,7.012a1.058,1.058,0,0,0-.823-.452l-20.47-.882a1.059,1.059,0,0,0-.091,2.116l19.084.823L26.757,20.324h-16.7L7.042,3.9A1.059,1.059,0,0,0,6.387,3.1L1.446,1.162A1.059,1.059,0,1,0,.672,3.133L5.065,4.859l3.07,16.715a1.059,1.059,0,0,0,1.042.867h.509l-1.163,3.23a.882.882,0,0,0,.83,1.181h.816a3.176,3.176,0,1,0,4.722,0h6.925a3.176,3.176,0,1,0,4.722,0h.992a.882.882,0,1,0,0-1.765H10.609l.953-2.647H27.529a1.058,1.058,0,0,0,1.008-.736L32.949,7.941A1.057,1.057,0,0,0,32.81,7.012ZM12.53,30.382a1.412,1.412,0,1,1,1.412-1.412A1.413,1.413,0,0,1,12.53,30.382Zm11.647,0a1.412,1.412,0,1,1,1.412-1.412A1.413,1.413,0,0,1,24.176,30.382Z"
+                                      transform="translate(0 -1.089)" />
+                            </svg>
+                        </div>
+                        <p>Товары</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class='header-mobiles-bottom'>
+            <div class='bottom-inner'>
+                <div class='close header-close-js'></div>
+                <div id='header-catalog-js' class='header-catalog'>
+                    <svg xmlns="http://www.w3.org/2000/svg" width="19.999" height="20" viewBox="0 0 19.999 20">
+                        <g id="Сгруппировать_2553" data-name="Сгруппировать 2553" transform="translate(-1 0.003)">
+                            <path id="Объединение_3" data-name="Объединение 3"
+                                  d="M15.116,20a1,1,0,0,1-1-1V15.117a1,1,0,0,1,1-1H19a1,1,0,0,1,1,1V19a1,1,0,0,1-1,1ZM8.058,20a1,1,0,0,1-1-1V15.118a1,1,0,0,1,1-1h3.882a1,1,0,0,1,1,1V19a1,1,0,0,1-1,1ZM1,20a1,1,0,0,1-1-1V15.117a1,1,0,0,1,1-1H4.882a1,1,0,0,1,1,1V19a1,1,0,0,1-1,1Zm14.117-7.059a1,1,0,0,1-1-1V8.059a1,1,0,0,1,1-1H19a1,1,0,0,1,1,1v3.883a1,1,0,0,1-1,1Zm-7.059,0a1,1,0,0,1-1-1V8.059a1,1,0,0,1,1-1H11.94a1,1,0,0,1,1,1v3.882a1,1,0,0,1-1,1ZM1,12.941a1,1,0,0,1-1-1V8.059a1,1,0,0,1,1-1H4.882a1,1,0,0,1,1,1v3.883a1,1,0,0,1-1,1ZM15.116,5.882a1,1,0,0,1-1-1V1a1,1,0,0,1,1-1H19a1,1,0,0,1,1,1V4.883a1,1,0,0,1-1,1Zm-7.058,0a1,1,0,0,1-1-1V1a1,1,0,0,1,1-1H11.94a1,1,0,0,1,1,1V4.883a1,1,0,0,1-1,1ZM1,5.882a1,1,0,0,1-1-1V1A1,1,0,0,1,1,0H4.882a1,1,0,0,1,1,1V4.883a1,1,0,0,1-1,1Z"
+                                  transform="translate(1 -0.003)" fill="#fff" />
+                        </g>
+                    </svg>
+                    <p>Каталог Товаров</p>
+                    <div id='catalog-submenu-js' class='catalog-submenu'>
+                        <a href='<?php echo home_url( '/' ); ?>product-page' class='submenu-item'>
+                            <div class='item-image'>
+                                <img src='<?php echo get_template_directory_uri() ?>/assets/images/product-item.png' alt='Кондиционер'>
+                            </div>
+                            <p>Настенные кондиционеры</p>
+                        </a>
+                        <a href='<?php echo home_url( '/' ); ?>product-page' class='submenu-item'>
+                            <div class='item-image'>
+                                <img src='<?php echo get_template_directory_uri() ?>/assets/images/product-item.png' alt='Кондиционер'>
+                            </div>
+                            <p>Готовые решения мультисистем</p>
+                        </a>
+                        <a href='<?php echo home_url( '/' ); ?>product-page' class='submenu-item'>
+                            <div class='item-image'>
+                                <img src='<?php echo get_template_directory_uri() ?>/assets/images/product-item.png' alt='Кондиционер'>
+                            </div>
+                            <p>Мультисплит-системы</p>
+                        </a>
+                        <a href='<?php echo home_url( '/' ); ?>product-page' class='submenu-item'>
+                            <div class='item-image'>
+                                <img src='<?php echo get_template_directory_uri() ?>/assets/images/product-item.png' alt='Кондиционер'>
+                            </div>
+                            <p>Напольно-потолочные кондиционеры</p>
+                        </a>
+                        <a href='<?php echo home_url( '/' ); ?>product-page' class='submenu-item'>
+                            <div class='item-image'>
+                                <img src='<?php echo get_template_directory_uri() ?>/assets/images/product-item.png' alt='Кондиционер'>
+                            </div>
+                            <p>Кассетные кондиционеры</p>
+                        </a>
+                        <a href='<?php echo home_url( '/' ); ?>product-page' class='submenu-item'>
+                            <div class='item-image'>
+                                <img src='<?php echo get_template_directory_uri() ?>/assets/images/product-item.png' alt='Кондиционер'>
+                            </div>
+                            <p>Канальные кондиционеры</p>
+                        </a>
+                        <a href='<?php echo home_url( '/' ); ?>product-page' class='submenu-item'>
+                            <div class='item-image'>
+                                <img src='<?php echo get_template_directory_uri() ?>/assets/images/product-item.png' alt='Кондиционер'>
+                            </div>
+                            <p>Колонные кондиционеры</p>
+                        </a>
+                        <a href='<?php echo home_url( '/' ); ?>product-page' class='submenu-item'>
+                            <div class='item-image'>
+                                <img src='<?php echo get_template_directory_uri() ?>/assets/images/product-item.png' alt='Кондиционер'>
+                            </div>
+                            <p>Мобильные кондиционеры</p>
+                        </a>
+                        <a href='<?php echo home_url( '/' ); ?>product-page' class='submenu-item'>
+                            <div class='item-image'>
+                                <img src='<?php echo get_template_directory_uri() ?>/assets/images/product-item.png' alt='Кондиционер'>
+                            </div>
+                            <p>Компрессорно-конденсаторный блок (ККБ)</p>
+                        </a>
+                    </div>
+                </div>
+                <a href='<?php echo home_url( '/' ); ?>personal-area' class='header-item header-profile'>
+                    <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="21"
+                         height="21" viewBox="0 0 21 21">
+                        <defs>
+                            <clipPath id="clip-path">
+                                <rect id="Прямоугольник_2160" data-name="Прямоугольник 2160" width="21" height="21"
+                                      transform="translate(113 369)" stroke="#707070" stroke-width="1" />
+                            </clipPath>
+                        </defs>
+                        <g id="Группа_масок_381" data-name="Группа масок 381" transform="translate(-113 -369)"
+                           clip-path="url(#clip-path)">
+                            <g id="user" transform="translate(113 369)">
+                                <g id="Сгруппировать_2994" data-name="Сгруппировать 2994">
+                                    <path id="Контур_860" data-name="Контур 860"
+                                          d="M17.925,13.575a10.46,10.46,0,0,0-3.99-2.5,6.07,6.07,0,1,0-6.869,0A10.517,10.517,0,0,0,0,21H1.641a8.859,8.859,0,0,1,17.719,0H21A10.432,10.432,0,0,0,17.925,13.575ZM10.5,10.5a4.43,4.43,0,1,1,4.43-4.43A4.435,4.435,0,0,1,10.5,10.5Z" />
+                                </g>
+                            </g>
+                        </g>
+                    </svg>
+                    <p>Мой Профиль</p>
+                </a>
+                <a href='<?php echo home_url( '/' ); ?>personal-area' class='header-item header-ordering'>
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24.657" height="32.443" viewBox="0 0 24.657 32.443">
+                        <g id="shopping-list" transform="translate(0.65 0.65)">
+                            <g id="Сгруппировать_2825" data-name="Сгруппировать 2825" transform="translate(5.839)">
+                                <g id="Сгруппировать_2824" data-name="Сгруппировать 2824">
+                                    <path id="Контур_759" data-name="Контур 759"
+                                          d="M20.081,1.946H17.967a2.92,2.92,0,0,0-5.507,0H10.348a.974.974,0,0,0-.973.973V6.813a.974.974,0,0,0,.973.973h9.732a.974.974,0,0,0,.973-.973V2.92A.974.974,0,0,0,20.081,1.946Z"
+                                          transform="translate(-9.375)" fill="none" stroke="#6b92b0" stroke-width="1.3" />
+                                </g>
+                            </g>
+                            <g id="Сгруппировать_2827" data-name="Сгруппировать 2827" transform="translate(0 3.893)">
+                                <g id="Сгруппировать_2826" data-name="Сгруппировать 2826">
+                                    <path id="Контур_760" data-name="Контур 760"
+                                          d="M25.161,3.75H23.215V6.67a2.923,2.923,0,0,1-2.92,2.92H10.563a2.923,2.923,0,0,1-2.92-2.92V3.75H5.7A1.95,1.95,0,0,0,3.75,5.7V29.054A1.925,1.925,0,0,0,5.7,31H25.161a1.925,1.925,0,0,0,1.946-1.946V5.7A1.925,1.925,0,0,0,25.161,3.75ZM15.145,20.984l-3.893,3.893a.977.977,0,0,1-1.378,0L7.927,22.93A.973.973,0,1,1,9.3,21.554l1.259,1.257,3.2-3.2a.974.974,0,0,1,1.378,1.376Zm0-7.786-3.893,3.893a.977.977,0,0,1-1.378,0L7.927,15.145A.973.973,0,0,1,9.3,13.768l1.259,1.257,3.2-3.2A.974.974,0,0,1,15.145,13.2Zm7.1,10.016H18.348a.973.973,0,0,1,0-1.946h3.893a.973.973,0,1,1,0,1.946Zm0-7.786H18.348a.973.973,0,0,1,0-1.946h3.893a.973.973,0,1,1,0,1.946Z"
+                                          transform="translate(-3.75 -3.75)" fill="none" stroke="#6b92b0"
+                                          stroke-width="1.3" />
+                                    <path id="Контур_766" data-name="Контур 766" d="M-.654.329H1.43L3.518,3.271H1.162Z"
+                                          transform="translate(4.414 9.993)" fill="#6b92b0" />
+                                    <path id="Контур_767" data-name="Контур 767"
+                                          d="M-.654.329H1.43L-3.023,5.217l-1.037-1.1Z" transform="translate(10.414 7.993)"
+                                          fill="#6b92b0" />
+                                    <path id="Контур_768" data-name="Контур 768" d="M-.654.329.771-.3,3.518,3.271H1.162Z"
+                                          transform="translate(4.414 17.993)" fill="#6b92b0" />
+                                    <path id="Контур_769" data-name="Контур 769"
+                                          d="M.072-.187,1.43.329-3.023,5.217l-1.037-1.1Z"
+                                          transform="translate(10.414 15.993)" fill="#6b92b0" />
+                                </g>
+                            </g>
+                        </g>
+                    </svg>
+                    <p>Мои заказы</p>
+                </a>
+                <a href='<?php echo home_url( '/' ); ?>comparison' class='header-item header-comparison'>
+                    <svg id="Сгруппировать_2793" data-name="Сгруппировать 2793" xmlns="http://www.w3.org/2000/svg"
+                         width="31.918" height="24.554" viewBox="0 0 31.918 24.554">
+                        <path id="Контур_724" data-name="Контур 724"
+                              d="M31.461,67.082,27.419,58.54h1.687a.7.7,0,1,0,0-1.406H18.947a3.058,3.058,0,0,0-5.976,0H2.812a.7.7,0,1,0,0,1.406H4.5L.457,67.082A.7.7,0,0,0,0,67.715a5.554,5.554,0,0,0,5.554,5.554h.035a5.7,5.7,0,0,0,5.624-5.589.6.6,0,0,0-.492-.6L6.679,58.54h6.292a3.093,3.093,0,0,0,2.285,2.144V73.832a4.781,4.781,0,0,0-4.148,4.781.668.668,0,0,0,.667.669h8.332a.668.668,0,0,0,.7-.632c0-.012,0-.024,0-.036a4.781,4.781,0,0,0-4.148-4.781V60.685a3.093,3.093,0,0,0,2.285-2.144h6.292L21.2,67.082a.633.633,0,0,0-.492.633,5.554,5.554,0,0,0,5.554,5.554h.035a5.66,5.66,0,0,0,5.624-5.554A.738.738,0,0,0,31.461,67.082ZM5.589,71.863h0a4.148,4.148,0,0,1-4.113-3.48H9.737A4.289,4.289,0,0,1,5.589,71.863Zm3.55-4.886h-7.1l3.55-7.628Zm10.194,10.9H12.585a3.621,3.621,0,0,1,3.375-2.742A3.621,3.621,0,0,1,19.334,77.874ZM15.959,59.349A1.652,1.652,0,1,1,17.611,57.7,1.652,1.652,0,0,1,15.959,59.349Zm10.37,0,3.55,7.628h-7.1Zm-.035,12.514a4.148,4.148,0,0,1-4.113-3.48h8.261A4.289,4.289,0,0,1,26.294,71.863Z"
+                              transform="translate(0 -54.727)" />
+                    </svg>
+                    <p>Сравнение</p>
+                </a>
+                <a href='<?php echo home_url( '/' ); ?>personal-area' class='header-item header-favorites'>
+                    <svg xmlns="http://www.w3.org/2000/svg" width="26.93" height="23.95" viewBox="0 0 26.93 23.95">
+                        <path id="Контур_723" data-name="Контур 723"
+                              d="M18.675,1.465a6.021,6.021,0,0,0-3.76,1.3,8.566,8.566,0,0,0-2.2,2.646,8.565,8.565,0,0,0-2.2-2.646,6.021,6.021,0,0,0-3.76-1.3C2.9,1.465,0,4.615,0,8.792c0,4.513,3.623,7.6,9.108,12.274.931.794,1.987,1.693,3.084,2.653a.795.795,0,0,0,1.046,0c1.1-.96,2.153-1.859,3.085-2.654C21.807,16.392,25.43,13.3,25.43,8.792,25.43,4.615,22.526,1.465,18.675,1.465Z"
+                              transform="translate(0.75 -0.715)" fill="none" stroke="#6B92B0" stroke-width="1.5" />
+                    </svg>
+                    <p>Избранные</p>
+                </a>
+                <a href='<?php echo home_url( '/' ); ?>personal-area' class='header-item header-viewed'>
+                    <svg xmlns="http://www.w3.org/2000/svg" width="30.555" height="18" viewBox="0 0 30.555 18">
+                        <g id="visibility" transform="translate(0.282 -6)">
+                            <g id="Сгруппировать_2813" data-name="Сгруппировать 2813">
+                                <g id="Сгруппировать_2812" data-name="Сгруппировать 2812">
+                                    <path id="Контур_755" data-name="Контур 755"
+                                          d="M29.889,14.645C29.653,14.3,23.975,6.25,15,6.25,7.3,6.25.436,14.255.147,14.6a.627.627,0,0,0,0,.807C.436,15.745,7.3,23.75,15,23.75S29.564,15.745,29.853,15.4A.625.625,0,0,0,29.889,14.645ZM15,22.5C8.826,22.5,2.956,16.613,1.465,15,2.954,13.386,8.817,7.5,15,7.5c7.224,0,12.323,5.879,13.568,7.466C27.13,16.528,21.226,22.5,15,22.5Z"
+                                          fill="#6b92b0" stroke="#6b92b0" stroke-width="0.5" />
+                                </g>
+                            </g>
+                            <g id="Сгруппировать_2815" data-name="Сгруппировать 2815">
+                                <g id="Сгруппировать_2814" data-name="Сгруппировать 2814">
+                                    <path id="Контур_756" data-name="Контур 756"
+                                          d="M15,10a5,5,0,1,0,5,5A5.005,5.005,0,0,0,15,10Zm0,8.75A3.75,3.75,0,1,1,18.75,15,3.755,3.755,0,0,1,15,18.75Z"
+                                          fill="#6b92b0" stroke="#6b92b0" stroke-width="0.5" />
+                                </g>
+                            </g>
+                        </g>
+                    </svg>
+                    <p>Просмотренные товары</p>
+                </a>
+                <a href='<?php echo home_url( '/' ); ?>personal-area' class='header-item header-reviews'>
+                    <svg xmlns="http://www.w3.org/2000/svg" width="26.419" height="24.716" viewBox="0 0 26.419 24.716">
+                        <g id="Сгруппировать_2829" data-name="Сгруппировать 2829" transform="translate(-1.791 -5.284)">
+                            <g id="Сгруппировать_2828" data-name="Сгруппировать 2828">
+                                <path id="Контур_761" data-name="Контур 761"
+                                      d="M28.209,16.732a2.645,2.645,0,0,0-2.642-2.642H18.527a15.294,15.294,0,0,0,.876-5.13,3.681,3.681,0,0,0-3.677-3.677H15a.881.881,0,0,0-.881.881c0,2.036-.793,5.712-2.233,7.152l-.056.056a9.742,9.742,0,0,1-2.995,1.935v-.336a.881.881,0,0,0-.881-.881H2.671a.881.881,0,0,0-.881.881V29.119A.881.881,0,0,0,2.671,30H7.955a.881.881,0,0,0,.881-.881V28.58A20.534,20.534,0,0,0,16.1,30h5.948A2.642,2.642,0,0,0,24.5,26.385a2.642,2.642,0,0,0,1.761-3.522,2.647,2.647,0,0,0,1.947-2.549,2.712,2.712,0,0,0-.688-1.8A2.632,2.632,0,0,0,28.209,16.732Zm-21.135,0V28.239H3.552V15.851H7.074Zm18.493,4.462H20.284a.881.881,0,1,0,0,1.761h3.522a.881.881,0,1,1,0,1.761H20.284a.881.881,0,1,0,0,1.761h1.761a.881.881,0,1,1,0,1.761H16.1a20.332,20.332,0,0,1-7.261-1.515V17.276a13.554,13.554,0,0,0,4.3-2.714C14.694,13,15.638,9.222,15.84,7.049a1.918,1.918,0,0,1,1.8,1.912c0,1.369-.533,4.417-1.5,5.387a.881.881,0,0,0,.623,1.5h8.806a.881.881,0,0,1,0,1.761H20.284a.881.881,0,1,0,0,1.761h5.284a.935.935,0,0,1,.881.939A.882.882,0,0,1,25.567,21.194Z"
+                                      fill="#6b92b0" />
+                            </g>
+                        </g>
+                    </svg>
+                    <p>Мои отзывы</p>
+                </a>
+                <nav class='header-menu'>
+                    <ul>
+                        <li>
+                            <a class='menu-item header-item' href='<?php echo home_url( '/' ); ?>'>Главная</a>
+                        </li>
+                        <li>
+                            <a class='menu-item header-item' href='<?php echo home_url( '/' ); ?>catalog'>Каталог</a>
+                        </li>
+                        <li>
+                            <a class='menu-item header-item' href='<?php echo home_url( '/' ); ?>installation-and-assembly'>Установка и
+                                монтаж</a>
+                        </li>
+                        <li>
+                            <a class='menu-item header-item' href='<?php echo home_url( '/' ); ?>services'>Сервис</a>
+                        </li>
+                        <li>
+                            <a class='menu-item header-item' href='<?php echo home_url( '/' ); ?>payment-and-delivery'>Оплата и доствка</a>
+                        </li>
+                        <li>
+                            <a class='menu-item header-item' href='<?php echo home_url( '/' ); ?>our-works'>Наши роботы</a>
+                        </li>
+                        <li>
+                            <a class='menu-item header-item' href='<?php echo home_url( '/' ); ?>reviews'>Отзывы</a>
+                        </li>
+                        <li>
+                            <a class='menu-item header-item' href='<?php echo home_url( '/' ); ?>blog'>Блог</a>
+                        </li>
+                        <li>
+                            <a class='menu-item header-item' href='<?php echo home_url( '/' ); ?>contacts'>Контакты</a>
+                        </li>
+                    </ul>
+                </nav>
+                <div class='header-item'>
+                    <div class='call'>
+                        <svg xmlns="http://www.w3.org/2000/svg" width="18.081" height="18.081"
+                             viewBox="0 0 18.081 18.081">
+                            <path id="Контур_135" data-name="Контур 135"
+                                  d="M16.63,11.868a10.266,10.266,0,0,1-3.224-.514,1.474,1.474,0,0,0-1.433.3L9.94,13.191a11.235,11.235,0,0,1-5.051-5.05l1.49-1.98a1.461,1.461,0,0,0,.36-1.481,10.281,10.281,0,0,1-.515-3.229A1.452,1.452,0,0,0,4.771,0H1.451A1.453,1.453,0,0,0,0,1.451a16.649,16.649,0,0,0,16.63,16.63,1.453,1.453,0,0,0,1.451-1.451V13.319A1.453,1.453,0,0,0,16.63,11.868Z" />
+                        </svg>
+                        <a href='tel:38(097) 107 25 25'>38(097) 107 25 25</a>
+                        <a href='tel:38(097) 125 95 95'>38(097) 125 95 95</a>
+                    </div>
+                    <div class='socials'>
+                        <div class='socials-images'>
+                            <a href='#' class='socials-image'>
+                                <img src='<?php echo get_template_directory_uri() ?>/assets/images/icons/viber.svg' alt='Viber'>
+                            </a>
+                            <a href='#' class='socials-image'>
+                                <img src='<?php echo get_template_directory_uri() ?>/assets/images/icons/whatsapp.svg' alt='WhatsApp'>
+                            </a>
+                            <a href='#' class='socials-image'>
+                                <img src='<?php echo get_template_directory_uri() ?>/assets/images/icons/telegram.svg' alt='Telegram'>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+<main class='personal-area'>
+    <div class='popup basket'>
+        <div class='popup-inner basket-inner'>
+            <div class='popup-title basket-title'>
+                <h2>Корзина</h2>
+                <div class='basket-close close'></div>
+            </div>
+            <div class='basket-list'>
+                <h4 class='no-products'>Корзина пуста</h4>
+                <div class='basket-item'>
+                    <div class='item-close'></div>
+                    <div class='item-image'>
+                        <img src='<?php echo get_template_directory_uri() ?>/assets/images/product-item.png' alt='Кондиционер'>
+                    </div>
+                    <div class='item-description'>
+                        <h5>C&H CH-S07GKP8</h5>
+                        <div class='quantity'>
+                            <button type='button' class='reduce'>-</button>
+                            <label>
+                                <input type='text' value='1' class='quantity-input'>
+                            </label>
+                            <button type='button' class='enlarge'>+</button>
+                        </div>
+                        <span>66 500 UAH</span>
+                    </div>
+                </div>
+                <div class='basket-item'>
+                    <div class='item-close'></div>
+                    <div class='item-image'>
+                        <img src='<?php echo get_template_directory_uri() ?>/assets/images/product-item.png' alt='Кондиционер'>
+                    </div>
+                    <div class='item-description'>
+                        <h5>C&H CH-S07GKP8</h5>
+                        <div class='quantity'>
+                            <button type='button' class='reduce'>-</button>
+                            <label>
+                                <input type='text' value='1' class='quantity-input'>
+                            </label>
+                            <button type='button' class='enlarge'>+</button>
+                        </div>
+                        <span>66 500 UAH</span>
+                    </div>
+                </div>
+                <div class='basket-item'>
+                    <div class='item-close'></div>
+                    <div class='item-image'>
+                        <img src='<?php echo get_template_directory_uri() ?>/assets/images/product-item.png' alt='Кондиционер'>
+                    </div>
+                    <div class='item-description'>
+                        <h5>C&H CH-S07GKP8</h5>
+                        <div class='quantity'>
+                            <button type='button' class='reduce'>-</button>
+                            <label>
+                                <input type='text' value='1' class='quantity-input'>
+                            </label>
+                            <button type='button' class='enlarge'>+</button>
+                        </div>
+                        <span>66 500 UAH</span>
+                    </div>
+                </div>
+            </div>
+            <div class='basket-bottom'>
+                <div class='basket-bottom-description'>
+                    <p>
+                        Доставка:
+                        <span>0 UAH</span>
+                    </p>
+                    <p>
+                        Сумма товара:
+                        <span>66 500 UAH</span>
+                    </p>
+                </div>
+                <a href='#' class='btn'>Заказать</a>
+            </div>
+        </div>
+    </div>
+    <div class='popup login'>
+        <div class='popup-inner login-inner'>
+            <div class='popup-title login-title'>
+                <h2>Вход</h2>
+                <div class='login-close close'></div>
+            </div>
+            <div class='popup-content login-content'>
+                <form action=''>
+                    <label for=''>
+                        <span>Эл. почта или телефон</span>
+                        <input type='tel'>
+                    </label>
+                    <label for=''>
+                        <span>Пароль</span>
+                        <input type='password'>
+                    </label>
+                    <div class='checkbox'>
+                        <label>
+                            <input type='checkbox'>
+                            Запомнить меня
+                        </label>
+                        <a href='#' class='forgot-password'>Напомнить пароль</a>
+                    </div>
+                    <a href='#' class='btn'>Войти</a>
+                    <p class='register-now'>Зарегистрироваться</p>
+                </form>
+            </div>
+        </div>
+    </div>
+    <div class='popup registration'>
+        <div class='popup-inner registration-inner'>
+            <div class='popup-title registration-title'>
+                <h2>Регистрация</h2>
+                <div class='registration-close close'></div>
+            </div>
+            <div class='popup-content registration-content'>
+                <form action=''>
+                    <label>
+                        <span>Имя</span>
+                        <input type='text'>
+                    </label>
+                    <label>
+                        <span>Фамилия</span>
+                        <input type='text'>
+                    </label>
+                    <label>
+                        <span>Номер телефона</span>
+                        <input type='tel'>
+                    </label>
+                    <label>
+                        <span>Эл. почта</span>
+                        <input type='email'>
+                    </label>
+                    <label>
+                        <span>Пароль</span>
+                        <input type='password'>
+                    </label>
+                    <label>
+                        <span>Повторите пароль</span>
+                        <input type='password'>
+                    </label>
+                    <div class='checkbox'>
+                        <label>
+                            <input type='checkbox'>
+                            Регистрируясь, вы соглашаетесь с пользовательским соглашением
+                        </label>
+                    </div>
+                    <a href='#' class='btn'>Зарегистрировать</a>
+                    <p class='registered'>Я уже зарегистрирован</p>
+                </form>
+            </div>
+        </div>
+    </div>
+    <section class='personal-information'>
+        <div class='container'>
+            <div class='personal-information-inner'>
+                <div class='category'>
+                    <div data-section-id='info-profile' class='category-item header-profile active'>
+                        <svg id="user" xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="0 0 30 30">
+                            <g id="Сгруппировать_2816" data-name="Сгруппировать 2816">
+                                <path id="Контур_757" data-name="Контур 757"
+                                      d="M25.607,19.393a14.942,14.942,0,0,0-5.7-3.575,8.672,8.672,0,1,0-9.813,0A15.024,15.024,0,0,0,0,30H2.344a12.656,12.656,0,0,1,25.313,0H30A14.9,14.9,0,0,0,25.607,19.393ZM15,15a6.328,6.328,0,1,1,6.328-6.328A6.335,6.335,0,0,1,15,15Z"
+                                      fill="#6b92b0" />
+                            </g>
+                        </svg>
+                        <div class='item-description'>
+                            <h5>Techcomfort</h5>
+                            <p>techcomfort@gmail.com</p>
+                        </div>
+                    </div>
+                    <div data-section-id='info-ordering' class='category-item header-ordering'>
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24.657" height="32.443"
+                             viewBox="0 0 24.657 32.443">
+                            <g id="shopping-list" transform="translate(0.65 0.65)">
+                                <g id="Сгруппировать_2825" data-name="Сгруппировать 2825" transform="translate(5.839)">
+                                    <g id="Сгруппировать_2824" data-name="Сгруппировать 2824">
+                                        <path id="Контур_759" data-name="Контур 759"
+                                              d="M20.081,1.946H17.967a2.92,2.92,0,0,0-5.507,0H10.348a.974.974,0,0,0-.973.973V6.813a.974.974,0,0,0,.973.973h9.732a.974.974,0,0,0,.973-.973V2.92A.974.974,0,0,0,20.081,1.946Z"
+                                              transform="translate(-9.375)" fill="none" stroke="#6b92b0"
+                                              stroke-width="1.3" />
+                                    </g>
+                                </g>
+                                <g id="Сгруппировать_2827" data-name="Сгруппировать 2827"
+                                   transform="translate(0 3.893)">
+                                    <g id="Сгруппировать_2826" data-name="Сгруппировать 2826">
+                                        <path id="Контур_760" data-name="Контур 760"
+                                              d="M25.161,3.75H23.215V6.67a2.923,2.923,0,0,1-2.92,2.92H10.563a2.923,2.923,0,0,1-2.92-2.92V3.75H5.7A1.95,1.95,0,0,0,3.75,5.7V29.054A1.925,1.925,0,0,0,5.7,31H25.161a1.925,1.925,0,0,0,1.946-1.946V5.7A1.925,1.925,0,0,0,25.161,3.75ZM15.145,20.984l-3.893,3.893a.977.977,0,0,1-1.378,0L7.927,22.93A.973.973,0,1,1,9.3,21.554l1.259,1.257,3.2-3.2a.974.974,0,0,1,1.378,1.376Zm0-7.786-3.893,3.893a.977.977,0,0,1-1.378,0L7.927,15.145A.973.973,0,0,1,9.3,13.768l1.259,1.257,3.2-3.2A.974.974,0,0,1,15.145,13.2Zm7.1,10.016H18.348a.973.973,0,0,1,0-1.946h3.893a.973.973,0,1,1,0,1.946Zm0-7.786H18.348a.973.973,0,0,1,0-1.946h3.893a.973.973,0,1,1,0,1.946Z"
+                                              transform="translate(-3.75 -3.75)" fill="none" stroke="#6b92b0"
+                                              stroke-width="1.3" />
+                                        <path id="Контур_766" data-name="Контур 766"
+                                              d="M-.654.329H1.43L3.518,3.271H1.162Z" transform="translate(4.414 9.993)"
+                                              fill="#6b92b0" />
+                                        <path id="Контур_767" data-name="Контур 767"
+                                              d="M-.654.329H1.43L-3.023,5.217l-1.037-1.1Z"
+                                              transform="translate(10.414 7.993)" fill="#6b92b0" />
+                                        <path id="Контур_768" data-name="Контур 768"
+                                              d="M-.654.329.771-.3,3.518,3.271H1.162Z"
+                                              transform="translate(4.414 17.993)" fill="#6b92b0" />
+                                        <path id="Контур_769" data-name="Контур 769"
+                                              d="M.072-.187,1.43.329-3.023,5.217l-1.037-1.1Z"
+                                              transform="translate(10.414 15.993)" fill="#6b92b0" />
+                                    </g>
+                                </g>
+                            </g>
+                        </svg>
+                        <p>Мои заказы</p>
+                    </div>
+                    <div data-section-id='info-wishes' class='category-item header-favorites'>
+                        <svg xmlns="http://www.w3.org/2000/svg" width="26.93" height="23.95" viewBox="0 0 26.93 23.95">
+                            <path id="Контур_723" data-name="Контур 723"
+                                  d="M18.675,1.465a6.021,6.021,0,0,0-3.76,1.3,8.566,8.566,0,0,0-2.2,2.646,8.565,8.565,0,0,0-2.2-2.646,6.021,6.021,0,0,0-3.76-1.3C2.9,1.465,0,4.615,0,8.792c0,4.513,3.623,7.6,9.108,12.274.931.794,1.987,1.693,3.084,2.653a.795.795,0,0,0,1.046,0c1.1-.96,2.153-1.859,3.085-2.654C21.807,16.392,25.43,13.3,25.43,8.792,25.43,4.615,22.526,1.465,18.675,1.465Z"
+                                  transform="translate(0.75 -0.715)" fill="none" stroke="#6B92B0" stroke-width="1.5" />
+                        </svg>
+                        <p>Список желаний</p>
+                    </div>
+                    <div data-section-id='info-viewed' class='category-item header-viewed'>
+                        <svg xmlns="http://www.w3.org/2000/svg" width="30.555" height="18" viewBox="0 0 30.555 18">
+                            <g id="visibility" transform="translate(0.282 -6)">
+                                <g id="Сгруппировать_2813" data-name="Сгруппировать 2813">
+                                    <g id="Сгруппировать_2812" data-name="Сгруппировать 2812">
+                                        <path id="Контур_755" data-name="Контур 755"
+                                              d="M29.889,14.645C29.653,14.3,23.975,6.25,15,6.25,7.3,6.25.436,14.255.147,14.6a.627.627,0,0,0,0,.807C.436,15.745,7.3,23.75,15,23.75S29.564,15.745,29.853,15.4A.625.625,0,0,0,29.889,14.645ZM15,22.5C8.826,22.5,2.956,16.613,1.465,15,2.954,13.386,8.817,7.5,15,7.5c7.224,0,12.323,5.879,13.568,7.466C27.13,16.528,21.226,22.5,15,22.5Z"
+                                              fill="#6b92b0" stroke="#6b92b0" stroke-width="0.5" />
+                                    </g>
+                                </g>
+                                <g id="Сгруппировать_2815" data-name="Сгруппировать 2815">
+                                    <g id="Сгруппировать_2814" data-name="Сгруппировать 2814">
+                                        <path id="Контур_756" data-name="Контур 756"
+                                              d="M15,10a5,5,0,1,0,5,5A5.005,5.005,0,0,0,15,10Zm0,8.75A3.75,3.75,0,1,1,18.75,15,3.755,3.755,0,0,1,15,18.75Z"
+                                              fill="#6b92b0" stroke="#6b92b0" stroke-width="0.5" />
+                                    </g>
+                                </g>
+                            </g>
+                        </svg>
+                        <p>Просмотренные товары</p>
+                    </div>
+                    <div data-section-id='info-reviews' class='category-item header-reviews'>
+                        <svg xmlns="http://www.w3.org/2000/svg" width="26.419" height="24.716"
+                             viewBox="0 0 26.419 24.716">
+                            <g id="Сгруппировать_2829" data-name="Сгруппировать 2829"
+                               transform="translate(-1.791 -5.284)">
+                                <g id="Сгруппировать_2828" data-name="Сгруппировать 2828">
+                                    <path id="Контур_761" data-name="Контур 761"
+                                          d="M28.209,16.732a2.645,2.645,0,0,0-2.642-2.642H18.527a15.294,15.294,0,0,0,.876-5.13,3.681,3.681,0,0,0-3.677-3.677H15a.881.881,0,0,0-.881.881c0,2.036-.793,5.712-2.233,7.152l-.056.056a9.742,9.742,0,0,1-2.995,1.935v-.336a.881.881,0,0,0-.881-.881H2.671a.881.881,0,0,0-.881.881V29.119A.881.881,0,0,0,2.671,30H7.955a.881.881,0,0,0,.881-.881V28.58A20.534,20.534,0,0,0,16.1,30h5.948A2.642,2.642,0,0,0,24.5,26.385a2.642,2.642,0,0,0,1.761-3.522,2.647,2.647,0,0,0,1.947-2.549,2.712,2.712,0,0,0-.688-1.8A2.632,2.632,0,0,0,28.209,16.732Zm-21.135,0V28.239H3.552V15.851H7.074Zm18.493,4.462H20.284a.881.881,0,1,0,0,1.761h3.522a.881.881,0,1,1,0,1.761H20.284a.881.881,0,1,0,0,1.761h1.761a.881.881,0,1,1,0,1.761H16.1a20.332,20.332,0,0,1-7.261-1.515V17.276a13.554,13.554,0,0,0,4.3-2.714C14.694,13,15.638,9.222,15.84,7.049a1.918,1.918,0,0,1,1.8,1.912c0,1.369-.533,4.417-1.5,5.387a.881.881,0,0,0,.623,1.5h8.806a.881.881,0,0,1,0,1.761H20.284a.881.881,0,1,0,0,1.761h5.284a.935.935,0,0,1,.881.939A.882.882,0,0,1,25.567,21.194Z"
+                                          fill="#6b92b0" />
+                                </g>
+                            </g>
+                        </svg>
+                        <p>Мои отзывы</p>
+                    </div>
+                </div>
+                <div class='info'>
+                    <div id='info-profile' class='info-list personal-data active'>
+                        <h2>Личные данные</h2>
+                        <div class='info-item personal-data-item'>
+                            <h5>
+                                Личные данные
+                                <span>
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="20.283" height="20.003"
+                                         viewBox="0 0 20.283 20.003">
+                                      <path id="Объединение_11" data-name="Объединение 11"
+                                            d="M22608.723-618.747a2.522,2.522,0,0,1-2.516-2.521v-11.76a2.522,2.522,0,0,1,2.516-2.521h6.723a.846.846,0,0,1,.842.84.843.843,0,0,1-.842.84h-6.723a.846.846,0,0,0-.84.84v11.76a.846.846,0,0,0,.84.84h11.76a.843.843,0,0,0,.842-.84v-6.718a.837.837,0,0,1,.84-.84.839.839,0,0,1,.84.84v6.718a2.522,2.522,0,0,1-2.521,2.521Zm4.373-6.888a.414.414,0,0,1-.113-.369l.572-2.851a.411.411,0,0,1,.113-.2l6.383-6.383,2.852,2.851-6.383,6.383a.379.379,0,0,1-.205.108l-2.855.574a.354.354,0,0,1-.08.006A.416.416,0,0,1,22613.1-625.635Zm8.313-11.209,1.244-1.249a2.255,2.255,0,0,1,3.18,0,2.242,2.242,0,0,1,.658,1.6,2.216,2.216,0,0,1-.658,1.584l-1.244,1.249Z"
+                                            transform="translate(-22606.207 638.749)" fill="#6b92b0" />
+                                    </svg>
+                                    Редактировать
+                                </span>
+                            </h5>
+                            <div class='item-description'>
+                                <div class='description-item'>
+                                    <span>Фамилия</span>
+                                    <p>Hohsadze</p>
+                                </div>
+                                <div class='description-item'>
+                                    <span>Имя</span>
+                                    <p>Christina</p>
+                                </div>
+                                <div class='description-item'>
+                                    <span>Отчество</span>
+                                    <p>Не указано</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class='info-item personal-data-item'>
+                            <h5>
+                                Контакты
+                                <span>
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="20.283" height="20.003"
+                                         viewBox="0 0 20.283 20.003">
+                                      <path id="Объединение_11" data-name="Объединение 11"
+                                            d="M22608.723-618.747a2.522,2.522,0,0,1-2.516-2.521v-11.76a2.522,2.522,0,0,1,2.516-2.521h6.723a.846.846,0,0,1,.842.84.843.843,0,0,1-.842.84h-6.723a.846.846,0,0,0-.84.84v11.76a.846.846,0,0,0,.84.84h11.76a.843.843,0,0,0,.842-.84v-6.718a.837.837,0,0,1,.84-.84.839.839,0,0,1,.84.84v6.718a2.522,2.522,0,0,1-2.521,2.521Zm4.373-6.888a.414.414,0,0,1-.113-.369l.572-2.851a.411.411,0,0,1,.113-.2l6.383-6.383,2.852,2.851-6.383,6.383a.379.379,0,0,1-.205.108l-2.855.574a.354.354,0,0,1-.08.006A.416.416,0,0,1,22613.1-625.635Zm8.313-11.209,1.244-1.249a2.255,2.255,0,0,1,3.18,0,2.242,2.242,0,0,1,.658,1.6,2.216,2.216,0,0,1-.658,1.584l-1.244,1.249Z"
+                                            transform="translate(-22606.207 638.749)" fill="#6b92b0" />
+                                    </svg>
+                                    Редактировать
+                                </span>
+                            </h5>
+                            <div class='item-description'>
+                                <div class='description-item'>
+                                    <span>Телефон</span>
+                                    <p>38(097) 107 25 25</p>
+                                </div>
+                                <div class='description-item'>
+                                    <span>Электронная почта</span>
+                                    <p>techcomfort@gmail.com</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class='info-item personal-data-item'>
+                            <h5>
+                                Адрес доставки
+                                <span>
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="20.283" height="20.003"
+                                         viewBox="0 0 20.283 20.003">
+                                      <path id="Объединение_11" data-name="Объединение 11"
+                                            d="M22608.723-618.747a2.522,2.522,0,0,1-2.516-2.521v-11.76a2.522,2.522,0,0,1,2.516-2.521h6.723a.846.846,0,0,1,.842.84.843.843,0,0,1-.842.84h-6.723a.846.846,0,0,0-.84.84v11.76a.846.846,0,0,0,.84.84h11.76a.843.843,0,0,0,.842-.84v-6.718a.837.837,0,0,1,.84-.84.839.839,0,0,1,.84.84v6.718a2.522,2.522,0,0,1-2.521,2.521Zm4.373-6.888a.414.414,0,0,1-.113-.369l.572-2.851a.411.411,0,0,1,.113-.2l6.383-6.383,2.852,2.851-6.383,6.383a.379.379,0,0,1-.205.108l-2.855.574a.354.354,0,0,1-.08.006A.416.416,0,0,1,22613.1-625.635Zm8.313-11.209,1.244-1.249a2.255,2.255,0,0,1,3.18,0,2.242,2.242,0,0,1,.658,1.6,2.216,2.216,0,0,1-.658,1.584l-1.244,1.249Z"
+                                            transform="translate(-22606.207 638.749)" fill="#6b92b0" />
+                                    </svg>
+                                    Редактировать
+                                </span>
+                            </h5>
+                            <div class='item-description'>
+                                <div class='description-item'>
+                                    <span>Адрес</span>
+                                    <p>Киев, Голосеевский (40-летия Октября) пр-т, д.86, кв.12</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div id='info-ordering' class='info-list ordering'>
+                        <h2>Мои заказы</h2>
+                        <div class='info-item ordering-item'>
+                            <span class='arrow'></span>
+                            <div class='item-image'>
+                                <img src='<?php echo get_template_directory_uri() ?>/assets/images/product-item.png' alt='кондиционер'>
+                            </div>
+                            <div class='item-description'>
+                                <div class='order-number'>
+                                    <span>№ 346 857 123 от 29.06.2021</span>
+                                    <p>Сделаное</p>
+                                </div>
+                                <div class='order-price'>
+                                    <span>сумма заказа</span>
+                                    <p>8 760 UAH</p>
+                                </div>
+                            </div>
+                            <div class='order-history'>
+                                <div class='order-history-left'>
+                                    <h5>История заказа</h5>
+                                    <p>Информация о заказе</p>
+                                    <ul>
+                                        <li>THH 20450405247481</li>
+                                        <li>Доставка курьером по Киеву</li>
+                                        <li>Киевская обл., Печерский р-н., Печерск, Генерала Алмазова ул., кв.145</li>
+                                        <li>Тюльпан Федотов</li>
+                                        <li>
+                                            <a href='tel:38(097) 107 25 25'>38(097) 107 25 25</a>
+                                        </li>
+                                        <li>
+                                            <a href='mailto:techcomfort@gmail.com'>techcomfort@gmail.com</a>
+                                        </li>
+                                    </ul>
+                                </div>
+                                <div class='order-history-right'>
+                                    <div class='order-data'>
+                                        <div class='data-product'>
+                                            <div class='product-image'>
+                                                <img src='<?php echo get_template_directory_uri() ?>/assets/images/product-item.png' alt='Кондиционер'>
+                                            </div>
+                                            <h5>C&H CH-S07GKP8</h5>
+                                        </div>
+                                        <div class='data-price'>
+                                            <span>цена</span>
+                                            <p>8 760 UAH</p>
+                                        </div>
+                                        <div class='data-amount'>
+                                            <span>количество</span>
+                                            <p>1</p>
+                                        </div>
+                                        <div class='data-price'>
+                                            <span>сумма заказа</span>
+                                            <p>8 760 UAH</p>
+                                        </div>
+                                    </div>
+                                    <div class='order-delivery'>
+                                        <div class='delivery-item'>
+                                            <span>Оплата</span>
+                                            <p>Оплата при получении в службах доставки</p>
+                                        </div>
+                                        <div class='delivery-item'>
+                                            <span>Доставка</span>
+                                            <p>Доставка курьером по Киеву</p>
+                                        </div>
+                                        <div class='delivery-item'>
+                                            <span>Вместе</span>
+                                            <span class='price'>8 760 UAH</span>
+                                        </div>
+                                        <button type='button' class='btn'>Повторить заказ</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class='info-item ordering-item'>
+                            <span class='arrow'></span>
+                            <div class='item-image'>
+                                <img src='<?php echo get_template_directory_uri() ?>/assets/images/product-item.png' alt='кондиционер'>
+                            </div>
+                            <div class='item-description'>
+                                <div class='order-number'>
+                                    <span>№ 346 857 123 от 29.06.2021</span>
+                                    <p>Сделаное</p>
+                                </div>
+                                <div class='order-price'>
+                                    <span>сумма заказа</span>
+                                    <p>8 760 UAH</p>
+                                </div>
+                            </div>
+                            <div class='order-history'>
+                                <div class='order-history-left'>
+                                    <h5>История заказа</h5>
+                                    <p>Информация о заказе</p>
+                                    <ul>
+                                        <li>THH 20450405247481</li>
+                                        <li>Доставка курьером по Киеву</li>
+                                        <li>Киевская обл., Печерский р-н., Печерск, Генерала Алмазова ул., кв.145</li>
+                                        <li>Тюльпан Федотов</li>
+                                        <li>
+                                            <a href='tel:38(097) 107 25 25'>38(097) 107 25 25</a>
+                                        </li>
+                                        <li>
+                                            <a href='mailto:techcomfort@gmail.com'>techcomfort@gmail.com</a>
+                                        </li>
+                                    </ul>
+                                </div>
+                                <div class='order-history-right'>
+                                    <div class='order-data'>
+                                        <div class='data-product'>
+                                            <div class='product-image'>
+                                                <img src='<?php echo get_template_directory_uri() ?>/assets/images/product-item.png' alt='Кондиционер'>
+                                            </div>
+                                            <h5>C&H CH-S07GKP8</h5>
+                                        </div>
+                                        <div class='data-price'>
+                                            <span>цена</span>
+                                            <p>8 760 UAH</p>
+                                        </div>
+                                        <div class='data-amount'>
+                                            <span>количество</span>
+                                            <p>1</p>
+                                        </div>
+                                        <div class='data-price'>
+                                            <span>сумма заказа</span>
+                                            <p>8 760 UAH</p>
+                                        </div>
+                                    </div>
+                                    <div class='order-delivery'>
+                                        <div class='delivery-item'>
+                                            <span>Оплата</span>
+                                            <p>Оплата при получении в службах доставки</p>
+                                        </div>
+                                        <div class='delivery-item'>
+                                            <span>Доставка</span>
+                                            <p>Доставка курьером по Киеву</p>
+                                        </div>
+                                        <div class='delivery-item'>
+                                            <span>Вместе</span>
+                                            <span class='price'>8 760 UAH</span>
+                                        </div>
+                                        <button type='button' class='btn'>Повторить заказ</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class='info-item ordering-item'>
+                            <span class='arrow'></span>
+                            <div class='item-image'>
+                                <img src='<?php echo get_template_directory_uri() ?>/assets/images/product-item.png' alt='кондиционер'>
+                            </div>
+                            <div class='item-description'>
+                                <div class='order-number'>
+                                    <span>№ 346 857 123 от 29.06.2021</span>
+                                    <p>Сделаное</p>
+                                </div>
+                                <div class='order-price'>
+                                    <span>сумма заказа</span>
+                                    <p>8 760 UAH</p>
+                                </div>
+                            </div>
+                            <div class='order-history'>
+                                <div class='order-history-left'>
+                                    <h5>История заказа</h5>
+                                    <p>Информация о заказе</p>
+                                    <ul>
+                                        <li>THH 20450405247481</li>
+                                        <li>Доставка курьером по Киеву</li>
+                                        <li>Киевская обл., Печерский р-н., Печерск, Генерала Алмазова ул., кв.145</li>
+                                        <li>Тюльпан Федотов</li>
+                                        <li>
+                                            <a href='tel:38(097) 107 25 25'>38(097) 107 25 25</a>
+                                        </li>
+                                        <li>
+                                            <a href='mailto:techcomfort@gmail.com'>techcomfort@gmail.com</a>
+                                        </li>
+                                    </ul>
+                                </div>
+                                <div class='order-history-right'>
+                                    <div class='order-data'>
+                                        <div class='data-product'>
+                                            <div class='product-image'>
+                                                <img src='<?php echo get_template_directory_uri() ?>/assets/images/product-item.png' alt='Кондиционер'>
+                                            </div>
+                                            <h5>C&H CH-S07GKP8</h5>
+                                        </div>
+                                        <div class='data-price'>
+                                            <span>цена</span>
+                                            <p>8 760 UAH</p>
+                                        </div>
+                                        <div class='data-amount'>
+                                            <span>количество</span>
+                                            <p>1</p>
+                                        </div>
+                                        <div class='data-price'>
+                                            <span>сумма заказа</span>
+                                            <p>8 760 UAH</p>
+                                        </div>
+                                    </div>
+                                    <div class='order-delivery'>
+                                        <div class='delivery-item'>
+                                            <span>Оплата</span>
+                                            <p>Оплата при получении в службах доставки</p>
+                                        </div>
+                                        <div class='delivery-item'>
+                                            <span>Доставка</span>
+                                            <p>Доставка курьером по Киеву</p>
+                                        </div>
+                                        <div class='delivery-item'>
+                                            <span>Вместе</span>
+                                            <span class='price'>8 760 UAH</span>
+                                        </div>
+                                        <button type='button' class='btn'>Повторить заказ</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class='info-item ordering-item'>
+                            <span class='arrow'></span>
+                            <div class='item-image'>
+                                <img src='<?php echo get_template_directory_uri() ?>/assets/images/product-item.png' alt='кондиционер'>
+                            </div>
+                            <div class='item-description'>
+                                <div class='order-number'>
+                                    <span>№ 346 857 123 от 29.06.2021</span>
+                                    <p>Сделаное</p>
+                                </div>
+                                <div class='order-price'>
+                                    <span>сумма заказа</span>
+                                    <p>8 760 UAH</p>
+                                </div>
+                            </div>
+                            <div class='order-history'>
+                                <div class='order-history-left'>
+                                    <h5>История заказа</h5>
+                                    <p>Информация о заказе</p>
+                                    <ul>
+                                        <li>THH 20450405247481</li>
+                                        <li>Доставка курьером по Киеву</li>
+                                        <li>Киевская обл., Печерский р-н., Печерск, Генерала Алмазова ул., кв.145</li>
+                                        <li>Тюльпан Федотов</li>
+                                        <li>
+                                            <a href='tel:38(097) 107 25 25'>38(097) 107 25 25</a>
+                                        </li>
+                                        <li>
+                                            <a href='mailto:techcomfort@gmail.com'>techcomfort@gmail.com</a>
+                                        </li>
+                                    </ul>
+                                </div>
+                                <div class='order-history-right'>
+                                    <div class='order-data'>
+                                        <div class='data-product'>
+                                            <div class='product-image'>
+                                                <img src='<?php echo get_template_directory_uri() ?>/assets/images/product-item.png' alt='Кондиционер'>
+                                            </div>
+                                            <h5>C&H CH-S07GKP8</h5>
+                                        </div>
+                                        <div class='data-price'>
+                                            <span>цена</span>
+                                            <p>8 760 UAH</p>
+                                        </div>
+                                        <div class='data-amount'>
+                                            <span>количество</span>
+                                            <p>1</p>
+                                        </div>
+                                        <div class='data-price'>
+                                            <span>сумма заказа</span>
+                                            <p>8 760 UAH</p>
+                                        </div>
+                                    </div>
+                                    <div class='order-delivery'>
+                                        <div class='delivery-item'>
+                                            <span>Оплата</span>
+                                            <p>Оплата при получении в службах доставки</p>
+                                        </div>
+                                        <div class='delivery-item'>
+                                            <span>Доставка</span>
+                                            <p>Доставка курьером по Киеву</p>
+                                        </div>
+                                        <div class='delivery-item'>
+                                            <span>Вместе</span>
+                                            <span class='price'>8 760 UAH</span>
+                                        </div>
+                                        <button type='button' class='btn'>Повторить заказ</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div id='info-wishes' class='info-list wishes'>
+                        <h2>
+                            Список желаний
+                            <button type='button' class='clear-all'>
+                                <svg xmlns="http://www.w3.org/2000/svg" width="15.558" height="19.999"
+                                     viewBox="0 0 15.558 19.999">
+                                    <g id="delete" transform="translate(-0.001 -0.001)">
+                                        <path id="Объединение_10" data-name="Объединение 10"
+                                              d="M11051.3-222a1.286,1.286,0,0,1-1.227-1.252l-.928-12.669a.624.624,0,0,1,.05-.3h-1.266a.462.462,0,0,1-.264-.083.563.563,0,0,1-.209-.625l.4-1.286a.777.777,0,0,1,.728-.569h13.258a.78.78,0,0,1,.729.569l.395,1.286a.554.554,0,0,1-.208.625.453.453,0,0,1-.264.083h-1.264a.624.624,0,0,1,.05.3l-.927,12.669a1.289,1.289,0,0,1-1.228,1.252Zm6.8-12.444-.553,10.4a.63.63,0,0,0,.553.689.172.172,0,0,0,.036,0,.62.62,0,0,0,.589-.616l.558-10.4a.637.637,0,0,0-.558-.691h-.033A.622.622,0,0,0,11058.1-234.444Zm-3.474.039V-224a.627.627,0,0,0,.592.652.625.625,0,0,0,.591-.652v-10.4a.623.623,0,0,0-.591-.652A.625.625,0,0,0,11054.625-234.405Zm-2.929-.652a.635.635,0,0,0-.556.694l.583,10.4a.619.619,0,0,0,.589.614.159.159,0,0,0,.036,0,.63.63,0,0,0,.553-.691l-.581-10.4a.621.621,0,0,0-.592-.615Zm5.322-5.028v-.608h-3.615v.608h-1.3v-.694a1.22,1.22,0,0,1,1.219-1.219h3.787a1.22,1.22,0,0,1,1.219,1.219v.694Z"
+                                              transform="translate(-11047.431 242)" fill="#6b92b0" />
+                                    </g>
+                                </svg>
+                                <span>Очистить все</span>
+                            </button>
+                        </h2>
+                        <p class='empty'>Список желаний пуст</p>
+                        <div class='products'>
+                            <div class='products-list '>
+                                <div class='products-item catalog-item'>
+                                    <a href='<?php echo home_url( '/' ); ?>product-page' class='item-image'>
+                                        <img src='<?php echo get_template_directory_uri() ?>/assets/images/product-item.png' alt='Кондиционер'>
+                                    </a>
+                                    <div class='item-description'>
+                                        <div class='rating'>
+                                            <svg id="Сгруппировать" xmlns="http://www.w3.org/2000/svg"
+                                                 width="14.137"
+                                                 height="13.608"
+                                                 viewBox="0 0 14.137 13.608">
+                                                <path id="Контур_2" data-name="Контур 2"
+                                                      d="M14.137,14.767,9,14.429,7.065,9.569l-1.934,4.86L0,14.767l3.935,3.342L2.644,23.177l4.421-2.795,4.421,2.795L10.2,18.108Z"
+                                                      transform="translate(0 -9.569)" fill="#ffdc96" />
+                                            </svg>
+                                            <svg id="Сгруппировать" xmlns="http://www.w3.org/2000/svg"
+                                                 width="14.137"
+                                                 height="13.608"
+                                                 viewBox="0 0 14.137 13.608">
+                                                <path id="Контур_2" data-name="Контур 2"
+                                                      d="M14.137,14.767,9,14.429,7.065,9.569l-1.934,4.86L0,14.767l3.935,3.342L2.644,23.177l4.421-2.795,4.421,2.795L10.2,18.108Z"
+                                                      transform="translate(0 -9.569)" fill="#ffdc96" />
+                                            </svg>
+                                            <svg id="Сгруппировать" xmlns="http://www.w3.org/2000/svg"
+                                                 width="14.137"
+                                                 height="13.608"
+                                                 viewBox="0 0 14.137 13.608">
+                                                <path id="Контур_2" data-name="Контур 2"
+                                                      d="M14.137,14.767,9,14.429,7.065,9.569l-1.934,4.86L0,14.767l3.935,3.342L2.644,23.177l4.421-2.795,4.421,2.795L10.2,18.108Z"
+                                                      transform="translate(0 -9.569)" fill="#ffdc96" />
+                                            </svg>
+                                            <svg id="Сгруппировать" xmlns="http://www.w3.org/2000/svg"
+                                                 width="14.137"
+                                                 height="13.608"
+                                                 viewBox="0 0 14.137 13.608">
+                                                <path id="Контур_2" data-name="Контур 2"
+                                                      d="M14.137,14.767,9,14.429,7.065,9.569l-1.934,4.86L0,14.767l3.935,3.342L2.644,23.177l4.421-2.795,4.421,2.795L10.2,18.108Z"
+                                                      transform="translate(0 -9.569)" fill="#ffdc96" />
+                                            </svg>
+                                            <svg id="Сгруппировать" xmlns="http://www.w3.org/2000/svg"
+                                                 width="14.137"
+                                                 height="13.608"
+                                                 viewBox="0 0 14.137 13.608">
+                                                <path id="Контур_2" data-name="Контур 2"
+                                                      d="M14.137,14.767,9,14.429,7.065,9.569l-1.934,4.86L0,14.767l3.935,3.342L2.644,23.177l4.421-2.795,4.421,2.795L10.2,18.108Z"
+                                                      transform="translate(0 -9.569)" fill="#ffdc96" />
+                                            </svg>
+                                        </div>
+                                        <a href='<?php echo home_url( '/' ); ?>product-page'>
+                                            C&H CH-S07GKP8
+                                            <svg class='favorites' xmlns="http://www.w3.org/2000/svg" width="27"
+                                                 height="24.07"
+                                                 viewBox="0 0 27 24.07">
+                                                <g id="Сгруппировать_2766" data-name="Сгруппировать 2766"
+                                                   transform="translate(1 -0.465)">
+                                                    <path id="Контур_714" data-name="Контур 714"
+                                                          d="M18.359,1.465a5.919,5.919,0,0,0-3.7,1.278,8.421,8.421,0,0,0-2.163,2.6,8.42,8.42,0,0,0-2.163-2.6,5.919,5.919,0,0,0-3.7-1.278C2.855,1.465,0,4.561,0,8.668,0,13.1,3.562,16.139,8.954,20.734c.916.78,1.953,1.665,3.032,2.608a.782.782,0,0,0,1.029,0c1.079-.943,2.117-1.828,3.033-2.609C21.438,16.139,25,13.1,25,8.668,25,4.561,22.145,1.465,18.359,1.465Z"
+                                                          fill="none" stroke="#6b92b0" stroke-width="2" />
+                                                </g>
+                                            </svg>
+                                        </a>
+                                        <p>
+                                            Класс А, Система фильтров 7SKY, CH SMART-ION Filter (только для моделей
+                                            XP7), ЕЕR -3,3 COP-3,7, тихий вн. блок 24 Дб, компактный Hi-tech дизайн,
+                                            фильтр Eco-fresh
+                                        </p>
+                                        <span class='price'>8 760 UAH</span>
+                                        <div class='description-buttons'>
+                                            <a href='#' class='btn'>Купить</a>
+                                            <a href='#' class='btn btn-second'>В Корзину</a>
+                                        </div>
+                                    </div>
+                                    <div class='item-buttons'>
+                                        <a href='#' class='btn'>Купить</a>
+                                        <a href='#' class='btn btn-second'>В Корзину</a>
+                                    </div>
+                                </div>
+                                <div class='products-item catalog-item'>
+                                    <a href='<?php echo home_url( '/' ); ?>product-page' class='item-image'>
+                                        <img src='<?php echo get_template_directory_uri() ?>/assets/images/product-item.png' alt='Кондиционер'>
+                                    </a>
+                                    <div class='item-description'>
+                                        <div class='rating'>
+                                            <svg id="Сгруппировать" xmlns="http://www.w3.org/2000/svg"
+                                                 width="14.137"
+                                                 height="13.608"
+                                                 viewBox="0 0 14.137 13.608">
+                                                <path id="Контур_2" data-name="Контур 2"
+                                                      d="M14.137,14.767,9,14.429,7.065,9.569l-1.934,4.86L0,14.767l3.935,3.342L2.644,23.177l4.421-2.795,4.421,2.795L10.2,18.108Z"
+                                                      transform="translate(0 -9.569)" fill="#ffdc96" />
+                                            </svg>
+                                            <svg id="Сгруппировать" xmlns="http://www.w3.org/2000/svg"
+                                                 width="14.137"
+                                                 height="13.608"
+                                                 viewBox="0 0 14.137 13.608">
+                                                <path id="Контур_2" data-name="Контур 2"
+                                                      d="M14.137,14.767,9,14.429,7.065,9.569l-1.934,4.86L0,14.767l3.935,3.342L2.644,23.177l4.421-2.795,4.421,2.795L10.2,18.108Z"
+                                                      transform="translate(0 -9.569)" fill="#ffdc96" />
+                                            </svg>
+                                            <svg id="Сгруппировать" xmlns="http://www.w3.org/2000/svg"
+                                                 width="14.137"
+                                                 height="13.608"
+                                                 viewBox="0 0 14.137 13.608">
+                                                <path id="Контур_2" data-name="Контур 2"
+                                                      d="M14.137,14.767,9,14.429,7.065,9.569l-1.934,4.86L0,14.767l3.935,3.342L2.644,23.177l4.421-2.795,4.421,2.795L10.2,18.108Z"
+                                                      transform="translate(0 -9.569)" fill="#ffdc96" />
+                                            </svg>
+                                            <svg id="Сгруппировать" xmlns="http://www.w3.org/2000/svg"
+                                                 width="14.137"
+                                                 height="13.608"
+                                                 viewBox="0 0 14.137 13.608">
+                                                <path id="Контур_2" data-name="Контур 2"
+                                                      d="M14.137,14.767,9,14.429,7.065,9.569l-1.934,4.86L0,14.767l3.935,3.342L2.644,23.177l4.421-2.795,4.421,2.795L10.2,18.108Z"
+                                                      transform="translate(0 -9.569)" fill="#ffdc96" />
+                                            </svg>
+                                            <svg id="Сгруппировать" xmlns="http://www.w3.org/2000/svg"
+                                                 width="14.137"
+                                                 height="13.608"
+                                                 viewBox="0 0 14.137 13.608">
+                                                <path id="Контур_2" data-name="Контур 2"
+                                                      d="M14.137,14.767,9,14.429,7.065,9.569l-1.934,4.86L0,14.767l3.935,3.342L2.644,23.177l4.421-2.795,4.421,2.795L10.2,18.108Z"
+                                                      transform="translate(0 -9.569)" fill="#ffdc96" />
+                                            </svg>
+                                        </div>
+                                        <a href='<?php echo home_url( '/' ); ?>product-page'>
+                                            C&H CH-S07GKP8
+                                            <svg class='favorites' xmlns="http://www.w3.org/2000/svg" width="27"
+                                                 height="24.07"
+                                                 viewBox="0 0 27 24.07">
+                                                <g id="Сгруппировать_2766" data-name="Сгруппировать 2766"
+                                                   transform="translate(1 -0.465)">
+                                                    <path id="Контур_714" data-name="Контур 714"
+                                                          d="M18.359,1.465a5.919,5.919,0,0,0-3.7,1.278,8.421,8.421,0,0,0-2.163,2.6,8.42,8.42,0,0,0-2.163-2.6,5.919,5.919,0,0,0-3.7-1.278C2.855,1.465,0,4.561,0,8.668,0,13.1,3.562,16.139,8.954,20.734c.916.78,1.953,1.665,3.032,2.608a.782.782,0,0,0,1.029,0c1.079-.943,2.117-1.828,3.033-2.609C21.438,16.139,25,13.1,25,8.668,25,4.561,22.145,1.465,18.359,1.465Z"
+                                                          fill="none" stroke="#6b92b0" stroke-width="2" />
+                                                </g>
+                                            </svg>
+                                        </a>
+                                        <p>
+                                            Класс А, Система фильтров 7SKY, CH SMART-ION Filter (только для моделей
+                                            XP7), ЕЕR -3,3 COP-3,7, тихий вн. блок 24 Дб, компактный Hi-tech дизайн,
+                                            фильтр Eco-fresh
+                                        </p>
+                                        <span class='price'>8 760 UAH</span>
+                                        <div class='description-buttons'>
+                                            <a href='#' class='btn'>Купить</a>
+                                            <a href='#' class='btn btn-second'>В Корзину</a>
+                                        </div>
+                                    </div>
+                                    <div class='item-buttons'>
+                                        <a href='#' class='btn'>Купить</a>
+                                        <a href='#' class='btn btn-second'>В Корзину</a>
+                                    </div>
+                                </div>
+                                <div class='products-item catalog-item'>
+                                    <a href='<?php echo home_url( '/' ); ?>product-page' class='item-image'>
+                                        <img src='<?php echo get_template_directory_uri() ?>/assets/images/product-item.png' alt='Кондиционер'>
+                                    </a>
+                                    <div class='item-description'>
+                                        <div class='rating'>
+                                            <svg id="Сгруппировать" xmlns="http://www.w3.org/2000/svg"
+                                                 width="14.137"
+                                                 height="13.608"
+                                                 viewBox="0 0 14.137 13.608">
+                                                <path id="Контур_2" data-name="Контур 2"
+                                                      d="M14.137,14.767,9,14.429,7.065,9.569l-1.934,4.86L0,14.767l3.935,3.342L2.644,23.177l4.421-2.795,4.421,2.795L10.2,18.108Z"
+                                                      transform="translate(0 -9.569)" fill="#ffdc96" />
+                                            </svg>
+                                            <svg id="Сгруппировать" xmlns="http://www.w3.org/2000/svg"
+                                                 width="14.137"
+                                                 height="13.608"
+                                                 viewBox="0 0 14.137 13.608">
+                                                <path id="Контур_2" data-name="Контур 2"
+                                                      d="M14.137,14.767,9,14.429,7.065,9.569l-1.934,4.86L0,14.767l3.935,3.342L2.644,23.177l4.421-2.795,4.421,2.795L10.2,18.108Z"
+                                                      transform="translate(0 -9.569)" fill="#ffdc96" />
+                                            </svg>
+                                            <svg id="Сгруппировать" xmlns="http://www.w3.org/2000/svg"
+                                                 width="14.137"
+                                                 height="13.608"
+                                                 viewBox="0 0 14.137 13.608">
+                                                <path id="Контур_2" data-name="Контур 2"
+                                                      d="M14.137,14.767,9,14.429,7.065,9.569l-1.934,4.86L0,14.767l3.935,3.342L2.644,23.177l4.421-2.795,4.421,2.795L10.2,18.108Z"
+                                                      transform="translate(0 -9.569)" fill="#ffdc96" />
+                                            </svg>
+                                            <svg id="Сгруппировать" xmlns="http://www.w3.org/2000/svg"
+                                                 width="14.137"
+                                                 height="13.608"
+                                                 viewBox="0 0 14.137 13.608">
+                                                <path id="Контур_2" data-name="Контур 2"
+                                                      d="M14.137,14.767,9,14.429,7.065,9.569l-1.934,4.86L0,14.767l3.935,3.342L2.644,23.177l4.421-2.795,4.421,2.795L10.2,18.108Z"
+                                                      transform="translate(0 -9.569)" fill="#ffdc96" />
+                                            </svg>
+                                            <svg id="Сгруппировать" xmlns="http://www.w3.org/2000/svg"
+                                                 width="14.137"
+                                                 height="13.608"
+                                                 viewBox="0 0 14.137 13.608">
+                                                <path id="Контур_2" data-name="Контур 2"
+                                                      d="M14.137,14.767,9,14.429,7.065,9.569l-1.934,4.86L0,14.767l3.935,3.342L2.644,23.177l4.421-2.795,4.421,2.795L10.2,18.108Z"
+                                                      transform="translate(0 -9.569)" fill="#ffdc96" />
+                                            </svg>
+                                        </div>
+                                        <a href='<?php echo home_url( '/' ); ?>product-page'>
+                                            C&H CH-S07GKP8
+                                            <svg class='favorites' xmlns="http://www.w3.org/2000/svg" width="27"
+                                                 height="24.07"
+                                                 viewBox="0 0 27 24.07">
+                                                <g id="Сгруппировать_2766" data-name="Сгруппировать 2766"
+                                                   transform="translate(1 -0.465)">
+                                                    <path id="Контур_714" data-name="Контур 714"
+                                                          d="M18.359,1.465a5.919,5.919,0,0,0-3.7,1.278,8.421,8.421,0,0,0-2.163,2.6,8.42,8.42,0,0,0-2.163-2.6,5.919,5.919,0,0,0-3.7-1.278C2.855,1.465,0,4.561,0,8.668,0,13.1,3.562,16.139,8.954,20.734c.916.78,1.953,1.665,3.032,2.608a.782.782,0,0,0,1.029,0c1.079-.943,2.117-1.828,3.033-2.609C21.438,16.139,25,13.1,25,8.668,25,4.561,22.145,1.465,18.359,1.465Z"
+                                                          fill="none" stroke="#6b92b0" stroke-width="2" />
+                                                </g>
+                                            </svg>
+                                        </a>
+                                        <p>
+                                            Класс А, Система фильтров 7SKY, CH SMART-ION Filter (только для моделей
+                                            XP7), ЕЕR -3,3 COP-3,7, тихий вн. блок 24 Дб, компактный Hi-tech дизайн,
+                                            фильтр Eco-fresh
+                                        </p>
+                                        <span class='price'>8 760 UAH</span>
+                                        <div class='description-buttons'>
+                                            <a href='#' class='btn'>Купить</a>
+                                            <a href='#' class='btn btn-second'>В Корзину</a>
+                                        </div>
+                                    </div>
+                                    <div class='item-buttons'>
+                                        <a href='#' class='btn'>Купить</a>
+                                        <a href='#' class='btn btn-second'>В Корзину</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class='info-item wishes-item'>
+                            <div class='item-description'>
+                                <div class='description-item'>
+                                    <span>1 товар на сумму</span>
+                                    <p>26 280 UAH</p>
+                                </div>
+                                <a href='#' class='btn'>Купить все</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div id='info-viewed' class='info-list viewed-products'>
+                        <h2>
+                            Просмотренные товары
+                        </h2>
+                        <div class='products'>
+                            <div class='products-list '>
+                                <div class='products-item catalog-item'>
+                                    <a href='<?php echo home_url( '/' ); ?>product-page' class='item-image'>
+                                        <img src='<?php echo get_template_directory_uri() ?>/assets/images/product-item.png' alt='Кондиционер'>
+                                    </a>
+                                    <div class='item-description'>
+                                        <div class='rating'>
+                                            <svg id="Сгруппировать" xmlns="http://www.w3.org/2000/svg"
+                                                 width="14.137"
+                                                 height="13.608"
+                                                 viewBox="0 0 14.137 13.608">
+                                                <path id="Контур_2" data-name="Контур 2"
+                                                      d="M14.137,14.767,9,14.429,7.065,9.569l-1.934,4.86L0,14.767l3.935,3.342L2.644,23.177l4.421-2.795,4.421,2.795L10.2,18.108Z"
+                                                      transform="translate(0 -9.569)" fill="#ffdc96" />
+                                            </svg>
+                                            <svg id="Сгруппировать" xmlns="http://www.w3.org/2000/svg"
+                                                 width="14.137"
+                                                 height="13.608"
+                                                 viewBox="0 0 14.137 13.608">
+                                                <path id="Контур_2" data-name="Контур 2"
+                                                      d="M14.137,14.767,9,14.429,7.065,9.569l-1.934,4.86L0,14.767l3.935,3.342L2.644,23.177l4.421-2.795,4.421,2.795L10.2,18.108Z"
+                                                      transform="translate(0 -9.569)" fill="#ffdc96" />
+                                            </svg>
+                                            <svg id="Сгруппировать" xmlns="http://www.w3.org/2000/svg"
+                                                 width="14.137"
+                                                 height="13.608"
+                                                 viewBox="0 0 14.137 13.608">
+                                                <path id="Контур_2" data-name="Контур 2"
+                                                      d="M14.137,14.767,9,14.429,7.065,9.569l-1.934,4.86L0,14.767l3.935,3.342L2.644,23.177l4.421-2.795,4.421,2.795L10.2,18.108Z"
+                                                      transform="translate(0 -9.569)" fill="#ffdc96" />
+                                            </svg>
+                                            <svg id="Сгруппировать" xmlns="http://www.w3.org/2000/svg"
+                                                 width="14.137"
+                                                 height="13.608"
+                                                 viewBox="0 0 14.137 13.608">
+                                                <path id="Контур_2" data-name="Контур 2"
+                                                      d="M14.137,14.767,9,14.429,7.065,9.569l-1.934,4.86L0,14.767l3.935,3.342L2.644,23.177l4.421-2.795,4.421,2.795L10.2,18.108Z"
+                                                      transform="translate(0 -9.569)" fill="#ffdc96" />
+                                            </svg>
+                                            <svg id="Сгруппировать" xmlns="http://www.w3.org/2000/svg"
+                                                 width="14.137"
+                                                 height="13.608"
+                                                 viewBox="0 0 14.137 13.608">
+                                                <path id="Контур_2" data-name="Контур 2"
+                                                      d="M14.137,14.767,9,14.429,7.065,9.569l-1.934,4.86L0,14.767l3.935,3.342L2.644,23.177l4.421-2.795,4.421,2.795L10.2,18.108Z"
+                                                      transform="translate(0 -9.569)" fill="#ffdc96" />
+                                            </svg>
+                                        </div>
+                                        <a href='<?php echo home_url( '/' ); ?>product-page'>
+                                            C&H CH-S07GKP8
+                                            <svg class='favorites' xmlns="http://www.w3.org/2000/svg" width="27"
+                                                 height="24.07"
+                                                 viewBox="0 0 27 24.07">
+                                                <g id="Сгруппировать_2766" data-name="Сгруппировать 2766"
+                                                   transform="translate(1 -0.465)">
+                                                    <path id="Контур_714" data-name="Контур 714"
+                                                          d="M18.359,1.465a5.919,5.919,0,0,0-3.7,1.278,8.421,8.421,0,0,0-2.163,2.6,8.42,8.42,0,0,0-2.163-2.6,5.919,5.919,0,0,0-3.7-1.278C2.855,1.465,0,4.561,0,8.668,0,13.1,3.562,16.139,8.954,20.734c.916.78,1.953,1.665,3.032,2.608a.782.782,0,0,0,1.029,0c1.079-.943,2.117-1.828,3.033-2.609C21.438,16.139,25,13.1,25,8.668,25,4.561,22.145,1.465,18.359,1.465Z"
+                                                          fill="none" stroke="#6b92b0" stroke-width="2" />
+                                                </g>
+                                            </svg>
+                                        </a>
+                                        <p>
+                                            Класс А, Система фильтров 7SKY, CH SMART-ION Filter (только для моделей
+                                            XP7), ЕЕR -3,3 COP-3,7, тихий вн. блок 24 Дб, компактный Hi-tech дизайн,
+                                            фильтр Eco-fresh
+                                        </p>
+                                        <span class='price'>8 760 UAH</span>
+                                        <div class='description-buttons'>
+                                            <a href='#' class='btn'>Купить</a>
+                                            <a href='#' class='btn btn-second'>В Корзину</a>
+                                        </div>
+                                    </div>
+                                    <div class='item-buttons'>
+                                        <a href='#' class='btn'>Купить</a>
+                                        <a href='#' class='btn btn-second'>В Корзину</a>
+                                    </div>
+                                </div>
+                                <div class='products-item catalog-item'>
+                                    <a href='<?php echo home_url( '/' ); ?>product-page' class='item-image'>
+                                        <img src='<?php echo get_template_directory_uri() ?>/assets/images/product-item.png' alt='Кондиционер'>
+                                    </a>
+                                    <div class='item-description'>
+                                        <div class='rating'>
+                                            <svg id="Сгруппировать" xmlns="http://www.w3.org/2000/svg"
+                                                 width="14.137"
+                                                 height="13.608"
+                                                 viewBox="0 0 14.137 13.608">
+                                                <path id="Контур_2" data-name="Контур 2"
+                                                      d="M14.137,14.767,9,14.429,7.065,9.569l-1.934,4.86L0,14.767l3.935,3.342L2.644,23.177l4.421-2.795,4.421,2.795L10.2,18.108Z"
+                                                      transform="translate(0 -9.569)" fill="#ffdc96" />
+                                            </svg>
+                                            <svg id="Сгруппировать" xmlns="http://www.w3.org/2000/svg"
+                                                 width="14.137"
+                                                 height="13.608"
+                                                 viewBox="0 0 14.137 13.608">
+                                                <path id="Контур_2" data-name="Контур 2"
+                                                      d="M14.137,14.767,9,14.429,7.065,9.569l-1.934,4.86L0,14.767l3.935,3.342L2.644,23.177l4.421-2.795,4.421,2.795L10.2,18.108Z"
+                                                      transform="translate(0 -9.569)" fill="#ffdc96" />
+                                            </svg>
+                                            <svg id="Сгруппировать" xmlns="http://www.w3.org/2000/svg"
+                                                 width="14.137"
+                                                 height="13.608"
+                                                 viewBox="0 0 14.137 13.608">
+                                                <path id="Контур_2" data-name="Контур 2"
+                                                      d="M14.137,14.767,9,14.429,7.065,9.569l-1.934,4.86L0,14.767l3.935,3.342L2.644,23.177l4.421-2.795,4.421,2.795L10.2,18.108Z"
+                                                      transform="translate(0 -9.569)" fill="#ffdc96" />
+                                            </svg>
+                                            <svg id="Сгруппировать" xmlns="http://www.w3.org/2000/svg"
+                                                 width="14.137"
+                                                 height="13.608"
+                                                 viewBox="0 0 14.137 13.608">
+                                                <path id="Контур_2" data-name="Контур 2"
+                                                      d="M14.137,14.767,9,14.429,7.065,9.569l-1.934,4.86L0,14.767l3.935,3.342L2.644,23.177l4.421-2.795,4.421,2.795L10.2,18.108Z"
+                                                      transform="translate(0 -9.569)" fill="#ffdc96" />
+                                            </svg>
+                                            <svg id="Сгруппировать" xmlns="http://www.w3.org/2000/svg"
+                                                 width="14.137"
+                                                 height="13.608"
+                                                 viewBox="0 0 14.137 13.608">
+                                                <path id="Контур_2" data-name="Контур 2"
+                                                      d="M14.137,14.767,9,14.429,7.065,9.569l-1.934,4.86L0,14.767l3.935,3.342L2.644,23.177l4.421-2.795,4.421,2.795L10.2,18.108Z"
+                                                      transform="translate(0 -9.569)" fill="#ffdc96" />
+                                            </svg>
+                                        </div>
+                                        <a href='<?php echo home_url( '/' ); ?>product-page'>
+                                            C&H CH-S07GKP8
+                                            <svg class='favorites' xmlns="http://www.w3.org/2000/svg" width="27"
+                                                 height="24.07"
+                                                 viewBox="0 0 27 24.07">
+                                                <g id="Сгруппировать_2766" data-name="Сгруппировать 2766"
+                                                   transform="translate(1 -0.465)">
+                                                    <path id="Контур_714" data-name="Контур 714"
+                                                          d="M18.359,1.465a5.919,5.919,0,0,0-3.7,1.278,8.421,8.421,0,0,0-2.163,2.6,8.42,8.42,0,0,0-2.163-2.6,5.919,5.919,0,0,0-3.7-1.278C2.855,1.465,0,4.561,0,8.668,0,13.1,3.562,16.139,8.954,20.734c.916.78,1.953,1.665,3.032,2.608a.782.782,0,0,0,1.029,0c1.079-.943,2.117-1.828,3.033-2.609C21.438,16.139,25,13.1,25,8.668,25,4.561,22.145,1.465,18.359,1.465Z"
+                                                          fill="none" stroke="#6b92b0" stroke-width="2" />
+                                                </g>
+                                            </svg>
+                                        </a>
+                                        <p>
+                                            Класс А, Система фильтров 7SKY, CH SMART-ION Filter (только для моделей
+                                            XP7), ЕЕR -3,3 COP-3,7, тихий вн. блок 24 Дб, компактный Hi-tech дизайн,
+                                            фильтр Eco-fresh
+                                        </p>
+                                        <span class='price'>8 760 UAH</span>
+                                        <div class='description-buttons'>
+                                            <a href='#' class='btn'>Купить</a>
+                                            <a href='#' class='btn btn-second'>В Корзину</a>
+                                        </div>
+                                    </div>
+                                    <div class='item-buttons'>
+                                        <a href='#' class='btn'>Купить</a>
+                                        <a href='#' class='btn btn-second'>В Корзину</a>
+                                    </div>
+                                </div>
+                                <div class='products-item catalog-item'>
+                                    <a href='<?php echo home_url( '/' ); ?>product-page' class='item-image'>
+                                        <img src='<?php echo get_template_directory_uri() ?>/assets/images/product-item.png' alt='Кондиционер'>
+                                    </a>
+                                    <div class='item-description'>
+                                        <div class='rating'>
+                                            <svg id="Сгруппировать" xmlns="http://www.w3.org/2000/svg"
+                                                 width="14.137"
+                                                 height="13.608"
+                                                 viewBox="0 0 14.137 13.608">
+                                                <path id="Контур_2" data-name="Контур 2"
+                                                      d="M14.137,14.767,9,14.429,7.065,9.569l-1.934,4.86L0,14.767l3.935,3.342L2.644,23.177l4.421-2.795,4.421,2.795L10.2,18.108Z"
+                                                      transform="translate(0 -9.569)" fill="#ffdc96" />
+                                            </svg>
+                                            <svg id="Сгруппировать" xmlns="http://www.w3.org/2000/svg"
+                                                 width="14.137"
+                                                 height="13.608"
+                                                 viewBox="0 0 14.137 13.608">
+                                                <path id="Контур_2" data-name="Контур 2"
+                                                      d="M14.137,14.767,9,14.429,7.065,9.569l-1.934,4.86L0,14.767l3.935,3.342L2.644,23.177l4.421-2.795,4.421,2.795L10.2,18.108Z"
+                                                      transform="translate(0 -9.569)" fill="#ffdc96" />
+                                            </svg>
+                                            <svg id="Сгруппировать" xmlns="http://www.w3.org/2000/svg"
+                                                 width="14.137"
+                                                 height="13.608"
+                                                 viewBox="0 0 14.137 13.608">
+                                                <path id="Контур_2" data-name="Контур 2"
+                                                      d="M14.137,14.767,9,14.429,7.065,9.569l-1.934,4.86L0,14.767l3.935,3.342L2.644,23.177l4.421-2.795,4.421,2.795L10.2,18.108Z"
+                                                      transform="translate(0 -9.569)" fill="#ffdc96" />
+                                            </svg>
+                                            <svg id="Сгруппировать" xmlns="http://www.w3.org/2000/svg"
+                                                 width="14.137"
+                                                 height="13.608"
+                                                 viewBox="0 0 14.137 13.608">
+                                                <path id="Контур_2" data-name="Контур 2"
+                                                      d="M14.137,14.767,9,14.429,7.065,9.569l-1.934,4.86L0,14.767l3.935,3.342L2.644,23.177l4.421-2.795,4.421,2.795L10.2,18.108Z"
+                                                      transform="translate(0 -9.569)" fill="#ffdc96" />
+                                            </svg>
+                                            <svg id="Сгруппировать" xmlns="http://www.w3.org/2000/svg"
+                                                 width="14.137"
+                                                 height="13.608"
+                                                 viewBox="0 0 14.137 13.608">
+                                                <path id="Контур_2" data-name="Контур 2"
+                                                      d="M14.137,14.767,9,14.429,7.065,9.569l-1.934,4.86L0,14.767l3.935,3.342L2.644,23.177l4.421-2.795,4.421,2.795L10.2,18.108Z"
+                                                      transform="translate(0 -9.569)" fill="#ffdc96" />
+                                            </svg>
+                                        </div>
+                                        <a href='<?php echo home_url( '/' ); ?>product-page'>
+                                            C&H CH-S07GKP8
+                                            <svg class='favorites' xmlns="http://www.w3.org/2000/svg" width="27"
+                                                 height="24.07"
+                                                 viewBox="0 0 27 24.07">
+                                                <g id="Сгруппировать_2766" data-name="Сгруппировать 2766"
+                                                   transform="translate(1 -0.465)">
+                                                    <path id="Контур_714" data-name="Контур 714"
+                                                          d="M18.359,1.465a5.919,5.919,0,0,0-3.7,1.278,8.421,8.421,0,0,0-2.163,2.6,8.42,8.42,0,0,0-2.163-2.6,5.919,5.919,0,0,0-3.7-1.278C2.855,1.465,0,4.561,0,8.668,0,13.1,3.562,16.139,8.954,20.734c.916.78,1.953,1.665,3.032,2.608a.782.782,0,0,0,1.029,0c1.079-.943,2.117-1.828,3.033-2.609C21.438,16.139,25,13.1,25,8.668,25,4.561,22.145,1.465,18.359,1.465Z"
+                                                          fill="none" stroke="#6b92b0" stroke-width="2" />
+                                                </g>
+                                            </svg>
+                                        </a>
+                                        <p>
+                                            Класс А, Система фильтров 7SKY, CH SMART-ION Filter (только для моделей
+                                            XP7), ЕЕR -3,3 COP-3,7, тихий вн. блок 24 Дб, компактный Hi-tech дизайн,
+                                            фильтр Eco-fresh
+                                        </p>
+                                        <span class='price'>8 760 UAH</span>
+                                        <div class='description-buttons'>
+                                            <a href='#' class='btn'>Купить</a>
+                                            <a href='#' class='btn btn-second'>В Корзину</a>
+                                        </div>
+                                    </div>
+                                    <div class='item-buttons'>
+                                        <a href='#' class='btn'>Купить</a>
+                                        <a href='#' class='btn btn-second'>В Корзину</a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class='products-list '>
+                                <div class='products-item catalog-item'>
+                                    <a href='<?php echo home_url( '/' ); ?>product-page' class='item-image'>
+                                        <img src='<?php echo get_template_directory_uri() ?>/assets/images/product-item.png' alt='Кондиционер'>
+                                    </a>
+                                    <div class='item-description'>
+                                        <div class='rating'>
+                                            <svg id="Сгруппировать" xmlns="http://www.w3.org/2000/svg"
+                                                 width="14.137"
+                                                 height="13.608"
+                                                 viewBox="0 0 14.137 13.608">
+                                                <path id="Контур_2" data-name="Контур 2"
+                                                      d="M14.137,14.767,9,14.429,7.065,9.569l-1.934,4.86L0,14.767l3.935,3.342L2.644,23.177l4.421-2.795,4.421,2.795L10.2,18.108Z"
+                                                      transform="translate(0 -9.569)" fill="#ffdc96" />
+                                            </svg>
+                                            <svg id="Сгруппировать" xmlns="http://www.w3.org/2000/svg"
+                                                 width="14.137"
+                                                 height="13.608"
+                                                 viewBox="0 0 14.137 13.608">
+                                                <path id="Контур_2" data-name="Контур 2"
+                                                      d="M14.137,14.767,9,14.429,7.065,9.569l-1.934,4.86L0,14.767l3.935,3.342L2.644,23.177l4.421-2.795,4.421,2.795L10.2,18.108Z"
+                                                      transform="translate(0 -9.569)" fill="#ffdc96" />
+                                            </svg>
+                                            <svg id="Сгруппировать" xmlns="http://www.w3.org/2000/svg"
+                                                 width="14.137"
+                                                 height="13.608"
+                                                 viewBox="0 0 14.137 13.608">
+                                                <path id="Контур_2" data-name="Контур 2"
+                                                      d="M14.137,14.767,9,14.429,7.065,9.569l-1.934,4.86L0,14.767l3.935,3.342L2.644,23.177l4.421-2.795,4.421,2.795L10.2,18.108Z"
+                                                      transform="translate(0 -9.569)" fill="#ffdc96" />
+                                            </svg>
+                                            <svg id="Сгруппировать" xmlns="http://www.w3.org/2000/svg"
+                                                 width="14.137"
+                                                 height="13.608"
+                                                 viewBox="0 0 14.137 13.608">
+                                                <path id="Контур_2" data-name="Контур 2"
+                                                      d="M14.137,14.767,9,14.429,7.065,9.569l-1.934,4.86L0,14.767l3.935,3.342L2.644,23.177l4.421-2.795,4.421,2.795L10.2,18.108Z"
+                                                      transform="translate(0 -9.569)" fill="#ffdc96" />
+                                            </svg>
+                                            <svg id="Сгруппировать" xmlns="http://www.w3.org/2000/svg"
+                                                 width="14.137"
+                                                 height="13.608"
+                                                 viewBox="0 0 14.137 13.608">
+                                                <path id="Контур_2" data-name="Контур 2"
+                                                      d="M14.137,14.767,9,14.429,7.065,9.569l-1.934,4.86L0,14.767l3.935,3.342L2.644,23.177l4.421-2.795,4.421,2.795L10.2,18.108Z"
+                                                      transform="translate(0 -9.569)" fill="#ffdc96" />
+                                            </svg>
+                                        </div>
+                                        <a href='<?php echo home_url( '/' ); ?>product-page'>
+                                            C&H CH-S07GKP8
+                                            <svg class='favorites' xmlns="http://www.w3.org/2000/svg" width="27"
+                                                 height="24.07"
+                                                 viewBox="0 0 27 24.07">
+                                                <g id="Сгруппировать_2766" data-name="Сгруппировать 2766"
+                                                   transform="translate(1 -0.465)">
+                                                    <path id="Контур_714" data-name="Контур 714"
+                                                          d="M18.359,1.465a5.919,5.919,0,0,0-3.7,1.278,8.421,8.421,0,0,0-2.163,2.6,8.42,8.42,0,0,0-2.163-2.6,5.919,5.919,0,0,0-3.7-1.278C2.855,1.465,0,4.561,0,8.668,0,13.1,3.562,16.139,8.954,20.734c.916.78,1.953,1.665,3.032,2.608a.782.782,0,0,0,1.029,0c1.079-.943,2.117-1.828,3.033-2.609C21.438,16.139,25,13.1,25,8.668,25,4.561,22.145,1.465,18.359,1.465Z"
+                                                          fill="none" stroke="#6b92b0" stroke-width="2" />
+                                                </g>
+                                            </svg>
+                                        </a>
+                                        <p>
+                                            Класс А, Система фильтров 7SKY, CH SMART-ION Filter (только для моделей
+                                            XP7), ЕЕR -3,3 COP-3,7, тихий вн. блок 24 Дб, компактный Hi-tech дизайн,
+                                            фильтр Eco-fresh
+                                        </p>
+                                        <span class='price'>8 760 UAH</span>
+                                        <div class='description-buttons'>
+                                            <a href='#' class='btn'>Купить</a>
+                                            <a href='#' class='btn btn-second'>В Корзину</a>
+                                        </div>
+                                    </div>
+                                    <div class='item-buttons'>
+                                        <a href='#' class='btn'>Купить</a>
+                                        <a href='#' class='btn btn-second'>В Корзину</a>
+                                    </div>
+                                </div>
+                                <div class='products-item catalog-item'>
+                                    <a href='<?php echo home_url( '/' ); ?>product-page' class='item-image'>
+                                        <img src='<?php echo get_template_directory_uri() ?>/assets/images/product-item.png' alt='Кондиционер'>
+                                    </a>
+                                    <div class='item-description'>
+                                        <div class='rating'>
+                                            <svg id="Сгруппировать" xmlns="http://www.w3.org/2000/svg"
+                                                 width="14.137"
+                                                 height="13.608"
+                                                 viewBox="0 0 14.137 13.608">
+                                                <path id="Контур_2" data-name="Контур 2"
+                                                      d="M14.137,14.767,9,14.429,7.065,9.569l-1.934,4.86L0,14.767l3.935,3.342L2.644,23.177l4.421-2.795,4.421,2.795L10.2,18.108Z"
+                                                      transform="translate(0 -9.569)" fill="#ffdc96" />
+                                            </svg>
+                                            <svg id="Сгруппировать" xmlns="http://www.w3.org/2000/svg"
+                                                 width="14.137"
+                                                 height="13.608"
+                                                 viewBox="0 0 14.137 13.608">
+                                                <path id="Контур_2" data-name="Контур 2"
+                                                      d="M14.137,14.767,9,14.429,7.065,9.569l-1.934,4.86L0,14.767l3.935,3.342L2.644,23.177l4.421-2.795,4.421,2.795L10.2,18.108Z"
+                                                      transform="translate(0 -9.569)" fill="#ffdc96" />
+                                            </svg>
+                                            <svg id="Сгруппировать" xmlns="http://www.w3.org/2000/svg"
+                                                 width="14.137"
+                                                 height="13.608"
+                                                 viewBox="0 0 14.137 13.608">
+                                                <path id="Контур_2" data-name="Контур 2"
+                                                      d="M14.137,14.767,9,14.429,7.065,9.569l-1.934,4.86L0,14.767l3.935,3.342L2.644,23.177l4.421-2.795,4.421,2.795L10.2,18.108Z"
+                                                      transform="translate(0 -9.569)" fill="#ffdc96" />
+                                            </svg>
+                                            <svg id="Сгруппировать" xmlns="http://www.w3.org/2000/svg"
+                                                 width="14.137"
+                                                 height="13.608"
+                                                 viewBox="0 0 14.137 13.608">
+                                                <path id="Контур_2" data-name="Контур 2"
+                                                      d="M14.137,14.767,9,14.429,7.065,9.569l-1.934,4.86L0,14.767l3.935,3.342L2.644,23.177l4.421-2.795,4.421,2.795L10.2,18.108Z"
+                                                      transform="translate(0 -9.569)" fill="#ffdc96" />
+                                            </svg>
+                                            <svg id="Сгруппировать" xmlns="http://www.w3.org/2000/svg"
+                                                 width="14.137"
+                                                 height="13.608"
+                                                 viewBox="0 0 14.137 13.608">
+                                                <path id="Контур_2" data-name="Контур 2"
+                                                      d="M14.137,14.767,9,14.429,7.065,9.569l-1.934,4.86L0,14.767l3.935,3.342L2.644,23.177l4.421-2.795,4.421,2.795L10.2,18.108Z"
+                                                      transform="translate(0 -9.569)" fill="#ffdc96" />
+                                            </svg>
+                                        </div>
+                                        <a href='<?php echo home_url( '/' ); ?>product-page'>
+                                            C&H CH-S07GKP8
+                                            <svg class='favorites' xmlns="http://www.w3.org/2000/svg" width="27"
+                                                 height="24.07"
+                                                 viewBox="0 0 27 24.07">
+                                                <g id="Сгруппировать_2766" data-name="Сгруппировать 2766"
+                                                   transform="translate(1 -0.465)">
+                                                    <path id="Контур_714" data-name="Контур 714"
+                                                          d="M18.359,1.465a5.919,5.919,0,0,0-3.7,1.278,8.421,8.421,0,0,0-2.163,2.6,8.42,8.42,0,0,0-2.163-2.6,5.919,5.919,0,0,0-3.7-1.278C2.855,1.465,0,4.561,0,8.668,0,13.1,3.562,16.139,8.954,20.734c.916.78,1.953,1.665,3.032,2.608a.782.782,0,0,0,1.029,0c1.079-.943,2.117-1.828,3.033-2.609C21.438,16.139,25,13.1,25,8.668,25,4.561,22.145,1.465,18.359,1.465Z"
+                                                          fill="none" stroke="#6b92b0" stroke-width="2" />
+                                                </g>
+                                            </svg>
+                                        </a>
+                                        <p>
+                                            Класс А, Система фильтров 7SKY, CH SMART-ION Filter (только для моделей
+                                            XP7), ЕЕR -3,3 COP-3,7, тихий вн. блок 24 Дб, компактный Hi-tech дизайн,
+                                            фильтр Eco-fresh
+                                        </p>
+                                        <span class='price'>8 760 UAH</span>
+                                        <div class='description-buttons'>
+                                            <a href='#' class='btn'>Купить</a>
+                                            <a href='#' class='btn btn-second'>В Корзину</a>
+                                        </div>
+                                    </div>
+                                    <div class='item-buttons'>
+                                        <a href='#' class='btn'>Купить</a>
+                                        <a href='#' class='btn btn-second'>В Корзину</a>
+                                    </div>
+                                </div>
+                                <div class='products-item catalog-item'>
+                                    <a href='<?php echo home_url( '/' ); ?>product-page' class='item-image'>
+                                        <img src='<?php echo get_template_directory_uri() ?>/assets/images/product-item.png' alt='Кондиционер'>
+                                    </a>
+                                    <div class='item-description'>
+                                        <div class='rating'>
+                                            <svg id="Сгруппировать" xmlns="http://www.w3.org/2000/svg"
+                                                 width="14.137"
+                                                 height="13.608"
+                                                 viewBox="0 0 14.137 13.608">
+                                                <path id="Контур_2" data-name="Контур 2"
+                                                      d="M14.137,14.767,9,14.429,7.065,9.569l-1.934,4.86L0,14.767l3.935,3.342L2.644,23.177l4.421-2.795,4.421,2.795L10.2,18.108Z"
+                                                      transform="translate(0 -9.569)" fill="#ffdc96" />
+                                            </svg>
+                                            <svg id="Сгруппировать" xmlns="http://www.w3.org/2000/svg"
+                                                 width="14.137"
+                                                 height="13.608"
+                                                 viewBox="0 0 14.137 13.608">
+                                                <path id="Контур_2" data-name="Контур 2"
+                                                      d="M14.137,14.767,9,14.429,7.065,9.569l-1.934,4.86L0,14.767l3.935,3.342L2.644,23.177l4.421-2.795,4.421,2.795L10.2,18.108Z"
+                                                      transform="translate(0 -9.569)" fill="#ffdc96" />
+                                            </svg>
+                                            <svg id="Сгруппировать" xmlns="http://www.w3.org/2000/svg"
+                                                 width="14.137"
+                                                 height="13.608"
+                                                 viewBox="0 0 14.137 13.608">
+                                                <path id="Контур_2" data-name="Контур 2"
+                                                      d="M14.137,14.767,9,14.429,7.065,9.569l-1.934,4.86L0,14.767l3.935,3.342L2.644,23.177l4.421-2.795,4.421,2.795L10.2,18.108Z"
+                                                      transform="translate(0 -9.569)" fill="#ffdc96" />
+                                            </svg>
+                                            <svg id="Сгруппировать" xmlns="http://www.w3.org/2000/svg"
+                                                 width="14.137"
+                                                 height="13.608"
+                                                 viewBox="0 0 14.137 13.608">
+                                                <path id="Контур_2" data-name="Контур 2"
+                                                      d="M14.137,14.767,9,14.429,7.065,9.569l-1.934,4.86L0,14.767l3.935,3.342L2.644,23.177l4.421-2.795,4.421,2.795L10.2,18.108Z"
+                                                      transform="translate(0 -9.569)" fill="#ffdc96" />
+                                            </svg>
+                                            <svg id="Сгруппировать" xmlns="http://www.w3.org/2000/svg"
+                                                 width="14.137"
+                                                 height="13.608"
+                                                 viewBox="0 0 14.137 13.608">
+                                                <path id="Контур_2" data-name="Контур 2"
+                                                      d="M14.137,14.767,9,14.429,7.065,9.569l-1.934,4.86L0,14.767l3.935,3.342L2.644,23.177l4.421-2.795,4.421,2.795L10.2,18.108Z"
+                                                      transform="translate(0 -9.569)" fill="#ffdc96" />
+                                            </svg>
+                                        </div>
+                                        <a href='<?php echo home_url( '/' ); ?>product-page'>
+                                            C&H CH-S07GKP8
+                                            <svg class='favorites' xmlns="http://www.w3.org/2000/svg" width="27"
+                                                 height="24.07"
+                                                 viewBox="0 0 27 24.07">
+                                                <g id="Сгруппировать_2766" data-name="Сгруппировать 2766"
+                                                   transform="translate(1 -0.465)">
+                                                    <path id="Контур_714" data-name="Контур 714"
+                                                          d="M18.359,1.465a5.919,5.919,0,0,0-3.7,1.278,8.421,8.421,0,0,0-2.163,2.6,8.42,8.42,0,0,0-2.163-2.6,5.919,5.919,0,0,0-3.7-1.278C2.855,1.465,0,4.561,0,8.668,0,13.1,3.562,16.139,8.954,20.734c.916.78,1.953,1.665,3.032,2.608a.782.782,0,0,0,1.029,0c1.079-.943,2.117-1.828,3.033-2.609C21.438,16.139,25,13.1,25,8.668,25,4.561,22.145,1.465,18.359,1.465Z"
+                                                          fill="none" stroke="#6b92b0" stroke-width="2" />
+                                                </g>
+                                            </svg>
+                                        </a>
+                                        <p>
+                                            Класс А, Система фильтров 7SKY, CH SMART-ION Filter (только для моделей
+                                            XP7), ЕЕR -3,3 COP-3,7, тихий вн. блок 24 Дб, компактный Hi-tech дизайн,
+                                            фильтр Eco-fresh
+                                        </p>
+                                        <span class='price'>8 760 UAH</span>
+                                        <div class='description-buttons'>
+                                            <a href='#' class='btn'>Купить</a>
+                                            <a href='#' class='btn btn-second'>В Корзину</a>
+                                        </div>
+                                    </div>
+                                    <div class='item-buttons'>
+                                        <a href='#' class='btn'>Купить</a>
+                                        <a href='#' class='btn btn-second'>В Корзину</a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class='products-list '>
+                                <div class='products-item catalog-item'>
+                                    <a href='<?php echo home_url( '/' ); ?>product-page' class='item-image'>
+                                        <img src='<?php echo get_template_directory_uri() ?>/assets/images/product-item.png' alt='Кондиционер'>
+                                    </a>
+                                    <div class='item-description'>
+                                        <div class='rating'>
+                                            <svg id="Сгруппировать" xmlns="http://www.w3.org/2000/svg"
+                                                 width="14.137"
+                                                 height="13.608"
+                                                 viewBox="0 0 14.137 13.608">
+                                                <path id="Контур_2" data-name="Контур 2"
+                                                      d="M14.137,14.767,9,14.429,7.065,9.569l-1.934,4.86L0,14.767l3.935,3.342L2.644,23.177l4.421-2.795,4.421,2.795L10.2,18.108Z"
+                                                      transform="translate(0 -9.569)" fill="#ffdc96" />
+                                            </svg>
+                                            <svg id="Сгруппировать" xmlns="http://www.w3.org/2000/svg"
+                                                 width="14.137"
+                                                 height="13.608"
+                                                 viewBox="0 0 14.137 13.608">
+                                                <path id="Контур_2" data-name="Контур 2"
+                                                      d="M14.137,14.767,9,14.429,7.065,9.569l-1.934,4.86L0,14.767l3.935,3.342L2.644,23.177l4.421-2.795,4.421,2.795L10.2,18.108Z"
+                                                      transform="translate(0 -9.569)" fill="#ffdc96" />
+                                            </svg>
+                                            <svg id="Сгруппировать" xmlns="http://www.w3.org/2000/svg"
+                                                 width="14.137"
+                                                 height="13.608"
+                                                 viewBox="0 0 14.137 13.608">
+                                                <path id="Контур_2" data-name="Контур 2"
+                                                      d="M14.137,14.767,9,14.429,7.065,9.569l-1.934,4.86L0,14.767l3.935,3.342L2.644,23.177l4.421-2.795,4.421,2.795L10.2,18.108Z"
+                                                      transform="translate(0 -9.569)" fill="#ffdc96" />
+                                            </svg>
+                                            <svg id="Сгруппировать" xmlns="http://www.w3.org/2000/svg"
+                                                 width="14.137"
+                                                 height="13.608"
+                                                 viewBox="0 0 14.137 13.608">
+                                                <path id="Контур_2" data-name="Контур 2"
+                                                      d="M14.137,14.767,9,14.429,7.065,9.569l-1.934,4.86L0,14.767l3.935,3.342L2.644,23.177l4.421-2.795,4.421,2.795L10.2,18.108Z"
+                                                      transform="translate(0 -9.569)" fill="#ffdc96" />
+                                            </svg>
+                                            <svg id="Сгруппировать" xmlns="http://www.w3.org/2000/svg"
+                                                 width="14.137"
+                                                 height="13.608"
+                                                 viewBox="0 0 14.137 13.608">
+                                                <path id="Контур_2" data-name="Контур 2"
+                                                      d="M14.137,14.767,9,14.429,7.065,9.569l-1.934,4.86L0,14.767l3.935,3.342L2.644,23.177l4.421-2.795,4.421,2.795L10.2,18.108Z"
+                                                      transform="translate(0 -9.569)" fill="#ffdc96" />
+                                            </svg>
+                                        </div>
+                                        <a href='<?php echo home_url( '/' ); ?>product-page'>
+                                            C&H CH-S07GKP8
+                                            <svg class='favorites' xmlns="http://www.w3.org/2000/svg" width="27"
+                                                 height="24.07"
+                                                 viewBox="0 0 27 24.07">
+                                                <g id="Сгруппировать_2766" data-name="Сгруппировать 2766"
+                                                   transform="translate(1 -0.465)">
+                                                    <path id="Контур_714" data-name="Контур 714"
+                                                          d="M18.359,1.465a5.919,5.919,0,0,0-3.7,1.278,8.421,8.421,0,0,0-2.163,2.6,8.42,8.42,0,0,0-2.163-2.6,5.919,5.919,0,0,0-3.7-1.278C2.855,1.465,0,4.561,0,8.668,0,13.1,3.562,16.139,8.954,20.734c.916.78,1.953,1.665,3.032,2.608a.782.782,0,0,0,1.029,0c1.079-.943,2.117-1.828,3.033-2.609C21.438,16.139,25,13.1,25,8.668,25,4.561,22.145,1.465,18.359,1.465Z"
+                                                          fill="none" stroke="#6b92b0" stroke-width="2" />
+                                                </g>
+                                            </svg>
+                                        </a>
+                                        <p>
+                                            Класс А, Система фильтров 7SKY, CH SMART-ION Filter (только для моделей
+                                            XP7), ЕЕR -3,3 COP-3,7, тихий вн. блок 24 Дб, компактный Hi-tech дизайн,
+                                            фильтр Eco-fresh
+                                        </p>
+                                        <span class='price'>8 760 UAH</span>
+                                        <div class='description-buttons'>
+                                            <a href='#' class='btn'>Купить</a>
+                                            <a href='#' class='btn btn-second'>В Корзину</a>
+                                        </div>
+                                    </div>
+                                    <div class='item-buttons'>
+                                        <a href='#' class='btn'>Купить</a>
+                                        <a href='#' class='btn btn-second'>В Корзину</a>
+                                    </div>
+                                </div>
+                                <div class='products-item catalog-item'>
+                                    <a href='<?php echo home_url( '/' ); ?>product-page' class='item-image'>
+                                        <img src='<?php echo get_template_directory_uri() ?>/assets/images/product-item.png' alt='Кондиционер'>
+                                    </a>
+                                    <div class='item-description'>
+                                        <div class='rating'>
+                                            <svg id="Сгруппировать" xmlns="http://www.w3.org/2000/svg"
+                                                 width="14.137"
+                                                 height="13.608"
+                                                 viewBox="0 0 14.137 13.608">
+                                                <path id="Контур_2" data-name="Контур 2"
+                                                      d="M14.137,14.767,9,14.429,7.065,9.569l-1.934,4.86L0,14.767l3.935,3.342L2.644,23.177l4.421-2.795,4.421,2.795L10.2,18.108Z"
+                                                      transform="translate(0 -9.569)" fill="#ffdc96" />
+                                            </svg>
+                                            <svg id="Сгруппировать" xmlns="http://www.w3.org/2000/svg"
+                                                 width="14.137"
+                                                 height="13.608"
+                                                 viewBox="0 0 14.137 13.608">
+                                                <path id="Контур_2" data-name="Контур 2"
+                                                      d="M14.137,14.767,9,14.429,7.065,9.569l-1.934,4.86L0,14.767l3.935,3.342L2.644,23.177l4.421-2.795,4.421,2.795L10.2,18.108Z"
+                                                      transform="translate(0 -9.569)" fill="#ffdc96" />
+                                            </svg>
+                                            <svg id="Сгруппировать" xmlns="http://www.w3.org/2000/svg"
+                                                 width="14.137"
+                                                 height="13.608"
+                                                 viewBox="0 0 14.137 13.608">
+                                                <path id="Контур_2" data-name="Контур 2"
+                                                      d="M14.137,14.767,9,14.429,7.065,9.569l-1.934,4.86L0,14.767l3.935,3.342L2.644,23.177l4.421-2.795,4.421,2.795L10.2,18.108Z"
+                                                      transform="translate(0 -9.569)" fill="#ffdc96" />
+                                            </svg>
+                                            <svg id="Сгруппировать" xmlns="http://www.w3.org/2000/svg"
+                                                 width="14.137"
+                                                 height="13.608"
+                                                 viewBox="0 0 14.137 13.608">
+                                                <path id="Контур_2" data-name="Контур 2"
+                                                      d="M14.137,14.767,9,14.429,7.065,9.569l-1.934,4.86L0,14.767l3.935,3.342L2.644,23.177l4.421-2.795,4.421,2.795L10.2,18.108Z"
+                                                      transform="translate(0 -9.569)" fill="#ffdc96" />
+                                            </svg>
+                                            <svg id="Сгруппировать" xmlns="http://www.w3.org/2000/svg"
+                                                 width="14.137"
+                                                 height="13.608"
+                                                 viewBox="0 0 14.137 13.608">
+                                                <path id="Контур_2" data-name="Контур 2"
+                                                      d="M14.137,14.767,9,14.429,7.065,9.569l-1.934,4.86L0,14.767l3.935,3.342L2.644,23.177l4.421-2.795,4.421,2.795L10.2,18.108Z"
+                                                      transform="translate(0 -9.569)" fill="#ffdc96" />
+                                            </svg>
+                                        </div>
+                                        <a href='<?php echo home_url( '/' ); ?>product-page'>
+                                            C&H CH-S07GKP8
+                                            <svg class='favorites' xmlns="http://www.w3.org/2000/svg" width="27"
+                                                 height="24.07"
+                                                 viewBox="0 0 27 24.07">
+                                                <g id="Сгруппировать_2766" data-name="Сгруппировать 2766"
+                                                   transform="translate(1 -0.465)">
+                                                    <path id="Контур_714" data-name="Контур 714"
+                                                          d="M18.359,1.465a5.919,5.919,0,0,0-3.7,1.278,8.421,8.421,0,0,0-2.163,2.6,8.42,8.42,0,0,0-2.163-2.6,5.919,5.919,0,0,0-3.7-1.278C2.855,1.465,0,4.561,0,8.668,0,13.1,3.562,16.139,8.954,20.734c.916.78,1.953,1.665,3.032,2.608a.782.782,0,0,0,1.029,0c1.079-.943,2.117-1.828,3.033-2.609C21.438,16.139,25,13.1,25,8.668,25,4.561,22.145,1.465,18.359,1.465Z"
+                                                          fill="none" stroke="#6b92b0" stroke-width="2" />
+                                                </g>
+                                            </svg>
+                                        </a>
+                                        <p>
+                                            Класс А, Система фильтров 7SKY, CH SMART-ION Filter (только для моделей
+                                            XP7), ЕЕR -3,3 COP-3,7, тихий вн. блок 24 Дб, компактный Hi-tech дизайн,
+                                            фильтр Eco-fresh
+                                        </p>
+                                        <span class='price'>8 760 UAH</span>
+                                        <div class='description-buttons'>
+                                            <a href='#' class='btn'>Купить</a>
+                                            <a href='#' class='btn btn-second'>В Корзину</a>
+                                        </div>
+                                    </div>
+                                    <div class='item-buttons'>
+                                        <a href='#' class='btn'>Купить</a>
+                                        <a href='#' class='btn btn-second'>В Корзину</a>
+                                    </div>
+                                </div>
+                                <div class='products-item catalog-item'>
+                                    <a href='<?php echo home_url( '/' ); ?>product-page' class='item-image'>
+                                        <img src='<?php echo get_template_directory_uri() ?>/assets/images/product-item.png' alt='Кондиционер'>
+                                    </a>
+                                    <div class='item-description'>
+                                        <div class='rating'>
+                                            <svg id="Сгруппировать" xmlns="http://www.w3.org/2000/svg"
+                                                 width="14.137"
+                                                 height="13.608"
+                                                 viewBox="0 0 14.137 13.608">
+                                                <path id="Контур_2" data-name="Контур 2"
+                                                      d="M14.137,14.767,9,14.429,7.065,9.569l-1.934,4.86L0,14.767l3.935,3.342L2.644,23.177l4.421-2.795,4.421,2.795L10.2,18.108Z"
+                                                      transform="translate(0 -9.569)" fill="#ffdc96" />
+                                            </svg>
+                                            <svg id="Сгруппировать" xmlns="http://www.w3.org/2000/svg"
+                                                 width="14.137"
+                                                 height="13.608"
+                                                 viewBox="0 0 14.137 13.608">
+                                                <path id="Контур_2" data-name="Контур 2"
+                                                      d="M14.137,14.767,9,14.429,7.065,9.569l-1.934,4.86L0,14.767l3.935,3.342L2.644,23.177l4.421-2.795,4.421,2.795L10.2,18.108Z"
+                                                      transform="translate(0 -9.569)" fill="#ffdc96" />
+                                            </svg>
+                                            <svg id="Сгруппировать" xmlns="http://www.w3.org/2000/svg"
+                                                 width="14.137"
+                                                 height="13.608"
+                                                 viewBox="0 0 14.137 13.608">
+                                                <path id="Контур_2" data-name="Контур 2"
+                                                      d="M14.137,14.767,9,14.429,7.065,9.569l-1.934,4.86L0,14.767l3.935,3.342L2.644,23.177l4.421-2.795,4.421,2.795L10.2,18.108Z"
+                                                      transform="translate(0 -9.569)" fill="#ffdc96" />
+                                            </svg>
+                                            <svg id="Сгруппировать" xmlns="http://www.w3.org/2000/svg"
+                                                 width="14.137"
+                                                 height="13.608"
+                                                 viewBox="0 0 14.137 13.608">
+                                                <path id="Контур_2" data-name="Контур 2"
+                                                      d="M14.137,14.767,9,14.429,7.065,9.569l-1.934,4.86L0,14.767l3.935,3.342L2.644,23.177l4.421-2.795,4.421,2.795L10.2,18.108Z"
+                                                      transform="translate(0 -9.569)" fill="#ffdc96" />
+                                            </svg>
+                                            <svg id="Сгруппировать" xmlns="http://www.w3.org/2000/svg"
+                                                 width="14.137"
+                                                 height="13.608"
+                                                 viewBox="0 0 14.137 13.608">
+                                                <path id="Контур_2" data-name="Контур 2"
+                                                      d="M14.137,14.767,9,14.429,7.065,9.569l-1.934,4.86L0,14.767l3.935,3.342L2.644,23.177l4.421-2.795,4.421,2.795L10.2,18.108Z"
+                                                      transform="translate(0 -9.569)" fill="#ffdc96" />
+                                            </svg>
+                                        </div>
+                                        <a href='<?php echo home_url( '/' ); ?>product-page'>
+                                            C&H CH-S07GKP8
+                                            <svg class='favorites' xmlns="http://www.w3.org/2000/svg" width="27"
+                                                 height="24.07"
+                                                 viewBox="0 0 27 24.07">
+                                                <g id="Сгруппировать_2766" data-name="Сгруппировать 2766"
+                                                   transform="translate(1 -0.465)">
+                                                    <path id="Контур_714" data-name="Контур 714"
+                                                          d="M18.359,1.465a5.919,5.919,0,0,0-3.7,1.278,8.421,8.421,0,0,0-2.163,2.6,8.42,8.42,0,0,0-2.163-2.6,5.919,5.919,0,0,0-3.7-1.278C2.855,1.465,0,4.561,0,8.668,0,13.1,3.562,16.139,8.954,20.734c.916.78,1.953,1.665,3.032,2.608a.782.782,0,0,0,1.029,0c1.079-.943,2.117-1.828,3.033-2.609C21.438,16.139,25,13.1,25,8.668,25,4.561,22.145,1.465,18.359,1.465Z"
+                                                          fill="none" stroke="#6b92b0" stroke-width="2" />
+                                                </g>
+                                            </svg>
+                                        </a>
+                                        <p>
+                                            Класс А, Система фильтров 7SKY, CH SMART-ION Filter (только для моделей
+                                            XP7), ЕЕR -3,3 COP-3,7, тихий вн. блок 24 Дб, компактный Hi-tech дизайн,
+                                            фильтр Eco-fresh
+                                        </p>
+                                        <span class='price'>8 760 UAH</span>
+                                        <div class='description-buttons'>
+                                            <a href='#' class='btn'>Купить</a>
+                                            <a href='#' class='btn btn-second'>В Корзину</a>
+                                        </div>
+                                    </div>
+                                    <div class='item-buttons'>
+                                        <a href='#' class='btn'>Купить</a>
+                                        <a href='#' class='btn btn-second'>В Корзину</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div id='info-reviews' class='info-list reviews'>
+                        <h2>Мои отзывы</h2>
+                        <div class='reviews-item'>
+                            <div class='item-title'>
+                                <h5>C&H CH-S07GKP8</h5>
+                                <div class='rating'>
+                                    <svg id="Сгруппировать" xmlns="http://www.w3.org/2000/svg" width="14.137"
+                                         height="13.608"
+                                         viewBox="0 0 14.137 13.608">
+                                        <path id="Контур_2" data-name="Контур 2"
+                                              d="M14.137,14.767,9,14.429,7.065,9.569l-1.934,4.86L0,14.767l3.935,3.342L2.644,23.177l4.421-2.795,4.421,2.795L10.2,18.108Z"
+                                              transform="translate(0 -9.569)" fill="#ffdc96" />
+                                    </svg>
+                                    <svg id="Сгруппировать" xmlns="http://www.w3.org/2000/svg" width="14.137"
+                                         height="13.608"
+                                         viewBox="0 0 14.137 13.608">
+                                        <path id="Контур_2" data-name="Контур 2"
+                                              d="M14.137,14.767,9,14.429,7.065,9.569l-1.934,4.86L0,14.767l3.935,3.342L2.644,23.177l4.421-2.795,4.421,2.795L10.2,18.108Z"
+                                              transform="translate(0 -9.569)" fill="#ffdc96" />
+                                    </svg>
+                                    <svg id="Сгруппировать" xmlns="http://www.w3.org/2000/svg" width="14.137"
+                                         height="13.608"
+                                         viewBox="0 0 14.137 13.608">
+                                        <path id="Контур_2" data-name="Контур 2"
+                                              d="M14.137,14.767,9,14.429,7.065,9.569l-1.934,4.86L0,14.767l3.935,3.342L2.644,23.177l4.421-2.795,4.421,2.795L10.2,18.108Z"
+                                              transform="translate(0 -9.569)" fill="#ffdc96" />
+                                    </svg>
+                                    <svg id="Сгруппировать" xmlns="http://www.w3.org/2000/svg" width="14.137"
+                                         height="13.608"
+                                         viewBox="0 0 14.137 13.608">
+                                        <path id="Контур_2" data-name="Контур 2"
+                                              d="M14.137,14.767,9,14.429,7.065,9.569l-1.934,4.86L0,14.767l3.935,3.342L2.644,23.177l4.421-2.795,4.421,2.795L10.2,18.108Z"
+                                              transform="translate(0 -9.569)" fill="#ffdc96" />
+                                    </svg>
+                                    <svg id="Сгруппировать" xmlns="http://www.w3.org/2000/svg" width="14.137"
+                                         height="13.608"
+                                         viewBox="0 0 14.137 13.608">
+                                        <path id="Контур_2" data-name="Контур 2"
+                                              d="M14.137,14.767,9,14.429,7.065,9.569l-1.934,4.86L0,14.767l3.935,3.342L2.644,23.177l4.421-2.795,4.421,2.795L10.2,18.108Z"
+                                              transform="translate(0 -9.569)" fill="#ffdc96" />
+                                    </svg>
+                                </div>
+                                <span class='data'>26.04.2021 в 18:10</span>
+                            </div>
+                            <div class='item-description'>
+                                <p>
+                                    Мы искали относительно недорогой, но качественный кондиционер и нашли подходящий
+                                    здесь.
+                                    Модель Грии, бесшумная и в режиме сна, он не мешает. Есть режим турбо, с помощью
+                                    которого,
+                                    можно быстро достичь нужной температуры. Рекомендую!
+                                </p>
+                            </div>
+                        </div>
+                        <div class='reviews-item'>
+                            <div class='item-title'>
+                                <h5>C&H CH-S07GKP8</h5>
+                                <div class='rating'>
+                                    <svg id="Сгруппировать" xmlns="http://www.w3.org/2000/svg" width="14.137"
+                                         height="13.608"
+                                         viewBox="0 0 14.137 13.608">
+                                        <path id="Контур_2" data-name="Контур 2"
+                                              d="M14.137,14.767,9,14.429,7.065,9.569l-1.934,4.86L0,14.767l3.935,3.342L2.644,23.177l4.421-2.795,4.421,2.795L10.2,18.108Z"
+                                              transform="translate(0 -9.569)" fill="#ffdc96" />
+                                    </svg>
+                                    <svg id="Сгруппировать" xmlns="http://www.w3.org/2000/svg" width="14.137"
+                                         height="13.608"
+                                         viewBox="0 0 14.137 13.608">
+                                        <path id="Контур_2" data-name="Контур 2"
+                                              d="M14.137,14.767,9,14.429,7.065,9.569l-1.934,4.86L0,14.767l3.935,3.342L2.644,23.177l4.421-2.795,4.421,2.795L10.2,18.108Z"
+                                              transform="translate(0 -9.569)" fill="#ffdc96" />
+                                    </svg>
+                                    <svg id="Сгруппировать" xmlns="http://www.w3.org/2000/svg" width="14.137"
+                                         height="13.608"
+                                         viewBox="0 0 14.137 13.608">
+                                        <path id="Контур_2" data-name="Контур 2"
+                                              d="M14.137,14.767,9,14.429,7.065,9.569l-1.934,4.86L0,14.767l3.935,3.342L2.644,23.177l4.421-2.795,4.421,2.795L10.2,18.108Z"
+                                              transform="translate(0 -9.569)" fill="#ffdc96" />
+                                    </svg>
+                                    <svg id="Сгруппировать" xmlns="http://www.w3.org/2000/svg" width="14.137"
+                                         height="13.608"
+                                         viewBox="0 0 14.137 13.608">
+                                        <path id="Контур_2" data-name="Контур 2"
+                                              d="M14.137,14.767,9,14.429,7.065,9.569l-1.934,4.86L0,14.767l3.935,3.342L2.644,23.177l4.421-2.795,4.421,2.795L10.2,18.108Z"
+                                              transform="translate(0 -9.569)" fill="#ffdc96" />
+                                    </svg>
+                                    <svg id="Сгруппировать" xmlns="http://www.w3.org/2000/svg" width="14.137"
+                                         height="13.608"
+                                         viewBox="0 0 14.137 13.608">
+                                        <path id="Контур_2" data-name="Контур 2"
+                                              d="M14.137,14.767,9,14.429,7.065,9.569l-1.934,4.86L0,14.767l3.935,3.342L2.644,23.177l4.421-2.795,4.421,2.795L10.2,18.108Z"
+                                              transform="translate(0 -9.569)" fill="#ffdc96" />
+                                    </svg>
+                                </div>
+                                <span class='data'>26.04.2021 в 18:10</span>
+                            </div>
+                            <div class='item-description'>
+                                <p>
+                                    Мы искали относительно недорогой, но качественный кондиционер и нашли подходящий
+                                    здесь.
+                                    Модель Грии, бесшумная и в режиме сна, он не мешает. Есть режим турбо, с помощью
+                                    которого,
+                                    можно быстро достичь нужной температуры. Рекомендую!
+                                </p>
+                            </div>
+                        </div>
+                        <div class='reviews-item'>
+                            <div class='item-title'>
+                                <h5>C&H CH-S07GKP8</h5>
+                                <div class='rating'>
+                                    <svg id="Сгруппировать" xmlns="http://www.w3.org/2000/svg" width="14.137"
+                                         height="13.608"
+                                         viewBox="0 0 14.137 13.608">
+                                        <path id="Контур_2" data-name="Контур 2"
+                                              d="M14.137,14.767,9,14.429,7.065,9.569l-1.934,4.86L0,14.767l3.935,3.342L2.644,23.177l4.421-2.795,4.421,2.795L10.2,18.108Z"
+                                              transform="translate(0 -9.569)" fill="#ffdc96" />
+                                    </svg>
+                                    <svg id="Сгруппировать" xmlns="http://www.w3.org/2000/svg" width="14.137"
+                                         height="13.608"
+                                         viewBox="0 0 14.137 13.608">
+                                        <path id="Контур_2" data-name="Контур 2"
+                                              d="M14.137,14.767,9,14.429,7.065,9.569l-1.934,4.86L0,14.767l3.935,3.342L2.644,23.177l4.421-2.795,4.421,2.795L10.2,18.108Z"
+                                              transform="translate(0 -9.569)" fill="#ffdc96" />
+                                    </svg>
+                                    <svg id="Сгруппировать" xmlns="http://www.w3.org/2000/svg" width="14.137"
+                                         height="13.608"
+                                         viewBox="0 0 14.137 13.608">
+                                        <path id="Контур_2" data-name="Контур 2"
+                                              d="M14.137,14.767,9,14.429,7.065,9.569l-1.934,4.86L0,14.767l3.935,3.342L2.644,23.177l4.421-2.795,4.421,2.795L10.2,18.108Z"
+                                              transform="translate(0 -9.569)" fill="#ffdc96" />
+                                    </svg>
+                                    <svg id="Сгруппировать" xmlns="http://www.w3.org/2000/svg" width="14.137"
+                                         height="13.608"
+                                         viewBox="0 0 14.137 13.608">
+                                        <path id="Контур_2" data-name="Контур 2"
+                                              d="M14.137,14.767,9,14.429,7.065,9.569l-1.934,4.86L0,14.767l3.935,3.342L2.644,23.177l4.421-2.795,4.421,2.795L10.2,18.108Z"
+                                              transform="translate(0 -9.569)" fill="#ffdc96" />
+                                    </svg>
+                                    <svg id="Сгруппировать" xmlns="http://www.w3.org/2000/svg" width="14.137"
+                                         height="13.608"
+                                         viewBox="0 0 14.137 13.608">
+                                        <path id="Контур_2" data-name="Контур 2"
+                                              d="M14.137,14.767,9,14.429,7.065,9.569l-1.934,4.86L0,14.767l3.935,3.342L2.644,23.177l4.421-2.795,4.421,2.795L10.2,18.108Z"
+                                              transform="translate(0 -9.569)" fill="#ffdc96" />
+                                    </svg>
+                                </div>
+                                <span class='data'>26.04.2021 в 18:10</span>
+                            </div>
+                            <div class='item-description'>
+                                <p>
+                                    Мы искали относительно недорогой, но качественный кондиционер и нашли подходящий
+                                    здесь.
+                                    Модель Грии, бесшумная и в режиме сна, он не мешает. Есть режим турбо, с помощью
+                                    которого,
+                                    можно быстро достичь нужной температуры. Рекомендую!
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+</main>
+<footer class='footer'>
+    <div class='footer-center'>
+        <div class='container'>
+            <div class='footer-center-inner'>
+                <a href='<?php echo home_url( '/' ); ?>' class='footer-logo'>
+                    <img src='<?php echo get_template_directory_uri() ?>/assets/images/icons/logo.svg' alt='logo'>
+                </a>
+                <div class='footer-menu'>
+                    <h5>Меню</h5>
+                    <div class='footer-menu-lists'>
+                        <ul>
+                            <li>
+                                <a href='<?php echo home_url( '/' ); ?>'>Главная</a>
+                            </li>
+                            <li>
+                                <a href='<?php echo home_url( '/' ); ?>catalog'>Каталог</a>
+                            </li>
+                            <li>
+                                <a href='<?php echo home_url( '/' ); ?>installation-and-assembly'>Установка и монтаж</a>
+                            </li>
+                            <li>
+                                <a href='<?php echo home_url( '/' ); ?>services'>Сервис</a>
+                            </li>
+                            <li>
+                                <a href='<?php echo home_url( '/' ); ?>payment-and-delivery'>Оплата и Доставка</a>
+                            </li>
+                        </ul>
+                        <ul>
+                            <li>
+                                <a href='<?php echo home_url( '/' ); ?>our-works'>Наши роботы</a>
+                            </li>
+                            <li>
+                                <a href='<?php echo home_url( '/' ); ?>reviews'>Отзывы</a>
+                            </li>
+                            <li>
+                                <a href='<?php echo home_url( '/' ); ?>blog'>Блог</a>
+                            </li>
+                            <li>
+                                <a href='<?php echo home_url( '/' ); ?>contacts'>Контакти</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <div class='footer-contact'>
+                    <h5>Контакти</h5>
+                    <a href='mailto:techcomfort@meta.ua' class='email'>
+                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="14.063" viewBox="0 0 20 14.063">
+                            <g id="mail" transform="translate(0 -2.969)">
+                                <g id="Сгруппировать_618" data-name="Сгруппировать 618">
+                                    <g id="Сгруппировать_617" data-name="Сгруппировать 617">
+                                        <path id="Контур_136" data-name="Контур 136"
+                                              d="M19.824,3.973,13.758,10l6.066,6.027A1.738,1.738,0,0,0,20,15.273V4.727A1.737,1.737,0,0,0,19.824,3.973Z" />
+                                    </g>
+                                </g>
+                                <g id="Сгруппировать_620" data-name="Сгруппировать 620">
+                                    <g id="Сгруппировать_619" data-name="Сгруппировать 619">
+                                        <path id="Контур_137" data-name="Контур 137"
+                                              d="M18.242,2.969H1.758A1.737,1.737,0,0,0,1,3.145l7.752,7.713a1.759,1.759,0,0,0,2.486,0L19,3.145A1.737,1.737,0,0,0,18.242,2.969Z" />
+                                    </g>
+                                </g>
+                                <g id="Сгруппировать_622" data-name="Сгруппировать 622">
+                                    <g id="Сгруппировать_621" data-name="Сгруппировать 621">
+                                        <path id="Контур_138" data-name="Контур 138"
+                                              d="M.176,3.973A1.737,1.737,0,0,0,0,4.727V15.273a1.737,1.737,0,0,0,.176.753L6.242,10Z" />
+                                    </g>
+                                </g>
+                                <g id="Сгруппировать_624" data-name="Сгруппировать 624">
+                                    <g id="Сгруппировать_623" data-name="Сгруппировать 623">
+                                        <path id="Контур_139" data-name="Контур 139"
+                                              d="M12.93,10.829l-.858.858a2.933,2.933,0,0,1-4.143,0l-.858-.858L1,16.855a1.737,1.737,0,0,0,.753.176H18.242A1.737,1.737,0,0,0,19,16.855Z" />
+                                    </g>
+                                </g>
+                            </g>
+                        </svg>
+                        techcomfort@meta.ua
+                    </a>
+                    <div class='call'>
+                        <svg xmlns="http://www.w3.org/2000/svg" width="18.081" height="18.081"
+                             viewBox="0 0 18.081 18.081">
+                            <path id="Контур_135" data-name="Контур 135"
+                                  d="M16.63,11.868a10.266,10.266,0,0,1-3.224-.514,1.474,1.474,0,0,0-1.433.3L9.94,13.191a11.235,11.235,0,0,1-5.051-5.05l1.49-1.98a1.461,1.461,0,0,0,.36-1.481,10.281,10.281,0,0,1-.515-3.229A1.452,1.452,0,0,0,4.771,0H1.451A1.453,1.453,0,0,0,0,1.451a16.649,16.649,0,0,0,16.63,16.63,1.453,1.453,0,0,0,1.451-1.451V13.319A1.453,1.453,0,0,0,16.63,11.868Z" />
+                        </svg>
+                        <div class='call-description'>
+                            <a href='tel:38(097) 107 25 25'>38(097) 107 25 25</a>
+                            <a href='tel:38(097) 125 95 95'>38(097) 125 95 95</a>
+                        </div>
+                    </div>
+                    <div class='address'>
+                        <svg xmlns="http://www.w3.org/2000/svg" width="13.904" height="20" viewBox="0 0 13.904 20">
+                            <path id="placeholder_3_" data-name="placeholder (3)"
+                                  d="M6.757,0A6.96,6.96,0,0,0-.2,6.952C-.2,11.77,6.763,20,6.763,20s6.945-8.467,6.945-13.048A6.96,6.96,0,0,0,6.757,0Zm2.1,8.987a2.966,2.966,0,1,1,0-4.195A2.957,2.957,0,0,1,8.854,8.987Zm0,0"
+                                  transform="translate(0.195)" />
+                        </svg>
+                        <p>г. Киев</p>
+                    </div>
+                </div>
+                <div class='socials'>
+                    <h5>Соц. сети</h5>
+                    <div class='socials-images'>
+                        <a href='#' class='socials-image'>
+                            <img src='<?php echo get_template_directory_uri() ?>/assets/images/icons/viber.svg' alt='Viber'>
+                        </a>
+                        <a href='#' class='socials-image'>
+                            <img src='<?php echo get_template_directory_uri() ?>/assets/images/icons/whatsapp.svg' alt='WhatsApp'>
+                        </a>
+                        <a href='#' class='socials-image'>
+                            <img src='<?php echo get_template_directory_uri() ?>/assets/images/icons/telegram.svg' alt='Telegram'>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class='footer-bottom'>
+        <div class='container'>
+            <p>Copyright © Baseline 2021 All rights reserved.</p>
+        </div>
+    </div>
+</footer>
+<script src='../assets/js/personal-area.js'></script>
+<script src='../assets/js/main.js'></script>
+</body>
+</html>

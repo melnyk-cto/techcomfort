@@ -1,0 +1,229 @@
+@import "./variables";
+
+@media (any-hover: hover) {
+}
+
+.basket {
+
+  h4 {
+    text-align:  center;
+    font-weight: 400;
+    display:     none;
+    width:       100%;
+  }
+  span {
+    font-size:      24px;
+    text-transform: uppercase;
+  }
+  &-inner {
+    max-width:       960px;
+    height:          407px;
+    justify-content: space-between;
+  }
+  &-title {
+    padding: 25px 4.7%;
+  }
+  &-list {
+    display:        flex;
+    flex-direction: column;
+    align-items:    center;
+    height:         100%;
+    border-bottom:  2px solid $primaryColor;
+    overflow:       auto;
+    padding:        0 4.9%;
+  }
+  &-item {
+    display:         flex;
+    justify-content: space-between;
+    align-items:     center;
+    position:        relative;
+    width:           100%;
+    padding:         5.72% 0;
+    .item-close {
+      width:      14px;
+      height:     14px;
+      cursor:     pointer;
+      position:   absolute;
+      top:        17%;
+      right:      0;
+      transition: 0.3s linear;
+      &:after, &:before {
+        content:       "";
+        width:         100%;
+        height:        2px;
+        position:      absolute;
+        top:           50%;
+        left:          0;
+        background:    $black;
+        border-radius: 3px;
+        z-index:       10;
+      }
+      &:after, &:before {
+        transform: rotate(-45deg);
+      }
+      &:before {
+        transform: rotate(45deg);
+      }
+    }
+    h5 {
+      font-size:   20px;
+      font-weight: 500;
+    }
+    .item-image {
+      width: 21%;
+    }
+    .item-description {
+      width:           69%;
+      margin-right:    4%;
+      display:         flex;
+      justify-content: space-between;
+      align-items:     center;
+    }
+    .quantity {
+      .reduce {
+        font-size: 31px;
+      }
+    }
+  }
+  &-bottom {
+    display:         flex;
+    justify-content: space-between;
+    align-items:     center;
+    padding:         3.71% 4.7% 3.71%;
+    p {
+      font-size:       18px;
+      display:         flex;
+      justify-content: space-between;
+      margin-bottom:   10px;
+      &:last-child {
+        margin-bottom: 0;
+      }
+    }
+    span {
+      font-size:   20px;
+      font-weight: 700;
+      margin-left: 10px;
+    }
+    .btn {
+      max-width: 172px;
+    }
+  }
+}
+
+@media screen and (max-width: 1150px) {
+  .basket {
+    span {
+      font-size: 18px;
+    }
+    h2 {
+      font-size: 24px;
+    }
+    &-inner {
+      max-width: 700px;
+      height:    252px;
+    }
+    &-title {
+      padding: 15px 4.7%;
+    }
+    &-list {
+      border-bottom: 1px solid $primaryColor;
+    }
+    &-item {
+      padding: 3.9% 0;
+      .item-close {
+        width:  10px;
+        height: 10px;
+        top:    15%;
+        &:after, &:before {
+          height:        1px;
+          border-radius: 2px;
+        }
+      }
+      h5 {
+        font-size: 16px;
+      }
+      .quantity {
+        .reduce {
+          font-size: 22px;
+        }
+      }
+      .item-image {
+        width: 22%;
+      }
+    }
+    &-bottom {
+      padding: 3% 4.7%;
+      p {
+        font-size: 16px;
+      }
+      span {
+        font-size: 16px;
+      }
+      .btn {
+        max-width: 125px;
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 767px) {
+  .basket {
+    span {
+      font-size: 12px;
+    }
+    h2 {
+      font-size: 20px;
+    }
+    &-item {
+      padding: 30px 0;
+      .item-close {
+        top: 15%;
+      }
+      h5 {
+        width:       100%;
+        font-size:   14px;
+        font-weight: 500;
+      }
+      .quantity {
+        width: 50%;
+        input {
+          background: #F8F8FA;
+        }
+        .reduce {
+          font-size: 18px;
+        }
+      }
+      span {
+        width: 41%;
+      }
+      .item-image {
+        width: 40%;
+      }
+      .item-description {
+        margin-right: 0;
+        width:        55%;
+        flex-wrap:    wrap;
+      }
+    }
+    &-bottom {
+      padding:   15px 20px;
+      flex-wrap: wrap;
+      p {
+        font-size:     12px;
+        margin-bottom: 5px;
+      }
+      span {
+        font-size:   14px;
+        font-weight: 500;
+      }
+      &-description {
+        width:         100%;
+        margin-bottom: 12px;
+      }
+      .btn {
+        max-width: initial;
+        width:     100%;
+      }
+    }
+  }
+}

@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="54" height="54" viewBox="0 0 54 54">
+  <defs>
+    <clipPath id="clip-path">
+      <rect id="Прямоугольник_787" data-name="Прямоугольник 787" width="35" height="35" transform="translate(-0.218 -0.396)" fill="#fff" stroke="#707070" stroke-width="1"/>
+    </clipPath>
+  </defs>
+  <g id="Сгруппировать_772" data-name="Сгруппировать 772" transform="translate(-1710 -5618)">
+    <circle id="Эллипс_15" data-name="Эллипс 15" cx="27" cy="27" r="27" transform="translate(1710 5618)" fill="#27aed6"/>
+    <g id="Группа_масок_94" data-name="Группа масок 94" transform="translate(1717.218 5628.396)" clip-path="url(#clip-path)">
+      <path id="telegram_1_" data-name="telegram (1)" d="M13.383,20.983l-.564,7.936a1.973,1.973,0,0,0,1.576-.763l3.785-3.617,7.842,5.743c1.438.8,2.452.379,2.84-1.323L34.009,4.838h0c.456-2.126-.769-2.958-2.17-2.436L1.583,13.985c-2.065.8-2.034,1.953-.351,2.474l7.736,2.406L26.936,7.622c.846-.56,1.614-.25.982.31Z" transform="translate(0.21 0.702)" fill="#fff"/>
+    </g>
+  </g>
+</svg>
