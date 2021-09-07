@@ -24,7 +24,7 @@
                     <div class='footer-menu-lists'>
                         <ul>
                             <li>
-                                <a href='#'>Главная</a>
+                                <a href='<?php echo home_url( '/' ); ?>'>Главная</a>
                             </li>
                             <li>
                                 <a href='<?php echo home_url( '/' ); ?>catalog'>Каталог</a>

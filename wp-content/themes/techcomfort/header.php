@@ -25,7 +25,7 @@
                 <nav class='header-menu'>
                     <ul class='menu-list'>
                         <li class='menu-item'>
-                            <a href='#'>Главная</a>
+                            <a href='<?php echo home_url( '/' ); ?>'>Главная</a>
                         </li>
                         <li class='menu-item'>
                             <a href='<?php echo home_url( '/' ); ?>catalog'>Каталог</a>
@@ -435,7 +435,7 @@
                     <nav class='menu'>
                         <ul>
                             <li>
-                                <a class='menu-item header-item' href='#'>Главная</a>
+                                <a class='menu-item header-item' href='<?php echo home_url( '/' ); ?>'>Главная</a>
                             </li>
                             <li>
                                 <a class='menu-item header-item' href='<?php echo home_url( '/' ); ?>catalog'>Каталог</a>
