@@ -16,7 +16,7 @@
   color:      $black;
   a, p {
     color:     $black;
-    font-size: 20px;
+    font-size: 16px;
   }
   h5 {
     margin-bottom:  25px;
@@ -42,8 +42,8 @@
     align-self: center;
   }
   &-menu {
-    max-width: 470px;
-    width:     33%;
+    max-width: 445px;
+    width:     30%;
     &-lists {
       display:         flex;
       justify-content: space-between;
@@ -52,13 +52,13 @@
   &-info {
     display:         flex;
     justify-content: space-between;
-    width:           39%;
-    max-width:       510px;
+    width:           37%;
+    max-width:       470px;
   }
   &-contact {
     a {
       margin-bottom: 20px;
-      font-size:     20px;
+      font-size:     16px;
     }
   }
   &-bottom {

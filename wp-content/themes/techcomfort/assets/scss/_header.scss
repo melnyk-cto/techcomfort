@@ -149,7 +149,7 @@
           display:     flex;
           align-items: center;
           a {
-            font-size:    16px;
+            font-size:    14px;
             margin-right: 25px;
           }
         }
@@ -225,7 +225,7 @@
     padding:     18px;
     cursor:      pointer;
     p {
-      font-size: 22px;
+      font-size: 20px;
       color:     $white;
     }
     svg {
@@ -260,7 +260,7 @@
           margin-bottom: 10px;
         }
         p {
-          font-size:   20px;
+          font-size:   18px;
           color:       $black;
           text-align:  center;
           font-weight: 500;
@@ -317,7 +317,7 @@
       .menu-item {
         margin: 0 12px;
         a {
-          font-size:   18px;
+          font-size:   14px;
           font-weight: 500;
         }
       }
@@ -372,7 +372,7 @@
       .language {
         background:     transparent;
         border:         none;
-        font-size:      22px;
+        font-size:      18px;
         text-transform: uppercase;
         position:       relative;
         cursor:         pointer;
@@ -387,7 +387,7 @@
           z-index:       100;
         }
         option {
-          font-size: 20px;
+          font-size: 18px;
         }
       }
     }
@@ -414,7 +414,7 @@
     &-catalog {
       padding: 16px 45px;
       p {
-        font-size:      20px;
+        font-size:      18px;
         text-transform: uppercase;
       }
       svg {
@@ -425,7 +425,7 @@
     }
     &-profile, &-comparison, &-favorites, &-basket, &-reviews, &-viewed, &-ordering {
       p {
-        font-size:   16px;
+        font-size:   14px;
         font-weight: 400;
       }
       svg {
@@ -471,7 +471,7 @@
     &-catalog {
       padding: 11px 20px;
       p {
-        font-size:      16px;
+        font-size:      14px;
         text-transform: initial;
       }
       svg {
@@ -482,7 +482,7 @@
     }
     &-profile, &-comparison, &-favorites, &-basket, &-reviews, &-viewed, &-ordering {
       p {
-        font-size:   16px;
+        font-size:   14px;
         font-weight: 400;
       }
       svg {
