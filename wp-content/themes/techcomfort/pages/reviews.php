@@ -12,7 +12,7 @@
                 <div class='basket-item'>
                     <div class='item-close'></div>
                     <div class='item-image'>
-                        <img src='<?php echo get_template_directory_uri() ?>/assets/images/product-item.png'
+                        <img src='<?php echo get_template_directory_uri() ?>/assets/images/product-gallery-1.jpg'
                              alt='Кондиционер'>
                     </div>
                     <div class='item-description'>
@@ -30,7 +30,7 @@
                 <div class='basket-item'>
                     <div class='item-close'></div>
                     <div class='item-image'>
-                        <img src='<?php echo get_template_directory_uri() ?>/assets/images/product-item.png'
+                        <img src='<?php echo get_template_directory_uri() ?>/assets/images/product-gallery-2.jpg'
                              alt='Кондиционер'>
                     </div>
                     <div class='item-description'>
@@ -48,7 +48,7 @@
                 <div class='basket-item'>
                     <div class='item-close'></div>
                     <div class='item-image'>
-                        <img src='<?php echo get_template_directory_uri() ?>/assets/images/product-item.png'
+                        <img src='<?php echo get_template_directory_uri() ?>/assets/images/product-gallery-3.jpg'
                              alt='Кондиционер'>
                     </div>
                     <div class='item-description'>
@@ -165,85 +165,35 @@
                                  viewBox="0 0 14.137 13.608">
                                 <path id="Контур_2" data-name="Контур 2"
                                       d="M14.137,14.767,9,14.429,7.065,9.569l-1.934,4.86L0,14.767l3.935,3.342L2.644,23.177l4.421-2.795,4.421,2.795L10.2,18.108Z"
-                                      transform="translate(0 -9.569)" fill="#ffdc96"/>
+                                      transform="translate(0 -9.569)" fill="#ffdc96" />
                             </svg>
                             <svg id="Сгруппировать" xmlns="http://www.w3.org/2000/svg" width="14.137"
                                  height="13.608"
                                  viewBox="0 0 14.137 13.608">
                                 <path id="Контур_2" data-name="Контур 2"
                                       d="M14.137,14.767,9,14.429,7.065,9.569l-1.934,4.86L0,14.767l3.935,3.342L2.644,23.177l4.421-2.795,4.421,2.795L10.2,18.108Z"
-                                      transform="translate(0 -9.569)" fill="#ffdc96"/>
+                                      transform="translate(0 -9.569)" fill="#ffdc96" />
                             </svg>
                             <svg id="Сгруппировать" xmlns="http://www.w3.org/2000/svg" width="14.137"
                                  height="13.608"
                                  viewBox="0 0 14.137 13.608">
                                 <path id="Контур_2" data-name="Контур 2"
                                       d="M14.137,14.767,9,14.429,7.065,9.569l-1.934,4.86L0,14.767l3.935,3.342L2.644,23.177l4.421-2.795,4.421,2.795L10.2,18.108Z"
-                                      transform="translate(0 -9.569)" fill="#ffdc96"/>
+                                      transform="translate(0 -9.569)" fill="#ffdc96" />
                             </svg>
                             <svg id="Сгруппировать" xmlns="http://www.w3.org/2000/svg" width="14.137"
                                  height="13.608"
                                  viewBox="0 0 14.137 13.608">
                                 <path id="Контур_2" data-name="Контур 2"
                                       d="M14.137,14.767,9,14.429,7.065,9.569l-1.934,4.86L0,14.767l3.935,3.342L2.644,23.177l4.421-2.795,4.421,2.795L10.2,18.108Z"
-                                      transform="translate(0 -9.569)" fill="#ffdc96"/>
+                                      transform="translate(0 -9.569)" fill="#ffdc96" />
                             </svg>
                             <svg id="Сгруппировать" xmlns="http://www.w3.org/2000/svg" width="14.137"
                                  height="13.608"
                                  viewBox="0 0 14.137 13.608">
                                 <path id="Контур_2" data-name="Контур 2"
                                       d="M14.137,14.767,9,14.429,7.065,9.569l-1.934,4.86L0,14.767l3.935,3.342L2.644,23.177l4.421-2.795,4.421,2.795L10.2,18.108Z"
-                                      transform="translate(0 -9.569)" fill="#ffdc96"/>
-                            </svg>
-                        </div>
-                        <span class='data'>26.04.2021 в 18:10</span>
-                    </div>
-                    <div class='item-description'>
-                        <p>
-                            Мы искали относительно недорогой, но качественный кондиционер и нашли подходящий здесь.
-                            Модель Грии, бесшумная и в режиме сна, он не мешает. Есть режим турбо, с помощью которого,
-                            можно быстро достичь нужной температуры. Рекомендую!
-                        </p>
-                    </div>
-                </div>
-                <div class='reviews-item'>
-                    <div class='item-title'>
-                        <h5>Тюльпан Федотов</h5>
-                        <div class='rating'>
-                            <svg id="Сгруппировать" xmlns="http://www.w3.org/2000/svg" width="14.137"
-                                 height="13.608"
-                                 viewBox="0 0 14.137 13.608">
-                                <path id="Контур_2" data-name="Контур 2"
-                                      d="M14.137,14.767,9,14.429,7.065,9.569l-1.934,4.86L0,14.767l3.935,3.342L2.644,23.177l4.421-2.795,4.421,2.795L10.2,18.108Z"
-                                      transform="translate(0 -9.569)" fill="#ffdc96"/>
-                            </svg>
-                            <svg id="Сгруппировать" xmlns="http://www.w3.org/2000/svg" width="14.137"
-                                 height="13.608"
-                                 viewBox="0 0 14.137 13.608">
-                                <path id="Контур_2" data-name="Контур 2"
-                                      d="M14.137,14.767,9,14.429,7.065,9.569l-1.934,4.86L0,14.767l3.935,3.342L2.644,23.177l4.421-2.795,4.421,2.795L10.2,18.108Z"
-                                      transform="translate(0 -9.569)" fill="#ffdc96"/>
-                            </svg>
-                            <svg id="Сгруппировать" xmlns="http://www.w3.org/2000/svg" width="14.137"
-                                 height="13.608"
-                                 viewBox="0 0 14.137 13.608">
-                                <path id="Контур_2" data-name="Контур 2"
-                                      d="M14.137,14.767,9,14.429,7.065,9.569l-1.934,4.86L0,14.767l3.935,3.342L2.644,23.177l4.421-2.795,4.421,2.795L10.2,18.108Z"
-                                      transform="translate(0 -9.569)" fill="#ffdc96"/>
-                            </svg>
-                            <svg id="Сгруппировать" xmlns="http://www.w3.org/2000/svg" width="14.137"
-                                 height="13.608"
-                                 viewBox="0 0 14.137 13.608">
-                                <path id="Контур_2" data-name="Контур 2"
-                                      d="M14.137,14.767,9,14.429,7.065,9.569l-1.934,4.86L0,14.767l3.935,3.342L2.644,23.177l4.421-2.795,4.421,2.795L10.2,18.108Z"
-                                      transform="translate(0 -9.569)" fill="#ffdc96"/>
-                            </svg>
-                            <svg id="Сгруппировать" xmlns="http://www.w3.org/2000/svg" width="14.137"
-                                 height="13.608"
-                                 viewBox="0 0 14.137 13.608">
-                                <path id="Контур_2" data-name="Контур 2"
-                                      d="M14.137,14.767,9,14.429,7.065,9.569l-1.934,4.86L0,14.767l3.935,3.342L2.644,23.177l4.421-2.795,4.421,2.795L10.2,18.108Z"
-                                      transform="translate(0 -9.569)" fill="#ffdc96"/>
+                                      transform="translate(0 -9.569)" fill="#ffdc96" />
                             </svg>
                         </div>
                         <span class='data'>26.04.2021 в 18:10</span>
@@ -265,85 +215,35 @@
                                  viewBox="0 0 14.137 13.608">
                                 <path id="Контур_2" data-name="Контур 2"
                                       d="M14.137,14.767,9,14.429,7.065,9.569l-1.934,4.86L0,14.767l3.935,3.342L2.644,23.177l4.421-2.795,4.421,2.795L10.2,18.108Z"
-                                      transform="translate(0 -9.569)" fill="#ffdc96"/>
+                                      transform="translate(0 -9.569)" fill="#ffdc96" />
                             </svg>
                             <svg id="Сгруппировать" xmlns="http://www.w3.org/2000/svg" width="14.137"
                                  height="13.608"
                                  viewBox="0 0 14.137 13.608">
                                 <path id="Контур_2" data-name="Контур 2"
                                       d="M14.137,14.767,9,14.429,7.065,9.569l-1.934,4.86L0,14.767l3.935,3.342L2.644,23.177l4.421-2.795,4.421,2.795L10.2,18.108Z"
-                                      transform="translate(0 -9.569)" fill="#ffdc96"/>
+                                      transform="translate(0 -9.569)" fill="#ffdc96" />
                             </svg>
                             <svg id="Сгруппировать" xmlns="http://www.w3.org/2000/svg" width="14.137"
                                  height="13.608"
                                  viewBox="0 0 14.137 13.608">
                                 <path id="Контур_2" data-name="Контур 2"
                                       d="M14.137,14.767,9,14.429,7.065,9.569l-1.934,4.86L0,14.767l3.935,3.342L2.644,23.177l4.421-2.795,4.421,2.795L10.2,18.108Z"
-                                      transform="translate(0 -9.569)" fill="#ffdc96"/>
+                                      transform="translate(0 -9.569)" fill="#ffdc96" />
                             </svg>
                             <svg id="Сгруппировать" xmlns="http://www.w3.org/2000/svg" width="14.137"
                                  height="13.608"
                                  viewBox="0 0 14.137 13.608">
                                 <path id="Контур_2" data-name="Контур 2"
                                       d="M14.137,14.767,9,14.429,7.065,9.569l-1.934,4.86L0,14.767l3.935,3.342L2.644,23.177l4.421-2.795,4.421,2.795L10.2,18.108Z"
-                                      transform="translate(0 -9.569)" fill="#ffdc96"/>
+                                      transform="translate(0 -9.569)" fill="#ffdc96" />
                             </svg>
                             <svg id="Сгруппировать" xmlns="http://www.w3.org/2000/svg" width="14.137"
                                  height="13.608"
                                  viewBox="0 0 14.137 13.608">
                                 <path id="Контур_2" data-name="Контур 2"
                                       d="M14.137,14.767,9,14.429,7.065,9.569l-1.934,4.86L0,14.767l3.935,3.342L2.644,23.177l4.421-2.795,4.421,2.795L10.2,18.108Z"
-                                      transform="translate(0 -9.569)" fill="#ffdc96"/>
-                            </svg>
-                        </div>
-                        <span class='data'>26.04.2021 в 18:10</span>
-                    </div>
-                    <div class='item-description'>
-                        <p>
-                            Мы искали относительно недорогой, но качественный кондиционер и нашли подходящий здесь.
-                            Модель Грии, бесшумная и в режиме сна, он не мешает. Есть режим турбо, с помощью которого,
-                            можно быстро достичь нужной температуры. Рекомендую!
-                        </p>
-                    </div>
-                </div>
-                <div class='reviews-item'>
-                    <div class='item-title'>
-                        <h5>Тюльпан Федотов</h5>
-                        <div class='rating'>
-                            <svg id="Сгруппировать" xmlns="http://www.w3.org/2000/svg" width="14.137"
-                                 height="13.608"
-                                 viewBox="0 0 14.137 13.608">
-                                <path id="Контур_2" data-name="Контур 2"
-                                      d="M14.137,14.767,9,14.429,7.065,9.569l-1.934,4.86L0,14.767l3.935,3.342L2.644,23.177l4.421-2.795,4.421,2.795L10.2,18.108Z"
-                                      transform="translate(0 -9.569)" fill="#ffdc96"/>
-                            </svg>
-                            <svg id="Сгруппировать" xmlns="http://www.w3.org/2000/svg" width="14.137"
-                                 height="13.608"
-                                 viewBox="0 0 14.137 13.608">
-                                <path id="Контур_2" data-name="Контур 2"
-                                      d="M14.137,14.767,9,14.429,7.065,9.569l-1.934,4.86L0,14.767l3.935,3.342L2.644,23.177l4.421-2.795,4.421,2.795L10.2,18.108Z"
-                                      transform="translate(0 -9.569)" fill="#ffdc96"/>
-                            </svg>
-                            <svg id="Сгруппировать" xmlns="http://www.w3.org/2000/svg" width="14.137"
-                                 height="13.608"
-                                 viewBox="0 0 14.137 13.608">
-                                <path id="Контур_2" data-name="Контур 2"
-                                      d="M14.137,14.767,9,14.429,7.065,9.569l-1.934,4.86L0,14.767l3.935,3.342L2.644,23.177l4.421-2.795,4.421,2.795L10.2,18.108Z"
-                                      transform="translate(0 -9.569)" fill="#ffdc96"/>
-                            </svg>
-                            <svg id="Сгруппировать" xmlns="http://www.w3.org/2000/svg" width="14.137"
-                                 height="13.608"
-                                 viewBox="0 0 14.137 13.608">
-                                <path id="Контур_2" data-name="Контур 2"
-                                      d="M14.137,14.767,9,14.429,7.065,9.569l-1.934,4.86L0,14.767l3.935,3.342L2.644,23.177l4.421-2.795,4.421,2.795L10.2,18.108Z"
-                                      transform="translate(0 -9.569)" fill="#ffdc96"/>
-                            </svg>
-                            <svg id="Сгруппировать" xmlns="http://www.w3.org/2000/svg" width="14.137"
-                                 height="13.608"
-                                 viewBox="0 0 14.137 13.608">
-                                <path id="Контур_2" data-name="Контур 2"
-                                      d="M14.137,14.767,9,14.429,7.065,9.569l-1.934,4.86L0,14.767l3.935,3.342L2.644,23.177l4.421-2.795,4.421,2.795L10.2,18.108Z"
-                                      transform="translate(0 -9.569)" fill="#ffdc96"/>
+                                      transform="translate(0 -9.569)" fill="#ffdc96" />
                             </svg>
                         </div>
                         <span class='data'>26.04.2021 в 18:10</span>
@@ -365,35 +265,35 @@
                                  viewBox="0 0 14.137 13.608">
                                 <path id="Контур_2" data-name="Контур 2"
                                       d="M14.137,14.767,9,14.429,7.065,9.569l-1.934,4.86L0,14.767l3.935,3.342L2.644,23.177l4.421-2.795,4.421,2.795L10.2,18.108Z"
-                                      transform="translate(0 -9.569)" fill="#ffdc96"/>
+                                      transform="translate(0 -9.569)" fill="#ffdc96" />
                             </svg>
                             <svg id="Сгруппировать" xmlns="http://www.w3.org/2000/svg" width="14.137"
                                  height="13.608"
                                  viewBox="0 0 14.137 13.608">
                                 <path id="Контур_2" data-name="Контур 2"
                                       d="M14.137,14.767,9,14.429,7.065,9.569l-1.934,4.86L0,14.767l3.935,3.342L2.644,23.177l4.421-2.795,4.421,2.795L10.2,18.108Z"
-                                      transform="translate(0 -9.569)" fill="#ffdc96"/>
+                                      transform="translate(0 -9.569)" fill="#ffdc96" />
                             </svg>
                             <svg id="Сгруппировать" xmlns="http://www.w3.org/2000/svg" width="14.137"
                                  height="13.608"
                                  viewBox="0 0 14.137 13.608">
                                 <path id="Контур_2" data-name="Контур 2"
                                       d="M14.137,14.767,9,14.429,7.065,9.569l-1.934,4.86L0,14.767l3.935,3.342L2.644,23.177l4.421-2.795,4.421,2.795L10.2,18.108Z"
-                                      transform="translate(0 -9.569)" fill="#ffdc96"/>
+                                      transform="translate(0 -9.569)" fill="#ffdc96" />
                             </svg>
                             <svg id="Сгруппировать" xmlns="http://www.w3.org/2000/svg" width="14.137"
                                  height="13.608"
                                  viewBox="0 0 14.137 13.608">
                                 <path id="Контур_2" data-name="Контур 2"
                                       d="M14.137,14.767,9,14.429,7.065,9.569l-1.934,4.86L0,14.767l3.935,3.342L2.644,23.177l4.421-2.795,4.421,2.795L10.2,18.108Z"
-                                      transform="translate(0 -9.569)" fill="#ffdc96"/>
+                                      transform="translate(0 -9.569)" fill="#ffdc96" />
                             </svg>
                             <svg id="Сгруппировать" xmlns="http://www.w3.org/2000/svg" width="14.137"
                                  height="13.608"
                                  viewBox="0 0 14.137 13.608">
                                 <path id="Контур_2" data-name="Контур 2"
                                       d="M14.137,14.767,9,14.429,7.065,9.569l-1.934,4.86L0,14.767l3.935,3.342L2.644,23.177l4.421-2.795,4.421,2.795L10.2,18.108Z"
-                                      transform="translate(0 -9.569)" fill="#ffdc96"/>
+                                      transform="translate(0 -9.569)" fill="#ffdc96" />
                             </svg>
                         </div>
                         <span class='data'>26.04.2021 в 18:10</span>
@@ -415,35 +315,135 @@
                                  viewBox="0 0 14.137 13.608">
                                 <path id="Контур_2" data-name="Контур 2"
                                       d="M14.137,14.767,9,14.429,7.065,9.569l-1.934,4.86L0,14.767l3.935,3.342L2.644,23.177l4.421-2.795,4.421,2.795L10.2,18.108Z"
-                                      transform="translate(0 -9.569)" fill="#ffdc96"/>
+                                      transform="translate(0 -9.569)" fill="#ffdc96" />
                             </svg>
                             <svg id="Сгруппировать" xmlns="http://www.w3.org/2000/svg" width="14.137"
                                  height="13.608"
                                  viewBox="0 0 14.137 13.608">
                                 <path id="Контур_2" data-name="Контур 2"
                                       d="M14.137,14.767,9,14.429,7.065,9.569l-1.934,4.86L0,14.767l3.935,3.342L2.644,23.177l4.421-2.795,4.421,2.795L10.2,18.108Z"
-                                      transform="translate(0 -9.569)" fill="#ffdc96"/>
+                                      transform="translate(0 -9.569)" fill="#ffdc96" />
                             </svg>
                             <svg id="Сгруппировать" xmlns="http://www.w3.org/2000/svg" width="14.137"
                                  height="13.608"
                                  viewBox="0 0 14.137 13.608">
                                 <path id="Контур_2" data-name="Контур 2"
                                       d="M14.137,14.767,9,14.429,7.065,9.569l-1.934,4.86L0,14.767l3.935,3.342L2.644,23.177l4.421-2.795,4.421,2.795L10.2,18.108Z"
-                                      transform="translate(0 -9.569)" fill="#ffdc96"/>
+                                      transform="translate(0 -9.569)" fill="#ffdc96" />
                             </svg>
                             <svg id="Сгруппировать" xmlns="http://www.w3.org/2000/svg" width="14.137"
                                  height="13.608"
                                  viewBox="0 0 14.137 13.608">
                                 <path id="Контур_2" data-name="Контур 2"
                                       d="M14.137,14.767,9,14.429,7.065,9.569l-1.934,4.86L0,14.767l3.935,3.342L2.644,23.177l4.421-2.795,4.421,2.795L10.2,18.108Z"
-                                      transform="translate(0 -9.569)" fill="#ffdc96"/>
+                                      transform="translate(0 -9.569)" fill="#ffdc96" />
                             </svg>
                             <svg id="Сгруппировать" xmlns="http://www.w3.org/2000/svg" width="14.137"
                                  height="13.608"
                                  viewBox="0 0 14.137 13.608">
                                 <path id="Контур_2" data-name="Контур 2"
                                       d="M14.137,14.767,9,14.429,7.065,9.569l-1.934,4.86L0,14.767l3.935,3.342L2.644,23.177l4.421-2.795,4.421,2.795L10.2,18.108Z"
-                                      transform="translate(0 -9.569)" fill="#ffdc96"/>
+                                      transform="translate(0 -9.569)" fill="#ffdc96" />
+                            </svg>
+                        </div>
+                        <span class='data'>26.04.2021 в 18:10</span>
+                    </div>
+                    <div class='item-description'>
+                        <p>
+                            Мы искали относительно недорогой, но качественный кондиционер и нашли подходящий здесь.
+                            Модель Грии, бесшумная и в режиме сна, он не мешает. Есть режим турбо, с помощью которого,
+                            можно быстро достичь нужной температуры. Рекомендую!
+                        </p>
+                    </div>
+                </div>
+                <div class='reviews-item'>
+                    <div class='item-title'>
+                        <h5>Тюльпан Федотов</h5>
+                        <div class='rating'>
+                            <svg id="Сгруппировать" xmlns="http://www.w3.org/2000/svg" width="14.137"
+                                 height="13.608"
+                                 viewBox="0 0 14.137 13.608">
+                                <path id="Контур_2" data-name="Контур 2"
+                                      d="M14.137,14.767,9,14.429,7.065,9.569l-1.934,4.86L0,14.767l3.935,3.342L2.644,23.177l4.421-2.795,4.421,2.795L10.2,18.108Z"
+                                      transform="translate(0 -9.569)" fill="#ffdc96" />
+                            </svg>
+                            <svg id="Сгруппировать" xmlns="http://www.w3.org/2000/svg" width="14.137"
+                                 height="13.608"
+                                 viewBox="0 0 14.137 13.608">
+                                <path id="Контур_2" data-name="Контур 2"
+                                      d="M14.137,14.767,9,14.429,7.065,9.569l-1.934,4.86L0,14.767l3.935,3.342L2.644,23.177l4.421-2.795,4.421,2.795L10.2,18.108Z"
+                                      transform="translate(0 -9.569)" fill="#ffdc96" />
+                            </svg>
+                            <svg id="Сгруппировать" xmlns="http://www.w3.org/2000/svg" width="14.137"
+                                 height="13.608"
+                                 viewBox="0 0 14.137 13.608">
+                                <path id="Контур_2" data-name="Контур 2"
+                                      d="M14.137,14.767,9,14.429,7.065,9.569l-1.934,4.86L0,14.767l3.935,3.342L2.644,23.177l4.421-2.795,4.421,2.795L10.2,18.108Z"
+                                      transform="translate(0 -9.569)" fill="#ffdc96" />
+                            </svg>
+                            <svg id="Сгруппировать" xmlns="http://www.w3.org/2000/svg" width="14.137"
+                                 height="13.608"
+                                 viewBox="0 0 14.137 13.608">
+                                <path id="Контур_2" data-name="Контур 2"
+                                      d="M14.137,14.767,9,14.429,7.065,9.569l-1.934,4.86L0,14.767l3.935,3.342L2.644,23.177l4.421-2.795,4.421,2.795L10.2,18.108Z"
+                                      transform="translate(0 -9.569)" fill="#ffdc96" />
+                            </svg>
+                            <svg id="Сгруппировать" xmlns="http://www.w3.org/2000/svg" width="14.137"
+                                 height="13.608"
+                                 viewBox="0 0 14.137 13.608">
+                                <path id="Контур_2" data-name="Контур 2"
+                                      d="M14.137,14.767,9,14.429,7.065,9.569l-1.934,4.86L0,14.767l3.935,3.342L2.644,23.177l4.421-2.795,4.421,2.795L10.2,18.108Z"
+                                      transform="translate(0 -9.569)" fill="#ffdc96" />
+                            </svg>
+                        </div>
+                        <span class='data'>26.04.2021 в 18:10</span>
+                    </div>
+                    <div class='item-description'>
+                        <p>
+                            Мы искали относительно недорогой, но качественный кондиционер и нашли подходящий здесь.
+                            Модель Грии, бесшумная и в режиме сна, он не мешает. Есть режим турбо, с помощью которого,
+                            можно быстро достичь нужной температуры. Рекомендую!
+                        </p>
+                    </div>
+                </div>
+                <div class='reviews-item'>
+                    <div class='item-title'>
+                        <h5>Тюльпан Федотов</h5>
+                        <div class='rating'>
+                            <svg id="Сгруппировать" xmlns="http://www.w3.org/2000/svg" width="14.137"
+                                 height="13.608"
+                                 viewBox="0 0 14.137 13.608">
+                                <path id="Контур_2" data-name="Контур 2"
+                                      d="M14.137,14.767,9,14.429,7.065,9.569l-1.934,4.86L0,14.767l3.935,3.342L2.644,23.177l4.421-2.795,4.421,2.795L10.2,18.108Z"
+                                      transform="translate(0 -9.569)" fill="#ffdc96" />
+                            </svg>
+                            <svg id="Сгруппировать" xmlns="http://www.w3.org/2000/svg" width="14.137"
+                                 height="13.608"
+                                 viewBox="0 0 14.137 13.608">
+                                <path id="Контур_2" data-name="Контур 2"
+                                      d="M14.137,14.767,9,14.429,7.065,9.569l-1.934,4.86L0,14.767l3.935,3.342L2.644,23.177l4.421-2.795,4.421,2.795L10.2,18.108Z"
+                                      transform="translate(0 -9.569)" fill="#ffdc96" />
+                            </svg>
+                            <svg id="Сгруппировать" xmlns="http://www.w3.org/2000/svg" width="14.137"
+                                 height="13.608"
+                                 viewBox="0 0 14.137 13.608">
+                                <path id="Контур_2" data-name="Контур 2"
+                                      d="M14.137,14.767,9,14.429,7.065,9.569l-1.934,4.86L0,14.767l3.935,3.342L2.644,23.177l4.421-2.795,4.421,2.795L10.2,18.108Z"
+                                      transform="translate(0 -9.569)" fill="#ffdc96" />
+                            </svg>
+                            <svg id="Сгруппировать" xmlns="http://www.w3.org/2000/svg" width="14.137"
+                                 height="13.608"
+                                 viewBox="0 0 14.137 13.608">
+                                <path id="Контур_2" data-name="Контур 2"
+                                      d="M14.137,14.767,9,14.429,7.065,9.569l-1.934,4.86L0,14.767l3.935,3.342L2.644,23.177l4.421-2.795,4.421,2.795L10.2,18.108Z"
+                                      transform="translate(0 -9.569)" fill="#ffdc96" />
+                            </svg>
+                            <svg id="Сгруппировать" xmlns="http://www.w3.org/2000/svg" width="14.137"
+                                 height="13.608"
+                                 viewBox="0 0 14.137 13.608">
+                                <path id="Контур_2" data-name="Контур 2"
+                                      d="M14.137,14.767,9,14.429,7.065,9.569l-1.934,4.86L0,14.767l3.935,3.342L2.644,23.177l4.421-2.795,4.421,2.795L10.2,18.108Z"
+                                      transform="translate(0 -9.569)" fill="#ffdc96" />
                             </svg>
                         </div>
                         <span class='data'>26.04.2021 в 18:10</span>
@@ -492,35 +492,35 @@
                                          viewBox="0 0 14.137 13.608">
                                         <path id="Контур_2" data-name="Контур 2"
                                               d="M14.137,14.767,9,14.429,7.065,9.569l-1.934,4.86L0,14.767l3.935,3.342L2.644,23.177l4.421-2.795,4.421,2.795L10.2,18.108Z"
-                                              transform="translate(0 -9.569)" fill="#ffdc96"/>
+                                              transform="translate(0 -9.569)" fill="#ffdc96" />
                                     </svg>
                                     <svg id="Сгруппировать" xmlns="http://www.w3.org/2000/svg" width="14.137"
                                          height="13.608"
                                          viewBox="0 0 14.137 13.608">
                                         <path id="Контур_2" data-name="Контур 2"
                                               d="M14.137,14.767,9,14.429,7.065,9.569l-1.934,4.86L0,14.767l3.935,3.342L2.644,23.177l4.421-2.795,4.421,2.795L10.2,18.108Z"
-                                              transform="translate(0 -9.569)" fill="#ffdc96"/>
+                                              transform="translate(0 -9.569)" fill="#ffdc96" />
                                     </svg>
                                     <svg id="Сгруппировать" xmlns="http://www.w3.org/2000/svg" width="14.137"
                                          height="13.608"
                                          viewBox="0 0 14.137 13.608">
                                         <path id="Контур_2" data-name="Контур 2"
                                               d="M14.137,14.767,9,14.429,7.065,9.569l-1.934,4.86L0,14.767l3.935,3.342L2.644,23.177l4.421-2.795,4.421,2.795L10.2,18.108Z"
-                                              transform="translate(0 -9.569)" fill="#ffdc96"/>
+                                              transform="translate(0 -9.569)" fill="#ffdc96" />
                                     </svg>
                                     <svg id="Сгруппировать" xmlns="http://www.w3.org/2000/svg" width="14.137"
                                          height="13.608"
                                          viewBox="0 0 14.137 13.608">
                                         <path id="Контур_2" data-name="Контур 2"
                                               d="M14.137,14.767,9,14.429,7.065,9.569l-1.934,4.86L0,14.767l3.935,3.342L2.644,23.177l4.421-2.795,4.421,2.795L10.2,18.108Z"
-                                              transform="translate(0 -9.569)" fill="#ffdc96"/>
+                                              transform="translate(0 -9.569)" fill="#ffdc96" />
                                     </svg>
                                     <svg id="Сгруппировать" xmlns="http://www.w3.org/2000/svg" width="14.137"
                                          height="13.608"
                                          viewBox="0 0 14.137 13.608">
                                         <path id="Контур_2" data-name="Контур 2"
                                               d="M14.137,14.767,9,14.429,7.065,9.569l-1.934,4.86L0,14.767l3.935,3.342L2.644,23.177l4.421-2.795,4.421,2.795L10.2,18.108Z"
-                                              transform="translate(0 -9.569)" fill="#ffdc96"/>
+                                              transform="translate(0 -9.569)" fill="#ffdc96" />
                                     </svg>
                                 </div>
                             </div>

@@ -12,7 +12,7 @@
                 <div class='basket-item'>
                     <div class='item-close'></div>
                     <div class='item-image'>
-                        <img src='<?php echo get_template_directory_uri() ?>/assets/images/product-item.png' alt='Кондиционер'>
+                        <img src='<?php echo get_template_directory_uri() ?>/assets/images/product-gallery-1.jpg' alt='Кондиционер'>
                     </div>
                     <div class='item-description'>
                         <h5>C&H CH-S07GKP8</h5>
@@ -29,7 +29,7 @@
                 <div class='basket-item'>
                     <div class='item-close'></div>
                     <div class='item-image'>
-                        <img src='<?php echo get_template_directory_uri() ?>/assets/images/product-item.png' alt='Кондиционер'>
+                        <img src='<?php echo get_template_directory_uri() ?>/assets/images/product-gallery-2.jpg' alt='Кондиционер'>
                     </div>
                     <div class='item-description'>
                         <h5>C&H CH-S07GKP8</h5>
@@ -46,7 +46,7 @@
                 <div class='basket-item'>
                     <div class='item-close'></div>
                     <div class='item-image'>
-                        <img src='<?php echo get_template_directory_uri() ?>/assets/images/product-item.png' alt='Кондиционер'>
+                        <img src='<?php echo get_template_directory_uri() ?>/assets/images/product-gallery-3.jpg' alt='Кондиционер'>
                     </div>
                     <div class='item-description'>
                         <h5>C&H CH-S07GKP8</h5>
@@ -156,14 +156,14 @@
                 <div class='comparison-product'>
                     <div class='product-item'>
                         <div class='item-image'>
-                            <img src='<?php echo get_template_directory_uri() ?>/assets/images/product-item.png' alt='Кондиционер'>
+                            <img src='<?php echo get_template_directory_uri() ?>/assets/images/product-gallery-4.jpg' alt='Кондиционер'>
                         </div>
                         <div class='item-description'>
                             <h3>C&H CH-S07GKP8</h3>
-                            <p>
-                                8 760 UAH
-                                <span>Есть в наличии</span>
-                            </p>
+                            <div class='description-info'>
+                                <span class='price'>8 760 UAH</span>
+                                <p class='available'>Есть в наличии</p>
+                            </div>
                             <a href='#' class='btn'>В Корзину</a>
                         </div>
                     </div>
@@ -223,14 +223,14 @@
                 <div class='comparison-product'>
                     <div class='product-item'>
                         <div class='item-image'>
-                            <img src='<?php echo get_template_directory_uri() ?>/assets/images/product-item.png' alt='Кондиционер'>
+                            <img src='<?php echo get_template_directory_uri() ?>/assets/images/product-gallery-5.jpg' alt='Кондиционер'>
                         </div>
                         <div class='item-description'>
                             <h3>C&H CH-S07GKP8</h3>
-                            <p>
-                                8 760 UAH
-                                <span>Есть в наличии</span>
-                            </p>
+                            <div class='description-info'>
+                                <span class='price'>8 760 UAH</span>
+                                <p class='available'>Есть в наличии</p>
+                            </div>
                             <a href='#' class='btn'>В Корзину</a>
                         </div>
                     </div>

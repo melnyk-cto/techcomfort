@@ -12,7 +12,8 @@
                 <div class='basket-item'>
                     <div class='item-close'></div>
                     <div class='item-image'>
-                        <img src='<?php echo get_template_directory_uri() ?>/assets/images/product-item.png' alt='Кондиционер'>
+                        <img src='<?php echo get_template_directory_uri() ?>/assets/images/product-gallery-1.jpg'
+                             alt='Кондиционер'>
                     </div>
                     <div class='item-description'>
                         <h5>C&H CH-S07GKP8</h5>
@@ -29,7 +30,8 @@
                 <div class='basket-item'>
                     <div class='item-close'></div>
                     <div class='item-image'>
-                        <img src='<?php echo get_template_directory_uri() ?>/assets/images/product-item.png' alt='Кондиционер'>
+                        <img src='<?php echo get_template_directory_uri() ?>/assets/images/product-gallery-4.jpg'
+                             alt='Кондиционер'>
                     </div>
                     <div class='item-description'>
                         <h5>C&H CH-S07GKP8</h5>
@@ -46,7 +48,8 @@
                 <div class='basket-item'>
                     <div class='item-close'></div>
                     <div class='item-image'>
-                        <img src='<?php echo get_template_directory_uri() ?>/assets/images/product-item.png' alt='Кондиционер'>
+                        <img src='<?php echo get_template_directory_uri() ?>/assets/images/product-gallery-8.jpg'
+                             alt='Кондиционер'>
                     </div>
                     <div class='item-description'>
                         <h5>C&H CH-S07GKP8</h5>
@@ -169,10 +172,14 @@
                         </ul>
                         <span class='more'>Подробнее</span>
                     </div>
-                    <div class='item-image'><img src='<?php echo get_template_directory_uri() ?>/assets/images/blog-image.jpg' alt='Кондиционер'></div>
+                    <div class='item-image'><img
+                                src='<?php echo get_template_directory_uri() ?>/assets/images/product-gallery-8.jpg'
+                                alt='Кондиционер'></div>
                 </div>
                 <div class='blog-item'>
-                    <div class='item-image'><img src='<?php echo get_template_directory_uri() ?>/assets/images/blog-image.jpg' alt='Кондиционер'></div>
+                    <div class='item-image'><img
+                                src='<?php echo get_template_directory_uri() ?>/assets/images/product-gallery-13.jpg'
+                                alt='Кондиционер'></div>
                     <div class='item-description'>
                         <h2>Как подобрать кондиционер</h2>
                         <p>
@@ -209,7 +216,9 @@
                         </ul>
                         <span class='more'>Подробнее</span>
                     </div>
-                    <div class='item-image'><img src='<?php echo get_template_directory_uri() ?>/assets/images/blog-image.jpg' alt='Кондиционер'></div>
+                    <div class='item-image'><img
+                                src='<?php echo get_template_directory_uri() ?>/assets/images/product-gallery-18.jpg'
+                                alt='Кондиционер'></div>
                 </div>
             </div>
         </div>

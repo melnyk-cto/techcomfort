@@ -12,7 +12,8 @@
                 <div class='basket-item'>
                     <div class='item-close'></div>
                     <div class='item-image'>
-                        <img src='<?php echo get_template_directory_uri() ?>/assets/images/product-item.png' alt='Кондиционер'>
+                        <img src='<?php echo get_template_directory_uri() ?>/assets/images/product-gallery-1.jpg'
+                             alt='Кондиционер'>
                     </div>
                     <div class='item-description'>
                         <h5>C&H CH-S07GKP8</h5>
@@ -29,7 +30,8 @@
                 <div class='basket-item'>
                     <div class='item-close'></div>
                     <div class='item-image'>
-                        <img src='<?php echo get_template_directory_uri() ?>/assets/images/product-item.png' alt='Кондиционер'>
+                        <img src='<?php echo get_template_directory_uri() ?>/assets/images/product-gallery-2.jpg'
+                             alt='Кондиционер'>
                     </div>
                     <div class='item-description'>
                         <h5>C&H CH-S07GKP8</h5>
@@ -46,7 +48,8 @@
                 <div class='basket-item'>
                     <div class='item-close'></div>
                     <div class='item-image'>
-                        <img src='<?php echo get_template_directory_uri() ?>/assets/images/product-item.png' alt='Кондиционер'>
+                        <img src='<?php echo get_template_directory_uri() ?>/assets/images/product-gallery-3.jpg'
+                             alt='Кондиционер'>
                     </div>
                     <div class='item-description'>
                         <h5>C&H CH-S07GKP8</h5>
@@ -249,7 +252,8 @@
                         </div>
                         <div class='item-inner'>
                             <div class='item-image'>
-                                <img src='<?php echo get_template_directory_uri() ?>/assets/images/product-item.png' alt='Кондиционер'>
+                                <img src='<?php echo get_template_directory_uri() ?>/assets/images/product-gallery-4.jpg'
+                                     alt='Кондиционер'>
                             </div>
                             <div class='item-description'>
                                 <div class='description-title'>

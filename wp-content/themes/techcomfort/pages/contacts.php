@@ -12,7 +12,8 @@
                 <div class='basket-item'>
                     <div class='item-close'></div>
                     <div class='item-image'>
-                        <img src='<?php echo get_template_directory_uri() ?>/assets/images/product-item.png' alt='Кондиционер'>
+                        <img src='<?php echo get_template_directory_uri() ?>/assets/images/product-gallery-1.jpg'
+                             alt='Кондиционер'>
                     </div>
                     <div class='item-description'>
                         <h5>C&H CH-S07GKP8</h5>
@@ -29,7 +30,8 @@
                 <div class='basket-item'>
                     <div class='item-close'></div>
                     <div class='item-image'>
-                        <img src='<?php echo get_template_directory_uri() ?>/assets/images/product-item.png' alt=Кондиционер''>
+                        <img src='<?php echo get_template_directory_uri() ?>/assets/images/product-gallery-2.jpg'
+                             alt=Кондиционер''>
                     </div>
                     <div class='item-description'>
                         <h5>C&H CH-S07GKP8</h5>
@@ -46,7 +48,8 @@
                 <div class='basket-item'>
                     <div class='item-close'></div>
                     <div class='item-image'>
-                        <img src='<?php echo get_template_directory_uri() ?>/assets/images/product-item.png' alt='Кондиционер'>
+                        <img src='<?php echo get_template_directory_uri() ?>/assets/images/product-gallery-3.jpg'
+                             alt='Кондиционер'>
                     </div>
                     <div class='item-description'>
                         <h5>C&H CH-S07GKP8</h5>
@@ -243,13 +246,16 @@
                     <div class='socials'>
                         <div class='socials-images'>
                             <a href='#' class='socials-image'>
-                                <img src='<?php echo get_template_directory_uri() ?>/assets/images/icons/viber.svg' alt='Viber'>
+                                <img src='<?php echo get_template_directory_uri() ?>/assets/images/icons/viber.svg'
+                                     alt='Viber'>
                             </a>
                             <a href='#' class='socials-image'>
-                                <img src='<?php echo get_template_directory_uri() ?>/assets/images/icons/whatsapp.svg' alt='WhatsApp'>
+                                <img src='<?php echo get_template_directory_uri() ?>/assets/images/icons/whatsapp.svg'
+                                     alt='WhatsApp'>
                             </a>
                             <a href='#' class='socials-image'>
-                                <img src='<?php echo get_template_directory_uri() ?>/assets/images/icons/telegram.svg' alt='Telegram'>
+                                <img src='<?php echo get_template_directory_uri() ?>/assets/images/icons/telegram.svg'
+                                     alt='Telegram'>
                             </a>
                         </div>
                     </div>

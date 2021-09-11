@@ -1,7 +1,7 @@
 <?php /* Template Name: Page - Product */ ?>
 <?php get_header(); ?>
 <?php
-    wp_enqueue_script('product-page-js', get_stylesheet_directory_uri() . '/assets/js/product-page.js');
+wp_enqueue_script('product-page-js', get_stylesheet_directory_uri() . '/assets/js/product-page.js');
 ?>
 <main class='product-page'>
     <div class='popup basket'>
@@ -15,7 +15,8 @@
                 <div class='basket-item'>
                     <div class='item-close'></div>
                     <div class='item-image'>
-                        <img src='<?php echo get_template_directory_uri() ?>/assets/images/product-item.png' alt='Кондиционер'>
+                        <img src='<?php echo get_template_directory_uri() ?>/assets/images/product-gallery-1.jpg'
+                             alt='Кондиционер'>
                     </div>
                     <div class='item-description'>
                         <h5>C&H CH-S07GKP8</h5>
@@ -32,7 +33,8 @@
                 <div class='basket-item'>
                     <div class='item-close'></div>
                     <div class='item-image'>
-                        <img src='<?php echo get_template_directory_uri() ?>/assets/images/product-item.png' alt='Кондиционер'>
+                        <img src='<?php echo get_template_directory_uri() ?>/assets/images/product-gallery-2.jpg'
+                             alt='Кондиционер'>
                     </div>
                     <div class='item-description'>
                         <h5>C&H CH-S07GKP8</h5>
@@ -49,7 +51,8 @@
                 <div class='basket-item'>
                     <div class='item-close'></div>
                     <div class='item-image'>
-                        <img src='<?php echo get_template_directory_uri() ?>/assets/images/product-item.png' alt='Кондиционер'>
+                        <img src='<?php echo get_template_directory_uri() ?>/assets/images/product-gallery-3.jpg'
+                             alt='Кондиционер'>
                     </div>
                     <div class='item-description'>
                         <h5>C&H CH-S07GKP8</h5>
@@ -162,27 +165,32 @@
                             <div class='swiper-wrapper'>
                                 <div class='swiper-slide'>
                                     <div class='slider-image'>
-                                        <img src='<?php echo get_template_directory_uri() ?>/assets/images/product-item.png' alt='Кондиционер'>
+                                        <img src='<?php echo get_template_directory_uri() ?>/assets/images/product-gallery-4.jpg'
+                                             alt='Кондиционер'>
                                     </div>
                                 </div>
                                 <div class='swiper-slide'>
                                     <div class='slider-image'>
-                                        <img src='<?php echo get_template_directory_uri() ?>/assets/images/product-item.png' alt='Кондиционер'>
+                                        <img src='<?php echo get_template_directory_uri() ?>/assets/images/product-gallery-5.jpg'
+                                             alt='Кондиционер'>
                                     </div>
                                 </div>
                                 <div class='swiper-slide'>
                                     <div class='slider-image'>
-                                        <img src='<?php echo get_template_directory_uri() ?>/assets/images/product-item.png' alt='Кондиционер'>
+                                        <img src='<?php echo get_template_directory_uri() ?>/assets/images/product-gallery-6.jpg'
+                                             alt='Кондиционер'>
                                     </div>
                                 </div>
                                 <div class='swiper-slide'>
                                     <div class='slider-image'>
-                                        <img src='<?php echo get_template_directory_uri() ?>/assets/images/product-item.png' alt='Кондиционер'>
+                                        <img src='<?php echo get_template_directory_uri() ?>/assets/images/product-gallery-7.jpg'
+                                             alt='Кондиционер'>
                                     </div>
                                 </div>
                                 <div class='swiper-slide'>
                                     <div class='slider-image'>
-                                        <img src='<?php echo get_template_directory_uri() ?>/assets/images/product-item.png' alt='Кондиционер'>
+                                        <img src='<?php echo get_template_directory_uri() ?>/assets/images/product-gallery-8.jpg'
+                                             alt='Кондиционер'>
                                     </div>
                                 </div>
                             </div>
@@ -194,27 +202,32 @@
                             <div class='swiper-wrapper'>
                                 <div class='swiper-slide'>
                                     <div class='slider-image'>
-                                        <img src='<?php echo get_template_directory_uri() ?>/assets/images/product-item.png' alt='Кондиционер'>
+                                        <img src='<?php echo get_template_directory_uri() ?>/assets/images/product-gallery-9.jpg'
+                                             alt='Кондиционер'>
                                     </div>
                                 </div>
                                 <div class='swiper-slide'>
                                     <div class='slider-image'>
-                                        <img src='<?php echo get_template_directory_uri() ?>/assets/images/product-item.png' alt='Кондиционер'>
+                                        <img src='<?php echo get_template_directory_uri() ?>/assets/images/product-gallery-10.jpg'
+                                             alt='Кондиционер'>
                                     </div>
                                 </div>
                                 <div class='swiper-slide'>
                                     <div class='slider-image'>
-                                        <img src='<?php echo get_template_directory_uri() ?>/assets/images/product-item.png' alt='Кондиционер'>
+                                        <img src='<?php echo get_template_directory_uri() ?>/assets/images/product-gallery-11.jpg'
+                                             alt='Кондиционер'>
                                     </div>
                                 </div>
                                 <div class='swiper-slide'>
                                     <div class='slider-image'>
-                                        <img src='<?php echo get_template_directory_uri() ?>/assets/images/product-item.png' alt='Кондиционер'>
+                                        <img src='<?php echo get_template_directory_uri() ?>/assets/images/product-gallery-12.jpg'
+                                             alt='Кондиционер'>
                                     </div>
                                 </div>
                                 <div class='swiper-slide'>
                                     <div class='slider-image'>
-                                        <img src='<?php echo get_template_directory_uri() ?>/assets/images/product-item.png' alt='Кондиционер'>
+                                        <img src='<?php echo get_template_directory_uri() ?>/assets/images/product-gallery-13.jpg'
+                                             alt='Кондиционер'>
                                     </div>
                                 </div>
                             </div>
@@ -410,8 +423,9 @@
                     <div class='swiper-wrapper'>
                         <div class='swiper-slide'>
                             <div class='products-item'>
-                                <a href='<?php echo home_url( '/' ); ?>product-page' class='item-image'>
-                                    <img src='<?php echo get_template_directory_uri() ?>/assets/images/product-item.png' alt='Кондиционер'>
+                                <a href='<?php echo home_url('/'); ?>product-page' class='item-image'>
+                                    <img src='<?php echo get_template_directory_uri() ?>/assets/images/product-gallery-15.jpg'
+                                         alt='Кондиционер'>
                                 </a>
                                 <div class='item-description'>
                                     <div class='rating'>
@@ -456,18 +470,26 @@
                                                   transform="translate(0 -9.569)" fill="#ffdc96" />
                                         </svg>
                                     </div>
-                                    <a href='<?php echo home_url( '/' ); ?>product-page'>
+                                    <a href='<?php echo home_url('/'); ?>product-page'>
                                         C&H CH-S07GKP8
-                                        <svg class='favorites' xmlns="http://www.w3.org/2000/svg"
-                                             width="27"
-                                             height="24.07" viewBox="0 0 27 24.07">
-                                            <g id="Сгруппировать_2766" data-name="Сгруппировать 2766"
-                                               transform="translate(1 -0.465)">
-                                                <path id="Контур_714" data-name="Контур 714"
-                                                      d="M18.359,1.465a5.919,5.919,0,0,0-3.7,1.278,8.421,8.421,0,0,0-2.163,2.6,8.42,8.42,0,0,0-2.163-2.6,5.919,5.919,0,0,0-3.7-1.278C2.855,1.465,0,4.561,0,8.668,0,13.1,3.562,16.139,8.954,20.734c.916.78,1.953,1.665,3.032,2.608a.782.782,0,0,0,1.029,0c1.079-.943,2.117-1.828,3.033-2.609C21.438,16.139,25,13.1,25,8.668,25,4.561,22.145,1.465,18.359,1.465Z"
-                                                      fill="none" stroke="#6b92b0" stroke-width="2" />
-                                            </g>
-                                        </svg>
+                                        <div class='description-icons'>
+                                            <svg class='favorites' xmlns="http://www.w3.org/2000/svg" width="27"
+                                                 height="24.07"
+                                                 viewBox="0 0 27 24.07">
+                                                <g id="Сгруппировать_2766" data-name="Сгруппировать 2766"
+                                                   transform="translate(1 -0.465)">
+                                                    <path id="Контур_714" data-name="Контур 714"
+                                                          d="M18.359,1.465a5.919,5.919,0,0,0-3.7,1.278,8.421,8.421,0,0,0-2.163,2.6,8.42,8.42,0,0,0-2.163-2.6,5.919,5.919,0,0,0-3.7-1.278C2.855,1.465,0,4.561,0,8.668,0,13.1,3.562,16.139,8.954,20.734c.916.78,1.953,1.665,3.032,2.608a.782.782,0,0,0,1.029,0c1.079-.943,2.117-1.828,3.033-2.609C21.438,16.139,25,13.1,25,8.668,25,4.561,22.145,1.465,18.359,1.465Z"
+                                                          fill="none" stroke="#6b92b0" stroke-width="2" />
+                                                </g>
+                                            </svg>
+                                            <svg class='share' enable-background="new 0 0 512 512" version="1.1"
+                                                 viewBox="0 0 512 512"
+                                                 xml:space="preserve" xmlns="http://www.w3.org/2000/svg">
+                                                <path fill='#B2C5D4'
+                                                      d="m406 332c-29.636 0-55.969 14.402-72.378 36.571l-141.27-72.195c2.37-8.052 3.648-16.567 3.648-25.376 0-11.931-2.339-23.324-6.574-33.753l148.06-88.958c16.52 19.39 41.104 31.711 68.514 31.711 49.626 0 90-40.374 90-90s-40.374-90-90-90-90 40.374-90 90c0 11.47 2.161 22.443 6.09 32.54l-148.43 89.18c-16.508-18.818-40.719-30.72-67.66-30.72-49.626 0-90 40.374-90 90s40.374 90 90 90c30.122 0 56.832-14.876 73.177-37.666l140.86 71.985c-2.623 8.434-4.037 17.395-4.037 26.681 0 49.626 40.374 90 90 90s90-40.374 90-90-40.374-90-90-90zm0-302c33.084 0 60 26.916 60 60s-26.916 60-60 60-60-26.916-60-60 26.916-60 60-60zm-300 301c-33.084 0-60-26.916-60-60s26.916-60 60-60 60 26.916 60 60-26.916 60-60 60zm300 151c-33.084 0-60-26.916-60-60s26.916-60 60-60 60 26.916 60 60-26.916 60-60 60z" />
+                                            </svg>
+                                        </div>
                                     </a>
                                     <span class='price'>8 760 UAH</span>
                                     <div class='description-buttons'>
@@ -479,8 +501,9 @@
                         </div>
                         <div class='swiper-slide'>
                             <div class='products-item'>
-                                <a href='<?php echo home_url( '/' ); ?>product-page' class='item-image'>
-                                    <img src='<?php echo get_template_directory_uri() ?>/assets/images/product-item.png' alt='Кондиционер'>
+                                <a href='<?php echo home_url('/'); ?>product-page' class='item-image'>
+                                    <img src='<?php echo get_template_directory_uri() ?>/assets/images/product-gallery-16.jpg'
+                                         alt='Кондиционер'>
                                 </a>
                                 <div class='item-description'>
                                     <div class='rating'>
@@ -525,18 +548,26 @@
                                                   transform="translate(0 -9.569)" fill="#ffdc96" />
                                         </svg>
                                     </div>
-                                    <a href='<?php echo home_url( '/' ); ?>product-page'>
+                                    <a href='<?php echo home_url('/'); ?>product-page'>
                                         C&H CH-S07GKP8
-                                        <svg class='favorites' xmlns="http://www.w3.org/2000/svg"
-                                             width="27"
-                                             height="24.07" viewBox="0 0 27 24.07">
-                                            <g id="Сгруппировать_2766" data-name="Сгруппировать 2766"
-                                               transform="translate(1 -0.465)">
-                                                <path id="Контур_714" data-name="Контур 714"
-                                                      d="M18.359,1.465a5.919,5.919,0,0,0-3.7,1.278,8.421,8.421,0,0,0-2.163,2.6,8.42,8.42,0,0,0-2.163-2.6,5.919,5.919,0,0,0-3.7-1.278C2.855,1.465,0,4.561,0,8.668,0,13.1,3.562,16.139,8.954,20.734c.916.78,1.953,1.665,3.032,2.608a.782.782,0,0,0,1.029,0c1.079-.943,2.117-1.828,3.033-2.609C21.438,16.139,25,13.1,25,8.668,25,4.561,22.145,1.465,18.359,1.465Z"
-                                                      fill="none" stroke="#6b92b0" stroke-width="2" />
-                                            </g>
-                                        </svg>
+                                        <div class='description-icons'>
+                                            <svg class='favorites' xmlns="http://www.w3.org/2000/svg" width="27"
+                                                 height="24.07"
+                                                 viewBox="0 0 27 24.07">
+                                                <g id="Сгруппировать_2766" data-name="Сгруппировать 2766"
+                                                   transform="translate(1 -0.465)">
+                                                    <path id="Контур_714" data-name="Контур 714"
+                                                          d="M18.359,1.465a5.919,5.919,0,0,0-3.7,1.278,8.421,8.421,0,0,0-2.163,2.6,8.42,8.42,0,0,0-2.163-2.6,5.919,5.919,0,0,0-3.7-1.278C2.855,1.465,0,4.561,0,8.668,0,13.1,3.562,16.139,8.954,20.734c.916.78,1.953,1.665,3.032,2.608a.782.782,0,0,0,1.029,0c1.079-.943,2.117-1.828,3.033-2.609C21.438,16.139,25,13.1,25,8.668,25,4.561,22.145,1.465,18.359,1.465Z"
+                                                          fill="none" stroke="#6b92b0" stroke-width="2" />
+                                                </g>
+                                            </svg>
+                                            <svg class='share' enable-background="new 0 0 512 512" version="1.1"
+                                                 viewBox="0 0 512 512"
+                                                 xml:space="preserve" xmlns="http://www.w3.org/2000/svg">
+                                                <path fill='#B2C5D4'
+                                                      d="m406 332c-29.636 0-55.969 14.402-72.378 36.571l-141.27-72.195c2.37-8.052 3.648-16.567 3.648-25.376 0-11.931-2.339-23.324-6.574-33.753l148.06-88.958c16.52 19.39 41.104 31.711 68.514 31.711 49.626 0 90-40.374 90-90s-40.374-90-90-90-90 40.374-90 90c0 11.47 2.161 22.443 6.09 32.54l-148.43 89.18c-16.508-18.818-40.719-30.72-67.66-30.72-49.626 0-90 40.374-90 90s40.374 90 90 90c30.122 0 56.832-14.876 73.177-37.666l140.86 71.985c-2.623 8.434-4.037 17.395-4.037 26.681 0 49.626 40.374 90 90 90s90-40.374 90-90-40.374-90-90-90zm0-302c33.084 0 60 26.916 60 60s-26.916 60-60 60-60-26.916-60-60 26.916-60 60-60zm-300 301c-33.084 0-60-26.916-60-60s26.916-60 60-60 60 26.916 60 60-26.916 60-60 60zm300 151c-33.084 0-60-26.916-60-60s26.916-60 60-60 60 26.916 60 60-26.916 60-60 60z" />
+                                            </svg>
+                                        </div>
                                     </a>
                                     <span class='price'>8 760 UAH</span>
                                     <div class='description-buttons'>
@@ -548,8 +579,9 @@
                         </div>
                         <div class='swiper-slide'>
                             <div class='products-item'>
-                                <a href='<?php echo home_url( '/' ); ?>product-page' class='item-image'>
-                                    <img src='<?php echo get_template_directory_uri() ?>/assets/images/product-item.png' alt='Кондиционер'>
+                                <a href='<?php echo home_url('/'); ?>product-page' class='item-image'>
+                                    <img src='<?php echo get_template_directory_uri() ?>/assets/images/product-gallery-18.jpg'
+                                         alt='Кондиционер'>
                                 </a>
                                 <div class='item-description'>
                                     <div class='rating'>
@@ -594,18 +626,26 @@
                                                   transform="translate(0 -9.569)" fill="#ffdc96" />
                                         </svg>
                                     </div>
-                                    <a href='<?php echo home_url( '/' ); ?>product-page'>
+                                    <a href='<?php echo home_url('/'); ?>product-page'>
                                         C&H CH-S07GKP8
-                                        <svg class='favorites' xmlns="http://www.w3.org/2000/svg"
-                                             width="27"
-                                             height="24.07" viewBox="0 0 27 24.07">
-                                            <g id="Сгруппировать_2766" data-name="Сгруппировать 2766"
-                                               transform="translate(1 -0.465)">
-                                                <path id="Контур_714" data-name="Контур 714"
-                                                      d="M18.359,1.465a5.919,5.919,0,0,0-3.7,1.278,8.421,8.421,0,0,0-2.163,2.6,8.42,8.42,0,0,0-2.163-2.6,5.919,5.919,0,0,0-3.7-1.278C2.855,1.465,0,4.561,0,8.668,0,13.1,3.562,16.139,8.954,20.734c.916.78,1.953,1.665,3.032,2.608a.782.782,0,0,0,1.029,0c1.079-.943,2.117-1.828,3.033-2.609C21.438,16.139,25,13.1,25,8.668,25,4.561,22.145,1.465,18.359,1.465Z"
-                                                      fill="none" stroke="#6b92b0" stroke-width="2" />
-                                            </g>
-                                        </svg>
+                                        <div class='description-icons'>
+                                            <svg class='favorites' xmlns="http://www.w3.org/2000/svg" width="27"
+                                                 height="24.07"
+                                                 viewBox="0 0 27 24.07">
+                                                <g id="Сгруппировать_2766" data-name="Сгруппировать 2766"
+                                                   transform="translate(1 -0.465)">
+                                                    <path id="Контур_714" data-name="Контур 714"
+                                                          d="M18.359,1.465a5.919,5.919,0,0,0-3.7,1.278,8.421,8.421,0,0,0-2.163,2.6,8.42,8.42,0,0,0-2.163-2.6,5.919,5.919,0,0,0-3.7-1.278C2.855,1.465,0,4.561,0,8.668,0,13.1,3.562,16.139,8.954,20.734c.916.78,1.953,1.665,3.032,2.608a.782.782,0,0,0,1.029,0c1.079-.943,2.117-1.828,3.033-2.609C21.438,16.139,25,13.1,25,8.668,25,4.561,22.145,1.465,18.359,1.465Z"
+                                                          fill="none" stroke="#6b92b0" stroke-width="2" />
+                                                </g>
+                                            </svg>
+                                            <svg class='share' enable-background="new 0 0 512 512" version="1.1"
+                                                 viewBox="0 0 512 512"
+                                                 xml:space="preserve" xmlns="http://www.w3.org/2000/svg">
+                                                <path fill='#B2C5D4'
+                                                      d="m406 332c-29.636 0-55.969 14.402-72.378 36.571l-141.27-72.195c2.37-8.052 3.648-16.567 3.648-25.376 0-11.931-2.339-23.324-6.574-33.753l148.06-88.958c16.52 19.39 41.104 31.711 68.514 31.711 49.626 0 90-40.374 90-90s-40.374-90-90-90-90 40.374-90 90c0 11.47 2.161 22.443 6.09 32.54l-148.43 89.18c-16.508-18.818-40.719-30.72-67.66-30.72-49.626 0-90 40.374-90 90s40.374 90 90 90c30.122 0 56.832-14.876 73.177-37.666l140.86 71.985c-2.623 8.434-4.037 17.395-4.037 26.681 0 49.626 40.374 90 90 90s90-40.374 90-90-40.374-90-90-90zm0-302c33.084 0 60 26.916 60 60s-26.916 60-60 60-60-26.916-60-60 26.916-60 60-60zm-300 301c-33.084 0-60-26.916-60-60s26.916-60 60-60 60 26.916 60 60-26.916 60-60 60zm300 151c-33.084 0-60-26.916-60-60s26.916-60 60-60 60 26.916 60 60-26.916 60-60 60z" />
+                                            </svg>
+                                        </div>
                                     </a>
                                     <span class='price'>8 760 UAH</span>
                                     <div class='description-buttons'>
@@ -617,8 +657,9 @@
                         </div>
                         <div class='swiper-slide'>
                             <div class='products-item'>
-                                <a href='<?php echo home_url( '/' ); ?>product-page' class='item-image'>
-                                    <img src='<?php echo get_template_directory_uri() ?>/assets/images/product-item.png' alt='Кондиционер'>
+                                <a href='<?php echo home_url('/'); ?>product-page' class='item-image'>
+                                    <img src='<?php echo get_template_directory_uri() ?>/assets/images/product-gallery-19.jpg'
+                                         alt='Кондиционер'>
                                 </a>
                                 <div class='item-description'>
                                     <div class='rating'>
@@ -663,18 +704,26 @@
                                                   transform="translate(0 -9.569)" fill="#ffdc96" />
                                         </svg>
                                     </div>
-                                    <a href='<?php echo home_url( '/' ); ?>product-page'>
+                                    <a href='<?php echo home_url('/'); ?>product-page'>
                                         C&H CH-S07GKP8
-                                        <svg class='favorites' xmlns="http://www.w3.org/2000/svg"
-                                             width="27"
-                                             height="24.07" viewBox="0 0 27 24.07">
-                                            <g id="Сгруппировать_2766" data-name="Сгруппировать 2766"
-                                               transform="translate(1 -0.465)">
-                                                <path id="Контур_714" data-name="Контур 714"
-                                                      d="M18.359,1.465a5.919,5.919,0,0,0-3.7,1.278,8.421,8.421,0,0,0-2.163,2.6,8.42,8.42,0,0,0-2.163-2.6,5.919,5.919,0,0,0-3.7-1.278C2.855,1.465,0,4.561,0,8.668,0,13.1,3.562,16.139,8.954,20.734c.916.78,1.953,1.665,3.032,2.608a.782.782,0,0,0,1.029,0c1.079-.943,2.117-1.828,3.033-2.609C21.438,16.139,25,13.1,25,8.668,25,4.561,22.145,1.465,18.359,1.465Z"
-                                                      fill="none" stroke="#6b92b0" stroke-width="2" />
-                                            </g>
-                                        </svg>
+                                        <div class='description-icons'>
+                                            <svg class='favorites' xmlns="http://www.w3.org/2000/svg" width="27"
+                                                 height="24.07"
+                                                 viewBox="0 0 27 24.07">
+                                                <g id="Сгруппировать_2766" data-name="Сгруппировать 2766"
+                                                   transform="translate(1 -0.465)">
+                                                    <path id="Контур_714" data-name="Контур 714"
+                                                          d="M18.359,1.465a5.919,5.919,0,0,0-3.7,1.278,8.421,8.421,0,0,0-2.163,2.6,8.42,8.42,0,0,0-2.163-2.6,5.919,5.919,0,0,0-3.7-1.278C2.855,1.465,0,4.561,0,8.668,0,13.1,3.562,16.139,8.954,20.734c.916.78,1.953,1.665,3.032,2.608a.782.782,0,0,0,1.029,0c1.079-.943,2.117-1.828,3.033-2.609C21.438,16.139,25,13.1,25,8.668,25,4.561,22.145,1.465,18.359,1.465Z"
+                                                          fill="none" stroke="#6b92b0" stroke-width="2" />
+                                                </g>
+                                            </svg>
+                                            <svg class='share' enable-background="new 0 0 512 512" version="1.1"
+                                                 viewBox="0 0 512 512"
+                                                 xml:space="preserve" xmlns="http://www.w3.org/2000/svg">
+                                                <path fill='#B2C5D4'
+                                                      d="m406 332c-29.636 0-55.969 14.402-72.378 36.571l-141.27-72.195c2.37-8.052 3.648-16.567 3.648-25.376 0-11.931-2.339-23.324-6.574-33.753l148.06-88.958c16.52 19.39 41.104 31.711 68.514 31.711 49.626 0 90-40.374 90-90s-40.374-90-90-90-90 40.374-90 90c0 11.47 2.161 22.443 6.09 32.54l-148.43 89.18c-16.508-18.818-40.719-30.72-67.66-30.72-49.626 0-90 40.374-90 90s40.374 90 90 90c30.122 0 56.832-14.876 73.177-37.666l140.86 71.985c-2.623 8.434-4.037 17.395-4.037 26.681 0 49.626 40.374 90 90 90s90-40.374 90-90-40.374-90-90-90zm0-302c33.084 0 60 26.916 60 60s-26.916 60-60 60-60-26.916-60-60 26.916-60 60-60zm-300 301c-33.084 0-60-26.916-60-60s26.916-60 60-60 60 26.916 60 60-26.916 60-60 60zm300 151c-33.084 0-60-26.916-60-60s26.916-60 60-60 60 26.916 60 60-26.916 60-60 60z" />
+                                            </svg>
+                                        </div>
                                     </a>
                                     <span class='price'>8 760 UAH</span>
                                     <div class='description-buttons'>
@@ -686,8 +735,9 @@
                         </div>
                         <div class='swiper-slide'>
                             <div class='products-item'>
-                                <a href='<?php echo home_url( '/' ); ?>product-page' class='item-image'>
-                                    <img src='<?php echo get_template_directory_uri() ?>/assets/images/product-item.png' alt='Кондиционер'>
+                                <a href='<?php echo home_url('/'); ?>product-page' class='item-image'>
+                                    <img src='<?php echo get_template_directory_uri() ?>/assets/images/product-gallery-20.jpg'
+                                         alt='Кондиционер'>
                                 </a>
                                 <div class='item-description'>
                                     <div class='rating'>
@@ -732,18 +782,26 @@
                                                   transform="translate(0 -9.569)" fill="#ffdc96" />
                                         </svg>
                                     </div>
-                                    <a href='<?php echo home_url( '/' ); ?>product-page'>
+                                    <a href='<?php echo home_url('/'); ?>product-page'>
                                         C&H CH-S07GKP8
-                                        <svg class='favorites' xmlns="http://www.w3.org/2000/svg"
-                                             width="27"
-                                             height="24.07" viewBox="0 0 27 24.07">
-                                            <g id="Сгруппировать_2766" data-name="Сгруппировать 2766"
-                                               transform="translate(1 -0.465)">
-                                                <path id="Контур_714" data-name="Контур 714"
-                                                      d="M18.359,1.465a5.919,5.919,0,0,0-3.7,1.278,8.421,8.421,0,0,0-2.163,2.6,8.42,8.42,0,0,0-2.163-2.6,5.919,5.919,0,0,0-3.7-1.278C2.855,1.465,0,4.561,0,8.668,0,13.1,3.562,16.139,8.954,20.734c.916.78,1.953,1.665,3.032,2.608a.782.782,0,0,0,1.029,0c1.079-.943,2.117-1.828,3.033-2.609C21.438,16.139,25,13.1,25,8.668,25,4.561,22.145,1.465,18.359,1.465Z"
-                                                      fill="none" stroke="#6b92b0" stroke-width="2" />
-                                            </g>
-                                        </svg>
+                                        <div class='description-icons'>
+                                            <svg class='favorites' xmlns="http://www.w3.org/2000/svg" width="27"
+                                                 height="24.07"
+                                                 viewBox="0 0 27 24.07">
+                                                <g id="Сгруппировать_2766" data-name="Сгруппировать 2766"
+                                                   transform="translate(1 -0.465)">
+                                                    <path id="Контур_714" data-name="Контур 714"
+                                                          d="M18.359,1.465a5.919,5.919,0,0,0-3.7,1.278,8.421,8.421,0,0,0-2.163,2.6,8.42,8.42,0,0,0-2.163-2.6,5.919,5.919,0,0,0-3.7-1.278C2.855,1.465,0,4.561,0,8.668,0,13.1,3.562,16.139,8.954,20.734c.916.78,1.953,1.665,3.032,2.608a.782.782,0,0,0,1.029,0c1.079-.943,2.117-1.828,3.033-2.609C21.438,16.139,25,13.1,25,8.668,25,4.561,22.145,1.465,18.359,1.465Z"
+                                                          fill="none" stroke="#6b92b0" stroke-width="2" />
+                                                </g>
+                                            </svg>
+                                            <svg class='share' enable-background="new 0 0 512 512" version="1.1"
+                                                 viewBox="0 0 512 512"
+                                                 xml:space="preserve" xmlns="http://www.w3.org/2000/svg">
+                                                <path fill='#B2C5D4'
+                                                      d="m406 332c-29.636 0-55.969 14.402-72.378 36.571l-141.27-72.195c2.37-8.052 3.648-16.567 3.648-25.376 0-11.931-2.339-23.324-6.574-33.753l148.06-88.958c16.52 19.39 41.104 31.711 68.514 31.711 49.626 0 90-40.374 90-90s-40.374-90-90-90-90 40.374-90 90c0 11.47 2.161 22.443 6.09 32.54l-148.43 89.18c-16.508-18.818-40.719-30.72-67.66-30.72-49.626 0-90 40.374-90 90s40.374 90 90 90c30.122 0 56.832-14.876 73.177-37.666l140.86 71.985c-2.623 8.434-4.037 17.395-4.037 26.681 0 49.626 40.374 90 90 90s90-40.374 90-90-40.374-90-90-90zm0-302c33.084 0 60 26.916 60 60s-26.916 60-60 60-60-26.916-60-60 26.916-60 60-60zm-300 301c-33.084 0-60-26.916-60-60s26.916-60 60-60 60 26.916 60 60-26.916 60-60 60zm300 151c-33.084 0-60-26.916-60-60s26.916-60 60-60 60 26.916 60 60-26.916 60-60 60z" />
+                                            </svg>
+                                        </div>
                                     </a>
                                     <span class='price'>8 760 UAH</span>
                                     <div class='description-buttons'>
