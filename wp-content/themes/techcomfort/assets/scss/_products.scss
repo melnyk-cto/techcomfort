@@ -33,7 +33,7 @@
     margin-bottom: 3.6%;
   }
   &-buttons {
-    margin-bottom: 5%;
+    margin-bottom: 3.75%;
     display:       flex;
     flex-wrap:     wrap;
     .btn-contour {
@@ -76,12 +76,12 @@
       width:         31%;
       margin-bottom: 6.55%;
       .item-image {
-        margin-bottom: 16.2%;
+        margin-bottom: 9%;
       }
       .item-description {
         p {
           display:       none;
-          margin-bottom: 17px;
+          margin-bottom: 15px;
         }
       }
       .item-buttons {
@@ -90,11 +90,11 @@
     }
   }
   &-item {
-    max-width:     353px;
-    width:         90%;
+    max-width:     375px;
+    width:         92%;
     margin:        0 auto;
     position:      relative;
-    box-shadow:    0 3px 20px 0 rgba(56, 69, 249, 0.14);
+    box-shadow:    0 3px 15px 0 rgba(56, 69, 249, 0.14);
     background:    $white;
     color:         $black;
     border-radius: 10px;
@@ -104,19 +104,25 @@
       font-size:      16px;
       padding:        8px 0;
       max-width:      initial;
-      width:          initial;
+      width:          calc(50% - 8px);
       border-radius:  5px;
       text-transform: capitalize;
-      margin:         15px 5.5% 0 0;
+      margin:         15px 0 0;
       &:last-child {
         margin: 15px 0 0;
       }
     }
+    .share {
+      cursor: pointer;
+      width:  19px;
+      height: 19px;
+    }
     .favorites {
-      cursor:  pointer;
-      z-index: 99;
-      width:   23px;
-      height:  23px;
+      cursor:       pointer;
+      z-index:      99;
+      width:        19px;
+      height:       19px;
+      margin-right: 15px;
       path {
         stroke: $bgColor;
       }
@@ -144,7 +150,7 @@
     }
     .item-image {
       display:       block;
-      margin-bottom: 16%;
+      margin-bottom: 10%;
       cursor:        pointer;
     }
     .item-description {
@@ -156,10 +162,13 @@
         display:         flex;
         justify-content: space-between;
         align-items:     center;
-        max-width:       245px;
+      }
+      .description-icons {
+        display:    flex;
+        align-self: center;
       }
       .rating {
-        margin-bottom: 5px;
+        margin-bottom: 8px;
       }
       .price {
         font-size:      18px;
@@ -167,9 +176,10 @@
         display:        inline-block;
       }
       .description-buttons {
-        display:     flex;
-        flex-wrap:   wrap;
-        align-items: center;
+        display:         flex;
+        justify-content: space-between;
+        flex-wrap:       wrap;
+        align-items:     center;
       }
     }
   }
@@ -186,7 +196,7 @@
       }
     }
     &-slider {
-      max-width: 840px;
+      max-width: 1000px;
       margin:    0 auto;
     }
     &-list {
@@ -212,26 +222,31 @@
       box-shadow:    0 3px 10px 0 rgba(56, 69, 249, 0.14);
       border-radius: 8px;
       padding:       13% 5% 9%;
-      max-width:     260px;
+      max-width:     300px;
       min-height:    232px;
       width:         92%;
       .btn {
         font-size:     14px;
         padding:       6px 0;
         border-radius: 3px;
+        width:         calc(50% - 6px);
+      }
+      .share {
+        width:  15px;
+        height: 15px;
       }
       .favorites {
-        width:  17px;
-        height: 15px;
+        width:        15px;
+        height:       15px;
+        margin-right: 10px;
       }
       .hit, .discount {
         top:       3%;
-        left:      14px;
         font-size: 14px;
         padding:   1px 14px;
       }
       .item-image {
-        margin-bottom: 8%;
+        margin-bottom: 7%;
       }
       .item-description {
         > a {
@@ -286,12 +301,6 @@
         max-width:  260px;
         min-height: 230px;
         padding:    25px 16px;
-        .item-image {
-          margin-bottom: 12%;
-        }
-        .btn {
-          width: 50%;
-        }
         .item-description {
           .description-buttons {
             flex-wrap: nowrap;
@@ -304,10 +313,7 @@
       border-radius: 8px;
       min-height:    230px;
       max-width:     270px;
-      padding:       25px 16px;
-      .item-image {
-        margin-bottom: 12%;
-      }
+      padding:       25px 16px 20px;
       .favorites {
         width:  17px;
         height: 15px;
