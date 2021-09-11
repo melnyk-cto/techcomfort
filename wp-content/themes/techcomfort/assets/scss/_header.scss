@@ -235,9 +235,9 @@
     }
     .catalog-submenu {
       position:        absolute;
-      top:             67px;
+      top:             54px;
       left:            0;
-      max-width:       1128px;
+      max-width:       880px;
       width:           100%;
       display:         flex;
       justify-content: space-between;
@@ -246,6 +246,8 @@
       padding:         10px 10px 0 10px;
       border-radius:   3px;
       box-shadow:      0 3px 6px 0 rgba(56, 69, 249, 0.26);
+      overflow:        scroll;
+      height:          calc(100vh - 54px);
       visibility:      hidden;
       opacity:         0;
       .submenu-item {
