@@ -5,7 +5,7 @@
 
 .home {
   h2 {
-    margin-bottom: 5.63%;
+    margin-bottom: 3.75%;
   }
   .basket {
     h2 {
@@ -49,13 +49,16 @@
     }
   }
   .products {
-    padding-top: 7.63%;
+    padding-top: 7%;
   }
-  .bestsellers {
-    padding-top: 6.9%;
+  .bestsellers, .reviews {
+    padding-top: 6.3%;
   }
   .advantage {
-    padding-top: 6.9%;
+    padding-top: 6.3%;
+    h2 {
+      margin-bottom: 4.7%;
+    }
     p {
       font-size:   18px;
       font-weight: 500;
@@ -63,20 +66,20 @@
     &-list {
       display:         flex;
       justify-content: space-between;
-      max-width:       1138px;
+      max-width:       1000px;
       margin:          0 auto;
     }
     &-item {
-      max-width:     324px;
+      max-width:     280px;
       width:         32%;
       background:    $white;
       text-align:    center;
       border-radius: 10px;
       box-shadow:    0 3px 40px 0 rgba(56, 69, 249, 0.14);
-      padding:       5% 5% 3.67%;
+      padding:       3% 4%;
       .item-image {
-        width:      58%;
-        margin:     0 auto 21%;
+        width:      55%;
+        margin:     0 auto 18%;
         text-align: center;
         span {
           font-family: "Montserrat", sans-serif;
@@ -94,24 +97,23 @@
       }
       &:nth-child(2) {
         .item-image {
-          max-width: 100px;
+          max-width: 85px;
         }
       }
       &:nth-child(3) {
         .item-image {
-          max-width: 94px;
+          max-width: 80px;
         }
       }
     }
   }
   .reviews {
-    padding-top: 7.73%;
     h3 {
       color:         $primaryColor;
-      margin-bottom: 12px;
+      margin-bottom: 8px;
     }
     h2 {
-      margin-bottom: 5%;
+      margin-bottom: 3.75%;
     }
     p {
       line-height: 1.45;
@@ -123,7 +125,7 @@
       display:        flex;
       flex-direction: column;
       &-inner {
-        margin-bottom: 6.2%;
+        margin-bottom: 5%;
         position:      relative;
       }
       .container {
@@ -131,7 +133,7 @@
       }
       .swiper-container {
         margin:  0 2.2%;
-        padding: 2% 0 6.5%;
+        padding: 15px 0 6.5%;
       }
       .swiper-button-prev, .swiper-button-next {
         transform: translate(0, -100%);
@@ -139,14 +141,14 @@
     }
     &-item {
       width:         90%;
-      min-height:    360px;
+      min-height:    320px;
       margin:        0 auto;
-      padding:       4% 5%;
+      padding:       3% 4.2%;
       background:    $white;
       border-radius: 20px;
-      box-shadow:    0 15px 40px 0 rgba(56, 69, 249, 0.13);
+      box-shadow:    0 15px 30px 0 rgba(56, 69, 249, 0.13);
       .item-title {
-        margin-bottom:   22px;
+        margin-bottom:   15px;
         display:         flex;
         justify-content: center;
         flex-direction:  column;
@@ -239,7 +241,7 @@
     .reviews {
       padding-top: 35px;
       h3 {
-        margin-bottom: 8px;
+        margin-bottom: 6px;
       }
       h2 {
         margin-bottom: 20px;
@@ -266,7 +268,7 @@
         border-radius: 10px;
         box-shadow:    0 3px 10px 0 rgba(56, 69, 249, 0.13);
         .item-title {
-          margin-bottom: 20px;
+          margin-bottom: 10px;
         }
       }
     }
@@ -385,9 +387,6 @@
         min-height: 350px;
         padding:    15px;
         box-shadow: 0 3px 8px 0 rgba(56, 69, 249, 0.13);
-        .item-title {
-          margin-bottom: 10px;
-        }
       }
     }
     .contact {
