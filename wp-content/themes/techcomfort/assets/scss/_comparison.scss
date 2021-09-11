@@ -28,10 +28,11 @@
     justify-content: space-between;
     align-items:     center;
     margin-bottom:   8.3%;
-    padding:         6.1%;
+    padding:         4%;
     h3 {
       font-size:     20px;
       font-weight:   500;
+      margin-bottom: 12px;
     }
     .price {
       font-size:    18px;
@@ -41,21 +42,24 @@
       font-size:   16px;
       font-weight: 500;
       color:       $primaryColor;
-      margin-left: 5%;
     }
     .btn {
       font-size: 16px;
       max-width: initial;
       width:     initial;
-      padding:   11px 29px;
+      padding:   8px 25px;
     }
     .item-image {
-      max-width: 263px;
-      width:     36%;
+      max-width: 300px;
+      width:     45%;
     }
     .item-description {
-      max-width: 350px;
-      width:     61%;
+      max-width: 325px;
+      width:     49%;
+      .description-info {
+        display:       flex;
+        margin-bottom: 20px;
+      }
     }
   }
   .product-characteristics {
@@ -89,24 +93,21 @@
       flex-wrap: wrap;
     }
     &-product {
-      width: 48.4%;
+      width: 49%;
     }
     .product-item, .product-characteristics {
       border-radius: 5px;
       box-shadow:    0 3px 8px 0 rgba(56, 69, 249, 0.13);
     }
     .product-item {
-      flex-direction: column;
-      margin-bottom:  20px;
+      margin: 0 auto 20px;
       .item-image {
-        width:         61%;
-        margin-bottom: 15px;
+        width: 48%;
       }
       .item-description {
-        text-align: center;
-        width:      100%;
+        width: 48%;
         h3 {
-          font-size:     18px;
+          font-size:     16px;
           margin-bottom: 10px;
         }
         p {
@@ -164,11 +165,18 @@
       width: 100%;
     }
     .product-item {
-      padding: 20px;
+      max-width:      340px;
+      padding:        20px;
+      flex-direction: column;
       .item-image {
-        margin-bottom: 12px;
+        max-width:     initial;
+        width:         100%;
+        margin-bottom: 15px;
       }
       .item-description {
+        text-align: center;
+        max-width:  initial;
+        width:      100%;
         h3 {
           font-size:     16px;
           margin-bottom: 8px;
@@ -176,11 +184,12 @@
         span {
           font-size: 12px;
         }
-        p {
-          margin-bottom: 10px;
-        }
         .btn {
           padding: 9px 18px;
+        }
+        .description-info {
+          justify-content: center;
+          margin-bottom:   10px;
         }
       }
     }
