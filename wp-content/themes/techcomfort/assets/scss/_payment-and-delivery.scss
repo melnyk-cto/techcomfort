@@ -30,7 +30,7 @@
   &-item {
     max-width:     364px;
     width:         100%;
-    min-height:    475px;
+    min-height:    390px;
     padding:       2.8% 20px 2.2%;
     background:    $white;
     border-radius: 10px;
@@ -72,7 +72,6 @@
   .delivery {
     padding-bottom: 5.75%;
     .payment-and-delivery-list {
-      max-width:     1185px;
       margin-bottom: 4.2%;
     }
     .payment-and-delivery-item {
@@ -140,7 +139,7 @@
       width:      45.5%;
       min-height: 300px;
       margin:     15px;
-      padding:    20px;
+      padding:    25px 20px;
       .item-image {
         margin: 0 auto 25px;
       }
@@ -245,7 +244,7 @@
     }
     &-item {
       max-width:  325px;
-      min-height: 180px;
+      min-height: 200px;
       margin:     0 0 30px;
       padding:    25px 15px;
       width:      100%;
