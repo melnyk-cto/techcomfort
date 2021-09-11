@@ -1,8 +1,8 @@
 @import "./variables";
 
 @media (any-hover: hover) {
-  .login {
-    .forgot-password:hover, .register-now:hover {
+  .registration {
+    .forgot-password:hover, .registered:hover {
       opacity: .7;
     }
   }
@@ -23,6 +23,7 @@
       .registered {
         font-size: 16px;
         margin:    0 auto;
+        cursor:    pointer;
       }
       .checkbox {
         margin: 5px 0 50px;
