@@ -30,21 +30,21 @@
     margin-bottom:   8.3%;
     padding:         6.1%;
     h3 {
-      font-weight:   400;
-      margin-bottom: 15px;
-    }
-    p {
-      display:       flex;
-      margin-bottom: 25px;
-      font-size:     24px;
+      font-size:     20px;
       font-weight:   500;
     }
-    span {
-      font-size:   20px;
+    .price {
+      font-size:    18px;
+      margin-right: 5%;
+    }
+    p {
+      font-size:   16px;
+      font-weight: 500;
       color:       $primaryColor;
       margin-left: 5%;
     }
     .btn {
+      font-size: 16px;
       max-width: initial;
       width:     initial;
       padding:   11px 29px;
@@ -109,16 +109,20 @@
           font-size:     18px;
           margin-bottom: 10px;
         }
-        span {
+        p {
           font-size: 14px;
         }
-        p {
-          font-size:       16px;
-          justify-content: center;
-          margin-bottom:   15px;
+        .price {
+          font-size:     16px;
+          margin-bottom: 5px;
         }
         .btn {
-          padding: 11px 22px;
+          font-size: 14px;
+          padding:   6px 16px;
+        }
+        .description-info {
+          flex-wrap:     wrap;
+          margin-bottom: 15px;
         }
       }
     }

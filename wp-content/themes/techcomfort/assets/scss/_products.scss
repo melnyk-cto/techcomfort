@@ -13,9 +13,16 @@
     &-item:hover {
       box-shadow: 0 3px 20px 0 rgba(56, 69, 249, 0.35);
     }
-    &-item .favorites:hover {
-      path {
-        stroke: $primaryColor;
+    &-item {
+      .favorites:hover {
+        path {
+          stroke: $primaryColor;
+        }
+      }
+      .share:hover {
+        path {
+          fill: $primaryColor;
+        }
       }
     }
   }
@@ -30,7 +37,7 @@
     display:       flex;
     flex-wrap:     wrap;
     .btn-contour {
-      font-size:    24px;
+      font-size:    20px;
       font-weight:  500;
       padding:      9px 23px;
       margin-right: 22px;
@@ -94,8 +101,8 @@
     padding:       13.5% 5% 8%;
     min-height:    320px;
     .btn {
-      font-size:      20px;
-      padding:        8px 4.5%;
+      font-size:      16px;
+      padding:        8px 0;
       max-width:      initial;
       width:          initial;
       border-radius:  5px;
@@ -122,9 +129,9 @@
     }
     .hit, .discount {
       position:      absolute;
-      top:           12px;
-      left:          16px;
-      font-size:     18px;
+      top:           2.5%;
+      left:          5%;
+      font-size:     16px;
       font-weight:   500;
       border-radius: 50px;
       padding:       2px 19px;
@@ -142,7 +149,7 @@
     }
     .item-description {
       > a {
-        font-size:       22px;
+        font-size:       16px;
         font-weight:     500;
         text-transform:  uppercase;
         margin-bottom:   8px;
@@ -155,7 +162,7 @@
         margin-bottom: 5px;
       }
       .price {
-        font-size:      22px;
+        font-size:      18px;
         text-transform: uppercase;
         display:        inline-block;
       }
@@ -209,8 +216,8 @@
       min-height:    232px;
       width:         92%;
       .btn {
-        font-size:     16px;
-        padding:       6px 5.7%;
+        font-size:     14px;
+        padding:       6px 0;
         border-radius: 3px;
       }
       .favorites {
@@ -228,7 +235,7 @@
       }
       .item-description {
         > a {
-          font-size:     18px;
+          font-size:     14px;
           margin-bottom: 2.9%;
         }
         .rating {
@@ -312,7 +319,7 @@
       }
       .item-description {
         > a {
-          font-size:     18px;
+          font-size:     14px;
           margin-bottom: 10px;
         }
         .rating {
@@ -321,9 +328,6 @@
             width:  10px;
             height: 10px;
           }
-        }
-        .price {
-          font-size: 16px;
         }
       }
     }

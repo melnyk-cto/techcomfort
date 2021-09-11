@@ -32,17 +32,13 @@
           height:        50px;
         }
         label {
-          font-size:   20px;
+          font-size:   16px;
           display:     flex;
           align-items: center;
           height:      initial;
-          span {
-            font-size: 20px;
-          }
         }
         input, textarea {
-          font-size: 20px;
-          padding:   12px 15px;
+          padding: 12px 15px;
         }
         input[type="radio"] {
           width:        17px;
@@ -94,14 +90,13 @@
       .delivery-service {
         label {
           span {
-            font-size:  18px;
             background: $white;
             padding:    0 6px;
           }
         }
         &-item {
           p {
-            font-size:   18px;
+            font-size:   16px;
             color:       #707070;
             margin-left: 4%;
           }
@@ -134,7 +129,7 @@
       margin-bottom: 0;
     }
     span {
-      font-size:      24px;
+      font-size:      20px;
       text-transform: uppercase;
     }
     &-item {
@@ -210,14 +205,10 @@
             height:        45px;
           }
           label {
-            font-size: 16px;
+            font-size: 14px;
             span {
-              font-size: 16px;
-              padding:   0 8px;
+              padding: 0 8px;
             }
-          }
-          input, textarea {
-            font-size: 16px;
           }
           input[type="radio"] {
             width:        12px;
@@ -249,9 +240,6 @@
               height: initial;
             }
             height: 50px;
-            span {
-              font-size: 16px;
-            }
           }
           &-item {
             p {

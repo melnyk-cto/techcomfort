@@ -224,8 +224,8 @@
     background:  $primaryColor;
     padding:     18px;
     cursor:      pointer;
-    p {
-      font-size: 20px;
+    > p {
+      font-size: 18px;
       color:     $white;
     }
     svg {
@@ -260,7 +260,6 @@
           margin-bottom: 10px;
         }
         p {
-          font-size:   18px;
           color:       $black;
           text-align:  center;
           font-weight: 500;

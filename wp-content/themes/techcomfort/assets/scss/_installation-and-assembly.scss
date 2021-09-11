@@ -25,9 +25,9 @@
       margin-bottom: 8%;
     }
     p {
-      font-size:     24px;
-      line-height:   1.4;
-      margin-bottom: 3.8%;
+      font-size:     18px;
+      line-height:   1.6;
+      margin-bottom: 20px;
     }
     &-inner {
       display:         flex;
@@ -60,7 +60,8 @@
         margin-bottom: 50px;
         .services-item {
           p {
-            width: 69%;
+            width:     69%;
+            font-size: 14px;
           }
         }
       }
