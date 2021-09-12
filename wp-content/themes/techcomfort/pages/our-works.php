@@ -255,6 +255,18 @@ wp_enqueue_script('salvatore-js', get_stylesheet_directory_uri() . '/assets/lib/
                     <img src='<?php echo get_template_directory_uri() ?>/assets/images/product-gallery-24.jpg'
                          alt='Кондиционер'>
                 </div>
+                <div class="gallery-item">
+                    <img src='<?php echo get_template_directory_uri() ?>/assets/images/product-gallery-25.jpg'
+                         alt='Кондиционер'>
+                </div>
+                <div class="gallery-item">
+                    <img src='<?php echo get_template_directory_uri() ?>/assets/images/product-gallery-26.jpg'
+                         alt='Кондиционер'>
+                </div>
+                <div class="gallery-item">
+                    <img src='<?php echo get_template_directory_uri() ?>/assets/images/product-gallery-27.jpg'
+                         alt='Кондиционер'>
+                </div>
             </div>
         </div>
     </section>
