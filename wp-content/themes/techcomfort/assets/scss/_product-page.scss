@@ -5,12 +5,15 @@
 
 .product-page {
   .products {
-    padding: 5.5% 0 6.3%;
+    padding: 5% 0;
+    h2 {
+      margin-bottom: 3%;
+    }
   }
   .product-info {
-    padding: 6.3% 0 5.85%;
+    padding: 5% 0;
     h2 {
-      margin-bottom: 4.75%;
+      margin-bottom: 2.5%;
     }
     &-inner {
       display:         flex;
@@ -18,13 +21,9 @@
     }
     &-slider {
       width: 48%;
-      .slider-image {
-        background: $white;
-      }
       .swiper-top {
         margin-bottom: 25px;
         .slider-image {
-          padding:       8.84%;
           border-radius: 10px;
         }
         .swiper-container {
@@ -36,7 +35,7 @@
       .swiper-bottom {
         position: relative;
         .swiper-container {
-          margin: 0 5%;
+          margin: 0 5.5%;
         }
         .swiper-button-prev, .swiper-button-next {
           &:after {
@@ -50,22 +49,19 @@
           right: 0;
         }
         .slider-image {
-          padding:       24.06% 6%;
-          border-radius: 5px;
-          position:      relative;
-          cursor:        pointer;
+          position: relative;
+          cursor:   pointer;
           &:after {
-            content:       "";
-            position:      absolute;
-            top:           0;
-            left:          0;
-            width:         100%;
-            height:        100%;
-            background:    rgba(59, 58, 58, 0.35);
-            border-radius: 5px;
-            visibility:    visible;
-            opacity:       1;
-            transition:    .3s linear;
+            content:    "";
+            position:   absolute;
+            top:        0;
+            left:       0;
+            width:      100%;
+            height:     100%;
+            background: rgba(59, 58, 58, 0.5);
+            visibility: visible;
+            opacity:    1;
+            transition: .3s linear;
           }
         }
         .swiper-slide-thumb-active {
@@ -89,14 +85,14 @@
           margin-right:  3.3%;
           background:    #E9ECF1;
           border-radius: 5px;
-          padding:       9px 16px;
+          padding:       7px 16px;
           &:last-child {
             margin-right: 0;
           }
         }
       }
       .area {
-        margin-bottom: 6.6%;
+        margin-bottom: 5.6%;
         h5 {
           margin-bottom: 22px;
         }
@@ -104,8 +100,8 @@
           display:   flex;
           flex-wrap: wrap;
           li {
-            font-size:     20px;
-            padding:       14px 2%;
+            font-size:     16px;
+            padding:       10px 2%;
             background:    #E9ECF1;
             border-radius: 5px;
             margin:        0 3.3% 15px 0;
@@ -120,8 +116,8 @@
         button {
           border:        2px solid $primaryColor;
           border-radius: 3px;
-          width:         30px;
-          height:        30px;
+          width:         28px;
+          height:        28px;
           color:         $primaryColor;
         }
         label {
@@ -136,10 +132,10 @@
         align-items: center;
       }
       .price {
-        font-size:    24px;
+        font-size:    18px;
         margin-right: 3.5%;
         span {
-          font-size:   24px;
+          font-size:   18px;
           font-weight: 700;
         }
       }
@@ -147,12 +143,12 @@
         display:       flex;
         align-items:   center;
         border-radius: 5px;
-        padding:       21px 25px;
+        padding:       12px 20px;
         max-width:     initial;
         width:         initial;
         svg {
-          width:        27px;
-          height:       27px;
+          width:        24px;
+          height:       24px;
           margin-right: 14px;
         }
       }
@@ -164,13 +160,17 @@
       font-weight:    500;
     }
     &-inner {
-      max-width: 1162px;
+      max-width: 1000px;
     }
     .tabs {
       margin-bottom: 4.74%;
       .btn-contour {
-        font-size:    20px;
-        margin-right: 20px;
+        margin-right:   15px;
+        padding:        8px 20px;
+        max-width:      initial;
+        width:          initial;
+        text-transform: none;
+        font-weight:    400;
         &:last-child {
           margin-right: 0;
         }
@@ -178,31 +178,34 @@
     }
     .description {
       max-width:     850px;
-      margin-bottom: 5.17%;
+      margin-bottom: 4%;
       h5 {
         margin-bottom: 24px;
+      }
+      p {
+        line-height: 1.5;
       }
     }
     .characteristics {
       background:    $white;
-      padding:       6% 7.32% 4.75%;
+      padding:       40px 3.5% 25px;
       border-radius: 10px;
       box-shadow:    0 3px 40px rgba(56, 69, 249, 0.13);
       margin-bottom: 6.01%;
       h5 {
-        margin-bottom: 20px;
+        margin-bottom: 15px;
       }
       &-item {
         display:         flex;
         justify-content: space-between;
         align-items:     center;
-        padding:         15px 2.02%;
+        padding:         15px 1.5%;
         border-bottom:   1px solid $primaryColor;
         &:last-child {
           border-bottom: none;
         }
         span {
-          font-size:  20px;
+          font-size:  16px;
           text-align: left;
           width:      17.6%;
         }
@@ -215,9 +218,9 @@
       .btn {
         max-width:   initial;
         width:       initial;
-        font-size:   24px;
+        font-size:   16px;
         font-weight: 400;
-        padding:     17px 25px;
+        padding:     15px 22px;
       }
       .rating {
         display:       flex;
@@ -225,22 +228,22 @@
         width:         100%;
         margin-bottom: 3.9%;
         p {
-          font-size:    24px;
           color:        #707070;
           margin-right: 10px;
         }
         svg {
-          width:  24px;
-          height: 24px;
+          width:        16px;
+          height:       16px;
+          margin-right: 2px;
         }
       }
       form {
         label {
           width:         100%;
-          margin-bottom: 32px;
+          margin-bottom: 28px;
         }
         .textarea {
-          height: 125px;
+          height: 120px;
         }
       }
     }
@@ -255,30 +258,21 @@
 @media screen and (max-width: 1150px) {
   .product-page {
     .product-info {
-      padding: 50px 0 60px;
+      padding: 50px 0;
       h2 {
-        margin-bottom: 3.8%;
+        font-size:     22px;
+        margin-bottom: 2.8%;
       }
       &-slider {
         width: 48.17%;
         .swiper-top {
           margin-bottom: 12px;
-          .slider-image {
-            border-radius: 5px;
-          }
         }
         .swiper-bottom {
           .swiper-button-prev, .swiper-button-next {
             width: initial;
             &:after {
               font-size: 18px !important;
-            }
-          }
-          .slider-image {
-            padding:       17px 5px;
-            border-radius: 2px;
-            &:after {
-              border-radius: 2px;
             }
           }
         }
@@ -315,6 +309,9 @@
             font-size:    16px;
             margin-right: 10px;
           }
+          label {
+            max-width: 22px;
+          }
           button {
             border: 1px solid $primaryColor;
             width:  20px;
@@ -325,11 +322,11 @@
           font-size:    16px;
           margin-right: 15%;
           span {
-            font-size: 20px;
+            font-size: 16px;
           }
         }
         .btn {
-          padding: 14px 21px;
+          padding: 10px 15px;
           svg {
             width:        19px;
             height:       19px;
@@ -340,7 +337,7 @@
     }
     .general-information {
       .tabs {
-        margin-bottom: 3.8%;
+        margin-bottom: 5%;
         .btn-contour {
           font-size:    14px;
           margin-right: 10px;
@@ -348,7 +345,7 @@
         }
       }
       .description {
-        margin-bottom: 8.2%;
+        margin-bottom: 3%;
         h5 {
           margin-bottom: 25px;
         }
@@ -370,12 +367,8 @@
         }
       }
       .reviews {
-        h5 {
-          margin-bottom: 8.9%;
-        }
         .btn {
-          font-size: 16px;
-          padding:   14px 18px;
+          padding: 14px 18px;
         }
         .rating {
           margin-bottom: 35px;
@@ -398,9 +391,11 @@
       }
     }
     .products {
-      padding: 5.5% 0 40px;
+      padding: 5% 0 40px;
       h2 {
-        font-size: 24px;
+        font-size:     22px;
+        line-height:   1.5;
+        margin-bottom: 2%;
       }
     }
   }
@@ -411,7 +406,9 @@
     .product-info {
       padding: 50px 0;
       h2 {
-        margin-bottom: 7%;
+        max-width: 500px;
+        font-size: 18px;
+        margin:    0 auto 3.5%;
       }
       &-inner {
         flex-direction: column;
@@ -419,7 +416,8 @@
       &-slider {
         width: 100%;
         .swiper-top {
-          margin-bottom: 50px;
+          max-width: 500px;
+          margin:    0 auto 50px;
           .swiper-container {
             padding-bottom: 35px;
             .swiper-pagination {
@@ -432,7 +430,9 @@
         }
       }
       &-description {
-        width: 100%;
+        max-width: 500px;
+        margin:    0 auto;
+        width:     100%;
         .description-info {
           margin-bottom: 20px;
           p {
@@ -496,9 +496,6 @@
         h5 {
           margin-bottom: 15px;
         }
-        p {
-          line-height: 1.3;
-        }
       }
       .characteristics {
         width:         100vw;
@@ -508,7 +505,7 @@
         box-shadow:    0 3px 8px rgba(56, 69, 249, 0.13);
         margin-bottom: 50px;
         h5 {
-          margin-bottom: 20px;
+          margin-bottom: 10px;
         }
         &-item {
           padding: 6px 0;
@@ -541,6 +538,9 @@
           .textarea {
             height: 75px;
           }
+          label {
+            margin-bottom: 22px;
+          }
         }
       }
     }
@@ -549,7 +549,8 @@
       h2 {
         font-size:     16px;
         line-height:   1.4;
-        margin-bottom: 8%;
+        text-align:    center;
+        margin-bottom: 5%;
       }
     }
   }
