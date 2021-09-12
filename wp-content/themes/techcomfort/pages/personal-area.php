@@ -1002,7 +1002,7 @@ wp_enqueue_script('personal-area-js', get_stylesheet_directory_uri() . '/assets/
                                 </div>
                                 <div class='products-item catalog-item'>
                                     <a href='<?php echo home_url('/'); ?>product-page' class='item-image'>
-                                        <img src='<?php echo get_template_directory_uri() ?>/assets/images/product-gallery-16.jpg'
+                                        <img src='<?php echo get_template_directory_uri() ?>/assets/images/product-gallery-26.jpg'
                                              alt='Кондиционер'>
                                     </a>
                                     <div class='item-description'>
@@ -1087,7 +1087,7 @@ wp_enqueue_script('personal-area-js', get_stylesheet_directory_uri() . '/assets/
                                 </div>
                                 <div class='products-item catalog-item'>
                                     <a href='<?php echo home_url('/'); ?>product-page' class='item-image'>
-                                        <img src='<?php echo get_template_directory_uri() ?>/assets/images/product-gallery-17.jpg'
+                                        <img src='<?php echo get_template_directory_uri() ?>/assets/images/product-gallery-27.jpg'
                                              alt='Кондиционер'>
                                     </a>
                                     <div class='item-description'>

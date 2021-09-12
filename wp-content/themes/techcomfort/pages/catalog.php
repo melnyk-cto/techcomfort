@@ -1259,7 +1259,7 @@ wp_enqueue_script('nouislider-js', get_stylesheet_directory_uri() . '/assets/lib
                             </div>
                             <div class='products-item catalog-item'>
                                 <a href='<?php echo home_url('/'); ?>product-page' class='item-image'>
-                                    <img src='<?php echo get_template_directory_uri() ?>/assets/images/product-gallery-16.jpg'
+                                    <img src='<?php echo get_template_directory_uri() ?>/assets/images/product-gallery-25.jpg'
                                          alt='Кондиционер'>
                                 </a>
                                 <div class='item-description'>
