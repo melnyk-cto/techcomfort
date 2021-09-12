@@ -164,23 +164,23 @@
                     <div class='services-list-inner'>
                         <div class='services-item'>
                             <p>Стандартный монтаж кондиционера 07-09</p>
-                            <span>2200</span>
+                            <span>2500</span>
                         </div>
                         <div class='services-item'>
                             <p>Стандартный монтаж кондиционера 12-16</p>
-                            <span>2300</span>
+                            <span>2600</span>
                         </div>
                         <div class='services-item'>
                             <p>Стандартный монтаж кондиционера 18-21</p>
-                            <span>2800</span>
+                            <span>3000</span>
                         </div>
                         <div class='services-item'>
                             <p>Стандартный монтаж кондиционера 22-24</p>
-                            <span>3400</span>
+                            <span>3600</span>
                         </div>
                         <div class='services-item'>
                             <p>Стандартный монтаж кондиционера 28-36</p>
-                            <span>3900</span>
+                            <span>4200</span>
                         </div>
                     </div>
                 </div>
@@ -218,15 +218,15 @@
                     <div class='services-list-inner'>
                         <div class='services-item'>
                             <p>Фреоновая магистраль 07-09</p>
-                            <span>300</span>
+                            <span>450</span>
                         </div>
                         <div class='services-item'>
                             <p>Фреоновая магистраль 12-18</p>
-                            <span>350</span>
+                            <span>500</span>
                         </div>
                         <div class='services-item'>
                             <p>Фреоновая магистраль 24-30</p>
-                            <span>450</span>
+                            <span>600</span>
                         </div>
                         <div class='services-item'>
                             <p>Дренажная система</p>
@@ -246,11 +246,11 @@
                         </div>
                         <div class='services-item'>
                             <p>Короб 60х40 мм</p>
-                            <span>120</span>
+                            <span>150</span>
                         </div>
                         <div class='services-item'>
                             <p>Короб 20х20 мм</p>
-                            <span>50</span>
+                            <span>100</span>
                         </div>
                         <div class='services-item'>
                             <p>Дополнительный крепёж за шт.</p>
@@ -304,7 +304,7 @@
             </div>
             <div class='services-content'>
                 <div class='services-list'>
-                    <h2>Цены на монтаж канальных, кассетных и консольных кондиционеров до 5-ти м/п магистрали</h2>
+                    <h2>Другие дополнительные услуги</h2>
                     <div class='services-list-title'>
                         <span>Виды работ</span>
                         <span>Цена, грн</span>
@@ -312,7 +312,7 @@
                     <div class='services-list-inner'>
                         <div class='services-item'>
                             <p>Снятие и установка стеклопакета за кв. м</p>
-                            <span>от 150</span>
+                            <span>от 200</span>
                         </div>
                         <div class='services-item'>
                             <p>Установка с лестницы за этаж</p>
@@ -359,10 +359,6 @@
                             <span>от 100</span>
                         </div>
                         <div class='services-item'>
-                            <p>Прокладка магистрали по потолку за м/п.</p>
-                            <span>от 30</span>
-                        </div>
-                        <div class='services-item'>
                             <p>Разборка и сборка вагонки за кв. м</p>
                             <span>от 100</span>
                         </div>
@@ -391,7 +387,7 @@
             </div>
             <div class='services-content'>
                 <div class='services-list'>
-                    <h2>Дополнительные расходные материалы и монтажные работы за 1м/п</h2>
+                    <h2>Стоимость демонтажных и монтажных работ внутренних и внешних блоков</h2>
                     <div class='services-list-title'>
                         <span>Виды работ</span>
                         <span>Цена, грн</span>
@@ -427,22 +423,22 @@
                         </div>
                         <div class='services-item'>
                             <p>Демонтаж наружного блока 18-24</p>
-                            <span>от 100</span>
+                            <span>от 1000</span>
                         </div>
                         <div class='services-item'>
                             <p>Демонтаж наружного блока 28-36</p>
                             <span>от 1500</span>
                         </div>
                         <div class='services-item'>
-                            <p>Монтаж внутреннего блока 28-36</p>
+                            <p>Монтаж наружного блока 07-12</p>
                             <span>от 600</span>
                         </div>
                         <div class='services-item'>
-                            <p>Демонтаж наружного блока 07-12</p>
+                            <p>Монтаж наружного блока 18-24</p>
                             <span>от 1200</span>
                         </div>
                         <div class='services-item'>
-                            <p>Демонтаж наружного блока 18-24</p>
+                            <p>Монтаж наружного блока 28-36</p>
                             <span>от 1500</span>
                         </div>
                     </div>
@@ -450,7 +446,6 @@
             </div>
         </div>
     </section>
-
     <section class='installation'>
         <div class='container'>
             <div class='installation-inner'>
