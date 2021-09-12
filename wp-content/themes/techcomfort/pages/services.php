@@ -171,11 +171,11 @@
                     </div>
                     <div class='services-item'>
                         <p>Дозаправка фреоном R-22, 100 г</p>
-                        <span>100</span>
+                        <span>120</span>
                     </div>
                     <div class='services-item'>
                         <p>Дозаправка фреоном R-410А, 100 г</p>
-                        <span>100</span>
+                        <span>120</span>
                     </div>
                     <div class='services-item'>
                         <p>Дозаправка фреоном R-32, 100 г </p>
