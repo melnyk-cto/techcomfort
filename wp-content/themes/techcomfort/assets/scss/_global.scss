@@ -364,10 +364,10 @@ form {
     position:      absolute;
     top:           50%;
     right:         0;
-    border-left:   7px solid transparent;
-    border-right:  7px solid transparent;
-    border-bottom: 12px solid $primaryColor;
-    transform:     translate(0, -50%) rotate(90deg);
+    border-left:   4px solid transparent;
+    border-right:  4px solid transparent;
+    border-bottom: 7px solid $primaryColor;
+    transform:     translate(0, -35%) rotate(90deg);
   }
 }
 
