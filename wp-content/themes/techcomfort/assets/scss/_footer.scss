@@ -117,8 +117,9 @@
     .socials {
       &-image {
         margin-right: 5px;
-        width:        42px;
-        height:       42px;
+        &:last-child {
+          margin-right: 0;
+        }
       }
     }
     &-bottom {
@@ -178,8 +179,6 @@
       }
       &-image {
         margin-right: 3px;
-        width:        37px;
-        height:       37px;
       }
     }
     &-bottom {
