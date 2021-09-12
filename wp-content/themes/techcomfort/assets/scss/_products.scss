@@ -77,6 +77,11 @@
       margin-bottom: 6.55%;
       .item-image {
         margin-bottom: 9%;
+        height:        13.31vw;
+        img {
+          height:     100%;
+          object-fit: cover;
+        }
       }
       .item-description {
         p {
