@@ -147,7 +147,7 @@
       .item-title {
         background:      $secondaryColor;
         position:        relative;
-        padding:         15px 8%;
+        padding:         15px 5%;
         border-radius:   10px 10px 0 0;
         display:         flex;
         justify-content: space-between;
@@ -157,7 +157,7 @@
         display:         flex;
         justify-content: space-between;
         align-items:     center;
-        padding:         5% 8%;
+        padding:         4.8% 5%;
         background:      $white;
         border-radius:   0 0 10px 10px;
       }
@@ -284,11 +284,11 @@
           font-size: 16px;
         }
         .item-title {
-          padding:       16px 5.2%;
+          padding:       15px 5.2%;
           border-radius: 8px 8px 0 0;
         }
         .item-inner {
-          padding:       4.5%;
+          padding:       4% 4.5%;
           border-radius: 0 0 8px 8px;
         }
       }
@@ -415,11 +415,11 @@
           font-size: 12px;
         }
         .item-title {
-          padding:       10px 5.2%;
+          padding:       8px 5.2%;
           border-radius: 5px 5px 0 0;
         }
         .item-inner {
-          padding:       5.5% 5%;
+          padding:       5% 5.2%;
           border-radius: 0 0 5px 5px;
         }
         .item-image {

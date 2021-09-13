@@ -51,31 +51,31 @@ wp_enqueue_script('product-page-js', get_stylesheet_directory_uri() . '/assets/j
                             <div class='swiper-wrapper'>
                                 <div class='swiper-slide'>
                                     <div class='slider-image'>
-                                        <img src='<?php echo get_template_directory_uri() ?>/assets/images/product-gallery-9.jpg'
+                                        <img src='<?php echo get_template_directory_uri() ?>/assets/images/product-gallery-4.jpg'
                                              alt='Кондиционер'>
                                     </div>
                                 </div>
                                 <div class='swiper-slide'>
                                     <div class='slider-image'>
-                                        <img src='<?php echo get_template_directory_uri() ?>/assets/images/product-gallery-10.jpg'
+                                        <img src='<?php echo get_template_directory_uri() ?>/assets/images/product-gallery-5.jpg'
                                              alt='Кондиционер'>
                                     </div>
                                 </div>
                                 <div class='swiper-slide'>
                                     <div class='slider-image'>
-                                        <img src='<?php echo get_template_directory_uri() ?>/assets/images/product-gallery-11.jpg'
+                                        <img src='<?php echo get_template_directory_uri() ?>/assets/images/product-gallery-6.jpg'
                                              alt='Кондиционер'>
                                     </div>
                                 </div>
                                 <div class='swiper-slide'>
                                     <div class='slider-image'>
-                                        <img src='<?php echo get_template_directory_uri() ?>/assets/images/product-gallery-12.jpg'
+                                        <img src='<?php echo get_template_directory_uri() ?>/assets/images/product-gallery-7.jpg'
                                              alt='Кондиционер'>
                                     </div>
                                 </div>
                                 <div class='swiper-slide'>
                                     <div class='slider-image'>
-                                        <img src='<?php echo get_template_directory_uri() ?>/assets/images/product-gallery-13.jpg'
+                                        <img src='<?php echo get_template_directory_uri() ?>/assets/images/product-gallery-8.jpg'
                                              alt='Кондиционер'>
                                     </div>
                                 </div>
@@ -133,9 +133,9 @@ wp_enqueue_script('product-page-js', get_stylesheet_directory_uri() . '/assets/j
         <div class='container'>
             <div class='general-information-inner'>
                 <div class='tabs buttons-container-js'>
-                    <a href='#description' class='btn-contour active'>Описание</a>
-                    <a href='#characteristics' class='btn-contour'>Характеристики</a>
-                    <a href='#reviews' class='btn-contour'>Отзывы</a>
+                    <a href='#description' class='btn btn-contour active'>Описание</a>
+                    <a href='#characteristics' class='btn btn-contour'>Характеристики</a>
+                    <a href='#reviews' class='btn btn-contour'>Отзывы</a>
                 </div>
                 <div id='description' class='description'>
                     <h5>Описание</h5>
