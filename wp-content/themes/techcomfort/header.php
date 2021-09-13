@@ -112,63 +112,63 @@
                     </svg>
                     <p>Каталог Товаров</p>
                     <div class='catalog-submenu'>
-                        <a href='product-page' class='submenu-item'>
+                        <a href='<?php echo home_url('/'); ?>product' class='submenu-item'>
                             <div class='item-image'>
                                 <img src='<?php echo get_template_directory_uri() ?>/assets/images/product-gallery-3.jpg'
                                      alt='Кондиционер'>
                             </div>
                             <p>Настенные кондиционеры</p>
                         </a>
-                        <a href='product-page' class='submenu-item'>
+                        <a href='<?php echo home_url('/'); ?>product' class='submenu-item'>
                             <div class='item-image'>
                                 <img src='<?php echo get_template_directory_uri() ?>/assets/images/product-gallery-4.jpg'
                                      alt='Кондиционер'>
                             </div>
                             <p>Готовые решения мультисистем</p>
                         </a>
-                        <a href='product-page' class='submenu-item'>
+                        <a href='<?php echo home_url('/'); ?>product' class='submenu-item'>
                             <div class='item-image'>
                                 <img src='<?php echo get_template_directory_uri() ?>/assets/images/product-gallery-5.jpg'
                                      alt='Кондиционер'>
                             </div>
                             <p>Мультисплит-системы</p>
                         </a>
-                        <a href='product-page' class='submenu-item'>
+                        <a href='<?php echo home_url('/'); ?>product' class='submenu-item'>
                             <div class='item-image'>
                                 <img src='<?php echo get_template_directory_uri() ?>/assets/images/product-gallery-6.jpg'
                                      alt='Кондиционер'>
                             </div>
                             <p>Напольно-потолочные кондиционеры</p>
                         </a>
-                        <a href='product-page' class='submenu-item'>
+                        <a href='<?php echo home_url('/'); ?>product' class='submenu-item'>
                             <div class='item-image'>
                                 <img src='<?php echo get_template_directory_uri() ?>/assets/images/product-gallery-7.jpg'
                                      alt='Кондиционер'>
                             </div>
                             <p>Кассетные кондиционеры</p>
                         </a>
-                        <a href='product-page' class='submenu-item'>
+                        <a href='<?php echo home_url('/'); ?>product' class='submenu-item'>
                             <div class='item-image'>
                                 <img src='<?php echo get_template_directory_uri() ?>/assets/images/product-gallery-8.jpg'
                                      alt='Кондиционер'>
                             </div>
                             <p>Канальные кондиционеры</p>
                         </a>
-                        <a href='product-page' class='submenu-item'>
+                        <a href='<?php echo home_url('/'); ?>product' class='submenu-item'>
                             <div class='item-image'>
                                 <img src='<?php echo get_template_directory_uri() ?>/assets/images/product-gallery-9.jpg'
                                      alt='Кондиционер'>
                             </div>
                             <p>Колонные кондиционеры</p>
                         </a>
-                        <a href='product-page' class='submenu-item'>
+                        <a href='<?php echo home_url('/'); ?>product' class='submenu-item'>
                             <div class='item-image'>
                                 <img src='<?php echo get_template_directory_uri() ?>/assets/images/product-gallery-10.jpg'
                                      alt='Кондиционер'>
                             </div>
                             <p>Мобильные кондиционеры</p>
                         </a>
-                        <a href='product-page' class='submenu-item'>
+                        <a href='<?php echo home_url('/'); ?>product' class='submenu-item'>
                             <div class='item-image'>
                                 <img src='<?php echo get_template_directory_uri() ?>/assets/images/product-gallery-11.jpg'
                                      alt='Кондиционер'>
@@ -268,63 +268,63 @@
                     </svg>
                     <p>Каталог Товаров</p>
                     <div id='catalog-submenu-js' class='catalog-submenu'>
-                        <a href='product-page' class='submenu-item'>
+                        <a href='<?php echo home_url('/'); ?>product' class='submenu-item'>
                             <div class='item-image'>
                                 <img src='<?php echo get_template_directory_uri() ?>/assets/images/product-gallery-12.jpg'
                                      alt='Кондиционер'>
                             </div>
                             <p>Настенные кондиционеры</p>
                         </a>
-                        <a href='product-page' class='submenu-item'>
+                        <a href='<?php echo home_url('/'); ?>product' class='submenu-item'>
                             <div class='item-image'>
                                 <img src='<?php echo get_template_directory_uri() ?>/assets/images/product-gallery-13.jpg'
                                      alt='Кондиционер'>
                             </div>
                             <p>Готовые решения мультисистем</p>
                         </a>
-                        <a href='product-page' class='submenu-item'>
+                        <a href='<?php echo home_url('/'); ?>product' class='submenu-item'>
                             <div class='item-image'>
                                 <img src='<?php echo get_template_directory_uri() ?>/assets/images/product-gallery-14.jpg'
                                      alt='Кондиционер'>
                             </div>
                             <p>Мультисплит-системы</p>
                         </a>
-                        <a href='product-page' class='submenu-item'>
+                        <a href='<?php echo home_url('/'); ?>product' class='submenu-item'>
                             <div class='item-image'>
                                 <img src='<?php echo get_template_directory_uri() ?>/assets/images/product-gallery-15.jpg'
                                      alt='Кондиционер'>
                             </div>
                             <p>Напольно-потолочные кондиционеры</p>
                         </a>
-                        <a href='product-page' class='submenu-item'>
+                        <a href='<?php echo home_url('/'); ?>product' class='submenu-item'>
                             <div class='item-image'>
                                 <img src='<?php echo get_template_directory_uri() ?>/assets/images/product-gallery-16.jpg'
                                      alt='Кондиционер'>
                             </div>
                             <p>Кассетные кондиционеры</p>
                         </a>
-                        <a href='product-page' class='submenu-item'>
+                        <a href='<?php echo home_url('/'); ?>product' class='submenu-item'>
                             <div class='item-image'>
                                 <img src='<?php echo get_template_directory_uri() ?>/assets/images/product-gallery-17.jpg'
                                      alt='Кондиционер'>
                             </div>
                             <p>Канальные кондиционеры</p>
                         </a>
-                        <a href='product-page' class='submenu-item'>
+                        <a href='<?php echo home_url('/'); ?>product' class='submenu-item'>
                             <div class='item-image'>
                                 <img src='<?php echo get_template_directory_uri() ?>/assets/images/product-gallery-18.jpg'
                                      alt='Кондиционер'>
                             </div>
                             <p>Колонные кондиционеры</p>
                         </a>
-                        <a href='product-page' class='submenu-item'>
+                        <a href='<?php echo home_url('/'); ?>product' class='submenu-item'>
                             <div class='item-image'>
                                 <img src='<?php echo get_template_directory_uri() ?>/assets/images/product-gallery-1.jpg'
                                      alt='Кондиционер'>
                             </div>
                             <p>Мобильные кондиционеры</p>
                         </a>
-                        <a href='product-page' class='submenu-item'>
+                        <a href='<?php echo home_url('/'); ?>product' class='submenu-item'>
                             <div class='item-image'>
                                 <img src='<?php echo get_template_directory_uri() ?>/assets/images/product-gallery-2.jpg'
                                      alt='Кондиционер'>

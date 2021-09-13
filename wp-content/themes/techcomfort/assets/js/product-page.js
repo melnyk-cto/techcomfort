@@ -52,6 +52,5 @@ document.addEventListener("DOMContentLoaded", function () {
         li.append(span);
         li.children[1].innerHTML = singleAttribute[i][0][2];
     }
-    console.log(singleAttribute, 'singleAttribute');
 
 });

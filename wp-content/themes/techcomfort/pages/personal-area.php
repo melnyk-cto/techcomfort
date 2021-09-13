@@ -492,7 +492,7 @@ wp_enqueue_script('personal-area-js', get_stylesheet_directory_uri() . '/assets/
                         <div class='products'>
                             <div class='products-list '>
                                 <div class='products-item catalog-item'>
-                                    <a href='<?php echo home_url('/'); ?>product-page' class='item-image'>
+                                    <a href='<?php echo home_url('/'); ?>product' class='item-image'>
                                         <img src='<?php echo get_template_directory_uri() ?>/assets/images/product-gallery-12.jpg'
                                              alt='Кондиционер'>
                                     </a>
@@ -539,7 +539,7 @@ wp_enqueue_script('personal-area-js', get_stylesheet_directory_uri() . '/assets/
                                                       transform="translate(0 -9.569)" fill="#ffdc96" />
                                             </svg>
                                         </div>
-                                        <a href='<?php echo home_url('/'); ?>product-page'>
+                                        <a href='<?php echo home_url('/'); ?>product'>
                                             C&H CH-S07GKP8
                                             <div class='description-icons'>
                                                 <svg class='favorites' xmlns="http://www.w3.org/2000/svg" width="27"
@@ -577,7 +577,7 @@ wp_enqueue_script('personal-area-js', get_stylesheet_directory_uri() . '/assets/
                                     </div>
                                 </div>
                                 <div class='products-item catalog-item'>
-                                    <a href='<?php echo home_url('/'); ?>product-page' class='item-image'>
+                                    <a href='<?php echo home_url('/'); ?>product' class='item-image'>
                                         <img src='<?php echo get_template_directory_uri() ?>/assets/images/product-gallery-13.jpg'
                                              alt='Кондиционер'>
                                     </a>
@@ -624,7 +624,7 @@ wp_enqueue_script('personal-area-js', get_stylesheet_directory_uri() . '/assets/
                                                       transform="translate(0 -9.569)" fill="#ffdc96" />
                                             </svg>
                                         </div>
-                                        <a href='<?php echo home_url('/'); ?>product-page'>
+                                        <a href='<?php echo home_url('/'); ?>product'>
                                             C&H CH-S07GKP8
                                             <div class='description-icons'>
                                                 <svg class='favorites' xmlns="http://www.w3.org/2000/svg" width="27"
@@ -662,7 +662,7 @@ wp_enqueue_script('personal-area-js', get_stylesheet_directory_uri() . '/assets/
                                     </div>
                                 </div>
                                 <div class='products-item catalog-item'>
-                                    <a href='<?php echo home_url('/'); ?>product-page' class='item-image'>
+                                    <a href='<?php echo home_url('/'); ?>product' class='item-image'>
                                         <img src='<?php echo get_template_directory_uri() ?>/assets/images/product-gallery-14.jpg'
                                              alt='Кондиционер'>
                                     </a>
@@ -709,7 +709,7 @@ wp_enqueue_script('personal-area-js', get_stylesheet_directory_uri() . '/assets/
                                                       transform="translate(0 -9.569)" fill="#ffdc96" />
                                             </svg>
                                         </div>
-                                        <a href='<?php echo home_url('/'); ?>product-page'>
+                                        <a href='<?php echo home_url('/'); ?>product'>
                                             C&H CH-S07GKP8
                                             <div class='description-icons'>
                                                 <svg class='favorites' xmlns="http://www.w3.org/2000/svg" width="27"
@@ -765,7 +765,7 @@ wp_enqueue_script('personal-area-js', get_stylesheet_directory_uri() . '/assets/
                         <div class='products'>
                             <div class='products-list '>
                                 <div class='products-item catalog-item'>
-                                    <a href='<?php echo home_url('/'); ?>product-page' class='item-image'>
+                                    <a href='<?php echo home_url('/'); ?>product' class='item-image'>
                                         <img src='<?php echo get_template_directory_uri() ?>/assets/images/product-gallery-15.jpg'
                                              alt='Кондиционер'>
                                     </a>
@@ -812,7 +812,7 @@ wp_enqueue_script('personal-area-js', get_stylesheet_directory_uri() . '/assets/
                                                       transform="translate(0 -9.569)" fill="#ffdc96" />
                                             </svg>
                                         </div>
-                                        <a href='<?php echo home_url('/'); ?>product-page'>
+                                        <a href='<?php echo home_url('/'); ?>product'>
                                             C&H CH-S07GKP8
                                             <div class='description-icons'>
                                                 <svg class='favorites' xmlns="http://www.w3.org/2000/svg" width="27"
@@ -850,7 +850,7 @@ wp_enqueue_script('personal-area-js', get_stylesheet_directory_uri() . '/assets/
                                     </div>
                                 </div>
                                 <div class='products-item catalog-item'>
-                                    <a href='<?php echo home_url('/'); ?>product-page' class='item-image'>
+                                    <a href='<?php echo home_url('/'); ?>product' class='item-image'>
                                         <img src='<?php echo get_template_directory_uri() ?>/assets/images/product-gallery-26.jpg'
                                              alt='Кондиционер'>
                                     </a>
@@ -897,7 +897,7 @@ wp_enqueue_script('personal-area-js', get_stylesheet_directory_uri() . '/assets/
                                                       transform="translate(0 -9.569)" fill="#ffdc96" />
                                             </svg>
                                         </div>
-                                        <a href='<?php echo home_url('/'); ?>product-page'>
+                                        <a href='<?php echo home_url('/'); ?>product'>
                                             C&H CH-S07GKP8
                                             <div class='description-icons'>
                                                 <svg class='favorites' xmlns="http://www.w3.org/2000/svg" width="27"
@@ -935,7 +935,7 @@ wp_enqueue_script('personal-area-js', get_stylesheet_directory_uri() . '/assets/
                                     </div>
                                 </div>
                                 <div class='products-item catalog-item'>
-                                    <a href='<?php echo home_url('/'); ?>product-page' class='item-image'>
+                                    <a href='<?php echo home_url('/'); ?>product' class='item-image'>
                                         <img src='<?php echo get_template_directory_uri() ?>/assets/images/product-gallery-27.jpg'
                                              alt='Кондиционер'>
                                     </a>
@@ -982,7 +982,7 @@ wp_enqueue_script('personal-area-js', get_stylesheet_directory_uri() . '/assets/
                                                       transform="translate(0 -9.569)" fill="#ffdc96" />
                                             </svg>
                                         </div>
-                                        <a href='<?php echo home_url('/'); ?>product-page'>
+                                        <a href='<?php echo home_url('/'); ?>product'>
                                             C&H CH-S07GKP8
                                             <div class='description-icons'>
                                                 <svg class='favorites' xmlns="http://www.w3.org/2000/svg" width="27"
@@ -1022,7 +1022,7 @@ wp_enqueue_script('personal-area-js', get_stylesheet_directory_uri() . '/assets/
                             </div>
                             <div class='products-list '>
                                 <div class='products-item catalog-item'>
-                                    <a href='<?php echo home_url('/'); ?>product-page' class='item-image'>
+                                    <a href='<?php echo home_url('/'); ?>product' class='item-image'>
                                         <img src='<?php echo get_template_directory_uri() ?>/assets/images/product-gallery-19.jpg'
                                              alt='Кондиционер'>
                                     </a>
@@ -1069,7 +1069,7 @@ wp_enqueue_script('personal-area-js', get_stylesheet_directory_uri() . '/assets/
                                                       transform="translate(0 -9.569)" fill="#ffdc96" />
                                             </svg>
                                         </div>
-                                        <a href='<?php echo home_url('/'); ?>product-page'>
+                                        <a href='<?php echo home_url('/'); ?>product'>
                                             C&H CH-S07GKP8
                                             <div class='description-icons'>
                                                 <svg class='favorites' xmlns="http://www.w3.org/2000/svg" width="27"
@@ -1107,7 +1107,7 @@ wp_enqueue_script('personal-area-js', get_stylesheet_directory_uri() . '/assets/
                                     </div>
                                 </div>
                                 <div class='products-item catalog-item'>
-                                    <a href='<?php echo home_url('/'); ?>product-page' class='item-image'>
+                                    <a href='<?php echo home_url('/'); ?>product' class='item-image'>
                                         <img src='<?php echo get_template_directory_uri() ?>/assets/images/product-gallery-20.jpg'
                                              alt='Кондиционер'>
                                     </a>
@@ -1154,7 +1154,7 @@ wp_enqueue_script('personal-area-js', get_stylesheet_directory_uri() . '/assets/
                                                       transform="translate(0 -9.569)" fill="#ffdc96" />
                                             </svg>
                                         </div>
-                                        <a href='<?php echo home_url('/'); ?>product-page'>
+                                        <a href='<?php echo home_url('/'); ?>product'>
                                             C&H CH-S07GKP8
                                             <div class='description-icons'>
                                                 <svg class='favorites' xmlns="http://www.w3.org/2000/svg" width="27"
@@ -1192,7 +1192,7 @@ wp_enqueue_script('personal-area-js', get_stylesheet_directory_uri() . '/assets/
                                     </div>
                                 </div>
                                 <div class='products-item catalog-item'>
-                                    <a href='<?php echo home_url('/'); ?>product-page' class='item-image'>
+                                    <a href='<?php echo home_url('/'); ?>product' class='item-image'>
                                         <img src='<?php echo get_template_directory_uri() ?>/assets/images/product-gallery-21.jpg'
                                              alt='Кондиционер'>
                                     </a>
@@ -1239,7 +1239,7 @@ wp_enqueue_script('personal-area-js', get_stylesheet_directory_uri() . '/assets/
                                                       transform="translate(0 -9.569)" fill="#ffdc96" />
                                             </svg>
                                         </div>
-                                        <a href='<?php echo home_url('/'); ?>product-page'>
+                                        <a href='<?php echo home_url('/'); ?>product'>
                                             C&H CH-S07GKP8
                                             <div class='description-icons'>
                                                 <svg class='favorites' xmlns="http://www.w3.org/2000/svg" width="27"
@@ -1279,7 +1279,7 @@ wp_enqueue_script('personal-area-js', get_stylesheet_directory_uri() . '/assets/
                             </div>
                             <div class='products-list '>
                                 <div class='products-item catalog-item'>
-                                    <a href='<?php echo home_url('/'); ?>product-page' class='item-image'>
+                                    <a href='<?php echo home_url('/'); ?>product' class='item-image'>
                                         <img src='<?php echo get_template_directory_uri() ?>/assets/images/product-gallery-22.jpg'
                                              alt='Кондиционер'>
                                     </a>
@@ -1326,7 +1326,7 @@ wp_enqueue_script('personal-area-js', get_stylesheet_directory_uri() . '/assets/
                                                       transform="translate(0 -9.569)" fill="#ffdc96" />
                                             </svg>
                                         </div>
-                                        <a href='<?php echo home_url('/'); ?>product-page'>
+                                        <a href='<?php echo home_url('/'); ?>product'>
                                             C&H CH-S07GKP8
                                             <div class='description-icons'>
                                                 <svg class='favorites' xmlns="http://www.w3.org/2000/svg" width="27"
@@ -1364,7 +1364,7 @@ wp_enqueue_script('personal-area-js', get_stylesheet_directory_uri() . '/assets/
                                     </div>
                                 </div>
                                 <div class='products-item catalog-item'>
-                                    <a href='<?php echo home_url('/'); ?>product-page' class='item-image'>
+                                    <a href='<?php echo home_url('/'); ?>product' class='item-image'>
                                         <img src='<?php echo get_template_directory_uri() ?>/assets/images/product-gallery-23.jpg'
                                              alt='Кондиционер'>
                                     </a>
@@ -1411,7 +1411,7 @@ wp_enqueue_script('personal-area-js', get_stylesheet_directory_uri() . '/assets/
                                                       transform="translate(0 -9.569)" fill="#ffdc96" />
                                             </svg>
                                         </div>
-                                        <a href='<?php echo home_url('/'); ?>product-page'>
+                                        <a href='<?php echo home_url('/'); ?>product'>
                                             C&H CH-S07GKP8
                                             <div class='description-icons'>
                                                 <svg class='favorites' xmlns="http://www.w3.org/2000/svg" width="27"
@@ -1449,7 +1449,7 @@ wp_enqueue_script('personal-area-js', get_stylesheet_directory_uri() . '/assets/
                                     </div>
                                 </div>
                                 <div class='products-item catalog-item'>
-                                    <a href='<?php echo home_url('/'); ?>product-page' class='item-image'>
+                                    <a href='<?php echo home_url('/'); ?>product' class='item-image'>
                                         <img src='<?php echo get_template_directory_uri() ?>/assets/images/product-gallery-18.jpg'
                                              alt='Кондиционер'>
                                     </a>
@@ -1496,7 +1496,7 @@ wp_enqueue_script('personal-area-js', get_stylesheet_directory_uri() . '/assets/
                                                       transform="translate(0 -9.569)" fill="#ffdc96" />
                                             </svg>
                                         </div>
-                                        <a href='<?php echo home_url('/'); ?>product-page'>
+                                        <a href='<?php echo home_url('/'); ?>product'>
                                             C&H CH-S07GKP8
                                             <div class='description-icons'>
                                                 <svg class='favorites' xmlns="http://www.w3.org/2000/svg" width="27"

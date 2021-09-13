@@ -226,7 +226,7 @@
                                 while ($loop->have_posts()) : $loop->the_post();
                                     global $product; ?>
                                     <div class='products-item catalog-item'>
-                                        <a id="id-<?php the_id(); ?>" href="<?php the_permalink(); ?>" title="<?php the_title(); ?>" class='item-image'>
+                                        <a id="id-<?php the_id(); ?>" href="<?php echo home_url('/'); ?>product?uid=<?php the_id(); ?>" title="<?php the_title(); ?>" class='item-image'>
                                             <?php if (has_post_thumbnail($loop->post->ID)) echo get_the_post_thumbnail($loop->post->ID, 'shop_catalog'); else echo '<img src="' . woocommerce_placeholder_img_src() . '" alt="product-image" />'; ?>
                                         </a>
                                         <div class='item-description'>
@@ -272,7 +272,7 @@
                                                           transform="translate(0 -9.569)" fill="#ffdc96"/>
                                                 </svg>
                                             </div>
-                                            <a href='<?php the_permalink(); ?>'>
+                                            <a href='<?php echo home_url('/'); ?>product?uid=<?php the_id(); ?>'>
                                                 <?php the_title(); ?>
                                                 <div class='description-icons'>
                                                     <svg class='favorites' xmlns="http://www.w3.org/2000/svg" width="27"
@@ -298,7 +298,7 @@
                                                <?php if ($product->get_price_html()) echo  $product->get_price_html(); else echo '?????? UAH'; ?>
                                             </span>
                                             <div class='description-buttons'>
-                                                <a href='<?php the_permalink(); ?>' class='btn'>Купить</a>
+                                                <a href='<?php echo home_url('/'); ?>product?uid=<?php the_id(); ?>' class='btn'>Купить</a>
                                                 <a href='#' class='btn btn-second'>В Корзину</a>
                                             </div>
                                         </div>
@@ -314,7 +314,7 @@
                                 <div class='swiper-wrapper'>
                                     <div class='swiper-slide'>
                                         <div class='products-item'>
-                                            <a href='<?php echo home_url('/'); ?>product-page' class='item-image'>
+                                            <a href='<?php echo home_url('/'); ?>product' class='item-image'>
                                                 <img src='<?php echo get_template_directory_uri() ?>/assets/images/product-gallery-18.jpg'
                                                      alt='Кондиционер'>
                                             </a>
@@ -361,7 +361,7 @@
                                                               transform="translate(0 -9.569)" fill="#ffdc96"/>
                                                     </svg>
                                                 </div>
-                                                <a href='<?php echo home_url('/'); ?>product-page'>
+                                                <a href='<?php echo home_url('/'); ?>product'>
                                                     C&H CH-S07GKP8
                                                     <div class='description-icons'>
                                                         <svg class='favorites' xmlns="http://www.w3.org/2000/svg"
@@ -393,7 +393,7 @@
                                     </div>
                                     <div class='swiper-slide'>
                                         <div class='products-item'>
-                                            <a href='<?php echo home_url('/'); ?>product-page' class='item-image'>
+                                            <a href='<?php echo home_url('/'); ?>product' class='item-image'>
                                                 <img src='<?php echo get_template_directory_uri() ?>/assets/images/product-gallery-20.jpg'
                                                      alt='Кондиционер'>
                                             </a>
@@ -440,7 +440,7 @@
                                                               transform="translate(0 -9.569)" fill="#ffdc96"/>
                                                     </svg>
                                                 </div>
-                                                <a href='<?php echo home_url('/'); ?>product-page'>
+                                                <a href='<?php echo home_url('/'); ?>product'>
                                                     C&H CH-S07GKP8
                                                     <div class='description-icons'>
                                                         <svg class='favorites' xmlns="http://www.w3.org/2000/svg"
@@ -472,7 +472,7 @@
                                     </div>
                                     <div class='swiper-slide'>
                                         <div class='products-item'>
-                                            <a href='<?php echo home_url('/'); ?>product-page' class='item-image'>
+                                            <a href='<?php echo home_url('/'); ?>product' class='item-image'>
                                                 <img src='<?php echo get_template_directory_uri() ?>/assets/images/product-gallery-21.jpg'
                                                      alt='Кондиционер'>
                                             </a>
@@ -519,7 +519,7 @@
                                                               transform="translate(0 -9.569)" fill="#ffdc96"/>
                                                     </svg>
                                                 </div>
-                                                <a href='<?php echo home_url('/'); ?>product-page'>
+                                                <a href='<?php echo home_url('/'); ?>product'>
                                                     C&H CH-S07GKP8
                                                     <div class='description-icons'>
                                                         <svg class='favorites' xmlns="http://www.w3.org/2000/svg"
@@ -551,7 +551,7 @@
                                     </div>
                                     <div class='swiper-slide'>
                                         <div class='products-item'>
-                                            <a href='<?php echo home_url('/'); ?>product-page' class='item-image'>
+                                            <a href='<?php echo home_url('/'); ?>product' class='item-image'>
                                                 <img src='<?php echo get_template_directory_uri() ?>/assets/images/product-gallery-22.jpg'
                                                      alt='Кондиционер'>
                                             </a>
@@ -598,7 +598,7 @@
                                                               transform="translate(0 -9.569)" fill="#ffdc96"/>
                                                     </svg>
                                                 </div>
-                                                <a href='<?php echo home_url('/'); ?>product-page'>
+                                                <a href='<?php echo home_url('/'); ?>product'>
                                                     C&H CH-S07GKP8
                                                     <div class='description-icons'>
                                                         <svg class='favorites' xmlns="http://www.w3.org/2000/svg"
@@ -630,7 +630,7 @@
                                     </div>
                                     <div class='swiper-slide'>
                                         <div class='products-item'>
-                                            <a href='<?php echo home_url('/'); ?>product-page' class='item-image'>
+                                            <a href='<?php echo home_url('/'); ?>product' class='item-image'>
                                                 <img src='<?php echo get_template_directory_uri() ?>/assets/images/product-gallery-23.jpg'
                                                      alt='Кондиционер'>
                                             </a>
@@ -677,7 +677,7 @@
                                                               transform="translate(0 -9.569)" fill="#ffdc96"/>
                                                     </svg>
                                                 </div>
-                                                <a href='<?php echo home_url('/'); ?>product-page'>
+                                                <a href='<?php echo home_url('/'); ?>product'>
                                                     C&H CH-S07GKP8
                                                     <div class='description-icons'>
                                                         <svg class='favorites' xmlns="http://www.w3.org/2000/svg"

@@ -10,6 +10,7 @@
 
 .catalog {
   &-content {
+    padding: 6.2% 0;
     .container {
       max-width: 1800px;
     }
@@ -245,7 +246,7 @@
               display: inline-block;
             }
             .price {
-              margin-top: auto;
+              margin-top:    auto;
               margin-bottom: 15px;
               font-weight:   500;
             }
