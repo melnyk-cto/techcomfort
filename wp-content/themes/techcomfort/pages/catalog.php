@@ -298,8 +298,8 @@
                                                <?php if ($product->get_price_html()) echo  $product->get_price_html(); else echo '?????? UAH'; ?>
                                             </span>
                                             <div class='description-buttons'>
-                                                <a href='<?php echo home_url('/'); ?>product?uid=<?php the_id(); ?>' class='btn'>Купить</a>
-                                                <a href='#' class='btn btn-second'>В Корзину</a>
+                                                <a href='<?php echo home_url('/'); ?>ordering?uid=<?php the_id(); ?>' class='btn'>Купить</a>
+                                                <a href='<?php echo home_url('/'); ?>ordering?uid=<?php the_id(); ?>' class='btn btn-second'>В Корзину</a>
                                             </div>
                                         </div>
                                     </div>

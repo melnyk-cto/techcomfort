@@ -1,5 +1,12 @@
 <?php /* Template Name: Page - Ordering */ ?>
 <?php get_header(); ?>
+<?php
+    $_product = wc_get_product($_GET["uid"]);
+?>
+<script>
+    // Description for product page
+    const descriptionProduct = `<?php echo $_product->get_description() ?>`;
+</script>
 <main class='ordering'>
     <section class='contact'>
         <div class='container'>
@@ -101,21 +108,20 @@
                         </div>
                         <div class='item-inner'>
                             <div class='item-image'>
-                                <img src='<?php echo get_template_directory_uri() ?>/assets/images/product-gallery-4.jpg'
-                                     alt='Кондиционер'>
+                                <?php echo $_product->get_image('thumbnail') ?>
                             </div>
                             <div class='item-description'>
                                 <div class='description-title'>
-                                    <h5>C&H CH-S07GKP8</h5>
+                                    <h5><?php echo $_product->get_title() ?></h5>
                                     <p>1 шт</p>
                                 </div>
-                                <span>66 500 UAH</span>
+                                <span class="price-product">????? UAH</span>
                             </div>
                         </div>
                     </div>
                     <p class='price'>
                         Сума товара:
-                        <span>66 500 UAH</span>
+                        <span>????? UAH</span>
                     </p>
                 </div>
             </div>
