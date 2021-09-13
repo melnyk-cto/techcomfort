@@ -20,3 +20,5 @@
     //            'menu_title' => __('General Sections'),
     //        ));
     //    }
+
+        add_theme_support( 'woocommerce' );

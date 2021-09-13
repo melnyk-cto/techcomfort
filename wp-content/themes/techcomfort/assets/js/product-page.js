@@ -35,4 +35,16 @@ document.addEventListener("DOMContentLoaded", function () {
         },
     });
 
+
+    const attributes = `Главная группа фильтров|Тип работы|Холод-тепло
+                        Главная группа фильтров|Холодопроизводительность (кВт)|2.56
+                        Главная группа фильтров|Теплопроизводительность (кВт)|2.66
+                        Главная группа фильтров|Напряжение, частота, Фазы (В, Гц, ф)|220-240501
+                        Главная группа фильтров|Тип хладагента|R-410A
+                        Главная группа фильтров|Рекомендованная площадь помещения|20-30 м2`;
+    const arrayAttributes = attributes.split('\n');
+    const singleAttribute = [];
+    arrayAttributes.map(item => singleAttribute.push([item.split('|')]));
+    console.log(singleAttribute, 'singleAttribute');
+
 });
