@@ -69,16 +69,14 @@
 }
 
 .header {
-  top:     0;
-  left:    0;
-  width:   100%;
-  color:   $black;
-  z-index: 101;
+  top:      0;
+  left:     0;
+  width:    100%;
+  color:    $black;
+  z-index:  101;
+  position: fixed;
   &.fixed {
     position:   fixed;
-    //top:      -63px;
-    //transform: translate3d(0,63px,0);
-    //transition: transform .3s;
     box-shadow: 0 3px 15px 0 rgba(107, 146, 176, 0.5);
     .header-top, .header-center {
       display: none;

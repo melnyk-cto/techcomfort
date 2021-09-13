@@ -293,10 +293,9 @@
                                             </svg>
                                                 </div>
                                             </a>
-                                            <p><?php the_archive_description(); ?></p>
+                                            <p><?php echo $product->get_description() ?></p>
                                             <span class='price'>
-                                               <?php if ($product->get_price_html()) echo  $product->get_price_html(); else echo 'Цена скрыта'; ?>
-
+                                               <?php if ($product->get_price_html()) echo  $product->get_price_html(); else echo '?????? UAH'; ?>
                                             </span>
                                             <div class='description-buttons'>
                                                 <a href='<?php the_permalink(); ?>' class='btn'>Купить</a>

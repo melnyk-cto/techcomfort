@@ -10,7 +10,6 @@
 
 .catalog {
   &-content {
-    padding: 6.2% 0;
     .container {
       max-width: 1800px;
     }
@@ -235,15 +234,18 @@
             margin-bottom: 0;
           }
           .item-description {
-            width: 73%;
+            width:          73%;
+            display:        flex;
+            flex-direction: column;
+            height:         100%;
             > a {
-              max-width:     220px;
               margin-bottom: 15px;
             }
             p {
               display: inline-block;
             }
             .price {
+              margin-top: auto;
               margin-bottom: 15px;
               font-weight:   500;
             }

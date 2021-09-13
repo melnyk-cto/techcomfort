@@ -36,15 +36,22 @@ document.addEventListener("DOMContentLoaded", function () {
     });
 
 
-    const attributes = `Главная группа фильтров|Тип работы|Холод-тепло
-                        Главная группа фильтров|Холодопроизводительность (кВт)|2.56
-                        Главная группа фильтров|Теплопроизводительность (кВт)|2.66
-                        Главная группа фильтров|Напряжение, частота, Фазы (В, Гц, ф)|220-240501
-                        Главная группа фильтров|Тип хладагента|R-410A
-                        Главная группа фильтров|Рекомендованная площадь помещения|20-30 м2`;
-    const arrayAttributes = attributes.split('\n');
+    // Description for product page
+    const characteristicsParent = document.getElementById('characteristics-list');
+    const arrayAttributes = descriptionProduct.split('\n');
     const singleAttribute = [];
     arrayAttributes.map(item => singleAttribute.push([item.split('|')]));
+    for (let i = 0; i < singleAttribute.length; i++) {
+        let li = document.createElement("li")
+        let p = document.createElement("p")
+        let span = document.createElement("span")
+        characteristicsParent.append(li);
+        li.setAttribute('class', 'characteristics-item');
+        li.append(p);
+        li.children[0].innerHTML = singleAttribute[i][0][1];
+        li.append(span);
+        li.children[1].innerHTML = singleAttribute[i][0][2];
+    }
     console.log(singleAttribute, 'singleAttribute');
 
 });

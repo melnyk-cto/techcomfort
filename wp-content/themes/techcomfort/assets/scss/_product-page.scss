@@ -24,7 +24,13 @@
       .swiper-top {
         margin-bottom: 25px;
         .slider-image {
+          background: $white;
           border-radius: 10px;
+          img {
+            height: 400px;
+            object-fit: contain;
+            object-position: center center;
+          }
         }
         .swiper-container {
           .swiper-pagination {
@@ -207,7 +213,7 @@
         span {
           font-size:  16px;
           text-align: left;
-          width:      17.6%;
+          width:      26.6%;
         }
       }
     }

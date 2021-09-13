@@ -128,20 +128,22 @@ document.addEventListener("DOMContentLoaded", function () {
 // button active
     const btnContour = document.querySelectorAll(".btn-contour");
     const buttonsContainer = document.querySelector(".buttons-container-js");
-    buttonsContainer.addEventListener("click", (event) => {
-        const elem = event.target.closest('.btn-contour');
-        if (!elem) {
-            return;
-        }
-
-        btnContour.forEach((item) => {
-            if (item.classList.contains('active')) {
-                item.classList.remove('active');
+    if (buttonsContainer) {
+        buttonsContainer.addEventListener("click", (event) => {
+            const elem = event.target.closest('.btn-contour');
+            if (!elem) {
+                return;
             }
-        });
 
-        elem.classList.add('active');
-    });
+            btnContour.forEach((item) => {
+                if (item.classList.contains('active')) {
+                    item.classList.remove('active');
+                }
+            });
+
+            elem.classList.add('active');
+        });
+    }
 
     if (swiperProducts) {
         const mySwiperProducts = new Swiper('.swiper-products', {
