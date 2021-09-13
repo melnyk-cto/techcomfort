@@ -423,6 +423,11 @@ form {
   }
 }
 
+//noUi slider
+.noUi-origin {
+  transition: none;
+}
+
 @media screen and (max-width: 1150px) {
   h2 {
     font-size: 24px;
