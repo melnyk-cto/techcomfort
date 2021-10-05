@@ -1,6 +1,10 @@
 <?php /* Template Name: Page - Ordering */ ?>
 <?php get_header(); ?>
 <?php
+
+    wp_enqueue_script('ordering-form', get_stylesheet_directory_uri() . '/assets/js/ordering-form.js');
+?>
+<?php
     $_product = wc_get_product($_GET["uid"]);
 ?>
 <script>
@@ -13,54 +17,54 @@
             <h2>Оформление заказа</h2>
             <div class='contact-inner'>
                 <div class='contact-form'>
-                    <form action=''>
+                    <form id="orderForm" action=''>
                         <label>
                             <span>Имя</span>
-                            <input type='text'>
+                            <input required name="First Name" type='text'>
                         </label>
                         <label>
                             <span>Фамилия</span>
-                            <input type='text'>
+                            <input required name="Second Name" type='text'>
                         </label>
                         <label>
                             <span>Телефон</span>
-                            <input type='tel'>
+                            <input required name="Mobile Number" type='tel'>
                         </label>
                         <label>
                             <span>Email</span>
-                            <input type='email'>
+                            <input required name="Email address" type='email'>
                         </label>
                         <label class='address'>
                             <span>Адрес</span>
-                            <textarea></textarea>
+                            <textarea required name="Address"></textarea>
                         </label>
                         <div class='installation-required'>
                             <h5>Требуется установка</h5>
                             <label>
-                                <input name='installation' type="radio" checked>
+                                <input required value="Да" name='Installation' type="radio" checked>
                                 Да
                             </label>
                             <label>
-                                <input name='installation' type="radio">
+                                <input value="Нет" name='Installation' type="radio">
                                 Нет
                             </label>
                             <label class='textarea'>
                                 <span>Дополнительная информация</span>
-                                <textarea></textarea>
+                                <textarea name="Additional"></textarea>
                             </label>
                         </div>
                         <div class='delivery-service'>
                             <h5>Сервис доставки</h5>
                             <div class='delivery-service-item'>
                                 <label class='courier'>
-                                    <input name='delivery' type='radio'>
+                                    <input value="Курьер" name='Delivery' type='radio'>
                                     Курьер
                                 </label>
                                 <p>доставка по Киеву бесплатно</p>
                             </div>
                             <div class='delivery-service-item'>
                                 <label class='new-mail'>
-                                    <input name='delivery' type='radio'>
+                                    <input value="Новая почта (по тарифу перевозчика)" name='Delivery' type='radio'>
                                     Новая почта ( по тарифу перевозчика )
                                 </label>
                                 <label>
@@ -74,7 +78,7 @@
                             </div>
                             <div class='delivery-service-item'>
                                 <label>
-                                    <input name='delivery' type='radio' checked>
+                                    <input value="Другой вариант доставки" name='Delivery' type='radio' checked>
                                     Другой вариант доставки
                                 </label>
                             </div>
@@ -82,23 +86,23 @@
                         <div class='payment-method'>
                             <h5>способ оплаты</h5>
                             <label>
-                                <input name='payment' type='radio'>
+                                <input value="Оплата наличными" name='Payment' type='radio'>
                                 Оплата наличными
                             </label>
                             <label>
-                                <input name='payment' type='radio' checked>
+                                <input value="Оплата картой" name='Payment' type='radio' checked>
                                 Оплата картой
                             </label>
                             <label>
-                                <input name='payment' type='radio'>
+                                <input value="Оплата при получении в службах доставки" name='Payment' type='radio'>
                                 Оплата при получении в службах доставки
                             </label>
                             <label>
-                                <input name='payment' type='radio'>
+                                <input value="Оплата по безналичному расчету (НДС)" name='Payment' type='radio'>
                                 Оплата по безналичному расчету (НДС)
                             </label>
                         </div>
-                        <button type='submit' class='btn'>создать Заказ</button>
+                        <button type='submit' id="submit" class='btn'>Создать Заказ</button>
                     </form>
                 </div>
                 <div class='ordering-basket'>

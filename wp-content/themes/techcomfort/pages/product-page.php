@@ -71,10 +71,10 @@
                     </div>
                     <div class='buy'>
                         <p class='price'>
-                            Цена:
-                            <span>????? UAH</span>
+                            Цена: <span><?php echo $_product->get_price_html(); ?></span>
                         </p>
-                        <a href='<?php echo home_url('/'); ?>ordering?uid=<?php echo $_product->get_id(); ?>' class='btn'>
+                        <a href='<?php echo home_url('/'); ?>ordering?uid=<?php echo $_product->get_id(); ?>'
+                           class='btn'>
                             <svg xmlns="http://www.w3.org/2000/svg" width="27" height="25.411" viewBox="0 0 27 25.411">
                                 <path id="Контур_72" data-name="Контур 72"
                                       d="M26.844,5.935a.866.866,0,0,0-.673-.37L9.422,4.843a.866.866,0,0,0-.074,1.731l15.614.673-3.07,9.579H8.23L5.762,3.387a.866.866,0,0,0-.535-.65L1.183,1.149A.866.866,0,0,0,.55,2.761L4.144,4.174,6.656,17.849a.867.867,0,0,0,.852.71h.417L6.973,21.2a.722.722,0,0,0,.679.966H8.32a2.6,2.6,0,1,0,3.863,0h5.666a2.6,2.6,0,1,0,3.863,0h.812a.722.722,0,1,0,0-1.444H8.68l.78-2.166H22.524a.866.866,0,0,0,.825-.6l3.61-11.262A.864.864,0,0,0,26.844,5.935ZM10.252,25.056A1.155,1.155,0,1,1,11.407,23.9,1.156,1.156,0,0,1,10.252,25.056Zm9.529,0A1.155,1.155,0,1,1,20.936,23.9,1.156,1.156,0,0,1,19.781,25.056Z"
@@ -91,14 +91,14 @@
         <div class='container'>
             <div class='general-information-inner'>
                 <div class='tabs buttons-container-js'>
-                    <a href='#description' class='btn btn-contour active'>Описание</a>
-                    <a href='#characteristics' class='btn btn-contour'>Характеристики</a>
-                    <a href='#reviews' class='btn btn-contour'>Отзывы</a>
+                    <!--                    <a href='#description' class='btn btn-contour active'>Описание</a>-->
+                    <!--                    <a href='#characteristics' class='btn btn-contour'>Характеристики</a>-->
+                    <!--                    <a href='#reviews' class='btn btn-contour'>Отзывы</a>-->
                 </div>
-                <div id='description' class='description'>
-                    <h5>Описание</h5>
-                    <p>?????????</p>
-                </div>
+                <!--                <div id='description' class='description'>-->
+                <!--                    <h5>Описание</h5>-->
+                <!--                    <p>?????????</p>-->
+                <!--                </div>-->
                 <div id='characteristics' class='characteristics'>
                     <h5>характеристики</h5>
                     <ul id="characteristics-list" class='characteristics-list'>
@@ -108,66 +108,66 @@
                         </li>
                     </ul>
                 </div>
-                <div id='reviews' class='reviews'>
-                    <h5>Отзывы</h5>
-                    <form action=''>
-                        <label>
-                            <span>Имя</span>
-                            <input type='text'>
-                        </label>
-                        <label class='textarea'>
-                            <span>Отзывы</span>
-                            <textarea></textarea>
-                        </label>
-                        <label class='textarea'>
-                            <span>Достоинства</span>
-                            <textarea></textarea>
-                        </label>
-                        <label class='textarea'>
-                            <span>Недостатки</span>
-                            <textarea></textarea>
-                        </label>
-                        <div class='rating'>
-                            <p>Оценка:</p>
-                            <svg id="Сгруппировать" xmlns="http://www.w3.org/2000/svg" width="14.137"
-                                 height="13.608"
-                                 viewBox="0 0 14.137 13.608">
-                                <path id="Контур_2" data-name="Контур 2"
-                                      d="M14.137,14.767,9,14.429,7.065,9.569l-1.934,4.86L0,14.767l3.935,3.342L2.644,23.177l4.421-2.795,4.421,2.795L10.2,18.108Z"
-                                      transform="translate(0 -9.569)" fill="#ffdc96"/>
-                            </svg>
-                            <svg id="Сгруппировать" xmlns="http://www.w3.org/2000/svg" width="14.137"
-                                 height="13.608"
-                                 viewBox="0 0 14.137 13.608">
-                                <path id="Контур_2" data-name="Контур 2"
-                                      d="M14.137,14.767,9,14.429,7.065,9.569l-1.934,4.86L0,14.767l3.935,3.342L2.644,23.177l4.421-2.795,4.421,2.795L10.2,18.108Z"
-                                      transform="translate(0 -9.569)" fill="#ffdc96"/>
-                            </svg>
-                            <svg id="Сгруппировать" xmlns="http://www.w3.org/2000/svg" width="14.137"
-                                 height="13.608"
-                                 viewBox="0 0 14.137 13.608">
-                                <path id="Контур_2" data-name="Контур 2"
-                                      d="M14.137,14.767,9,14.429,7.065,9.569l-1.934,4.86L0,14.767l3.935,3.342L2.644,23.177l4.421-2.795,4.421,2.795L10.2,18.108Z"
-                                      transform="translate(0 -9.569)" fill="#ffdc96"/>
-                            </svg>
-                            <svg id="Сгруппировать" xmlns="http://www.w3.org/2000/svg" width="14.137"
-                                 height="13.608"
-                                 viewBox="0 0 14.137 13.608">
-                                <path id="Контур_2" data-name="Контур 2"
-                                      d="M14.137,14.767,9,14.429,7.065,9.569l-1.934,4.86L0,14.767l3.935,3.342L2.644,23.177l4.421-2.795,4.421,2.795L10.2,18.108Z"
-                                      transform="translate(0 -9.569)" fill="#ffdc96"/>
-                            </svg>
-                            <svg id="Сгруппировать" xmlns="http://www.w3.org/2000/svg" width="14.137"
-                                 height="13.608"
-                                 viewBox="0 0 14.137 13.608">
-                                <path id="Контур_2" data-name="Контур 2"
-                                      d="M14.137,14.767,9,14.429,7.065,9.569l-1.934,4.86L0,14.767l3.935,3.342L2.644,23.177l4.421-2.795,4.421,2.795L10.2,18.108Z"
-                                      transform="translate(0 -9.569)" fill="#ffdc96"/>
-                            </svg>
-                        </div>
-                        <button class='btn'>Отправить отзыв</button>
-                    </form>
-                </div>
+                <!--                <div id='reviews' class='reviews'>-->
+                <!--                    <h5>Отзывы</h5>-->
+                <!--                    <form action=''>-->
+                <!--                        <label>-->
+                <!--                            <span>Имя</span>-->
+                <!--                            <input type='text'>-->
+                <!--                        </label>-->
+                <!--                        <label class='textarea'>-->
+                <!--                            <span>Отзывы</span>-->
+                <!--                            <textarea></textarea>-->
+                <!--                        </label>-->
+                <!--                        <label class='textarea'>-->
+                <!--                            <span>Достоинства</span>-->
+                <!--                            <textarea></textarea>-->
+                <!--                        </label>-->
+                <!--                        <label class='textarea'>-->
+                <!--                            <span>Недостатки</span>-->
+                <!--                            <textarea></textarea>-->
+                <!--                        </label>-->
+                <!--                        <div class='rating'>-->
+                <!--                            <p>Оценка:</p>-->
+                <!--                            <svg id="Сгруппировать" xmlns="http://www.w3.org/2000/svg" width="14.137"-->
+                <!--                                 height="13.608"-->
+                <!--                                 viewBox="0 0 14.137 13.608">-->
+                <!--                                <path id="Контур_2" data-name="Контур 2"-->
+                <!--                                      d="M14.137,14.767,9,14.429,7.065,9.569l-1.934,4.86L0,14.767l3.935,3.342L2.644,23.177l4.421-2.795,4.421,2.795L10.2,18.108Z"-->
+                <!--                                      transform="translate(0 -9.569)" fill="#ffdc96"/>-->
+                <!--                            </svg>-->
+                <!--                            <svg id="Сгруппировать" xmlns="http://www.w3.org/2000/svg" width="14.137"-->
+                <!--                                 height="13.608"-->
+                <!--                                 viewBox="0 0 14.137 13.608">-->
+                <!--                                <path id="Контур_2" data-name="Контур 2"-->
+                <!--                                      d="M14.137,14.767,9,14.429,7.065,9.569l-1.934,4.86L0,14.767l3.935,3.342L2.644,23.177l4.421-2.795,4.421,2.795L10.2,18.108Z"-->
+                <!--                                      transform="translate(0 -9.569)" fill="#ffdc96"/>-->
+                <!--                            </svg>-->
+                <!--                            <svg id="Сгруппировать" xmlns="http://www.w3.org/2000/svg" width="14.137"-->
+                <!--                                 height="13.608"-->
+                <!--                                 viewBox="0 0 14.137 13.608">-->
+                <!--                                <path id="Контур_2" data-name="Контур 2"-->
+                <!--                                      d="M14.137,14.767,9,14.429,7.065,9.569l-1.934,4.86L0,14.767l3.935,3.342L2.644,23.177l4.421-2.795,4.421,2.795L10.2,18.108Z"-->
+                <!--                                      transform="translate(0 -9.569)" fill="#ffdc96"/>-->
+                <!--                            </svg>-->
+                <!--                            <svg id="Сгруппировать" xmlns="http://www.w3.org/2000/svg" width="14.137"-->
+                <!--                                 height="13.608"-->
+                <!--                                 viewBox="0 0 14.137 13.608">-->
+                <!--                                <path id="Контур_2" data-name="Контур 2"-->
+                <!--                                      d="M14.137,14.767,9,14.429,7.065,9.569l-1.934,4.86L0,14.767l3.935,3.342L2.644,23.177l4.421-2.795,4.421,2.795L10.2,18.108Z"-->
+                <!--                                      transform="translate(0 -9.569)" fill="#ffdc96"/>-->
+                <!--                            </svg>-->
+                <!--                            <svg id="Сгруппировать" xmlns="http://www.w3.org/2000/svg" width="14.137"-->
+                <!--                                 height="13.608"-->
+                <!--                                 viewBox="0 0 14.137 13.608">-->
+                <!--                                <path id="Контур_2" data-name="Контур 2"-->
+                <!--                                      d="M14.137,14.767,9,14.429,7.065,9.569l-1.934,4.86L0,14.767l3.935,3.342L2.644,23.177l4.421-2.795,4.421,2.795L10.2,18.108Z"-->
+                <!--                                      transform="translate(0 -9.569)" fill="#ffdc96"/>-->
+                <!--                            </svg>-->
+                <!--                        </div>-->
+                <!--                        <button class='btn'>Отправить отзыв</button>-->
+                <!--                    </form>-->
+                <!--                </div>-->
             </div>
         </div>
     </section>

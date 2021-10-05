@@ -295,7 +295,7 @@
                                             </a>
                                             <p><?php echo $product->get_description() ?></p>
                                             <span class='price'>
-                                               <?php if ($product->get_price_html()) echo  $product->get_price_html(); else echo '?????? UAH'; ?>
+                                               <?php if ($product->get_price_html()) echo  $product->get_price_html(); else echo 'Уточняйте цену'; ?>
                                             </span>
                                             <div class='description-buttons'>
                                                 <a href='<?php echo home_url('/'); ?>ordering?uid=<?php the_id(); ?>' class='btn'>Купить</a>
