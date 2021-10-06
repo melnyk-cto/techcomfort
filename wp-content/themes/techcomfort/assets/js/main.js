@@ -11,7 +11,7 @@ document.addEventListener("DOMContentLoaded", function () {
     const loginClose = document.querySelector(".login-close");
     const registrationClose = document.querySelector(".registration-close");
     const basket = document.querySelector(".basket");
-    const headerBasket = document.getElementsByClassName("header-basket");
+    const headerBasket = document.getElementsByClassName("open-basket-js");
     const noProducts = document.querySelector(".no-products");
     const itemClose = document.getElementsByClassName("item-close");
     const headerCatalog = document.getElementById("header-catalog-js");

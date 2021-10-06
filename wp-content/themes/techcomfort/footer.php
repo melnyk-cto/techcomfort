@@ -41,7 +41,7 @@
                         </ul>
                         <ul>
                             <li>
-                                <a href='<?php echo home_url( '/' ); ?>our-works'>Наши роботы</a>
+                                <a href='<?php echo home_url( '/' ); ?>our-works'>Наши работы</a>
                             </li>
 <!--                            <li>-->
 <!--                                <a href='--><?php //echo home_url( '/' ); ?><!--reviews'>Отзывы</a>-->

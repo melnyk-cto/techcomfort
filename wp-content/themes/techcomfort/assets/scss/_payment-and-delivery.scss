@@ -25,17 +25,16 @@
   }
   &-list {
     display:   flex;
-    flex-wrap: wrap;
+    grid-gap: 0 18px;
   }
   &-item {
     max-width:     364px;
-    width:         100%;
     min-height:    390px;
     padding:       2.8% 20px 2.2%;
     background:    $white;
     border-radius: 10px;
     box-shadow:    0 3px 20px rgba(56, 69, 249, 0.13);
-    margin:        18px;
+    width:         25%;
     .item-image {
       margin: 0 auto 12.1%;
     }
@@ -133,6 +132,7 @@
     }
     &-list {
       justify-content: center;
+      flex-wrap: wrap;
     }
     &-item {
       max-width:  initial;

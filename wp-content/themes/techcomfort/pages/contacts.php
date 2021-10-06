@@ -6,29 +6,7 @@
             <div class='contact-inner'>
                 <div class='contact-form'>
                     <h2>Обратная связь</h2>
-                    <form action=''>
-                        <label for=''>
-                            <span>Имя</span>
-                            <input type='text'>
-                        </label>
-                        <label for=''>
-                            <span>Фамилия</span>
-                            <input type='text'>
-                        </label>
-                        <label for=''>
-                            <span>Телефон</span>
-                            <input type='tel'>
-                        </label>
-                        <label for=''>
-                            <span>Email</span>
-                            <input type='email'>
-                        </label>
-                        <label class='textarea'>
-                            <span>Текст сообщения</span>
-                            <textarea name=''></textarea>
-                        </label>
-                        <button type='submit' class='btn'>отправить</button>
-                    </form>
+                   <?php echo do_shortcode('[contact-form-7 id="10669" title="Обратная связь"]') ?>
                 </div>
                 <div class='contact-info'>
                     <div class='info-title'>

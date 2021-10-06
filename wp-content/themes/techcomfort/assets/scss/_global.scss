@@ -1,7 +1,7 @@
 @import "variables";
 
 @media (any-hover: hover) {
-  .btn:hover {
+  input.btn, .btn:hover {
     background: $bgColor;
     color:      $black;
   }
@@ -96,7 +96,7 @@ button {
   border: none;
 }
 
-.btn {
+input.btn, .btn {
   display:        inline-block;
   background:     $primaryColor;
   color:          $white;
@@ -109,6 +109,7 @@ button {
   text-transform: uppercase;
   border-radius:  5px;
   cursor:         pointer;
+  border:         none;
   &:active {
     background: $bgColor;
     color:      $black;
@@ -178,7 +179,7 @@ button {
           font-size: 18px;
         }
       }
-      .btn {
+      input.btn, .btn {
         max-width:     initial;
         font-size:     14px;
         padding:       17px;
@@ -263,8 +264,9 @@ form {
   label {
     position: relative;
     height:   50px;
-    span {
+    span.label {
       position:   absolute;
+      z-index:    4;
       top:        0;
       left:       25px;
       font-size:  16px;
@@ -277,16 +279,19 @@ form {
   textarea {
     resize: none;
   }
-  input:not([type="radio"]), textarea {
+  input:not([type="radio"], .btn), textarea {
     width:      100%;
-    height:     100%;
     background: transparent;
     border:     1px solid $bgColor;
     font-size:  16px;
     padding:    15px;
+    height:     50px;
     &:focus, &:focus-visible {
       outline: 2px solid $primaryColor !important;
     }
+  }
+  textarea {
+    min-height: 125px;
   }
   .textarea {
     width: 100%;
@@ -444,7 +449,7 @@ form {
   p, a {
     font-size: 14px;
   }
-  .btn {
+  input.btn, .btn {
     font-size: 14px;
     max-width: 130px;
     padding:   14px;
@@ -492,7 +497,7 @@ form {
   form {
     label {
       height: 45px;
-      span {
+      span.label {
         left:      15px;
         font-size: 14px;
         padding:   0 8px;
@@ -501,7 +506,7 @@ form {
     textarea {
       font-size: 14px;
     }
-    input:not([type="radio"]), textarea {
+    input:not([type="radio"], .btn), textarea {
       font-size: 14px;
     }
   }
@@ -521,7 +526,7 @@ form {
       form {
         label {
           height: 50px;
-          span {
+          span.label {
             background: $white;
           }
           input {
@@ -531,7 +536,7 @@ form {
             font-size: 16px;
           }
         }
-        .btn {
+        input.btn, .btn {
           padding:       13px;
           margin-bottom: 10px;
         }
@@ -588,7 +593,7 @@ form {
   p, a {
     font-size: 12px;
   }
-  .btn {
+  input.btn, .btn {
     padding:       13px;
     font-size:     14px;
     font-weight:   400;
@@ -606,16 +611,18 @@ form {
   form {
     label {
       height: 40px;
-      span {
+      span.label {
         font-size: 12px;
         padding:   0 5px;
       }
     }
     textarea {
-      font-size: 12px;
+      font-size:  12px;
+      min-height: 75px;
     }
-    input:not([type="radio"]), textarea {
+    input:not([type="radio"], .btn), textarea {
       font-size: 12px;
+      height:    40px;
     }
   }
   .email, .call {
@@ -646,7 +653,7 @@ form {
       form {
         label {
           height: 40px;
-          span {
+          span.label {
             background: #F8F8FA;
           }
           input {
@@ -656,7 +663,7 @@ form {
             font-size: 14px;
           }
         }
-        .btn {
+        input.btn, .btn {
           padding: 12px;
         }
         .checkbox {
@@ -700,4 +707,28 @@ form {
       max-width: 20px;
     }
   }
+}
+
+// cf7
+.wpcf7-form-control-wrap {
+  z-index: 2;
+}
+
+.wpcf7-not-valid-tip {
+  font-size: 12px;
+}
+
+
+// Shop page
+.products.columns-4 {
+  display:   flex;
+  flex-wrap: wrap;
+}
+
+.woocommerce-breadcrumb, .woocommerce-products-header {
+  display: none;
+}
+
+.added_to_cart.wc-forward {
+  display: none;
 }

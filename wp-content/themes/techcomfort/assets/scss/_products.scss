@@ -2,7 +2,7 @@
 
 @media (any-hover: hover) {
   .products {
-    &-slider:hover {
+    .products-slider:hover {
       .swiper-button-prev, .swiper-button-next {
         opacity: 1;
         &.swiper-button-disabled {
@@ -10,10 +10,10 @@
         }
       }
     }
-    &-item:hover {
+    .products-item:hover {
       box-shadow: 0 3px 20px 0 rgba(56, 69, 249, 0.35);
     }
-    &-item {
+    .products-item, .product {
       .favorites:hover {
         path {
           stroke: $primaryColor;
@@ -32,7 +32,7 @@
   h2 {
     margin-bottom: 3.6%;
   }
-  &-buttons {
+  .products-buttons {
     margin-bottom: 3.75%;
     display:       flex;
     flex-wrap:     wrap;
@@ -46,7 +46,7 @@
       }
     }
   }
-  &-slider {
+  .products-slider {
     .swiper-container {
       padding: 15px 0;
       .swiper-pagination {
@@ -66,36 +66,13 @@
       }
     }
   }
-  &-list {
+  .products-list {
     display:         flex;
     justify-content: space-between;
     flex-wrap:       wrap;
     margin-bottom:   25px;
-    .catalog-item {
-      padding:       0;
-      width:         31%;
-      margin-bottom: 6.55%;
-      .item-image {
-        height:        250px;
-        img {
-          height:     100%;
-          object-fit: contain;
-          padding:    10px;
-        }
-      }
-      .item-description {
-        padding: 15px;
-        p {
-          display:       none;
-          margin-bottom: 15px;
-        }
-      }
-      .item-buttons {
-        display: none;
-      }
-    }
   }
-  &-item {
+  .products-item, .product {
     max-width:     375px;
     width:         92%;
     margin:        0 auto;
@@ -187,11 +164,34 @@
       }
     }
   }
+  .catalog-item, .product {
+    padding:       0;
+    width:         31%;
+    margin-bottom: 6.55%;
+    .item-image {
+      height:        250px;
+      img {
+        height:     100%;
+        object-fit: contain;
+        padding:    10px;
+      }
+    }
+    .item-description {
+      padding: 15px;
+      p {
+        display:       none;
+        margin-bottom: 15px;
+      }
+    }
+    .item-buttons {
+      display: none;
+    }
+  }
 }
 
 @media screen and (max-width: 1150px) {
   .products {
-    &-buttons {
+    .products-buttons {
       margin-bottom: 25px;
       .btn-contour {
         font-size:    16px;
@@ -199,29 +199,15 @@
         margin-right: 15px;
       }
     }
-    &-slider {
+    .products-slider {
       max-width: 1000px;
       margin:    0 auto;
     }
-    &-list {
+    .products-list {
       margin-bottom:   30px;
       justify-content: center;
-      .catalog-item {
-        width:  30%;
-        margin: 0 10px 20px;
-        .item-image {
-          margin-bottom: 7.3%;
-        }
-        .item-description {
-          p {
-            font-size:     14px;
-            line-height:   1.5;
-            margin-bottom: 10px;
-          }
-        }
-      }
     }
-    &-item {
+    .products-item, .product {
       box-shadow:    0 3px 10px 0 rgba(56, 69, 249, 0.14);
       border-radius: 8px;
       padding:       13% 5% 9%;
@@ -268,12 +254,26 @@
         }
       }
     }
+    .catalog-item, .product {
+      width:  30%;
+      margin: 0 10px 20px;
+      .item-image {
+        margin-bottom: 7.3%;
+      }
+      .item-description {
+        p {
+          font-size:     14px;
+          line-height:   1.5;
+          margin-bottom: 10px;
+        }
+      }
+    }
   }
 }
 
 @media screen and (max-width: 767px) {
   .products {
-    &-buttons {
+    .products-buttons {
       margin:    0 auto 10px;
       max-width: 415px;
       .btn-contour {
@@ -283,7 +283,7 @@
         border-radius: 3px;
       }
     }
-    &-slider {
+    .products-slider {
       .swiper-container {
         padding: 5px 0 35px;
         .swiper-pagination {
@@ -297,18 +297,7 @@
         right: 15px;
       }
     }
-    &-list {
-      .catalog-item {
-        width:  44%;
-        margin: 0 10px 20px;
-        .item-description {
-          .description-buttons {
-            flex-wrap: nowrap;
-          }
-        }
-      }
-    }
-    &-item {
+    .products-item {
       box-shadow:    0 3px 10px 0 rgba(56, 69, 249, 0.14);
       border-radius: 8px;
       min-height:    230px;
@@ -337,20 +326,26 @@
         }
       }
     }
+    .catalog-item, .product {
+      width:  44%;
+      margin: 0 10px 20px;
+      .item-description {
+        .description-buttons {
+          flex-wrap: nowrap;
+        }
+      }
+    }
   }
 }
 
 @media screen and (max-width: 567px) {
   .products {
-    &-list {
-      .catalog-item {
-        width: 100%;
-        max-width: 100%;
-        .item-image {
-          height: 200px;
-        }
+    .catalog-item, .product {
+      width: 100%;
+      max-width: 100%;
+      .item-image {
+        height: 200px;
       }
     }
   }
-
 }

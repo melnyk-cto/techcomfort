@@ -16,8 +16,8 @@
     text-transform: uppercase;
   }
   &-inner {
-    max-width:       960px;
-    height:          407px;
+    min-height:      407px;
+    max-height:          90%;
     justify-content: space-between;
   }
   &-title {
@@ -71,6 +71,9 @@
     }
     .item-image {
       width: 21%;
+      img {
+        height: auto;
+      }
     }
     .item-description {
       width:           69%;
