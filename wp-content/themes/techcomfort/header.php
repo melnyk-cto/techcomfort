@@ -71,13 +71,17 @@
                                   d="M6.774,0A7.016,7.016,0,0,0-.234,7.008c0,4.857,7.015,13.154,7.015,13.154s7-8.535,7-13.154A7.016,7.016,0,0,0,6.774,0ZM8.888,9.06a2.99,2.99,0,1,1,0-4.229A2.981,2.981,0,0,1,8.888,9.06Zm0,0"
                                   transform="translate(0.234)" fill="#6b92b0"/>
                         </svg>
-                        <p>г. Киев</p>
+                        <p><?php echo get_field('city', 'option')?></p>
                     </div>
                     <div class='call'>
-                        <a href='tel:38(097) 107 25 25'>38(097) 107 25 25</a>
-                        <a href='tel:38(097) 125 95 95'>38(097) 125 95 95</a>
+                        <a href='tel:<?php echo get_field('phone_1', 'option')?>'><?php echo get_field('phone_1', 'option')?></a>
+                        <a href='tel:<?php echo get_field('phone_2', 'option')?>'><?php echo get_field('phone_2', 'option')?></a>
                     </div>
                     <div class='socials'>
+                        <a href='https://t.me/' class='socials-image'>
+                            <img src='<?php echo get_template_directory_uri() ?>/assets/images/icons/telegram.svg'
+                                 alt='Telegram'>
+                        </a>
                         <a href='#' class='socials-image'>
                             <img src='<?php echo get_template_directory_uri() ?>/assets/images/icons/viber.svg'
                                  alt='Viber'>
@@ -87,11 +91,11 @@
                                  alt='WhatsApp'>
                         </a>
                     </div>
-                    <select name='' id='' class='language'>
-                        <option value=''>Ru</option>
-                        <option value=''>En</option>
-                        <option value=''>Un</option>
-                    </select>
+<!--                    <select name='' id='' class='language'>-->
+                    <!--                        <option value=''>Ru</option>-->
+                    <!--                        <option value=''>En</option>-->
+                    <!--                        <option value=''>Un</option>-->
+                    <!--                    </select>-->
                 </div>
             </div>
         </div>
@@ -503,8 +507,8 @@
                                 <path id="Контур_135" data-name="Контур 135"
                                       d="M16.63,11.868a10.266,10.266,0,0,1-3.224-.514,1.474,1.474,0,0,0-1.433.3L9.94,13.191a11.235,11.235,0,0,1-5.051-5.05l1.49-1.98a1.461,1.461,0,0,0,.36-1.481,10.281,10.281,0,0,1-.515-3.229A1.452,1.452,0,0,0,4.771,0H1.451A1.453,1.453,0,0,0,0,1.451a16.649,16.649,0,0,0,16.63,16.63,1.453,1.453,0,0,0,1.451-1.451V13.319A1.453,1.453,0,0,0,16.63,11.868Z"/>
                             </svg>
-                            <a href='tel:38(097) 107 25 25'>38(097) 107 25 25</a>
-                            <a href='tel:38(097) 125 95 95'>38(097) 125 95 95</a>
+                            <a href='tel:<?php echo get_field('phone_1', 'option')?>'><?php echo get_field('phone_1', 'option')?></a>
+                            <a href='tel:<?php echo get_field('phone_2', 'option')?>'><?php echo get_field('phone_2', 'option')?></a>
                         </div>
                         <div class='socials'>
                             <div class='socials-images'>

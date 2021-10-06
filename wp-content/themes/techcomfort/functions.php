@@ -12,13 +12,13 @@
     //        'top'    => 'Верхнее меню',    //Название месторасположения меню в шаблоне
     //    ));
 
-    // ACF
-    //    if (function_exists('acf_add_options_page')) {
-    //        // Register options page.
-    //        $parent = acf_add_options_page(array(
-    //            'page_title' => __('Theme General Sections'),
-    //            'menu_title' => __('General Sections'),
-    //        ));
-    //    }
+    //     ACF
+    if (function_exists('acf_add_options_page')) {
+        // Register options page.
+        $parent = acf_add_options_page(array(
+            'page_title' => __('Основная информация на сайте'),
+            'menu_title' => __('General Sections'),
+        ));
+    }
 
-        add_theme_support( 'woocommerce' );
+    add_theme_support('woocommerce');

@@ -11,6 +11,37 @@
     }
     &-item {
       padding: 10px;
+      cursor:  pointer;
+      &:hover, &:active {
+        opacity: .7;
+      }
+      &.fixed {
+        position:   fixed;
+        left:       0;
+        top:        0;
+        z-index:    120;
+        background: rgba(0, 0, 0, 0.8);
+        padding:    10%;
+        width:      100%;
+        height:     100%;
+        text-align: center;
+        &:hover, &:active {
+          opacity: 1;
+        }
+        &:before {
+          content:    '';
+          width:      24px;
+          height:     24px;
+          position:   absolute;
+          right:      10px;
+          top:        10px;
+          background: red;
+        }
+        img {
+          max-height: 100%;
+          width:      auto;
+        }
+      }
     }
     .clearfix {
       &::after {

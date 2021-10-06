@@ -3,7 +3,7 @@ document.addEventListener("DOMContentLoaded", function () {
     const header = document.querySelector(".header");
     const headerMenu = document.querySelector(".header-menu");
     const headerMobilesBottom = document.querySelector(".header-mobiles-bottom");
-    const headerMobilesInner = document.querySelector(".bottom-inner");
+    const headerCenter = document.querySelector(".header-center");
     const swiperProducts = document.querySelector(".swiper-products");
     const burger = document.querySelector(".burger");
     const headerClose = document.querySelector(".header-close-js");
@@ -25,38 +25,40 @@ document.addEventListener("DOMContentLoaded", function () {
     const registerNow = document.querySelector(".register-now");
     const registered = document.querySelector(".registered");
 
-// Burger menu
+    // Burger menu
     burger.addEventListener("click", function () {
         headerMobilesBottom.classList.add("show");
     });
 
-//close header mobiles
+    //close header mobiles
     headerClose.addEventListener("click", function () {
         headerMobilesBottom.classList.remove("show");
     });
-//
-// //outside click
-// window.addEventListener('click', function (e) {
-//     if (!headerMobilesInner.contains(e.target) && !headerClose.contains(e.target)) {
-//         headerMobilesBottom.classList.remove("show")
-//     }
-// });
+    //
 
-//basket show
+    document.addEventListener('scroll', function () {
+        if (window.scrollY > 80) {
+            headerCenter.style.display = 'none';
+        } else {
+            headerCenter.style.display = 'block';
+        }
+    })
+
+    //basket show
     for (let i = 0; i < headerBasket.length; i++) {
         headerBasket[i].addEventListener("click", function () {
             basket.classList.add("show")
         });
     }
 
-//basket close
+    //basket close
     for (let i = 0; i < basketClose.length; i++) {
         basketClose[i].addEventListener("click", function () {
             basket.classList.remove("show")
         });
     }
 
-// basket item close
+    // basket item close
     for (let i = 0; i < itemClose.length; i++) {
         itemClose[i].addEventListener("click", function () {
             this.parentElement.remove();
@@ -67,23 +69,25 @@ document.addEventListener("DOMContentLoaded", function () {
         });
     }
 
-//login show
-    headerProfile.addEventListener("click", function () {
-        login.classList.add("show")
-    });
+    //login show
+    if (headerProfile) {
+        headerProfile.addEventListener("click", function () {
+            login.classList.add("show")
+        });
+    }
 
-//login hidden
+    //login hidden
     loginClose.addEventListener("click", function () {
         login.classList.remove("show")
     });
 
-//registration show
+    //registration show
     registerNow.addEventListener("click", function () {
         login.classList.remove("show");
         registration.classList.add("show")
     });
 
-//registration hidden
+    //registration hidden
     registrationClose.addEventListener("click", function () {
         registration.classList.remove("show")
     });
@@ -92,7 +96,7 @@ document.addEventListener("DOMContentLoaded", function () {
         login.classList.add("show")
     });
 
-//header catalog
+    //header catalog
     headerCatalog.addEventListener("click", function () {
         catalogSubmenu.classList.toggle("show");
         if (catalogSubmenu.classList.contains("show")) {
@@ -102,7 +106,7 @@ document.addEventListener("DOMContentLoaded", function () {
         }
     });
 
-// quantity
+    // quantity
     for (let i = 0; i < minusBtn.length; i++) {
         let input = plusBtn[i].parentElement.querySelector(".quantity-input");
         plusBtn[i].addEventListener("click", function () {
@@ -117,7 +121,7 @@ document.addEventListener("DOMContentLoaded", function () {
         });
     }
 
-//favorites
+    //favorites
     for (let i = 0; i < favorites.length; i++) {
         favorites[i].addEventListener("click", function (e) {
             e.preventDefault();
@@ -125,7 +129,7 @@ document.addEventListener("DOMContentLoaded", function () {
         })
     }
 
-// button active
+    // button active
     const btnContour = document.querySelectorAll(".btn-contour");
     const buttonsContainer = document.querySelector(".buttons-container-js");
     if (buttonsContainer) {

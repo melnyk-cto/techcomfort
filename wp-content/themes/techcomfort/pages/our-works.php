@@ -2,6 +2,7 @@
 <?php get_header(); ?>
 <?php
 wp_enqueue_script('salvatore-js', get_stylesheet_directory_uri() . '/assets/lib/salvatore.min.js');
+wp_enqueue_script('our-works-js', get_stylesheet_directory_uri() . '/assets/js/our-works.js');
 ?>
 <main class='our-works'>
     <section class='gallery'>
