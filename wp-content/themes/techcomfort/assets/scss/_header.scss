@@ -50,12 +50,6 @@
     }
     &-mobiles {
       &-bottom {
-        .header-item:hover {
-          color: $primaryColor;
-          p {
-            color: $primaryColor;
-          }
-        }
         .header-catalog {
           .catalog-submenu .submenu-item:hover {
             p {
@@ -131,25 +125,6 @@
         right:    45px;
         &:after, &:before {
           background: $white;
-        }
-      }
-      .header-item {
-        display:       flex;
-        align-items:   center;
-        border-bottom: 1px solid $primaryColor;
-        min-height:    56px;
-        padding:       0 45px;
-        cursor:        pointer;
-        &.menu-item {
-          justify-content: space-between;
-        }
-        .call {
-          display:     flex;
-          align-items: center;
-          a {
-            font-size:    14px;
-            margin-right: 25px;
-          }
         }
       }
       .header-catalog {
@@ -470,6 +445,23 @@
     }
     &-mobiles {
       display: block;
+      .menu-item {
+        display:       flex;
+        align-items:   center;
+        border-bottom: 1px solid $primaryColor;
+        min-height:    56px;
+        padding:       0 45px;
+        cursor:        pointer;
+        .call {
+          display:     flex;
+          align-items: center;
+          a {
+            font-size:    14px;
+            margin-right: 25px;
+          }
+        }
+      }
+
     }
   }
 }
@@ -575,12 +567,14 @@
             }
           }
         }
-        .header-item {
-          padding:     0 20px;
-          min-height:  41px;
-          font-size:   14px;
-          font-weight: 500;
-          flex-wrap:   wrap;
+        .menu-item {
+          padding:    0 20px;
+          min-height: 41px;
+          flex-wrap:  wrap;
+          a {
+            font-size:   14px;
+            font-weight: 500;
+          }
           p {
             font-size: 14px;
           }

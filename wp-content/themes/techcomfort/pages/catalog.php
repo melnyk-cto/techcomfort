@@ -212,7 +212,6 @@
                                 </svg>
                             </button>
                         </div>
-                        Отзывы о Магазине
                     </div>
                     <div class='products'>
                         <div class='products-list '>

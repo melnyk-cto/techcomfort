@@ -22,3 +22,14 @@
     }
 
     add_theme_support('woocommerce');
+
+    add_theme_support( 'menus' );
+
+    function init_navigation() {
+        register_nav_menus(
+            array(
+                'main_menu' => esc_html__('Главное меню', 'orion'),
+            )
+        );
+    }
+    add_action('init', 'init_navigation');
