@@ -222,16 +222,25 @@
                     </div>
                     <div class='products'>
                         <div class='products-list '>
-                            <?php
-                                $args = array(
 
+                            <?php
+                                $paged = (get_query_var('paged')) ? absint(get_query_var('paged')) : 1;
+
+                                $args = array(
                                     'post_type' => 'product',
                                     'stock' => 1,
-                                    'posts_per_page' => 30,
+                                    'posts_per_page' => 48,
                                     'orderby' => 'meta_value_num',
                                     'meta_key' => '_price',
                                     'order' => 'DESC',
+                                    'paged' => $paged
                                 );
+
+                                // The Query
+                                $cquery = new WP_Query($args);
+
+                                $big = 999999999; // need an unlikely integer
+
                                 if (isset($_GET['filter']) && $_GET['filter'] === 'price') {
                                     if (isset($_GET['from']) && isset($_GET['to'])) {
                                         $args['meta_query'] = array(
@@ -318,12 +327,15 @@
                                                 <!--                                                              fill="none" stroke="#6b92b0" stroke-width="2"/>-->
                                                 <!--                                                    </g>-->
                                                 <!--                                                </svg>-->
-                                                <svg class='share' enable-background="new 0 0 512 512" version="1.1"
-                                                     viewBox="0 0 512 512"
-                                                     xml:space="preserve" xmlns="http://www.w3.org/2000/svg">
+                                                <a href="javascript: void(0)"
+                                                   onClick="window.open('https://twitter.com/intent/tweet?text=ТАЙТЛ_СТРАНИЦЫ. ОПИСАНИЕ. СССЫЛКА','sharer','status=0,toolbar=0,width=650,height=500');">
+                                                    <svg class='share' enable-background="new 0 0 512 512" version="1.1"
+                                                         viewBox="0 0 512 512"
+                                                         xml:space="preserve" xmlns="http://www.w3.org/2000/svg">
                                             <path fill='#B2C5D4'
                                                   d="m406 332c-29.636 0-55.969 14.402-72.378 36.571l-141.27-72.195c2.37-8.052 3.648-16.567 3.648-25.376 0-11.931-2.339-23.324-6.574-33.753l148.06-88.958c16.52 19.39 41.104 31.711 68.514 31.711 49.626 0 90-40.374 90-90s-40.374-90-90-90-90 40.374-90 90c0 11.47 2.161 22.443 6.09 32.54l-148.43 89.18c-16.508-18.818-40.719-30.72-67.66-30.72-49.626 0-90 40.374-90 90s40.374 90 90 90c30.122 0 56.832-14.876 73.177-37.666l140.86 71.985c-2.623 8.434-4.037 17.395-4.037 26.681 0 49.626 40.374 90 90 90s90-40.374 90-90-40.374-90-90-90zm0-302c33.084 0 60 26.916 60 60s-26.916 60-60 60-60-26.916-60-60 26.916-60 60-60zm-300 301c-33.084 0-60-26.916-60-60s26.916-60 60-60 60 26.916 60 60-26.916 60-60 60zm300 151c-33.084 0-60-26.916-60-60s26.916-60 60-60 60 26.916 60 60-26.916 60-60 60z"/>
                                             </svg>
+                                                </a>
                                             </div>
                                         </a>
                                         <!-- Need for JS -->
@@ -359,7 +371,7 @@
                                                <?php if ($product->get_price_html()) echo $product->get_price_html(); else echo 'Уточняйте цену'; ?>
                                             </span>
                                         <div class='description-buttons'>
-                                            <a href='<?php echo home_url('/'); ?>ordering?uid=<?php the_id(); ?>'
+                                            <a href='<?php echo home_url('/'); ?>ordering'
                                                class='btn'>Купить</a>
                                             <a data-quantity="1" data-product_id="<?php the_id(); ?>"
                                                href='<?php echo home_url('/'); ?>?add-to-cart=<?php the_id(); ?>'
@@ -370,6 +382,14 @@
                                 </div>
                             <?php endwhile; ?>
                             <?php wp_reset_query(); ?>
+                           <div class="pagination">
+                               <?php echo paginate_links(array(
+                                   'base' => str_replace($big, '%#%', esc_url(get_pagenum_link($big))),
+                                   'format' => '?paged=%#%',
+                                   'current' => max(1, get_query_var('paged')),
+                                   'total' => $cquery->max_num_pages
+                               ));; ?>
+                           </div>
                         </div>
                     </div>
                     <div class='products'>

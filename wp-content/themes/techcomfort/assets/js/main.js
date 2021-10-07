@@ -3,7 +3,6 @@ document.addEventListener("DOMContentLoaded", function () {
     const header = document.querySelector(".header");
     const headerMenu = document.querySelector(".header-menu");
     const headerMobilesBottom = document.querySelector(".header-mobiles-bottom");
-    const headerCenter = document.querySelector(".header-center");
     const swiperProducts = document.querySelector(".swiper-products");
     const burger = document.querySelector(".burger");
     const headerClose = document.querySelector(".header-close-js");
@@ -34,15 +33,6 @@ document.addEventListener("DOMContentLoaded", function () {
     headerClose.addEventListener("click", function () {
         headerMobilesBottom.classList.remove("show");
     });
-    //
-
-    document.addEventListener('scroll', function () {
-        if (window.scrollY > 80) {
-            headerCenter.style.display = 'none';
-        } else {
-            headerCenter.style.display = 'block';
-        }
-    })
 
     // reload page
     const ajaxAddToCart = document.getElementsByClassName('ajax_add_to_cart');
@@ -51,7 +41,7 @@ document.addEventListener("DOMContentLoaded", function () {
             window.location.href = "#basket";
             setTimeout(() => {
                 location.reload();
-            }, 500)
+            }, 1000)
         });
         if (window.location.hash === '#basket') {
             basket.classList.add('show')

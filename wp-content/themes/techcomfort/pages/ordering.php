@@ -4,124 +4,41 @@
     global $woocommerce;
     wp_enqueue_script('ordering-form', get_stylesheet_directory_uri() . '/assets/js/ordering-form.js');
 ?>
-<?php
-    $_product = wc_get_product($_GET["uid"]);
-?>
-<script>
-    // Description for product page
-    const descriptionProduct = `<?php echo $_product->get_description() ?>`;
-</script>
 <main class='ordering'>
     <section class='contact'>
         <div class='container'>
             <h2>Оформление заказа</h2>
             <div class='contact-inner'>
                 <div class='contact-form'>
-                    <form id="orderForm" action=''>
-                        <label>
-                            <span>Имя</span>
-                            <input required name="First Name" type='text'>
-                        </label>
-                        <label>
-                            <span>Фамилия</span>
-                            <input required name="Second Name" type='text'>
-                        </label>
-                        <label>
-                            <span>Телефон</span>
-                            <input required name="Mobile Number" type='tel'>
-                        </label>
-                        <label>
-                            <span>Email</span>
-                            <input required name="Email address" type='email'>
-                        </label>
-                        <label class='address'>
-                            <span>Адрес</span>
-                            <textarea required name="Address"></textarea>
-                        </label>
-                        <div class='installation-required'>
-                            <h5>Требуется установка</h5>
-                            <label>
-                                <input required value="Да" name='Installation' type="radio" checked>
-                                Да
-                            </label>
-                            <label>
-                                <input value="Нет" name='Installation' type="radio">
-                                Нет
-                            </label>
-                            <label class='textarea'>
-                                <span>Дополнительная информация</span>
-                                <textarea name="Additional"></textarea>
-                            </label>
-                        </div>
-                        <div class='delivery-service'>
-                            <h5>Сервис доставки</h5>
-                            <div class='delivery-service-item'>
-                                <label class='courier'>
-                                    <input value="Курьер" name='Delivery' type='radio'>
-                                    Курьер
-                                </label>
-                                <p>доставка по Киеву бесплатно</p>
-                            </div>
-                            <div class='delivery-service-item'>
-                                <label class='new-mail'>
-                                    <input value="Новая почта (по тарифу перевозчика)" name='Delivery' type='radio'>
-                                    Новая почта ( по тарифу перевозчика )
-                                </label>
-                                <label>
-                                    <span>Адрес</span>
-                                    <input type='text'>
-                                </label>
-                                <label>
-                                    <span>Отделение</span>
-                                    <input type='text'>
-                                </label>
-                            </div>
-                            <div class='delivery-service-item'>
-                                <label>
-                                    <input value="Другой вариант доставки" name='Delivery' type='radio' checked>
-                                    Другой вариант доставки
-                                </label>
-                            </div>
-                        </div>
-                        <div class='payment-method'>
-                            <h5>способ оплаты</h5>
-                            <label>
-                                <input value="Оплата наличными" name='Payment' type='radio'>
-                                Оплата наличными
-                            </label>
-                            <label>
-                                <input value="Оплата картой" name='Payment' type='radio' checked>
-                                Оплата картой
-                            </label>
-                            <label>
-                                <input value="Оплата при получении в службах доставки" name='Payment' type='radio'>
-                                Оплата при получении в службах доставки
-                            </label>
-                            <label>
-                                <input value="Оплата по безналичному расчету (НДС)" name='Payment' type='radio'>
-                                Оплата по безналичному расчету (НДС)
-                            </label>
-                        </div>
-                        <button type='submit' id="submit" class='btn'>Создать Заказ</button>
-                    </form>
+                    <?php echo do_shortcode('[contact-form-7 id="10731" title="Оформление заказа"]') ?>
                 </div>
                 <div class='ordering-basket'>
                     <div class='ordering-basket-item'>
                         <div class='item-title'>
                             <h2>Корзина</h2>
                         </div>
-                        <div class='item-inner'>
+                        <?php
+                            global $woocommerce;
+                            $items = $woocommerce->cart->get_cart();
+
+                            foreach ($items as $item => $values) {
+                                $_product = wc_get_product($values['data']->get_id());
+                                $cart_item_remove_url = wc_get_cart_remove_url($item);
+                                $price = $_product->get_regular_price();
+                                $price_excl_tax = number_format(wc_get_price_excluding_tax($_product), 0, '', ' '); // price without VAT
+                                echo " <div class='item-inner'>
                             <div class='item-image'>
-                                <?php echo $_product->get_image('thumbnail') ?>
+                                 " . $_product->get_image('180') . "
                             </div>
                             <div class='item-description'>
                                 <div class='description-title'>
-                                    <h5><?php echo $_product->get_title() ?></h5>
-                                    <p>1 шт</p>
+                                    <h5>" . $_product->get_title() . "</h5>
                                 </div>
-                                <span class="price-product"><?php echo $_product->get_price() ?> ₴</span>
+                                <span class='price-product'>" . $price_excl_tax . " ₴</span>
                             </div>
-                        </div>
+                        </div>";
+                            }
+                        ?>
                     </div>
                     <p class='price'>
                         Сума товара:

@@ -45,12 +45,12 @@
           height:       17px;
           margin-right: 10px;
         }
-        .address, .textarea {
-          height: 97px;
-        }
         .address {
-          width:         100%;
-          margin-bottom: 24px;
+          width:          100%;
+          margin-bottom:  24px;
+          display:        flex;
+          flex-direction: column;
+          align-items:    flex-start;
         }
       }
       .installation-required {
@@ -74,10 +74,11 @@
         margin-bottom: 50px;
         width:         100%;
         label {
-          width: 100%;
+          width:         100%;
+          margin-bottom: 0;
         }
       }
-      .delivery-service .delivery-service-item, .payment-method label {
+      .delivery-service .wpcf7-list-item, .payment-method .wpcf7-list-item {
         background:    $white;
         border-radius: 5px;
         box-shadow:    0 3px 20px rgba(56, 69, 249, 0.13);
@@ -138,8 +139,9 @@
       margin-bottom: 5.25%;
       h5 {
         font-size:     20px;
-        margin-bottom: 10px;
         font-weight:   500;
+        margin-bottom: 0;
+
       }
       p {
         font-size: 18px;
@@ -160,18 +162,23 @@
         padding:         4.8% 5%;
         background:      $white;
         border-radius:   0 0 10px 10px;
+        margin-bottom:   10px;
       }
       .item-image {
-        width: 27.1%;
+        width: 100px;
+        img {
+          height: auto;
+        }
       }
       .item-description {
         display:         flex;
         justify-content: space-between;
         align-items:     center;
-        width:           60%;
+        width:           100%;
+        padding-left:    20px;
       }
       .price-product {
-        min-width: 120px;
+        min-width:    120px;
         padding-left: 10px;
       }
     }
@@ -221,6 +228,7 @@
           }
           .address, .textarea {
             height: 90px;
+            width:  100%;
           }
           .address {
             margin-bottom: 35px;
@@ -234,7 +242,7 @@
             }
           }
         }
-        .delivery-service .delivery-service-item, .payment-method label {
+        .delivery-service .wpcf7-list-item, .payment-method .wpcf7-list-item {
           box-shadow: 0 3px 10px rgba(56, 69, 249, 0.13);
           padding:    15px;
         }
@@ -362,7 +370,7 @@
             }
           }
         }
-        .delivery-service .delivery-service-item, .payment-method label {
+        .delivery-service .wpcf7-list-item, .payment-method .wpcf7-list-item {
           box-shadow:    0 3px 8px rgba(56, 69, 249, 0.13);
           padding:       13px 10px;
           border-radius: 3px;
@@ -451,3 +459,28 @@
     }
   }
 }
+
+.ordering {
+  .wpcf7-list-item {
+    width: 100%;
+  }
+  .wpcf7-form-control-wrap {
+    width: 100%;
+  }
+
+  .wpcf7-list-item {
+    margin-left:   0;
+    margin-bottom: 16px;
+  }
+  .additional {
+    margin-top: 16px;
+  }
+  .amount bdi {
+    color: #6b92b0;
+  }
+  .wpcf7-not-valid-tip {
+    position: relative;
+    top:      2px;
+  }
+}
+

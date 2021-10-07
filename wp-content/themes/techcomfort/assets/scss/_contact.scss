@@ -15,7 +15,6 @@
     display:         flex;
     justify-content: space-between;
     align-items:     center;
-    flex-wrap:       wrap;
   }
   &-form {
     max-width: 906px;
@@ -114,6 +113,7 @@
     }
     &-inner {
       flex-direction: column;
+      flex-wrap: wrap;
     }
     &-form {
       width:         100%;

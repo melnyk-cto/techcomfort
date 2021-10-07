@@ -381,6 +381,13 @@
                             </div>
                             <div class='item-description'>
                                 <h5>" . $_product->get_title() . "</h5>
+                                <div class='quantity'>
+                                    <button type='button' class='reduce'>-</button>
+                                    <label>
+                                        <input type='text' value=" . $values['quantity'] . " class='quantity-input'>
+                                    </label>
+                                    <button type='button' class='enlarge'>+</button>
+                                </div>
                                 <span>" . $price_excl_tax . " ₴</span>
                             </div>
                         </div>";
@@ -393,7 +400,7 @@
                 <p>Сумма товара:<span><?php echo $woocommerce->cart->get_cart_total() ?></span>
                 </p>
             </div>
-            <a href='#' class='btn'>Заказать</a>
+            <a href='<?php echo home_url( '/' ); ?>ordering' class='btn'>Заказать</a>
         </div>
     </div>
 </div>
