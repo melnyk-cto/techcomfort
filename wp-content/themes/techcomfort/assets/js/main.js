@@ -44,30 +44,46 @@ document.addEventListener("DOMContentLoaded", function () {
         }
     })
 
+    // reload page
+    const ajaxAddToCart = document.getElementsByClassName('ajax_add_to_cart');
+    for (let i = 0; i < ajaxAddToCart.length; i++) {
+        ajaxAddToCart[i].addEventListener('click', function () {
+            window.location.href = "#basket";
+            setTimeout(() => {
+                location.reload();
+            }, 500)
+        });
+        if (window.location.hash === '#basket') {
+            basket.classList.add('show')
+        }
+    }
+
     //basket show
     for (let i = 0; i < headerBasket.length; i++) {
         headerBasket[i].addEventListener("click", function () {
-            basket.classList.add("show")
+            window.location.hash = '#basket';
+            basket.classList.add("show");
         });
     }
 
     //basket close
     for (let i = 0; i < basketClose.length; i++) {
         basketClose[i].addEventListener("click", function () {
+            window.location.hash = '';
             basket.classList.remove("show")
         });
     }
 
     // basket item close
-    for (let i = 0; i < itemClose.length; i++) {
-        itemClose[i].addEventListener("click", function () {
-            this.parentElement.remove();
-            if (itemClose.length <= 0) {
-                noProducts.style.display = "block";
-                noProducts.parentElement.style.flexDirection = "row"
-            }
-        });
-    }
+    // for (let i = 0; i < itemClose.length; i++) {
+    //     itemClose[i].addEventListener("click", function () {
+    //         this.parentElement.remove();
+    //         if (itemClose.length <= 0) {
+    //             noProducts.style.display = "block";
+    //             noProducts.parentElement.style.flexDirection = "row"
+    //         }
+    //     });
+    // }
 
     //login show
     if (headerProfile) {
@@ -178,5 +194,4 @@ document.addEventListener("DOMContentLoaded", function () {
             header.classList.remove("fixed")
         }
     });
-
 });

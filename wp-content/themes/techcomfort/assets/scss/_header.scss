@@ -259,8 +259,7 @@
       margin-right: 10px;
       position:     relative;
       height:       30px;
-      &:after {
-        content:         "2";
+      span {
         position:        absolute;
         top:             0;
         right:           0;
@@ -433,7 +432,7 @@
         svg {
           width: 21px;
         }
-        &:after {
+        span {
           width:     10px;
           font-size: 7px;
           padding:   1px;
@@ -513,7 +512,7 @@
           width:  19px;
           height: 19px;
         }
-        &:after {
+       span {
           font-size: 6px;
           padding:   1px 0;
         }

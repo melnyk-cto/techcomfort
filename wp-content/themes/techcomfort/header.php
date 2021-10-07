@@ -1,3 +1,4 @@
+<?php global $woocommerce; ?>
 <!doctype html>
 <html class="no-js" <?php language_attributes(); ?>>
 <head>
@@ -8,7 +9,7 @@
     <!-- <link rel="shortcut icon" href="assets/images/favicon.ico" type="image/x-icon">-->
     <meta name="theme-color" content="#e4a11b">
     <meta http-equiv='X-UA-Compatible' content='ie=edge'>
-    <title>Главная</title>
+    <title><?php wp_title(''); ?></title>
     <!-- Start Of Social Graph Protocol Meta Data -->
     <meta property="og:locale" content="en_US"/>
     <!-- <meta property="og:url" content="http://example.com/"/>-->
@@ -197,6 +198,7 @@
                     <!--                    </a>-->
                     <div class='header-basket open-basket-js'>
                         <div class='basket-image'>
+                            <span><?php echo $woocommerce->cart->get_cart_contents_count(); ?></span>
                             <svg id="shopping-cart-empty-side-view" xmlns="http://www.w3.org/2000/svg" width="33"
                                  height="31.058" viewBox="0 0 33 31.058">
                                 <path id="Контур_100" data-name="Контур 100"
@@ -379,14 +381,6 @@
                             </div>
                             <div class='item-description'>
                                 <h5>" . $_product->get_title() . "</h5>
-                                <div class='quantity'>
-                                    <button type='button' class='reduce'>-</button>
-                                    <label>
-                                        <input type='text' value=" . $values['quantity'] . " class='quantity-input'>
-                                    </label>
-                                    <button type='button' class='enlarge'>+</button>
-                                </div>
-                              
                                 <span>" . $price_excl_tax . " ₴</span>
                             </div>
                         </div>";

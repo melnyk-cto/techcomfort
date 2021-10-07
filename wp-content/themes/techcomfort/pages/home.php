@@ -157,7 +157,7 @@
                                                        class='btn'>Купить</a>
                                                     <a data-quantity="1" data-product_id="<?php echo $sub_value; ?>"
                                                        href='<?php echo home_url('/'); ?>?add-to-cart=<?php echo $sub_value; ?>'
-                                                       class='btn btn-second product_type_simple add_to_cart_button ajax_add_to_cart open-basket-js'>
+                                                       class='btn btn-second product_type_simple add_to_cart_button ajax_add_to_cart'>
                                                         В Корзину
                                                     </a>
                                                 </div>
@@ -271,7 +271,7 @@
                                                        class='btn'>Купить</a>
                                                     <a data-quantity="1" data-product_id="<?php echo $sub_value; ?>"
                                                        href='<?php echo home_url('/'); ?>?add-to-cart=<?php echo $sub_value; ?>'
-                                                       class='btn btn-second product_type_simple add_to_cart_button ajax_add_to_cart open-basket-js'>В
+                                                       class='btn btn-second product_type_simple add_to_cart_button ajax_add_to_cart'>В
                                                         Корзину</a>
                                                 </div>
                                             </div>
@@ -411,7 +411,7 @@
                                                        class='btn'>Купить</a>
                                                     <a data-quantity="1" data-product_id="<?php echo $sub_value; ?>"
                                                        href='<?php echo home_url('/'); ?>?add-to-cart=<?php echo $sub_value; ?>'
-                                                       class='btn btn-second product_type_simple add_to_cart_button ajax_add_to_cart open-basket-js'>В
+                                                       class='btn btn-second product_type_simple add_to_cart_button ajax_add_to_cart'>В
                                                         Корзину</a>
                                                 </div>
                                             </div>

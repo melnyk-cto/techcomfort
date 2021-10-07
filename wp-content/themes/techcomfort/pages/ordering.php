@@ -1,7 +1,7 @@
 <?php /* Template Name: Page - Ordering */ ?>
 <?php get_header(); ?>
 <?php
-
+    global $woocommerce;
     wp_enqueue_script('ordering-form', get_stylesheet_directory_uri() . '/assets/js/ordering-form.js');
 ?>
 <?php
@@ -119,13 +119,13 @@
                                     <h5><?php echo $_product->get_title() ?></h5>
                                     <p>1 шт</p>
                                 </div>
-                                <span class="price-product">????? UAH</span>
+                                <span class="price-product"><?php echo $_product->get_price() ?> ₴</span>
                             </div>
                         </div>
                     </div>
                     <p class='price'>
                         Сума товара:
-                        <span>????? UAH</span>
+                        <span><?php echo $woocommerce->cart->get_cart_total() ?></span>
                     </p>
                 </div>
             </div>
