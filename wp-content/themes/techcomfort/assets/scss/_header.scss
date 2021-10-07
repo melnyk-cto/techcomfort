@@ -33,8 +33,7 @@
     &-bottom {
       .header-catalog:hover {
         .catalog-submenu {
-          visibility: visible;
-          opacity:    1;
+          display: flex;
         }
       }
     }
@@ -212,7 +211,6 @@
       left:            0;
       max-width:       880px;
       width:           100%;
-      display:         flex;
       justify-content: space-between;
       flex-wrap:       wrap;
       background:      $secondaryColor;
@@ -221,8 +219,7 @@
       box-shadow:      0 3px 6px 0 rgba(56, 69, 249, 0.26);
       overflow:        scroll;
       height:          calc(100vh - 54px);
-      visibility:      hidden;
-      opacity:         0;
+      display:      none;
       .submenu-item {
         padding:       1.91% 1.86% 1%;
         width:         32.7%;

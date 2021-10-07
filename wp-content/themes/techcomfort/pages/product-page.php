@@ -173,7 +173,7 @@
     </section>
     <section class='products'>
         <div class='container'>
-            <h2>другие кондиционеры для этой площади помещения</h2>
+            <h2>Просмотренные товары</h2>
             <div class='products-slider'>
                 <div class='swiper-container swiper-products'>
                     <div class='swiper-wrapper'>

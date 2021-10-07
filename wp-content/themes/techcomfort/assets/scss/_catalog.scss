@@ -239,6 +239,13 @@
             display:        flex;
             flex-direction: column;
             height:         100%;
+            .characteristics-list {
+              display: inline-block;
+              p {
+                margin-bottom: 6px;
+                font-weight:   700;
+              }
+            }
             > a {
               margin-bottom: 15px;
             }
@@ -547,10 +554,13 @@
             .item-description {
               width:      59%;
               align-self: center;
-              padding: 5px;
+              padding:    5px;
               > a {
                 max-width:     initial;
                 margin-bottom: 5px;
+              }
+              .characteristics-list {
+                display: none;
               }
               p {
                 display: none;
