@@ -13,14 +13,16 @@
     }
   }
   .banner {
-    padding-top: 4.7%;
+    padding-top: 2.7%;
     .container {
       max-width: 1800px;
     }
     img {
-      height:     100%;
-      object-fit: cover;
-      max-height: 375px;
+      height:           100%;
+      object-fit:       contain;
+      max-height:       375px;
+      background-color: #fff;
+      border: 1px solid #dde2e8;
     }
     .slider-top {
       margin-bottom: 36px;
@@ -58,7 +60,7 @@
   .advantage {
     padding-top: 6.3%;
     h2 {
-      margin-bottom: 4.7%;
+      margin-bottom: 2.7%;
     }
     p {
       font-size:   18px;
@@ -126,15 +128,14 @@
       display:        flex;
       flex-direction: column;
       &-inner {
-        margin-bottom: 5%;
-        position:      relative;
+        position: relative;
       }
       .container {
         max-width: 1800px;
       }
       .swiper-container {
         margin:  0 2.2%;
-        padding: 15px 0 6.5%;
+        padding: 15px 0 3.5%;
       }
       .swiper-button-prev, .swiper-button-next {
         transform: translate(0, -100%);
@@ -142,7 +143,7 @@
     }
     &-item {
       width:         90%;
-      min-height:    320px;
+      min-height:    240px;
       margin:        0 auto;
       padding:       3% 4.2%;
       background:    $white;
@@ -251,11 +252,8 @@
         line-height: 1.5;
       }
       &-slider {
-        &-inner {
-          margin-bottom: 60px;
-        }
         .swiper-container {
-          padding: 2% 0 6.5%;
+          padding: 2% 0 3.5%;
           margin:  0;
         }
         .swiper-button-prev, .swiper-button-next {
@@ -264,7 +262,6 @@
       }
       &-item {
         width:         94%;
-        min-height:    360px;
         padding:       18px;
         border-radius: 10px;
         box-shadow:    0 3px 10px 0 rgba(56, 69, 249, 0.13);
@@ -288,7 +285,7 @@
       text-align: center;
     }
     .banner {
-      padding-top: 50px;
+      padding-top: 20px;
       .slider-top {
         margin-bottom: 15px;
         .swiper-container {
@@ -375,9 +372,6 @@
         line-height: 1.6;
       }
       &-slider {
-        &-inner {
-          margin-bottom: 30px;
-        }
         .swiper-container {
           padding: 5px 0 35px;
         }
@@ -385,7 +379,6 @@
       &-item {
         width:      95%;
         max-width:  350px;
-        min-height: 350px;
         padding:    15px;
         box-shadow: 0 3px 8px 0 rgba(56, 69, 249, 0.13);
       }

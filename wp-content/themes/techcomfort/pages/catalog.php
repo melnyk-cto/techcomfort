@@ -212,21 +212,46 @@
                                 </svg>
                             </button>
                         </div>
+                        Отзывы о Магазине
                     </div>
                     <div class='products'>
                         <div class='products-list '>
                             <?php
                                 $args = array(
+
                                     'post_type' => 'product',
                                     'stock' => 1,
                                     'posts_per_page' => 30,
-                                    'orderby' => 'date',
-                                    'order' => 'DESC');
+                                    'orderby' => 'meta_value_num',
+                                    'meta_key' => '_price',
+                                    'order' => 'DESC',
+                                );
+                                if (isset($_GET['filter']) && $_GET['filter'] === 'price') {
+                                    if (isset($_GET['from']) && isset($_GET['to'])) {
+                                        $args['meta_query'] = array(
+                                            'relation' => 'AND',
+                                            [
+                                                'key' => '_price',
+                                                'value' => $_GET['from'],
+                                                'compare' => '>=',
+                                                'type' => 'numeric',
+                                            ],
+                                            [
+                                                'key' => '_price',
+                                                'value' => $_GET['to'],
+                                                'compare' => '<=',
+                                                'type' => 'numeric',
+                                            ]
+                                        );
+                                    }
+                                }
                                 $loop = new WP_Query($args);
                                 while ($loop->have_posts()) : $loop->the_post();
                                     global $product; ?>
                                     <div class='products-item catalog-item'>
-                                        <a id="id-<?php the_id(); ?>" href="<?php echo home_url('/'); ?>product?uid=<?php the_id(); ?>" title="<?php the_title(); ?>" class='item-image'>
+                                        <a id="id-<?php the_id(); ?>"
+                                           href="<?php echo home_url('/'); ?>product?uid=<?php the_id(); ?>"
+                                           title="<?php the_title(); ?>" class='item-image'>
                                             <?php if (has_post_thumbnail($loop->post->ID)) echo get_the_post_thumbnail($loop->post->ID, 'shop_catalog'); else echo '<img src="' . woocommerce_placeholder_img_src() . '" alt="product-image" />'; ?>
                                         </a>
                                         <div class='item-description'>
@@ -295,11 +320,15 @@
                                             </a>
                                             <p><?php echo $product->get_description() ?></p>
                                             <span class='price'>
-                                               <?php if ($product->get_price_html()) echo  $product->get_price_html(); else echo 'Уточняйте цену'; ?>
+                                               <?php if ($product->get_price_html()) echo $product->get_price_html(); else echo 'Уточняйте цену'; ?>
                                             </span>
                                             <div class='description-buttons'>
-                                                <a href='<?php echo home_url('/'); ?>ordering?uid=<?php the_id(); ?>' class='btn'>Купить</a>
-                                                <a  data-quantity="1"  data-product_id="<?php the_id(); ?>" href='<?php echo home_url('/'); ?>?add-to-cart=<?php the_id(); ?>' class='btn btn-second product_type_simple add_to_cart_button ajax_add_to_cart open-basket-js'>В Корзину</a>
+                                                <a href='<?php echo home_url('/'); ?>ordering?uid=<?php the_id(); ?>'
+                                                   class='btn'>Купить</a>
+                                                <a data-quantity="1" data-product_id="<?php the_id(); ?>"
+                                                   href='<?php echo home_url('/'); ?>?add-to-cart=<?php the_id(); ?>'
+                                                   class='btn btn-second product_type_simple add_to_cart_button ajax_add_to_cart open-basket-js'>В
+                                                    Корзину</a>
                                             </div>
                                         </div>
                                     </div>

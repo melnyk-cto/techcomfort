@@ -549,7 +549,7 @@
                     $_product = wc_get_product($values['data']->get_id());
                     $cart_item_remove_url = wc_get_cart_remove_url($item);
                     $price = $_product->get_regular_price();
-                    $price_excl_tax = wc_get_price_excluding_tax($_product); // price without VAT
+                    $price_excl_tax = number_format(wc_get_price_excluding_tax($_product), 0, '', ' '); // price without VAT
                     echo "<div class='basket-item'>
                             <a data-product_id=" . $_product->get_id() . " class='item-close product-remove' href=" . $cart_item_remove_url . "></a>
                             <div class='item-image'>
