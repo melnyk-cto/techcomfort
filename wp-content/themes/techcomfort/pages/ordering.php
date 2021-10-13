@@ -2,8 +2,10 @@
 <?php get_header(); ?>
 <?php
     global $woocommerce;
-    wp_enqueue_script('ordering-form', get_stylesheet_directory_uri() . '/assets/js/ordering-form.js');
 ?>
+<script>
+    const products = [];
+</script>
 <main class='ordering'>
     <section class='contact'>
         <div class='container'>
@@ -20,8 +22,9 @@
                         <?php
                             global $woocommerce;
                             $items = $woocommerce->cart->get_cart();
-
+                            $count = 0;
                             foreach ($items as $item => $values) {
+                                $count++;
                                 $_product = wc_get_product($values['data']->get_id());
                                 $cart_item_remove_url = wc_get_cart_remove_url($item);
                                 $price = $_product->get_regular_price();
@@ -33,10 +36,8 @@
                             <div class='item-description'>
                                 <div class='description-title'>
                                     <h5>" . $_product->get_title() . "</h5>
-                                    <script>
-                                    const item = document.getElementsByClassName('products-js')[0];
-                                    const products =`".  $_product->get_title() . "`
-                                    item.value = products;
+                                    <script>                                    
+                                     products.push({Номер:`$count` ,Название: `" . $_product->get_title() . "`, Цена: `" . $price_excl_tax . "`,  Ссылка: `https://techcomfort.com.ua/product/?uid=" . $_product->get_id() . "`})
                                     </script>
                                 </div>
                                 <span class='price-product'>" . $price_excl_tax . " ₴</span>
@@ -55,3 +56,8 @@
     </section>
 </main>
 <?php get_footer(); ?>
+
+<script>
+    const item = document.getElementsByClassName('products-js')[0];
+    item.value = JSON.stringify(products);
+</script>
