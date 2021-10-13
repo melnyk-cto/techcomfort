@@ -90,7 +90,7 @@
                         </g>
                     </svg>
                     <p>Каталог Товаров</p>
-                    <div class='catalog-submenu'>
+                    <div class='catalog-submenu d-none'>
                         <a href='<?php echo home_url('/'); ?>product' class='submenu-item'>
                             <div class='item-image'>
                                 <img src='<?php echo get_template_directory_uri() ?>/assets/images/product-gallery-3.jpg'

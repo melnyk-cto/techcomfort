@@ -83,7 +83,7 @@
         justify-content: center;
         margin:          20px 4px;
         cursor:          pointer;
-        font-size: 16px;
+        font-size:       16px;
         &:hover, &.current {
           color: #6B92B0;
         }
@@ -166,9 +166,19 @@
         justify-content: space-between;
         align-items:     center;
       }
+      .description-wrapper {
+        display:         flex;
+        align-items:     flex-start;
+        justify-content: space-between;
+        a {
+          word-wrap: break-word;
+          width:     calc(100% - 33px);
+        }
+      }
       .description-icons {
-        display:    flex;
-        align-self: center;
+        margin-left: 10px;
+        display:     flex;
+        align-self:  center;
       }
       .rating {
         margin-bottom: 8px;
