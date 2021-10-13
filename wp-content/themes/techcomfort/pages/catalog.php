@@ -26,7 +26,7 @@
                             <div class="style-2 wrapper m-b-50 p-l-r">
                                 <div class='price-value'>
                                     <label>
-                                        <input type="text" class="input-with-keypress-0 value">
+                                        <input id="price-from" type="text" class="input-with-keypress-0 value">
                                     </label>
                                     <span></span>
                                     <label>

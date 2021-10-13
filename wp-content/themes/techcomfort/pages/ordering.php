@@ -33,6 +33,11 @@
                             <div class='item-description'>
                                 <div class='description-title'>
                                     <h5>" . $_product->get_title() . "</h5>
+                                    <script>
+                                    const item = document.getElementsByClassName('products-js')[0];
+                                    const products =`".  $_product->get_title() . "`
+                                    item.value = products;
+                                    </script>
                                 </div>
                                 <span class='price-product'>" . $price_excl_tax . " ₴</span>
                             </div>

@@ -28,13 +28,28 @@ document.addEventListener("DOMContentLoaded", function () {
     const input1 = document.querySelector(".input-with-keypress-1");
     const inputs = [input0, input1];
 
+    const filters = JSON.parse(localStorage.getItem('filters'));
+    let fromPrice;
+    let toPrice;
+    if (filters) {
+        fromPrice = filters.range[0];
+        toPrice = filters.range[1];
+    } else {
+        fromPrice = 0;
+        toPrice = 500000;
+    }
+
     noUiSlider.create(keypressSlider, {
-        start: [0, 30000],
+        start: [fromPrice, toPrice],
         connect: true,
         step: 1,
         range: {
             min: [0],
-            max: [30000]
+            max: [500000]
+        },
+        format: {
+            to: (v) => parseFloat(v).toFixed(0),
+            from: (v) => parseFloat(v).toFixed(0)
         }
     });
 
@@ -141,6 +156,15 @@ document.addEventListener("DOMContentLoaded", function () {
             nextEl: ".swiper-button-next",
             prevEl: ".swiper-button-prev",
         },
+    });
+
+
+    // filters
+    keypressSlider.noUiSlider.on('change', function (value) {
+        localStorage.setItem('filters', JSON.stringify({range: [value[0], value[1]]}))
+        setTimeout(() => {
+            window.location.href = `?filter=price&from=${value[0]}&to=${value[1]}`
+        }, 500)
     });
 
 });
