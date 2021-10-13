@@ -122,5 +122,3 @@ wp_enqueue_script('our-works-js', get_stylesheet_directory_uri() . '/assets/js/o
     </section>
 </main>
 <?php get_footer(); ?>
-
-<script src='../assets/lib/salvatore.min.js'></script>

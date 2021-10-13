@@ -390,7 +390,7 @@
                             </div>
                         </div>
                     </div>
-                    <div class='products'>
+                    <div class='products d-none'>
                         <h2>Просмотренные товары</h2>
                         <div class='products-slider'>
                             <div class='swiper-container swiper-products'>

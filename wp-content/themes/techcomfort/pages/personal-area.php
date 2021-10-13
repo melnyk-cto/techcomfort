@@ -758,7 +758,7 @@ wp_enqueue_script('personal-area-js', get_stylesheet_directory_uri() . '/assets/
                             </div>
                         </div>
                     </div>
-                    <div id='info-viewed' class='info-list viewed-products'>
+                    <div id='info-viewed' class='info-list viewed-products d-none'>
                         <h2>
                             Просмотренные товары
                         </h2>
