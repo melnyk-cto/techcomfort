@@ -28,17 +28,19 @@ document.addEventListener("DOMContentLoaded", function () {
     const input1 = document.querySelector(".input-with-keypress-1");
     const inputs = [input0, input1];
 
-    const filters = JSON.parse(localStorage.getItem('filters'));
+    const url = new URL(window.location.href);
     let fromPrice;
     let toPrice;
-    if (filters) {
-        fromPrice = filters.range[0];
-        toPrice = filters.range[1];
+    if (url.searchParams.get('from')) {
+        fromPrice = url.searchParams.get('from');
     } else {
         fromPrice = 0;
+    }
+    if (url.searchParams.get('to')) {
+        toPrice = url.searchParams.get('to');
+    } else {
         toPrice = 500000;
     }
-
     noUiSlider.create(keypressSlider, {
         start: [fromPrice, toPrice],
         connect: true,
@@ -53,7 +55,7 @@ document.addEventListener("DOMContentLoaded", function () {
         }
     });
 
-//filter
+    //filter
     const filterClose = document.getElementsByClassName("close-filter")[0];
     const filter = document.getElementsByClassName("filter")[0];
     const btnFilter = document.getElementsByClassName("btn-filter")[0];
@@ -159,12 +161,29 @@ document.addEventListener("DOMContentLoaded", function () {
     });
 
 
-    // filters
+    // filter by price range
     keypressSlider.noUiSlider.on('change', function (value) {
-        localStorage.setItem('filters', JSON.stringify({range: [value[0], value[1]]}))
         setTimeout(() => {
-            window.location.href = `?filter=price&from=${value[0]}&to=${value[1]}`
+            url.searchParams.set('from',value[0]);
+            url.searchParams.set('to',value[1]);
+            window.location.href = url;
         }, 500)
     });
+
+    // filter by sorting
+    const sorting = document.getElementById('sorting');
+    if (url.searchParams.get('type')) {
+        sorting.value = url.searchParams.get('type');
+    } else {
+        sorting.value = 'default';
+
+    }
+
+    sorting.addEventListener('change', function () {
+        setTimeout(() => {
+            url.searchParams.set('type', this.value);
+            window.location.href = url;
+        }, 500)
+    })
 
 });

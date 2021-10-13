@@ -192,12 +192,12 @@
                         <div class='sorting'>
                             <p>Сортировка:</p>
                             <label>
-                                <select>
-                                    <option value='по умолчанию'>по умолчанию</option>
-                                    <option>oт дешевых к дорогим</option>
-                                    <option>oт дорогих к дешевым</option>
-                                    <option>по рейтингу</option>
-                                    <option>популярное</option>
+                                <select id="sorting">
+                                    <option value='default'>по умолчанию</option>
+                                    <option value="asc">oт дешевых к дорогим</option>
+                                    <option value="desc">oт дорогих к дешевым</option>
+                                    <option value="rate">по рейтингу</option>
+                                    <option value="popular">популярное</option>
                                 </select>
                             </label>
                         </div>
@@ -232,7 +232,7 @@
                                     'posts_per_page' => 48,
                                     'orderby' => 'meta_value_num',
                                     'meta_key' => '_price',
-                                    'order' => 'DESC',
+                                    'order' => $_GET['type'],
                                     'paged' => $paged
                                 );
 
@@ -241,24 +241,22 @@
 
                                 $big = 999999999; // need an unlikely integer
 
-                                if (isset($_GET['filter']) && $_GET['filter'] === 'price') {
-                                    if (isset($_GET['from']) && isset($_GET['to'])) {
-                                        $args['meta_query'] = array(
-                                            'relation' => 'AND',
-                                            [
-                                                'key' => '_price',
-                                                'value' => $_GET['from'],
-                                                'compare' => '>=',
-                                                'type' => 'numeric',
-                                            ],
-                                            [
-                                                'key' => '_price',
-                                                'value' => $_GET['to'],
-                                                'compare' => '<=',
-                                                'type' => 'numeric',
-                                            ]
-                                        );
-                                    }
+                                if (isset($_GET['from']) && isset($_GET['to'])) {
+                                    $args['meta_query'] = array(
+                                        'relation' => 'AND',
+                                        [
+                                            'key' => '_price',
+                                            'value' => $_GET['from'],
+                                            'compare' => '>=',
+                                            'type' => 'numeric',
+                                        ],
+                                        [
+                                            'key' => '_price',
+                                            'value' => $_GET['to'],
+                                            'compare' => '<=',
+                                            'type' => 'numeric',
+                                        ],
+                                    );
                                 }
                                 $loop = new WP_Query($args);
                                 $count = 0; ?>
@@ -382,14 +380,14 @@
                                 </div>
                             <?php endwhile; ?>
                             <?php wp_reset_query(); ?>
-                           <div class="pagination">
-                               <?php echo paginate_links(array(
-                                   'base' => str_replace($big, '%#%', esc_url(get_pagenum_link($big))),
-                                   'format' => '?paged=%#%',
-                                   'current' => max(1, get_query_var('paged')),
-                                   'total' => $cquery->max_num_pages
-                               ));; ?>
-                           </div>
+                            <div class="pagination">
+                                <?php echo paginate_links(array(
+                                    'base' => str_replace($big, '%#%', esc_url(get_pagenum_link($big))),
+                                    'format' => '?paged=%#%',
+                                    'current' => max(1, get_query_var('paged')),
+                                    'total' => $cquery->max_num_pages
+                                ));; ?>
+                            </div>
                         </div>
                     </div>
                     <div class='products'>
