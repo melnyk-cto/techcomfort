@@ -19,12 +19,11 @@ document.addEventListener("DOMContentLoaded", function () {
 
     const swiperBanner = new Swiper('.swiper-banner', {
         spaceBetween: 15,
-        slidesPerView: 2,
+        slidesPerView: 3,
         freeMode: true,
         watchSlidesProgress: true,
         breakpoints: {
             768: {
-                slidesPerView: 3,
                 spaceBetween: 25,
             },
             1151: {

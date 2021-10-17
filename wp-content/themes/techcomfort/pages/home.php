@@ -67,6 +67,7 @@
                 <a href='#popular' class='btn-contour'>Популярные</a>
                 <a href='#most-viewed' class='btn-contour'>Самые Просматриваемые</a>
             </div>
+            <h2>Рекомендуемые</h2>
             <div class='products-slider'>
                 <div class='swiper-container swiper-products'>
                     <div class='swiper-wrapper'>
@@ -319,7 +320,7 @@
     </section>
     <section id='most-viewed' class='products conditioners'>
         <div class='container'>
-            <h2>Кондиционеры</h2>
+            <h2>Самые Просматриваемые</h2>
             <div class='products-slider'>
                 <div class='swiper-container swiper-products'>
                     <div class='swiper-wrapper'>

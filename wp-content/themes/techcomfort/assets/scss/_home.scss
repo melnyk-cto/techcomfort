@@ -21,8 +21,9 @@
       height:           100%;
       object-fit:       cover;
       max-height:       375px;
+      min-height:       140px;
       background-color: #fff;
-      border: 1px solid #dde2e8;
+      border:           1px solid #dde2e8;
     }
     .slider-top {
       margin-bottom: 36px;
@@ -33,6 +34,7 @@
       margin-left: auto;
       img {
         border-radius: 10px;
+        min-height:       inherit;
       }
       .swiper-button-prev {
         opacity:        1;
@@ -294,12 +296,9 @@
         }
         .swiper-container {
           margin-left:    0;
-          padding-bottom: 35px;
+          padding-bottom: 24px;
           .swiper-pagination {
             display: block;
-          }
-          .swiper-slide {
-            height: 24.1vw;
           }
         }
       }
