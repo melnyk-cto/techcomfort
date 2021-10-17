@@ -224,6 +224,7 @@
                     </a>
                     <div class='header-basket open-basket-js'>
                         <div class='basket-image'>
+                            <span><?php echo $woocommerce->cart->get_cart_contents_count(); ?></span>
                             <svg id="shopping-cart-empty-side-view" xmlns="http://www.w3.org/2000/svg" width="33"
                                  height="31.058" viewBox="0 0 33 31.058">
                                 <path id="Контур_100" data-name="Контур 100"

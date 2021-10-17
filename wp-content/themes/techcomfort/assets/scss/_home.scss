@@ -19,7 +19,7 @@
     }
     img {
       height:           100%;
-      object-fit:       contain;
+      object-fit:       cover;
       max-height:       375px;
       background-color: #fff;
       border: 1px solid #dde2e8;
@@ -178,11 +178,6 @@
       padding-top: 60px;
       .slider-top {
         margin-bottom: 30px;
-        .swiper-container {
-          .swiper-slide {
-            height: 32.7vw;
-          }
-        }
       }
       .slider-bottom {
         width: 90.4%;
@@ -288,11 +283,6 @@
       padding-top: 20px;
       .slider-top {
         margin-bottom: 15px;
-        .swiper-container {
-          .swiper-slide {
-            height: 75.7vw;
-          }
-        }
       }
       .slider-bottom {
         width: 100%;

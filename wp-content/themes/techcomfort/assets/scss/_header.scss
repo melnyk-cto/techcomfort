@@ -37,10 +37,8 @@
         }
       }
     }
-    &-menu .menu-item:hover {
-      a {
-        color: $primaryColor;
-      }
+    &-menu .menu-item a:hover {
+      color: $primaryColor;
     }
     &-center {
       &-content a:hover {
@@ -71,7 +69,7 @@
   &.fixed {
     position:   fixed;
     box-shadow: 0 3px 15px 0 rgba(107, 146, 176, 0.5);
-   .header-center {
+    .header-center {
       display: none;
     }
   }
@@ -219,7 +217,7 @@
       box-shadow:      0 3px 6px 0 rgba(56, 69, 249, 0.26);
       overflow:        scroll;
       height:          calc(100vh - 54px);
-      display:      none;
+      display:         none;
       .submenu-item {
         padding:       1.91% 1.86% 1%;
         width:         32.7%;
@@ -278,7 +276,6 @@
   }
   &-top {
     background:    $secondaryColor;
-    padding:       18px 0;
     border-bottom: 1px solid #b2c5d4;
     &-inner {
       display:         flex;
@@ -293,6 +290,8 @@
       .menu-item {
         margin: 0 12px;
         a {
+          display:     block;
+          padding:     18px 0;
           font-size:   16px;
           font-weight: 500;
         }
@@ -441,20 +440,32 @@
     }
     &-mobiles {
       display: block;
+      .menu {
+        a {
+          width:   100%;
+          padding: 0 45px;
+        }
+      }
       .menu-item {
         display:       flex;
         align-items:   center;
         border-bottom: 1px solid $primaryColor;
-        min-height:    56px;
-        padding:       0 45px;
         cursor:        pointer;
+        a {
+          line-height: 56px;
+          height:      56px;
+        }
         .call {
           display:     flex;
           align-items: center;
+          padding:     0 45px;
           a {
             font-size:    14px;
             margin-right: 25px;
           }
+        }
+        .socials {
+          padding: 0 20px;
         }
       }
 
@@ -507,15 +518,6 @@
       }
       .basket-image {
         margin-right: 0;
-        height:       19px;
-        svg {
-          width:  19px;
-          height: 19px;
-        }
-       span {
-          font-size: 6px;
-          padding:   1px 0;
-        }
       }
     }
     .burger {
@@ -563,9 +565,14 @@
             }
           }
         }
+        .menu {
+          a {
+            padding:    0 20px;
+            line-height: 41px;
+           height: 41px;
+          }
+        }
         .menu-item {
-          padding:    0 20px;
-          min-height: 41px;
           flex-wrap:  wrap;
           a {
             font-size:   14px;
@@ -577,14 +584,21 @@
           .call {
             width:  100%;
             margin: 10px 0;
+            padding:    0 20px;
             a {
               font-size:    14px;
               font-weight:  400;
               margin-right: 15px;
+              line-height: 1;
+              height: inherit;
             }
           }
           .socials {
             margin-bottom: 20px;
+            a {
+              line-height: 1;
+              height: inherit;
+            }
           }
         }
       }

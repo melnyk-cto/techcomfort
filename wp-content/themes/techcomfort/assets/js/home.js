@@ -21,8 +21,6 @@ document.addEventListener("DOMContentLoaded", function () {
         spaceBetween: 15,
         slidesPerView: 2,
         freeMode: true,
-        loop: true,
-        watchSlidesVisibility: true,
         watchSlidesProgress: true,
         breakpoints: {
             768: {
@@ -30,7 +28,6 @@ document.addEventListener("DOMContentLoaded", function () {
                 spaceBetween: 25,
             },
             1151: {
-                slidesPerView: 3,
                 spaceBetween: 70,
             }
         },
@@ -49,10 +46,13 @@ document.addEventListener("DOMContentLoaded", function () {
         slidesPerView: 1,
         centeredSlides: true,
         spaceBetween: 10,
+        autoplay: true,
+        speed: 500,
+        effect: 'coverflow',
+        loop: true,
         thumbs: {
-            swiper: swiperBanner
+            swiper: swiperBanner,
         },
-
     });
 
 });
