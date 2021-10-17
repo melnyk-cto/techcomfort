@@ -366,7 +366,7 @@
                                         <?php //echo $product->get_description() ?><!--</p>-->
 
                                         <span class='price'>
-                                               <?php if ($product->get_price_html()) echo $product->get_price_html(); else echo 'Уточняйте цену'; ?>
+                                               <?php if ((int)$product->get_price() > 10) echo $product->get_price_html(); else echo "<span class='green'>Уточняйте цену</span>"; ?>
                                             </span>
                                         <div class='description-buttons'>
                                             <a href='<?php echo home_url('/'); ?>ordering'
