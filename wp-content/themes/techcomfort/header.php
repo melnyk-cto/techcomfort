@@ -9,7 +9,7 @@
     <!-- <link rel="shortcut icon" href="assets/images/favicon.ico" type="image/x-icon">-->
     <meta name="theme-color" content="#e4a11b">
     <meta http-equiv='X-UA-Compatible' content='ie=edge'>
-    <title><?php wp_title(''); ?></title>
+    <title><?php the_title_attribute(); ?></title>
     <!-- Start Of Social Graph Protocol Meta Data -->
     <meta property="og:locale" content="en_US"/>
     <!-- <meta property="og:url" content="http://example.com/"/>-->
