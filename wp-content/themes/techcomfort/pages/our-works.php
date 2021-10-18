@@ -14,7 +14,8 @@
                         if ($images): ?>
                             <?php foreach ($images as $image): ?>
                                 <div class="gallery-item">
-                                    <img src='<?php echo esc_url($image['url']); ?>'
+                                    <img class="gallery-close" src="<?php echo get_template_directory_uri() ?>/assets/images/icons/close.svg" alt="">
+                                    <img class="gallery-image" src='<?php echo esc_url($image['url']); ?>'
                                          alt="<?php echo esc_attr($image['alt']); ?>">
                                 </div>
                             <?php endforeach; ?>

@@ -3,10 +3,17 @@ document.addEventListener("DOMContentLoaded", function () {
     ourWorks.style.opacity = 1;
 
     // zoom on click
-    const gallery = document.getElementsByClassName('gallery-item');
-    for (let i = 0; i < gallery.length; i++) {
-        gallery[i].addEventListener('click', function () {
-            this.classList.add('fixed')
+    const image = document.getElementsByClassName('gallery-image');
+    const close = document.getElementsByClassName('gallery-close');
+    for (let i = 0; i < image.length; i++) {
+        image[i].addEventListener('click', function () {
+            this.parentElement.classList.add('fixed')
+        });
+    }
+
+    for (let i = 0; i < close.length; i++) {
+        close[i].addEventListener('click', function () {
+             this.parentElement.classList.remove('fixed')
         });
     }
 });

@@ -29,19 +29,28 @@
         &:hover, &:active {
           opacity: 1;
         }
-        &:before {
-          content:    '';
-          width:      24px;
-          height:     24px;
-          position:   absolute;
-          right:      10px;
-          top:        10px;
-          background: red;
+        .gallery-close {
+          display: block;
         }
-        img {
+        .gallery-image {
           max-height: 100%;
           width:      auto;
+          max-width:  100%;
         }
+      }
+    }
+    &-close {
+      content:    '';
+      width:      34px;
+      position:   absolute;
+      z-index:    10;
+      right:      0;
+      top:        0;
+      display:    none;
+      padding:    5px;
+      background: #fff;
+      &:hover, &:active {
+        opacity: .7;
       }
     }
     .clearfix {
