@@ -7,7 +7,7 @@
     <meta name='viewport'
           content='width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0'>
     <!-- <link rel="shortcut icon" href="assets/images/favicon.ico" type="image/x-icon">-->
-    <meta name="theme-color" content="#e4a11b">
+    <meta name="theme-color" content="#b2c5d4">
     <meta http-equiv='X-UA-Compatible' content='ie=edge'>
     <title><?php the_title_attribute(); ?></title>
     <!-- Start Of Social Graph Protocol Meta Data -->

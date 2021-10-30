@@ -74,7 +74,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
         /* begin Listen to keypress on the input */
         function setSliderHandle(i, value) {
-            var r = [null, null];
+            const r = [null, null];
             r[i] = value;
             keypressSlider.noUiSlider.set(r);
         }
@@ -86,16 +86,16 @@ document.addEventListener("DOMContentLoaded", function () {
             });
 
             input.addEventListener("keydown", function (e) {
-                var values = keypressSlider.noUiSlider.get();
-                var value = Number(values[handle]);
+                const values = keypressSlider.noUiSlider.get();
+                const value = Number(values[handle]);
 
                 // [[handle0_down, handle0_up], [handle1_down, handle1_up]]
-                var steps = keypressSlider.noUiSlider.steps();
+                const steps = keypressSlider.noUiSlider.steps();
 
                 // [down, up]
-                var step = steps[handle];
+                const step = steps[handle];
 
-                var position;
+                let position;
 
                 // 13 is enter,
                 // 38 is key up,
@@ -138,28 +138,6 @@ document.addEventListener("DOMContentLoaded", function () {
         });
         /* end Listen to keypress on the input */
     });
-
-//swiper
-    const mySwiperCatalogProducts = new Swiper('.swiper-products', {
-        slidesPerView: 1,
-        breakpoints: {
-            768: {
-                slidesPerView: 3,
-            },
-            1151: {
-                slidesPerView: 3,
-            }
-        },
-        pagination: {
-            el: ".swiper-pagination",
-            clickable: true,
-        },
-        navigation: {
-            nextEl: ".swiper-button-next",
-            prevEl: ".swiper-button-prev",
-        },
-    });
-
 
     // filter by price range
     keypressSlider.noUiSlider.on('change', function (value) {

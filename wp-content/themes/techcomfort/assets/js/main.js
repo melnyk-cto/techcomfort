@@ -159,11 +159,11 @@ document.addEventListener("DOMContentLoaded", function () {
         const mySwiperProducts = new Swiper('.swiper-products', {
             slidesPerView: 1,
             breakpoints: {
+                556: {
+                    slidesPerView: 2,
+                },
                 768: {
                     slidesPerView: 3,
-                },
-                1151: {
-                    slidesPerView: 4,
                 }
             },
             pagination: {

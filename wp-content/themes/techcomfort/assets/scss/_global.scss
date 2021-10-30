@@ -306,6 +306,9 @@ form {
 }
 
 .swiper-container {
+  .swiper-slide {
+    height: auto;
+  }
   .swiper-pagination-bullets {
     bottom: 0 !important;
     .swiper-pagination-bullet {
@@ -732,6 +735,6 @@ form {
   display: none;
 }
 
- .products-js {
-   display:none
- }
+.products-js {
+  display: none
+}
