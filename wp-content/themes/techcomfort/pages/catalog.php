@@ -39,146 +39,167 @@
                         </div>
                         <div class='manufacturers filter-item'>
                             <h5>Производители</h5>
-                            <label>
-                                <input type='checkbox'>
-                                ­С&H (104)
-                            </label>
+                            <div class="filter-labels">
+                                <label>
+                                    <input type='checkbox'>
+                                    ­С&H (104)
+                                </label>
+                            </div>
+                            <span class='more show-all-js'>Скрыть все</span>
                         </div>
                         <div class='area filter-item'>
                             <h5>Рекомендованная площадь,м²</h5>
-                            <label>
-                                <input type='checkbox'>
-                                18 - 22
-                            </label>
-                            <label>
-                                <input type='checkbox'>
-                                20 - 33
-                            </label>
-                            <label>
-                                <input type='checkbox'>
-                                23 - 33
-                            </label>
-                            <label>
-                                <input type='checkbox'>
-                                30 - 40
-                            </label>
-                            <label>
-                                <input type='checkbox'>
-                                31 - 41
-                            </label>
-                            <span class='more'>Показать все</span>
+                            <div class="filter-labels">
+                                <label>
+                                    <input type='checkbox'>
+                                    18 - 22
+                                </label>
+                                <label>
+                                    <input type='checkbox'>
+                                    20 - 33
+                                </label>
+                                <label>
+                                    <input type='checkbox'>
+                                    23 - 33
+                                </label>
+                                <label>
+                                    <input type='checkbox'>
+                                    30 - 40
+                                </label>
+                                <label>
+                                    <input type='checkbox'>
+                                    31 - 41
+                                </label>
+                            </div>
+                            <span class='more show-all-js'>Скрыть все</span>
                         </div>
                         <div class='refrigerant filter-item'>
                             <h5>Тип хладагента</h5>
-                            <label>
-                                <input type='checkbox'>
-                                410A (47)
-                            </label>
-                            <label>
-                                <input type='checkbox'>
-                                r-32 (57)
-                            </label>
+                            <div class="filter-labels">
+                                <label>
+                                    <input type='checkbox'>
+                                    410A (47)
+                                </label>
+                                <label>
+                                    <input type='checkbox'>
+                                    r-32 (57)
+                                </label>
+                            </div>
+                            <span class='more show-all-js'>Скрыть все</span>
                         </div>
                         <div class='compressor filter-item'>
                             <h5>Тип компрессора</h5>
-                            <label>
-                                <input type='checkbox'>
-                                Инверторный
-                            </label>
-                            <label>
-                                <input type='checkbox'>
-                                Обычный
-                            </label>
+                            <div class="filter-labels">
+                                <label>
+                                    <input type='checkbox'>
+                                    Инверторный
+                                </label>
+                                <label>
+                                    <input type='checkbox'>
+                                    Обычный
+                                </label>
+                            </div>
+                            <span class='more show-all-js'>Скрыть все</span>
                         </div>
                         <div class='heating filter-item'>
                             <h5>Работа на обогрев до С</h5>
-                            <label>
-                                <input type='checkbox'>
-                                -7
-                            </label>
-                            <label>
-                                <input type='checkbox'>
-                                -10
-                            </label>
-                            <label>
-                                <input type='checkbox'>
-                                -15
-                            </label>
-                            <label>
-                                <input type='checkbox'>
-                                -18
-                            </label>
-                            <label>
-                                <input type='checkbox'>
-                                -20
-                            </label>
-                            <label>
-                                <input type='checkbox'>
-                                -30
-                            </label>
-                            <label>
-                                <input type='checkbox'>
-                                -35
-                            </label>
-                            <span class='more'>Показать все</span>
+                            <div class="filter-labels">
+                                <label>
+                                    <input type='checkbox'>
+                                    -7
+                                </label>
+                                <label>
+                                    <input type='checkbox'>
+                                    -10
+                                </label>
+                                <label>
+                                    <input type='checkbox'>
+                                    -15
+                                </label>
+                                <label>
+                                    <input type='checkbox'>
+                                    -18
+                                </label>
+                                <label>
+                                    <input type='checkbox'>
+                                    -20
+                                </label>
+                                <label>
+                                    <input type='checkbox'>
+                                    -30
+                                </label>
+                                <label>
+                                    <input type='checkbox'>
+                                    -35
+                                </label>
+                            </div>
+                            <span class='more show-all-js'>Скрыть все</span>
                         </div>
                         <div class='wi-fi filter-item'>
                             <h5>Wi-Fi</h5>
-                            <label>
-                                <input type='checkbox'>
-                                Есть
-                            </label>
-                            <label>
-                                <input type='checkbox'>
-                                Нет
-                            </label>
-                            <label>
-                                <input type='checkbox'>
-                                Опционально
-                            </label>
+                            <div class="filter-labels">
+                                <label>
+                                    <input type='checkbox'>
+                                    Есть
+                                </label>
+                                <label>
+                                    <input type='checkbox'>
+                                    Нет
+                                </label>
+                                <label>
+                                    <input type='checkbox'>
+                                    Опционально
+                                </label>
+                            </div>
+                            <span class='more show-all-js'>Скрыть все</span>
                         </div>
                         <div class='color filter-item'>
                             <h5>Цвет</h5>
-                            <label>
-                                <input type='checkbox'>
-                                Белый
-                            </label>
-                            <label>
-                                <input type='checkbox'>
-                                Серебристый
-                            </label>
-                            <label>
-                                <input type='checkbox'>
-                                Металлик
-                            </label>
-                            <label>
-                                <input type='checkbox'>
-                                Титаниум
-                            </label>
-                            <label>
-                                <input type='checkbox'>
-                                Черный
-                            </label>
-                            <span class='more'>Показать все</span>
+                            <div class="filter-labels">
+                                <label>
+                                    <input type='checkbox'>
+                                    Белый
+                                </label>
+                                <label>
+                                    <input type='checkbox'>
+                                    Серебристый
+                                </label>
+                                <label>
+                                    <input type='checkbox'>
+                                    Металлик
+                                </label>
+                                <label>
+                                    <input type='checkbox'>
+                                    Титаниум
+                                </label>
+                                <label>
+                                    <input type='checkbox'>
+                                    Черный
+                                </label>
+                            </div>
+                            <span class='more show-all-js'>Скрыть все</span>
                         </div>
                         <div class='noise-level filter-item'>
                             <h5>Минимальный уровень шума внутреннего блока</h5>
-                            <label>
-                                <input type='checkbox'>
-                                16-29 Дб
-                            </label>
-                            <label>
-                                <input type='checkbox'>
-                                33-44 дБ
-                            </label>
-                            <label>
-                                <input type='checkbox'>
-                                45-59 дБ
-                            </label>
-                            <label>
-                                <input type='checkbox'>
-                                60 дБ и более
-                            </label>
+                            <div class="filter-labels">
+                                <label>
+                                    <input type='checkbox'>
+                                    16-29 Дб
+                                </label>
+                                <label>
+                                    <input type='checkbox'>
+                                    33-44 дБ
+                                </label>
+                                <label>
+                                    <input type='checkbox'>
+                                    45-59 дБ
+                                </label>
+                                <label>
+                                    <input type='checkbox'>
+                                    60 дБ и более
+                                </label>
+                            </div>
+                            <span class='more show-all-js'>Скрыть все</span>
                         </div>
                     </form>
                 </div>

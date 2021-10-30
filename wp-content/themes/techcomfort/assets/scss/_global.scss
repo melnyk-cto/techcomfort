@@ -370,6 +370,10 @@ form {
   position:        relative;
   padding-right:   15px;
   font-size:       16px;
+  cursor:          pointer;
+  &:hover, &:active {
+    opacity: .7;
+  }
   &:after {
     content:       "";
     position:      absolute;
@@ -378,7 +382,7 @@ form {
     border-left:   4px solid transparent;
     border-right:  4px solid transparent;
     border-bottom: 7px solid $primaryColor;
-    transform:     translate(0, -35%) rotate(90deg);
+    transform:     translate(0, -50%) rotate(90deg);
   }
 }
 
@@ -607,7 +611,7 @@ form {
     &:after {
       border-left:   3px solid transparent;
       border-right:  3px solid transparent;
-      border-bottom: 5px solid $primaryColor;
+      border-bottom: 4px solid $primaryColor;
     }
   }
   form {

@@ -158,6 +158,7 @@ document.addEventListener("DOMContentLoaded", function () {
     if (swiperProducts) {
         const mySwiperProducts = new Swiper('.swiper-products', {
             slidesPerView: 1,
+            spaceBetween: 15,
             breakpoints: {
                 556: {
                     slidesPerView: 2,

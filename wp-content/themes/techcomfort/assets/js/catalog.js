@@ -142,8 +142,8 @@ document.addEventListener("DOMContentLoaded", function () {
     // filter by price range
     keypressSlider.noUiSlider.on('change', function (value) {
         setTimeout(() => {
-            url.searchParams.set('from',value[0]);
-            url.searchParams.set('to',value[1]);
+            url.searchParams.set('from', value[0]);
+            url.searchParams.set('to', value[1]);
             window.location.href = url;
         }, 500)
     });
@@ -164,4 +164,19 @@ document.addEventListener("DOMContentLoaded", function () {
         }, 500)
     })
 
+
+    // Скрыть или показать элементы фильтра
+    const showAll = document.getElementsByClassName('show-all-js');
+    console.log(showAll, 'showAll')
+
+    for (let i = 0; i < showAll.length; i++) {
+        showAll[i].addEventListener('click', function () {
+            this.parentElement.classList.toggle('hide');
+            if (this.innerHTML === "Показать все") {
+                this.innerHTML = "Скрыть все"
+            } else {
+                this.innerHTML = "Показать все"
+            }
+        });
+    }
 });
