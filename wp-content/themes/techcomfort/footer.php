@@ -113,13 +113,13 @@
                         <h5>Соц. сети</h5>
                         <div class='socials-images'>
                             <a href='#' class='socials-image'>
+                                <img src='<?php echo get_template_directory_uri() ?>/assets/images/icons/telegram.svg' alt='Telegram'>
+                            </a>
+                            <a href='#' class='socials-image'>
                                 <img src='<?php echo get_template_directory_uri() ?>/assets/images/icons/viber.svg' alt='Viber'>
                             </a>
                             <a href='#' class='socials-image'>
                                 <img src='<?php echo get_template_directory_uri() ?>/assets/images/icons/whatsapp.svg' alt='WhatsApp'>
-                            </a>
-                            <a href='#' class='socials-image'>
-                                <img src='<?php echo get_template_directory_uri() ?>/assets/images/icons/telegram.svg' alt='Telegram'>
                             </a>
                         </div>
                     </div>
