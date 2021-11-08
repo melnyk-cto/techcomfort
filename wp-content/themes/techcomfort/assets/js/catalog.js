@@ -22,7 +22,7 @@ document.addEventListener("DOMContentLoaded", function () {
         });
     }
 
-// filter price
+    // filter price
     const keypressSlider = document.querySelector(".slider-keypress");
     const input0 = document.querySelector(".input-with-keypress-0");
     const input1 = document.querySelector(".input-with-keypress-1");
@@ -57,16 +57,16 @@ document.addEventListener("DOMContentLoaded", function () {
 
     //filter
     const filterClose = document.getElementsByClassName("close-filter")[0];
-    const filter = document.getElementsByClassName("filter")[0];
+    const filterPanel = document.getElementsByClassName("filter")[0];
     const btnFilter = document.getElementsByClassName("btn-filter")[0];
 
     btnFilter.addEventListener("click", function () {
-        filter.style.visibility = "visible";
-        filter.style.opacity = "1";
+        filterPanel.style.visibility = "visible";
+        filterPanel.style.opacity = "1";
     });
     filterClose.addEventListener("click", function () {
-        filter.style.visibility = "hidden";
-        filter.style.opacity = "0";
+        filterPanel.style.visibility = "hidden";
+        filterPanel.style.opacity = "0";
     });
 
     keypressSlider.noUiSlider.on("update", function (values, handle) {
@@ -138,31 +138,6 @@ document.addEventListener("DOMContentLoaded", function () {
         });
         /* end Listen to keypress on the input */
     });
-
-    // filter by price range
-    keypressSlider.noUiSlider.on('change', function (value) {
-        setTimeout(() => {
-            url.searchParams.set('from', value[0]);
-            url.searchParams.set('to', value[1]);
-            window.location.href = url;
-        }, 500)
-    });
-
-    // filter by sorting
-    const sorting = document.getElementById('sorting');
-    if (url.searchParams.get('type')) {
-        sorting.value = url.searchParams.get('type');
-    } else {
-        sorting.value = 'default';
-
-    }
-
-    sorting.addEventListener('change', function () {
-        setTimeout(() => {
-            url.searchParams.set('type', this.value);
-            window.location.href = url;
-        }, 500)
-    })
 
 
     // Скрыть или показать элементы фильтра

@@ -87,6 +87,8 @@ document.addEventListener("DOMContentLoaded", function () {
         document.cookie = updatedCookie;
     }
 
+
+    // Добавление в cookie товаров которые посещал пользователь
     const url = new URL(window.location.href);
     const name = 'viewedProducts';
     let data = getCookie(name);
