@@ -44,7 +44,7 @@
             margin-bottom: 0;
           }
         }
-        input {
+        input[type="checkbox"] {
           width:        18px;
           height:       18px;
           margin-right: 10px;
@@ -310,7 +310,7 @@
             margin-bottom: 8px;
             font-size:     16px;
           }
-          input {
+          input[type="checkbox"] {
             width:  16px;
             height: 16px;
           }
@@ -444,7 +444,7 @@
           label {
             font-size: 12px;
           }
-          input {
+          input[type="checkbox"] {
             width:  14px;
             height: 14px;
           }

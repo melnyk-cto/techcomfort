@@ -23,7 +23,7 @@
 
     add_theme_support('woocommerce');
 
-    add_theme_support( 'menus' );
+    add_theme_support('menus');
 
     function init_navigation() {
         register_nav_menus(
@@ -33,3 +33,30 @@
         );
     }
     add_action('init', 'init_navigation');
+
+    // Добавление Custom Attributes
+//    $args = array('post_type' => 'product', 'posts_per_page' => -1);
+//    $loop = new WP_Query($args);
+//    while ($loop->have_posts()) : $loop->the_post();
+//        if (!empty($loop->post->post_content)) {
+//            $attributes = $loop->post->post_content;
+//            $explodes = explode(PHP_EOL, $attributes);
+//
+//            $number = 0;
+//            $product_attributes = [];
+//            foreach ($explodes as $explode) {
+//                $explode = explode("|", $explode);
+//                $product_attributes[$number] = array(
+//                    //Make sure the 'name' is same as you have the attribute
+//                    'name' => htmlspecialchars(stripslashes($explode[1])),
+//                    'value' => $explode[2],
+//                );
+//                $number++;
+//            }
+//
+//            //Add as post meta
+//            update_post_meta($loop->post->ID, '_product_attributes', $product_attributes);
+//        }
+//    endwhile;
+
+    ini_set('memory_limit', '256M');

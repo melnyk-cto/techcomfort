@@ -7,11 +7,35 @@
     wp_enqueue_script('catalog-js', get_stylesheet_directory_uri() . '/assets/js/catalog.js');
     wp_enqueue_script('nouislider-js', get_stylesheet_directory_uri() . '/assets/lib/nouislider.js');
 ?>
-<script>
-    let descriptionProduct;
-    let singleAttribute = [];
 
-</script>
+
+<?php
+    $args = array(
+        'post_type' => 'product',
+        'stock' => 1,
+        'orderby' => 'meta_value_num',
+        'meta_key' => '_price',
+        'order' => $_GET['type'],
+    );
+
+    if (isset($_GET['from']) && isset($_GET['to'])) {
+        $args['meta_query'] = array(
+            'relation' => 'AND',
+            [
+                'key' => '_price',
+                'value' => $_GET['from'],
+                'compare' => '>=',
+                'type' => 'numeric',
+            ],
+            [
+                'key' => '_price',
+                'value' => $_GET['to'],
+                'compare' => '<=',
+                'type' => 'numeric',
+            ],
+        );
+    } ?>
+
 <main class='catalog'>
     <section class='catalog-content'>
         <div class='container'>
@@ -21,7 +45,6 @@
                         <h2>Фильтры</h2>
                         <div class='close close-filter'></div>
                     </div>
-                    <?php echo do_shortcode('[woocommerce_product_search]'); ?>
                     <form action=''>
                         <div class='price filter-item'>
                             <h5>Цена</h5>
@@ -39,170 +62,33 @@
                                 <div class="slider-keypress m-b-20"></div>
                             </div>
                         </div>
-                        <div class='manufacturers filter-item'>
-                            <h5>Производители</h5>
-                            <div class="filter-labels">
-                                <label>
-                                    <input type='checkbox'>
-                                    ­С&H (104)
-                                </label>
-                            </div>
-                            <span class='more show-all-js'>Скрыть все</span>
-                        </div>
-                        <div class='area filter-item'>
-                            <h5>Рекомендованная площадь,м²</h5>
-                            <div class="filter-labels">
-                                <label>
-                                    <input type='checkbox'>
-                                    18 - 22
-                                </label>
-                                <label>
-                                    <input type='checkbox'>
-                                    20 - 33
-                                </label>
-                                <label>
-                                    <input type='checkbox'>
-                                    23 - 33
-                                </label>
-                                <label>
-                                    <input type='checkbox'>
-                                    30 - 40
-                                </label>
-                                <label>
-                                    <input type='checkbox'>
-                                    31 - 41
-                                </label>
-                            </div>
-                            <span class='more show-all-js'>Скрыть все</span>
-                        </div>
-                        <div class='refrigerant filter-item'>
-                            <h5>Тип хладагента</h5>
-                            <div class="filter-labels">
-                                <label>
-                                    <input type='checkbox'>
-                                    410A (47)
-                                </label>
-                                <label>
-                                    <input type='checkbox'>
-                                    r-32 (57)
-                                </label>
-                            </div>
-                            <span class='more show-all-js'>Скрыть все</span>
-                        </div>
-                        <div class='compressor filter-item'>
-                            <h5>Тип компрессора</h5>
-                            <div class="filter-labels">
-                                <label>
-                                    <input type='checkbox'>
-                                    Инверторный
-                                </label>
-                                <label>
-                                    <input type='checkbox'>
-                                    Обычный
-                                </label>
-                            </div>
-                            <span class='more show-all-js'>Скрыть все</span>
-                        </div>
-                        <div class='heating filter-item'>
-                            <h5>Работа на обогрев до С</h5>
-                            <div class="filter-labels">
-                                <label>
-                                    <input type='checkbox'>
-                                    -7
-                                </label>
-                                <label>
-                                    <input type='checkbox'>
-                                    -10
-                                </label>
-                                <label>
-                                    <input type='checkbox'>
-                                    -15
-                                </label>
-                                <label>
-                                    <input type='checkbox'>
-                                    -18
-                                </label>
-                                <label>
-                                    <input type='checkbox'>
-                                    -20
-                                </label>
-                                <label>
-                                    <input type='checkbox'>
-                                    -30
-                                </label>
-                                <label>
-                                    <input type='checkbox'>
-                                    -35
-                                </label>
-                            </div>
-                            <span class='more show-all-js'>Скрыть все</span>
-                        </div>
-                        <div class='wi-fi filter-item'>
-                            <h5>Wi-Fi</h5>
-                            <div class="filter-labels">
-                                <label>
-                                    <input type='checkbox'>
-                                    Есть
-                                </label>
-                                <label>
-                                    <input type='checkbox'>
-                                    Нет
-                                </label>
-                                <label>
-                                    <input type='checkbox'>
-                                    Опционально
-                                </label>
-                            </div>
-                            <span class='more show-all-js'>Скрыть все</span>
-                        </div>
-                        <div class='color filter-item'>
-                            <h5>Цвет</h5>
-                            <div class="filter-labels">
-                                <label>
-                                    <input type='checkbox'>
-                                    Белый
-                                </label>
-                                <label>
-                                    <input type='checkbox'>
-                                    Серебристый
-                                </label>
-                                <label>
-                                    <input type='checkbox'>
-                                    Металлик
-                                </label>
-                                <label>
-                                    <input type='checkbox'>
-                                    Титаниум
-                                </label>
-                                <label>
-                                    <input type='checkbox'>
-                                    Черный
-                                </label>
-                            </div>
-                            <span class='more show-all-js'>Скрыть все</span>
-                        </div>
-                        <div class='noise-level filter-item'>
-                            <h5>Минимальный уровень шума внутреннего блока</h5>
-                            <div class="filter-labels">
-                                <label>
-                                    <input type='checkbox'>
-                                    16-29 Дб
-                                </label>
-                                <label>
-                                    <input type='checkbox'>
-                                    33-44 дБ
-                                </label>
-                                <label>
-                                    <input type='checkbox'>
-                                    45-59 дБ
-                                </label>
-                                <label>
-                                    <input type='checkbox'>
-                                    60 дБ и более
-                                </label>
-                            </div>
-                            <span class='more show-all-js'>Скрыть все</span>
-                        </div>
+                        <?php
+                            $args['posts_per_page'] = -1;
+                            $loop = new WP_Query($args);
+
+                            $attributeArray = array();
+                            while ($loop->have_posts()) :
+                                $loop->the_post();
+                                global $product;
+                                foreach ($product->get_attributes() as $attribute) {
+                                    if (!empty($attribute['value'])) {
+                                        $attributeArray[$attribute['name']][] = $attribute['value'];
+                                    }
+                                }
+                                ?>
+                            <?php endwhile; ?>
+                        <?php wp_reset_query(); ?>
+                        <?php foreach ($attributeArray as $key => $values) {
+                            echo "<div class='filter-item hide'><h5>$key</h5><div class='filter-labels'>";
+                            $values_unique = array_unique($values);
+                            foreach ($values_unique as $value) {
+                                echo "<label><input type='checkbox'>$value</label>";
+                            }
+                            echo "</div><span class='more show-all-js'>Показать все</span></div>";
+                        }
+                        ?>
+
+
                     </form>
                 </div>
                 <div class='catalog-list'>
@@ -243,47 +129,22 @@
                         </div>
                     </div>
                     <div class='products'>
-                        <div class='products-list '>
-
+                        <div class='products-list'>
                             <?php
                                 $paged = (get_query_var('paged')) ? absint(get_query_var('paged')) : 1;
 
-                                $args = array(
-                                    'post_type' => 'product',
-                                    'stock' => 1,
-                                    'posts_per_page' => 48,
-                                    'orderby' => 'meta_value_num',
-                                    'meta_key' => '_price',
-                                    'order' => $_GET['type'],
-                                    'paged' => $paged
-                                );
+                                $args['posts_per_page'] = 48;
+                                var_dump($paged);
+                                $args['paged'] = $paged;
 
                                 // The Query
                                 $cquery = new WP_Query($args);
                                 $big = 999999999; // need an unlikely integer
 
-                                if (isset($_GET['from']) && isset($_GET['to'])) {
-                                    $args['meta_query'] = array(
-                                        'relation' => 'AND',
-                                        [
-                                            'key' => '_price',
-                                            'value' => $_GET['from'],
-                                            'compare' => '>=',
-                                            'type' => 'numeric',
-                                        ],
-                                        [
-                                            'key' => '_price',
-                                            'value' => $_GET['to'],
-                                            'compare' => '<=',
-                                            'type' => 'numeric',
-                                        ],
-                                    );
-                                }
                                 $loop = new WP_Query($args);
-                                $count = 0; ?>
+                            ?>
                             <?php while ($loop->have_posts()) : $loop->the_post();
-                                global $product;
-                                $count++ ?>
+                                global $product; ?>
                                 <div class='products-item catalog-item'>
                                     <a id="id-<?php the_id(); ?>"
                                        href="<?php echo home_url('/'); ?>product?uid=<?php the_id(); ?>"
@@ -360,29 +221,13 @@
                                             </div>
                                         </div>
                                         <!-- Need for JS -->
-                                        <ul class='characteristics-list'></ul>
-                                        <script>
-                                            characteristicsParent = document.getElementsByClassName('characteristics-list');
-                                            descriptionProduct = `<?php echo $product->get_description() ?>`.split('\n');
-                                            descriptionProduct.map(item => descriptionProduct.push([item.split('|')]));
-                                            singleAttribute = [];
-                                            for (let i = 0; i < descriptionProduct.length; i++) {
-                                                if (Array.isArray(descriptionProduct[i])) {
-                                                    singleAttribute.push(descriptionProduct[i])
+                                        <ul class='characteristics-list'>
+                                            <?php
+                                                foreach ($product->get_attributes() as $attribute) {
+                                                    echo '<li class="characteristics-item"><p>' . $attribute["name"] . '</p><span>: ' . $attribute["value"] . '</span></li>';
                                                 }
-                                            }
-                                            for (let z = 0; z < singleAttribute.length; z++) {
-                                                let li = document.createElement("li")
-                                                let p = document.createElement("p")
-                                                let span = document.createElement("span")
-                                                characteristicsParent[`<?php echo $count - 1 ?>`].append(li);
-                                                li.setAttribute('class', 'characteristics-item');
-                                                li.append(p);
-                                                li.children[0].innerHTML = singleAttribute[z][0][1];
-                                                li.append(span);
-                                                li.children[1].innerHTML = `: ${singleAttribute[z][0][2]}`
-                                            }
-                                        </script>
+                                            ?>
+                                        </ul>
                                         <span class='price'>
                                                <?php if ((int)$product->get_price() > 10) echo $product->get_price_html(); else echo "<span class='green'>Уточняйте цену</span>"; ?>
                                             </span>
