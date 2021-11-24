@@ -87,9 +87,14 @@
                             while ($loop->have_posts()) :
                                 $loop->the_post();
                                 global $product;
-                                foreach ($product->get_attributes() as $attribute) {
-                                    if (!empty($attribute['value'])) {
-                                        $attributeArray[$attribute['name']][] = $attribute['value'];
+                                $attributes = $product->get_description();
+                                // Возвращает массив строк, полученных разбиением строки string с использованием separator в качестве разделителя
+                                $explodes = explode(PHP_EOL, $attributes);
+                                foreach ($explodes as $explode) {
+                                    // Возвращает массив строк, полученных разбиением строки string с использованием separator в качестве разделителя
+                                    $explode = explode("|", $explode);
+                                    if (!empty($explode[2])) {
+                                        $attributeArray[$explode[1]][] = mb_strtolower($explode[2]);
                                     }
                                 }
                                 ?>
@@ -97,6 +102,7 @@
                         <?php wp_reset_query(); ?>
                         <?php foreach ($attributeArray as $key => $values) {
                             echo "<div class='filter-item" . (!empty($compareValues) ? ' hide' : '') . "'>" . "<h5>$key</h5><div class='filter-labels'>";
+                            // Убирает повторяющиеся значения из массива
                             $values_unique = array_unique($values);
                             foreach ($values_unique as $value) {
                                 $formatKey = str_replace(' ', '_', $key);
@@ -244,8 +250,11 @@
                                         <!-- Need for JS -->
                                         <ul class='characteristics-list'>
                                             <?php
-                                                foreach ($product->get_attributes() as $attribute) {
-                                                    echo '<li class="characteristics-item"><p>' . $attribute["name"] . '</p><span>: ' . $attribute["value"] . '</span></li>';
+                                                $attributes = $product->get_description();
+                                                $explodes = explode(PHP_EOL, $attributes);
+                                                foreach ($explodes as $explode) {
+                                                    $explode = explode("|", $explode);
+                                                    echo '<li class="characteristics-item"><p>' . $explode[1] . '</p><span>: ' . $explode[2] . '</span></li>';
                                                 }
                                             ?>
                                         </ul>
