@@ -16,6 +16,7 @@
         'orderby' => 'meta_value_num',
         'meta_key' => '_price',
         'order' => $_GET['type'],
+        'product_cat' => $_GET['category'],
     );
 
 ?>
@@ -47,25 +48,25 @@
                             </div>
                         </div>
                         <?php
-                            $dates = array();
+                            $metaQuery = [];
                             foreach ($_GET as $key => $values) {
                                 if (isset($key)) {
                                     if ($key === 'from') {
-                                        array_push($dates, [
+                                        array_push($metaQuery, [
                                             'key' => '_price',
                                             'value' => $values,
                                             'compare' => '>=',
-                                            'type' => 'number',
+                                            'type' => 'numeric',
                                         ]);
                                     } else if ($key === 'to') {
-                                        array_push($dates, [
+                                        array_push($metaQuery, [
                                             'key' => '_price',
                                             'value' => $values,
                                             'compare' => '<=',
-                                            'type' => 'number',
+                                            'type' => 'numeric',
                                         ]);
-                                    } else {
-                                        array_push($dates, [
+                                    } else if ($key !== 'category' && $key !== 'type') {
+                                        array_push($metaQuery, [
                                             'key' => $key,
                                             'value' => $values,
                                             'compare' => 'LIKE',
@@ -75,7 +76,7 @@
                             }
                             $args['meta_query'] = array(
                                 'relation' => 'AND',
-                                $dates
+                                $metaQuery
                             );
                         ?>
                         <?php
@@ -95,7 +96,7 @@
                             <?php endwhile; ?>
                         <?php wp_reset_query(); ?>
                         <?php foreach ($attributeArray as $key => $values) {
-                            echo "<div class='filter-item" .  (!empty($compareValues) ? ' hide' : '') . "'>" . "<h5>$key</h5><div class='filter-labels'>";
+                            echo "<div class='filter-item" . (!empty($compareValues) ? ' hide' : '') . "'>" . "<h5>$key</h5><div class='filter-labels'>";
                             $values_unique = array_unique($values);
                             foreach ($values_unique as $value) {
                                 $formatKey = str_replace(' ', '_', $key);

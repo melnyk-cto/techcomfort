@@ -288,12 +288,36 @@
         align-items: center;
       }
       .menu-item {
-        margin: 0 12px;
+        margin:   0 12px;
+        position: relative;
         a {
           display:     block;
           padding:     18px 0;
           font-size:   16px;
           font-weight: 500;
+          + .sub-menu {
+            position:      absolute;
+            z-index:       1;
+            left:          0;
+            bottom:        4px;
+            background:    #dde2e8;
+            border-radius: 6px;
+            box-shadow:    0 3px 15px 0 rgba(56, 69, 249, .14%);
+            display:       none;
+            transform:     translate(0, 100%);
+            min-width:     300px;
+            a {
+              padding: 12px 0;
+            }
+            &:hover, &:active {
+              display: block;
+            }
+          }
+          &:hover, &:active {
+            + .sub-menu {
+              display: block;
+            }
+          }
         }
       }
     }
@@ -382,6 +406,7 @@
   }
 }
 
+
 @media screen and (max-width: 1150px) {
   .header {
     &-top, &-bottom, &-center {
@@ -391,7 +416,8 @@
       display: flex;
     }
     &-catalog {
-      padding: 16px 45px;
+      padding:    16px 45px;
+      min-height: 53px;
       p {
         font-size:      18px;
         text-transform: uppercase;
@@ -448,13 +474,31 @@
         }
       }
       .menu-item {
-        display:       flex;
-        align-items:   center;
-        border-bottom: 1px solid $primaryColor;
-        cursor:        pointer;
+        display:        flex;
+        flex-direction: column;
+        align-items:    center;
+        border-bottom:  1px solid $primaryColor;
+        cursor:         pointer;
         a {
           line-height: 56px;
           height:      56px;
+          + .sub-menu {
+            width: 100%;
+            li {
+              border-bottom: 1px solid transparent;
+              &:first-child {
+                a {
+                  padding-top: 0;
+                }
+              }
+            }
+            a {
+              padding:     10px 15px 10px 65px;
+              min-height:  auto;
+              line-height: 1;
+              height:      auto;
+            }
+          }
         }
         .call {
           display:     flex;
@@ -579,6 +623,11 @@
           a {
             font-size:   14px;
             font-weight: 500;
+            + .sub-menu {
+              a {
+                padding: 8px 15px 8px 40px;
+              }
+            }
           }
           p {
             font-size: 14px;
