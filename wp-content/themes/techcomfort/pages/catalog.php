@@ -20,7 +20,10 @@
     );
 
 ?>
-
+<div class="loading">
+    <img src='<?php echo get_template_directory_uri() ?>/assets/images/icons/loading.svg'
+         alt=''>
+</div>
 <main class='catalog'>
     <section class='catalog-content'>
         <div class='container'>

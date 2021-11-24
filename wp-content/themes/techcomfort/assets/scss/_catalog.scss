@@ -9,6 +9,7 @@
 }
 
 .catalog {
+  opacity: 0;
   &-content {
     padding: 6.2% 0;
     .container {
@@ -240,6 +241,7 @@
           display:         flex;
           justify-content: space-between;
           align-items:     center;
+          flex-direction: row;
           padding:         3% 2.15%;
           margin-bottom:   3.5%;
           .item-image {
