@@ -27,6 +27,8 @@
 <main class='catalog'>
     <section class='catalog-content'>
         <div class='container'>
+            <?php $category = get_term_by('slug', $_GET['category'], 'product_cat'); ?>
+            <h2 class="category-name"> <?php echo $category->name ?></h2>
             <div class='catalog-inner'>
                 <div class='filter'>
                     <div class='filter-title'>
