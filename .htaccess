@@ -1,4 +1,4 @@
-php_value memory_limit 256M
+php_value memory_limit 500M
 
 # BEGIN WordPress
 # Директивы (строки) между `BEGIN WordPress` и `END WordPress`

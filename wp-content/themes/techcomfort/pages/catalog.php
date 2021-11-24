@@ -18,23 +18,7 @@
         'order' => $_GET['type'],
     );
 
-    if (isset($_GET['from']) && isset($_GET['to'])) {
-        $args['meta_query'] = array(
-            'relation' => 'AND',
-            [
-                'key' => '_price',
-                'value' => $_GET['from'],
-                'compare' => '>=',
-                'type' => 'numeric',
-            ],
-            [
-                'key' => '_price',
-                'value' => $_GET['to'],
-                'compare' => '<=',
-                'type' => 'numeric',
-            ],
-        );
-    } ?>
+?>
 
 <main class='catalog'>
     <section class='catalog-content'>
@@ -63,6 +47,38 @@
                             </div>
                         </div>
                         <?php
+                            $dates = array();
+                            foreach ($_GET as $key => $values) {
+                                if (isset($key)) {
+                                    if ($key === 'from') {
+                                        array_push($dates, [
+                                            'key' => '_price',
+                                            'value' => $values,
+                                            'compare' => '>=',
+                                            'type' => 'number',
+                                        ]);
+                                    } else if ($key === 'to') {
+                                        array_push($dates, [
+                                            'key' => '_price',
+                                            'value' => $values,
+                                            'compare' => '<=',
+                                            'type' => 'number',
+                                        ]);
+                                    } else {
+                                        array_push($dates, [
+                                            'key' => $key,
+                                            'value' => $values,
+                                            'compare' => 'LIKE',
+                                        ]);
+                                    }
+                                }
+                            }
+                            $args['meta_query'] = array(
+                                'relation' => 'AND',
+                                $dates
+                            );
+                        ?>
+                        <?php
                             $args['posts_per_page'] = -1;
                             $loop = new WP_Query($args);
 
@@ -79,10 +95,15 @@
                             <?php endwhile; ?>
                         <?php wp_reset_query(); ?>
                         <?php foreach ($attributeArray as $key => $values) {
-                            echo "<div class='filter-item hide'><h5>$key</h5><div class='filter-labels'>";
+                            echo "<div class='filter-item" .  (!empty($compareValues) ? ' hide' : '') . "'>" . "<h5>$key</h5><div class='filter-labels'>";
                             $values_unique = array_unique($values);
                             foreach ($values_unique as $value) {
-                                echo "<label><input type='checkbox'>$value</label>";
+                                $formatKey = str_replace(' ', '_', $key);
+                                $compareValues = array_intersect_assoc($_GET, array($formatKey => $value));
+                                echo "<label class='filter-label-js' data-key=" . $formatKey . " data-value='$value'><input type='checkbox'";
+                                if (!empty($compareValues)) echo " checked>";
+                                if (empty($compareValues)) echo " >";
+                                echo $value . "</label>";
                             }
                             echo "</div><span class='more show-all-js'>Показать все</span></div>";
                         }
@@ -134,7 +155,6 @@
                                 $paged = (get_query_var('paged')) ? absint(get_query_var('paged')) : 1;
 
                                 $args['posts_per_page'] = 48;
-                                var_dump($paged);
                                 $args['paged'] = $paged;
 
                                 // The Query

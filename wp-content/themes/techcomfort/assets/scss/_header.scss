@@ -373,8 +373,9 @@
   &-bottom {
     background: $secondaryColor;
     &-inner {
+      min-height:      54px;
       display:         flex;
-      justify-content: space-between;
+      justify-content: flex-end;
       align-items:     center;
       position:        relative;
     }
@@ -476,7 +477,8 @@
 @media screen and (max-width: 767px) {
   .header {
     &-catalog {
-      padding: 11px 20px;
+      padding:    11px 20px;
+      min-height: 38px;
       p {
         font-size:      14px;
         text-transform: initial;
@@ -567,13 +569,13 @@
         }
         .menu {
           a {
-            padding:    0 20px;
+            padding:     0 20px;
             line-height: 41px;
-           height: 41px;
+            height:      41px;
           }
         }
         .menu-item {
-          flex-wrap:  wrap;
+          flex-wrap: wrap;
           a {
             font-size:   14px;
             font-weight: 500;
@@ -582,22 +584,22 @@
             font-size: 14px;
           }
           .call {
-            width:  100%;
-            margin: 10px 0;
-            padding:    0 20px;
+            width:   100%;
+            margin:  10px 0;
+            padding: 0 20px;
             a {
               font-size:    14px;
               font-weight:  400;
               margin-right: 15px;
-              line-height: 1;
-              height: inherit;
+              line-height:  1;
+              height:       inherit;
             }
           }
           .socials {
             margin-bottom: 20px;
             a {
               line-height: 1;
-              height: inherit;
+              height:      inherit;
             }
           }
         }

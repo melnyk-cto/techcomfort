@@ -40,6 +40,10 @@
           height:        initial;
           margin-bottom: 10px;
           font-size:     16px;
+          cursor:        pointer;
+          &:hover, &:active {
+            opacity: .7;
+          }
           &:last-child {
             margin-bottom: 0;
           }

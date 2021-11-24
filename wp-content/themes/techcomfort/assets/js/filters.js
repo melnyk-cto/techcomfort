@@ -33,4 +33,12 @@ document.addEventListener("DOMContentLoaded", function () {
     }
 
 
+    //  Фильтрация по значению
+    const filter = document.getElementsByClassName('filter-label-js');
+    for (let i = 0; i < filter.length; i++) {
+        filter[i].addEventListener('click', function () {
+            url.searchParams.set(this.getAttribute('data-key'), this.getAttribute('data-value'));
+            window.location.href = url;
+        });
+    }
 });

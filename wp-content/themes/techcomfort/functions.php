@@ -32,7 +32,16 @@
             )
         );
     }
+
     add_action('init', 'init_navigation');
+
+
+    function get_product_by_sku( $sku ) {
+        global $wpdb;
+        $product_id = $wpdb->get_var( $wpdb->prepare( "SELECT post_id FROM $wpdb->postmeta WHERE meta_key='_sku' AND meta_value='%s' LIMIT 1", $sku ) );
+        if ( $product_id ) return new WC_Product( $product_id );
+        return null;
+    }
 
     // Добавление Custom Attributes
 //    $args = array('post_type' => 'product', 'posts_per_page' => -1);
@@ -41,22 +50,11 @@
 //        if (!empty($loop->post->post_content)) {
 //            $attributes = $loop->post->post_content;
 //            $explodes = explode(PHP_EOL, $attributes);
-//
-//            $number = 0;
-//            $product_attributes = [];
 //            foreach ($explodes as $explode) {
 //                $explode = explode("|", $explode);
-//                $product_attributes[$number] = array(
-//                    //Make sure the 'name' is same as you have the attribute
-//                    'name' => htmlspecialchars(stripslashes($explode[1])),
-//                    'value' => $explode[2],
-//                );
-//                $number++;
+//                update_post_meta($loop->post->ID, str_replace(' ', '_', $explode[1]), $explode[2]);
 //            }
-//
-//            //Add as post meta
-//            update_post_meta($loop->post->ID, '_product_attributes', $product_attributes);
 //        }
 //    endwhile;
 
-    ini_set('memory_limit', '256M');
+    ini_set('memory_limit', '500M');

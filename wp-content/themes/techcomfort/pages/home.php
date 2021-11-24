@@ -79,11 +79,11 @@
                                 while (have_rows('list-of-conditioners')) : the_row();
                                     // Load sub field value.
                                     $sub_value = get_sub_field('product_id');
-                                    $_product = wc_get_product($sub_value);
+                                    $_product = get_product_by_sku($sub_value);
                                     ?>
                                     <div class='swiper-slide'>
                                         <div class='products-item'>
-                                            <a href='<?php echo home_url('/'); ?>product?uid=<?php echo $sub_value; ?>'
+                                            <a href='<?php echo home_url('/'); ?>product?uid=<?php echo $_product->get_id(); ?>'
                                                class='item-image'>
                                                 <?php echo $_product->get_image('500') ?>
                                             </a>
@@ -130,7 +130,7 @@
                                                               transform="translate(0 -9.569)" fill="#ffdc96"/>
                                                     </svg>
                                                 </div>
-                                                <a href='<?php echo home_url('/'); ?>product?uid=<?php echo $sub_value; ?>'>
+                                                <a href='<?php echo home_url('/'); ?>product?uid=<?php echo $_product->get_id(); ?>'>
                                                     <?php echo $_product->get_title() ?>
                                                     <div class='description-icons'>
                                                         <!--                                                        <svg class='favorites' xmlns="http://www.w3.org/2000/svg"-->
@@ -154,10 +154,10 @@
                                                 </a>
                                                 <span class='price'><?php echo number_format(wc_get_price_excluding_tax($_product), 0, '', ' ') ?> ₴</span>
                                                 <div class='description-buttons'>
-                                                    <a href='<?php echo home_url('/'); ?>product?uid=<?php echo $sub_value; ?>'
+                                                    <a href='<?php echo home_url('/'); ?>product?uid=<?php echo $_product->get_id(); ?>'
                                                        class='btn'>Купить</a>
-                                                    <a data-quantity="1" data-product_id="<?php echo $sub_value; ?>"
-                                                       href='<?php echo home_url('/'); ?>?add-to-cart=<?php echo $sub_value; ?>'
+                                                    <a data-quantity="1" data-product_id="<?php echo $_product->get_id(); ?>"
+                                                       href='<?php echo home_url('/'); ?>?add-to-cart=<?php echo $_product->get_id(); ?>'
                                                        class='btn btn-second product_type_simple add_to_cart_button ajax_add_to_cart'>
                                                         В Корзину
                                                     </a>
@@ -193,12 +193,12 @@
                                 while (have_rows('pupular-list-of-conditioners')) : the_row();
                                     // Load sub field value.
                                     $sub_value = get_sub_field('product_id');
-                                    $_product = wc_get_product($sub_value);
+                                    $_product = get_product_by_sku($sub_value);
                                     ?>
                                     <div class='swiper-slide'>
                                         <div class='products-item'>
                                             <span class='hit'>хит</span>
-                                            <a href='<?php echo home_url('/'); ?>product?uid=<?php echo $sub_value; ?>'
+                                            <a href='<?php echo home_url('/'); ?>product?uid=<?php echo $_product->get_id(); ?>'
                                                class='item-image'>
                                                 <?php echo $_product->get_image('500') ?>
                                             </a>
@@ -245,7 +245,7 @@
                                                               transform="translate(0 -9.569)" fill="#ffdc96"/>
                                                     </svg>
                                                 </div>
-                                                <a href='<?php echo home_url('/'); ?>product?uid=<?php echo $sub_value; ?>'>
+                                                <a href='<?php echo home_url('/'); ?>product?uid=<?php echo $_product->get_id(); ?>'>
                                                     <?php echo $_product->get_title() ?>
                                                     <div class='description-icons'>
                                                         <!--                                                        <svg class='favorites' xmlns="http://www.w3.org/2000/svg" width="27"-->
@@ -268,10 +268,10 @@
                                                 </a>
                                                 <span class='price'><?php echo number_format(wc_get_price_excluding_tax($_product), 0, '', ' ') ?> ₴</span>
                                                 <div class='description-buttons'>
-                                                    <a href='<?php echo home_url('/'); ?>product?uid=<?php echo $sub_value; ?>'
+                                                    <a href='<?php echo home_url('/'); ?>product?uid=<?php echo $_product->get_id(); ?>'
                                                        class='btn'>Купить</a>
-                                                    <a data-quantity="1" data-product_id="<?php echo $sub_value; ?>"
-                                                       href='<?php echo home_url('/'); ?>?add-to-cart=<?php echo $sub_value; ?>'
+                                                    <a data-quantity="1" data-product_id="<?php echo $_product->get_id(); ?>"
+                                                       href='<?php echo home_url('/'); ?>?add-to-cart=<?php echo $_product->get_id(); ?>'
                                                        class='btn btn-second product_type_simple add_to_cart_button ajax_add_to_cart'>В
                                                         Корзину</a>
                                                 </div>
@@ -332,12 +332,12 @@
                                 while (have_rows('most-viewed-list-of-conditioners')) : the_row();
                                     // Load sub field value.
                                     $sub_value = get_sub_field('product_id');
-                                    $_product = wc_get_product($sub_value);
+                                    $_product = get_product_by_sku($sub_value);
                                     ?>
                                     <div class='swiper-slide'>
                                         <div class='products-item'>
                                             <span class='discount d-none'>-2%</span>
-                                            <a href='<?php echo home_url('/'); ?>product?uid=<?php echo $sub_value; ?>'
+                                            <a href='<?php echo home_url('/'); ?>product?uid=<?php echo $_product->get_id(); ?>'
                                                class='item-image'>
                                                 <?php echo $_product->get_image('500') ?>
                                             </a>
@@ -384,7 +384,7 @@
                                                               transform="translate(0 -9.569)" fill="#ffdc96"/>
                                                     </svg>
                                                 </div>
-                                                <a href='<?php echo home_url('/'); ?>product?uid=<?php echo $sub_value; ?>'>
+                                                <a href='<?php echo home_url('/'); ?>product?uid=<?php echo $_product->get_id(); ?>'>
                                                     <?php echo $_product->get_title() ?>
                                                     <div class='description-icons'>
                                                         <!--                                                        <svg class='favorites' xmlns="http://www.w3.org/2000/svg"-->
@@ -408,10 +408,10 @@
                                                 </a>
                                                 <span class='price'><?php echo number_format(wc_get_price_excluding_tax($_product), 0, '', ' ') ?> ₴</span>
                                                 <div class='description-buttons'>
-                                                    <a href='<?php echo home_url('/'); ?>product?uid=<?php echo $sub_value; ?>'
+                                                    <a href='<?php echo home_url('/'); ?>product?uid=<?php echo $_product->get_id(); ?>'
                                                        class='btn'>Купить</a>
-                                                    <a data-quantity="1" data-product_id="<?php echo $sub_value; ?>"
-                                                       href='<?php echo home_url('/'); ?>?add-to-cart=<?php echo $sub_value; ?>'
+                                                    <a data-quantity="1" data-product_id="<?php echo $_product->get_id(); ?>"
+                                                       href='<?php echo home_url('/'); ?>?add-to-cart=<?php echo $_product->get_id(); ?>'
                                                        class='btn btn-second product_type_simple add_to_cart_button ajax_add_to_cart'>В
                                                         Корзину</a>
                                                 </div>
