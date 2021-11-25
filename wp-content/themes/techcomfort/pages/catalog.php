@@ -99,7 +99,20 @@
                                     // Возвращает массив строк, полученных разбиением строки string с использованием separator в качестве разделителя
                                     $explode = explode("|", $explode);
                                     if (!empty($explode[2])) {
-                                        $attributeArray[$explode[1]][] = mb_strtolower($explode[2]);
+                                        // Исключить фильтры
+                                        if ($explode[1] === 'Тип хладагента') {
+                                            $formatKey = trim(preg_replace('/\s\s+/', '', str_replace("\n", "", $explode[2])));
+                                            $attributeArray[$explode[1]][] = ($formatKey);
+                                        } elseif (
+                                            $explode[1] !== 'Размеры'
+                                            && $explode[1] !== 'Вес, кг'
+                                            && $explode[1] !== 'Холодопроизводительность (кВт)'
+                                            && $explode[1] !== 'Теплопроизводительность (кВт)'
+                                            && $explode[1] !== 'Потребляемая мощность (кВт)'
+                                        ) {
+                                            $formatKey = trim(preg_replace('/\s\s+/', '', str_replace("\n", "", $explode[2])));
+                                            $attributeArray[$explode[1]][] = mb_strtolower($formatKey);
+                                        }
                                     }
                                 }
                                 ?>
