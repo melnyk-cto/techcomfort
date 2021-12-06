@@ -36,25 +36,94 @@
     add_action('init', 'init_navigation');
 
 
-    function get_product_by_sku( $sku ) {
+    function get_product_by_sku($sku) {
         global $wpdb;
-        $product_id = $wpdb->get_var( $wpdb->prepare( "SELECT post_id FROM $wpdb->postmeta WHERE meta_key='_sku' AND meta_value='%s' LIMIT 1", $sku ) );
-        if ( $product_id ) return new WC_Product( $product_id );
+        $product_id = $wpdb->get_var($wpdb->prepare("SELECT post_id FROM $wpdb->postmeta WHERE meta_key='_sku' AND meta_value='%s' LIMIT 1", $sku));
+        if ($product_id) return new WC_Product($product_id);
         return null;
     }
 
+    register_taxonomy('product_cat', array('product'), array());
+
     // Добавление Custom Attributes
-//    $args = array('post_type' => 'product', 'posts_per_page' => -1);
-//    $loop = new WP_Query($args);
-//    while ($loop->have_posts()) : $loop->the_post();
-//        if (!empty($loop->post->post_content)) {
-//            $attributes = $loop->post->post_content;
-//            $explodes = explode(PHP_EOL, $attributes);
-//            foreach ($explodes as $explode) {
-//                $explode = explode("|", $explode);
-//                update_post_meta($loop->post->ID, str_replace(' ', '_', $explode[1]), $explode[2]);
-//            }
-//        }
-//    endwhile;
+    function saveAttributes($attributes, $id, $globalAttributes, $filtersName) {
+        // Сохранение атрибутов для продукта в качестве мета ключей
+        foreach ($attributes as $attribute) {
+            $attributeArray = explode("|", $attribute);
+            $attributeWithoutSymbols = str_replace(':', '', $attributeArray[1]);
+            foreach ($filtersName as $name) {
+                if ($attributeWithoutSymbols === $name) {
+                    array_push($globalAttributes, [$attributeWithoutSymbols, $attributeArray[2]]);
+                    update_post_meta($id, (str_replace(' ', '_', $attributeWithoutSymbols)), $attributeArray[2]);
+                }
+            }
+        }
+
+        // Сохранение атрибутов для фильтрации
+        update_post_meta($id, '_global_attributes', $globalAttributes);
+    }
+
+    $args = array('post_type' => 'product', 'posts_per_page' => -1);
+    $loop = new WP_Query($args);
+    while ($loop->have_posts()) : $loop->the_post();
+        $removedGroup = [];
+        if (!empty($loop->post->post_content)) {
+            $attributes = $loop->post->post_content;
+            // Возвращает массив строк, полученных разбиением строки string с использованием separator в качестве разделителя.
+            $separatedBySpaceAttributes = explode(PHP_EOL, $attributes);
+
+
+            // Get category
+            $terms = get_the_terms($loop->post->ID, 'product_cat');
+            if (is_array($terms) && !empty($terms)) {
+                foreach ($terms as $term) {
+
+                    // Берем родительскую категорию
+                    $parentCategoryId = $term->parent;
+                    $parentProductCat = get_term_by('term_taxonomy_id', $parentCategoryId, 'product_cat');
+                    $parentCategoryNAme = $parentProductCat->name;
+                    $globalAttributes = [];
+
+                    // Определяем какие атрыбуты показывать взависимости от категории
+                    if ($parentCategoryNAme === 'Уценка') {
+                        $filtersName = ['Тип работы', 'Рекомендованная площадь помещения', 'Тип хладагента', 'Работа на обогрев до, градусов C', 'Цвет', 'Тип компрессора'];
+                        saveAttributes($separatedBySpaceAttributes, $loop->post->ID, $globalAttributes, $filtersName);
+                    } elseif ($parentCategoryNAme === 'Расходные материалы') {
+                        $filtersName = ['Тип товара'];
+                        saveAttributes($separatedBySpaceAttributes, $loop->post->ID, $globalAttributes, $filtersName);
+                    } elseif ($parentCategoryNAme === 'Кулеры воды') {
+                        $filtersName = ['Тип охлаждения', 'Тип нагрева', 'Тип товара', 'Цвет'];
+                        saveAttributes($separatedBySpaceAttributes, $loop->post->ID, $globalAttributes, $filtersName);
+                    } elseif ($parentCategoryNAme === 'Микроклимат') {
+                        $filtersName = ['Рекомендованная площадь ', 'Цвет', 'Тип товара'];
+                        saveAttributes($separatedBySpaceAttributes, $loop->post->ID, $globalAttributes, $filtersName);
+                    } elseif ($parentCategoryNAme === 'Вентиляторы вытяжные') {
+                        $filtersName = ['Размер патрубка(мм.)', 'Воздухообмен(м3/ч)', 'Монтаж', 'Цвет'];
+                        saveAttributes($separatedBySpaceAttributes, $loop->post->ID, $globalAttributes, $filtersName);
+                    } elseif ($parentCategoryNAme === 'Приточно-вытяжные установки') {
+                        $filtersName = ['Расход воздуха, м3/ч'];
+                        saveAttributes($separatedBySpaceAttributes, $loop->post->ID, $globalAttributes, $filtersName);
+                    } elseif ($parentCategoryNAme === 'Отопительная техника') {
+                        $filtersName = ['Цвет', 'Тип товара'];
+                        saveAttributes($separatedBySpaceAttributes, $loop->post->ID, $globalAttributes, $filtersName);
+                    } elseif ($parentCategoryNAme === 'Мультизональные VRF, VRV системы') {
+                        $filtersName = ['Тип товара'];
+                        saveAttributes($separatedBySpaceAttributes, $loop->post->ID, $globalAttributes, $filtersName);
+                    } elseif ($parentCategoryNAme === 'Кондиционеры') {
+                        $filtersName = [
+                            'Тип работы', 'Холодопроизводительность (кВт)', 'Теплопроизводительность (кВт)',
+                            'Напряжение, частота, Фазы (В, Гц, ф)', 'Тип хладагента', 'Рекомендованная площадь помещения',
+                            'Размеры внутреннего блока, (мм) Ш/В/Г', 'Размеры наружного блока, (мм) Ш/В/Г', 'Цвет',
+                            'Дополнительные опции', 'Тип компрессора', 'Работа на обогрев до, градусов C', 'Уровень шума, дБ',
+                            'Минимальный уровень шума внутреннего блока, (ДБ)', 'Макс. к-во подключаемых внутренних блоков',
+                            'Общая площадь помещений (м2)', 'Количество комнат', 'Площадь комнаты №1(м2)', 'Площадь комнаты №2(м2)',
+                            'Площадь комнаты №3(м2)', 'Уровень звукового давления, дБА'
+                        ];
+                        saveAttributes($separatedBySpaceAttributes, $loop->post->ID, $globalAttributes, $filtersName);
+                    }
+                }
+            }
+        }
+    endwhile;
 
     ini_set('memory_limit', '500M');

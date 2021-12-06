@@ -92,29 +92,16 @@
                             while ($loop->have_posts()) :
                                 $loop->the_post();
                                 global $product;
-                                $attributes = $product->get_description();
-                                // Возвращает массив строк, полученных разбиением строки string с использованием separator в качестве разделителя
-                                $explodes = explode(PHP_EOL, $attributes);
-                                foreach ($explodes as $explode) {
-                                    // Возвращает массив строк, полученных разбиением строки string с использованием separator в качестве разделителя
-                                    $explode = explode("|", $explode);
-                                    if (!empty($explode[2])) {
-                                        // Исключить фильтры
-                                        if ($explode[1] === 'Тип хладагента') {
-                                            $formatKey = trim(preg_replace('/\s\s+/', '', str_replace("\n", "", $explode[2])));
-                                            $attributeArray[$explode[1]][] = ($formatKey);
-                                        } elseif (
-                                            $explode[1] !== 'Размеры'
-                                            && $explode[1] !== 'Вес, кг'
-                                            && $explode[1] !== 'Холодопроизводительность (кВт)'
-                                            && $explode[1] !== 'Теплопроизводительность (кВт)'
-                                            && $explode[1] !== 'Потребляемая мощность (кВт)'
-                                        ) {
-                                            $formatKey = trim(preg_replace('/\s\s+/', '', str_replace("\n", "", $explode[2])));
-                                            $attributeArray[$explode[1]][] = mb_strtolower($formatKey);
-                                        }
-                                    }
-                                }
+
+                                $attributes = get_post_meta($loop->post->ID, '_global_attributes', true);
+                               if (is_array($attributes)) {
+                                   foreach ($attributes as $attribute) {
+                                       if (!empty($attribute[1])) {
+                                           $formatKey = trim(preg_replace('/\s\s+/', '', str_replace("\n", "", $attribute[1])));
+                                           $attributeArray[$attribute[0]][] = mb_strtolower($formatKey);
+                                       }
+                                   }
+                               }
                                 ?>
                             <?php endwhile; ?>
                         <?php wp_reset_query(); ?>
