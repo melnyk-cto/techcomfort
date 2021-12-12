@@ -27,6 +27,10 @@
 <main class='catalog'>
     <section class='catalog-content'>
         <div class='container'>
+            <!-- TODO: need delete -->
+            <a href='?update_attributes=true' class="btn">Update Attributes</a>
+            <?php if (isset($_GET['update_attributes'])) {createAttributes();} ?>
+
             <?php $category = get_term_by('slug', $_GET['category'], 'product_cat'); ?>
             <h2 class="category-name"> <?php echo $category->name ?></h2>
             <div class='catalog-inner'>
@@ -94,14 +98,14 @@
                                 global $product;
 
                                 $attributes = get_post_meta($loop->post->ID, '_global_attributes', true);
-                               if (is_array($attributes)) {
-                                   foreach ($attributes as $attribute) {
-                                       if (!empty($attribute[1])) {
-                                           $formatKey = trim(preg_replace('/\s\s+/', '', str_replace("\n", "", $attribute[1])));
-                                           $attributeArray[$attribute[0]][] = mb_strtolower($formatKey);
-                                       }
-                                   }
-                               }
+                                if (is_array($attributes)) {
+                                    foreach ($attributes as $attribute) {
+                                        if (!empty($attribute[1])) {
+                                            $formatKey = trim(preg_replace('/\s\s+/', '', str_replace("\n", "", $attribute[1])));
+                                            $attributeArray[$attribute[0]][] = mb_strtolower($formatKey);
+                                        }
+                                    }
+                                }
                                 ?>
                             <?php endwhile; ?>
                         <?php wp_reset_query(); ?>
