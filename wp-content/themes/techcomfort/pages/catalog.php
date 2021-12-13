@@ -14,7 +14,6 @@
         'post_type' => 'product',
         'stock' => 1,
         'orderby' => 'meta_value_num',
-        'meta_key' => '_price',
         'order' => $_GET['type'],
         'product_cat' => $_GET['category'],
     );
@@ -28,7 +27,7 @@
     <section class='catalog-content'>
         <div class='container'>
             <!-- TODO: need delete -->
-            <a href='?update_attributes=true' class="btn">Update Attributes</a>
+            <a href='?update_attributes=true' class="btn d-none">Update Attributes</a>
             <?php if (isset($_GET['update_attributes'])) {createAttributes();} ?>
 
             <?php $category = get_term_by('slug', $_GET['category'], 'product_cat'); ?>

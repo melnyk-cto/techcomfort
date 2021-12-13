@@ -5,6 +5,8 @@ document.addEventListener("DOMContentLoaded", function () {
     const headerMobilesBottom = document.querySelector(".header-mobiles-bottom");
     const swiperProducts = document.querySelector(".swiper-products");
     const burger = document.querySelector(".burger");
+    const menuItem = document.getElementsByClassName("sub-item-js");
+    const disableLink = document.getElementsByClassName("disable-link-js");
     const headerClose = document.querySelector(".header-close-js");
     const basketClose = document.querySelectorAll(".basket-close");
     const loginClose = document.querySelector(".login-close");
@@ -28,6 +30,21 @@ document.addEventListener("DOMContentLoaded", function () {
     burger.addEventListener("click", function () {
         headerMobilesBottom.classList.add("show");
     });
+
+    // Show Sub Menu
+    for (let i = 0; i < menuItem.length; i++) {
+        menuItem[i].addEventListener('click', function () {
+            this.classList.toggle('show');
+            this.querySelector('a').preventDefault();
+        });
+    }
+
+    // Disable link for Header Sub Menu
+    for (let i = 0; i < disableLink.length; i++) {
+        disableLink[i].addEventListener('click', function (e) {
+            e.preventDefault();
+        });
+    }
 
     //close header mobiles
     headerClose.addEventListener("click", function () {

@@ -24,13 +24,7 @@
         <div class='container'>
             <div class='header-top-inner'>
                 <nav class='header-menu'>
-                    <?php $args = array(
-                        'theme_location' => 'main_menu',
-                        'menu_class' => 'menu-list',
-                        'container' => '',
-                        'menu_id' => 'menu-slick',
-                    );
-                        wp_nav_menu($args); ?>
+                    <?php include get_template_directory() . '/components/_header-menu.php'; ?>
                 </nav>
             </div>
         </div>
@@ -167,15 +161,8 @@
                 <div class='close header-close-js'></div>
                 <div id='header-catalog-js' class='header-catalog'></div>
                 <div class='header-menu'>
-                    <div class='header-actions'>
-                    </div>
-                    <?php $args = array(
-                        'theme_location' => 'main_menu',
-                        'menu_class' => 'menu',
-                        'container' => '',
-                        'menu_id' => 'menu-slick',
-                    );
-                        wp_nav_menu($args); ?>
+                    <div class='header-actions'></div>
+                    <?php include get_template_directory() . '/components/_header-menu.php'; ?>
                     <div class='menu-item'>
                         <div class='call'>
                             <svg xmlns="http://www.w3.org/2000/svg" width="18.081" height="18.081"
@@ -208,124 +195,7 @@
         </div>
     </div>
 </header>
+<?php include get_template_directory() . '/components/_basket.php'; ?>
+<?php include get_template_directory() . '/components/_login.php'; ?>
+<?php include get_template_directory() . '/components/_registration.php'; ?>
 
-<div class='popup basket'>
-    <div class='popup-inner basket-inner'>
-        <div class='popup-title basket-title'>
-            <h2>Корзина</h2>
-            <div class='basket-close close'></div>
-        </div>
-        <div class='basket-list'>
-            <!--            <h4 class='no-products'>Корзина пуста</h4>-->
-            <?php
-                global $woocommerce;
-                $items = $woocommerce->cart->get_cart();
-
-                foreach ($items as $item => $values) {
-                    $_product = wc_get_product($values['data']->get_id());
-                    $cart_item_remove_url = wc_get_cart_remove_url($item);
-                    $price = $_product->get_regular_price();
-                    $price_excl_tax = number_format(wc_get_price_excluding_tax($_product), 0, '', ' '); // price without VAT
-                    echo "<div class='basket-item'>
-                            <a data-product_id=" . $_product->get_id() . " class='item-close product-remove' href=" . $cart_item_remove_url . "></a>
-                            <div class='item-image'>
-                             " . $_product->get_image('180') . "
-                            </div>
-                            <div class='item-description'>
-                                <h5>" . $_product->get_title() . "</h5>
-                                <div class='quantity'>
-                                    <button type='button' class='reduce'>-</button>
-                                    <label>
-                                        <input type='text' value=" . $values['quantity'] . " class='quantity-input'>
-                                    </label>
-                                    <button type='button' class='enlarge'>+</button>
-                                </div>
-                                <span>" . $price_excl_tax . " ₴</span>
-                            </div>
-                        </div>";
-                }
-            ?>
-        </div>
-        <div class='basket-bottom'>
-            <div class='basket-bottom-description'>
-                <p>Доставка:<span>0 UAH</span></p>
-                <p>Сумма товара:<span><?php echo $woocommerce->cart->get_cart_total() ?></span>
-                </p>
-            </div>
-            <a href='<?php echo home_url( '/' ); ?>ordering' class='btn'>Заказать</a>
-        </div>
-    </div>
-</div>
-<div class='popup login'>
-    <div class='popup-inner login-inner'>
-        <div class='popup-title login-title'>
-            <h2>Вход</h2>
-            <div class='login-close close'></div>
-        </div>
-        <div class='popup-content login-content'>
-            <form action=''>
-                <label for=''>
-                    <span>Эл. почта или телефон</span>
-                    <input type='tel'>
-                </label>
-                <label for=''>
-                    <span>Пароль</span>
-                    <input type='password'>
-                </label>
-                <div class='checkbox'>
-                    <label>
-                        <input type='checkbox'>
-                        Запомнить меня
-                    </label>
-                    <a href='#' class='forgot-password'>Напомнить пароль</a>
-                </div>
-                <a href='#' class='btn'>Войти</a>
-                <p class='register-now'>Зарегистрироваться</p>
-            </form>
-        </div>
-    </div>
-</div>
-<div class='popup registration'>
-    <div class='popup-inner registration-inner'>
-        <div class='popup-title registration-title'>
-            <h2>Регистрация</h2>
-            <div class='registration-close close'></div>
-        </div>
-        <div class='popup-content registration-content'>
-            <form action=''>
-                <label>
-                    <span>Имя</span>
-                    <input type='text'>
-                </label>
-                <label>
-                    <span>Фамилия</span>
-                    <input type='text'>
-                </label>
-                <label>
-                    <span>Номер телефона</span>
-                    <input type='tel'>
-                </label>
-                <label>
-                    <span>Эл. почта</span>
-                    <input type='email'>
-                </label>
-                <label>
-                    <span>Пароль</span>
-                    <input type='password'>
-                </label>
-                <label>
-                    <span>Повторите пароль</span>
-                    <input type='password'>
-                </label>
-                <div class='checkbox'>
-                    <label>
-                        <input type='checkbox'>
-                        Регистрируясь, вы соглашаетесь с пользовательским соглашением
-                    </label>
-                </div>
-                <a href='#' class='btn'>Зарегистрировать</a>
-                <p class='registered'>Я уже зарегистрирован</p>
-            </form>
-        </div>
-    </div>
-</div>
