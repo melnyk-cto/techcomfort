@@ -1,44 +1,46 @@
 document.addEventListener("DOMContentLoaded", function () {
-    const url = new URL(window.location.href);
+  const url = new URL(window.location.href);
 
 
-    // Сортировка
-    const sorting = document.getElementById('sorting');
-    sorting.addEventListener('change', function () {
-        setTimeout(() => {
-            url.searchParams.set('type', this.value);
-            window.location.href = url;
-        }, 500)
-    })
+  // Сортировка
+  const sorting = document.getElementById('sorting');
+  sorting.addEventListener('change', function () {
+    setTimeout(() => {
+      url.searchParams.set('type', this.value);
+      window.location.href = url;
+    }, 500)
+  })
 
-    // Фильтрация по цене при изменении ползунка
-    const priceBtn = document.querySelector(".filler-price-js");
-    const input0 = document.querySelector(".input-with-keypress-0");
-    const input1 = document.querySelector(".input-with-keypress-1");
+  // Фильтрация по цене при изменении ползунка
+  const priceBtn = document.getElementsByClassName("filler-price-js");
+  const input0 = document.getElementsByClassName("input-with-keypress-0");
+  const input1 = document.getElementsByClassName("input-with-keypress-1");
 
-    priceBtn.addEventListener('click', function () {
-        setTimeout(() => {
-            url.searchParams.set('from', input0.value);
-            url.searchParams.set('to', input1.value);
-            window.location.href = url;
-        }, 500)
+  for (let i = 0; i < priceBtn.length; i++) {
+    priceBtn[i].addEventListener('click', function () {
+      setTimeout(() => {
+        url.searchParams.set(input0[i].getAttribute('data-from'), input0[i].value);
+        url.searchParams.set(input1[i].getAttribute('data-to'), input1[i].value);
+        window.location.href = url;
+      }, 500)
     });
+  }
 
 
-    // Фильтрация по цене при загрузке страницы
-    if (url.searchParams.get('type')) {
-        sorting.value = url.searchParams.get('type');
-    } else {
-        sorting.value = 'default';
-    }
+  // Фильтрация по цене при загрузке страницы
+  if (url.searchParams.get('type')) {
+    sorting.value = url.searchParams.get('type');
+  } else {
+    sorting.value = 'default';
+  }
 
 
-    //  Фильтрация по значению
-    const filter = document.getElementsByClassName('filter-label-js');
-    for (let i = 0; i < filter.length; i++) {
-        filter[i].addEventListener('click', function () {
-            url.searchParams.set(this.getAttribute('data-key'), this.getAttribute('data-value'));
-            window.location.href = url;
-        });
-    }
+  //  Фильтрация по значению
+  const filter = document.getElementsByClassName('filter-label-js');
+  for (let i = 0; i < filter.length; i++) {
+    filter[i].addEventListener('click', function () {
+      url.searchParams.set(this.getAttribute('data-key'), this.getAttribute('data-value'));
+      window.location.href = url;
+    });
+  }
 });
