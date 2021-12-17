@@ -19,8 +19,7 @@ document.addEventListener("DOMContentLoaded", function () {
   for (let i = 0; i < priceBtn.length; i++) {
     priceBtn[i].addEventListener('click', function () {
       setTimeout(() => {
-        url.searchParams.set(input0[i].getAttribute('data-from'), input0[i].value);
-        url.searchParams.set(input1[i].getAttribute('data-to'), input1[i].value);
+        url.searchParams.set(this.getAttribute('data-name'), `${input0[i].value}.${input1[i].value}`);
         window.location.href = url;
       }, 500)
     });
