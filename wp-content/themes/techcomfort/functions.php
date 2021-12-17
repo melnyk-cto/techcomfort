@@ -45,7 +45,12 @@
             $attributeWithoutSymbols = str_replace(':', '', $attributeArray[1]);
             foreach ($filtersName as $name) {
                 if ($attributeWithoutSymbols === $name) {
-                    if ($name === "Размеры внутреннего блока, (мм) Ш/В/Г") {
+                    if ($name === "Размеры внутреннего блока, (мм) Ш/В/Г" || $name === "Размеры наружного блока, (мм) Ш/В/Г") {
+                        if ($name === "Размеры внутреннего блока, (мм) Ш/В/Г") {
+                            $type = 'внутреннего';
+                        } else {
+                            $type = 'наружного';
+                        }
                         // Нужно разделить три значения 000x000x000 на три отдельных числа
                         $haystack = $attributeArray[2];
                         $needle = 'х';
@@ -69,19 +74,19 @@
                         }
 
                         if (strlen($explodeValue[0]) <= 4 && strlen($explodeValue[1]) <= 4 && strlen($explodeValue[2]) <= 4) {
-                            array_push($globalAttributes, ['Размеры внутреннего блока, Ш (мм)', $explodeValue[0]]);
-                            array_push($globalAttributes, ['Размеры внутреннего блока, В (мм)', $explodeValue[1]]);
-                            array_push($globalAttributes, ['Размеры внутреннего блока, Г (мм)', $explodeValue[2]]);
-                            update_post_meta($id, (str_replace(' ', '_', 'Размеры внутреннего блока, Ш (мм)')), $explodeValue[0]);
-                            update_post_meta($id, (str_replace(' ', '_', 'Размеры внутреннего блока, В (мм)')), $explodeValue[1]);
-                            update_post_meta($id, (str_replace(' ', '_', 'Размеры внутреннего блока, Г (мм)')), $explodeValue[2]);
+                            array_push($globalAttributes, ['Размеры ' . $type . ' блока, Ш (мм)', $explodeValue[0]]);
+                            array_push($globalAttributes, ['Размеры ' . $type . ' блока, В (мм)', $explodeValue[1]]);
+                            array_push($globalAttributes, ['Размеры ' . $type . ' блока, Г (мм)', $explodeValue[2]]);
+                            update_post_meta($id, (str_replace(' ', '_', 'Размеры ' . $type . ' блока, Ш (мм)')), $explodeValue[0]);
+                            update_post_meta($id, (str_replace(' ', '_', 'Размеры ' . $type . ' блока, В (мм)')), $explodeValue[1]);
+                            update_post_meta($id, (str_replace(' ', '_', 'Размеры ' . $type . ' блока, Г (мм)')), $explodeValue[2]);
                         } else {
-                            array_push($globalAttributes, ['Размеры внутреннего блока, Ш (мм)', 0]);
-                            array_push($globalAttributes, ['Размеры внутреннего блока, В (мм)', 0]);
-                            array_push($globalAttributes, ['Размеры внутреннего блока, Г (мм)', 0]);
-                            update_post_meta($id, (str_replace(' ', '_', 'Размеры внутреннего блока, Ш (мм)')), 0);
-                            update_post_meta($id, (str_replace(' ', '_', 'Размеры внутреннего блока, В (мм)')), 0);
-                            update_post_meta($id, (str_replace(' ', '_', 'Размеры внутреннего блока, Г (мм)')), 0);
+                            array_push($globalAttributes, ['Размеры ' . $type . ' блока, Ш (мм)', 0]);
+                            array_push($globalAttributes, ['Размеры ' . $type . ' блока, В (мм)', 0]);
+                            array_push($globalAttributes, ['Размеры ' . $type . ' блока, Г (мм)', 0]);
+                            update_post_meta($id, (str_replace(' ', '_', 'Размеры ' . $type . ' блока, Ш (мм)')), 0);
+                            update_post_meta($id, (str_replace(' ', '_', 'Размеры ' . $type . ' блока, В (мм)')), 0);
+                            update_post_meta($id, (str_replace(' ', '_', 'Размеры ' . $type . ' блока, Г (мм)')), 0);
 
                         }
                     } else {
@@ -136,11 +141,8 @@
                         } elseif ($parentCategoryNAme === 'Приточно-вытяжные установки') {
                             $filtersName = ['Расход воздуха, м3/ч'];
                             saveAttributes($separatedBySpaceAttributes, $loop->post->ID, $globalAttributes, $filtersName);
-                        } elseif ($parentCategoryNAme === 'Отопительная техника') {
-                            $filtersName = ['Цвет', 'Тип товара'];
-                            saveAttributes($separatedBySpaceAttributes, $loop->post->ID, $globalAttributes, $filtersName);
-                        } elseif ($parentCategoryNAme === 'Мультизональные VRF, VRV системы') {
-                            $filtersName = ['Тип товара'];
+                        } elseif ($parentCategoryNAme === 'Отопительная техника' || $parentCategoryNAme === 'Мультизональные VRF, VRV системы') {
+                            $filtersName = ['Цвет'];
                             saveAttributes($separatedBySpaceAttributes, $loop->post->ID, $globalAttributes, $filtersName);
                         } elseif ($parentCategoryNAme === 'Кондиционеры') {
                             $filtersName = ['Тип работы', 'Холодопроизводительность (кВт)', 'Теплопроизводительность (кВт)', 'Напряжение, частота, Фазы (В, Гц, ф)', 'Тип хладагента', 'Рекомендованная площадь помещения', 'Размеры внутреннего блока, (мм) Ш/В/Г', 'Размеры наружного блока, (мм) Ш/В/Г', 'Цвет', 'Тип компрессора', 'Работа на обогрев до, градусов C', 'Уровень шума, дБ', 'Минимальный уровень шума внутреннего блока, (ДБ)', 'Макс. к-во подключаемых внутренних блоков', 'Общая площадь помещений (м2)', 'Количество комнат', 'Площадь комнаты №1(м2)', 'Площадь комнаты №2(м2)', 'Площадь комнаты №3(м2)', 'Уровень звукового давления, дБА'];
@@ -152,4 +154,4 @@
         endwhile;
     }
 
-    //  createAttributes();
+   // createAttributes();

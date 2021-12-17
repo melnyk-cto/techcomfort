@@ -1,10 +1,10 @@
 <?php
-global $key;
-global $values_unique
+    global $key;
+    global $values_unique;
+    global $temperature;
 ?>
-
 <div class='filter-item hide'><h5><?php echo $key ?></h5>
-    <div class='filter-labels'>
+    <div class='filter-labels <?php if ($temperature) echo 'temperature' ?>'>
         <?php foreach ($values_unique as $value) {
             $title = $value;
             if ($key === 'Напряжение, частота, Фазы (В, Гц, ф)') {
@@ -14,11 +14,10 @@ global $values_unique
                 $title = $arr3;
             }
             $formatKey = str_replace(' ', '_', $key);
-            $compareValues = array_intersect_assoc($_GET, array($formatKey => $value)); ?>
-            <label class='filter-label-js' data-key="<?php echo $formatKey ?>"
-                   data-value=<?php echo $value ?>>
-                <input type='checkbox'>
-                <?php echo $title ?>
+            $compareValues = array_intersect_assoc($_GET, array($formatKey => $value));
+            $formatValue = str_replace(' ', '_', $value); ?>
+            <label class='filter-label-js' data-key="<?php echo $formatKey ?>" data-value=<?php echo $formatValue ?>>
+                <input type='checkbox'><?php echo $title ?>
             </label>
         <?php } ?>
     </div>

@@ -127,6 +127,29 @@
         .filter-labels {
           display:       block;
           margin-bottom: 10px;
+          &.temperature {
+            display:   flex;
+            flex-wrap: wrap;
+            label {
+              display:         inline-flex;
+              width:           auto;
+              padding:         4px;
+              border:          1px solid #6b92b0;
+              margin:          4px;
+              border-radius:   4px;
+              min-width:       32px;
+              justify-content: center;
+              align-items:     center;
+              background:      #dde2e8;
+              transition:      .2s linear;
+              &:hover, &:active {
+                background: transparent;
+              }
+            }
+            input {
+              display: none;
+            }
+          }
         }
         &.hide {
           .filter-labels {
