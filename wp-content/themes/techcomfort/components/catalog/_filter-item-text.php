@@ -16,7 +16,7 @@ global $values_unique
             $formatKey = str_replace(' ', '_', $key);
             $compareValues = array_intersect_assoc($_GET, array($formatKey => $value)); ?>
             <label class='filter-label-js' data-key="<?php echo $formatKey ?>"
-                   data-value='$value'>
+                   data-value=<?php echo $value ?>>
                 <input type='checkbox'>
                 <?php echo $title ?>
             </label>

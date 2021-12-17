@@ -22,40 +22,39 @@
     .filter {
       max-width: 400px;
       width:     28%;
-      &-title {
-        display:         flex;
-        justify-content: space-between;
-        align-items:     center;
-        margin-bottom:   50px;
-        .close-filter {
-          display: none;
+      .close-filter {
+        position: absolute;
+        z-index:  1;
+        right:    20px;
+        top:      20px;
+        width:    22px;
+        height:   22px;
+        display:  none;
+        &:after, &:before {
+          height: 2px;
         }
       }
-      form {
-        display:        flex;
-        flex-direction: column;
-        label {
-          width:         100%;
-          display:       flex;
-          align-items:   center;
-          height:        initial;
-          margin-bottom: 10px;
-          font-size:     16px;
-          cursor:        pointer;
-          &:hover, &:active {
-            opacity: .7;
-          }
-          &:last-child {
-            margin-bottom: 0;
-          }
+      label {
+        width:         100%;
+        display:       flex;
+        align-items:   center;
+        height:        initial;
+        margin-bottom: 10px;
+        font-size:     16px;
+        cursor:        pointer;
+        &:hover, &:active {
+          opacity: .7;
         }
-        input[type="checkbox"] {
-          width:        18px;
-          height:       18px;
-          margin-right: 10px;
-          border:       1px solid $primaryColor;
-          background:   $primaryColor;
+        &:last-child {
+          margin-bottom: 0;
         }
+      }
+      input[type="checkbox"] {
+        width:        18px;
+        height:       18px;
+        margin-right: 10px;
+        border:       1px solid $primaryColor;
+        background:   $primaryColor;
       }
       .price {
         &-value {
@@ -241,7 +240,7 @@
           display:         flex;
           justify-content: space-between;
           align-items:     center;
-          flex-direction: row;
+          flex-direction:  row;
           padding:         3% 2.15%;
           margin-bottom:   3.5%;
           .item-image {
@@ -305,21 +304,16 @@
         overflow:   auto;
         visibility: hidden;
         opacity:    0;
-        &-title {
-          margin-bottom: 40px;
-          .close-filter {
-            display: block;
-          }
+        .close-filter {
+          display: block;
         }
-        form {
-          label {
-            margin-bottom: 8px;
-            font-size:     16px;
-          }
-          input[type="checkbox"] {
-            width:  16px;
-            height: 16px;
-          }
+        label {
+          margin-bottom: 8px;
+          font-size:     16px;
+        }
+        input[type="checkbox"] {
+          width:  16px;
+          height: 16px;
         }
         .price {
           padding: 15px 25px 20px;
@@ -435,25 +429,13 @@
       .filter {
         top:     41px;
         height:  calc(100% - 41px);
-        padding: 30px 20px;
-        &-title {
-          margin-bottom: 15px;
-          .close-filter {
-            width:  22px;
-            height: 22px;
-            &:after, &:before {
-              height: 2px;
-            }
-          }
+        padding: 55px 20px;
+        label {
+          font-size: 12px;
         }
-        form {
-          label {
-            font-size: 12px;
-          }
-          input[type="checkbox"] {
-            width:  14px;
-            height: 14px;
-          }
+        input[type="checkbox"] {
+          width:  14px;
+          height: 14px;
         }
         .price {
           padding: 15px 15px 20px;

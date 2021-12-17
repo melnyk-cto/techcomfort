@@ -15,10 +15,7 @@
     //     ACF
     if (function_exists('acf_add_options_page')) {
         // Register options page.
-        $parent = acf_add_options_page(array(
-            'page_title' => __('Основная информация на сайте'),
-            'menu_title' => __('General Sections'),
-        ));
+        $parent = acf_add_options_page(array('page_title' => __('Основная информация на сайте'), 'menu_title' => __('General Sections'),));
     }
 
     add_theme_support('woocommerce');
@@ -26,11 +23,7 @@
     add_theme_support('menus');
 
     function init_navigation() {
-        register_nav_menus(
-            array(
-                'main_menu' => esc_html__('Главное меню', 'orion'),
-            )
-        );
+        register_nav_menus(array('main_menu' => esc_html__('Главное меню', 'orion'),));
     }
 
     add_action('init', 'init_navigation');
@@ -52,8 +45,49 @@
             $attributeWithoutSymbols = str_replace(':', '', $attributeArray[1]);
             foreach ($filtersName as $name) {
                 if ($attributeWithoutSymbols === $name) {
-                    array_push($globalAttributes, [$attributeWithoutSymbols, $attributeArray[2]]);
-                    update_post_meta($id, (str_replace(' ', '_', $attributeWithoutSymbols)), $attributeArray[2]);
+                    if ($name === "Размеры внутреннего блока, (мм) Ш/В/Г") {
+                        // Нужно разделить три значения 000x000x000 на три отдельных числа
+                        $haystack = $attributeArray[2];
+                        $needle = 'х';
+                        $pos = strripos($haystack, $needle);
+                        if ($pos === false) {
+                            $needle = 'x';
+                            $pos = strripos($haystack, $needle);
+                            if ($pos === false) {
+                                $needle = 'X';
+                                $pos = strripos($haystack, $needle);
+                                if ($pos === false) {
+                                    $explodeValue = explode("-", $attributeArray[2]);
+                                } else {
+                                    $explodeValue = explode("X", $attributeArray[2]);
+                                }
+                            } else {
+                                $explodeValue = explode("x", $attributeArray[2]);
+                            }
+                        } else {
+                            $explodeValue = explode("х", $attributeArray[2]);
+                        }
+
+                        if (strlen($explodeValue[0]) <= 4 && strlen($explodeValue[1]) <= 4 && strlen($explodeValue[2]) <= 4) {
+                            array_push($globalAttributes, ['Размеры внутреннего блока, Ш (мм)', $explodeValue[0]]);
+                            array_push($globalAttributes, ['Размеры внутреннего блока, В (мм)', $explodeValue[1]]);
+                            array_push($globalAttributes, ['Размеры внутреннего блока, Г (мм)', $explodeValue[2]]);
+                            update_post_meta($id, (str_replace(' ', '_', 'Размеры внутреннего блока, Ш (мм)')), $explodeValue[0]);
+                            update_post_meta($id, (str_replace(' ', '_', 'Размеры внутреннего блока, В (мм)')), $explodeValue[1]);
+                            update_post_meta($id, (str_replace(' ', '_', 'Размеры внутреннего блока, Г (мм)')), $explodeValue[2]);
+                        } else {
+                            array_push($globalAttributes, ['Размеры внутреннего блока, Ш (мм)', 0]);
+                            array_push($globalAttributes, ['Размеры внутреннего блока, В (мм)', 0]);
+                            array_push($globalAttributes, ['Размеры внутреннего блока, Г (мм)', 0]);
+                            update_post_meta($id, (str_replace(' ', '_', 'Размеры внутреннего блока, Ш (мм)')), 0);
+                            update_post_meta($id, (str_replace(' ', '_', 'Размеры внутреннего блока, В (мм)')), 0);
+                            update_post_meta($id, (str_replace(' ', '_', 'Размеры внутреннего блока, Г (мм)')), 0);
+
+                        }
+                    } else {
+                        array_push($globalAttributes, [$attributeWithoutSymbols, $attributeArray[2]]);
+                        update_post_meta($id, (str_replace(' ', '_', $attributeWithoutSymbols)), $attributeArray[2]);
+                    }
                 }
             }
         }
@@ -83,7 +117,7 @@
                         $parentCategoryNAme = $parentProductCat->name;
                         $globalAttributes = [];
 
-                        // Определяем какие атрыбуты показывать взависимости от категории
+                        // Определяем какие атрибуты показывать в зависимости от категории
                         if ($parentCategoryNAme === 'Уценка') {
                             $filtersName = ['Тип работы', 'Рекомендованная площадь помещения', 'Тип хладагента', 'Работа на обогрев до, градусов C', 'Цвет', 'Тип компрессора'];
                             saveAttributes($separatedBySpaceAttributes, $loop->post->ID, $globalAttributes, $filtersName);
@@ -109,15 +143,7 @@
                             $filtersName = ['Тип товара'];
                             saveAttributes($separatedBySpaceAttributes, $loop->post->ID, $globalAttributes, $filtersName);
                         } elseif ($parentCategoryNAme === 'Кондиционеры') {
-                            $filtersName = [
-                                'Тип работы', 'Холодопроизводительность (кВт)', 'Теплопроизводительность (кВт)',
-                                'Напряжение, частота, Фазы (В, Гц, ф)', 'Тип хладагента', 'Рекомендованная площадь помещения',
-                                'Размеры внутреннего блока, (мм) Ш/В/Г', 'Размеры наружного блока, (мм) Ш/В/Г', 'Цвет',
-                                'Дополнительные опции', 'Тип компрессора', 'Работа на обогрев до, градусов C', 'Уровень шума, дБ',
-                                'Минимальный уровень шума внутреннего блока, (ДБ)', 'Макс. к-во подключаемых внутренних блоков',
-                                'Общая площадь помещений (м2)', 'Количество комнат', 'Площадь комнаты №1(м2)', 'Площадь комнаты №2(м2)',
-                                'Площадь комнаты №3(м2)', 'Уровень звукового давления, дБА'
-                            ];
+                            $filtersName = ['Тип работы', 'Холодопроизводительность (кВт)', 'Теплопроизводительность (кВт)', 'Напряжение, частота, Фазы (В, Гц, ф)', 'Тип хладагента', 'Рекомендованная площадь помещения', 'Размеры внутреннего блока, (мм) Ш/В/Г', 'Размеры наружного блока, (мм) Ш/В/Г', 'Цвет', 'Тип компрессора', 'Работа на обогрев до, градусов C', 'Уровень шума, дБ', 'Минимальный уровень шума внутреннего блока, (ДБ)', 'Макс. к-во подключаемых внутренних блоков', 'Общая площадь помещений (м2)', 'Количество комнат', 'Площадь комнаты №1(м2)', 'Площадь комнаты №2(м2)', 'Площадь комнаты №3(м2)', 'Уровень звукового давления, дБА'];
                             saveAttributes($separatedBySpaceAttributes, $loop->post->ID, $globalAttributes, $filtersName);
                         }
                     }
@@ -125,3 +151,5 @@
             }
         endwhile;
     }
+
+    //  createAttributes();
