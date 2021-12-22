@@ -1,5 +1,6 @@
 <div class='filter'>
     <div class='close close-filter'></div>
+    <a href='/' class="btn clear-filters clear-filters-js">Очистить фильтрацию</a>
     <?php
         // Filters
         $argsForFilter = array('post_type' => 'product', 'posts_per_page' => -1, 'product_cat' => $_GET['category']);

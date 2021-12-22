@@ -34,6 +34,18 @@
           height: 2px;
         }
       }
+      .clear-filters {
+        max-width:     100%;
+        margin-bottom: 16px;
+        font-size:     14px;
+        background:    white;
+        color:         #000;
+        border:        1px solid #b2c5d4;
+        transition:    .2s linear;
+        &:hover, &:active {
+          background: #b2c5d4;
+        }
+      }
       label {
         width:         100%;
         display:       flex;
@@ -329,6 +341,10 @@
         opacity:    0;
         .close-filter {
           display: block;
+        }
+        .clear-filters {
+          font-size: 12px;
+          padding:   8px;
         }
         label {
           margin-bottom: 8px;

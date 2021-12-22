@@ -1,6 +1,13 @@
 document.addEventListener("DOMContentLoaded", function () {
   const url = new URL(window.location.href);
 
+  // Очистка параметров фильтрации
+  const clear = document.getElementsByClassName('clear-filters-js')[0];
+  clear.addEventListener('click', function (e) {
+    e.preventDefault();
+    const category = url.searchParams.get('category');
+    window.location.href = `${window.location.pathname}/?category=${category}`
+  });
 
   // Сортировка
   const sorting = document.getElementById('sorting');
