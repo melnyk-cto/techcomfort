@@ -38,7 +38,7 @@
 
     // Добавление Custom Attributes
     register_taxonomy('product_cat', array('product'), array());
-    function saveAttributes($attributes, $id, $globalAttributes, $filtersName) {
+    function saveAttributes($attributes, $post, $globalAttributes, $filtersName) {
         // Сохранение атрибутов для продукта в качестве мета ключей
         foreach ($attributes as $attribute) {
             $attributeArray = explode("|", $attribute);
@@ -77,27 +77,31 @@
                             array_push($globalAttributes, ['Размеры ' . $type . ' блока, Ш (мм)', $explodeValue[0]]);
                             array_push($globalAttributes, ['Размеры ' . $type . ' блока, В (мм)', $explodeValue[1]]);
                             array_push($globalAttributes, ['Размеры ' . $type . ' блока, Г (мм)', $explodeValue[2]]);
-                            update_post_meta($id, (str_replace(' ', '_', 'Размеры ' . $type . ' блока, Ш (мм)')), $explodeValue[0]);
-                            update_post_meta($id, (str_replace(' ', '_', 'Размеры ' . $type . ' блока, В (мм)')), $explodeValue[1]);
-                            update_post_meta($id, (str_replace(' ', '_', 'Размеры ' . $type . ' блока, Г (мм)')), $explodeValue[2]);
+                            update_post_meta($post->ID, (str_replace(' ', '_', 'Размеры ' . $type . ' блока, Ш (мм)')), $explodeValue[0]);
+                            update_post_meta($post->ID, (str_replace(' ', '_', 'Размеры ' . $type . ' блока, В (мм)')), $explodeValue[1]);
+                            update_post_meta($post->ID, (str_replace(' ', '_', 'Размеры ' . $type . ' блока, Г (мм)')), $explodeValue[2]);
                         } else {
                             array_push($globalAttributes, ['Размеры ' . $type . ' блока, Ш (мм)', 0]);
                             array_push($globalAttributes, ['Размеры ' . $type . ' блока, В (мм)', 0]);
                             array_push($globalAttributes, ['Размеры ' . $type . ' блока, Г (мм)', 0]);
-                            update_post_meta($id, (str_replace(' ', '_', 'Размеры ' . $type . ' блока, Ш (мм)')), 0);
-                            update_post_meta($id, (str_replace(' ', '_', 'Размеры ' . $type . ' блока, В (мм)')), 0);
-                            update_post_meta($id, (str_replace(' ', '_', 'Размеры ' . $type . ' блока, Г (мм)')), 0);
+                            update_post_meta($post->ID, (str_replace(' ', '_', 'Размеры ' . $type . ' блока, Ш (мм)')), 0);
+                            update_post_meta($post->ID, (str_replace(' ', '_', 'Размеры ' . $type . ' блока, В (мм)')), 0);
+                            update_post_meta($post->ID, (str_replace(' ', '_', 'Размеры ' . $type . ' блока, Г (мм)')), 0);
 
                         }
                     } else {
                         array_push($globalAttributes, [$attributeWithoutSymbols, $attributeArray[2]]);
-                        update_post_meta($id, (str_replace(' ', '_', $attributeWithoutSymbols)), $attributeArray[2]);
+                        update_post_meta($post->ID, (str_replace(' ', '_', $attributeWithoutSymbols)), $attributeArray[2]);
                     }
                 }
             }
         }
+        // Get Tags
+        array_push($globalAttributes, ['Производитель', $post->post_excerpt]);
+        update_post_meta($post->ID, 'Производитель', $post->post_excerpt);
+
         // Сохранение атрибутов для фильтрации
-        update_post_meta($id, '_global_attributes', $globalAttributes);
+        update_post_meta($post->ID, '_global_attributes', $globalAttributes);
     }
 
     function createAttributes() {
@@ -125,28 +129,28 @@
                         // Определяем какие атрибуты показывать в зависимости от категории
                         if ($parentCategoryNAme === 'Уценка') {
                             $filtersName = ['Тип работы', 'Рекомендованная площадь помещения', 'Тип хладагента', 'Работа на обогрев до, градусов C', 'Цвет', 'Тип компрессора'];
-                            saveAttributes($separatedBySpaceAttributes, $loop->post->ID, $globalAttributes, $filtersName);
+                            saveAttributes($separatedBySpaceAttributes, $loop->post, $globalAttributes, $filtersName);
                         } elseif ($parentCategoryNAme === 'Расходные материалы') {
                             $filtersName = ['Тип товара'];
-                            saveAttributes($separatedBySpaceAttributes, $loop->post->ID, $globalAttributes, $filtersName);
+                            saveAttributes($separatedBySpaceAttributes, $loop->post, $globalAttributes, $filtersName);
                         } elseif ($parentCategoryNAme === 'Кулеры воды') {
                             $filtersName = ['Тип охлаждения', 'Тип нагрева', 'Тип товара', 'Цвет'];
-                            saveAttributes($separatedBySpaceAttributes, $loop->post->ID, $globalAttributes, $filtersName);
+                            saveAttributes($separatedBySpaceAttributes, $loop->post, $globalAttributes, $filtersName);
                         } elseif ($parentCategoryNAme === 'Микроклимат') {
                             $filtersName = ['Рекомендованная площадь ', 'Цвет', 'Тип товара'];
-                            saveAttributes($separatedBySpaceAttributes, $loop->post->ID, $globalAttributes, $filtersName);
+                            saveAttributes($separatedBySpaceAttributes, $loop->post, $globalAttributes, $filtersName);
                         } elseif ($parentCategoryNAme === 'Вентиляторы вытяжные') {
                             $filtersName = ['Размер патрубка(мм.)', 'Воздухообмен(м3/ч)', 'Монтаж', 'Цвет'];
-                            saveAttributes($separatedBySpaceAttributes, $loop->post->ID, $globalAttributes, $filtersName);
+                            saveAttributes($separatedBySpaceAttributes, $loop->post, $globalAttributes, $filtersName);
                         } elseif ($parentCategoryNAme === 'Приточно-вытяжные установки') {
                             $filtersName = ['Расход воздуха, м3/ч'];
-                            saveAttributes($separatedBySpaceAttributes, $loop->post->ID, $globalAttributes, $filtersName);
+                            saveAttributes($separatedBySpaceAttributes, $loop->post, $globalAttributes, $filtersName);
                         } elseif ($parentCategoryNAme === 'Отопительная техника' || $parentCategoryNAme === 'Мультизональные VRF, VRV системы') {
                             $filtersName = ['Цвет'];
-                            saveAttributes($separatedBySpaceAttributes, $loop->post->ID, $globalAttributes, $filtersName);
+                            saveAttributes($separatedBySpaceAttributes, $loop->post, $globalAttributes, $filtersName);
                         } elseif ($parentCategoryNAme === 'Кондиционеры') {
                             $filtersName = ['Тип работы', 'Холодопроизводительность (кВт)', 'Теплопроизводительность (кВт)', 'Напряжение, частота, Фазы (В, Гц, ф)', 'Тип хладагента', 'Рекомендованная площадь помещения', 'Размеры внутреннего блока, (мм) Ш/В/Г', 'Размеры наружного блока, (мм) Ш/В/Г', 'Цвет', 'Тип компрессора', 'Работа на обогрев до, градусов C', 'Уровень шума, дБ', 'Минимальный уровень шума внутреннего блока, (ДБ)', 'Макс. к-во подключаемых внутренних блоков', 'Общая площадь помещений (м2)', 'Количество комнат', 'Площадь комнаты №1(м2)', 'Площадь комнаты №2(м2)', 'Площадь комнаты №3(м2)', 'Уровень звукового давления, дБА'];
-                            saveAttributes($separatedBySpaceAttributes, $loop->post->ID, $globalAttributes, $filtersName);
+                            saveAttributes($separatedBySpaceAttributes, $loop->post, $globalAttributes, $filtersName);
                         }
                     }
                 }

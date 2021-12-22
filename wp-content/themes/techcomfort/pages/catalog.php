@@ -6,10 +6,36 @@
     wp_enqueue_script('filters-js', get_stylesheet_directory_uri() . '/assets/js/filters.js');
     wp_enqueue_script('catalog-js', get_stylesheet_directory_uri() . '/assets/js/catalog.js');
     wp_enqueue_script('nouislider-js', get_stylesheet_directory_uri() . '/assets/lib/nouislider.js');
+?>
 
+<!-- Get Products -->
+<?php
     $args = array('post_type' => 'product', 'stock' => 1, 'orderby' => 'meta_value_num', 'order' => $_GET['type'], 'product_cat' => $_GET['category'],);
 
+    $metaQuery = [];
+    foreach ($_GET as $key => $values) {
+        if (isset($key)) {
+            // Фильтрация по цене
+            if ($key === 'price') {
+                $explodeValue = explode(".", $values);
+                array_push($metaQuery, ['key' => '_price', 'value' => array($explodeValue[0], $explodeValue[1]), 'type' => 'numeric', 'compare' => 'BETWEEN',]);
+
+                // Фильтрация по диапазону значений
+            } else if ($key === str_replace(' ', '_', 'Холодопроизводительность (кВт)') || $key === str_replace(' ', '_', 'Теплопроизводительность (кВт)') || $key === str_replace(' ', '_', 'Размеры внутреннего блока, Ш (мм)') || $key === str_replace(' ', '_', 'Размеры внутреннего блока, В (мм)') || $key === str_replace(' ', '_', 'Размеры внутреннего блока, Г (мм)') || $key === str_replace(' ', '_', 'Размеры наружного блока, Ш (мм)') || $key === str_replace(' ', '_', 'Размеры наружного блока, В (мм)') || $key === str_replace(' ', '_', 'Размеры наружного блока, Г (мм)') || $key === str_replace(' ', '_', 'Минимальный уровень шума внутреннего блока, (ДБ)')) {
+                $explodeValue = explode(".", $values);
+                array_push($metaQuery, ['key' => $key, 'value' => [$explodeValue[0], $explodeValue[1] - 1], 'type' => 'numeric', 'compare' => 'BETWEEN',]);
+                // Фильтрация по точному названию
+            } else if ($key === str_replace(' ', '_', 'Тип работы') || $key === str_replace(' ', '_', 'Напряжение, частота, Фазы (В, Гц, ф)') || $key === str_replace(' ', '_', 'Тип хладагента') || $key === str_replace(' ', '_', 'Рекомендованная площадь помещения') || $key === str_replace(' ', '_', 'Цвет') || $key === str_replace(' ', '_', 'Тип компрессора') || $key === str_replace(' ', '_', 'Работа на обогрев до, градусов C') || $key === str_replace(' ', '_', 'Уровень шума, дБ') || $key === str_replace(' ', '_', 'Уровень звукового давления, дБА') || $key === str_replace(' ', '_', 'Тип товара') || $key === str_replace(' ', '_', 'Воздухообмен(м3/ч)') || $key === str_replace(' ', '_', 'Размер патрубка(мм.)') || $key === 'Производитель') {
+                array_push($metaQuery, ['key' => $key, 'value' => str_replace('_', ' ', $values), 'compare' => 'LIKE',]);
+            }
+        }
+    };
+
+    $args['meta_query'] = array('relation' => 'AND', $metaQuery);
+
+    $args['posts_per_page'] = -1;
 ?>
+
 <div class="loading">
     <img src='<?php echo get_template_directory_uri() ?>/assets/images/icons/loading.svg'
          alt=''>
@@ -22,93 +48,10 @@
             <?php if (isset($_GET['update_attributes'])) {
                 createAttributes();
             } ?>
-
             <?php $category = get_term_by('slug', $_GET['category'], 'product_cat'); ?>
             <h2 class="category-name"> <?php echo $category->name ?></h2>
             <div class='catalog-inner'>
-                <div class='filter'>
-                    <div class='close close-filter'></div>
-                    <?php
-                        $metaQuery = [];
-                        foreach ($_GET as $key => $values) {
-                            if (isset($key)) {
-                                // Фильтрация по цене
-                                if ($key === 'price') {
-                                    $explodeValue = explode(".", $values);
-                                    array_push($metaQuery, ['key' => '_price', 'value' => array($explodeValue[0], $explodeValue[1]), 'type' => 'numeric', 'compare' => 'BETWEEN',]);
-
-                                    // Фильтрация по диапазону значений
-                                } else if ($key === str_replace(' ', '_', 'Холодопроизводительность (кВт)') || $key === str_replace(' ', '_', 'Теплопроизводительность (кВт)') || $key === str_replace(' ', '_', 'Размеры внутреннего блока, Ш (мм)') || $key === str_replace(' ', '_', 'Размеры внутреннего блока, В (мм)') || $key === str_replace(' ', '_', 'Размеры внутреннего блока, Г (мм)') || $key === str_replace(' ', '_', 'Размеры наружного блока, Ш (мм)') || $key === str_replace(' ', '_', 'Размеры наружного блока, В (мм)') || $key === str_replace(' ', '_', 'Размеры наружного блока, Г (мм)') || $key === str_replace(' ', '_', 'Минимальный уровень шума внутреннего блока, (ДБ)')) {
-                                    $explodeValue = explode(".", $values);
-                                    array_push($metaQuery, ['key' => $key, 'value' => [$explodeValue[0], $explodeValue[1] - 1], 'type' => 'numeric', 'compare' => 'BETWEEN',]);
-                                    // Фильтрация по точному названию
-                                } else if ($key === str_replace(' ', '_', 'Тип работы') || $key === str_replace(' ', '_', 'Напряжение, частота, Фазы (В, Гц, ф)') || $key === str_replace(' ', '_', 'Тип хладагента') || $key === str_replace(' ', '_', 'Рекомендованная площадь помещения') || $key === str_replace(' ', '_', 'Цвет') || $key === str_replace(' ', '_', 'Тип компрессора') || $key === str_replace(' ', '_', 'Работа на обогрев до, градусов C') || $key === str_replace(' ', '_', 'Уровень шума, дБ') || $key === str_replace(' ', '_', 'Уровень звукового давления, дБА') || $key === str_replace(' ', '_', 'Тип товара') || $key === str_replace(' ', '_', 'Воздухообмен(м3/ч)') || $key === str_replace(' ', '_', 'Размер патрубка(мм.)')) {
-                                    array_push($metaQuery, ['key' => $key, 'value' => str_replace('_', ' ', $values), 'compare' => 'LIKE',]);
-                                }
-                            }
-                        };
-
-                        $args['meta_query'] = array('relation' => 'AND', $metaQuery,);
-
-                        $args['posts_per_page'] = -1;
-                        $loop = new WP_Query($args);
-
-                        $attributeArray = array();
-                        while ($loop->have_posts()) :
-                            $loop->the_post();
-                            global $product;
-                            $attributes = get_post_meta($loop->post->ID, '_global_attributes', true);
-                            if (is_array($attributes)) {
-                                foreach ($attributes as $attribute) {
-                                    if (!empty($attribute[1])) {
-                                        $formatKey = trim(preg_replace('/\s\s+/', '', str_replace("\n", "", $attribute[1])));
-                                        $attributeArray[$attribute[0]][] = mb_strtolower($formatKey);
-                                    }
-                                }
-                            } ?>
-                        <?php endwhile; ?>
-                    <?php wp_reset_query();
-                        // Фильтрация по цене
-                        $slider = false;
-                        $key = 'Цена';
-                        $maxValue = 500000;
-                        $name = 'price';
-                        include get_template_directory() . '/components/catalog/_filter-item-range.php'; ?>
-                    <?php foreach ($attributeArray as $key => $values) {
-                        $maxValue = round(max($values));
-                        // Фильтрация по диапазону значений
-                        if ($key === 'Холодопроизводительность (кВт)' || $key === 'Теплопроизводительность (кВт)' || $key === 'Размеры внутреннего блока, Ш (мм)' || $key === 'Размеры внутреннего блока, В (мм)' || $key === 'Размеры внутреннего блока, Г (мм)' || $key === 'Размеры наружного блока, Ш (мм)' || $key === 'Размеры наружного блока, В (мм)' || $key === 'Размеры наружного блока, Г (мм)' || $key === 'Минимальный уровень шума внутреннего блока, (ДБ)') {
-                            $newValues = [];
-                            foreach ($values as $newValue) {
-                                if (strlen($newValue) <= 3) {
-                                    $haystack = $newValue;
-                                    $needle = '-';
-                                    $pos = strripos($haystack, $needle);
-                                    if ($pos === false) {
-                                        array_push($newValues, $newValue);
-                                    } else {
-                                        $explodeValue = explode("-", $newValue);
-                                        array_push($newValues, $explodeValue[1]);
-                                    }
-                                }
-                            }
-                            $maxValue = round(max($newValues));
-                            $name = $key;
-                            include get_template_directory() . '/components/catalog/_filter-item-range.php'; ?>
-                            <!-- Фильтрация по точному названию -->
-                        <?php } else {
-                            // Убирает повторяющиеся значения из массива
-                            $values_unique = (array_unique($values));
-                            asort($values_unique);
-                            if ($key === 'Работа на обогрев до, градусов C') {
-                                $temperature = true;
-                            } else {
-                                $temperature = false;
-                            }
-                            include get_template_directory() . '/components/catalog/_filter-item-text.php'; ?>
-                        <?php }
-                    } ?>
-                </div>
+                <?php include get_template_directory() . '/components/catalog/_filters.php'; ?>
                 <div class='catalog-list'>
                     <div class='catalog-list-title'>
                         <button type='button' class='btn btn-filter'>
