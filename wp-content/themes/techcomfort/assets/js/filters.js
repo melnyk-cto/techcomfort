@@ -1,8 +1,33 @@
 document.addEventListener("DOMContentLoaded", function () {
   const url = new URL(window.location.href);
 
-  // Очистка параметров фильтрации
+  // Выбранные фильтры
+  const selectedFilters = document.getElementsByClassName('selected-filters')[0]
+  const selectedFilter = document.getElementsByClassName('selected-filter-js')[0]
   const clear = document.getElementsByClassName('clear-filters-js')[0];
+
+  const params = url.search.split('&');
+  // Скрываем фильтры если ничего не выбрано
+  if (params.length <= 1) {
+    selectedFilters.classList.add('d-none');
+    clear.classList.add('d-none');
+  } else {
+    selectedFilters.classList.remove('d-none');
+    clear.classList.remove('d-none');
+  }
+
+  // Показываем выбранные фильтры
+  for (let i = 0; i < params.length; i++) {
+    const name = params[i].split('=');
+    if (decodeURI(name[0]) !== '?category' && decodeURI(name[0]) !== 'type') {
+      const div = document.createElement('div');
+      div.innerHTML = decodeURI(name[0].replaceAll('_', ' ').replaceAll('%2C',','));
+      div.className = 'selected-filter';
+      selectedFilter.appendChild(div)
+    }
+  }
+
+  // Очистка параметров фильтрации
   clear.addEventListener('click', function (e) {
     e.preventDefault();
     const category = url.searchParams.get('category');

@@ -46,6 +46,42 @@
           background: #b2c5d4;
         }
       }
+      .selected-filter-content {
+        margin-bottom:   -8px;
+        display:         flex;
+        align-items:     flex-start;
+        justify-content: flex-start;
+        flex-wrap:       wrap;
+      }
+      .selected-filter {
+        font-size:     13px;
+        border:        1px solid #6b92b0;
+        padding:       6px 18px 6px 4px;
+        border-radius: 4px;
+        display:       inline-block;
+        position:      relative;
+        z-index:       1;
+        line-height:   1;
+        color:         #6b92b0;
+        margin-bottom: 8px;
+        margin-right:  8px;
+        cursor:        pointer;
+        &:hover, &:active {
+          opacity: .7;
+        }
+        &:before {
+          content:         '';
+          background:      url("../images/icons/close-blue.svg") no-repeat;
+          background-size: contain;
+          position:        absolute;
+          z-index:         1;
+          right:           4px;
+          top:             50%;
+          width:           8px;
+          height:          8px;
+          transform:       translate(0, -50%);
+        }
+      }
       label {
         width:         100%;
         display:       flex;

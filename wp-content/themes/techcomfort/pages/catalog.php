@@ -16,7 +16,7 @@
     foreach ($_GET as $key => $values) {
         if (isset($key)) {
             // Фильтрация по цене
-            if ($key === 'price') {
+            if ($key === 'Цена') {
                 $explodeValue = explode(".", $values);
                 array_push($metaQuery, ['key' => '_price', 'value' => array($explodeValue[0], $explodeValue[1]), 'type' => 'numeric', 'compare' => 'BETWEEN',]);
 

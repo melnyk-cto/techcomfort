@@ -13,7 +13,7 @@
             <label>
                 <input data-value-to='<?php echo $maxValue ?>' type='text' class='input-with-keypress-1 value'>
             </label>
-            <button type='button' data-name='<?php echo str_replace('', '_', $name) ?>' class='btn filler-price-js'>
+            <button type='button' data-name='<?php echo str_replace(' ', '_', $name) ?>' class='btn filler-price-js'>
                 ок
             </button>
         </div>

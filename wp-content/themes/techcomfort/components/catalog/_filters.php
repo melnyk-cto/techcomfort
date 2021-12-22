@@ -1,5 +1,9 @@
 <div class='filter'>
     <div class='close close-filter'></div>
+    <div class='filter-item selected-filters'>
+        <h5>Выбрано</h5>
+      <div class='selected-filter-content selected-filter-js'></div>
+    </div>
     <a href='/' class="btn clear-filters clear-filters-js">Очистить фильтрацию</a>
     <?php
         // Filters
@@ -25,7 +29,7 @@
         // Фильтрация по цене
         $key = 'Цена';
         $maxValue = 500000;
-        $name = 'price';
+        $name = 'Цена';
         include get_template_directory() . '/components/catalog/_filter-item-range.php';
         $key = 'Производитель';
         $values_unique = (array_unique($productCatArray));
