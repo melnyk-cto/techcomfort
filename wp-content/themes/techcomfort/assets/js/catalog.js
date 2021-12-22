@@ -22,12 +22,12 @@ document.addEventListener("DOMContentLoaded", function () {
     });
   }
 
-  // filter price
+  // filter
   const keypressSlider = document.getElementsByClassName("slider-keypress");
   const input0 = document.getElementsByClassName("input-with-keypress-0");
   const input1 = document.getElementsByClassName("input-with-keypress-1");
+  const button = document.getElementsByClassName("filler-price-js");
 
-  //filter
   const filterClose = document.getElementsByClassName("close-filter")[0];
   const filterPanel = document.getElementsByClassName("filter")[0];
   const btnFilter = document.getElementsByClassName("btn-filter")[0];
@@ -41,26 +41,28 @@ document.addEventListener("DOMContentLoaded", function () {
     filterPanel.style.opacity = "0";
   });
 
+  // При обновлении страницы показывать текущее значение фильтра
   for (let i = 0; i < keypressSlider.length; i++) {
-    // const url = new URL(window.location.href);
-    // let fromPrice;
-    // let toPrice;
-    // if (url.searchParams.get('priceFrom')) {
-    //   fromPrice = url.searchParams.get('priceFrom');
-    // } else {
-    //   fromPrice = Number(input0[i].getAttribute('data-value-from'));
-    // }
-    // if (url.searchParams.get('priceTo')) {
-    //   toPrice = url.searchParams.get('priceTo');
-    // } else {
-    //   toPrice = Number(input1[i].getAttribute('data-value-to'));
-    // }
-
-    const inputs = [input0[i], input1[i]];
     const from = Number(input0[i].getAttribute('data-value-from'));
     const to = Number(input1[i].getAttribute('data-value-to'));
+    let startFrom;
+    let startTo;
+
+    const url = new URL(window.location.href);
+    let searchParams = url.searchParams.get(button[i].getAttribute('data-name'));
+    if (searchParams) {
+      const range = searchParams.split('.');
+      startFrom = Number(range[0]);
+      startTo = Number(range[1]);
+    } else {
+      startFrom = from;
+      startTo = to;
+    }
+
+    const inputs = [input0[i], input1[i]];
+
     noUiSlider.create(keypressSlider[i], {
-      start: [from, to],
+      start: [startFrom, startTo],
       connect: true,
       step: 1,
       range: {

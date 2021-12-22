@@ -52,7 +52,7 @@
             $name = $key;
             include get_template_directory() . '/components/catalog/_filter-item-range.php'; ?>
             <!-- Фильтрация по точному названию -->
-        <?php } else {
+        <?php } else if ($key !== 'Производитель') {
             // Убирает повторяющиеся значения из массива
             $values_unique = (array_unique($values));
             asort($values_unique);

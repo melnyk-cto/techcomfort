@@ -38,7 +38,12 @@ document.addEventListener("DOMContentLoaded", function () {
   const filter = document.getElementsByClassName('filter-label-js');
   for (let i = 0; i < filter.length; i++) {
     filter[i].addEventListener('click', function () {
-      url.searchParams.set(this.getAttribute('data-key'), this.getAttribute('data-value'));
+      //  Удаляем значение фильтрации если это значение было выбрано ранее
+      if (url.searchParams.get(this.getAttribute('data-key')) === this.getAttribute('data-value')) {
+        url.searchParams.delete(this.getAttribute('data-key'));
+      } else {
+        url.searchParams.set(this.getAttribute('data-key'), this.getAttribute('data-value'));
+      }
       window.location.href = url;
     });
   }

@@ -3,7 +3,7 @@
     global $values_unique;
     global $temperature;
 ?>
-<div class='filter-item hide'><h5><?php echo $key ?></h5>
+<div class='filter-item <?php if (!$_GET[str_replace(' ', '_', $key)]) echo 'hide' ?>'><h5><?php echo $key ?></h5>
     <div class='filter-labels <?php if ($temperature) echo 'temperature' ?>'>
         <?php foreach ($values_unique as $value) {
             $title = $value;
@@ -17,8 +17,15 @@
             $compareValues = array_intersect_assoc($_GET, array($formatKey => $value));
             $formatValue = str_replace(' ', '_', $value); ?>
             <label class='filter-label-js' data-key="<?php echo $formatKey ?>" data-value=<?php echo $formatValue ?>>
-                <input type='checkbox'><?php echo $title ?>
+                <input type='checkbox' <?php if ($_GET[str_replace(' ', '_', $key)] === $formatValue) echo 'checked' ?>><?php echo $title ?>
             </label>
         <?php } ?>
     </div>
-    <span class='more show-all-js'>Показать все</span></div>
+    <span class='more show-all-js'>
+         <?php
+             if (!$_GET[str_replace(' ', '_', $key)]) { ?>
+                 Показать все
+             <?php } else { ?>
+                 Скрыть все
+             <?php } ?>
+    </span></div>
