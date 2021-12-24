@@ -62,10 +62,11 @@
         position:      relative;
         z-index:       1;
         line-height:   1;
-        color:         #6b92b0;
+        color:         #000;
         margin-bottom: 8px;
         margin-right:  8px;
         cursor:        pointer;
+        user-select: none;
         &:hover, &:active {
           opacity: .7;
         }
@@ -82,7 +83,7 @@
           transform:       translate(0, -50%);
         }
       }
-      label {
+      .filter-label {
         width:         100%;
         display:       flex;
         align-items:   center;
@@ -178,7 +179,7 @@
           &.temperature {
             display:   flex;
             flex-wrap: wrap;
-            label {
+            .filter-label {
               display:         inline-flex;
               width:           auto;
               padding:         4px;
@@ -382,7 +383,7 @@
           font-size: 12px;
           padding:   8px;
         }
-        label {
+        .filter-label {
           margin-bottom: 8px;
           font-size:     16px;
         }
@@ -505,7 +506,7 @@
         top:     41px;
         height:  calc(100% - 41px);
         padding: 55px 20px;
-        label {
+        .filter-label {
           font-size: 12px;
         }
         input[type="checkbox"] {

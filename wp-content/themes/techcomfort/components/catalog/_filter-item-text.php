@@ -16,9 +16,9 @@
             $formatKey = str_replace(' ', '_', $key);
             $compareValues = array_intersect_assoc($_GET, array($formatKey => $value));
             $formatValue = str_replace(' ', '_', $value); ?>
-            <label class='filter-label-js' data-key="<?php echo $formatKey ?>" data-value=<?php echo $formatValue ?>>
+            <div class='filter-label filter-label-js' data-key="<?php echo $formatKey ?>" data-value=<?php echo $formatValue ?>>
                 <input type='checkbox' <?php if ($_GET[str_replace(' ', '_', $key)] === $formatValue) echo 'checked' ?>><?php echo $title ?>
-            </label>
+            </div>
         <?php } ?>
     </div>
     <span class='more show-all-js'>

@@ -2,8 +2,9 @@ document.addEventListener("DOMContentLoaded", function () {
   const url = new URL(window.location.href);
 
   // Выбранные фильтры
-  const selectedFilters = document.getElementsByClassName('selected-filters')[0]
-  const selectedFilter = document.getElementsByClassName('selected-filter-js')[0]
+  const selectedFilters = document.getElementsByClassName('selected-filters')[0];
+  const selectedFilter = document.getElementsByClassName('selected-filter-wrapper-js')[0];
+  const selected = document.getElementsByClassName('selected-filter');
   const clear = document.getElementsByClassName('clear-filters-js')[0];
 
   const params = url.search.split('&');
@@ -21,10 +22,19 @@ document.addEventListener("DOMContentLoaded", function () {
     const name = params[i].split('=');
     if (decodeURI(name[0]) !== '?category' && decodeURI(name[0]) !== 'type') {
       const div = document.createElement('div');
-      div.innerHTML = decodeURI(name[0].replaceAll('_', ' ').replaceAll('%2C',','));
+      div.innerHTML = decodeURI(name[0].replaceAll('_', ' ').replaceAll('%2C', ','));
       div.className = 'selected-filter';
+      div.setAttribute('data-name', decodeURI(name[0].replaceAll('%2C', ',')));
       selectedFilter.appendChild(div)
     }
+  }
+  // Удаляем выбраный фильтр
+  for (let i = 0; i < selected.length; i++) {
+    selected[i].addEventListener('click', function () {
+      this.getAttribute('data-name');
+      url.searchParams.delete(this.getAttribute('data-name'));
+      window.location.href = url;
+    });
   }
 
   // Очистка параметров фильтрации

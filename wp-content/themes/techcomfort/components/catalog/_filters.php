@@ -2,7 +2,7 @@
     <div class='close close-filter'></div>
     <div class='filter-item selected-filters'>
         <h5>Выбрано</h5>
-      <div class='selected-filter-content selected-filter-js'></div>
+      <div class='selected-filter-content selected-filter-wrapper-js'></div>
     </div>
     <a href='/' class="btn clear-filters clear-filters-js">Очистить фильтрацию</a>
     <?php

@@ -10,7 +10,12 @@
 
 <!-- Get Products -->
 <?php
-    $args = array('post_type' => 'product', 'stock' => 1, 'orderby' => 'meta_value_num', 'order' => $_GET['type'], 'product_cat' => $_GET['category'],);
+    $args = array(
+        'post_type' => 'product',
+        'stock' => 1, 'orderby' => 'meta_value_num',
+        'order' => $_GET['type'],
+        'product_cat' => $_GET['category'],
+    );
 
     $metaQuery = [];
     foreach ($_GET as $key => $values) {
@@ -21,15 +26,39 @@
                 array_push($metaQuery, ['key' => '_price', 'value' => array($explodeValue[0], $explodeValue[1]), 'type' => 'numeric', 'compare' => 'BETWEEN',]);
 
                 // Фильтрация по диапазону значений
-            } else if ($key === str_replace(' ', '_', 'Холодопроизводительность (кВт)') || $key === str_replace(' ', '_', 'Теплопроизводительность (кВт)') || $key === str_replace(' ', '_', 'Размеры внутреннего блока, Ш (мм)') || $key === str_replace(' ', '_', 'Размеры внутреннего блока, В (мм)') || $key === str_replace(' ', '_', 'Размеры внутреннего блока, Г (мм)') || $key === str_replace(' ', '_', 'Размеры наружного блока, Ш (мм)') || $key === str_replace(' ', '_', 'Размеры наружного блока, В (мм)') || $key === str_replace(' ', '_', 'Размеры наружного блока, Г (мм)') || $key === str_replace(' ', '_', 'Минимальный уровень шума внутреннего блока, (ДБ)')) {
+            } else if (
+                $key === str_replace(' ', '_', 'Холодопроизводительность (кВт)') ||
+                $key === str_replace(' ', '_', 'Теплопроизводительность (кВт)') ||
+                $key === str_replace(' ', '_', 'Размеры внутреннего блока, Ш (мм)') ||
+                $key === str_replace(' ', '_', 'Размеры внутреннего блока, В (мм)') ||
+                $key === str_replace(' ', '_', 'Размеры внутреннего блока, Г (мм)') ||
+                $key === str_replace(' ', '_', 'Размеры наружного блока, Ш (мм)') ||
+                $key === str_replace(' ', '_', 'Размеры наружного блока, В (мм)') ||
+                $key === str_replace(' ', '_', 'Размеры наружного блока, Г (мм)') ||
+                $key === str_replace(' ', '_', 'Минимальный уровень шума внутреннего блока, (ДБ)')
+            ) {
                 $explodeValue = explode(".", $values);
                 array_push($metaQuery, ['key' => $key, 'value' => [$explodeValue[0], $explodeValue[1] - 1], 'type' => 'numeric', 'compare' => 'BETWEEN',]);
                 // Фильтрация по точному названию
-            } else if ($key === str_replace(' ', '_', 'Тип работы') || $key === str_replace(' ', '_', 'Напряжение, частота, Фазы (В, Гц, ф)') || $key === str_replace(' ', '_', 'Тип хладагента') || $key === str_replace(' ', '_', 'Рекомендованная площадь помещения') || $key === str_replace(' ', '_', 'Цвет') || $key === str_replace(' ', '_', 'Тип компрессора') || $key === str_replace(' ', '_', 'Работа на обогрев до, градусов C') || $key === str_replace(' ', '_', 'Уровень шума, дБ') || $key === str_replace(' ', '_', 'Уровень звукового давления, дБА') || $key === str_replace(' ', '_', 'Тип товара') || $key === str_replace(' ', '_', 'Воздухообмен(м3/ч)') || $key === str_replace(' ', '_', 'Размер патрубка(мм.)') || $key === 'Производитель') {
-                array_push($metaQuery, ['key' => $key, 'value' => str_replace('_', ' ', $values), 'compare' => 'LIKE',]);
+            } else if (
+                $key === str_replace(' ', '_', 'Тип работы') ||
+                $key === str_replace(' ', '_', 'Напряжение, частота, Фазы (В, Гц, ф)') ||
+                $key === str_replace(' ', '_', 'Тип хладагента') ||
+                $key === str_replace(' ', '_', 'Рекомендованная площадь помещения') ||
+                $key === str_replace(' ', '_', 'Цвет') ||
+                $key === str_replace(' ', '_', 'Тип компрессора') ||
+                $key === str_replace(' ', '_', 'Работа на обогрев до, градусов C') ||
+                $key === str_replace(' ', '_', 'Уровень шума, дБ') ||
+                $key === str_replace(' ', '_', 'Уровень звукового давления, дБА') ||
+                $key === str_replace(' ', '_', 'Тип товара') ||
+                $key === str_replace(' ', '_', 'Воздухообмен(м3/ч)') ||
+                $key === str_replace(' ', '_', 'Размер патрубка(мм.)') ||
+                $key === 'Производитель'
+            ) {
+                array_push($metaQuery, ['key' => $key, 'value' => str_replace('_', ' ', $values), 'compare' => '=',]);
             }
         }
-    };
+    }
 
     $args['meta_query'] = array('relation' => 'AND', $metaQuery);
 
