@@ -8,14 +8,6 @@ document.addEventListener("DOMContentLoaded", function () {
   const clear = document.getElementsByClassName('clear-filters-js')[0];
 
   const params = url.search.split('&');
-  // Скрываем фильтры если ничего не выбрано
-  if (params.length <= 1) {
-    selectedFilters.classList.add('d-none');
-    clear.classList.add('d-none');
-  } else {
-    selectedFilters.classList.remove('d-none');
-    clear.classList.remove('d-none');
-  }
 
   // Показываем выбранные фильтры
   for (let i = 0; i < params.length; i++) {
@@ -43,6 +35,15 @@ document.addEventListener("DOMContentLoaded", function () {
     const category = url.searchParams.get('category');
     window.location.href = `${window.location.pathname}/?category=${category}`
   });
+
+  // Скрываем фильтры если ничего не выбрано
+  if (selected.length <= 0) {
+    selectedFilters.classList.add('d-none');
+    clear.classList.add('d-none');
+  } else {
+    selectedFilters.classList.remove('d-none');
+    clear.classList.remove('d-none');
+  }
 
   // Сортировка
   const sorting = document.getElementById('sorting');

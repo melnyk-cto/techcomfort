@@ -17,13 +17,20 @@
         'product_cat' => $_GET['category'],
     );
 
+    // Значения сортировки по умолчанию
+    if ($_GET['type']) {
+        $args['order'] = $_GET['type'];
+    } else {
+        $args['order'] = 'ASC';
+    }
+
     $metaQuery = [];
     foreach ($_GET as $key => $values) {
         if (isset($key)) {
             // Фильтрация по цене
             if ($key === 'Цена') {
                 $explodeValue = explode(".", $values);
-                array_push($metaQuery, ['key' => '_price', 'value' => array($explodeValue[0], $explodeValue[1]), 'type' => 'numeric', 'compare' => 'BETWEEN',]);
+                array_push($metaQuery, ['key' => '_price', 'value' => array($explodeValue[0], $explodeValue[1]), 'type' => 'numeric', 'compare' => 'BETWEEN']);
 
                 // Фильтрация по диапазону значений
             } else if (
@@ -60,7 +67,23 @@
         }
     }
 
-    $args['meta_query'] = array('relation' => 'AND', $metaQuery);
+    if (!$_GET['Цена']) {
+        $args['meta_query'] = [
+            'relation' => 'AND',
+            [
+                'key' => '_price',
+                'value' => [10000, 50000],
+                'type' => 'numeric',
+                'compare' => 'BETWEEN'
+            ],
+            $metaQuery
+        ];
+    } else {
+        $args['meta_query'] = [
+            'relation' => 'AND',
+            $metaQuery
+        ];
+    }
 
     $args['posts_per_page'] = -1;
 ?>
