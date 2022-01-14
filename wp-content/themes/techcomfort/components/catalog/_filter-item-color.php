@@ -90,11 +90,5 @@
             </div>
         <?php } ?>
     </div>
-    <span class='more show-all-js'>
-         <?php
-             if (!$_GET[str_replace(' ', '_', $key)]) { ?>
-                 Показать все
-             <?php } else { ?>
-                 Скрыть все
-             <?php } ?>
-    </span></div>
+    <span class='more show-all-js'><?php if (!$_GET[str_replace(' ', '_', $key)]) { ?>Показать все<?php } else { ?>Скрыть все<?php } ?></span>
+</div>

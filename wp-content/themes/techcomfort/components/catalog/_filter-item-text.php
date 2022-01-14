@@ -15,16 +15,11 @@
             }
             $formatKey = str_replace(' ', '_', $key);
             $formatValue = str_replace(' ', '_', $value); ?>
-            <div class='filter-label filter-label-js' data-key="<?php echo $formatKey ?>" data-value=<?php echo $formatValue ?>>
+            <div class='filter-label filter-label-js' data-key="<?php echo $formatKey ?>"
+                 data-value=<?php echo $formatValue ?>>
                 <input type='checkbox' <?php if ($_GET[str_replace(' ', '_', $key)] === $formatValue) echo 'checked' ?>><?php echo $title ?>
             </div>
         <?php } ?>
     </div>
-    <span class='more show-all-js'>
-         <?php
-             if (!$_GET[str_replace(' ', '_', $key)]) { ?>
-                 Показать все
-             <?php } else { ?>
-                 Скрыть все
-             <?php } ?>
-    </span></div>
+    <span class='more show-all-js'><?php if (!$_GET[str_replace(' ', '_', $key)]) { ?>Показать все<?php } else { ?>Скрыть все<?php } ?></span>
+</div>

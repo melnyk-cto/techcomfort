@@ -259,7 +259,7 @@
             margin:        0 6px;
           }
           .btn {
-            font-size:   18px;
+            font-size:   16px;
             padding:     3px 0;
             margin-left: 22px;
             max-width:   93px;
@@ -297,7 +297,7 @@
         background:    $white;
         border-radius: 10px;
         box-shadow:    0 3px 40px rgba(56, 69, 249, 0.13);
-        padding:       20px;
+        padding:       16px;
         margin-bottom: 10px;
         .filter-labels {
           display:       block;
@@ -346,10 +346,12 @@
           margin-bottom: 0;
         }
         h5 {
+          font-size:     16px;
           line-height:   1.3;
           margin-bottom: 15px;
         }
         .more {
+          font-size: 14px;
           display: inline-block;
           &:after {
             transform: translate(0, -50%) rotate(180deg);
@@ -374,7 +376,7 @@
           width:       initial;
           span {
             color:       $white;
-            font-size:   16px;
+            font-size:   14px;
             font-weight: 500;
           }
           img {
@@ -392,7 +394,7 @@
           margin-right: 15px;
         }
         select {
-          font-size:     16px;
+          font-size:     14px;
           padding:       2px 5px;
           border:        none;
           background:    $white;
@@ -401,7 +403,7 @@
           max-width:     215px;
         }
         option {
-          font-size: 16px;
+          font-size: 14px;
         }
       }
       .catalog-buttons {
@@ -517,7 +519,6 @@
         }
         .filter-label {
           margin-bottom: 8px;
-          font-size:     16px;
         }
         input[type="checkbox"] {
           width:  16px;
@@ -537,7 +538,6 @@
               margin: 0 12px;
             }
             .btn {
-              font-size: 16px;
               padding:   2px 0;
               max-width: 90px;
             }
@@ -551,7 +551,6 @@
           padding:       17px 25px;
           margin-bottom: 15px;
           h5 {
-            font-size:     18px;
             margin-bottom: 10px;
           }
         }
