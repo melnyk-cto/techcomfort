@@ -66,7 +66,7 @@
         margin-bottom: 8px;
         margin-right:  8px;
         cursor:        pointer;
-        user-select: none;
+        user-select:   none;
         &:hover, &:active {
           opacity: .7;
         }
@@ -96,6 +96,63 @@
         }
         &:last-child {
           margin-bottom: 0;
+        }
+      }
+      .color-item {
+        border:        1px solid #DDE2E8;
+        width:         33px;
+        height:        33px;
+        margin-right:  5px;
+        margin-bottom: 5px;
+      }
+      input:checked + .current-color {
+        border: 3px solid #6B92B0;
+      }
+      .current-color {
+        width:      100%;
+        height:     100%;
+        background: #fff;
+        &.beige {
+          background: rgba(207, 181, 149, 1);
+        }
+        &.gold {
+          background: #f7c663;
+        }
+        &.black {
+          background: #000;
+        }
+        &.titanium {
+          background: #aca996;
+        }
+        &.silver {
+          background: #c9c9ca;
+        }
+        &.painting {
+          background: linear-gradient(45deg, green 23%, red 46%, #3b3bdc 100%);
+        }
+        &.red {
+          background: red;
+        }
+        &.silver-metallic {
+          background: #dcdddf;
+        }
+        &.grey-metallic {
+          background: #c7cfd2;
+        }
+        &.mirror {
+          background: #484c4f;
+        }
+        &.mirror-black {
+          background: #494949;
+        }
+        &.silver {
+          background: #b1b3b6;
+        }
+        &.black-mirror {
+          background: rgba(134, 140, 146, 1);
+        }
+        &.golden-metallic {
+          background: #eee8d8;
         }
       }
       input[type="checkbox"] {
@@ -198,6 +255,12 @@
             input {
               display: none;
             }
+          }
+          &.colors {
+            display:         flex;
+            flex-wrap:       wrap;
+            justify-content: flex-start;
+            align-items:     flex-start;
           }
         }
         &.hide {

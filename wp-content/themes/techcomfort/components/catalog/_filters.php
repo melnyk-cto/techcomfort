@@ -55,8 +55,13 @@
             }
             $maxValue = round(max($newValues));
             $name = $key;
-            include get_template_directory() . '/components/catalog/_filter-item-range.php'; ?>
-            <!-- Фильтрация по точному названию -->
+            include get_template_directory() . '/components/catalog/_filter-item-range.php';
+            // Фильтрация для цветов
+        } else if ($key === 'Цвет') {
+            $values_unique = (array_unique($values));
+            unset($values_unique[array_search('чёрный', $values_unique)]);
+            asort($values_unique);
+            include get_template_directory() . '/components/catalog/_filter-item-color.php'; ?>
         <?php } else if ($key !== 'Производитель') {
             // Убирает повторяющиеся значения из массива
             $values_unique = (array_unique($values));

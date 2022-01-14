@@ -52,7 +52,7 @@
                 $key === str_replace(' ', '_', 'Напряжение, частота, Фазы (В, Гц, ф)') ||
                 $key === str_replace(' ', '_', 'Тип хладагента') ||
                 $key === str_replace(' ', '_', 'Рекомендованная площадь помещения') ||
-                $key === str_replace(' ', '_', 'Цвет') ||
+                $key === 'Цвет' ||
                 $key === str_replace(' ', '_', 'Тип компрессора') ||
                 $key === str_replace(' ', '_', 'Работа на обогрев до, градусов C') ||
                 $key === str_replace(' ', '_', 'Уровень шума, дБ') ||
@@ -67,23 +67,10 @@
         }
     }
 
-    if (!$_GET['Цена']) {
-        $args['meta_query'] = [
-            'relation' => 'AND',
-            [
-                'key' => '_price',
-                'value' => [10000, 50000],
-                'type' => 'numeric',
-                'compare' => 'BETWEEN'
-            ],
-            $metaQuery
-        ];
-    } else {
-        $args['meta_query'] = [
-            'relation' => 'AND',
-            $metaQuery
-        ];
-    }
+    $args['meta_query'] = [
+        'relation' => 'AND',
+        $metaQuery
+    ];
 
     $args['posts_per_page'] = -1;
 ?>
