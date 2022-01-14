@@ -5,140 +5,49 @@
         <div class='container'>
             <h2>Сравнение</h2>
             <div class='comparison-inner'>
-                <div class='comparison-product'>
-                    <div class='product-item'>
-                        <div class='item-image'>
-                            <img src='<?php echo get_template_directory_uri() ?>/assets/images/product-gallery-4.jpg' alt='Кондиционер'>
-                        </div>
-                        <div class='item-description'>
-                            <h3>C&H CH-S07GKP8</h3>
-                            <div class='description-info'>
-                                <span class='price'>8 760 UAH</span>
-                                <p class='available'>Есть в наличии</p>
-                            </div>
-                            <a href='#' class='btn'>В Корзину</a>
-                        </div>
-                    </div>
-                    <div class='product-characteristics'>
-                        <ul>
-                            <li>
-                                <h5>Тип кондиционера</h5>
-                                <p>настенный</p>
-                            </li>
-                            <li>
-                                <h5>Производитель</h5>
-                                <p>C&H</p>
-                            </li>
-                            <li>
-                                <h5>Модель</h5>
-                                <p>C&H CH-S07XP7</p>
-                            </li>
-                            <li>
-                                <h5>Серия</h5>
-                                <p>AIR MASTER PLUS</p>
-                            </li>
-                            <li>
-                                <h5>Рекомендованная площадь помещения,м²</h5>
-                                <p>20</p>
-                            </li>
-                            <li>
-                                <h5>Тип хладагента</h5>
-                                <p>410А</p>
-                            </li>
-                            <li>
-                                <h5>Холодопроизводительность (кВт)</h5>
-                                <p>2.26</p>
-                            </li>
-                            <li>
-                                <h5>Теплопроизводительность (кВт)</h5>
-                                <p>2.43</p>
-                            </li>
-                            <li>
-                                <h5>Потребляемая мощность (кВт)</h5>
-                                <p>0.69</p>
-                            </li>
-                            <li>
-                                <h5>EER/COP</h5>
-                                <p>3,28/3,68</p>
-                            </li>
-                            <li>
-                                <h5>SEER(CLASS)/SCOP (CLASS)</h5>
-                                <p>A</p>
-                            </li>
-                            <li>
-                                <h5>Цвет</h5>
-                                <p>белый</p>
-                            </li>
-                        </ul>
-                    </div>
-                </div>
-                <div class='comparison-product'>
-                    <div class='product-item'>
-                        <div class='item-image'>
-                            <img src='<?php echo get_template_directory_uri() ?>/assets/images/product-gallery-5.jpg' alt='Кондиционер'>
-                        </div>
-                        <div class='item-description'>
-                            <h3>C&H CH-S07GKP8</h3>
-                            <div class='description-info'>
-                                <span class='price'>8 760 UAH</span>
-                                <p class='available'>Есть в наличии</p>
-                            </div>
-                            <a href='#' class='btn'>В Корзину</a>
-                        </div>
-                    </div>
-                    <div class='product-characteristics'>
-                        <ul>
-                            <li>
-                                <h5>Тип кондиционера</h5>
-                                <p>настенный</p>
-                            </li>
-                            <li>
-                                <h5>Производитель</h5>
-                                <p>C&H</p>
-                            </li>
-                            <li>
-                                <h5>Модель</h5>
-                                <p>C&H CH-S07XP7</p>
-                            </li>
-                            <li>
-                                <h5>Серия</h5>
-                                <p>AIR MASTER PLUS</p>
-                            </li>
-                            <li>
-                                <h5>Рекомендованная площадь помещения,м²</h5>
-                                <p>20</p>
-                            </li>
-                            <li>
-                                <h5>Тип хладагента</h5>
-                                <p>410А</p>
-                            </li>
-                            <li>
-                                <h5>Холодопроизводительность (кВт)</h5>
-                                <p>2.26</p>
-                            </li>
-                            <li>
-                                <h5>Теплопроизводительность (кВт)</h5>
-                                <p>2.43</p>
-                            </li>
-                            <li>
-                                <h5>Потребляемая мощность (кВт)</h5>
-                                <p>0.69</p>
-                            </li>
-                            <li>
-                                <h5>EER/COP</h5>
-                                <p>3,28/3,68</p>
-                            </li>
-                            <li>
-                                <h5>SEER(CLASS)/SCOP (CLASS)</h5>
-                                <p>A</p>
-                            </li>
-                            <li>
-                                <h5>Цвет</h5>
-                                <p>белый</p>
-                            </li>
-                        </ul>
-                    </div>
-                </div>
+                <?php
+                    $cookie = $_COOKIE['compareArray'];
+                    if ($cookie) {
+                        $compareProducts = explode(',', $cookie);
+                        foreach ($compareProducts as $i => $product) {
+
+                            $_product = wc_get_product($product);
+                            if ($_product) { ?>
+                                <div class='comparison-product'>
+                                    <div class='product-item'>
+                                        <div class='item-image'>
+                                            <?php echo $_product->get_image('1000') ?>
+                                        </div>
+                                        <div class='item-description'>
+                                            <h3><?php echo $_product->get_title() ?></h3>
+                                            <div class='description-info'>
+                                                <span class='price'>
+                                                 <?php if ((int)$_product->get_price() > 10) echo $_product->get_price_html(); else echo "<span class='green'>Уточняйте цену</span>"; ?>
+                                                </span>
+                                            </div>
+                                            <a data-quantity="1"
+                                               data-product_id="<?php echo $_product; ?>"
+                                               href='<?php echo home_url('/'); ?>?add-to-cart=<?php echo $_product; ?>'
+                                               class='btn product_type_simple add_to_cart_button ajax_add_to_cart'>
+                                                В Корзину
+                                            </a>
+                                        </div>
+                                    </div>
+                                    <div class='product-characteristics'>
+                                        <ul>
+                                            <?php $attributes = $_product->get_description();
+                                                $explodes = explode(PHP_EOL, $attributes);
+                                                foreach ($explodes as $explode) {
+                                                    $explode = explode("|", $explode);
+                                                    echo '<li><h5>' . $explode[1] . '</h5><p> ' . $explode[2] . '</p></li>';
+                                                }
+                                            ?>
+                                        </ul>
+                                    </div>
+                                </div>
+                            <?php }
+                        }
+                    } ?>
                 <div class='comparison-characteristics product-characteristics'>
                     <ul>
                         <li>

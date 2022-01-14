@@ -37,11 +37,9 @@
     .price {
       font-size:    18px;
       margin-right: 5%;
-    }
-    p {
-      font-size:   16px;
-      font-weight: 500;
-      color:       $primaryColor;
+      .green {
+        color: green;
+      }
     }
     .btn {
       font-size: 16px;
@@ -52,6 +50,10 @@
     .item-image {
       max-width: 300px;
       width:     45%;
+      img {
+        object-fit: contain;
+        height:     185px;
+      }
     }
     .item-description {
       max-width: 325px;

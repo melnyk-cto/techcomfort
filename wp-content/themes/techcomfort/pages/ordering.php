@@ -1,8 +1,6 @@
 <?php /* Template Name: Page - Ordering */ ?>
 <?php get_header(); ?>
-<?php
-    global $woocommerce;
-?>
+<?php global $woocommerce; ?>
 <script>
     const products = [];
 </script>
@@ -20,7 +18,6 @@
                             <h2>Корзина</h2>
                         </div>
                         <?php
-                            global $woocommerce;
                             $items = $woocommerce->cart->get_cart();
                             $count = 0;
                             foreach ($items as $item => $values) {

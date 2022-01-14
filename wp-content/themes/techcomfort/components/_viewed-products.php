@@ -1,6 +1,6 @@
 <?php $cookie = $_COOKIE['viewedProducts'];
 if ($cookie) {
-    $viewedProducts = explode(',', $_COOKIE['viewedProducts']); ?>
+    $viewedProducts = explode(',', $cookie); ?>
     <div class='products'>
         <h2>Просмотренные товары</h2>
         <div class='products-slider'>
