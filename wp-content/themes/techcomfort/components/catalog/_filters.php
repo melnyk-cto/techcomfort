@@ -59,7 +59,9 @@
             // Фильтрация для цветов
         } else if ($key === 'Цвет') {
             $values_unique = (array_unique($values));
-            unset($values_unique[array_search('чёрный', $values_unique)]);
+
+            unset($values_unique["чёрный"]);
+            $values_unique = array_diff($values_unique, ["чёрный"]);
             asort($values_unique);
             include get_template_directory() . '/components/catalog/_filter-item-color.php'; ?>
         <?php } else if ($key !== 'Производитель') {

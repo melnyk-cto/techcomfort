@@ -16,7 +16,7 @@
                 $currentColor = 'black';
             } else if ($value == 'титаниум') {
                 $currentColor = 'titanium';
-            } else if ($value == 'картина') {
+            } else if ($value == 'картина' || $value === 'белый+4 варианта цвета передних панелей') {
                 $currentColor = 'painting';
             } else if ($value == 'красный') {
                 $currentColor = 'red';
@@ -34,6 +34,52 @@
                 $currentColor = 'black-mirror';
             } else if ($value == 'золотистый металлик') {
                 $currentColor = 'golden-metallic';
+            } else if ($value == 'дуб') {
+                $currentColor = 'oak';
+            } else if ($value == 'коричневый') {
+                $currentColor = 'brown';
+            } else if ($value == 'орех') {
+                $currentColor = 'nut';
+            } else if ($value == 'слоновая кость') {
+                $currentColor = 'ivory';
+            } else if ($value == 'бронзовый') {
+                $currentColor = 'bronze';
+            } else if ($value == 'сталь') {
+                $currentColor = 'steel';
+            } else if ($value == 'хром') {
+                $currentColor = 'chromium';
+            } else if ($value == 'оранжевый') {
+                $currentColor = 'orange';
+            } else if ($value == 'нержавеющая сталь') {
+                $currentColor = 'stainless-steel';
+            } else if ($value == 'серо-белый') {
+                $currentColor = 'gray-white';
+            } else if ($value == 'серый') {
+                $currentColor = 'gray';
+            } else if ($value == 'металлик') {
+                $currentColor = 'metallic';
+            } else if ($value == 'белый/черный' || $value === 'белый корпус+черная панель' || $value === 'белый+черное') {
+                $currentColor = 'black-white';
+            } else if ($value == 'голубой' || $value === 'голубой металлик') {
+                $currentColor = 'blue';
+            } else if ($value == 'терракотовый') {
+                $currentColor = 'terracotta';
+            } else if ($value == 'розовый') {
+                $currentColor = 'pink';
+            } else if ($value == 'бело-фиолетовый') {
+                $currentColor = 'white-pink';
+            } else if ($value == 'серо-фиолетовый') {
+                $currentColor = 'grey-pink';
+            } else if ($value == 'белый +серебро') {
+                $currentColor = 'white-silver';
+            } else if ($value == 'дерево') {
+                $currentColor = 'tree';
+            } else if ($value == 'черный с серебристыми вставками') {
+                $currentColor = 'black-silver';
+            } else if ($value == 'зеленый') {
+                $currentColor = 'green';
+            } else if ($value == 'белый и кофе' || $value == 'белый и кофейный') {
+                $currentColor = 'white-coffee';
             }
             ?>
             <div class='filter-label filter-label-js color-item' data-key="<?php echo $formatKey ?>"

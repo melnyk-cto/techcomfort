@@ -154,6 +154,75 @@
         &.golden-metallic {
           background: #eee8d8;
         }
+        &.oak {
+          background: #bb6d14;
+        }
+        &.brown {
+          background: #451805;
+        }
+        &.nut {
+          background: #5f4638;
+        }
+        &.ivory {
+          background: #bdb5ab;
+        }
+        &.bronze {
+          background: rgba(164, 117, 71, 1);
+        }
+        &.steel {
+          background: rgba(170, 170, 171, 1);
+        }
+        &.chromium {
+          background: #bdc5c8;
+        }
+        &.orange {
+          background: #fb6f2c;
+        }
+        &.stainless-steel {
+          background: #c5c4bf;
+        }
+        &.gray-white {
+          background: #757c87;
+        }
+        &.gray {
+          background: gray;
+        }
+        &.metallic {
+          background: #6d767d;
+        }
+        &.black-white {
+          background: linear-gradient(45deg, #fff 33%, #000 100%);
+        }
+        &.blue {
+          background: blue;
+        }
+        &.terracotta {
+          background: #7f2112;
+        }
+        &.pink {
+          background: pink;
+        }
+        &.white-pink {
+          background: linear-gradient(45deg, #fff 33%, pink 100%);
+        }
+        &.grey-pink {
+          background: linear-gradient(45deg, grey 33%, pink 100%);
+        }
+        &.white-silver {
+          background: linear-gradient(45deg, #fff 33%, #b1b3b6 100%);
+        }
+        &.tree {
+          background: #4f3634;
+        }
+        &.black-silver {
+          background: linear-gradient(45deg, #000 33%, #b1b3b6 100%);
+        }
+        &.green {
+          background: green;
+        }
+        &.white-coffee {
+          background: linear-gradient(45deg, #fff 33%, #6c4c35 100%);
+        }
       }
       input[type="checkbox"] {
         width:        18px;
