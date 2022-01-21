@@ -5,16 +5,15 @@
         <div class='container'>
             <h2>Сравнение</h2>
             <div class='comparison-inner'>
-                <?php
-                    $cookie = $_COOKIE['compareArray'];
+                <?php $cookie = $_COOKIE['compareArray'];
                     if ($cookie) {
-                        $compareProducts = explode(',', $cookie);
-                        foreach ($compareProducts as $i => $product) {
-
-                            $_product = wc_get_product($product);
-                            if ($_product) { ?>
-                                <div class='comparison-product'>
+                        $compareProducts = explode(',', $cookie); ?>
+                        <div class='comparison-product'>
+                            <?php foreach ($compareProducts as $i => $product) {
+                                $_product = wc_get_product($product);
+                                if ($_product) { ?>
                                     <div class='product-item'>
+                                        <img class="close" src="<?php echo get_template_directory_uri() ?>/assets/images/icons/close.svg" alt="">
                                         <div class='item-image'>
                                             <?php echo $_product->get_image('1000') ?>
                                         </div>
@@ -33,109 +32,29 @@
                                             </a>
                                         </div>
                                     </div>
-                                    <div class='product-characteristics'>
-                                        <ul>
-                                            <?php $attributes = $_product->get_description();
-                                                $explodes = explode(PHP_EOL, $attributes);
-                                                foreach ($explodes as $explode) {
-                                                    $explode = explode("|", $explode);
-                                                    echo '<li><h5>' . $explode[1] . '</h5><p> ' . $explode[2] . '</p></li>';
-                                                }
-                                            ?>
-                                        </ul>
-                                    </div>
-                                </div>
-                            <?php }
-                        }
-                    } ?>
-                <div class='comparison-characteristics product-characteristics'>
-                    <ul>
-                        <li>
-                            <h5>Тип кондиционера</h5>
-                            <p>
-                                настенный
-                                <span>настенный</span>
-                            </p>
-                        </li>
-                        <li>
-                            <h5>Производитель</h5>
-                            <p>
-                                C&H
-                                <span>C&H</span>
-                            </p>
-                        </li>
-                        <li>
-                            <h5>Модель</h5>
-                            <p>
-                                C&H CH-S07XP7
-                                <span>C&H CH-S07XP7</span>
-                            </p>
-                        </li>
-                        <li>
-                            <h5>Серия</h5>
-                            <p>
-                                AIR MASTER PLUS
-                                <span>AIR MASTER PLUS</span>
-                            </p>
-                        </li>
-                        <li>
-                            <h5>Рекомендованная площадь помещения,м²</h5>
-                            <p>
-                                20
-                                <span>20</span>
-                            </p>
-                        </li>
-                        <li>
-                            <h5>Тип хладагента</h5>
-                            <p>
-                                410А
-                                <span>410А</span>
-                            </p>
-                        </li>
-                        <li>
-                            <h5>Холодопроизводительность (кВт)</h5>
-                            <p>
-                                2.26
-                                <span>2.26</span>
-                            </p>
-                        </li>
-                        <li>
-                            <h5>Теплопроизводительность (кВт)</h5>
-                            <p>
-                                2.43
-                                <span>2.43</span>
-                            </p>
-                        </li>
-                        <li>
-                            <h5>Потребляемая мощность (кВт)</h5>
-                            <p>
-                                0.69
-                                <span>0.69</span>
-                            </p>
-                        </li>
-                        <li>
-                            <h5>EER/COP</h5>
-                            <p>
-                                3,28/3,68
-                                <span>3,28/3,68</span>
-                            </p>
-                        </li>
-                        <li>
-                            <h5>SEER(CLASS)/SCOP (CLASS)</h5>
-                            <p>
-                                A
-                                <span>A</span>
-                            </p>
-                        </li>
-                        <li>
-                            <h5>Цвет</h5>
-                            <p>
-                                белый
-                                <span>белый</span>
-                            </p>
-                        </li>
-                    </ul>
-                </div>
+                                <?php }
+                            } ?>
+                        </div>
+                        <div class='product-characteristics'>
+                            <ul>
+                                <?php
+                                    $titles = [
+                                        'Расход воздуха, м3/ч', 'Размер патрубка(мм.)', 'Воздухообмен(м3/ч)', 'Монтаж', 'Тип нагрева', 'Тип охлаждения', 'Тип товара', 'Тип работы', 'Холодопроизводительность (кВт)', 'Теплопроизводительность (кВт)',
+                                        'Напряжение, частота, Фазы (В, Гц, ф)', 'Тип хладагента', 'Рекомендованная площадь помещения',
+                                        'Размеры внутреннего блока, (мм) Ш/В/Г', 'Размеры наружного блока, (мм) Ш/В/Г', 'Цвет',
+                                        'Тип компрессора', 'Работа на обогрев до, градусов C', 'Уровень шума, дБ',
+                                        'Минимальный уровень шума внутреннего блока, (ДБ)', 'Макс. к-во подключаемых внутренних блоков',
+                                        'Общая площадь помещений (м2)', 'Количество комнат', 'Площадь комнаты №1(м2)', 'Площадь комнаты №2(м2)',
+                                        'Площадь комнаты №3(м2)', 'Уровень звукового давления, дБА'
+                                    ];
+
+                                    foreach ($titles as $title) {
+                                        include get_template_directory() . '/components/comparison/_characteristics-item.php';
+                                    }
+                                ?>
+                            </ul>
+                        </div>
+                    <?php } ?>
             </div>
         </div>
     </section>
