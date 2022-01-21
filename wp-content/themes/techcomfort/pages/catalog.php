@@ -200,7 +200,11 @@
                                                     </a>
                                                     <div class='description-icons'>
                                                         <svg data-id='<?php echo $loop->post->ID ?>'
-                                                             class='favorites compare-js'
+                                                             class='favorites compare-js  <?php $cookie = $_COOKIE['compareArray'];
+                                                                 if ($cookie) {
+                                                                     $compareProducts = explode(',', $cookie);
+                                                                     if (in_array($loop->post->ID, $compareProducts)) echo 'active';
+                                                                 } ?>'
                                                              xmlns="http://www.w3.org/2000/svg"
                                                              width="27"
                                                              height="24.07"
