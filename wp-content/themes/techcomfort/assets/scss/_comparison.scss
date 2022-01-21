@@ -22,13 +22,15 @@
     box-shadow:    0 3px 30px 0 rgba(56, 69, 249, 0.13);
     border-radius: 10px;
     margin-bottom: 16px;
+    overflow:      auto;
     .close {
       position:   absolute;
       z-index:    1;
-      right:      0;
+      right:      10px;
       top:        0;
       padding:    5px;
       width:      30px;
+      height:     30px;
       transition: .2s linear;
       &:hover, &:active {
         opacity: .7;
@@ -38,10 +40,10 @@
       display:         flex;
       justify-content: space-between;
       align-items:     center;
-      width:           400px;
+      min-width:       350px;
       padding:         0 15px;
       position:        relative;
-      flex:            1 1 auto;
+      width:         inherit;
       &:not(:last-child) {
         border-right: 1px solid #6B92B0;
       }
@@ -72,8 +74,7 @@
         }
       }
       .item-description {
-        max-width: 325px;
-        width:     49%;
+        flex: 1 1 auto;
         .description-info {
           display:       flex;
           margin-bottom: 20px;
@@ -87,26 +88,26 @@
     background:    $white;
     border-radius: 10px;
     box-shadow:    0 3px 30px 0 rgba(56, 69, 249, 0.13);
+    overflow:      auto;
     h5 {
       font-weight:   500;
       margin-bottom: 12px;
     }
     .product-value {
-      display:     flex;
-      align-items: flex-start;
+      width:   100%;
+      display: flex;
       p {
-        width:   400px;
-        padding: 0 10px;
-        flex:    1 1 auto;
+        min-width:     350px;
+        padding:       10px;
+        width:         inherit;
+        border-bottom: 1px solid $primaryColor;
         &:not(:last-child) {
           border-right: 1px solid #6B92B0;
         }
       }
     }
     li {
-      padding-bottom: 15px;
-      margin-bottom:  15px;
-      border-bottom:  1px solid $primaryColor;
+      margin-bottom: 15px;
       &:last-child {
         padding-bottom: 0;
         margin-bottom:  0;
@@ -134,7 +135,6 @@
           width: 48%;
         }
         .item-description {
-          width: 48%;
           h3 {
             font-size:     16px;
             margin-bottom: 10px;
@@ -168,14 +168,6 @@
         padding-bottom: 12px;
         margin-bottom:  12px;
       }
-      p {
-        display:         flex;
-        justify-content: space-between;
-      }
-      span {
-        text-align: left;
-        width:      38%;
-      }
     }
   }
 }
@@ -188,32 +180,34 @@
     &-inner {
       flex-direction: column;
     }
-    .product-item {
-      max-width:      340px;
-      padding:        20px;
-      flex-direction: column;
-      .item-image {
-        max-width:     initial;
-        width:         100%;
-        margin-bottom: 15px;
-      }
-      .item-description {
-        text-align: center;
-        max-width:  initial;
-        width:      100%;
-        h3 {
-          font-size:     16px;
-          margin-bottom: 8px;
+    &-product {
+      border-radius: 0;
+      .product-item {
+        max-width:      340px;
+        padding:        20px;
+        flex-direction: column;
+        min-width:      172px;
+        .item-image {
+          max-width:     initial;
+          width:         100%;
+          margin-bottom: 15px;
         }
-        span {
-          font-size: 12px;
-        }
-        .btn {
-          padding: 9px 18px;
-        }
-        .description-info {
-          justify-content: center;
-          margin-bottom:   10px;
+        .item-description {
+          text-align: center;
+          h3 {
+            font-size:     16px;
+            margin-bottom: 8px;
+          }
+          span {
+            font-size: 12px;
+          }
+          .btn {
+            padding: 9px 18px;
+          }
+          .description-info {
+            justify-content: center;
+            margin-bottom:   10px;
+          }
         }
       }
     }
@@ -222,11 +216,16 @@
       h5 {
         font-size: 16px;
       }
+      .product-value {
+        p {
+          min-width: 172px;
+        }
+      }
       li {
         padding-bottom: 10px;
         margin-bottom:  10px;
       }
-      p, span {
+      p {
         font-size: 14px;
       }
     }

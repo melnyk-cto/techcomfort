@@ -13,7 +13,10 @@
                                 $_product = wc_get_product($product);
                                 if ($_product) { ?>
                                     <div class='product-item'>
-                                        <img class="close" src="<?php echo get_template_directory_uri() ?>/assets/images/icons/close.svg" alt="">
+                                        <img data-id='<?php echo $_product->get_id() ?>'
+                                             class="close comparison-close-js"
+                                             src="<?php echo get_template_directory_uri() ?>/assets/images/icons/close.svg"
+                                             alt="">
                                         <div class='item-image'>
                                             <?php echo $_product->get_image('1000') ?>
                                         </div>
@@ -54,7 +57,7 @@
                                 ?>
                             </ul>
                         </div>
-                    <?php } ?>
+                    <?php } else echo '<h3>Нет товаров для сравнения</h3>' ?>
             </div>
         </div>
     </section>

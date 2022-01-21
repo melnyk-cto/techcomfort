@@ -237,28 +237,39 @@ document.addEventListener("DOMContentLoaded", function () {
     document.cookie = updatedCookie;
   }
 
+  const updateCookie = (element) => {
+    const dataId = element.getAttribute('data-id');
+    let compareArray = [];
+    if (getCookie('compareArray')) {
+      compareArray = getCookie('compareArray').split(',');
+      if (compareArray.includes(dataId)) {
+        // удаление элемента если он уже сушествует
+        const index = compareArray.indexOf(dataId);
+        if (index > -1) compareArray.splice(index, 1);
+        compareArray.indexOf(dataId)
+      } else {
+        compareArray.push(dataId);
+      }
+    } else {
+      compareArray.push(dataId);
+    }
+    setCookie('compareArray', compareArray)
+  }
   // Сравнение товаров
   const compare = document.getElementsByClassName("compare-js");
+  const comparisonClose = document.getElementsByClassName("comparison-close-js");
   for (let i = 0; i < compare.length; i++) {
     compare[i].addEventListener("click", function (e) {
       e.preventDefault();
       this.classList.toggle("active");
-      let compareArray = [];
-      const dataId = this.getAttribute('data-id');
-      if (getCookie('compareArray')) {
-        compareArray = getCookie('compareArray').split(',');
-        if (compareArray.includes(dataId)) {
-          // удаление элемента если он уже сушествует
-          const index = compareArray.indexOf(dataId);
-          if (index > -1) compareArray.splice(index, 1);
-          compareArray.indexOf(dataId)
-        } else {
-          compareArray.push(dataId);
-        }
-      } else {
-        compareArray.push(dataId);
-      }
-      setCookie('compareArray', compareArray)
-    })
+      updateCookie(this);
+    });
+  }
+
+  for (let i = 0; i < comparisonClose.length; i++) {
+    comparisonClose[i].addEventListener('click', function () {
+      updateCookie(this);
+      window.location.reload();
+    });
   }
 });
