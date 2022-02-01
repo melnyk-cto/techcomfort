@@ -1,9 +1,9 @@
-<?php /* Template Name: Page - Personal Area */ ?>
+<?php /* Template Name: Page - My Account */ ?>
 <?php get_header(); ?>
 <?php
-wp_enqueue_script('personal-area-js', get_stylesheet_directory_uri() . '/assets/js/personal-area.js');
+wp_enqueue_script('my-account-js', get_stylesheet_directory_uri() . '/assets/js/my-account.js');
 ?>
-<main class='personal-area'>
+<main class='my-account'>
     <section class='personal-information'>
         <div class='container'>
             <div class='personal-information-inner'>

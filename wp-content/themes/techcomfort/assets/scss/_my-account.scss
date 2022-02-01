@@ -1,7 +1,7 @@
 @import "./variables";
 
 @media (any-hover: hover) {
-  .personal-area {
+  .my-account {
     .personal-information {
       .category .category-item:not(.active):hover {
         p, h5 {
@@ -12,7 +12,7 @@
   }
 }
 
-.personal-area {
+.my-account {
   .personal-information {
     padding: 5.5% 0;
     h2 {
@@ -404,7 +404,7 @@
 }
 
 @media screen and (max-width: 1150px) {
-  .personal-area {
+  .my-account {
     .personal-information {
       padding: 55px 0;
       h2 {
@@ -605,7 +605,7 @@
 }
 
 @media screen and (max-width: 767px) {
-  .personal-area {
+  .my-account {
     .personal-information {
       .info {
         &-item {

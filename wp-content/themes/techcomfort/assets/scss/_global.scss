@@ -166,44 +166,6 @@ input.btn, .btn {
   &-content {
     padding:  4.9% 8.5%;
     overflow: auto;
-    form {
-      label {
-        height: 65px;
-        span {
-          background: $white;
-        }
-        input {
-          border-radius: 5px;
-        }
-        span, input {
-          font-size: 18px;
-        }
-      }
-      input.btn, .btn {
-        max-width:     initial;
-        font-size:     14px;
-        padding:       17px;
-        margin-bottom: 15px;
-      }
-      .registered, .register-now, .forgot-password {
-        color: $primaryColor;
-      }
-      .checkbox {
-        display:         flex;
-        justify-content: space-between;
-        align-items:     center;
-        label {
-          display:       flex;
-          height:        initial;
-          margin-bottom: 0;
-        }
-        input {
-          width:        18px;
-          height:       18px;
-          margin-right: 15px;
-        }
-      }
-    }
   }
   &-title {
     background:      $secondaryColor;
@@ -555,36 +517,6 @@ form {
       padding:       18px 25px;
       border-radius: 8px 8px 0 0;
     }
-    &-content {
-      form {
-        label {
-          height: 50px;
-          span.label {
-            background: $white;
-          }
-          input {
-            border-radius: 3px;
-          }
-          span, input {
-            font-size: 16px;
-          }
-        }
-        input.btn, .btn {
-          padding:       13px;
-          margin-bottom: 10px;
-        }
-        .forgot-password, .register-now {
-          font-size: 16px;
-        }
-        .checkbox {
-          input {
-            width:        15px;
-            height:       15px;
-            margin-right: 10px;
-          }
-        }
-      }
-    }
   }
   .close {
     width:  20px;
@@ -679,32 +611,6 @@ form {
     &-title {
       border-radius: 0;
       padding:       14px 20px;
-    }
-    &-content {
-      form {
-        label {
-          height: 40px;
-          span.label {
-            background: #F8F8FA;
-          }
-          input {
-            border-radius: 2px;
-          }
-          span, input {
-            font-size: 14px;
-          }
-        }
-        input.btn, .btn {
-          padding: 12px;
-        }
-        .checkbox {
-          input {
-            width:        14px;
-            height:       14px;
-            margin-right: 5px;
-          }
-        }
-      }
     }
   }
   .close {
