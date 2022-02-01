@@ -196,6 +196,3 @@
     </div>
 </header>
 <?php include get_template_directory() . '/components/_basket.php'; ?>
-<?php //include get_template_directory() . '/components/_login.php'; ?>
-<?php include get_template_directory() . '/components/_registration.php'; ?>
-

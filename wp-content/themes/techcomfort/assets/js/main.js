@@ -9,8 +9,7 @@ document.addEventListener("DOMContentLoaded", function () {
   const disableLink = document.getElementsByClassName("disable-link-js");
   const headerClose = document.querySelector(".header-close-js");
   const basketClose = document.querySelectorAll(".basket-close");
-  const loginClose = document.querySelector(".login-close");
-  const registrationClose = document.querySelector(".registration-close");
+  const popupClose = document.querySelector(".popup-close-js");
   const basket = document.querySelector(".basket");
   const headerBasket = document.getElementsByClassName("open-basket-js");
   const noProducts = document.querySelector(".no-products");
@@ -23,8 +22,6 @@ document.addEventListener("DOMContentLoaded", function () {
   const headerProfile = document.querySelector(".header-profile");
   const login = document.querySelector(".login");
   const registration = document.querySelector(".registration");
-  const registerNow = document.querySelector(".register-now");
-  const registered = document.querySelector(".registered");
 
   // Burger menu
   burger.addEventListener("click", function () {
@@ -99,24 +96,10 @@ document.addEventListener("DOMContentLoaded", function () {
     });
   }
 
-  //login hidden
-  loginClose.addEventListener("click", function () {
-    login.classList.remove("show")
-  });
-
-  //registration show
-  registerNow.addEventListener("click", function () {
-    login.classList.remove("show");
-    registration.classList.add("show")
-  });
 
   //registration hidden
-  registrationClose.addEventListener("click", function () {
-    registration.classList.remove("show")
-  });
-  registered.addEventListener("click", function () {
-    registration.classList.remove("show");
-    login.classList.add("show")
+  popupClose.addEventListener("click", function () {
+    registration.classList.toggle("show")
   });
 
   //header catalog
