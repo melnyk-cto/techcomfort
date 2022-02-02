@@ -16,7 +16,30 @@
   .personal-information {
     padding: 5.5% 0;
     h2 {
-      margin-bottom: 35px;
+      margin-bottom:   35px;
+      display:         flex;
+      align-items:     center;
+      justify-content: space-between;
+      .edit {
+        display:     flex;
+        align-items: center;
+        cursor:      pointer;
+        transition:  .2s linear;
+        user-select: none;
+        &:hover, &:active {
+          opacity: .7;
+        }
+        span {
+          color:          $primaryColor;
+          font-size:      16px;
+          font-weight:    400;
+          text-transform: initial;
+        }
+        img {
+          width:        14px;
+          margin-right: 8px;
+        }
+      }
     }
     .container {
       max-width: 1850px;
@@ -93,6 +116,16 @@
         &.active {
           display: block;
         }
+        &.edited {
+          .info-item .item-description {
+            label {
+              pointer-events: inherit;
+            }
+            input {
+              border: 1px solid #6B92B0;
+            }
+          }
+        }
       }
       .catalog-item {
         width:  32%;
@@ -109,11 +142,20 @@
         .item-description {
           display:         flex;
           justify-content: space-between;
-          p {
-            font-size:  18px;
-            margin-top: 10px;
+          label {
+            flex-direction: column;
+            display:        flex;
+            pointer-events: none;
+          }
+          input {
+            font-size:     18px;
+            margin-top:    10px;
+            padding:       4px;
+            border:        1px solid transparent;
+            border-radius: 2px;
           }
           span {
+            padding:   0 4px;
             font-size: 16px;
             color:     #707070;
           }
@@ -145,18 +187,6 @@
         justify-content: space-between;
         align-items:     center;
         margin-bottom:   20px;
-        span {
-          color:          $primaryColor;
-          font-size:      16px;
-          font-weight:    400;
-          text-transform: initial;
-          display:        flex;
-          align-items:    flex-end;
-          svg {
-            width:        14px;
-            margin-right: 8px;
-          }
-        }
       }
       &-item {
         display:        flex;
@@ -409,6 +439,15 @@
       padding: 55px 0;
       h2 {
         margin-bottom: 25px;
+        .edit {
+          span {
+            font-size: 16px;
+          }
+          img {
+            width:        15px;
+            margin-right: 5px;
+          }
+        }
       }
       .category {
         display: none;
@@ -433,7 +472,7 @@
             border-radius: 1px;
           }
           .item-description {
-            p {
+            input {
               font-size: 16px;
             }
             span {
@@ -457,13 +496,6 @@
       .personal-data {
         h5 {
           margin-bottom: 10px;
-          span {
-            font-size: 16px;
-            svg {
-              width:        15px;
-              margin-right: 5px;
-            }
-          }
         }
         &-item {
           margin-bottom: 15px;
@@ -583,7 +615,7 @@
             span {
               font-size: 16px;
             }
-            p {
+            input {
               font-size:   20px;
               font-weight: 500;
             }
@@ -607,6 +639,18 @@
 @media screen and (max-width: 767px) {
   .my-account {
     .personal-information {
+      h2 {
+        .edit {
+          align-items: center;
+          span {
+            font-size: 12px;
+          }
+          img {
+            width:        12px;
+            margin-right: 2px;
+          }
+        }
+      }
       .info {
         &-item {
           width:         100vw;
@@ -623,7 +667,7 @@
           }
           .item-description {
             flex-direction: column;
-            p {
+            input {
               font-size:  14px;
               margin-top: 5px;
             }
@@ -650,14 +694,6 @@
         h5 {
           font-size:     16px;
           margin-bottom: 20px;
-          span {
-            font-size:   12px;
-            align-items: center;
-            svg {
-              width:        12px;
-              margin-right: 2px;
-            }
-          }
         }
         &-item {
           margin-bottom: 20px;
@@ -791,7 +827,7 @@
             span {
               font-size: 14px;
             }
-            p {
+            input {
               font-size: 18px;
             }
             .description-item {

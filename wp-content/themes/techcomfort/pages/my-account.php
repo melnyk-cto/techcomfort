@@ -1,9 +1,18 @@
 <?php /* Template Name: Page - My Account */ ?>
 <?php get_header(); ?>
 <?php
-wp_enqueue_script('my-account-js', get_stylesheet_directory_uri() . '/assets/js/my-account.js');
+    wp_enqueue_script('my-account-js', get_stylesheet_directory_uri() . '/assets/js/my-account.js');
 ?>
 <main class='my-account'>
+    <?php
+
+        $first_name = ucfirst(get_user_meta(get_current_user_id(), 'first_name', true));
+        $last_name = ucfirst(get_user_meta(get_current_user_id(), 'last_name', true));
+        $patronymic = ucfirst(get_user_meta(get_current_user_id(), 'patronymic', true));
+        $phone = ucfirst(get_user_meta(get_current_user_id(), 'phone', true));
+        $user_email = ucfirst(get_user_meta(get_current_user_id(), 'user_email', true));
+        $address = ucfirst(get_user_meta(get_current_user_id(), 'address', true));
+    ?>
     <section class='personal-information'>
         <div class='container'>
             <div class='personal-information-inner'>
@@ -18,7 +27,13 @@ wp_enqueue_script('my-account-js', get_stylesheet_directory_uri() . '/assets/js/
                         </svg>
                         <div class='item-description'>
                             <h5>Techcomfort</h5>
-                            <p>techcomfort@gmail.com</p>
+                            <p>
+                                <?php if ($user_email) {
+                                    echo $user_email;
+                                } else {
+                                    echo 'Не указано';
+                                } ?>
+                            </p>
                         </div>
                     </div>
                     <div data-section-id='info-ordering' class='category-item header-ordering'>
@@ -103,81 +118,7 @@ wp_enqueue_script('my-account-js', get_stylesheet_directory_uri() . '/assets/js/
                     </div>
                 </div>
                 <div class='info'>
-                    <div id='info-profile' class='info-list personal-data active'>
-                        <h2>Личные данные</h2>
-                        <div class='info-item personal-data-item'>
-                            <h5>
-                                Личные данные
-                                <span>
-                                    <svg xmlns="http://www.w3.org/2000/svg" width="20.283" height="20.003"
-                                         viewBox="0 0 20.283 20.003">
-                                      <path id="Объединение_11" data-name="Объединение 11"
-                                            d="M22608.723-618.747a2.522,2.522,0,0,1-2.516-2.521v-11.76a2.522,2.522,0,0,1,2.516-2.521h6.723a.846.846,0,0,1,.842.84.843.843,0,0,1-.842.84h-6.723a.846.846,0,0,0-.84.84v11.76a.846.846,0,0,0,.84.84h11.76a.843.843,0,0,0,.842-.84v-6.718a.837.837,0,0,1,.84-.84.839.839,0,0,1,.84.84v6.718a2.522,2.522,0,0,1-2.521,2.521Zm4.373-6.888a.414.414,0,0,1-.113-.369l.572-2.851a.411.411,0,0,1,.113-.2l6.383-6.383,2.852,2.851-6.383,6.383a.379.379,0,0,1-.205.108l-2.855.574a.354.354,0,0,1-.08.006A.416.416,0,0,1,22613.1-625.635Zm8.313-11.209,1.244-1.249a2.255,2.255,0,0,1,3.18,0,2.242,2.242,0,0,1,.658,1.6,2.216,2.216,0,0,1-.658,1.584l-1.244,1.249Z"
-                                            transform="translate(-22606.207 638.749)" fill="#6b92b0" />
-                                    </svg>
-                                    Редактировать
-                                </span>
-                            </h5>
-                            <div class='item-description'>
-                                <div class='description-item'>
-                                    <span>Фамилия</span>
-                                    <p>Hohsadze</p>
-                                </div>
-                                <div class='description-item'>
-                                    <span>Имя</span>
-                                    <p>Christina</p>
-                                </div>
-                                <div class='description-item'>
-                                    <span>Отчество</span>
-                                    <p>Не указано</p>
-                                </div>
-                            </div>
-                        </div>
-                        <div class='info-item personal-data-item'>
-                            <h5>
-                                Контакты
-                                <span>
-                                    <svg xmlns="http://www.w3.org/2000/svg" width="20.283" height="20.003"
-                                         viewBox="0 0 20.283 20.003">
-                                      <path id="Объединение_11" data-name="Объединение 11"
-                                            d="M22608.723-618.747a2.522,2.522,0,0,1-2.516-2.521v-11.76a2.522,2.522,0,0,1,2.516-2.521h6.723a.846.846,0,0,1,.842.84.843.843,0,0,1-.842.84h-6.723a.846.846,0,0,0-.84.84v11.76a.846.846,0,0,0,.84.84h11.76a.843.843,0,0,0,.842-.84v-6.718a.837.837,0,0,1,.84-.84.839.839,0,0,1,.84.84v6.718a2.522,2.522,0,0,1-2.521,2.521Zm4.373-6.888a.414.414,0,0,1-.113-.369l.572-2.851a.411.411,0,0,1,.113-.2l6.383-6.383,2.852,2.851-6.383,6.383a.379.379,0,0,1-.205.108l-2.855.574a.354.354,0,0,1-.08.006A.416.416,0,0,1,22613.1-625.635Zm8.313-11.209,1.244-1.249a2.255,2.255,0,0,1,3.18,0,2.242,2.242,0,0,1,.658,1.6,2.216,2.216,0,0,1-.658,1.584l-1.244,1.249Z"
-                                            transform="translate(-22606.207 638.749)" fill="#6b92b0" />
-                                    </svg>
-                                    Редактировать
-                                </span>
-                            </h5>
-                            <div class='item-description'>
-                                <div class='description-item'>
-                                    <span>Телефон</span>
-                                    <p>38(097) 107 25 25</p>
-                                </div>
-                                <div class='description-item'>
-                                    <span>Электронная почта</span>
-                                    <p>techcomfort@gmail.com</p>
-                                </div>
-                            </div>
-                        </div>
-                        <div class='info-item personal-data-item'>
-                            <h5>
-                                Адрес доставки
-                                <span>
-                                    <svg xmlns="http://www.w3.org/2000/svg" width="20.283" height="20.003"
-                                         viewBox="0 0 20.283 20.003">
-                                      <path id="Объединение_11" data-name="Объединение 11"
-                                            d="M22608.723-618.747a2.522,2.522,0,0,1-2.516-2.521v-11.76a2.522,2.522,0,0,1,2.516-2.521h6.723a.846.846,0,0,1,.842.84.843.843,0,0,1-.842.84h-6.723a.846.846,0,0,0-.84.84v11.76a.846.846,0,0,0,.84.84h11.76a.843.843,0,0,0,.842-.84v-6.718a.837.837,0,0,1,.84-.84.839.839,0,0,1,.84.84v6.718a2.522,2.522,0,0,1-2.521,2.521Zm4.373-6.888a.414.414,0,0,1-.113-.369l.572-2.851a.411.411,0,0,1,.113-.2l6.383-6.383,2.852,2.851-6.383,6.383a.379.379,0,0,1-.205.108l-2.855.574a.354.354,0,0,1-.08.006A.416.416,0,0,1,22613.1-625.635Zm8.313-11.209,1.244-1.249a2.255,2.255,0,0,1,3.18,0,2.242,2.242,0,0,1,.658,1.6,2.216,2.216,0,0,1-.658,1.584l-1.244,1.249Z"
-                                            transform="translate(-22606.207 638.749)" fill="#6b92b0" />
-                                    </svg>
-                                    Редактировать
-                                </span>
-                            </h5>
-                            <div class='item-description'>
-                                <div class='description-item'>
-                                    <span>Адрес</span>
-                                    <p>Киев, Голосеевский (40-летия Октября) пр-т, д.86, кв.12</p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+                    <?php include get_template_directory() . '/components/account/_personal-area.php'; ?>
                     <div id='info-ordering' class='info-list ordering'>
                         <h2>Мои заказы</h2>
                         <div class='info-item ordering-item'>

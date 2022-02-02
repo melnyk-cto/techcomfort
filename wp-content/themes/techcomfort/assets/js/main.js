@@ -98,9 +98,11 @@ document.addEventListener("DOMContentLoaded", function () {
 
 
   //registration hidden
-  popupClose.addEventListener("click", function () {
-    registration.classList.toggle("show")
-  });
+  if (popupClose) {
+    popupClose.addEventListener("click", function () {
+      registration.classList.toggle("show")
+    });
+  }
 
   //header catalog
   headerCatalog.addEventListener("click", function () {

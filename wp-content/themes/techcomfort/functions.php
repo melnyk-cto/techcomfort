@@ -164,4 +164,27 @@
         endwhile;
     }
 
-   // createAttributes();
+    // createAttributes();
+
+    function updateUSer($first_name, $last_name, $patronymic, $phone, $user_email, $address) {
+        $user_id = 10;
+        delete_user_meta($user_id, 'patronymic');
+        delete_user_meta($user_id, 'address');
+        add_user_meta($user_id, 'patronymic', $patronymic, true);
+        add_user_meta($user_id, 'address', $address, true);
+
+        $user_id = wp_update_user([
+            'ID' => $user_id,
+            'first_name' => $first_name,
+            'last_name' => $last_name,
+            'phone' => $phone,
+            'user_email' => $user_email,
+        ]);
+        if (is_wp_error($user_id)) {
+            // Произошла ошибка, возможно такого пользователя не существует.
+        } else {
+            // is OK
+        }
+    }
+
+//    updateUSer('1111', '222222', '33333', '444444', 'nick3102@urk.net', '555555');
