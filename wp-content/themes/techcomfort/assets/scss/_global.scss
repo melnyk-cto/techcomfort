@@ -210,6 +210,7 @@ input.btn, .btn {
 .d-none {
   display: none !important;
 }
+
 .d-block {
   display: block !important;
 }
@@ -237,16 +238,17 @@ input.btn, .btn {
     width: 50px;
   }
 }
+
 .no-products {
-  width: 100%;
+  width:      100%;
   text-align: center;
-  margin: 20px 0;
-  color: red;
+  margin:     20px 0;
+  color:      red;
 }
 
 .category-name {
   margin-bottom: 32px;
-  color: #6b92b0;
+  color:         #6b92b0;
 }
 
 form {
@@ -422,6 +424,15 @@ form {
     width:      100%;
     text-align: center;
     border:     none;
+  }
+}
+
+.not-found {
+  text-align: center;
+  padding:    40px 0;
+  a {
+    margin-top: 16px;
+    min-width:  280px;
   }
 }
 

@@ -193,6 +193,37 @@
       font-size:     16px;
     }
   }
+  &.lost-password {
+    .user-registration-error {
+      text-align:    center;
+      margin-bottom: 16px;
+    }
+    .title {
+      margin-bottom: 16px;
+      text-align:    center;
+    }
+    .user-registration-form-row {
+      margin-bottom: 32px;
+    }
+    .success {
+      display:    none;
+      text-align: center;
+      a {
+        margin-top:      16px;
+        color:           #fff;
+        text-decoration: none !important;
+        min-width:       200px;
+      }
+    }
+    &.send {
+      .ur-frontend-form {
+        display: none;
+      }
+      .success {
+        display: block;
+      }
+    }
+  }
 }
 
 

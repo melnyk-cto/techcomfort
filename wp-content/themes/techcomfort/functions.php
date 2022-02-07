@@ -6,6 +6,7 @@
 
         wp_enqueue_script('swiper-js', get_stylesheet_directory_uri() . '/assets/lib/swiper.js');
         wp_enqueue_script('main-js', get_stylesheet_directory_uri() . '/assets/js/main.js');
+        wp_enqueue_script("jquery");
     }
 
     //    register_nav_menus(array(
@@ -167,7 +168,7 @@
     // createAttributes();
 
     function updateUSer($first_name, $last_name, $patronymic, $phone, $user_email, $address) {
-        $user_id = 10;
+        $user_id = get_current_user_id();
         delete_user_meta($user_id, 'patronymic');
         delete_user_meta($user_id, 'address');
         add_user_meta($user_id, 'patronymic', $patronymic, true);
@@ -187,4 +188,3 @@
         }
     }
 
-//    updateUSer('1111', '222222', '33333', '444444', 'nick3102@urk.net', '555555');

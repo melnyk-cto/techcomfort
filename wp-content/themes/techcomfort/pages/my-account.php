@@ -8,10 +8,12 @@
 
         $first_name = ucfirst(get_user_meta(get_current_user_id(), 'first_name', true));
         $last_name = ucfirst(get_user_meta(get_current_user_id(), 'last_name', true));
-        $patronymic = ucfirst(get_user_meta(get_current_user_id(), 'patronymic', true));
-        $phone = ucfirst(get_user_meta(get_current_user_id(), 'phone', true));
+        $patronymic = ucfirst(get_user_meta(get_current_user_id(), 'user_registration_patronymic', true));
+        $phone = ucfirst(get_user_meta(get_current_user_id(), 'user_registration_phone', true));
         $user_email = ucfirst(get_user_meta(get_current_user_id(), 'user_email', true));
-        $address = ucfirst(get_user_meta(get_current_user_id(), 'address', true));
+        $address = ucfirst(get_user_meta(get_current_user_id(), 'user_registration_patronymic', true));
+        $user_info = get_userdata(get_current_user_id());
+        $user_email = $user_info->user_email;
     ?>
     <section class='personal-information'>
         <div class='container'>
@@ -1642,3 +1644,16 @@
     </section>
 </main>
 <?php get_footer(); ?>
+
+
+<script type="text/javascript">
+  jQuery(document).ready(function () {
+
+    jQuery('.edit-js').on('click', function (e) {
+      console.log(111)
+      e.preventDefault();
+
+
+    });
+  });
+</script>
