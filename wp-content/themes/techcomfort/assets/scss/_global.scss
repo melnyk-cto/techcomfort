@@ -255,6 +255,7 @@ form {
   display:         flex;
   justify-content: space-between;
   flex-wrap:       wrap;
+  flex-direction:  column;
   label {
     position: relative;
     span.label {
@@ -433,6 +434,15 @@ form {
   a {
     margin-top: 16px;
     min-width:  280px;
+  }
+}
+
+.not-registered {
+  text-align: center;
+  padding:    40px 0;
+  a {
+    margin-top: 16px;
+    min-width:  260px;
   }
 }
 

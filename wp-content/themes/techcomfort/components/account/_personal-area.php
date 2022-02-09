@@ -4,67 +4,112 @@
     global $patronymic;
     global $phone;
     global $user_email;
-    global $address;
-?>
+    global $address; ?>
 
 <div id='info-profile' class='info-list personal-data active'>
-    <h2>
-        Личные данные
-        <span class='edit edit-js'>
-            <img src='<?php echo get_template_directory_uri() ?>/assets/images/icons/edit.svg' alt='edit'>
-            <span>Редактировать</span>
-        </span>
-    </h2>
-    <div class='info-item personal-data-item'>
-        <h5>Личные данные</h5>
-        <div class='item-description'>
-            <div class='description-item'>
-                <label>
-                    <span>Фамилия</span>
-                    <input placeholder='Не указано' type='text' value='<?php if ($last_name) echo $last_name; ?>'>
-                </label>
-                <p></p>
+    <form id="form" class="form">
+        <h2>
+            Личные данные
+            <div class='title-right'>
+                <span class='edit log-out'>
+            <img src='<?php echo get_template_directory_uri() ?>/assets/images/icons/logout.svg' alt='edit'>
+            <span>
+                <?php echo wp_kses_post(apply_filters('user_registration_logged_in_message', sprintf(__('<a href="%s">Выйти с аккаунта</a>', 'user-registration'), ur_logout_url()))); ?>
+            </span>
+            </span>
+                <span class='edit edit-js'>
+                    <img src='<?php echo get_template_directory_uri() ?>/assets/images/icons/edit.svg' alt='edit'>
+                    <span>Редактировать</span>
+                </span>
+                <span class='edit cancel-js d-none'>
+                    Отменить
+                </span>
+                <button type="submit" id="form_submit" class='edit save-js form_button d-none'>
+                    Сохранить
+                </button>
             </div>
-            <div class='description-item'>
-                <label>
-                    <span>Имя</span>
-                    <input placeholder='Не указано' type='text' value='<?php if ($first_name) echo $first_name; ?>'>
-                </label>
-            </div>
-            <div class='description-item'>
-                <label>
-                    <span>Отчество</span>
-                    <input placeholder='Не указано' type='text' value='<?php if ($patronymic) echo $patronymic; ?>'>
-                </label>
+        </h2>
+        <div class='info-item personal-data-item'>
+            <h5>Личные данные</h5>
+            <div class='item-description'>
+                <div class='description-item'>
+                    <label>
+                        <span>Фамилия</span>
+                        <input
+                                name="form_first"
+                                class="required form_first"
+                                placeholder='Не указано'
+                                type='text'
+                                value='<?php if ($last_name) echo $last_name; ?>'>
+                    </label>
+                    <p></p>
+                </div>
+                <div class='description-item'>
+                    <label>
+                        <span>Имя</span>
+                        <input
+                                name="form_last"
+                                class="required form_last"
+                                placeholder='Не указано'
+                                type='text'
+                                value='<?php if ($first_name) echo $first_name; ?>'>
+                    </label>
+                </div>
+                <div class='description-item'>
+                    <label>
+                        <span>Отчество</span>
+                        <input
+                                name="form_patronymic"
+                                class="form_patronymic"
+                                placeholder='Не указано'
+                                type='text'
+                                value='<?php if ($patronymic) echo $patronymic; ?>'>
+                    </label>
+                </div>
             </div>
         </div>
-    </div>
-    <div class='info-item personal-data-item'>
-        <h5>Контакты</h5>
-        <div class='item-description'>
-            <div class='description-item'>
-                <label>
-                    <span>Телефон</span>
-                    <input placeholder='Не указано' type='text' value='<?php if ($phone) echo $phone; ?>'>
-                </label>
-            </div>
-            <div class='description-item'>
-                <label>
-                    <span>Электронная почта</span>
-                    <input placeholder='Не указано' type='text' value='<?php if ($user_email) echo $user_email; ?>'>
-                </label>
+        <div class='info-item personal-data-item'>
+            <h5>Контакты</h5>
+            <div class='item-description'>
+                <div class='description-item'>
+                    <label>
+                        <span>Телефон</span>
+                        <input
+                                name="form_tel"
+                                class="required form_tel"
+                                placeholder='Не указано'
+                                type='text'
+                                value='<?php if ($phone) echo $phone; ?>'>
+                    </label>
+                </div>
+                <div class='description-item'>
+                    <label>
+                        <span>Электронная почта</span>
+                        <input
+                                name="form_email"
+                                class="required form_email"
+                                placeholder='Не указано'
+                                type='email'
+                                value='<?php if ($user_email) echo $user_email; ?>'>
+                    </label>
+                </div>
             </div>
         </div>
-    </div>
-    <div class='info-item personal-data-item'>
-        <h5>Адрес доставки</h5>
-        <div class='item-description'>
-            <div class='description-item'>
-                <label>
-                    <span>Адрес</span>
-                    <input placeholder='Не указано' type='text' value='<?php if ($address) echo $address; ?>'>
-                </label>
+        <div class='info-item personal-data-item'>
+            <h5>Адрес доставки</h5>
+            <div class='item-description'>
+                <div class='description-item'>
+                    <label>
+                        <span>Адрес</span>
+                        <input
+                                name="form_address"
+                                class="required form_address"
+                                placeholder='Не указано'
+                                type='text'
+                                value='<?php if ($address) echo $address; ?>'>
+                    </label>
+                </div>
             </div>
         </div>
-    </div>
+    </form>
 </div>

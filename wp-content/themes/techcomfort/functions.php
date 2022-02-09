@@ -167,24 +167,21 @@
 
     // createAttributes();
 
-    function updateUSer($first_name, $last_name, $patronymic, $phone, $user_email, $address) {
-        $user_id = get_current_user_id();
-        delete_user_meta($user_id, 'patronymic');
-        delete_user_meta($user_id, 'address');
-        add_user_meta($user_id, 'patronymic', $patronymic, true);
-        add_user_meta($user_id, 'address', $address, true);
 
-        $user_id = wp_update_user([
-            'ID' => $user_id,
-            'first_name' => $first_name,
-            'last_name' => $last_name,
-            'phone' => $phone,
-            'user_email' => $user_email,
-        ]);
-        if (is_wp_error($user_id)) {
-            // Произошла ошибка, возможно такого пользователя не существует.
-        } else {
-            // is OK
-        }
+    //  Нужно для формы на странице "My Account"
+    add_action('wp_enqueue_scripts', 'ajax_form_scripts');
+    function ajax_form_scripts() {
+
+        // Обработка полей формы
+        wp_enqueue_script('jquery-form');
+
+        // Подключаем скрипты формы
+        wp_enqueue_script('ajax-form', get_theme_file_uri('/assets/js/my-account.js'), array('jquery'), 1.0, true);
+        wp_localize_script('ajax-form', 'ajax_form_object', array(
+            'url' => admin_url('admin-ajax.php'),
+            'nonce' => wp_create_nonce('ajax-form-nonce'),
+        ));
     }
 
+    //  Обновление информации в аккаунте пользователя
+    require_once get_stylesheet_directory() . '/update-user.php';

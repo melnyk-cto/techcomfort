@@ -61,16 +61,76 @@ document.addEventListener("DOMContentLoaded", function () {
     }
   });
 
+});
 
-  const editProfile = document.getElementsByClassName('edit-js')[0];
-  editProfile.addEventListener('click', function () {
-    if (this.children[1].innerHTML === 'Редактировать') {
-      this.closest('#info-profile').classList.add('edited');
-      this.children[1].innerHTML = 'Сохранить';
-    } else {
-      this.closest('#info-profile').classList.remove('edited');
-      this.children[1].innerHTML = 'Редактировать';
-      window.location.href= '?update_user=true';
-    }
+jQuery(document).ready(function ($) {
+  jQuery('.edit-js').click(function () {
+    jQuery(this).addClass('d-none');
+    jQuery('#form_submit').removeClass('d-none');
+    jQuery('.cancel-js').removeClass('d-none');
+    jQuery('.personal-data').addClass('edited');
   });
+
+  jQuery('.cancel-js').click(function () {
+    jQuery(this).addClass('d-none');
+    jQuery('#form_submit').addClass('d-none');
+    jQuery('.edit-js').removeClass('d-none');
+    jQuery('.personal-data').removeClass('edited');
+
+    // Сбрасываем значения полей
+    $('#form')[0].reset();
+    $('#form input, #form textarea').removeClass('error');
+    $('.notification').remove();
+  });
+
+
+  const form = $('#form');
+  // Сбрасываем значения полей
+  $('#form input, #form textarea').on('blur', function () {
+    $('#form input, #form textarea').removeClass('error');
+    $('.notification').remove();
+    $('#form_submit').val('Отправить');
+  });
+
+  // Отправка значений полей
+  const options = {
+    url: ajax_form_object.url,
+    data: {
+      action: 'ajax_form_action',
+      nonce: ajax_form_object.nonce
+    },
+    type: 'POST',
+    dataType: 'json',
+    beforeSubmit: function () {
+      // При отправке формы меняем надпись на кнопке
+      $('#form_submit').html('Отправляем...');
+    },
+    success: function (request) {
+      if (request.success === true) {
+        // Если все поля заполнены, отправляем данные и меняем надпись на кнопке
+        form.before('<div class="notification notification_accept">' + request.data + '</div>').slideDown();
+        $('#form_submit').html('Отправить');
+        jQuery('#form_submit').addClass('d-none');
+        jQuery('.cancel-js').addClass('d-none');
+        jQuery('.edit-js').removeClass('d-none');
+        jQuery('.personal-data').removeClass('edited');
+
+      } else {
+        // Если поля не заполнены, выводим сообщения и меняем надпись на кнопке
+        $.each(request.data, function (key, val) {
+          const name = $('.form_' + key);
+          name.addClass('error');
+          name.after('<div class="notification notification_warning notification_warning_' + key + '">' + val + '</div>');
+        });
+        $('#form_submit').html('Отправить');
+        form.before('<div class="notification notification_error">Не удалось отправить, исправьте ошибки</div>').slideDown();
+      }
+    },
+    error: function () {
+      $('#form_submit').html('Отправить');
+      form.before('<div class="notification notification_error">Не удалось отправить, исправьте ошибки</div>').slideDown();
+    }
+  };
+  // Отправка формы
+  form.ajaxForm(options);
 });

@@ -19,27 +19,41 @@
       margin-bottom:   35px;
       display:         flex;
       align-items:     center;
-      justify-content: space-between;
-      .edit {
+      justify-content: flex-start;
+      width:           100%;
+      .title-right {
+        margin-left: auto;
         display:     flex;
         align-items: center;
-        cursor:      pointer;
-        transition:  .2s linear;
-        user-select: none;
-        &:hover, &:active {
-          opacity: .7;
-        }
-        span {
+        span, a, button {
           color:          $primaryColor;
           font-size:      16px;
           font-weight:    400;
           text-transform: initial;
+          background:     transparent;
         }
-        img {
-          width:        14px;
-          margin-right: 8px;
+        .log-out {
+          margin-right: 20px;
+        }
+        .cancel-js {
+          margin-right: 15px;
+        }
+        .edit {
+          display:     flex;
+          align-items: center;
+          cursor:      pointer;
+          transition:  .2s linear;
+          user-select: none;
+          &:hover, &:active {
+            opacity: .7;
+          }
+          img {
+            width:        14px;
+            margin-right: 8px;
+          }
         }
       }
+
     }
     .container {
       max-width: 1850px;
@@ -122,7 +136,7 @@
               pointer-events: inherit;
             }
             input {
-              border: 1px solid #6B92B0;
+              border: 1px solid #B2C5D4;
             }
           }
         }
@@ -148,11 +162,13 @@
             pointer-events: none;
           }
           input {
-            font-size:     18px;
-            margin-top:    10px;
-            padding:       4px;
+            margin-top:    4px;
             border:        1px solid transparent;
+            font-size:     16px;
+            padding:       8px 10px;
             border-radius: 2px;
+            position:      relative;
+            left:          -8px;
           }
           span {
             padding:   0 4px;
@@ -200,7 +216,10 @@
         }
         .item-description {
           max-width: 800px;
-          width:     74%;
+          flex-wrap: wrap;
+          .description-item {
+            width: 31%;
+          }
         }
       }
     }
@@ -433,19 +452,44 @@
   }
 }
 
+.notification_accept {
+  text-align:    center;
+  padding:       20px;
+  border:        1px solid green;
+  border-radius: 4px;
+  margin-bottom: 16px;
+  color:         green;
+}
+
+.notification_error {
+  text-align:    center;
+  padding:       20px;
+  border:        1px solid red;
+  border-radius: 4px;
+  margin-bottom: 16px;
+  color:         red;
+}
+
+.notification_warning {
+  color:     red;
+  font-size: 12px;
+}
+
 @media screen and (max-width: 1150px) {
   .my-account {
     .personal-information {
       padding: 55px 0;
       h2 {
         margin-bottom: 25px;
-        .edit {
-          span {
+        .title-right {
+          span, a, button {
             font-size: 16px;
           }
-          img {
-            width:        15px;
-            margin-right: 5px;
+          .edit {
+            img {
+              width:        15px;
+              margin-right: 5px;
+            }
           }
         }
       }
@@ -454,7 +498,6 @@
       }
       .info {
         &-list {
-          display:   block;
           max-width: 945px;
           width:     100%;
           margin:    0 auto;
@@ -640,21 +683,21 @@
   .my-account {
     .personal-information {
       h2 {
-        .edit {
-          align-items: center;
-          span {
+        .title-right {
+          span, a, button {
             font-size: 12px;
           }
-          img {
-            width:        12px;
-            margin-right: 2px;
+          .edit {
+            align-items: center;
+            img {
+              width:        12px;
+              margin-right: 2px;
+            }
           }
         }
       }
       .info {
         &-item {
-          width:         100vw;
-          margin-left:   -20px;
           border-radius: 0;
           box-shadow:    0 3px 8px 0 rgba(56, 69, 249, 0.13);
           margin-bottom: 20px;
@@ -666,7 +709,6 @@
             border-bottom: 1px solid $black;
           }
           .item-description {
-            flex-direction: column;
             input {
               font-size:  14px;
               margin-top: 5px;
@@ -703,6 +745,7 @@
             width: 100%;
             .description-item {
               margin-bottom: 15px;
+              width:         48%;
               &:last-child {
                 margin-bottom: 0;
               }
@@ -856,6 +899,24 @@
             margin-bottom: 10px;
           }
         }
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 567px) {
+  .my-account {
+    .personal-information {
+      h2 {
+        flex-direction:  column;
+        justify-content: center;
+        align-items:     center;
+        .title-right {
+          margin: 16px auto 0 auto;
+        }
+      }
+      .personal-data-item .item-description .description-item {
+        width: 100%;
       }
     }
   }
