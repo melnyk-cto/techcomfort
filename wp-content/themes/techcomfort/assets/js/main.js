@@ -257,10 +257,4 @@ document.addEventListener("DOMContentLoaded", function () {
       window.location.reload();
     });
   }
-
-  // redirect to 'lost-password'
-  const href = window.location.href;
-  if (href.includes('my-account/lost-password')) {
-    window.location.href = '/lost-password'
-  }
 });

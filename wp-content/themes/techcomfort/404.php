@@ -3,7 +3,7 @@
     get_header(); ?>
     <main>
         <div class='not-found'>
-            <h2>Page not found</h2>
+            <h2>Страница не найдена :-(</h2>
             <a href='<?php echo home_url('/'); ?>' class='btn'>Вернутся на главную страницу</a>
         </div>
     </main>

@@ -1,5 +1,15 @@
 <?php /* Template Name: Page - My Account */ ?>
 <?php get_header(); ?>
+    <script>
+      // redirect to 'lost-password'
+      const href = window.location.href;
+      if (href.includes('my-account/lost-password')) {
+        document.body.style.opacity = '0';
+        window.location.href = '/lost-password'
+      } else {
+        document.body.style.opacity = '1';
+      }
+    </script>
     <main class='my-account'>
         <?php if (is_user_logged_in()) : ?>
             <?php
