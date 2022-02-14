@@ -4,28 +4,30 @@ document.addEventListener("DOMContentLoaded", function () {
   const infoList = document.querySelectorAll(".info-list");
   const categories = document.querySelector('.category');
 
-  categories.addEventListener('click', (event) => {
-    const elem = event.target.closest('.category-item');
-    if (!elem) {
-      return;
-    }
-    const sectionId = elem.dataset.sectionId;
-
-    categoryItem.forEach((item) => {
-      if (item.classList.contains('active')) {
-        item.classList.remove('active');
+  if (categories) {
+    categories.addEventListener('click', (event) => {
+      const elem = event.target.closest('.category-item');
+      if (!elem) {
+        return;
       }
-    });
+      const sectionId = elem.dataset.sectionId;
 
-    infoList.forEach((elem) => {
-      if (elem.classList.contains('active')) {
-        elem.classList.remove('active');
-      }
-    });
+      categoryItem.forEach((item) => {
+        if (item.classList.contains('active')) {
+          item.classList.remove('active');
+        }
+      });
 
-    elem.classList.add('active');
-    document.getElementById(sectionId).classList.add('active');
-  });
+      infoList.forEach((elem) => {
+        if (elem.classList.contains('active')) {
+          elem.classList.remove('active');
+        }
+      });
+
+      elem.classList.add('active');
+      document.getElementById(sectionId).classList.add('active');
+    });
+  }
 
   // open order history
   const arrow = document.querySelectorAll(".arrow");
@@ -47,19 +49,21 @@ document.addEventListener("DOMContentLoaded", function () {
   // const wishesItem = document.getElementsByClassName("wishes-item")[0];
   const wishesProducts = document.getElementsByClassName("products")[0];
 
-  clearBtn.addEventListener("click", function () {
-    this.classList.toggle("active");
-    if (this.classList.contains("active")) {
-      this.parentElement.style.justifyContent = "center";
-      wishesEmpty.classList.add("active");
-      wishesProducts.classList.add("hidden");
-      // wishesItem.classList.add("hidden")
-    } else {
-      wishesEmpty.classList.remove("active");
-      wishesProducts.classList.remove("hidden");
-      // wishesItem.classList.remove("hidden")
-    }
-  });
+  if (clearBtn) {
+    clearBtn.addEventListener("click", function () {
+      this.classList.toggle("active");
+      if (this.classList.contains("active")) {
+        this.parentElement.style.justifyContent = "center";
+        wishesEmpty.classList.add("active");
+        wishesProducts.classList.add("hidden");
+        // wishesItem.classList.add("hidden")
+      } else {
+        wishesEmpty.classList.remove("active");
+        wishesProducts.classList.remove("hidden");
+        // wishesItem.classList.remove("hidden")
+      }
+    });
+  }
 
 });
 

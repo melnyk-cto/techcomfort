@@ -2,7 +2,7 @@
 
 <?php get_header(); ?>
 <main>
-    <div class='registration  registration-page lost-password'>
+    <div class='registration lost-password'>
         <div class='registration-inner'>
             <div class='registration-title'>
                 <h2><?php the_title(); ?></h2>
