@@ -1,6 +1,7 @@
 <?php /* Template Name: Page - Login */ ?>
 <?php get_header(); ?>
 <main>
+    <?php if (!is_user_logged_in()) : ?>
     <div class='registration login-page'>
         <div class='registration-inner'>
             <div class='registration-title'>
@@ -211,6 +212,11 @@
             <a href='<?php echo home_url('/'); ?>registration' class='btn-registration'>Зарегистрироваться</a>
         </div>
     </div>
+    <?php else : ?>
+        <script>
+            window.location.href = '/my-account'
+        </script>
+    <?php endif; ?>
 </main>
 <?php get_footer(); ?>
 
