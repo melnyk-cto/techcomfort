@@ -82,16 +82,16 @@ jQuery(document).ready(function ($) {
     jQuery('.personal-data').removeClass('edited');
 
     // Сбрасываем значения полей
-    $('#form')[0].reset();
-    $('#form input, #form textarea').removeClass('error');
+    $('#form-personal')[0].reset();
+    $('#form-personal input, #form-personal textarea').removeClass('error');
     $('.notification').remove();
   });
 
 
-  const form = $('#form');
+  const form = $('#form-personal');
   // Сбрасываем значения полей
-  $('#form input, #form textarea').on('blur', function () {
-    $('#form input, #form textarea').removeClass('error');
+  $('#form-personal input, #form-personal textarea').on('blur', function () {
+    $('#form-personal input, #form-personal textarea').removeClass('error');
     $('.notification').remove();
     $('#form_submit').val('Отправить');
   });

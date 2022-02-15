@@ -168,20 +168,62 @@
     // createAttributes();
 
 
-    //  Нужно для формы на странице "My Account"
-    add_action('wp_enqueue_scripts', 'ajax_form_scripts');
-    function ajax_form_scripts() {
+    //  Обновление информации в аккаунте пользователя
+    require_once get_stylesheet_directory() . '/update-user.php';
 
-        // Обработка полей формы
-        wp_enqueue_script('jquery-form');
-
-        // Подключаем скрипты формы
-        wp_enqueue_script('ajax-form', get_theme_file_uri('/assets/js/my-account.js'), array('jquery'), 1.0, true);
-        wp_localize_script('ajax-form', 'ajax_form_object', array(
-            'url' => admin_url('admin-ajax.php'),
-            'nonce' => wp_create_nonce('ajax-form-nonce'),
+    /** Новый тип записи - «Отзывы» **/
+    add_action('init', 'register_post_type_reviews');
+    function register_post_type_reviews() {
+        register_post_type('reviews', array(
+            'label' => null,
+            'labels' => [
+                'name' => 'Отзывы',
+                'singular_name' => 'Отзыв',
+                'add_new' => 'Добавить отзыв',
+                'add_new_item' => 'Добавление отзыва',
+                'edit_item' => 'Редактирование отзыва',
+                'new_item' => 'Новый отзыв',
+                'view_item' => 'Смотреть отзыв',
+                'search_items' => 'Искать отзывы',
+                'not_found' => 'Не найдено',
+                'not_found_in_trash' => 'Не найдено в корзине',
+                'menu_name' => 'Отзывы',
+            ],
+            'description' => 'Отзывы',
+            'exclude_from_search' => false,
+            'public' => true,
+            'capability_type' => 'page',
+            'hierarchical' => false,
+            'show_in_menu' => null,
+            'show_in_rest' => null,
+            'rest_base' => null,
+            'menu_position' => null,
+            'menu_icon' => 'dashicons-format-status',
+            'supports' => [
+                'title',
+                'editor',
+            ],
+            'has_archive' => false,
+            'rewrite' => true,
+            'query_var' => true,
         ));
     }
 
+    /** Уведомления о новых неопубликованных отзывах **/
+    add_action('admin_menu', 'add_user_menu_bubble');
+    function add_user_menu_bubble() {
+        global $menu;
+
+        $count = wp_count_posts('reviews')->pending; # на утверждении
+        if ($count) {
+            foreach ($menu as $key => $value) {
+                if ($menu[$key][2] == 'edit.php?post_type=reviews') {
+                    $menu[$key][0] .= '<span class="awaiting-mod"><span class="pending-count">' . $count . '</span></span>';
+                    break;
+                }
+            }
+        }
+    }
+
     //  Обновление информации в аккаунте пользователя
-    require_once get_stylesheet_directory() . '/update-user.php';
+    require_once get_stylesheet_directory() . '/add-review.php';

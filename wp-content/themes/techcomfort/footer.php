@@ -24,33 +24,34 @@
                     <div class='footer-menu-lists'>
                         <ul>
                             <li>
-                                <a href='<?php echo home_url( '/' ); ?>'>Главная</a>
+                                <a href='<?php echo home_url('/'); ?>'>Главная</a>
                             </li>
                             <li>
-                                <a href='<?php echo home_url( '/' ); ?>catalog'>Каталог</a>
+                                <a href='<?php echo home_url('/'); ?>catalog'>Каталог</a>
                             </li>
                             <li>
-                                <a href='<?php echo home_url( '/' ); ?>installation-and-assembly'>Установка и монтаж</a>
+                                <a href='<?php echo home_url('/'); ?>installation-and-assembly'>Установка и монтаж</a>
                             </li>
                             <li>
-                                <a href='<?php echo home_url( '/' ); ?>services'>Сервис</a>
+                                <a href='<?php echo home_url('/'); ?>services'>Сервис</a>
                             </li>
                             <li>
-                                <a href='<?php echo home_url( '/' ); ?>payment-and-delivery'>Оплата и Доставка</a>
+                                <a href='<?php echo home_url('/'); ?>payment-and-delivery'>Оплата и Доставка</a>
                             </li>
                         </ul>
                         <ul>
                             <li>
-                                <a href='<?php echo home_url( '/' ); ?>our-works'>Наши работы</a>
+                                <a href='<?php echo home_url('/'); ?>our-works'>Наши работы</a>
                             </li>
-<!--                            <li>-->
-<!--                                <a href='--><?php //echo home_url( '/' ); ?><!--reviews'>Отзывы</a>-->
-<!--                            </li>-->
-<!--                            <li>-->
-<!--                                <a href='--><?php //echo home_url( '/' ); ?><!--blog'>Блог</a>-->
-<!--                            </li>-->
                             <li>
-                                <a href='<?php echo home_url( '/' ); ?>contacts'>Контакти</a>
+                                <a href='<?php echo home_url('/'); ?>reviews'>Отзывы</a>
+                            </li>
+                            <!--                            <li>-->
+                            <!--                                <a href='-->
+                            <?php //echo home_url( '/' ); ?><!--blog'>Блог</a>-->
+                            <!--                            </li>-->
+                            <li>
+                                <a href='<?php echo home_url('/'); ?>contacts'>Контакти</a>
                             </li>
                         </ul>
                     </div>
@@ -96,8 +97,8 @@
                                       d="M16.63,11.868a10.266,10.266,0,0,1-3.224-.514,1.474,1.474,0,0,0-1.433.3L9.94,13.191a11.235,11.235,0,0,1-5.051-5.05l1.49-1.98a1.461,1.461,0,0,0,.36-1.481,10.281,10.281,0,0,1-.515-3.229A1.452,1.452,0,0,0,4.771,0H1.451A1.453,1.453,0,0,0,0,1.451a16.649,16.649,0,0,0,16.63,16.63,1.453,1.453,0,0,0,1.451-1.451V13.319A1.453,1.453,0,0,0,16.63,11.868Z" />
                             </svg>
                             <div class='call-description'>
-                                <a href='tel:<?php echo get_field('phone_1', 'option')?>'><?php echo get_field('phone_1', 'option')?></a>
-                                <a href='tel:<?php echo get_field('phone_2', 'option')?>'><?php echo get_field('phone_2', 'option')?></a>
+                                <a href='tel:<?php echo get_field('phone_1', 'option') ?>'><?php echo get_field('phone_1', 'option') ?></a>
+                                <a href='tel:<?php echo get_field('phone_2', 'option') ?>'><?php echo get_field('phone_2', 'option') ?></a>
                             </div>
                         </div>
                         <div class='address'>
@@ -106,20 +107,23 @@
                                       d="M6.757,0A6.96,6.96,0,0,0-.2,6.952C-.2,11.77,6.763,20,6.763,20s6.945-8.467,6.945-13.048A6.96,6.96,0,0,0,6.757,0Zm2.1,8.987a2.966,2.966,0,1,1,0-4.195A2.957,2.957,0,0,1,8.854,8.987Zm0,0"
                                       transform="translate(0.195)" />
                             </svg>
-                            <p><?php echo get_field('city', 'option')?></p>
+                            <p><?php echo get_field('city', 'option') ?></p>
                         </div>
                     </div>
                     <div class='socials'>
                         <h5>Соц. сети</h5>
                         <div class='socials-images'>
                             <a href='#' class='socials-image'>
-                                <img src='<?php echo get_template_directory_uri() ?>/assets/images/icons/telegram.svg' alt='Telegram'>
+                                <img src='<?php echo get_template_directory_uri() ?>/assets/images/icons/telegram.svg'
+                                     alt='Telegram'>
                             </a>
                             <a href='#' class='socials-image'>
-                                <img src='<?php echo get_template_directory_uri() ?>/assets/images/icons/viber.svg' alt='Viber'>
+                                <img src='<?php echo get_template_directory_uri() ?>/assets/images/icons/viber.svg'
+                                     alt='Viber'>
                             </a>
                             <a href='#' class='socials-image'>
-                                <img src='<?php echo get_template_directory_uri() ?>/assets/images/icons/whatsapp.svg' alt='WhatsApp'>
+                                <img src='<?php echo get_template_directory_uri() ?>/assets/images/icons/whatsapp.svg'
+                                     alt='WhatsApp'>
                             </a>
                         </div>
                     </div>

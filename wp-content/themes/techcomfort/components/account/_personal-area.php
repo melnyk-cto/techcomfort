@@ -7,7 +7,7 @@
     global $address; ?>
 
 <div id='info-profile' class='info-list personal-data active'>
-    <form id="form" class="form">
+    <form id="form-personal" class="form">
         <h2>
             Личные данные
             <div class='title-right'>
@@ -36,8 +36,9 @@
                     <label>
                         <span>Фамилия</span>
                         <input
+                                required
                                 name="form_first"
-                                class="required form_first"
+                                class="form_first"
                                 placeholder='Не указано'
                                 type='text'
                                 value='<?php if ($last_name) echo $last_name; ?>'>
@@ -48,8 +49,9 @@
                     <label>
                         <span>Имя</span>
                         <input
+                                required
                                 name="form_last"
-                                class="required form_last"
+                                class="form_last"
                                 placeholder='Не указано'
                                 type='text'
                                 value='<?php if ($first_name) echo $first_name; ?>'>
@@ -59,6 +61,7 @@
                     <label>
                         <span>Отчество</span>
                         <input
+                                required
                                 name="form_patronymic"
                                 class="form_patronymic"
                                 placeholder='Не указано'
@@ -75,10 +78,11 @@
                     <label>
                         <span>Телефон</span>
                         <input
+                                required
                                 name="form_tel"
-                                class="required form_tel"
+                                class="form_tel"
                                 placeholder='Не указано'
-                                type='text'
+                                type='tel'
                                 value='<?php if ($phone) echo $phone; ?>'>
                     </label>
                 </div>
@@ -86,8 +90,9 @@
                     <label>
                         <span>Электронная почта</span>
                         <input
+                                required
                                 name="form_email"
-                                class="required form_email"
+                                class="form_email"
                                 placeholder='Не указано'
                                 type='email'
                                 value='<?php if ($user_email) echo $user_email; ?>'>
@@ -102,8 +107,9 @@
                     <label>
                         <span>Адрес</span>
                         <input
+                                required
                                 name="form_address"
-                                class="required form_address"
+                                class="form_address"
                                 placeholder='Не указано'
                                 type='text'
                                 value='<?php if ($address) echo $address; ?>'>

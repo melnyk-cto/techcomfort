@@ -1,5 +1,16 @@
 <?php /* Template Name: Page - My Account */ ?>
 <?php get_header(); ?>
+<?php
+    // Обработка полей формы
+    wp_enqueue_script('jquery-form');
+
+    // Подключаем скрипты формы
+    wp_enqueue_script('ajax-form', get_theme_file_uri('/assets/js/my-account.js'), array('jquery'), 1.0, true);
+    wp_localize_script('ajax-form', 'ajax_form_object', array(
+        'url' => admin_url('admin-ajax.php'),
+        'nonce' => wp_create_nonce('ajax-form-nonce'),
+    ));
+?>
     <main class='my-account'>
         <?php if (is_user_logged_in()) : ?>
             <?php
@@ -7,7 +18,6 @@
             $last_name = ucfirst(get_user_meta(get_current_user_id(), 'last_name', true));
             $patronymic = ucfirst(get_user_meta(get_current_user_id(), 'user_registration_patronymic', true));
             $phone = ucfirst(get_user_meta(get_current_user_id(), 'user_registration_phone', true));
-            $user_email = ucfirst(get_user_meta(get_current_user_id(), 'user_email', true));
             $address = ucfirst(get_user_meta(get_current_user_id(), 'user_registration_address', true));
             $user_info = get_userdata(get_current_user_id());
             $user_email = $user_info->user_email; ?>

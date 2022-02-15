@@ -195,6 +195,9 @@
       }
     }
     .personal-data {
+      form {
+        flex-direction: column;
+      }
       h5 {
         color:           $primaryColor;
         font-weight:     500;

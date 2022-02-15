@@ -10,7 +10,8 @@
                     $categoriesId = get_term_children($parentCategory->term_id, 'product_cat');
                     ?>
                     <li class="menu-item sub-item-js <?php if ($categoriesId) echo 'arrow' ?>">
-                        <a href="<?php echo home_url('/'); ?>catalog?category=<?php echo $term->slug ?>" class="<?php if ($categoriesId) echo 'disable-link-js' ?>"><?php echo $term->name ?></a>
+                        <a href="<?php echo home_url('/'); ?>catalog?category=<?php echo $term->slug ?>"
+                           class="<?php if ($categoriesId) echo 'disable-link-js' ?>"><?php echo $term->name ?></a>
                         <?php
                             if ($categoriesId) { ?>
                                 <ul class="sub-menu2">
@@ -44,6 +45,9 @@
         <a href="<?php echo home_url('/'); ?>our-works/">Наши работы</a></li>
     <li class="menu-item">
         <a href="<?php echo home_url('/'); ?>payment-and-delivery/">Оплата и доставка</a>
+    </li>
+    <li class="menu-item">
+        <a href="<?php echo home_url('/'); ?>reviews/">Отзывы</a>
     </li>
     <li class="menu-item">
         <a href="<?php echo home_url('/'); ?>contacts/">Контакты</a>
