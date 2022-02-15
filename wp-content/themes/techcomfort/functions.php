@@ -169,7 +169,7 @@
 
 
     //  Обновление информации в аккаунте пользователя
-    require_once get_stylesheet_directory() . '/update-user.php';
+    require_once get_stylesheet_directory() . '/includes/update-user.php';
 
     /** Новый тип записи - «Отзывы» **/
     add_action('init', 'register_post_type_reviews');
@@ -226,4 +226,4 @@
     }
 
     //  Обновление информации в аккаунте пользователя
-    require_once get_stylesheet_directory() . '/add-review.php';
+    require_once get_stylesheet_directory() . '/includes/add-review.php';

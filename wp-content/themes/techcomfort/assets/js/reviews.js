@@ -27,7 +27,7 @@ jQuery(document).ready(function ($) {
         // Если все поля заполнены, отправляем данные и меняем надпись на кнопке
         form.before('<div class="notification notification_accept">' + request.data + '</div>').slideDown();
         $('#form_submit_reviews').html('Отзыв Отправлено');
-
+        jQuery('#form-reviews').addClass('d-none');
       } else {
         // Если поля не заполнены, выводим сообщения и меняем надпись на кнопке
         $.each(request.data, function (key, val) {

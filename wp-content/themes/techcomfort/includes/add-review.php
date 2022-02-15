@@ -11,26 +11,29 @@
         $form_first = sanitize_text_field($_POST['form_first']);
         $form_last = sanitize_text_field($_POST['form_last']);
         $form_rating = sanitize_text_field($_POST['form_rating']);
-        $form_tel = sanitize_text_field($_POST['form_tel']);
-        $form_email = sanitize_text_field($_POST['form_email']);
         $form_message = sanitize_text_field($_POST['form_message']);
+        $form_advantages = sanitize_text_field($_POST['form_advantages']);
+        $form_disadvantages = sanitize_text_field($_POST['form_disadvantages']);
+        $form_tel = sanitize_text_field($_POST['form_tel']);
 
         $post_data = array(
             'post_author' => get_current_user_id(),
             'post_status' => 'publish', # Статус создаваемой записи.
             'post_type' => 'reviews',   # тип записи - «Отзывы»
-            'post_title' => 'Отзыв от - ' . $form_first . ' ' . $form_last . ', Количество звезд - ' . $form_rating,  # заголовок отзыва
+            'post_title' => $form_first . ' ' . $form_last . ', звезд - ' . $form_rating,   # заголовок отзыва
             'post_content' => $form_message,   # текст отзыва
-   );
+        );
 
         // Вставляем запись в базу данных
         $post_id = wp_insert_post($post_data);
 
         // Добавляем остальные поля
-        update_field('rejting', $form_rating, $post_id); # рейтинг
-        update_field('form_first', $form_first, $post_id);      # имя
-        update_field('form_last', $form_first, $post_id);      # имя
-        update_field('form_tel', $form_tel, $post_id);      # телефон
+        update_field('reviews_first-name', $form_first, $post_id);      # имя
+        update_field('reviews_last-name', $form_last, $post_id);      # фамилия
+        update_field('reviews_rating', $form_rating, $post_id);      # рейтинг
+        update_field('reviews_advantages', $form_advantages, $post_id);      # достоинства
+        update_field('reviews_disadvantages', $form_disadvantages, $post_id);      # недостатки
+        update_field('reviews_tel', $form_tel, $post_id);      # телефон
 
         // Отправляем сообщение об успешной отправке
         $message_success = 'Ваш отзыв успешно добавлен';

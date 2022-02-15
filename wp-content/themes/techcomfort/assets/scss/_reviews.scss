@@ -27,6 +27,10 @@
     }
     p {
       line-height: 1.4;
+      &.reviews-title {
+        margin-top:  8px;
+        font-weight: 700;
+      }
     }
     &:last-child {
       margin-bottom: 0;
@@ -98,7 +102,7 @@
   }
   .not-registered {
     text-align: left;
-    padding:    0 0 40px 0;
+    padding:    0;
   }
 }
 
@@ -117,9 +121,6 @@
       margin-bottom:  15px;
       h5 {
         margin-right: 10px;
-      }
-      p {
-        line-height: 1.5;
       }
       .item-title {
         .rating {

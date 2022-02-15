@@ -1,3 +1,19 @@
+<?php
+    global $isAdvantages;
+    global $isDisadvantages;
+    global $title;
+?>
+<?php
+    // Обработка полей формы
+    wp_enqueue_script('jquery-form');
+
+    // Подключаем скрипты формы
+    wp_enqueue_script('ajax-form-reviews', get_theme_file_uri('/assets/js/reviews.js'), array('jquery'), 1.0, true);
+    wp_localize_script('ajax-form-reviews', 'ajax_form_object', array(
+        'url' => admin_url('admin-ajax.php'),
+        'nonce' => wp_create_nonce('ajax-form-nonce'),
+    ));
+?>
 <div class='reviews'>
     <div class='reviews-inner'>
         <?php if (is_user_logged_in()) : ?>
@@ -10,8 +26,7 @@
             <form id="form-reviews" class="form reviews-form">
                 <h3>Добавление отзыва</h3>
                 <p class='info'>Изменить данные можно на странице - "Мой Профиль"</p>
-
-                <label for=''>
+                <label>
                     <span class='label'>Имя</span>
                     <input
                             required
@@ -21,7 +36,7 @@
                             type='text'
                             value='<?php if ($first_name) echo $first_name; ?>'>
                 </label>
-                <label for=''>
+                <label>
                     <span class='label'>Фамилия</span>
                     <input
                             required
@@ -31,7 +46,7 @@
                             type='text'
                             value='<?php if ($last_name) echo $last_name; ?>'>
                 </label>
-                <label for=''>
+                <label>
                     <span class='label'>Телефон</span>
                     <input
                             name="form_tel"
@@ -40,7 +55,7 @@
                             type='tel'
                             value='<?php if ($phone) echo $phone; ?>'>
                 </label>
-                <label for=''>
+                <label>
                     <span class='label'>Email</span>
                     <input
                             required
@@ -57,20 +72,24 @@
                               class="form_message"
                               placeholder='Введите ваш отзыв...'></textarea>
                 </label>
-                <label class='textarea'>
-                    <span class='label'>Достоинства</span>
-                    <textarea required
-                              name="form_advantages"
-                              class="form_advantages"
-                              placeholder='Введите достоинства...'></textarea>
-                </label>
-                <label class='textarea'>
-                    <span class='label'>Недостатки</span>
-                    <textarea required
-                              name="form_disadvantages"
-                              class="form_disadvantages"
-                              placeholder='Введите недостатки...'></textarea>
-                </label>
+                <?php if ($isAdvantages) { ?>
+                    <label class='textarea'>
+                        <span class='label'>Достоинства</span>
+                        <textarea required
+                                  name="form_advantages"
+                                  class="form_advantages"
+                                  placeholder='Введите достоинства...'></textarea>
+                    </label>
+                <?php } ?>
+                <?php if ($isDisadvantages) { ?>
+                    <label class='textarea'>
+                        <span class='label'>Недостатки</span>
+                        <textarea required
+                                  name="form_disadvantages"
+                                  class="form_disadvantages"
+                                  placeholder='Введите недостатки...'></textarea>
+                    </label>
+                <?php } ?>
                 <div class='appraisal'>
                     <p>Оценка:</p>
                     <div class="rating__group rating">
@@ -95,7 +114,7 @@
             </div>
         <?php endif; ?>
     </div>
-    <h2>Все Отзывы О Магазине</h2>
+    <h2><?php echo $title ?></h2>
     <div class='reviews-list'>
         <?php
             $mypost_Query = new WP_Query(array(
@@ -108,10 +127,13 @@
                     $mypost_Query->the_post();; ?>
                     <div class='reviews-item'>
                         <div class='item-title'>
-                            <h5><?php the_field('form_first'); ?><?php the_field('form_last'); ?></h5>
+                            <h5>
+                                <?php the_field('reviews_first-name'); ?>
+                                <?php the_field('reviews_last-name'); ?>
+                            </h5>
                             <div class='rating'>
                                 <?php for ($r = 1; $r <= 5; $r++) { ?>
-                                    <?php if (get_field('rejting') < $r) { ?>
+                                    <?php if (get_field('reviews_rating') < $r) { ?>
                                         <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14"
                                              viewBox="0 0 24 24">
                                             <path style="fill:#DADADA"
@@ -130,6 +152,14 @@
                         </div>
                         <div class='item-description'>
                             <p><?php the_content(); ?></p>
+                            <?php if (get_field('reviews_disadvantages')) { ?>
+                                <p class='reviews-title'>Достоинства</p>
+                                <p>• <?php the_field('reviews_advantages'); ?></p>
+                            <?php } ?>
+                            <?php if (get_field('reviews_disadvantages')) { ?>
+                                <p class='reviews-title'>Недостатки</p>
+                                <p>• <?php the_field('reviews_disadvantages'); ?></p>
+                            <?php } ?>
                         </div>
                     </div>
                 <?php }

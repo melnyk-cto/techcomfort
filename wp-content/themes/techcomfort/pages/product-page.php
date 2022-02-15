@@ -101,7 +101,7 @@
                 <!--                    <p>?????????</p>-->
                 <!--                </div>-->
                 <div id='characteristics' class='characteristics'>
-                    <h5>характеристики</h5>
+                    <h5 class='product-title'>характеристики</h5>
                     <ul id="characteristics-list" class='characteristics-list'>
                         <li class='characteristics-item'>
                             <p>Тип кондиционера</p>
@@ -110,7 +110,11 @@
                     </ul>
                 </div>
                 <div id='reviews'>
-                    <?php include get_template_directory() . '/components/_reviews-item.php'; ?>
+                    <?php
+                        $isAdvantages = true;
+                        $isDisadvantages = true;
+                        $title = 'Все Отзывы о продукте';
+                        include get_template_directory() . '/components/_reviews-item.php'; ?>
                 </div>
             </div>
         </div>
