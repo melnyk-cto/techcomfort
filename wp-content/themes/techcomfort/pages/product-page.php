@@ -1,10 +1,10 @@
 <?php /* Template Name: Page - Product */ ?>
 <?php get_header(); ?>
 <?php
-wp_enqueue_script('product-page-js', get_stylesheet_directory_uri() . '/assets/js/product-page.js');
+    wp_enqueue_script('product-page-js', get_stylesheet_directory_uri() . '/assets/js/product-page.js');
 ?>
 <?php
-$_product = wc_get_product($_GET["uid"]);
+    $_product = wc_get_product($_GET["uid"]);
 ?>
 <script>
   // Description for product page
@@ -93,8 +93,8 @@ $_product = wc_get_product($_GET["uid"]);
             <div class='general-information-inner'>
                 <div class='tabs buttons-container-js'>
                     <!--                    <a href='#description' class='btn btn-contour active'>Описание</a>-->
-                    <!--                    <a href='#characteristics' class='btn btn-contour'>Характеристики</a>-->
-                    <!--                    <a href='#reviews' class='btn btn-contour'>Отзывы</a>-->
+                    <a href='#characteristics' class='btn btn-contour'>Характеристики</a>
+                    <a href='#reviews' class='btn btn-contour'>Отзывы</a>
                 </div>
                 <!--                <div id='description' class='description'>-->
                 <!--                    <h5>Описание</h5>-->
@@ -109,69 +109,14 @@ $_product = wc_get_product($_GET["uid"]);
                         </li>
                     </ul>
                 </div>
-                <!--                <div id='reviews' class='reviews'>-->
-                <!--                    <h5>Отзывы</h5>-->
-                <!--                    <form action=''>-->
-                <!--                        <label>-->
-                <!--                            <span>Имя</span>-->
-                <!--                            <input type='text'>-->
-                <!--                        </label>-->
-                <!--                        <label class='textarea'>-->
-                <!--                            <span>Отзывы</span>-->
-                <!--                            <textarea></textarea>-->
-                <!--                        </label>-->
-                <!--                        <label class='textarea'>-->
-                <!--                            <span>Достоинства</span>-->
-                <!--                            <textarea></textarea>-->
-                <!--                        </label>-->
-                <!--                        <label class='textarea'>-->
-                <!--                            <span>Недостатки</span>-->
-                <!--                            <textarea></textarea>-->
-                <!--                        </label>-->
-                <!--                        <div class='rating'>-->
-                <!--                            <p>Оценка:</p>-->
-                <!--                            <svg id="Сгруппировать" xmlns="http://www.w3.org/2000/svg" width="14.137"-->
-                <!--                                 height="13.608"-->
-                <!--                                 viewBox="0 0 14.137 13.608">-->
-                <!--                                <path id="Контур_2" data-name="Контур 2"-->
-                <!--                                      d="M14.137,14.767,9,14.429,7.065,9.569l-1.934,4.86L0,14.767l3.935,3.342L2.644,23.177l4.421-2.795,4.421,2.795L10.2,18.108Z"-->
-                <!--                                      transform="translate(0 -9.569)" fill="#ffdc96"/>-->
-                <!--                            </svg>-->
-                <!--                            <svg id="Сгруппировать" xmlns="http://www.w3.org/2000/svg" width="14.137"-->
-                <!--                                 height="13.608"-->
-                <!--                                 viewBox="0 0 14.137 13.608">-->
-                <!--                                <path id="Контур_2" data-name="Контур 2"-->
-                <!--                                      d="M14.137,14.767,9,14.429,7.065,9.569l-1.934,4.86L0,14.767l3.935,3.342L2.644,23.177l4.421-2.795,4.421,2.795L10.2,18.108Z"-->
-                <!--                                      transform="translate(0 -9.569)" fill="#ffdc96"/>-->
-                <!--                            </svg>-->
-                <!--                            <svg id="Сгруппировать" xmlns="http://www.w3.org/2000/svg" width="14.137"-->
-                <!--                                 height="13.608"-->
-                <!--                                 viewBox="0 0 14.137 13.608">-->
-                <!--                                <path id="Контур_2" data-name="Контур 2"-->
-                <!--                                      d="M14.137,14.767,9,14.429,7.065,9.569l-1.934,4.86L0,14.767l3.935,3.342L2.644,23.177l4.421-2.795,4.421,2.795L10.2,18.108Z"-->
-                <!--                                      transform="translate(0 -9.569)" fill="#ffdc96"/>-->
-                <!--                            </svg>-->
-                <!--                            <svg id="Сгруппировать" xmlns="http://www.w3.org/2000/svg" width="14.137"-->
-                <!--                                 height="13.608"-->
-                <!--                                 viewBox="0 0 14.137 13.608">-->
-                <!--                                <path id="Контур_2" data-name="Контур 2"-->
-                <!--                                      d="M14.137,14.767,9,14.429,7.065,9.569l-1.934,4.86L0,14.767l3.935,3.342L2.644,23.177l4.421-2.795,4.421,2.795L10.2,18.108Z"-->
-                <!--                                      transform="translate(0 -9.569)" fill="#ffdc96"/>-->
-                <!--                            </svg>-->
-                <!--                            <svg id="Сгруппировать" xmlns="http://www.w3.org/2000/svg" width="14.137"-->
-                <!--                                 height="13.608"-->
-                <!--                                 viewBox="0 0 14.137 13.608">-->
-                <!--                                <path id="Контур_2" data-name="Контур 2"-->
-                <!--                                      d="M14.137,14.767,9,14.429,7.065,9.569l-1.934,4.86L0,14.767l3.935,3.342L2.644,23.177l4.421-2.795,4.421,2.795L10.2,18.108Z"-->
-                <!--                                      transform="translate(0 -9.569)" fill="#ffdc96"/>-->
-                <!--                            </svg>-->
-                <!--                        </div>-->
-                <!--                        <button class='btn'>Отправить отзыв</button>-->
-                <!--                    </form>-->
-                <!--                </div>-->
+                <div id='reviews'>
+                    <?php include get_template_directory() . '/components/_reviews-item.php'; ?>
+                </div>
             </div>
         </div>
     </section>
-    <?php include get_template_directory() . '/components/_viewed-products.php'; ?>
+    <div class='container'>
+        <?php include get_template_directory() . '/components/_viewed-products.php'; ?>
+    </div>
 </main>
 <?php get_footer(); ?>
