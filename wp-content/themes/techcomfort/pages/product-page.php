@@ -114,6 +114,8 @@
                         $isAdvantages = true;
                         $isDisadvantages = true;
                         $title = 'Все Отзывы о продукте';
+                        $addNewReviews = true;
+                        $idGlobal = $_GET["uid"];
                         include get_template_directory() . '/components/_reviews-item.php'; ?>
                 </div>
             </div>

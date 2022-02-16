@@ -8,6 +8,8 @@
                 $isAdvantages = false;
                 $isDisadvantages = false;
                 $title = 'ВСЕ ОТЗЫВЫ О МАГАЗИНЕ';
+                $addNewReviews = true;
+                $idGlobal =  'магазин';
                 include get_template_directory() . '/components/_reviews-item.php'; ?>
         </div>
     </section>

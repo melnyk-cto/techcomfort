@@ -435,23 +435,6 @@
         }
       }
     }
-    .reviews {
-      &-item {
-        &:last-child {
-          margin-bottom:  0;
-          padding-bottom: 0;
-        }
-        h5 {
-          font-weight: 600;
-        }
-        .item-title {
-          margin-bottom: 10px;
-        }
-        &:last-child {
-          border-bottom: none;
-        }
-      }
-    }
   }
 }
 
@@ -671,13 +654,6 @@
           }
         }
       }
-      .reviews {
-        &-item {
-          .item-title {
-            margin-bottom: 20px;
-          }
-        }
-      }
     }
   }
 }
@@ -890,17 +866,6 @@
       .viewed-products {
         h2 {
           text-align: center;
-        }
-      }
-      .reviews {
-        &-item {
-          p {
-            font-size:   12px;
-            line-height: 1.3333333;
-          }
-          .item-title {
-            margin-bottom: 10px;
-          }
         }
       }
     }

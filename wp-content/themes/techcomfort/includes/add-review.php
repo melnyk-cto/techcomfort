@@ -15,9 +15,10 @@
         $form_advantages = sanitize_text_field($_POST['form_advantages']);
         $form_disadvantages = sanitize_text_field($_POST['form_disadvantages']);
         $form_tel = sanitize_text_field($_POST['form_tel']);
+        $form_product = sanitize_text_field($_POST['form_product']);
 
         $post_data = array(
-            'post_author' => get_current_user_id(),
+            'post_author' => get_current_user_id(),  # нужно для фильтрации в личном кабинете
             'post_status' => 'publish', # Статус создаваемой записи.
             'post_type' => 'reviews',   # тип записи - «Отзывы»
             'post_title' => $form_first . ' ' . $form_last . ', звезд - ' . $form_rating,   # заголовок отзыва
@@ -34,6 +35,7 @@
         update_field('reviews_advantages', $form_advantages, $post_id);      # достоинства
         update_field('reviews_disadvantages', $form_disadvantages, $post_id);      # недостатки
         update_field('reviews_tel', $form_tel, $post_id);      # телефон
+        update_field('reviews_product', $form_product, $post_id);      # телефон
 
         // Отправляем сообщение об успешной отправке
         $message_success = 'Ваш отзыв успешно добавлен';
