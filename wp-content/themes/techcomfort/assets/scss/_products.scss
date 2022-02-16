@@ -19,11 +19,6 @@
           stroke: $primaryColor;
         }
       }
-      .share:hover {
-        path {
-          fill: $primaryColor;
-        }
-      }
     }
   }
 }
@@ -119,11 +114,6 @@
       &:last-child {
         margin: 15px 0 0;
       }
-    }
-    .share {
-      cursor: pointer;
-      width:  19px;
-      height: 19px;
     }
     .favorites {
       cursor:       pointer;
@@ -270,10 +260,6 @@
         padding:       6px 0;
         border-radius: 3px;
         width:         calc(50% - 6px);
-      }
-      .share {
-        width:  15px;
-        height: 15px;
       }
       .favorites {
         width:        15px;
