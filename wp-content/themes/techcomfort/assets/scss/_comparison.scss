@@ -14,20 +14,15 @@
     width: 100%;
   }
   &-product {
-    width:         100%;
-    display:       flex;
-    align-items:   flex-start;
-    padding:       32px;
-    background:    $white;
-    box-shadow:    0 3px 30px 0 rgba(56, 69, 249, 0.13);
-    border-radius: 10px;
-    margin-bottom: 16px;
-    overflow:      auto;
+    width:       100%;
+    display:     flex;
+    align-items: flex-start;
+    overflow:    auto;
     .close {
       position:   absolute;
       z-index:    1;
       right:      10px;
-      top:        0;
+      top:        10px;
       padding:    5px;
       width:      30px;
       height:     30px;
@@ -36,17 +31,25 @@
         opacity: .7;
       }
     }
+    .product-top {
+      display:         flex;
+      align-items:     center;
+      justify-content: space-between;
+      width:           100%;
+      margin-bottom:   16px;
+    }
     .product-item {
       display:         flex;
       justify-content: space-between;
       align-items:     center;
       min-width:       350px;
-      padding:         0 15px;
       position:        relative;
-      width:         inherit;
-      &:not(:last-child) {
-        border-right: 1px solid #6B92B0;
-      }
+      width:           inherit;
+      flex-direction:  column;
+      padding:         32px;
+      background:      $white;
+      border-radius:   10px;
+      margin:          0 16px 0 0;
       h3 {
         font-size:     20px;
         font-weight:   500;
@@ -68,6 +71,7 @@
       .item-image {
         max-width: 300px;
         width:     45%;
+        margin-right: 10px;
         img {
           object-fit: contain;
           height:     185px;
@@ -83,12 +87,7 @@
     }
   }
   .product-characteristics {
-    width:         100%;
-    padding:       32px;
-    background:    $white;
-    border-radius: 10px;
-    box-shadow:    0 3px 30px 0 rgba(56, 69, 249, 0.13);
-    overflow:      auto;
+    width: 100%;
     h5 {
       font-weight:   500;
       margin-bottom: 12px;
@@ -97,8 +96,7 @@
       width:   100%;
       display: flex;
       p {
-        min-width:     350px;
-        padding:       10px;
+        padding:       0 0 10px 0;
         width:         inherit;
         border-bottom: 1px solid $primaryColor;
         &:not(:last-child) {
@@ -126,14 +124,8 @@
       flex-wrap: wrap;
     }
     &-product {
-      border-radius: 5px;
-      box-shadow:    0 3px 8px 0 rgba(56, 69, 249, 0.13);
-      padding:       20px;
       .product-item {
-        margin: 0 auto 20px;
-        .item-image {
-          width: 48%;
-        }
+        margin: 0 16px 20px 16px;
         .item-description {
           h3 {
             font-size:     16px;
@@ -158,9 +150,6 @@
       }
     }
     .product-characteristics {
-      padding:       20px;
-      border-radius: 5px;
-      box-shadow:    0 3px 8px 0 rgba(56, 69, 249, 0.13);
       h5 {
         margin-bottom: 10px;
       }
@@ -181,19 +170,10 @@
       flex-direction: column;
     }
     &-product {
-      border-radius: 0;
       .product-item {
-        max-width:      340px;
         padding:        20px;
         flex-direction: column;
-        min-width:      172px;
-        .item-image {
-          max-width:     initial;
-          width:         100%;
-          margin-bottom: 15px;
-        }
         .item-description {
-          text-align: center;
           h3 {
             font-size:     16px;
             margin-bottom: 8px;
@@ -212,14 +192,8 @@
       }
     }
     .product-characteristics {
-      border-radius: 0;
       h5 {
         font-size: 16px;
-      }
-      .product-value {
-        p {
-          min-width: 172px;
-        }
       }
       li {
         padding-bottom: 10px;

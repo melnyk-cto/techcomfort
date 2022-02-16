@@ -1,12 +1,13 @@
 <?php
     global $compare;
     global $title;
+    global $_product;
     $isTitle = false;
 ?>
 
 
-<?php foreach ($compare as $i => $product) {
-    $_product = wc_get_product($product);
+<?php
+    $_product = wc_get_product($_product->get_id());
     if ($_product) {
         $attributes = $_product->get_description();
         $explodes = explode(PHP_EOL, $attributes);
@@ -16,16 +17,14 @@
                 $isTitle = true;
             }
         }
-        ?>
-    <?php }
-} ?>
+    } ?>
 
 <?php if ($isTitle) { ?>
     <li>
         <h5><?php echo $title ?></h5>
         <div class='product-value'>
-            <?php foreach ($compare as $i => $product) {
-                $_product = wc_get_product($product);
+            <?php
+                $_product = wc_get_product($_product->get_id());
                 if ($_product) {
                     $attributes = $_product->get_description();
                     $explodes = explode(PHP_EOL, $attributes);
@@ -47,7 +46,7 @@
                         echo '<p>Нет данных</p>';
                     }
                 }
-            } ?>
+            ?>
         </div>
     </li>
 <?php } ?>

@@ -1,25 +1,12 @@
 document.addEventListener("DOMContentLoaded", function () {
-
-  const favorites = document.getElementsByClassName("favorites-js");
-  const compare = document.getElementsByClassName("compare-js");
-
-
-  // // Сравнение товаров
-  // const comparisonClose = document.getElementsByClassName("comparison-close-js");
-  // for (let i = 0; i < compare.length; i++) {
-  //   compare[i].addEventListener("click", function (e) {
-  //     e.preventDefault();
-  //     this.classList.toggle("active");
-  //     // updateCookie(this);
-  //   });
-  // }
-  //
-  // for (let i = 0; i < comparisonClose.length; i++) {
-  //   comparisonClose[i].addEventListener('click', function () {
-  //     // updateCookie(this);
-  //     window.location.reload();
-  //   });
-  // }
+console.log(111)
+  //   Удаление из избранного
+  const compareButton = document.getElementsByClassName('compare-close-js');
+  for (let i = 0; i < compareButton.length; i++) {
+    compareButton[i].addEventListener('click', function () {
+      this.closest('.product-item').classList.add('d-none');
+    })
+  }
 
 });
 
