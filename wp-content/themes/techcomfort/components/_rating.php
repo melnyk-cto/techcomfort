@@ -20,7 +20,10 @@
             </svg>
         <?php } ?>
     <?php } ?>
-    <?php if ($showCountsReviews) { ?>
-        <div class='reviews-count'> <?php echo count($starsArray) ?> отзывов</div>
-    <?php } ?>
+    <?php
+        if ($starsArray) {
+            if ($showCountsReviews) { ?>
+                <div class='reviews-count'> <?php echo count($starsArray) ?> отзывов</div>
+            <?php }
+        } ?>
 </div>

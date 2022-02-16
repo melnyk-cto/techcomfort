@@ -65,7 +65,7 @@ document.addEventListener("DOMContentLoaded", function () {
     });
   }
 
-  //   Удаление из списка желаний
+  // Удаление из списка желаний
   const favoritesButton = document.getElementsByClassName('favorites-js');
   for (let i = 0; i < favoritesButton.length; i++) {
     favoritesButton[i].addEventListener('click', function () {
