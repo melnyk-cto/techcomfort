@@ -177,8 +177,10 @@
                                                     $starsArray = $countProducts[$loop->post->ID];
                                                     $showCountsReviews = true;
                                                     $sumReviews = 0;
-                                                    if (count($starsArray) > 0) {
-                                                        $sumReviews = round((array_sum($starsArray) / count($starsArray)));
+                                                    if ($starsArray) {
+                                                        if (count($starsArray) > 0) {
+                                                            $sumReviews = round((array_sum($starsArray) / count($starsArray)));
+                                                        }
                                                     }
                                                     include get_template_directory() . '/components/_rating.php'; ?>
                                                 <div class="description-wrapper">

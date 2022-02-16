@@ -114,8 +114,10 @@
                                                     $starsArray = $countProducts[$_product->get_id()];
                                                     $showCountsReviews = true;
                                                     $sumReviews = 0;
-                                                    if (count($starsArray) > 0) {
-                                                        $sumReviews = round((array_sum($starsArray) / count($starsArray)));
+                                                    if ($starsArray) {
+                                                        if (count($starsArray) > 0) {
+                                                            $sumReviews = round((array_sum($starsArray) / count($starsArray)));
+                                                        }
                                                     }
                                                     include get_template_directory() . '/components/_rating.php'; ?>
                                                 <a href='<?php echo home_url('/'); ?>product?uid=<?php echo $_product->get_id(); ?>'>
@@ -180,8 +182,10 @@
                                                     $starsArray = $countProducts[$_product->get_id()];
                                                     $showCountsReviews = true;
                                                     $sumReviews = 0;
-                                                    if (count($starsArray) > 0) {
-                                                        $sumReviews = round((array_sum($starsArray) / count($starsArray)));
+                                                    if ($starsArray) {
+                                                        if (count($starsArray) > 0) {
+                                                            $sumReviews = round((array_sum($starsArray) / count($starsArray)));
+                                                        }
                                                     }
                                                     include get_template_directory() . '/components/_rating.php'; ?>
                                                 <a href='<?php echo home_url('/'); ?>product?uid=<?php echo $_product->get_id(); ?>'>
@@ -271,8 +275,10 @@
                                                     $starsArray = $countProducts[$_product->get_id()];
                                                     $showCountsReviews = true;
                                                     $sumReviews = 0;
-                                                    if (count($starsArray) > 0) {
-                                                        $sumReviews = round((array_sum($starsArray) / count($starsArray)));
+                                                    if ($starsArray) {
+                                                        if (count($starsArray) > 0) {
+                                                            $sumReviews = round((array_sum($starsArray) / count($starsArray)));
+                                                        }
                                                     }
                                                     include get_template_directory() . '/components/_rating.php'; ?>
                                                 <a href='<?php echo home_url('/'); ?>product?uid=<?php echo $_product->get_id(); ?>'>
@@ -336,8 +342,10 @@
                                                         $starsArray = $countProducts[$_product->get_id()];
                                                         $showCountsReviews = true;
                                                         $sumReviews = 0;
-                                                        if (count($starsArray) > 0) {
-                                                            $sumReviews = round((array_sum($starsArray) / count($starsArray)));
+                                                        if ($starsArray) {
+                                                            if (count($starsArray) > 0) {
+                                                                $sumReviews = round((array_sum($starsArray) / count($starsArray)));
+                                                            }
                                                         }
                                                         include get_template_directory() . '/components/_rating.php'; ?>
                                                 </div>
