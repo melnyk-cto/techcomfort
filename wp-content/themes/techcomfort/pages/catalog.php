@@ -8,6 +8,26 @@
     wp_enqueue_script('nouislider-js', get_stylesheet_directory_uri() . '/assets/lib/nouislider.js');
 ?>
 
+<!-- Отзывы -->
+<?php
+    $argsReviews = [
+        'post_type' => 'reviews', # тип записи
+        'post_status' => 'publish', # статус записи
+        'posts_per_page' => -1,        # количество (-1 - все)
+    ];
+    $myPostReviews_Query = new WP_Query($argsReviews);
+    $countProducts = [];
+    if ($myPostReviews_Query->have_posts()) {
+        while ($myPostReviews_Query->have_posts()) :
+            $myPostReviews_Query->the_post();
+            if (get_field('reviews_product') !== 'магазин') {
+                $countProducts[get_field('reviews_product')][] = get_field('reviews_rating');
+            }
+        endwhile;
+        wp_reset_postdata(); // "сброс"
+    }
+?>
+
 <!-- Get Products -->
 <?php
     $args = array(
@@ -152,48 +172,14 @@
                                                 <?php if (has_post_thumbnail($loop->post->ID)) echo get_the_post_thumbnail($loop->post->ID, 'shop_catalog'); else echo '<img src="' . woocommerce_placeholder_img_src() . '" alt="product-image" />'; ?>
                                             </a>
                                             <div class='item-description'>
-                                                <div class='rating'>
-                                                    <svg id="Сгруппировать" xmlns="http://www.w3.org/2000/svg"
-                                                         width="14.137"
-                                                         height="13.608"
-                                                         viewBox="0 0 14.137 13.608">
-                                                        <path id="Контур_2" data-name="Контур 2"
-                                                              d="M14.137,14.767,9,14.429,7.065,9.569l-1.934,4.86L0,14.767l3.935,3.342L2.644,23.177l4.421-2.795,4.421,2.795L10.2,18.108Z"
-                                                              transform="translate(0 -9.569)" fill="#ffdc96" />
-                                                    </svg>
-                                                    <svg id="Сгруппировать" xmlns="http://www.w3.org/2000/svg"
-                                                         width="14.137"
-                                                         height="13.608"
-                                                         viewBox="0 0 14.137 13.608">
-                                                        <path id="Контур_2" data-name="Контур 2"
-                                                              d="M14.137,14.767,9,14.429,7.065,9.569l-1.934,4.86L0,14.767l3.935,3.342L2.644,23.177l4.421-2.795,4.421,2.795L10.2,18.108Z"
-                                                              transform="translate(0 -9.569)" fill="#ffdc96" />
-                                                    </svg>
-                                                    <svg id="Сгруппировать" xmlns="http://www.w3.org/2000/svg"
-                                                         width="14.137"
-                                                         height="13.608"
-                                                         viewBox="0 0 14.137 13.608">
-                                                        <path id="Контур_2" data-name="Контур 2"
-                                                              d="M14.137,14.767,9,14.429,7.065,9.569l-1.934,4.86L0,14.767l3.935,3.342L2.644,23.177l4.421-2.795,4.421,2.795L10.2,18.108Z"
-                                                              transform="translate(0 -9.569)" fill="#ffdc96" />
-                                                    </svg>
-                                                    <svg id="Сгруппировать" xmlns="http://www.w3.org/2000/svg"
-                                                         width="14.137"
-                                                         height="13.608"
-                                                         viewBox="0 0 14.137 13.608">
-                                                        <path id="Контур_2" data-name="Контур 2"
-                                                              d="M14.137,14.767,9,14.429,7.065,9.569l-1.934,4.86L0,14.767l3.935,3.342L2.644,23.177l4.421-2.795,4.421,2.795L10.2,18.108Z"
-                                                              transform="translate(0 -9.569)" fill="#ffdc96" />
-                                                    </svg>
-                                                    <svg id="Сгруппировать" xmlns="http://www.w3.org/2000/svg"
-                                                         width="14.137"
-                                                         height="13.608"
-                                                         viewBox="0 0 14.137 13.608">
-                                                        <path id="Контур_2" data-name="Контур 2"
-                                                              d="M14.137,14.767,9,14.429,7.065,9.569l-1.934,4.86L0,14.767l3.935,3.342L2.644,23.177l4.421-2.795,4.421,2.795L10.2,18.108Z"
-                                                              transform="translate(0 -9.569)" fill="#ffdc96" />
-                                                    </svg>
-                                                </div>
+                                                <?php
+                                                    $starsArray = $countProducts[$loop->post->ID];
+                                                    $showCountsReviews = true;
+                                                    $sumReviews = 0;
+                                                    if (count($starsArray) > 0) {
+                                                        $sumReviews = round((array_sum($starsArray) / count($starsArray)));
+                                                    }
+                                                    include get_template_directory() . '/components/_rating.php'; ?>
                                                 <div class="description-wrapper">
                                                     <a href='<?php echo home_url('/'); ?>product/?uid=<?php the_id(); ?>'>
                                                         <?php the_title(); ?>

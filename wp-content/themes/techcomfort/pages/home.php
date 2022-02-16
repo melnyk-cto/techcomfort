@@ -3,6 +3,28 @@
 <?php
     wp_enqueue_script('home-js', get_stylesheet_directory_uri() . '/assets/js/home.js');
 ?>
+
+<!-- Отзывы -->
+<?php
+    $argsReviews = [
+        'post_type' => 'reviews', # тип записи
+        'post_status' => 'publish', # статус записи
+        'posts_per_page' => -1,        # количество (-1 - все)
+    ];
+
+    $myPostReviews_Query = new WP_Query($argsReviews);
+    $countProducts = [];
+    if ($myPostReviews_Query->have_posts()) {
+        while ($myPostReviews_Query->have_posts()) :
+            $myPostReviews_Query->the_post();
+            if (get_field('reviews_product') !== 'магазин') {
+                $countProducts[get_field('reviews_product')][] = get_field('reviews_rating');
+            }
+        endwhile;
+        wp_reset_postdata(); // "сброс"
+    }
+?>
+
 <main class='home'>
     <section class='banner'>
         <div class='container'>
@@ -88,48 +110,14 @@
                                                 <?php echo $_product->get_image('500') ?>
                                             </a>
                                             <div class='item-description'>
-                                                <div class='rating'>
-                                                    <svg id="Сгруппировать" xmlns="http://www.w3.org/2000/svg"
-                                                         width="14.137"
-                                                         height="13.608"
-                                                         viewBox="0 0 14.137 13.608">
-                                                        <path id="Контур_2" data-name="Контур 2"
-                                                              d="M14.137,14.767,9,14.429,7.065,9.569l-1.934,4.86L0,14.767l3.935,3.342L2.644,23.177l4.421-2.795,4.421,2.795L10.2,18.108Z"
-                                                              transform="translate(0 -9.569)" fill="#ffdc96"/>
-                                                    </svg>
-                                                    <svg id="Сгруппировать" xmlns="http://www.w3.org/2000/svg"
-                                                         width="14.137"
-                                                         height="13.608"
-                                                         viewBox="0 0 14.137 13.608">
-                                                        <path id="Контур_2" data-name="Контур 2"
-                                                              d="M14.137,14.767,9,14.429,7.065,9.569l-1.934,4.86L0,14.767l3.935,3.342L2.644,23.177l4.421-2.795,4.421,2.795L10.2,18.108Z"
-                                                              transform="translate(0 -9.569)" fill="#ffdc96"/>
-                                                    </svg>
-                                                    <svg id="Сгруппировать" xmlns="http://www.w3.org/2000/svg"
-                                                         width="14.137"
-                                                         height="13.608"
-                                                         viewBox="0 0 14.137 13.608">
-                                                        <path id="Контур_2" data-name="Контур 2"
-                                                              d="M14.137,14.767,9,14.429,7.065,9.569l-1.934,4.86L0,14.767l3.935,3.342L2.644,23.177l4.421-2.795,4.421,2.795L10.2,18.108Z"
-                                                              transform="translate(0 -9.569)" fill="#ffdc96"/>
-                                                    </svg>
-                                                    <svg id="Сгруппировать" xmlns="http://www.w3.org/2000/svg"
-                                                         width="14.137"
-                                                         height="13.608"
-                                                         viewBox="0 0 14.137 13.608">
-                                                        <path id="Контур_2" data-name="Контур 2"
-                                                              d="M14.137,14.767,9,14.429,7.065,9.569l-1.934,4.86L0,14.767l3.935,3.342L2.644,23.177l4.421-2.795,4.421,2.795L10.2,18.108Z"
-                                                              transform="translate(0 -9.569)" fill="#ffdc96"/>
-                                                    </svg>
-                                                    <svg id="Сгруппировать" xmlns="http://www.w3.org/2000/svg"
-                                                         width="14.137"
-                                                         height="13.608"
-                                                         viewBox="0 0 14.137 13.608">
-                                                        <path id="Контур_2" data-name="Контур 2"
-                                                              d="M14.137,14.767,9,14.429,7.065,9.569l-1.934,4.86L0,14.767l3.935,3.342L2.644,23.177l4.421-2.795,4.421,2.795L10.2,18.108Z"
-                                                              transform="translate(0 -9.569)" fill="#ffdc96"/>
-                                                    </svg>
-                                                </div>
+                                                <?php
+                                                    $starsArray = $countProducts[$_product->get_id()];
+                                                    $showCountsReviews = true;
+                                                    $sumReviews = 0;
+                                                    if (count($starsArray) > 0) {
+                                                        $sumReviews = round((array_sum($starsArray) / count($starsArray)));
+                                                    }
+                                                    include get_template_directory() . '/components/_rating.php'; ?>
                                                 <a href='<?php echo home_url('/'); ?>product?uid=<?php echo $_product->get_id(); ?>'>
                                                     <?php echo $_product->get_title() ?>
                                                     <div class='description-icons'>
@@ -148,7 +136,7 @@
                                                              viewBox="0 0 512 512"
                                                              xml:space="preserve" xmlns="http://www.w3.org/2000/svg">
                                                 <path fill='#B2C5D4'
-                                                      d="m406 332c-29.636 0-55.969 14.402-72.378 36.571l-141.27-72.195c2.37-8.052 3.648-16.567 3.648-25.376 0-11.931-2.339-23.324-6.574-33.753l148.06-88.958c16.52 19.39 41.104 31.711 68.514 31.711 49.626 0 90-40.374 90-90s-40.374-90-90-90-90 40.374-90 90c0 11.47 2.161 22.443 6.09 32.54l-148.43 89.18c-16.508-18.818-40.719-30.72-67.66-30.72-49.626 0-90 40.374-90 90s40.374 90 90 90c30.122 0 56.832-14.876 73.177-37.666l140.86 71.985c-2.623 8.434-4.037 17.395-4.037 26.681 0 49.626 40.374 90 90 90s90-40.374 90-90-40.374-90-90-90zm0-302c33.084 0 60 26.916 60 60s-26.916 60-60 60-60-26.916-60-60 26.916-60 60-60zm-300 301c-33.084 0-60-26.916-60-60s26.916-60 60-60 60 26.916 60 60-26.916 60-60 60zm300 151c-33.084 0-60-26.916-60-60s26.916-60 60-60 60 26.916 60 60-26.916 60-60 60z"/>
+                                                      d="m406 332c-29.636 0-55.969 14.402-72.378 36.571l-141.27-72.195c2.37-8.052 3.648-16.567 3.648-25.376 0-11.931-2.339-23.324-6.574-33.753l148.06-88.958c16.52 19.39 41.104 31.711 68.514 31.711 49.626 0 90-40.374 90-90s-40.374-90-90-90-90 40.374-90 90c0 11.47 2.161 22.443 6.09 32.54l-148.43 89.18c-16.508-18.818-40.719-30.72-67.66-30.72-49.626 0-90 40.374-90 90s40.374 90 90 90c30.122 0 56.832-14.876 73.177-37.666l140.86 71.985c-2.623 8.434-4.037 17.395-4.037 26.681 0 49.626 40.374 90 90 90s90-40.374 90-90-40.374-90-90-90zm0-302c33.084 0 60 26.916 60 60s-26.916 60-60 60-60-26.916-60-60 26.916-60 60-60zm-300 301c-33.084 0-60-26.916-60-60s26.916-60 60-60 60 26.916 60 60-26.916 60-60 60zm300 151c-33.084 0-60-26.916-60-60s26.916-60 60-60 60 26.916 60 60-26.916 60-60 60z" />
                                             </svg>
                                                     </div>
                                                 </a>
@@ -156,7 +144,8 @@
                                                 <div class='description-buttons'>
                                                     <a href='<?php echo home_url('/'); ?>product?uid=<?php echo $_product->get_id(); ?>'
                                                        class='btn'>Купить</a>
-                                                    <a data-quantity="1" data-product_id="<?php echo $_product->get_id(); ?>"
+                                                    <a data-quantity="1"
+                                                       data-product_id="<?php echo $_product->get_id(); ?>"
                                                        href='<?php echo home_url('/'); ?>?add-to-cart=<?php echo $_product->get_id(); ?>'
                                                        class='btn btn-second product_type_simple add_to_cart_button ajax_add_to_cart'>
                                                         В Корзину
@@ -203,48 +192,14 @@
                                                 <?php echo $_product->get_image('500') ?>
                                             </a>
                                             <div class='item-description'>
-                                                <div class='rating'>
-                                                    <svg id="Сгруппировать" xmlns="http://www.w3.org/2000/svg"
-                                                         width="14.137"
-                                                         height="13.608"
-                                                         viewBox="0 0 14.137 13.608">
-                                                        <path id="Контур_2" data-name="Контур 2"
-                                                              d="M14.137,14.767,9,14.429,7.065,9.569l-1.934,4.86L0,14.767l3.935,3.342L2.644,23.177l4.421-2.795,4.421,2.795L10.2,18.108Z"
-                                                              transform="translate(0 -9.569)" fill="#ffdc96"/>
-                                                    </svg>
-                                                    <svg id="Сгруппировать" xmlns="http://www.w3.org/2000/svg"
-                                                         width="14.137"
-                                                         height="13.608"
-                                                         viewBox="0 0 14.137 13.608">
-                                                        <path id="Контур_2" data-name="Контур 2"
-                                                              d="M14.137,14.767,9,14.429,7.065,9.569l-1.934,4.86L0,14.767l3.935,3.342L2.644,23.177l4.421-2.795,4.421,2.795L10.2,18.108Z"
-                                                              transform="translate(0 -9.569)" fill="#ffdc96"/>
-                                                    </svg>
-                                                    <svg id="Сгруппировать" xmlns="http://www.w3.org/2000/svg"
-                                                         width="14.137"
-                                                         height="13.608"
-                                                         viewBox="0 0 14.137 13.608">
-                                                        <path id="Контур_2" data-name="Контур 2"
-                                                              d="M14.137,14.767,9,14.429,7.065,9.569l-1.934,4.86L0,14.767l3.935,3.342L2.644,23.177l4.421-2.795,4.421,2.795L10.2,18.108Z"
-                                                              transform="translate(0 -9.569)" fill="#ffdc96"/>
-                                                    </svg>
-                                                    <svg id="Сгруппировать" xmlns="http://www.w3.org/2000/svg"
-                                                         width="14.137"
-                                                         height="13.608"
-                                                         viewBox="0 0 14.137 13.608">
-                                                        <path id="Контур_2" data-name="Контур 2"
-                                                              d="M14.137,14.767,9,14.429,7.065,9.569l-1.934,4.86L0,14.767l3.935,3.342L2.644,23.177l4.421-2.795,4.421,2.795L10.2,18.108Z"
-                                                              transform="translate(0 -9.569)" fill="#ffdc96"/>
-                                                    </svg>
-                                                    <svg id="Сгруппировать" xmlns="http://www.w3.org/2000/svg"
-                                                         width="14.137"
-                                                         height="13.608"
-                                                         viewBox="0 0 14.137 13.608">
-                                                        <path id="Контур_2" data-name="Контур 2"
-                                                              d="M14.137,14.767,9,14.429,7.065,9.569l-1.934,4.86L0,14.767l3.935,3.342L2.644,23.177l4.421-2.795,4.421,2.795L10.2,18.108Z"
-                                                              transform="translate(0 -9.569)" fill="#ffdc96"/>
-                                                    </svg>
-                                                </div>
+                                                <?php
+                                                    $starsArray = $countProducts[$_product->get_id()];
+                                                    $showCountsReviews = true;
+                                                    $sumReviews = 0;
+                                                    if (count($starsArray) > 0) {
+                                                        $sumReviews = round((array_sum($starsArray) / count($starsArray)));
+                                                    }
+                                                    include get_template_directory() . '/components/_rating.php'; ?>
                                                 <a href='<?php echo home_url('/'); ?>product?uid=<?php echo $_product->get_id(); ?>'>
                                                     <?php echo $_product->get_title() ?>
                                                     <div class='description-icons'>
@@ -262,7 +217,7 @@
                                                              viewBox="0 0 512 512"
                                                              xml:space="preserve" xmlns="http://www.w3.org/2000/svg">
                                                 <path fill='#B2C5D4'
-                                                      d="m406 332c-29.636 0-55.969 14.402-72.378 36.571l-141.27-72.195c2.37-8.052 3.648-16.567 3.648-25.376 0-11.931-2.339-23.324-6.574-33.753l148.06-88.958c16.52 19.39 41.104 31.711 68.514 31.711 49.626 0 90-40.374 90-90s-40.374-90-90-90-90 40.374-90 90c0 11.47 2.161 22.443 6.09 32.54l-148.43 89.18c-16.508-18.818-40.719-30.72-67.66-30.72-49.626 0-90 40.374-90 90s40.374 90 90 90c30.122 0 56.832-14.876 73.177-37.666l140.86 71.985c-2.623 8.434-4.037 17.395-4.037 26.681 0 49.626 40.374 90 90 90s90-40.374 90-90-40.374-90-90-90zm0-302c33.084 0 60 26.916 60 60s-26.916 60-60 60-60-26.916-60-60 26.916-60 60-60zm-300 301c-33.084 0-60-26.916-60-60s26.916-60 60-60 60 26.916 60 60-26.916 60-60 60zm300 151c-33.084 0-60-26.916-60-60s26.916-60 60-60 60 26.916 60 60-26.916 60-60 60z"/>
+                                                      d="m406 332c-29.636 0-55.969 14.402-72.378 36.571l-141.27-72.195c2.37-8.052 3.648-16.567 3.648-25.376 0-11.931-2.339-23.324-6.574-33.753l148.06-88.958c16.52 19.39 41.104 31.711 68.514 31.711 49.626 0 90-40.374 90-90s-40.374-90-90-90-90 40.374-90 90c0 11.47 2.161 22.443 6.09 32.54l-148.43 89.18c-16.508-18.818-40.719-30.72-67.66-30.72-49.626 0-90 40.374-90 90s40.374 90 90 90c30.122 0 56.832-14.876 73.177-37.666l140.86 71.985c-2.623 8.434-4.037 17.395-4.037 26.681 0 49.626 40.374 90 90 90s90-40.374 90-90-40.374-90-90-90zm0-302c33.084 0 60 26.916 60 60s-26.916 60-60 60-60-26.916-60-60 26.916-60 60-60zm-300 301c-33.084 0-60-26.916-60-60s26.916-60 60-60 60 26.916 60 60-26.916 60-60 60zm300 151c-33.084 0-60-26.916-60-60s26.916-60 60-60 60 26.916 60 60-26.916 60-60 60z" />
                                             </svg>
                                                     </div>
                                                 </a>
@@ -270,7 +225,8 @@
                                                 <div class='description-buttons'>
                                                     <a href='<?php echo home_url('/'); ?>product?uid=<?php echo $_product->get_id(); ?>'
                                                        class='btn'>Купить</a>
-                                                    <a data-quantity="1" data-product_id="<?php echo $_product->get_id(); ?>"
+                                                    <a data-quantity="1"
+                                                       data-product_id="<?php echo $_product->get_id(); ?>"
                                                        href='<?php echo home_url('/'); ?>?add-to-cart=<?php echo $_product->get_id(); ?>'
                                                        class='btn btn-second product_type_simple add_to_cart_button ajax_add_to_cart'>В
                                                         Корзину</a>
@@ -342,48 +298,14 @@
                                                 <?php echo $_product->get_image('500') ?>
                                             </a>
                                             <div class='item-description'>
-                                                <div class='rating'>
-                                                    <svg id="Сгруппировать" xmlns="http://www.w3.org/2000/svg"
-                                                         width="14.137"
-                                                         height="13.608"
-                                                         viewBox="0 0 14.137 13.608">
-                                                        <path id="Контур_2" data-name="Контур 2"
-                                                              d="M14.137,14.767,9,14.429,7.065,9.569l-1.934,4.86L0,14.767l3.935,3.342L2.644,23.177l4.421-2.795,4.421,2.795L10.2,18.108Z"
-                                                              transform="translate(0 -9.569)" fill="#ffdc96"/>
-                                                    </svg>
-                                                    <svg id="Сгруппировать" xmlns="http://www.w3.org/2000/svg"
-                                                         width="14.137"
-                                                         height="13.608"
-                                                         viewBox="0 0 14.137 13.608">
-                                                        <path id="Контур_2" data-name="Контур 2"
-                                                              d="M14.137,14.767,9,14.429,7.065,9.569l-1.934,4.86L0,14.767l3.935,3.342L2.644,23.177l4.421-2.795,4.421,2.795L10.2,18.108Z"
-                                                              transform="translate(0 -9.569)" fill="#ffdc96"/>
-                                                    </svg>
-                                                    <svg id="Сгруппировать" xmlns="http://www.w3.org/2000/svg"
-                                                         width="14.137"
-                                                         height="13.608"
-                                                         viewBox="0 0 14.137 13.608">
-                                                        <path id="Контур_2" data-name="Контур 2"
-                                                              d="M14.137,14.767,9,14.429,7.065,9.569l-1.934,4.86L0,14.767l3.935,3.342L2.644,23.177l4.421-2.795,4.421,2.795L10.2,18.108Z"
-                                                              transform="translate(0 -9.569)" fill="#ffdc96"/>
-                                                    </svg>
-                                                    <svg id="Сгруппировать" xmlns="http://www.w3.org/2000/svg"
-                                                         width="14.137"
-                                                         height="13.608"
-                                                         viewBox="0 0 14.137 13.608">
-                                                        <path id="Контур_2" data-name="Контур 2"
-                                                              d="M14.137,14.767,9,14.429,7.065,9.569l-1.934,4.86L0,14.767l3.935,3.342L2.644,23.177l4.421-2.795,4.421,2.795L10.2,18.108Z"
-                                                              transform="translate(0 -9.569)" fill="#ffdc96"/>
-                                                    </svg>
-                                                    <svg id="Сгруппировать" xmlns="http://www.w3.org/2000/svg"
-                                                         width="14.137"
-                                                         height="13.608"
-                                                         viewBox="0 0 14.137 13.608">
-                                                        <path id="Контур_2" data-name="Контур 2"
-                                                              d="M14.137,14.767,9,14.429,7.065,9.569l-1.934,4.86L0,14.767l3.935,3.342L2.644,23.177l4.421-2.795,4.421,2.795L10.2,18.108Z"
-                                                              transform="translate(0 -9.569)" fill="#ffdc96"/>
-                                                    </svg>
-                                                </div>
+                                                <?php
+                                                    $starsArray = $countProducts[$_product->get_id()];
+                                                    $showCountsReviews = true;
+                                                    $sumReviews = 0;
+                                                    if (count($starsArray) > 0) {
+                                                        $sumReviews = round((array_sum($starsArray) / count($starsArray)));
+                                                    }
+                                                    include get_template_directory() . '/components/_rating.php'; ?>
                                                 <a href='<?php echo home_url('/'); ?>product?uid=<?php echo $_product->get_id(); ?>'>
                                                     <?php echo $_product->get_title() ?>
                                                     <div class='description-icons'>
@@ -402,7 +324,7 @@
                                                              viewBox="0 0 512 512"
                                                              xml:space="preserve" xmlns="http://www.w3.org/2000/svg">
                                                 <path fill='#B2C5D4'
-                                                      d="m406 332c-29.636 0-55.969 14.402-72.378 36.571l-141.27-72.195c2.37-8.052 3.648-16.567 3.648-25.376 0-11.931-2.339-23.324-6.574-33.753l148.06-88.958c16.52 19.39 41.104 31.711 68.514 31.711 49.626 0 90-40.374 90-90s-40.374-90-90-90-90 40.374-90 90c0 11.47 2.161 22.443 6.09 32.54l-148.43 89.18c-16.508-18.818-40.719-30.72-67.66-30.72-49.626 0-90 40.374-90 90s40.374 90 90 90c30.122 0 56.832-14.876 73.177-37.666l140.86 71.985c-2.623 8.434-4.037 17.395-4.037 26.681 0 49.626 40.374 90 90 90s90-40.374 90-90-40.374-90-90-90zm0-302c33.084 0 60 26.916 60 60s-26.916 60-60 60-60-26.916-60-60 26.916-60 60-60zm-300 301c-33.084 0-60-26.916-60-60s26.916-60 60-60 60 26.916 60 60-26.916 60-60 60zm300 151c-33.084 0-60-26.916-60-60s26.916-60 60-60 60 26.916 60 60-26.916 60-60 60z"/>
+                                                      d="m406 332c-29.636 0-55.969 14.402-72.378 36.571l-141.27-72.195c2.37-8.052 3.648-16.567 3.648-25.376 0-11.931-2.339-23.324-6.574-33.753l148.06-88.958c16.52 19.39 41.104 31.711 68.514 31.711 49.626 0 90-40.374 90-90s-40.374-90-90-90-90 40.374-90 90c0 11.47 2.161 22.443 6.09 32.54l-148.43 89.18c-16.508-18.818-40.719-30.72-67.66-30.72-49.626 0-90 40.374-90 90s40.374 90 90 90c30.122 0 56.832-14.876 73.177-37.666l140.86 71.985c-2.623 8.434-4.037 17.395-4.037 26.681 0 49.626 40.374 90 90 90s90-40.374 90-90-40.374-90-90-90zm0-302c33.084 0 60 26.916 60 60s-26.916 60-60 60-60-26.916-60-60 26.916-60 60-60zm-300 301c-33.084 0-60-26.916-60-60s26.916-60 60-60 60 26.916 60 60-26.916 60-60 60zm300 151c-33.084 0-60-26.916-60-60s26.916-60 60-60 60 26.916 60 60-26.916 60-60 60z" />
                                             </svg>
                                                     </div>
                                                 </a>
@@ -410,7 +332,8 @@
                                                 <div class='description-buttons'>
                                                     <a href='<?php echo home_url('/'); ?>product?uid=<?php echo $_product->get_id(); ?>'
                                                        class='btn'>Купить</a>
-                                                    <a data-quantity="1" data-product_id="<?php echo $_product->get_id(); ?>"
+                                                    <a data-quantity="1"
+                                                       data-product_id="<?php echo $_product->get_id(); ?>"
                                                        href='<?php echo home_url('/'); ?>?add-to-cart=<?php echo $_product->get_id(); ?>'
                                                        class='btn btn-second product_type_simple add_to_cart_button ajax_add_to_cart'>В
                                                         Корзину</a>
@@ -456,43 +379,14 @@
                                             <div class='reviews-item'>
                                                 <div class='item-title'>
                                                     <h3><?php echo $name ?></h3>
-                                                    <div class='rating'>
-                                                        <svg id="Сгруппировать" xmlns="http://www.w3.org/2000/svg"
-                                                             width="14.137"
-                                                             height="13.608" viewBox="0 0 14.137 13.608">
-                                                            <path id="Контур_2" data-name="Контур 2"
-                                                                  d="M14.137,14.767,9,14.429,7.065,9.569l-1.934,4.86L0,14.767l3.935,3.342L2.644,23.177l4.421-2.795,4.421,2.795L10.2,18.108Z"
-                                                                  transform="translate(0 -9.569)" fill="#ffdc96"/>
-                                                        </svg>
-                                                        <svg id="Сгруппировать" xmlns="http://www.w3.org/2000/svg"
-                                                             width="14.137"
-                                                             height="13.608" viewBox="0 0 14.137 13.608">
-                                                            <path id="Контур_2" data-name="Контур 2"
-                                                                  d="M14.137,14.767,9,14.429,7.065,9.569l-1.934,4.86L0,14.767l3.935,3.342L2.644,23.177l4.421-2.795,4.421,2.795L10.2,18.108Z"
-                                                                  transform="translate(0 -9.569)" fill="#ffdc96"/>
-                                                        </svg>
-                                                        <svg id="Сгруппировать" xmlns="http://www.w3.org/2000/svg"
-                                                             width="14.137"
-                                                             height="13.608" viewBox="0 0 14.137 13.608">
-                                                            <path id="Контур_2" data-name="Контур 2"
-                                                                  d="M14.137,14.767,9,14.429,7.065,9.569l-1.934,4.86L0,14.767l3.935,3.342L2.644,23.177l4.421-2.795,4.421,2.795L10.2,18.108Z"
-                                                                  transform="translate(0 -9.569)" fill="#ffdc96"/>
-                                                        </svg>
-                                                        <svg id="Сгруппировать" xmlns="http://www.w3.org/2000/svg"
-                                                             width="14.137"
-                                                             height="13.608" viewBox="0 0 14.137 13.608">
-                                                            <path id="Контур_2" data-name="Контур 2"
-                                                                  d="M14.137,14.767,9,14.429,7.065,9.569l-1.934,4.86L0,14.767l3.935,3.342L2.644,23.177l4.421-2.795,4.421,2.795L10.2,18.108Z"
-                                                                  transform="translate(0 -9.569)" fill="#ffdc96"/>
-                                                        </svg>
-                                                        <svg id="Сгруппировать" xmlns="http://www.w3.org/2000/svg"
-                                                             width="14.137"
-                                                             height="13.608" viewBox="0 0 14.137 13.608">
-                                                            <path id="Контур_2" data-name="Контур 2"
-                                                                  d="M14.137,14.767,9,14.429,7.065,9.569l-1.934,4.86L0,14.767l3.935,3.342L2.644,23.177l4.421-2.795,4.421,2.795L10.2,18.108Z"
-                                                                  transform="translate(0 -9.569)" fill="#ffdc96"/>
-                                                        </svg>
-                                                    </div>
+                                                    <?php
+                                                        $starsArray = $countProducts[$_product->get_id()];
+                                                        $showCountsReviews = true;
+                                                        $sumReviews = 0;
+                                                        if (count($starsArray) > 0) {
+                                                            $sumReviews = round((array_sum($starsArray) / count($starsArray)));
+                                                        }
+                                                        include get_template_directory() . '/components/_rating.php'; ?>
                                                 </div>
                                                 <p><?php echo $text ?></p>
                                             </div>
