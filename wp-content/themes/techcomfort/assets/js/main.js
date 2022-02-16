@@ -18,7 +18,6 @@ document.addEventListener("DOMContentLoaded", function () {
   const catalogSubmenu = document.getElementById("catalog-submenu-js");
   const minusBtn = document.getElementsByClassName("reduce");
   const plusBtn = document.getElementsByClassName("enlarge");
-  const favorites = document.getElementsByClassName("favorites-js");
   const headerProfile = document.querySelector(".header-profile");
   const login = document.querySelector(".login");
   const registration = document.querySelector(".registration");
@@ -129,14 +128,6 @@ document.addEventListener("DOMContentLoaded", function () {
     });
   }
 
-  //favorites
-  for (let i = 0; i < favorites.length; i++) {
-    favorites[i].addEventListener("click", function (e) {
-      e.preventDefault();
-      this.classList.toggle("active")
-    })
-  }
-
   // button active
   const btnContour = document.querySelectorAll(".btn-contour");
   const buttonsContainer = document.querySelector(".buttons-container-js");
@@ -189,72 +180,7 @@ document.addEventListener("DOMContentLoaded", function () {
   });
 
 
-  // возвращает куки с указанным name, или undefined, если ничего не найдено
-  function getCookie(name) {
-    let matches = document.cookie.match(new RegExp(
-      "(?:^|; )" + name.replace(/([\.$?*|{}\(\)\[\]\\\/\+^])/g, '\\$1') + "=([^;]*)"
-    ));
-    return matches ? decodeURIComponent(matches[1]) : undefined;
-  }
 
-  function setCookie(name, value, options = {}) {
-    options = {
-      path: '/',
-      // при необходимости добавьте другие значения по умолчанию
-      ...options
-    };
 
-    if (options.expires instanceof Date) {
-      options.expires = options.expires.toUTCString();
-    }
 
-    let updatedCookie = escape(name) + "=" + escape(value);
-
-    for (let optionKey in options) {
-      updatedCookie += "; " + optionKey;
-      let optionValue = options[optionKey];
-      if (optionValue !== true) {
-        updatedCookie += "=" + optionValue;
-      }
-    }
-
-    console.log(updatedCookie, 'updatedCookie')
-    document.cookie = updatedCookie;
-  }
-
-  const updateCookie = (element) => {
-    const dataId = element.getAttribute('data-id');
-    let compareArray = [];
-    if (getCookie('compareArray')) {
-      compareArray = getCookie('compareArray').split(',');
-      if (compareArray.includes(dataId)) {
-        // удаление элемента если он уже сушествует
-        const index = compareArray.indexOf(dataId);
-        if (index > -1) compareArray.splice(index, 1);
-        compareArray.indexOf(dataId)
-      } else {
-        compareArray.push(dataId);
-      }
-    } else {
-      compareArray.push(dataId);
-    }
-    setCookie('compareArray', compareArray)
-  }
-  // Сравнение товаров
-  const compare = document.getElementsByClassName("compare-js");
-  const comparisonClose = document.getElementsByClassName("comparison-close-js");
-  for (let i = 0; i < compare.length; i++) {
-    compare[i].addEventListener("click", function (e) {
-      e.preventDefault();
-      this.classList.toggle("active");
-      updateCookie(this);
-    });
-  }
-
-  for (let i = 0; i < comparisonClose.length; i++) {
-    comparisonClose[i].addEventListener('click', function () {
-      updateCookie(this);
-      window.location.reload();
-    });
-  }
 });

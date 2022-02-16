@@ -120,6 +120,7 @@
       z-index:      99;
       width:        19px;
       margin-right: 15px;
+      background:   transparent;
       svg {
         width: 100%;
       }
@@ -178,6 +179,7 @@
         margin-left: 10px;
         display:     flex;
         align-self:  center;
+        flex-wrap:   nowrap;
       }
       .rating {
         margin-bottom: 8px;

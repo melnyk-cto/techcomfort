@@ -32,7 +32,8 @@
 <?php
     $args = array(
         'post_type' => 'product',
-        'stock' => 1, 'orderby' => 'meta_value_num',
+        'stock' => 1,
+        'orderby' => 'meta_value_num',
         'order' => $_GET['type'],
         'product_cat' => $_GET['category'],
     );
@@ -200,11 +201,13 @@
                                                     ?>
                                                 </ul>
                                                 <span class='price'>
-                                               <?php if ((int)$product->get_price() > 10) echo $product->get_price_html(); else echo "<span class='green'>Уточняйте цену</span>"; ?>
-                                            </span>
+                                                    <?php if ((int)$product->get_price() > 10) echo $product->get_price_html(); else echo "<span class='green'>Уточняйте цену</span>"; ?>
+                                                </span>
                                                 <div class='description-buttons'>
                                                     <a href='<?php echo home_url('/'); ?>product/?uid=<?php the_id(); ?>'
-                                                       class='btn'>Купить</a>
+                                                       class='btn'>
+                                                        Купить
+                                                    </a>
                                                     <a data-quantity="1" data-product_id="<?php the_id(); ?>"
                                                        href='<?php echo home_url('/'); ?>?add-to-cart=<?php the_id(); ?>'
                                                        class='btn btn-second product_type_simple add_to_cart_button ajax_add_to_cart'>

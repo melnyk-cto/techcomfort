@@ -227,3 +227,6 @@
 
     //  Обновление информации в аккаунте пользователя
     require_once get_stylesheet_directory() . '/includes/add-review.php';
+
+    //  Добавление в избранное или сравнение
+    require_once get_stylesheet_directory() . '/includes/compare-favorite.php';
