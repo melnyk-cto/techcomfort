@@ -5,38 +5,39 @@
         <div class='container'>
             <h2>Сравнение</h2>
             <div class='comparison-inner'>
-                <?php $cookie = $_COOKIE['compareArray'];
-                    if ($cookie) {
-                        $compareProducts = explode(',', $cookie); ?>
+                <?php
+                    $userID = get_user_meta(get_current_user_id());
+                    $compare = $userID['compare'];
+                    if (count($compare) > 0) { ?>
                         <div class='comparison-product'>
-                            <?php foreach ($compareProducts as $i => $product) {
-                                $_product = wc_get_product($product);
-                                if ($_product) { ?>
-                                    <div class='product-item'>
-                                        <img data-id='<?php echo $_product->get_id() ?>'
-                                             class="close comparison-close-js"
-                                             src="<?php echo get_template_directory_uri() ?>/assets/images/icons/close.svg"
-                                             alt="">
-                                        <div class='item-image'>
-                                            <?php echo $_product->get_image('1000') ?>
-                                        </div>
-                                        <div class='item-description'>
-                                            <h3><?php echo $_product->get_title() ?></h3>
-                                            <div class='description-info'>
+                            <?php foreach ($compare as $value) {
+                                    $_product = wc_get_product($value);
+                                    if ($_product) { ?>
+                                        <div class='product-item'>
+                                            <img data-id='<?php echo $_product->get_id() ?>'
+                                                 class="close comparison-close-js"
+                                                 src="<?php echo get_template_directory_uri() ?>/assets/images/icons/close.svg"
+                                                 alt="">
+                                            <div class='item-image'>
+                                                <?php echo $_product->get_image('1000') ?>
+                                            </div>
+                                            <div class='item-description'>
+                                                <h3><?php echo $_product->get_title() ?></h3>
+                                                <div class='description-info'>
                                                 <span class='price'>
                                                  <?php if ((int)$_product->get_price() > 10) echo $_product->get_price_html(); else echo "<span class='green'>Уточняйте цену</span>"; ?>
                                                 </span>
+                                                </div>
+                                                <a data-quantity="1"
+                                                   data-product_id="<?php echo $_product; ?>"
+                                                   href='<?php echo home_url('/'); ?>?add-to-cart=<?php echo $_product; ?>'
+                                                   class='btn product_type_simple add_to_cart_button ajax_add_to_cart'>
+                                                    В Корзину
+                                                </a>
                                             </div>
-                                            <a data-quantity="1"
-                                               data-product_id="<?php echo $_product; ?>"
-                                               href='<?php echo home_url('/'); ?>?add-to-cart=<?php echo $_product; ?>'
-                                               class='btn product_type_simple add_to_cart_button ajax_add_to_cart'>
-                                                В Корзину
-                                            </a>
                                         </div>
-                                    </div>
-                                <?php }
-                            } ?>
+                                    <?php }
+                                } ?>
                         </div>
                         <div class='product-characteristics'>
                             <ul>

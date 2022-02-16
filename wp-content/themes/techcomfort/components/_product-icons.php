@@ -2,6 +2,7 @@
     global $postId;
     $userID = get_user_meta(get_current_user_id());
     $favorites = $userID['favorite'];
+    $compare = $userID['compare'];
 ?>
 
 <?php
@@ -17,7 +18,9 @@
 ?>
 
 <form id='form-compare-favorite' class='description-icons'>
-    <button type='submit' class='icon compare-js submit-icon-js' data-name='compare' data-id='<?php echo $postId ?>'>
+    <button type='submit'
+            class='icon compare-js submit-icon-js <?php if (in_array($postId, $compare)) echo ' active' ?>'
+            data-name='compare' data-id='<?php echo $postId ?>'>
         <svg id="Сгруппировать_2793" data-name="Сгруппировать 2793"
              xmlns="http://www.w3.org/2000/svg" width="31.918"
              height="24.554" viewBox="0 0 31.918 24.554">
@@ -26,7 +29,9 @@
                   transform="translate(0 -54.727)"></path>
         </svg>
     </button>
-    <button type='submit' class='icon favorites-js submit-icon-js <?php if (in_array($postId, $favorites))  echo ' active'?>' data-name='favorites' data-id='<?php echo $postId ?>'>
+    <button type='submit'
+            class='icon favorites-js submit-icon-js <?php if (in_array($postId, $favorites)) echo ' active' ?>'
+            data-name='favorites' data-id='<?php echo $postId ?>'>
         <svg xmlns="http://www.w3.org/2000/svg" width="27"
              height="24.07" viewBox="0 0 27 24.07">
             <g id="Сгруппировать_2766"

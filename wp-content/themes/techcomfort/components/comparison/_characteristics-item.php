@@ -1,11 +1,11 @@
 <?php
-    global $compareProducts;
+    global $compare;
     global $title;
     $isTitle = false;
 ?>
 
 
-<?php foreach ($compareProducts as $i => $product) {
+<?php foreach ($compare as $i => $product) {
     $_product = wc_get_product($product);
     if ($_product) {
         $attributes = $_product->get_description();
@@ -24,7 +24,7 @@
     <li>
         <h5><?php echo $title ?></h5>
         <div class='product-value'>
-            <?php foreach ($compareProducts as $i => $product) {
+            <?php foreach ($compare as $i => $product) {
                 $_product = wc_get_product($product);
                 if ($_product) {
                     $attributes = $_product->get_description();
