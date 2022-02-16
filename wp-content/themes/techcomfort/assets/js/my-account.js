@@ -65,6 +65,13 @@ document.addEventListener("DOMContentLoaded", function () {
     });
   }
 
+  //   Список Желаний
+  const favoritesButton = document.getElementsByClassName('favorites-js');
+  for (let i = 0; i < favoritesButton.length; i++) {
+    favoritesButton[i].addEventListener('click', function () {
+      this.closest('.products-item').classList.add('d-none');
+    })
+  }
 });
 
 jQuery(document).ready(function ($) {
