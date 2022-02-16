@@ -22,63 +22,50 @@
 <div class='products'>
     <div class='products-list '>
         <?php
-            $argsFavorites = [
-                'post_type' => 'product', # тип записи
-                'stock' => 1,
-                'orderby' => 'meta_value_num',
-                'meta_query' => [
-                    'relation' => 'AND',
-                    [
-                        'key' => 'favorite',
-                        'value' => 'true',
-                        'compare' => '='
-                    ]
-                ],
-                'posts_per_page' => -1,        # количество (-1 - все)
-            ];
-            $favorites = new WP_Query($argsFavorites);
-            if ($favorites->have_posts()) {
-                while ($favorites->have_posts()) : $favorites->the_post();
-                    global $product; ?>
+            $userID = get_user_meta(get_current_user_id());
+            $favorites = $userID['favorite'];
+            if (count($favorites) > 0) {
+                foreach ($favorites as $value) {
+                    $_product = wc_get_product($value); ?>
                     <div class='products-item catalog-item'>
-                        <a id="id-<?php the_id(); ?>"
-                           href="<?php echo home_url('/'); ?>product?uid=<?php the_id(); ?>"
+                        <a id="id-<?php echo $_product->get_id(); ?>"
+                           href="<?php echo home_url('/'); ?>product?uid=<?php echo $_product->get_id(); ?>"
                            title="<?php the_title(); ?>" class='item-image'>
-                            <?php if (has_post_thumbnail($favorites->post->ID)) echo get_the_post_thumbnail($favorites->post->ID, 'shop_catalog'); else echo '<img src="' . woocommerce_placeholder_img_src() . '" alt="product-image" />'; ?>
+                            <?php if (has_post_thumbnail($_product->get_id())) echo get_the_post_thumbnail($_product->get_id(), 'shop_catalog'); else echo '<img src="' . woocommerce_placeholder_img_src() . '" alt="product-image" />'; ?>
                         </a>
                         <div class='item-description'>
                             <?php
-                                $starsArray = $countProducts[$favorites->post->ID];
+                                $starsArray = $countProducts[$_product->get_id()];
                                 $showCountsReviews = true;
                                 $sumReviews = 0;
                                 if (count($starsArray) > 0) {
                                     $sumReviews = round((array_sum($starsArray) / count($starsArray)));
                                 }
                                 include get_template_directory() . '/components/_rating.php'; ?>
-                            <a href='<?php echo home_url('/'); ?>product/?uid=<?php the_id(); ?>'>
+                            <a href='<?php echo home_url('/'); ?>product/?uid=<?php echo $_product->get_id(); ?>'>
                                 <?php the_title(); ?>
                                 <?php
-                                    $postId = $favorites->post->ID;
+                                    $postId = $_product->get_id();
                                     include get_template_directory() . '/components/_product-icons.php'; ?>
                             </a>
                             <span class='price'>
-                                <?php if ((int)$product->get_price() > 10) echo $product->get_price_html(); else echo "<span class='green'>Уточняйте цену</span>"; ?>
+                                <?php if ((int)$_product->get_price() > 10) echo $_product->get_price_html(); else echo "<span class='green'>Уточняйте цену</span>"; ?>
                             </span>
                             <div class='description-buttons'>
-                                <a href='<?php echo home_url('/'); ?>product/?uid=<?php the_id(); ?>'
+                                <a href='<?php echo home_url('/'); ?>product/?uid=<?php echo $_product->get_id(); ?>'
                                    class='btn'>
                                     Купить
                                 </a>
-                                <a data-quantity="1" data-product_id="<?php the_id(); ?>"
-                                   href='<?php echo home_url('/'); ?>?add-to-cart=<?php the_id(); ?>'
+                                <a data-quantity="1" data-product_id="<?php echo $_product->get_id(); ?>"
+                                   href='<?php echo home_url('/'); ?>?add-to-cart=<?php echo $_product->get_id(); ?>'
                                    class='btn btn-second product_type_simple add_to_cart_button ajax_add_to_cart'>
                                     В Корзину
                                 </a>
                             </div>
                         </div>
                     </div>
-                <?php endwhile;
-            } else {
+                <?php } ?>
+            <?php } else {
                 echo '<h3 class="no-products">Нет товар по указанном фильтре</h3>';
             }
         ?>

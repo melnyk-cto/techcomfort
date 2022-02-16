@@ -32,17 +32,11 @@ jQuery(document).ready(function () {
     // добавляем класс "active"
     jQuery(this).toggleClass("active")
 
-    let isCompare = false;
-    let isFavorite = false;
-    let compare = jQuery('.compare-js');
-    let favorite = jQuery('.favorites-js');
-
-    if (compare.attr('data-name') === 'compare') {
-      isCompare = compare.hasClass("active");
-    }
-
-    if (favorite.attr('data-name') === 'favorites') {
-      isFavorite = favorite.hasClass("active");
+    let type;
+    if (jQuery(this).attr('data-name') === 'compare') {
+      type = 'compare';
+    } else if (jQuery(this).attr('data-name') === 'favorites') {
+      type = 'favorites';
     }
 
     const options = {
@@ -50,8 +44,7 @@ jQuery(document).ready(function () {
       data: {
         action: 'ajax_form_action_compare_favorite',
         nonce: ajax_form_object.nonce,
-        compare: isCompare,
-        favorite: isFavorite,
+        valueType: type,
         id: jQuery(this).attr('data-id'),
       },
       type: 'POST',

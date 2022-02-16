@@ -8,14 +8,25 @@
             wp_die('Данные отправлены с некорректного адреса');
         }
 
-        $form_favorite = sanitize_text_field($_POST['favorite']);
-        $form_compare = sanitize_text_field($_POST['compare']);
+        $form_type = sanitize_text_field($_POST['valueType']);
         $form_id = sanitize_text_field($_POST['id']);
+        $userID = get_user_meta(get_current_user_id());
 
+        // Нажатие на кнопку Избранное или Сравнение
+        if ($form_type === 'favorites') {
+            if (in_array($form_id, $userID['favorite'])) {
+                delete_user_meta(get_current_user_id(), 'favorite', $form_id);
+            } else {
+                add_user_meta(get_current_user_id(), 'favorite', $form_id);
+            }
+        } elseif ($form_type === 'compare') {
+            if (in_array($form_id, $userID['compare'])) {
+                delete_user_meta(get_current_user_id(), 'compare', $form_id);
+            } else {
+                add_user_meta(get_current_user_id(), 'compare', $form_id);
+            }
+        }
 
-        // Добавляем остальные поля
-        update_post_meta($form_id, "compare", $form_compare);
-        update_post_meta($form_id, "favorite", $form_favorite);
 
         // Отправляем сообщение об успешной отправке
         $message_success = 'Ваш compare-favorite успешно обновлен';

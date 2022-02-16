@@ -1,4 +1,8 @@
-<?php global $postId ?>
+<?php
+    global $postId;
+    $userID = get_user_meta(get_current_user_id());
+    $favorites = $userID['favorite'];
+?>
 
 <?php
     // Обработка полей формы
@@ -22,7 +26,7 @@
                   transform="translate(0 -54.727)"></path>
         </svg>
     </button>
-    <button type='submit' class='icon favorites-js submit-icon-js' data-name='favorites' data-id='<?php echo $postId ?>'>
+    <button type='submit' class='icon favorites-js submit-icon-js <?php if (in_array($postId, $favorites))  echo ' active'?>' data-name='favorites' data-id='<?php echo $postId ?>'>
         <svg xmlns="http://www.w3.org/2000/svg" width="27"
              height="24.07" viewBox="0 0 27 24.07">
             <g id="Сгруппировать_2766"
