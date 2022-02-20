@@ -121,7 +121,7 @@
                             </div>
                             <p>Сравнение</p>
                         </a>
-                        <a href='<?php echo home_url('/'); ?>my-account' class='header-item header-favorites'>
+                        <a href='<?php echo home_url('/'); ?>my-account#favorites' class='header-item header-favorites'>
                             <div class='count-image'>
                                 <?php
                                     $userID = get_user_meta(get_current_user_id());
@@ -213,7 +213,7 @@
                             </div>
                             <p>Сравнение</p>
                         </a>
-                        <a href='<?php echo home_url('/'); ?>my-account' class='header-item header-favorites'>
+                        <a href='<?php echo home_url('/'); ?>my-account#favorites' class='header-item header-favorites'>
                             <div class='count-image'>
                                 <?php
                                     $userID = get_user_meta(get_current_user_id());
