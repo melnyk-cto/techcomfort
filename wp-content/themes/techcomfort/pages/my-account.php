@@ -222,7 +222,7 @@
                             </div>
                             <div class='info-list viewed-products '>
                                 <h2>Просмотренные товары</h2>
-                                <!-- --><?php //include get_template_directory() . '/components/account/_products-viewed.php'; ?>
+                                 <?php include get_template_directory() . '/components/account/_products-viewed.php'; ?>
                             </div>
                             <div class='info-list reviews '>
                                 <?php
