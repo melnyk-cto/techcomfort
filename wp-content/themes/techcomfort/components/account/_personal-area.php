@@ -6,7 +6,7 @@
     global $user_email;
     global $address; ?>
 
-<div id='info-profile' class='info-list personal-data active'>
+<div id='info-profile' class='info-list personal-data'>
     <form id="form-personal" class="form">
         <h2>
             Личные данные

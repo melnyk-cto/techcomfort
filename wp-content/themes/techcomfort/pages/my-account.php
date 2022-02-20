@@ -25,7 +25,7 @@
                 <div class='container'>
                     <div class='personal-information-inner'>
                         <div class='category'>
-                            <div data-section-id='info-profile' class='category-item header-profile active'>
+                            <a href='#' class='category-item header-profile'>
                                 <svg id="user" xmlns="http://www.w3.org/2000/svg" width="30" height="30"
                                      viewBox="0 0 30 30">
                                     <g id="Сгруппировать_2816" data-name="Сгруппировать 2816">
@@ -44,8 +44,8 @@
                                         } ?>
                                     </p>
                                 </div>
-                            </div>
-                            <div data-section-id='info-ordering' class='category-item header-ordering'>
+                            </a>
+                            <a href='#ordering' class='category-item header-ordering'>
                                 <svg xmlns="http://www.w3.org/2000/svg" width="24.657" height="32.443"
                                      viewBox="0 0 24.657 32.443">
                                     <g id="shopping-list" transform="translate(0.65 0.65)">
@@ -84,8 +84,8 @@
                                     </g>
                                 </svg>
                                 <p>Мои заказы</p>
-                            </div>
-                            <div data-section-id='info-wishes' class='category-item header-favorites'>
+                            </a>
+                            <a href='#favorites' class='category-item header-favorites'>
                                 <svg xmlns="http://www.w3.org/2000/svg" width="26.93" height="23.95"
                                      viewBox="0 0 26.93 23.95">
                                     <path id="Контур_723" data-name="Контур 723"
@@ -94,8 +94,8 @@
                                           stroke-width="1.5" />
                                 </svg>
                                 <p>Список желаний</p>
-                            </div>
-                            <div data-section-id='info-viewed' class='category-item header-viewed'>
+                            </a>
+                            <a href='#viewed' class='category-item header-viewed'>
                                 <svg xmlns="http://www.w3.org/2000/svg" width="30.555" height="18"
                                      viewBox="0 0 30.555 18">
                                     <g id="visibility" transform="translate(0.282 -6)">
@@ -116,8 +116,8 @@
                                     </g>
                                 </svg>
                                 <p>Просмотренные товары</p>
-                            </div>
-                            <div data-section-id='info-reviews' class='category-item header-reviews'>
+                            </a>
+                            <a href='#reviews' class='category-item header-reviews'>
                                 <svg xmlns="http://www.w3.org/2000/svg" width="26.419" height="24.716"
                                      viewBox="0 0 26.419 24.716">
                                     <g id="Сгруппировать_2829" data-name="Сгруппировать 2829"
@@ -130,11 +130,11 @@
                                     </g>
                                 </svg>
                                 <p>Мои отзывы</p>
-                            </div>
+                            </a>
                         </div>
                         <div class='info'>
                             <?php include get_template_directory() . '/components/account/_personal-area.php'; ?>
-                            <div id='info-ordering' class='info-list ordering'>
+                            <div class='info-list ordering'>
                                 <h2>Мои заказы</h2>
                                 <!--                                <div class='info-item ordering-item'>-->
                                 <!--                                    <span class='arrow'></span>-->
@@ -215,38 +215,16 @@
                                 <!--                                </div>-->
                                 <p class='empty'>Список заказов пуст</p>
                             </div>
-                            <div id='info-wishes' class='info-list wishes'>
-                                <h2>
-                                    Список желаний
-                                    <!--                                    <button type='button' class='clear-all'>-->
-                                    <!--                                        <svg xmlns="http://www.w3.org/2000/svg" width="15.558" height="19.999"-->
-                                    <!--                                             viewBox="0 0 15.558 19.999">-->
-                                    <!--                                            <g id="delete" transform="translate(-0.001 -0.001)">-->
-                                    <!--                                                <path id="Объединение_10" data-name="Объединение 10"-->
-                                    <!--                                                      d="M11051.3-222a1.286,1.286,0,0,1-1.227-1.252l-.928-12.669a.624.624,0,0,1,.05-.3h-1.266a.462.462,0,0,1-.264-.083.563.563,0,0,1-.209-.625l.4-1.286a.777.777,0,0,1,.728-.569h13.258a.78.78,0,0,1,.729.569l.395,1.286a.554.554,0,0,1-.208.625.453.453,0,0,1-.264.083h-1.264a.624.624,0,0,1,.05.3l-.927,12.669a1.289,1.289,0,0,1-1.228,1.252Zm6.8-12.444-.553,10.4a.63.63,0,0,0,.553.689.172.172,0,0,0,.036,0,.62.62,0,0,0,.589-.616l.558-10.4a.637.637,0,0,0-.558-.691h-.033A.622.622,0,0,0,11058.1-234.444Zm-3.474.039V-224a.627.627,0,0,0,.592.652.625.625,0,0,0,.591-.652v-10.4a.623.623,0,0,0-.591-.652A.625.625,0,0,0,11054.625-234.405Zm-2.929-.652a.635.635,0,0,0-.556.694l.583,10.4a.619.619,0,0,0,.589.614.159.159,0,0,0,.036,0,.63.63,0,0,0,.553-.691l-.581-10.4a.621.621,0,0,0-.592-.615Zm5.322-5.028v-.608h-3.615v.608h-1.3v-.694a1.22,1.22,0,0,1,1.219-1.219h3.787a1.22,1.22,0,0,1,1.219,1.219v.694Z"-->
-                                    <!--                                                      transform="translate(-11047.431 242)" fill="#6b92b0" />-->
-                                    <!--                                            </g>-->
-                                    <!--                                        </svg>-->
-                                    <!--                                        <span>Очистить все</span>-->
-                                    <!--                                    </button>-->
-                                </h2>
+                            <div class='info-list favorites '>
+                                <h2>Список желаний</h2>
                                 <p class='empty'>Список желаний пуст</p>
                                 <?php include get_template_directory() . '/components/account/_favorites.php'; ?>
-                                <!--                                <div class='info-item wishes-item'>-->
-                                <!--                                    <div class='item-description'>-->
-                                <!--                                        <div class='description-item'>-->
-                                <!--                                            <span>1 товар на сумму</span>-->
-                                <!--                                            <p>26 280 UAH</p>-->
-                                <!--                                        </div>-->
-                                <!--                                        <a href='#' class='btn'>Купить все</a>-->
-                                <!--                                    </div>-->
-                                <!--                                </div>-->
                             </div>
-                            <div id='info-viewed' class='info-list viewed-products d-none'>
+                            <div class='info-list viewed-products '>
                                 <h2>Просмотренные товары</h2>
-                                <?php include get_template_directory() . '/components/account/_products-viewed.php'; ?>
+                                <!-- --><?php //include get_template_directory() . '/components/account/_products-viewed.php'; ?>
                             </div>
-                            <div id='info-reviews' class='info-list reviews'>
+                            <div class='info-list reviews '>
                                 <?php
                                     $isAdvantages = false;
                                     $isDisadvantages = false;

@@ -1,31 +1,17 @@
 document.addEventListener("DOMContentLoaded", function () {
 
-  const categoryItem = document.querySelectorAll(".category-item");
-  const infoList = document.querySelectorAll(".info-list");
-  const categories = document.querySelector('.category');
+  const categoryItem = document.getElementsByClassName("category-item");
+  const infoList = document.getElementsByClassName("info-list");
 
-  if (categories) {
-    categories.addEventListener('click', (event) => {
-      const elem = event.target.closest('.category-item');
-      if (!elem) {
-        return;
+  // Переключение табов
+  for (let i = 0; i < categoryItem.length; i++) {
+    categoryItem[i].addEventListener('click', () => {
+      for (let k = 0; k < categoryItem.length; k++) {
+        categoryItem[k].classList.remove('active');
+        infoList[k].classList.remove('active');
       }
-      const sectionId = elem.dataset.sectionId;
-
-      categoryItem.forEach((item) => {
-        if (item.classList.contains('active')) {
-          item.classList.remove('active');
-        }
-      });
-
-      infoList.forEach((elem) => {
-        if (elem.classList.contains('active')) {
-          elem.classList.remove('active');
-        }
-      });
-
-      elem.classList.add('active');
-      document.getElementById(sectionId).classList.add('active');
+      categoryItem[i].classList.add('active');
+      infoList[i].classList.add('active');
     });
   }
 
@@ -43,27 +29,6 @@ document.addEventListener("DOMContentLoaded", function () {
     })
   }
 
-  // clear wishlist
-  const clearBtn = document.getElementsByClassName("clear-all")[0];
-  const wishesEmpty = document.getElementsByClassName("empty")[0];
-  // const wishesItem = document.getElementsByClassName("wishes-item")[0];
-  const wishesProducts = document.getElementsByClassName("products")[0];
-
-  if (clearBtn) {
-    clearBtn.addEventListener("click", function () {
-      this.classList.toggle("active");
-      if (this.classList.contains("active")) {
-        this.parentElement.style.justifyContent = "center";
-        wishesEmpty.classList.add("active");
-        wishesProducts.classList.add("hidden");
-        // wishesItem.classList.add("hidden")
-      } else {
-        wishesEmpty.classList.remove("active");
-        wishesProducts.classList.remove("hidden");
-        // wishesItem.classList.remove("hidden")
-      }
-    });
-  }
 
   // Удаление из списка желаний
   const favoritesButton = document.getElementsByClassName('favorites-js');
@@ -72,8 +37,28 @@ document.addEventListener("DOMContentLoaded", function () {
       this.closest('.products-item').classList.add('d-none');
     })
   }
+
+  // Открыть соответствующую вкладку
+  const hash = window.location.hash;
+  if (hash === '#ordering') {
+    categoryItem[1].classList.add('active');
+    infoList[1].classList.add('active');
+  } else if (hash === '#favorites') {
+    categoryItem[2].classList.add('active');
+    infoList[2].classList.add('active');
+  } else if (hash === '#viewed') {
+    categoryItem[3].classList.add('active');
+    infoList[3].classList.add('active');
+  } else if (hash === '#reviews') {
+    categoryItem[4].classList.add('active');
+    infoList[4].classList.add('active');
+  } else {
+    categoryItem[0].classList.add('active');
+    infoList[0].classList.add('active');
+  }
 });
 
+// Personal info
 jQuery(document).ready(function ($) {
   jQuery('.edit-js').click(function () {
     jQuery(this).addClass('d-none');
