@@ -31,6 +31,7 @@
                                                 <img data-name='compare' data-id='<?php echo $_product->get_id() ?>'
                                                      class="close submit-icon-js compare-close-js"
                                                      src="<?php echo get_template_directory_uri() ?>/assets/images/icons/close.svg"
+                                                     data-userID='<?php echo $userID ?>'
                                                      alt="">
                                                 <div class='item-image'>
                                                     <?php echo $_product->get_image('1000') ?>

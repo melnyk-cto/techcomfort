@@ -260,10 +260,9 @@
                 </div>
             </section>
         <?php else : ?>
-            <div class="not-registered">
-                <h2>Вы не зарегистрированы</h2>
-                <a href='<?php echo home_url('/'); ?>login' class='btn'>Войти в аккаунт</a>
-            </div>
+            <script>
+              window.location.href = '/login'
+            </script>
         <?php endif; ?>
     </main>
 <?php get_footer(); ?>

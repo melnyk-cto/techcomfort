@@ -5,29 +5,17 @@
     &-catalog .catalog-submenu .submenu-item:hover {
       border: 3px solid $primaryColor;
     }
-    &-favorites:hover {
-      svg {
-        path {
-          stroke: $primaryColor;
+    &-item {
+      &:hover {
+        svg {
+          path {
+            fill:   $primaryColor;
+            stroke: $primaryColor;
+          }
         }
-      }
-      p {
-        color: $primaryColor;
-      }
-    }
-    &-reviews:hover, &-ordering:hover, &-viewed:hover {
-      p {
-        color: $primaryColor;
-      }
-    }
-    &-basket:hover, &-comparison:hover, &-profile:hover {
-      svg {
-        path {
-          fill: $primaryColor;
+        p {
+          color: $primaryColor;
         }
-      }
-      p {
-        color: $primaryColor;
       }
     }
     &-bottom {
@@ -246,32 +234,40 @@
     display:     flex;
     align-items: center;
   }
-  &-profile, &-comparison, &-favorites, &-reviews, &-viewed, &-ordering {
+  &-item {
     margin-right: 37px;
-    svg {
-      margin-right: 10px;
+    display:      flex;
+    align-items:  center;
+    cursor:       pointer;
+    p {
+      font-size:   16px;
+      font-weight: 500;
     }
-  }
-  &-basket {
-    .basket-image {
+    .count-image {
       margin-right: 10px;
       position:     relative;
-      height:       30px;
-      span {
-        position:        absolute;
-        top:             0;
-        right:           0;
-        width:           18px;
-        border-radius:   50%;
-        background:      #FFC36B;
-        font-size:       11px;
-        font-weight:     500;
-        display:         flex;
-        justify-content: center;
-        align-self:      center;
-        padding:         3px 0 2px;
-        transform:       translate(40%, -25%);
+      svg {
+        width:  auto;
+        height: 20px;
       }
+    }
+    .sub-label {
+      position:        absolute;
+      top:             0;
+      right:           0;
+      width:           18px;
+      border-radius:   50%;
+      background:      #FFC36B;
+      font-size:       11px;
+      font-weight:     500;
+      display:         flex;
+      justify-content: center;
+      align-self:      center;
+      padding:         3px 0 2px;
+      transform:       translate(40%, -25%);
+    }
+    &.header-basket {
+      margin-right: 0;
     }
   }
   &-top {
@@ -502,45 +498,37 @@
         height:       20px;
       }
     }
-    &-profile, &-comparison, &-favorites, &-basket, &-reviews, &-viewed, &-ordering {
-      p {
-        font-size:   14px;
-        font-weight: 400;
-      }
-      svg {
-        width:  21px;
-        height: 21px;
-      }
-    }
     &-ordering {
       svg {
         width:  23px;
         height: 28px;
       }
     }
-    &-profile, &-comparison, &-favorites, &-reviews, &-viewed, &-ordering {
-      margin-right: 0;
-      svg {
-        fill:         $primaryColor;
-        margin-right: 15px;
+    &-item {
+      margin-right: 28px;
+      p {
+        font-size:   14px;
+        font-weight: 400;
       }
-    }
-    &-basket {
-      .basket-image {
+      .sub-label {
+        width:     10px;
+        font-size: 7px;
+        padding:   1px;
+      }
+      .count-image {
         margin-right: 8px;
-        height:       21px;
-        svg {
-          width: 21px;
-        }
-        span {
-          width:     10px;
-          font-size: 7px;
-          padding:   1px;
-        }
+      }
+      &.header-comparison {
+        margin-left: auto;
       }
     }
     &-mobiles {
       display: block;
+      &-top {
+        .logo {
+          margin-left: 20px;
+        }
+      }
       .menu {
         a {
           width:   100%;
@@ -664,37 +652,22 @@
         height:       14px;
       }
     }
-    &-profile, &-comparison, &-favorites, &-basket, &-reviews, &-viewed, &-ordering {
-      p {
-        font-size:   14px;
-        font-weight: 400;
-      }
-      svg {
-        width:  20px;
-        height: 21px;
-        path {
-          //stroke: $primaryColor;
-        }
-      }
-    }
     &-ordering {
       svg {
         width:  20px;
         height: 28px;
       }
     }
-    &-profile, &-comparison, &-favorites, &-reviews, &-viewed, &-ordering {
-      margin-right: 0;
-      svg {
-        margin-right: 15px;
-      }
-    }
-    &-basket {
+    &-item {
+      margin-right: 22px;
       p {
         display: none;
       }
-      .basket-image {
+      .count-image {
         margin-right: 0;
+        svg {
+          height: 16px;
+        }
       }
     }
     .burger {

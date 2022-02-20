@@ -20,7 +20,7 @@
 <form id='form-compare-favorite' class='description-icons'>
     <button type='submit'
             class='icon compare-js submit-icon-js <?php if (in_array($postId, $compare)) echo ' active' ?>'
-            data-name='compare' data-id='<?php echo $postId ?>'>
+            data-name='compare' data-id='<?php echo $postId ?>' data-userID='<?php echo $userID ?>'>
         <svg id="Сгруппировать_2793" data-name="Сгруппировать 2793"
              xmlns="http://www.w3.org/2000/svg" width="31.918"
              height="24.554" viewBox="0 0 31.918 24.554">
@@ -31,7 +31,7 @@
     </button>
     <button type='submit'
             class='icon favorites-js submit-icon-js <?php if (in_array($postId, $favorites)) echo ' active' ?>'
-            data-name='favorites' data-id='<?php echo $postId ?>'>
+            data-name='favorites' data-id='<?php echo $postId ?>' data-userID='<?php echo $userID ?>'>
         <svg xmlns="http://www.w3.org/2000/svg" width="27"
              height="24.07" viewBox="0 0 27 24.07">
             <g id="Сгруппировать_2766"

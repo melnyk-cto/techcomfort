@@ -1,29 +1,25 @@
-document.addEventListener("DOMContentLoaded", function () {
-console.log(111)
-  //   Удаление из избранного
-  const compareButton = document.getElementsByClassName('compare-close-js');
-  for (let i = 0; i < compareButton.length; i++) {
-    compareButton[i].addEventListener('click', function () {
-      this.closest('.product-item').classList.add('d-none');
-    })
-  }
-
-});
-
-
 jQuery(document).ready(function () {
+
   // Отправка значений полей
   jQuery('.submit-icon-js').on('click', function (e) {
     e.preventDefault();
 
-    // добавляем класс "active"
-    jQuery(this).toggleClass("active")
+    const dataName = jQuery(this).attr('data-name');
+    const userID = jQuery(this).attr('data-userID');
+    const notification = jQuery('.notification');
 
+
+    // проверяем тип
     let type;
-    if (jQuery(this).attr('data-name') === 'compare') {
+    if (dataName === 'compare') {
       type = 'compare';
-    } else if (jQuery(this).attr('data-name') === 'favorites') {
+    } else if (dataName === 'favorites') {
       type = 'favorites';
+    }
+
+    //   Удаление из избранного
+    if (jQuery(this).hasClass('compare-close-js')) {
+      jQuery(this).closest('.product-item').addClass('d-none');
     }
 
     const options = {
@@ -52,8 +48,22 @@ jQuery(document).ready(function () {
         console.error('Не удалось отправить, исправьте ошибки')
       }
     };
-    // Отправка формы
-    jQuery.ajax(options);
+
+    if (userID) {
+      // добавляем класс "active"
+      jQuery(this).toggleClass("active");
+
+      // Отправка формы
+      jQuery.ajax(options);
+    } else {
+      // Показываем notification
+      notification.attr('data-type', 'error');
+      notification.text('Вам нужно зарегестрироватся!');
+      notification.removeClass('d-none');
+      setTimeout(() => {
+        notification.addClass('d-none');
+      }, 3000)
+    }
   })
 
 });

@@ -50,6 +50,7 @@
       background:      $white;
       border-radius:   10px;
       margin:          0 16px 0 0;
+      max-width:       700px;
       h3 {
         font-size:     20px;
         font-weight:   500;
@@ -69,8 +70,8 @@
         padding:   8px 25px;
       }
       .item-image {
-        max-width: 300px;
-        width:     45%;
+        max-width:    300px;
+        width:        45%;
         margin-right: 10px;
         img {
           object-fit: contain;
@@ -102,6 +103,9 @@
         &:not(:last-child) {
           border-right: 1px solid #6B92B0;
         }
+        &.empty {
+          opacity: .5;
+        }
       }
     }
     li {
@@ -125,7 +129,7 @@
     }
     &-product {
       .product-item {
-        margin: 0 16px 20px 16px;
+        margin: 0 16px 20px 0;
         .item-description {
           h3 {
             font-size:     16px;
@@ -185,15 +189,14 @@
             padding: 9px 18px;
           }
           .description-info {
-            justify-content: center;
-            margin-bottom:   10px;
+            margin-bottom: 10px;
           }
         }
       }
     }
     .product-characteristics {
       h5 {
-        font-size: 16px;
+        font-size: 14px;
       }
       li {
         padding-bottom: 10px;

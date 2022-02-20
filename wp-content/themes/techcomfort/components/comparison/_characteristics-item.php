@@ -26,6 +26,7 @@
             <?php
                 $_product = wc_get_product($_product->get_id());
                 if ($_product) {
+
                     $attributes = $_product->get_description();
                     $explodes = explode(PHP_EOL, $attributes);
                     $titles = [];
@@ -38,12 +39,15 @@
                     if (in_array($title, $titles)) {
                         foreach ($explodes as $explode) {
                             $explodeSeparated = explode("|", $explode);
+
                             if ($explodeSeparated[1] === $title) { ?>
-                                <p><?php echo $explodeSeparated[2] ?></p>
+                                <?php if ($explodeSeparated[2]) {
+                                    echo '<p>' . $explodeSeparated[2] . '</p>';
+                                } else echo '<p class="empty">Нет данных</p>' ?>
                             <?php }
                         }
                     } else {
-                        echo '<p>Нет данных</p>';
+                        echo '<p class="empty">Нет данных</p>';
                     }
                 }
             ?>

@@ -378,28 +378,9 @@ form {
   }
 }
 
-.header-profile, .header-comparison, .header-favorites, .header-basket, .header-reviews, .header-viewed, .header-ordering {
-  display:     flex;
-  align-items: center;
-  cursor:      pointer;
-  p {
-    font-size:   16px;
-    font-weight: 500;
-  }
-  svg {
-    width: 25px;
-  }
-}
-
 .header-comparison {
   svg {
     width: 28px;
-  }
-}
-
-.header-profile {
-  svg {
-    margin-right: 5px;
   }
 }
 
@@ -443,6 +424,28 @@ form {
     margin-top: 16px;
     min-width:  260px;
   }
+}
+
+.notification {
+  position:      fixed;
+  right:         10px;
+  top:           10px;
+  z-index:       10000;
+  max-width:     300px;
+  width:         100%;
+  box-shadow:    0 3px 15px 0 rgba(56, 69, 249, .14);
+  background:    #fff;
+  color:         #000;
+  border-radius: 6px;
+  font-size:     14px;
+  padding:       16px 12px;
+}
+
+.notification[data-type='error'] {
+  color: red;
+}
+.notification[data-type='success'] {
+  color: green;
 }
 
 //noUi slider

@@ -77,73 +77,100 @@
             <div class='header-bottom-inner'>
                 <div class='header-action'>
                     <?php if (is_user_logged_in()) { ?>
-                        <a class='header-profile' href='<?php echo home_url('/'); ?>my-account'>
-                            <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
-                                 width="21"
-                                 height="21" viewBox="0 0 21 21">
-                                <defs>
-                                    <clipPath id="clip-path">
-                                        <rect id="Прямоугольник_2160" data-name="Прямоугольник 2160" width="21"
-                                              height="21"
-                                              transform="translate(113 369)" stroke="#707070" stroke-width="1" />
-                                    </clipPath>
-                                </defs>
-                                <g id="Группа_масок_381" data-name="Группа масок 381" transform="translate(-113 -369)"
-                                   clip-path="url(#clip-path)">
-                                    <g id="user" transform="translate(113 369)">
-                                        <g id="Сгруппировать_2994" data-name="Сгруппировать 2994">
-                                            <path id="Контур_860" data-name="Контур 860"
-                                                  d="M17.925,13.575a10.46,10.46,0,0,0-3.99-2.5,6.07,6.07,0,1,0-6.869,0A10.517,10.517,0,0,0,0,21H1.641a8.859,8.859,0,0,1,17.719,0H21A10.432,10.432,0,0,0,17.925,13.575ZM10.5,10.5a4.43,4.43,0,1,1,4.43-4.43A4.435,4.435,0,0,1,10.5,10.5Z" />
+                        <a class='header-item header-profile' href='<?php echo home_url('/'); ?>my-account'>
+                            <div class='count-image'>
+                                <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+                                     width="21"
+                                     height="21" viewBox="0 0 21 21">
+                                    <defs>
+                                        <clipPath id="clip-path">
+                                            <rect id="Прямоугольник_2160" data-name="Прямоугольник 2160" width="21"
+                                                  height="21"
+                                                  transform="translate(113 369)" stroke="#707070" stroke-width="1" />
+                                        </clipPath>
+                                    </defs>
+                                    <g id="Группа_масок_381" data-name="Группа масок 381"
+                                       transform="translate(-113 -369)"
+                                       clip-path="url(#clip-path)">
+                                        <g id="user" transform="translate(113 369)">
+                                            <g id="Сгруппировать_2994" data-name="Сгруппировать 2994">
+                                                <path id="Контур_860" data-name="Контур 860"
+                                                      d="M17.925,13.575a10.46,10.46,0,0,0-3.99-2.5,6.07,6.07,0,1,0-6.869,0A10.517,10.517,0,0,0,0,21H1.641a8.859,8.859,0,0,1,17.719,0H21A10.432,10.432,0,0,0,17.925,13.575ZM10.5,10.5a4.43,4.43,0,1,1,4.43-4.43A4.435,4.435,0,0,1,10.5,10.5Z" />
+                                            </g>
                                         </g>
                                     </g>
-                                </g>
-                            </svg>
+                                </svg>
+                            </div>
                             <p>Мой Профиль</p>
                         </a>
+                        <a href='<?php echo home_url('/'); ?>comparison' class='header-item header-comparison'>
+                            <div class='count-image'>
+                                <?php
+                                    $userID = get_user_meta(get_current_user_id());
+                                    $compare = $userID['compare'];
+                                    if ($compare) { ?>
+                                        <span class='sub-label'><?php echo count($compare) ?></span>
+                                    <?php } ?>
+                                <svg id="Сгруппировать_2793" data-name="Сгруппировать 2793"
+                                     xmlns="http://www.w3.org/2000/svg"
+                                     width="31.918" height="24.554" viewBox="0 0 31.918 24.554">
+                                    <path id="Контур_724" data-name="Контур 724"
+                                          d="M31.461,67.082,27.419,58.54h1.687a.7.7,0,1,0,0-1.406H18.947a3.058,3.058,0,0,0-5.976,0H2.812a.7.7,0,1,0,0,1.406H4.5L.457,67.082A.7.7,0,0,0,0,67.715a5.554,5.554,0,0,0,5.554,5.554h.035a5.7,5.7,0,0,0,5.624-5.589.6.6,0,0,0-.492-.6L6.679,58.54h6.292a3.093,3.093,0,0,0,2.285,2.144V73.832a4.781,4.781,0,0,0-4.148,4.781.668.668,0,0,0,.667.669h8.332a.668.668,0,0,0,.7-.632c0-.012,0-.024,0-.036a4.781,4.781,0,0,0-4.148-4.781V60.685a3.093,3.093,0,0,0,2.285-2.144h6.292L21.2,67.082a.633.633,0,0,0-.492.633,5.554,5.554,0,0,0,5.554,5.554h.035a5.66,5.66,0,0,0,5.624-5.554A.738.738,0,0,0,31.461,67.082ZM5.589,71.863h0a4.148,4.148,0,0,1-4.113-3.48H9.737A4.289,4.289,0,0,1,5.589,71.863Zm3.55-4.886h-7.1l3.55-7.628Zm10.194,10.9H12.585a3.621,3.621,0,0,1,3.375-2.742A3.621,3.621,0,0,1,19.334,77.874ZM15.959,59.349A1.652,1.652,0,1,1,17.611,57.7,1.652,1.652,0,0,1,15.959,59.349Zm10.37,0,3.55,7.628h-7.1Zm-.035,12.514a4.148,4.148,0,0,1-4.113-3.48h8.261A4.289,4.289,0,0,1,26.294,71.863Z"
+                                          transform="translate(0 -54.727)" />
+                                </svg>
+                            </div>
+                            <p>Сравнение</p>
+                        </a>
+                        <a href='<?php echo home_url('/'); ?>my-account' class='header-item header-favorites'>
+                            <div class='count-image'>
+                                <?php
+                                    $userID = get_user_meta(get_current_user_id());
+                                    $favorite = $userID['favorite'];
+                                    if ($favorite) { ?>
+                                        <span class='sub-label'><?php echo count($favorite) ?></span>
+                                    <?php } ?>
+                                <svg xmlns="http://www.w3.org/2000/svg" width="26.93" height="23.95"
+                                     viewBox="0 0 26.93 23.95">
+                                    <path id="Контур_723" data-name="Контур 723"
+                                          d="M18.675,1.465a6.021,6.021,0,0,0-3.76,1.3,8.566,8.566,0,0,0-2.2,2.646,8.565,8.565,0,0,0-2.2-2.646,6.021,6.021,0,0,0-3.76-1.3C2.9,1.465,0,4.615,0,8.792c0,4.513,3.623,7.6,9.108,12.274.931.794,1.987,1.693,3.084,2.653a.795.795,0,0,0,1.046,0c1.1-.96,2.153-1.859,3.085-2.654C21.807,16.392,25.43,13.3,25.43,8.792,25.43,4.615,22.526,1.465,18.675,1.465Z"
+                                          transform="translate(0.75 -0.715)" fill="none" stroke="#000"
+                                          stroke-width="1.5" />
+                                </svg>
+                            </div>
+                            <p>Избранные</p>
+                        </a>
+
                     <?php } else { ?>
-                    <a class='header-profile' href='<?php echo home_url('/'); ?>login'>
-                        <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="21"
-                             height="21" viewBox="0 0 21 21">
-                            <defs>
-                                <clipPath id="clip-path">
-                                    <rect id="Прямоугольник_2160" data-name="Прямоугольник 2160" width="21" height="21"
-                                          transform="translate(113 369)" stroke="#707070" stroke-width="1" />
-                                </clipPath>
-                            </defs>
-                            <g id="Группа_масок_381" data-name="Группа масок 381" transform="translate(-113 -369)"
-                               clip-path="url(#clip-path)">
-                                <g id="user" transform="translate(113 369)">
-                                    <g id="Сгруппировать_2994" data-name="Сгруппировать 2994">
-                                        <path id="Контур_860" data-name="Контур 860"
-                                              d="M17.925,13.575a10.46,10.46,0,0,0-3.99-2.5,6.07,6.07,0,1,0-6.869,0A10.517,10.517,0,0,0,0,21H1.641a8.859,8.859,0,0,1,17.719,0H21A10.432,10.432,0,0,0,17.925,13.575ZM10.5,10.5a4.43,4.43,0,1,1,4.43-4.43A4.435,4.435,0,0,1,10.5,10.5Z" />
+                        <a class='header-item header-profile' href='<?php echo home_url('/'); ?>login'>
+                            <div class='count-image'>
+                                <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+                                     width="21"
+                                     height="21" viewBox="0 0 21 21">
+                                    <defs>
+                                        <clipPath id="clip-path">
+                                            <rect id="Прямоугольник_2160" data-name="Прямоугольник 2160" width="21"
+                                                  height="21"
+                                                  transform="translate(113 369)" stroke="#707070" stroke-width="1" />
+                                        </clipPath>
+                                    </defs>
+                                    <g id="Группа_масок_381" data-name="Группа масок 381"
+                                       transform="translate(-113 -369)"
+                                       clip-path="url(#clip-path)">
+                                        <g id="user" transform="translate(113 369)">
+                                            <g id="Сгруппировать_2994" data-name="Сгруппировать 2994">
+                                                <path id="Контур_860" data-name="Контур 860"
+                                                      d="M17.925,13.575a10.46,10.46,0,0,0-3.99-2.5,6.07,6.07,0,1,0-6.869,0A10.517,10.517,0,0,0,0,21H1.641a8.859,8.859,0,0,1,17.719,0H21A10.432,10.432,0,0,0,17.925,13.575ZM10.5,10.5a4.43,4.43,0,1,1,4.43-4.43A4.435,4.435,0,0,1,10.5,10.5Z" />
+                                            </g>
+                                        </g>
                                     </g>
-                                </g>
-                            </g>
-                        </svg>
-                        <p>Войти</p>
-                    </a>
+                                </svg>
+                            </div>
+                            <p>Войти</p>
+                        </a>
                     <?php } ?>
-                    <a href='<?php echo home_url('/'); ?>comparison' class='header-comparison'>
-                        <svg id="Сгруппировать_2793" data-name="Сгруппировать 2793" xmlns="http://www.w3.org/2000/svg"
-                             width="31.918" height="24.554" viewBox="0 0 31.918 24.554">
-                            <path id="Контур_724" data-name="Контур 724"
-                                  d="M31.461,67.082,27.419,58.54h1.687a.7.7,0,1,0,0-1.406H18.947a3.058,3.058,0,0,0-5.976,0H2.812a.7.7,0,1,0,0,1.406H4.5L.457,67.082A.7.7,0,0,0,0,67.715a5.554,5.554,0,0,0,5.554,5.554h.035a5.7,5.7,0,0,0,5.624-5.589.6.6,0,0,0-.492-.6L6.679,58.54h6.292a3.093,3.093,0,0,0,2.285,2.144V73.832a4.781,4.781,0,0,0-4.148,4.781.668.668,0,0,0,.667.669h8.332a.668.668,0,0,0,.7-.632c0-.012,0-.024,0-.036a4.781,4.781,0,0,0-4.148-4.781V60.685a3.093,3.093,0,0,0,2.285-2.144h6.292L21.2,67.082a.633.633,0,0,0-.492.633,5.554,5.554,0,0,0,5.554,5.554h.035a5.66,5.66,0,0,0,5.624-5.554A.738.738,0,0,0,31.461,67.082ZM5.589,71.863h0a4.148,4.148,0,0,1-4.113-3.48H9.737A4.289,4.289,0,0,1,5.589,71.863Zm3.55-4.886h-7.1l3.55-7.628Zm10.194,10.9H12.585a3.621,3.621,0,0,1,3.375-2.742A3.621,3.621,0,0,1,19.334,77.874ZM15.959,59.349A1.652,1.652,0,1,1,17.611,57.7,1.652,1.652,0,0,1,15.959,59.349Zm10.37,0,3.55,7.628h-7.1Zm-.035,12.514a4.148,4.148,0,0,1-4.113-3.48h8.261A4.289,4.289,0,0,1,26.294,71.863Z"
-                                  transform="translate(0 -54.727)" />
-                        </svg>
-                        <p>Сравнение</p>
-                    </a>
-                    <!--                    <a href='-->
-                    <?php //echo home_url('/'); ?><!--my-account' class='header-favorites'>-->
-                    <!--                        <svg xmlns="http://www.w3.org/2000/svg" width="26.93" height="23.95" viewBox="0 0 26.93 23.95">-->
-                    <!--                            <path id="Контур_723" data-name="Контур 723"-->
-                    <!--                                  d="M18.675,1.465a6.021,6.021,0,0,0-3.76,1.3,8.566,8.566,0,0,0-2.2,2.646,8.565,8.565,0,0,0-2.2-2.646,6.021,6.021,0,0,0-3.76-1.3C2.9,1.465,0,4.615,0,8.792c0,4.513,3.623,7.6,9.108,12.274.931.794,1.987,1.693,3.084,2.653a.795.795,0,0,0,1.046,0c1.1-.96,2.153-1.859,3.085-2.654C21.807,16.392,25.43,13.3,25.43,8.792,25.43,4.615,22.526,1.465,18.675,1.465Z"-->
-                    <!--                                  transform="translate(0.75 -0.715)" fill="none" stroke="#000" stroke-width="1.5"/>-->
-                    <!--                        </svg>-->
-                    <!--                        <p>Избранные</p>-->
-                    <!--                    </a>-->
-                    <div class='header-basket open-basket-js'>
-                        <div class='basket-image'>
-                            <span><?php echo $woocommerce->cart->get_cart_contents_count(); ?></span>
+                    <div class='header-item header-basket open-basket-js'>
+                        <div class='count-image'>
+                            <span class='sub-label'><?php echo $woocommerce->cart->get_cart_contents_count(); ?></span>
                             <svg id="shopping-cart-empty-side-view" xmlns="http://www.w3.org/2000/svg" width="33"
                                  height="31.058" viewBox="0 0 33 31.058">
                                 <path id="Контур_100" data-name="Контур 100"
@@ -167,9 +194,47 @@
                     <a href='<?php echo home_url('/'); ?>' class='logo'>
                         <img src='<?php echo get_template_directory_uri() ?>/assets/images/icons/logo.svg' alt='logo'>
                     </a>
-                    <div class='header-basket open-basket-js'>
-                        <div class='basket-image'>
-                            <span><?php echo $woocommerce->cart->get_cart_contents_count(); ?></span>
+                    <?php if (is_user_logged_in()) { ?>
+                        <a href='<?php echo home_url('/'); ?>comparison' class='header-item header-comparison'>
+                            <div class='count-image'>
+                                <?php
+                                    $userID = get_user_meta(get_current_user_id());
+                                    $compare = $userID['compare'];
+                                    if ($compare) { ?>
+                                        <span class='sub-label'><?php echo count($compare) ?></span>
+                                    <?php } ?>
+                                <svg id="Сгруппировать_2793" data-name="Сгруппировать 2793"
+                                     xmlns="http://www.w3.org/2000/svg"
+                                     width="31.918" height="24.554" viewBox="0 0 31.918 24.554">
+                                    <path id="Контур_724" data-name="Контур 724"
+                                          d="M31.461,67.082,27.419,58.54h1.687a.7.7,0,1,0,0-1.406H18.947a3.058,3.058,0,0,0-5.976,0H2.812a.7.7,0,1,0,0,1.406H4.5L.457,67.082A.7.7,0,0,0,0,67.715a5.554,5.554,0,0,0,5.554,5.554h.035a5.7,5.7,0,0,0,5.624-5.589.6.6,0,0,0-.492-.6L6.679,58.54h6.292a3.093,3.093,0,0,0,2.285,2.144V73.832a4.781,4.781,0,0,0-4.148,4.781.668.668,0,0,0,.667.669h8.332a.668.668,0,0,0,.7-.632c0-.012,0-.024,0-.036a4.781,4.781,0,0,0-4.148-4.781V60.685a3.093,3.093,0,0,0,2.285-2.144h6.292L21.2,67.082a.633.633,0,0,0-.492.633,5.554,5.554,0,0,0,5.554,5.554h.035a5.66,5.66,0,0,0,5.624-5.554A.738.738,0,0,0,31.461,67.082ZM5.589,71.863h0a4.148,4.148,0,0,1-4.113-3.48H9.737A4.289,4.289,0,0,1,5.589,71.863Zm3.55-4.886h-7.1l3.55-7.628Zm10.194,10.9H12.585a3.621,3.621,0,0,1,3.375-2.742A3.621,3.621,0,0,1,19.334,77.874ZM15.959,59.349A1.652,1.652,0,1,1,17.611,57.7,1.652,1.652,0,0,1,15.959,59.349Zm10.37,0,3.55,7.628h-7.1Zm-.035,12.514a4.148,4.148,0,0,1-4.113-3.48h8.261A4.289,4.289,0,0,1,26.294,71.863Z"
+                                          transform="translate(0 -54.727)" />
+                                </svg>
+                            </div>
+                            <p>Сравнение</p>
+                        </a>
+                        <a href='<?php echo home_url('/'); ?>my-account' class='header-item header-favorites'>
+                            <div class='count-image'>
+                                <?php
+                                    $userID = get_user_meta(get_current_user_id());
+                                    $favorite = $userID['favorite'];
+                                    if ($favorite) { ?>
+                                        <span class='sub-label'><?php echo count($favorite) ?></span>
+                                    <?php } ?>
+                                <svg xmlns="http://www.w3.org/2000/svg" width="26.93" height="23.95"
+                                     viewBox="0 0 26.93 23.95">
+                                    <path id="Контур_723" data-name="Контур 723"
+                                          d="M18.675,1.465a6.021,6.021,0,0,0-3.76,1.3,8.566,8.566,0,0,0-2.2,2.646,8.565,8.565,0,0,0-2.2-2.646,6.021,6.021,0,0,0-3.76-1.3C2.9,1.465,0,4.615,0,8.792c0,4.513,3.623,7.6,9.108,12.274.931.794,1.987,1.693,3.084,2.653a.795.795,0,0,0,1.046,0c1.1-.96,2.153-1.859,3.085-2.654C21.807,16.392,25.43,13.3,25.43,8.792,25.43,4.615,22.526,1.465,18.675,1.465Z"
+                                          transform="translate(0.75 -0.715)" fill="none" stroke="#000"
+                                          stroke-width="1.5" />
+                                </svg>
+                            </div>
+                            <p>Избранные</p>
+                        </a>
+                    <?php } ?>
+                    <div class='header-item header-basket open-basket-js'>
+                        <div class='count-image'>
+                            <span class='sub-label'><?php echo $woocommerce->cart->get_cart_contents_count(); ?></span>
                             <svg id="shopping-cart-empty-side-view" xmlns="http://www.w3.org/2000/svg" width="33"
                                  height="31.058" viewBox="0 0 33 31.058">
                                 <path id="Контур_100" data-name="Контур 100"
@@ -221,4 +286,7 @@
         </div>
     </div>
 </header>
+<div class='notification d-none'>
+    Не удалось отправить
+</div>
 <?php include get_template_directory() . '/components/_basket.php'; ?>
