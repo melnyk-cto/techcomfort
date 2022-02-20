@@ -286,7 +286,7 @@
         </div>
     </div>
 </header>
-<div class='notification d-none'>
+<div class='notification-message d-none'>
     Не удалось отправить
 </div>
 <?php include get_template_directory() . '/components/_basket.php'; ?>

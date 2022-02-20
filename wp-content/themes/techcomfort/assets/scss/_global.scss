@@ -426,7 +426,7 @@ form {
   }
 }
 
-.notification {
+.notification-message {
   position:      fixed;
   right:         10px;
   top:           10px;
@@ -441,10 +441,10 @@ form {
   padding:       16px 12px;
 }
 
-.notification[data-type='error'] {
+.notification-message[data-type='error'] {
   color: red;
 }
-.notification[data-type='success'] {
+.notification-message[data-type='success'] {
   color: green;
 }
 

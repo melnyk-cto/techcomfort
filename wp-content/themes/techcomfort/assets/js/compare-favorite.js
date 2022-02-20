@@ -6,7 +6,7 @@ jQuery(document).ready(function () {
 
     const dataName = jQuery(this).attr('data-name');
     const userID = jQuery(this).attr('data-userID');
-    const notification = jQuery('.notification');
+    const notification = jQuery('.notification-message');
 
 
     // проверяем тип
