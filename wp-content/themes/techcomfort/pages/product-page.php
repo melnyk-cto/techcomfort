@@ -56,14 +56,10 @@
                         <p>Код Товара: <?php echo $_product->get_sku() ?></p>
                         <p>Производитель: <?php echo $_product->get_short_description() ?></p>
                     </div>
-                    <div class='area'>
+                    <div class='area d-none'>
                         <h5>Площадь, М²</h5>
                         <ul class='area-list'>
-                            <li>18-22 М²</li>
-                            <li>20-30 М²</li>
-                            <li>23-33 М²</li>
-                            <li>30­40 М²</li>
-                            <li>31-41 М²</li>
+                            <li class='area-item'></li>
                         </ul>
                     </div>
                     <div class='quantity'>
