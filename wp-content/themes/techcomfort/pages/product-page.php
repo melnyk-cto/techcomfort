@@ -13,7 +13,14 @@
 <main class='product-page'>
     <section class='product-info'>
         <div class='container'>
-            <h2><?php echo $_product->get_title() ?></h2>
+            <h2>
+                <?php echo $_product->get_title() ?>
+                <div class='clipboard'>
+                    <img class='clipboard' src='<?php echo get_template_directory_uri() ?>/assets/images/icons/share.svg'
+                         alt=''>
+                    <p class='d-none'>Ссылку скопировано</p>
+                </div>
+            </h2>
             <div class='product-info-inner'>
                 <div class='product-info-slider'>
                     <div class='swiper-top'>

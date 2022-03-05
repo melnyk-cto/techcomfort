@@ -10,8 +10,37 @@
   .product-info {
     padding: 5% 0;
     h2 {
-      font-size:     34px;
-      margin-bottom: 2.5%;
+      font-size:       34px;
+      margin-bottom:   2.5%;
+      display:         flex;
+      align-items:     center;
+      justify-content: flex-start;
+      img {
+        width:       24px;
+        margin-left: 15px;
+        cursor:      pointer;
+        &:hover, &:active {
+          opacity: .7;
+        }
+      }
+    }
+    .clipboard {
+      position: relative;
+      z-index:  2;
+      display:  flex;
+      p {
+        text-transform: none;
+        font-size:      12px;
+        position:       absolute;
+        right:          0;
+        bottom:         -4px;
+        transform:      translate(0, 100%);
+        padding:        8px 4px;
+        background:     white;
+        border-radius:  4px;
+        width:          134px;
+        border:         1px solid #b2c5d3;
+      }
     }
     &-inner {
       display:         flex;
