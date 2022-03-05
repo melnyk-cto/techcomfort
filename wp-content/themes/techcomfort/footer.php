@@ -46,6 +46,9 @@
                             <li>
                                 <a href='<?php echo home_url('/'); ?>reviews'>Отзывы</a>
                             </li>
+                            <li>
+                                <a href='<?php echo home_url('/'); ?>terms-and-conditions'>Cоглашение</a>
+                            </li>
                             <!--                            <li>-->
                             <!--                                <a href='-->
                             <?php //echo home_url( '/' ); ?><!--blog'>Блог</a>-->

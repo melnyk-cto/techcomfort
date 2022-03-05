@@ -1,0 +1,46 @@
+@import "variables";
+
+.terms-and-conditions {
+  h2 {
+    margin-bottom: 32px;
+    line-height:   1.5;
+  }
+  padding: 40px 0;
+  a {
+    color: $primaryColor;
+    &:hover, &:active {
+      color: $bgColor;
+    }
+  }
+  p {
+    margin-bottom: 18px;
+    line-height:   1.5;
+  }
+  ul {
+    list-style-type: circle;
+    padding-left:    32px;
+    margin-bottom:   16px;
+    li {
+      line-height: 1.5;
+    }
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .terms-and-conditions {
+    h2 {
+      font-size: 24px;
+      margin-bottom: 24px;
+    }
+    p {
+      margin-bottom: 10px;
+    }
+    ul {
+      margin-bottom: 16px;
+      padding-left:  24px;
+      li {
+        font-size: 12px;
+      }
+    }
+  }
+}
