@@ -44,9 +44,6 @@
                                     include get_template_directory() . '/components/_rating.php'; ?>
                                 <a href='<?php echo home_url('/'); ?>product/?uid=<?php echo $product; ?>'>
                                     <?php echo $_product->get_title() ?>
-                                    <?php
-                                        $postId = $_product->get_id();
-                                        include get_template_directory() . '/components/_product-icons.php'; ?>
                                 </a>
                                 <span class='price'>
                                     <?php if ((int)$_product->get_price() > 10) echo $_product->get_price_html(); else echo "<span class='green'>Уточняйте цену</span>"; ?>

@@ -10,16 +10,6 @@
         }
       }
     }
-    .products-item:hover {
-      box-shadow: 0 3px 20px 0 rgba(56, 69, 249, 0.35);
-    }
-    .products-item, .product {
-      .icon:hover {
-        path {
-          stroke: $primaryColor;
-        }
-      }
-    }
   }
 }
 
@@ -129,6 +119,18 @@
         opacity: .7;
       }
       &.active {
+        path {
+          fill:    $primaryColor;
+          stroke:  $primaryColor;
+          opacity: 1;
+        }
+        &:hover {
+          path {
+            opacity: 0.7;
+          }
+        }
+      }
+      &:hover {
         path {
           fill:    $primaryColor;
           stroke:  $primaryColor;

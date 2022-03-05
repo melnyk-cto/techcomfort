@@ -28,7 +28,7 @@
                 if (count($favorites) > 0) {
                     foreach ($favorites as $value) {
                         $_product = wc_get_product($value); ?>
-                        <div class='products-item catalog-item'>
+                        <div class='products-item catalog-item favorite-item'>
                             <a id="id-<?php echo $_product->get_id(); ?>"
                                href="<?php echo home_url('/'); ?>product?uid=<?php echo $_product->get_id(); ?>"
                                title="<?php echo $_product->get_title(); ?>" class='item-image'>

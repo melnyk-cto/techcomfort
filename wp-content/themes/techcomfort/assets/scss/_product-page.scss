@@ -2,7 +2,7 @@
 
 .product-page {
   .products {
-    padding: 5% 0;
+    padding: 0 0 5% 0;
     h2 {
       margin-bottom: 3%;
     }
@@ -10,7 +10,7 @@
   .product-info {
     padding: 5% 0;
     h2 {
-      font-size: 34px;
+      font-size:     34px;
       margin-bottom: 2.5%;
     }
     &-inner {
@@ -22,11 +22,11 @@
       .swiper-top {
         margin-bottom: 25px;
         .slider-image {
-          background: $white;
+          background:    $white;
           border-radius: 10px;
           img {
-            height: 400px;
-            object-fit: contain;
+            height:          400px;
+            object-fit:      contain;
             object-position: center center;
           }
         }
@@ -159,6 +159,7 @@
     }
   }
   .general-information {
+    margin-bottom: 40px;
     .product-title {
       text-transform: uppercase;
       font-weight:    500;
@@ -336,7 +337,7 @@
       }
     }
     .products {
-      padding: 5% 0 40px;
+      padding: 0 0 40px;
       h2 {
         font-size:     22px;
         line-height:   1.5;
@@ -464,7 +465,6 @@
       }
     }
     .products {
-      padding: 50px 0;
       h2 {
         font-size:     16px;
         line-height:   1.4;
