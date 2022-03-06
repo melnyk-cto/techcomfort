@@ -6,7 +6,7 @@
     <div class='item-description'>
         <div class='order-number'>
             <span>№ 346 857 123 от 29.06.2021</span>
-            <p>Сделаное</p>
+            <p>Статус: <span>Сделаное</span></p>
         </div>
         <div class='order-price'>
             <span>сумма заказа</span>

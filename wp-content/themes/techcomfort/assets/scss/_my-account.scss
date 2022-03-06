@@ -242,6 +242,9 @@
         .item-description {
           max-width: 660px;
           width:     60%;
+          span {
+            padding: 0;
+          }
         }
         .order-number, .order-price {
           display:         flex;
