@@ -76,6 +76,7 @@
         <div class='container'>
             <div class='header-bottom-inner'>
                 <div class='header-action'>
+                    <?php include get_template_directory() . '/components/_search-input.php'; ?>
                     <?php if (is_user_logged_in()) { ?>
                         <a class='header-item header-profile' href='<?php echo home_url('/'); ?>my-account'>
                             <div class='count-image'>
@@ -139,7 +140,6 @@
                             </div>
                             <p>Избранные</p>
                         </a>
-
                     <?php } else { ?>
                         <a class='header-item header-profile' href='<?php echo home_url('/'); ?>login'>
                             <div class='count-image'>
@@ -245,6 +245,7 @@
                         <p>Товары</p>
                     </div>
                 </div>
+                <?php include get_template_directory() . '/components/_search-input.php'; ?>
             </div>
         </div>
         <div class='header-mobiles-bottom'>

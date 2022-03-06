@@ -117,3 +117,19 @@ document.addEventListener("DOMContentLoaded", function () {
     setCookie(name, value)
   }
 });
+
+jQuery(document).ready(function ($) {
+  // Копировать ссылку
+  const $temp = $("<input>");
+  const $url = $(location).attr('href');
+  $('.clipboard').on('click', function () {
+    $("body").append($temp);
+    $temp.val($url).select();
+    document.execCommand("copy");
+    $temp.remove();
+    $(".clipboard p").removeClass('d-none');
+    setTimeout(() => {
+      $(".clipboard p").addClass('d-none');
+    }, 1000)
+  })
+});

@@ -230,3 +230,6 @@
 
     //  Добавление в избранное или сравнение
     require_once get_stylesheet_directory() . '/includes/compare-favorite.php';
+
+    //  Поиск на сайте
+    require_once get_stylesheet_directory() . '/includes/search-bar.php';
