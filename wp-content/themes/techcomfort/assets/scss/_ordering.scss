@@ -60,9 +60,6 @@
           text-transform: initial;
           margin-bottom:  15px;
         }
-        .wpcf7-list-item {
-          margin-bottom: 18px;
-        }
         label {
           margin-bottom: 10px;
           &:nth-child(3) {
@@ -79,20 +76,27 @@
         label {
           width:         100%;
           margin-bottom: 0;
+          cursor:        pointer;
         }
       }
-      .delivery-service .wpcf7-list-item, .payment-method .wpcf7-list-item {
+      .delivery-service .delivery-service-item, .payment-method label {
         background:    $white;
         border-radius: 5px;
         box-shadow:    0 3px 20px rgba(56, 69, 249, 0.13);
         margin-bottom: 20px;
         padding:       12px 15px;
+        &:hover, &:active {
+          color: $primaryColor;
+        }
         &:last-child {
           margin-bottom: 0;
         }
       }
       .delivery-service {
         label {
+          &:hover, &:active {
+            color: $primaryColor;
+          }
           span {
             background: $white;
             padding:    0 6px;
@@ -196,28 +200,6 @@
   }
 }
 
-.ordering {
-  .wpcf7-list-item {
-    width:         100%;
-    margin-left:   0;
-    margin-bottom: 0;
-  }
-  .wpcf7-form-control-wrap {
-    width: 100%;
-  }
-  .additional {
-    margin-top: 16px;
-  }
-  .amount bdi {
-    color: #6b92b0;
-  }
-  .wpcf7-not-valid-tip {
-    position: relative;
-    top:      2px;
-  }
-}
-
-
 @media screen and (max-width: 1150px) {
   .ordering {
     .contact {
@@ -267,7 +249,7 @@
             }
           }
         }
-        .delivery-service .wpcf7-list-item, .payment-method .wpcf7-list-item {
+        .delivery-service .delivery-service-item, .payment-method label {
           box-shadow: 0 3px 10px rgba(56, 69, 249, 0.13);
           padding:    15px;
         }
@@ -348,7 +330,7 @@
         margin-bottom: 30px;
       }
       .btn {
-        max-width: 280px;
+        max-width: 400px;
         width:     100%;
         padding:   13px;
       }
@@ -392,7 +374,7 @@
             }
           }
         }
-        .delivery-service .wpcf7-list-item, .payment-method .wpcf7-list-item {
+        .delivery-service .delivery-service-item, .payment-method label {
           box-shadow:    0 3px 8px rgba(56, 69, 249, 0.13);
           padding:       13px 10px;
           border-radius: 3px;
