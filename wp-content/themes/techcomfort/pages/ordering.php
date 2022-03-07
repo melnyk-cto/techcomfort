@@ -4,6 +4,13 @@
 <script>
   const products = [];
 </script>
+<?php
+    $first_name = ucfirst(get_user_meta(get_current_user_id(), 'first_name', true));
+    $last_name = ucfirst(get_user_meta(get_current_user_id(), 'last_name', true));
+    $phone = ucfirst(get_user_meta(get_current_user_id(), 'user_registration_phone', true));
+    $address = ucfirst(get_user_meta(get_current_user_id(), 'user_registration_address', true));
+    $user_info = get_userdata(get_current_user_id());
+    $user_email = $user_info->user_email; ?>
 <main class='ordering'>
     <section class='contact'>
         <div class='container'>
@@ -14,23 +21,23 @@
                         <textarea class='products-js' name='textarea-products'></textarea>
                         <label>
                             <span class="label">Имя*</span>
-                            <input type='text' name='form-first'>
+                            <input type='text' name='form-first' value='<?php if ($first_name) echo $first_name; ?>'>
                         </label>
                         <label>
                             <span class="label">Фамилия*</span>
-                            <input type='text' name='form-last'>
+                            <input type='text' name='form-last' value='<?php if ($last_name) echo $last_name; ?>'>
                         </label>
                         <label>
                             <span class="label">Телефон*</span>
-                            <input type='tel' name='form-phone'>
+                            <input type='tel' name='form-phone' value='<?php if ($phone) echo $phone; ?>'>
                         </label>
                         <label>
                             <span class="label">Email*</span>
-                            <input type='email' name='form-email'>
+                            <input type='email' name='form-email' value='<?php if ($user_email) echo $user_email; ?>'>
                         </label>
                         <label class='address'>
                             <span class="label">Адрес</span>
-                            <textarea name='address'></textarea>
+                            <textarea name='address' value='<?php if ($address) echo $address; ?>'></textarea>
                         </label>
                         <div class='installation-required'>
                             <h5>Требуется установка</h5>
@@ -112,23 +119,31 @@
                                 $_product = wc_get_product($values['data']->get_id());
                                 $cart_item_remove_url = wc_get_cart_remove_url($item);
                                 $price = $_product->get_regular_price();
-                                $price_excl_tax = number_format(wc_get_price_excluding_tax($_product), 0, '', ' '); // price without VAT
-                                echo " <div class='item-inner'>
-                            <div class='item-image'>
-                                 " . $_product->get_image('180') . "
-                            </div>
-                            <div class='item-description'>
-                                <div class='description-title'>
-                                    <h5>" . $_product->get_title() . "</h5>
-                                    <script>                                    
-                                     products.push({Номер:`$count` ,Название: `" . $_product->get_title() . "`, Цена: `" . $price_excl_tax . "`,  Ссылка: `https://techcomfort.com.ua/product/?uid=" . $_product->get_id() . "`})
-                                    </script>
+                                $price_excl_tax = number_format(wc_get_price_excluding_tax($_product) * $values['quantity'], 0, '', ' '); // price without VAT
+                                ?>
+                                <div class='item-inner'>
+                                    <div class='item-image'>
+                                        <?php echo $_product->get_image('180') ?>
+                                    </div>
+                                    <div class='item-description'>
+                                        <div class='description-title'>
+                                            <h5><?php echo $_product->get_title() ?></h5>
+                                        </div>
+                                        <span class='quantity-product'><?php echo $values['quantity']; ?></span>
+                                        <span class='price-product'><?php echo $price_excl_tax; ?> ₴</span>
+                                    </div>
                                 </div>
-                                <span class='price-product'>" . $price_excl_tax . " ₴</span>
-                            </div>
-                        </div>";
-                            }
-                        ?>
+                                <script>
+                                  products.push({
+                                    ID: "<?php echo $_product->get_id(); ?>",
+                                    Count: "<?php echo $values['quantity']; ?>",
+                                    Number: <?php echo $count?>,
+                                    Name: "<?php echo $_product->get_title(); ?>",
+                                    Price: "<?php echo $price_excl_tax; ?>",
+                                    Link: "https://techcomfort.com.ua/product/?uid=<?php echo $_product->get_id(); ?>"
+                                  })
+                                </script>
+                            <?php } ?>
                     </div>
                     <p class='price'>
                         Сума товара:

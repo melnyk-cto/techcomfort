@@ -12,7 +12,6 @@ jQuery(document).ready(function ($) {
   const options = {
     type: "POST",
     url: ajax_form_object.url,
-    dataType: 'json',
     data: {
       action: 'ajax_form_action_order_form',
       nonce: ajax_form_object.nonce,

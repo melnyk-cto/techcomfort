@@ -1,4 +1,6 @@
 <?php
+    global $woocommerce;
+
     // create js ajax for search
     function order_form_enqueue() {
         // Обработка полей формы
@@ -10,6 +12,7 @@
         ));
     }
 
+    add_action('woocommerce_checkout_process', 'create_vip_order');
     add_action('wp_enqueue_scripts', 'order_form_enqueue');
 
     // Ajax handling
@@ -50,11 +53,41 @@
             $formEmail = sanitize_text_field($_POST['form-email']);
         }
 
+        $formAddress = sanitize_text_field($_POST['address']);
+
+        $encodeProducts = stripslashes(html_entity_decode($_POST['textarea-products']));
+        $products = json_decode($encodeProducts, true);
+
         // Проверяем массив ошибок, если не пустой, то передаем сообщение. Иначе отправляем письмо
         if ($errors) {
             wp_send_json_error($errors);
 
         } else {
+
+            $address = array(
+                'first_name' => $formFirst,
+                'last_name' => $formLast,
+                'company' => '',
+                'email' => $formEmail,
+                'phone' => $formPhone,
+                'address_1' => $formAddress,
+                'address_2' => '',
+                'city' => '',
+                'state' => '',
+                'postcode' => '',
+                'country' => ''
+            );
+
+            // Now we create the order
+            $order = wc_create_order();
+            // The add_product() function below is located in /plugins/woocommerce/includes/abstracts/abstract_wc_order.php
+            foreach ($products as $key) {
+                $order->add_product(get_product($key['ID']), $key['Count']); // This is an existing SIMPLE product
+            }
+            $order->set_address($address, 'billing');
+            $order->calculate_totals();
+            $order->update_status("Completed", 'Imported order', TRUE);
+
             // Отправляем сообщение об успешной отправке
             $message_success = 'Заказа успешно отправлен';
 
