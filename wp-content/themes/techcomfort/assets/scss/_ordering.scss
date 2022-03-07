@@ -22,12 +22,22 @@
     &-inner {
       align-items: flex-start;
     }
+    .notification_error {
+      margin-top: 32px;
+    }
+    .notification_warning {
+      position:  absolute;
+      z-index:   1;
+      left:      0;
+      bottom:    0;
+      transform: translate(0, 100%);
+    }
     &-form {
       max-width: 695px;
       margin:    0 20px 60px 0;
       form {
         > label {
-          margin-bottom: 32px;
+          margin-bottom: 30px;
           width:         47.6%;
           min-font-size: 50px;
         }
@@ -219,7 +229,6 @@
         form {
           flex-direction: row;
           > label {
-            margin-bottom: 19px;
             width:         48.6%;
             min-height:    45px;
           }
@@ -340,7 +349,6 @@
         form {
           flex-direction: column;
           > label {
-            margin-bottom: 20px;
             width:         100%;
             min-height:    40px;
           }

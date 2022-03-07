@@ -233,3 +233,6 @@
 
     //  Поиск на сайте
     require_once get_stylesheet_directory() . '/includes/search-bar.php';
+
+    //  Форма оформления заказа
+    require_once get_stylesheet_directory() . '/includes/order-form.php';

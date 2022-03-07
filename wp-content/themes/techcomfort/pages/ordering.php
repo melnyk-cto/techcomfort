@@ -10,23 +10,23 @@
             <h2>Оформление заказа</h2>
             <div class='contact-inner'>
                 <div class='contact-form'>
-                    <form action=''>
+                    <form action='' id='order-form'>
                         <textarea class='products-js' name='textarea-products'></textarea>
                         <label>
                             <span class="label">Имя*</span>
-                            <input type='text' name='first-name' required>
+                            <input type='text' name='form-first'>
                         </label>
                         <label>
                             <span class="label">Фамилия*</span>
-                            <input type='text' name='last-name' required>
+                            <input type='text' name='form-last'>
                         </label>
                         <label>
                             <span class="label">Телефон*</span>
-                            <input type='tel' name='phone' required>
+                            <input type='tel' name='form-phone'>
                         </label>
                         <label>
                             <span class="label">Email*</span>
-                            <input type='email' name='email' required>
+                            <input type='email' name='form-email'>
                         </label>
                         <label class='address'>
                             <span class="label">Адрес</span>
@@ -44,7 +44,7 @@
                             </label>
                             <label class='textarea'>
                                 <span class='label'>Дополнительная информация</span>
-                                <textarea name="Additional"></textarea>
+                                <textarea name="additional-information"></textarea>
                             </label>
                         </div>
                         <div class='delivery-service'>
@@ -63,7 +63,7 @@
                                 </label>
                                 <label>
                                     <span class='label'>Адрес</span>
-                                    <input type='text' class='address-mail'>
+                                    <input type='text' class='address-mail' name='department-address'>
                                 </label>
                                 <label>
                                     <span class='label'>Отделение</span>
@@ -96,7 +96,7 @@
                                 Оплата по безналичному расчету (НДС)
                             </label>
                         </div>
-                        <button type='submit' id="submit" class='btn'>Создать Заказ</button>
+                        <button type='submit' id="order-form-submit" class='btn'>Создать Заказ</button>
                     </form>
                 </div>
                 <div class='ordering-basket'>
