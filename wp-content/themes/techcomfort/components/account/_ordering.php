@@ -4,8 +4,8 @@
     $orders = wc_get_orders($args);
 
     foreach ($orders as $order) {
-
         $date_modified = $order->get_date_modified();
+        $price = number_format($order->get_total(), 0, '', ' ');
         ?>
         <div class='info-item ordering-item'>
             <span class='arrow'></span>
@@ -19,69 +19,80 @@
                         $order->get_order_number(),
                         $date_modified->date("d.m.y о g:i")
                     ); ?>
-                    <p>Статус: <span class='order-status'>
+                    <p class='order-status'>Статус: <span class='order-status'>
                             <?php echo $order->get_status() ?>
                         </span>
                     </p>
                 </div>
                 <div class='order-price'>
-                    <span>сумма заказа</span>
-                    <p><?php echo $order->get_total() ?> UAH</p>
+                    <span>Сумма заказа</span>
+                    <p><?php echo $price ?> UAH</p>
                 </div>
             </div>
             <div class='order-history'>
                 <div class='order-history-left'>
-                    <h5>История заказа</h5>
-                    <p>Информация о заказе</p>
+                    <h5>Информация о заказе</h5>
                     <ul>
-                        <li>THH 20450405247481</li>
-                        <li>Доставка курьером по Киеву</li>
-                        <li>Киевская обл., Печерский р-н., Печерск, Генерала Алмазова ул.,
-                            кв.145
-                        </li>
-                        <li>Тюльпан Федотов</li>
                         <li>
-                            <a href='tel:38(097) 107 25 25'>38(097) 107 25 25</a>
+                            Номер заказа: <span><?php echo $order->get_order_number() ?></span>
                         </li>
                         <li>
-                            <a href='mailto:techcomfort@gmail.com'>techcomfort@gmail.com</a>
+                            ФИО:
+                            <span>
+                                <?php echo $order->get_billing_first_name() ?>
+                                <?php echo $order->get_billing_last_name() ?>
+                            </span>
+                        </li>
+                        <li>
+                            Телефон:
+                            <span><?php echo $order->get_billing_phone() ?></span>
+                        </li>
+                        <li>
+                            Email:
+                            <span><?php echo $order->get_billing_email() ?></span>
+                        </li>
+                        <li>
+                            Адрес: <span><?php echo $order->get_billing_address_1() ?></span>
+                        </li>
+                        <li>
+                            Требуется установка: <span><?php echo '????????????' ?></span>
+                        </li>
+                        <li>
+                            Дополнительная информация: <span><?php echo '????????????' ?></span>
                         </li>
                     </ul>
                 </div>
                 <div class='order-history-right'>
                     <div class='order-data'>
-                        <div class='data-product'>
-                            <div class='product-image'>
-                                <img src='<?php echo get_template_directory_uri() ?>/assets/images/product-gallery-5.jpg'
-                                     alt='Кондиционер'>
-                            </div>
-                            <h5>C&H CH-S07GKP8</h5>
+                        <div class='product-image'>
+                            <img src='<?php echo get_template_directory_uri() ?>/assets/images/product-gallery-5.jpg'
+                                 alt='Кондиционер'>
                         </div>
-                        <div class='data-price'>
-                            <span>цена</span>
-                            <p>8 760 UAH</p>
+                        <div class='data-title'>
+                            <h5>C&H CH-S07GKP8</h5>
+                            <span class='data-title-price'>Цена: <span>8 760 UAH</span></span>
                         </div>
                         <div class='data-amount'>
-                            <span>количество</span>
+                            <span>Количество</span>
                             <p>1</p>
                         </div>
                         <div class='data-price'>
-                            <span>сумма заказа</span>
+                            <span>Сумма заказа</span>
                             <p>8 760 UAH</p>
                         </div>
                     </div>
                     <div class='order-delivery'>
                         <div class='delivery-item'>
-                            <span>Оплата</span>
-                            <p>Оплата при получении в службах доставки</p>
+                            <span>Способ Оплаты:</span>
+                            <p><?php echo '????????????' ?></p>
                         </div>
                         <div class='delivery-item'>
-                            <span>Доставка</span>
-                            <p>Доставка курьером по Киеву</p>
+                            <span>Сервис Доставки</span>
+                            <p><?php echo '????????????' ?></p>
                         </div>
                         <div class='delivery-item'>
                             <span>Вместе</span>
-                            <span class='price'>8 760 UAH</span>
+                            <span class='price'><?php echo $price ?> UAH</span>
                         </div>
                     </div>
                 </div>
