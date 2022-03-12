@@ -255,6 +255,9 @@
           max-width: 600px;
           width:     60%;
         }
+        .order-status {
+          text-transform: capitalize;
+        }
         .order-history {
           display:         none;
           flex-wrap:       wrap;
