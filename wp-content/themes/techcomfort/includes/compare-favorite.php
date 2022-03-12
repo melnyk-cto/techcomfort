@@ -27,8 +27,21 @@
             }
         }
 
+        //
+        $userID = get_user_meta(get_current_user_id());
+        $compare = $userID['compare'];
+        $favorite = $userID['favorite'];
+        $countCompare = 0;
+        $countFavorite = 0;
+        if ($compare) $countCompare = count($compare);
+        if ($favorite) $countFavorite = count($favorite);
 
         // Отправляем сообщение об успешной отправке
         $message_success = 'Ваш compare-favorite успешно обновлен';
-        wp_send_json_success($message_success);
+        wp_send_json_success([
+            'status' => $message_success,
+            'info' => [
+                'compare' => $countCompare,
+                'favorite' => $countFavorite
+            ]]);
     }

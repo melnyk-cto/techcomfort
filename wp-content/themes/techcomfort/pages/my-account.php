@@ -34,7 +34,6 @@
                             </div>
                             <div class='info-list favorites '>
                                 <h2>Список желаний</h2>
-                                <p class='empty'>Список желаний пуст</p>
                                 <?php include get_template_directory() . '/components/account/_favorites.php'; ?>
                             </div>
                             <div class='info-list viewed-products '>

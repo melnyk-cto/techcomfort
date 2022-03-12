@@ -6,8 +6,6 @@ jQuery(document).ready(function () {
 
     const dataName = jQuery(this).attr('data-name');
     const userID = jQuery(this).attr('data-userID');
-    const notification = jQuery('.notification-message');
-
 
     // проверяем тип
     let type;
@@ -19,7 +17,11 @@ jQuery(document).ready(function () {
 
     //   Удаление из избранного
     if (jQuery(this).hasClass('compare-close-js')) {
-      jQuery(this).closest('.product-item').addClass('d-none');
+      const inner = jQuery(this).closest('.comparison-inner');
+      jQuery(this).closest('.product-item').fadeOut("slow", function () {
+        jQuery(this).remove();
+        if (jQuery('.product-item').length === 0) inner.html(`<h3>Нет товаров для сравнения</h3>`)
+      })
     }
 
     const options = {
@@ -38,7 +40,33 @@ jQuery(document).ready(function () {
       success: function (request) {
         if (request.success === true) {
           // Удача
-          console.log('Отправлено')
+          console.log('Отправлено');
+
+          // обновление значения в хедере
+          const {data: {info: {compare = null, favorite = null} = {}} = {}} = request;
+          const compareSelector = jQuery('.compare-count-js');
+          const favoriteSelector = jQuery('.favorite-count-js');
+
+          const addCount = (selector, count) => {
+            if (count) {
+              selector.removeClass('d-none');
+            } else {
+              selector.addClass('d-none');
+            }
+            selector.html(count);
+          }
+
+          addCount(compareSelector, compare)
+          addCount(favoriteSelector, favorite)
+
+          new Noty({
+            type: 'success',
+            theme: 'relax',
+            text: `Обновлено!`,
+            timeout: 3000
+          }).show();
+
+
         } else {
           // Если поля не заполнены, выводим сообщения и меняем надпись на кнопке
           console.log('Не отправлено')
@@ -57,12 +85,12 @@ jQuery(document).ready(function () {
       jQuery.ajax(options);
     } else {
       // Показываем notification
-      notification.attr('data-type', 'error');
-      notification.text('Вам нужно зарегестрироватся!');
-      notification.removeClass('d-none');
-      setTimeout(() => {
-        notification.addClass('d-none');
-      }, 3000)
+      new Noty({
+        type: 'error',
+        theme: 'relax',
+        text: "Вам нужно зарегистрироваться!",
+        timeout: 3000
+      }).show();
     }
   })
 

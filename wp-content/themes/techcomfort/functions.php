@@ -3,15 +3,14 @@
     function my_scripts() {
         wp_enqueue_style('main-css', get_stylesheet_directory_uri() . '/assets/css/main.css');
         wp_enqueue_style('swiper-css', get_stylesheet_directory_uri() . '/assets/lib/swiper.css');
+        wp_enqueue_style('noty-css', get_stylesheet_directory_uri() . '/assets/lib/noty/noty.css');
+        wp_enqueue_style('relax-noty-css', get_stylesheet_directory_uri() . '/assets/lib/noty/relax.css');
 
+        wp_enqueue_script("jquery");
+        wp_enqueue_script('noty-js', get_stylesheet_directory_uri() . '/assets/lib/noty/noty.min.js');
         wp_enqueue_script('swiper-js', get_stylesheet_directory_uri() . '/assets/lib/swiper.js');
         wp_enqueue_script('main-js', get_stylesheet_directory_uri() . '/assets/js/main.js');
-        wp_enqueue_script("jquery");
     }
-
-    //    register_nav_menus(array(
-    //        'top'    => 'Верхнее меню',    //Название месторасположения меню в шаблоне
-    //    ));
 
     //     ACF
     if (function_exists('acf_add_options_page')) {

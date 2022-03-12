@@ -426,28 +426,6 @@ form {
   }
 }
 
-.notification-message {
-  position:      fixed;
-  right:         10px;
-  top:           10px;
-  z-index:       10000;
-  max-width:     300px;
-  width:         100%;
-  box-shadow:    0 3px 15px 0 rgba(56, 69, 249, .14);
-  background:    #fff;
-  color:         #000;
-  border-radius: 6px;
-  font-size:     14px;
-  padding:       16px 12px;
-}
-
-.notification-message[data-type='error'] {
-  color: red;
-}
-.notification-message[data-type='success'] {
-  color: green;
-}
-
 //noUi slider
 .noUi-origin {
   transition: none;

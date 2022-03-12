@@ -32,9 +32,15 @@ document.addEventListener("DOMContentLoaded", function () {
 
   // Удаление из списка желаний
   const favoritesButton = document.getElementsByClassName('favorites-js');
+  const inner = document.getElementsByClassName('products-list')[0];
   for (let i = 0; i < favoritesButton.length; i++) {
     favoritesButton[i].addEventListener('click', function () {
-      this.closest('.favorite-item').classList.add('d-none');
+      this.closest('.favorite-item').remove();
+      if (!inner.querySelector('.products-item')) {
+        const p = document.createElement('h3');
+        p.innerHTML = 'Список желаний пуст'
+        inner.appendChild(p);
+      }
     })
   }
 

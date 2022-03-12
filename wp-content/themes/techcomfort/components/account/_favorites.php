@@ -71,8 +71,8 @@
                         </div>
                     <?php } ?>
                 <?php } else {
-                    echo '<h3 class="no-products">Нет товар по указанном фильтре</h3>'; ?>
+                    echo '<h3>Список желаний пуст</h3>'; ?>
                 <?php }
-            } else echo '<h3 class="no-products">Нет товар по указанном фильтре</h3>'; ?>
+            } else echo '<h3>Список желаний пуст</h3>'; ?>
     </div>
 </div>

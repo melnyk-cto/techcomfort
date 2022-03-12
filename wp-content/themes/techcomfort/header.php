@@ -108,10 +108,8 @@
                             <div class='count-image'>
                                 <?php
                                     $userID = get_user_meta(get_current_user_id());
-                                    $compare = $userID['compare'];
-                                    if ($compare) { ?>
-                                        <span class='sub-label'><?php echo count($compare) ?></span>
-                                    <?php } ?>
+                                    $compare = $userID['compare']; ?>
+                                <span class='sub-label compare-count-js <?php if (!$compare) echo 'd-none' ?>'><?php if ($compare) echo count($compare) ?></span>
                                 <svg id="Сгруппировать_2793" data-name="Сгруппировать 2793"
                                      xmlns="http://www.w3.org/2000/svg"
                                      width="31.918" height="24.554" viewBox="0 0 31.918 24.554">
@@ -126,10 +124,8 @@
                             <div class='count-image'>
                                 <?php
                                     $userID = get_user_meta(get_current_user_id());
-                                    $favorite = $userID['favorite'];
-                                    if ($favorite) { ?>
-                                        <span class='sub-label'><?php echo count($favorite) ?></span>
-                                    <?php } ?>
+                                    $favorite = $userID['favorite']; ?>
+                                <span class='sub-label favorite-count-js <?php if (!$favorite) echo 'd-none' ?>'><?php echo count($favorite) ?></span>
                                 <svg xmlns="http://www.w3.org/2000/svg" width="26.93" height="23.95"
                                      viewBox="0 0 26.93 23.95">
                                     <path id="Контур_723" data-name="Контур 723"
@@ -199,10 +195,8 @@
                             <div class='count-image'>
                                 <?php
                                     $userID = get_user_meta(get_current_user_id());
-                                    $compare = $userID['compare'];
-                                    if ($compare) { ?>
-                                        <span class='sub-label'><?php echo count($compare) ?></span>
-                                    <?php } ?>
+                                    $compare = $userID['compare']; ?>
+                                <span class='sub-label compare-count-js <?php if (!$compare) echo 'd-none' ?>'><?php if ($compare) echo count($compare) ?></span>
                                 <svg id="Сгруппировать_2793" data-name="Сгруппировать 2793"
                                      xmlns="http://www.w3.org/2000/svg"
                                      width="31.918" height="24.554" viewBox="0 0 31.918 24.554">
@@ -217,10 +211,8 @@
                             <div class='count-image'>
                                 <?php
                                     $userID = get_user_meta(get_current_user_id());
-                                    $favorite = $userID['favorite'];
-                                    if ($favorite) { ?>
-                                        <span class='sub-label'><?php echo count($favorite) ?></span>
-                                    <?php } ?>
+                                    $favorite = $userID['favorite']; ?>
+                                <span class='sub-label favorite-count-js <?php if (!$favorite) echo 'd-none' ?>'><?php echo count($favorite) ?></span>
                                 <svg xmlns="http://www.w3.org/2000/svg" width="26.93" height="23.95"
                                      viewBox="0 0 26.93 23.95">
                                     <path id="Контур_723" data-name="Контур 723"
@@ -287,7 +279,4 @@
         </div>
     </div>
 </header>
-<div class='notification-message d-none'>
-    Не удалось отправить
-</div>
 <?php include get_template_directory() . '/components/_basket.php'; ?>

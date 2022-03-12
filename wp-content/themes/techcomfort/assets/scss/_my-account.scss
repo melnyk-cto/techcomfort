@@ -377,16 +377,6 @@
       &.active {
         display: flex;
       }
-      .empty {
-        display:         none;
-        justify-content: center;
-        font-size:       22px;
-        text-align:      center;
-        padding:         10% 0 17%;
-        &.active {
-          display: flex;
-        }
-      }
       h2 {
         display:         flex;
         justify-content: space-between;
@@ -623,13 +613,6 @@
         }
       }
       .favorites {
-        .empty {
-          font-size:  24px;
-          text-align: center;
-          &.active {
-            display: flex;
-          }
-        }
         &-item {
           padding:   15px 20px;
           max-width: 945px;
@@ -817,9 +800,6 @@
         }
       }
       .favorites {
-        .empty {
-          font-size: 16px;
-        }
         &-item {
           padding:   15px 20px 20px;
           max-width: initial;
