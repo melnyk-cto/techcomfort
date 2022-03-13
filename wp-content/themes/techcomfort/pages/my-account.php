@@ -29,7 +29,6 @@
                             <?php include get_template_directory() . '/components/account/_personal-area.php'; ?>
                             <div class='info-list ordering'>
                                 <h2>Мои заказы</h2>
-                                <!-- <p class='empty'>Список заказов пуст</p>-->
                                 <?php include get_template_directory() . '/components/account/_ordering.php'; ?>
                             </div>
                             <div class='info-list favorites '>

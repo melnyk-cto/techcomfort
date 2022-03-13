@@ -60,6 +60,7 @@
         $formDeliveryAddress = sanitize_text_field($_POST['delivery-address']);
         $formDeliveryMail = sanitize_text_field($_POST['delivery-mail']);
         $formPayment = sanitize_text_field($_POST['payment']);
+        $userId = get_current_user_id();
 
         $encodeProducts = stripslashes(html_entity_decode($_POST['textarea-products']));
         $products = json_decode($encodeProducts, true);
@@ -100,6 +101,7 @@
             update_field('order_delivery_address', $formDeliveryAddress, $order->get_id()); # Новая почта (Адрес)
             update_field('order_delivery_mail', $formDeliveryMail, $order->get_id()); # Новая почта (Отделение, №)
             update_field('order_payment', $formPayment, $order->get_id()); # Способ Оплаты
+            update_field('order_user_id', $userId, $order->get_id()); # Способ Оплаты
 
             // Отправляем сообщение об успешной отправке
             $message_success = 'Заказа успешно отправлен';
@@ -107,18 +109,46 @@
             // Отправляем сообщение на почту
             $to = get_option('admin_email');
             $subject = 'Новый заказ з сайта Tehcomfort';
-            $message = "
-                ФИО: " . $formFirst . " " . $formLast . "\r\n
-                Телефон: " . $formPhone . "\r\n
-                Email: " . $formEmail . "\r\n
-                Адрес: " . $formAddress . "\r\n
-                Требуется установка: " . $formInstallation . "\r\n
-                Дополнительная информация: " . $formAdditionalInformation . "\r\n
-                Сервис доставки: " . $formDelivery . "\r\n
-                Новая почта (Адрес): " . $formDeliveryAddress . "\r\n
-                Новая почта (Отделение, №): " . $formDeliveryMail . "\r\n
-                Способ оплаты: " . $formPayment . "\r\n";
-            mail($to, $subject, $message);
+            // текст письма
+            $message = '<html>
+                        <head>
+                          <title>Новый заказ з сайта Tehcomfort</title>
+                        </head>
+                        <body>
+                          <p>Новый заказ з сайта Tehcomfort</p>
+                          <table>
+                            <tr>
+                              <th>ФИО</th>
+                              <th>Телефон</th>
+                              <th>Email</th>
+                              <th>Адрес</th>
+                              <th>Требуется установка</th>
+                              <th>Дополнительная информация</th>
+                              <th>Сервис доставки</th>
+                              <th>Новая почта (Адрес)</th>
+                              <th>Новая почта (Отделение, №)</th>
+                              <th>Способ оплаты</th>
+                            </tr>
+                            <tr>
+                              <td>' . $formFirst . ' ' . $formLast . '</td>
+                              <td>' . $formPhone . '</td>
+                              <td>' . $formEmail . '</td>
+                              <td>' . $formAddress . '</td>
+                              <td>' . $formInstallation . '</td>
+                              <td>' . $formAdditionalInformation . '</td>
+                              <td>' . $formDelivery . '</td>
+                              <td>' . $formDeliveryAddress . '</td>
+                              <td>' . $formDeliveryMail . '</td>
+                              <td>' . $formPayment . '</td>
+                            </tr>
+                          </table>
+                          <a href="https://techcomfort.com.ua/wp-admin/edit.php?post_type=shop_order" target="_blank">Перейти на страницу заказов</a>
+                        </body>
+                        </html>';
+            // Для отправки HTML-письма должен быть установлен заголовок Content-type
+            $headers = 'MIME-Version: 1.0' . "\r\n";
+            $headers .= 'Content-type: text/html; charset=iso-8859-1' . "\r\n";
+            mail($to, $subject, $message,  implode("\r\n", $headers));
 
             wp_send_json_success($message_success);
         }
