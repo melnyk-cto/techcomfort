@@ -105,9 +105,19 @@
             $message_success = 'Заказа успешно отправлен';
 
             // Отправляем сообщение на почту
-            $to = 'melnyk.cto.dev@gmail.com';
+            $to = get_option('admin_email');
             $subject = 'Новый заказ з сайта Tehcomfort';
-            $message = 'Hello my world!';
+            $message = "
+                ФИО: " . $formFirst . " " . $formLast . "\r\n
+                Телефон: " . $formPhone . "\r\n
+                Email: " . $formEmail . "\r\n
+                Адрес: " . $formAddress . "\r\n
+                Требуется установка: " . $formInstallation . "\r\n
+                Дополнительная информация: " . $formAdditionalInformation . "\r\n
+                Сервис доставки: " . $formDelivery . "\r\n
+                Новая почта (Адрес): " . $formDeliveryAddress . "\r\n
+                Новая почта (Отделение, №): " . $formDeliveryMail . "\r\n
+                Способ оплаты: " . $formPayment . "\r\n";
             mail($to, $subject, $message);
 
             wp_send_json_success($message_success);
