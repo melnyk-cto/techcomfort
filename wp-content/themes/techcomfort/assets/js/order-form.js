@@ -1,6 +1,7 @@
 jQuery(document).ready(function ($) {
   const submitButton = $('#order-form-submit');
   const form = $('#order-form');
+  const basket = JSON.parse($('textarea[name="textarea-products"]').val());
 
   // Сбрасываем значения полей
   $('#order-form input, #order-form textarea').on('blur', function () {
@@ -43,5 +44,10 @@ jQuery(document).ready(function ($) {
     }
   };
 
-  form.ajaxForm(options);
+  if (basket.length === 0) {
+    form.addClass('d-none');
+    form.after('<div class="notification notification_error">Ваша корзина пустая</div>').slideDown();
+  } else {
+    form.ajaxForm(options);
+  }
 });

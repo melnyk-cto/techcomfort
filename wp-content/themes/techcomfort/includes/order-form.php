@@ -54,6 +54,12 @@
         }
 
         $formAddress = sanitize_text_field($_POST['address']);
+        $formInstallation = sanitize_text_field($_POST['installation']);
+        $formAdditionalInformation = sanitize_text_field($_POST['additional-information']);
+        $formDelivery = sanitize_text_field($_POST['delivery']);
+        $formDeliveryAddress = sanitize_text_field($_POST['delivery-address']);
+        $formDeliveryMail = sanitize_text_field($_POST['delivery-mail']);
+        $formPayment = sanitize_text_field($_POST['payment']);
 
         $encodeProducts = stripslashes(html_entity_decode($_POST['textarea-products']));
         $products = json_decode($encodeProducts, true);
@@ -87,6 +93,14 @@
             $order->set_address($address, 'billing');
             $order->calculate_totals();
             $order->update_status("Completed", 'Imported order', TRUE);
+
+            // Добавляем остальные поля
+            update_field('order_installation', $formInstallation, $order->get_id()); # Требуется установка
+            update_field('order_additional_information', $formAdditionalInformation, $order->get_id()); # Дополнительная информация
+            update_field('order_delivery', $formDelivery, $order->get_id()); # Сервис Доставки
+            update_field('order_delivery_address', $formDeliveryAddress, $order->get_id()); # Новая почта (Адрес)
+            update_field('order_delivery_mail', $formDeliveryMail, $order->get_id()); # Новая почта (Отделение, №)
+            update_field('order_payment', $formPayment, $order->get_id()); # Способ Оплаты
 
             // Отправляем сообщение об успешной отправке
             $message_success = 'Заказа успешно отправлен';

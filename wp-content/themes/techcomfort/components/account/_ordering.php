@@ -6,12 +6,13 @@
     foreach ($orders as $order) {
         $date_modified = $order->get_date_modified();
         $price = number_format($order->get_total(), 0, '', ' ');
+        $items = $order->get_items();
+        $_product = wc_get_product(array_values($items)[0]['product_id']);
         ?>
         <div class='info-item ordering-item'>
             <span class='arrow'></span>
             <div class='item-image'>
-                <img src='<?php echo get_template_directory_uri() ?>/assets/images/product-gallery-4.jpg'
-                     alt='кондиционер'>
+                <?php if ($_product) echo $_product->get_image('180') ?>
             </div>
             <div class='item-description'>
                 <div class='order-number'>
@@ -51,44 +52,56 @@
                             Email:
                             <span><?php echo $order->get_billing_email() ?></span>
                         </li>
+                        <?php if ($order->get_billing_address_1()) { ?>
+                            <li>
+                                Адрес: <span><?php echo $order->get_billing_address_1() ?></span>
+                            </li>
+                        <?php } ?>
                         <li>
-                            Адрес: <span><?php echo $order->get_billing_address_1() ?></span>
+                            Требуется установка: <span><?php echo get_field('order_installation', $order->get_id()) ?></span>
                         </li>
-                        <li>
-                            Требуется установка: <span><?php echo '????????????' ?></span>
-                        </li>
-                        <li>
-                            Дополнительная информация: <span><?php echo '????????????' ?></span>
-                        </li>
+                        <?php if (get_field('order_additional_information', $order->get_id())) { ?>
+                            <li>
+                                Дополнительная информация:
+                                <span><?php echo get_field('order_additional_information', $order->get_id()) ?></span>
+                            </li>
+                        <?php } ?>
                     </ul>
                 </div>
                 <div class='order-history-right'>
-                    <div class='order-data'>
-                        <div class='product-image'>
-                            <img src='<?php echo get_template_directory_uri() ?>/assets/images/product-gallery-5.jpg'
-                                 alt='Кондиционер'>
-                        </div>
-                        <div class='data-title'>
-                            <h5>C&H CH-S07GKP8</h5>
-                            <span class='data-title-price'>Цена: <span>8 760 UAH</span></span>
-                        </div>
-                        <div class='data-amount'>
-                            <span>Количество</span>
-                            <p>1</p>
-                        </div>
-                        <div class='data-price'>
-                            <span>Сумма заказа</span>
-                            <p>8 760 UAH</p>
-                        </div>
-                    </div>
+                    <?php
+                        foreach ($order->get_items() as $item) {
+                            $priceItemTotal = number_format($item->get_total(), 0, '', ' ');
+                            $priceItem = number_format(($item->get_total() / $item->get_quantity()), 0, '', ' ');
+                            $_product = wc_get_product($item['product_id']); ?>
+                            <div class='order-data'>
+                                <div class='product-image'>
+                                    <?php echo $_product->get_image('180') ?>
+                                </div>
+                                <div class='data-title'>
+                                    <h5><?php echo $item->get_name(); ?></h5>
+                                    <span class='data-title-price'>Цена: <span><?php echo $priceItem; ?> UAH</span></span>
+                                </div>
+                                <div class='data-amount'>
+                                    <span>Количество</span>
+                                    <p><?php echo $item->get_quantity(); ?></p>
+                                </div>
+                                <div class='data-price'>
+                                    <span>Сумма заказа</span>
+                                    <p><?php echo $priceItemTotal; ?> UAH</p>
+                                </div>
+                            </div>
+                        <?php } ?>
                     <div class='order-delivery'>
                         <div class='delivery-item'>
-                            <span>Способ Оплаты:</span>
-                            <p><?php echo '????????????' ?></p>
+                            <span>Способ Оплаты</span>
+                            <p><?php echo get_field('order_payment', $order->get_id()) ?></p>
                         </div>
                         <div class='delivery-item'>
                             <span>Сервис Доставки</span>
-                            <p><?php echo '????????????' ?></p>
+                            <p><?php echo get_field('order_delivery', $order->get_id()) ?></p>
+                            <p><?php echo get_field('order_delivery_address', $order->get_id()) ?></p>
+                            <p><?php echo get_field('order_delivery_mail', $order->get_id()) ?></p>
                         </div>
                         <div class='delivery-item'>
                             <span>Вместе</span>

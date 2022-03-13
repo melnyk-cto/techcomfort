@@ -70,11 +70,11 @@
                                 </label>
                                 <label>
                                     <span class='label'>Адрес</span>
-                                    <input type='text' class='address-mail' name='department-address'>
+                                    <input type='text' class='address-mail' name='delivery-address'>
                                 </label>
                                 <label>
-                                    <span class='label'>Отделение</span>
-                                    <input type='text' name='department-mail'>
+                                    <span class='label'>Отделение, №</span>
+                                    <input type='text' name='delivery-mail'>
                                 </label>
                             </div>
                             <div class='delivery-service-item'>
@@ -87,11 +87,11 @@
                         <div class='payment-method'>
                             <h5>Способ оплаты</h5>
                             <label>
-                                <input value="Оплата наличными" name='payment' type='radio'>
+                                <input value="Оплата наличными" name='payment' type='radio' checked>
                                 Оплата наличными
                             </label>
                             <label>
-                                <input value="Оплата картой" name='payment' type='radio' checked>
+                                <input value="Оплата картой" name='payment' type='radio'>
                                 Оплата картой
                             </label>
                             <label>
