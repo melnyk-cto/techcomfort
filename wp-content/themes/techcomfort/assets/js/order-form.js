@@ -46,7 +46,7 @@ jQuery(document).ready(function ($) {
 
   if (basket.length === 0) {
     form.addClass('d-none');
-    form.after('<div class="notification notification_error">Ваша корзина пустая</div>').slideDown();
+    form.after('<div class="notification notification_error">Добавте товаров в корзину</div>').slideDown();
   } else {
     form.ajaxForm(options);
   }

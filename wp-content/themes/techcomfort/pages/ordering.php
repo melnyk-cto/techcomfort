@@ -144,6 +144,11 @@
                                   })
                                 </script>
                             <?php } ?>
+                        <?php if ($count === 0) { ?>
+                            <div class='item-inner'>
+                                <h3>Корзина пустая</h3>
+                            </div>
+                        <?php } ?>
                     </div>
                     <p class='price'>
                         Сума товара:

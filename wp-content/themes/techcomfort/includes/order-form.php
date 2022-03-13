@@ -69,7 +69,6 @@
             wp_send_json_error($errors);
 
         } else {
-
             $address = array(
                 'first_name' => $formFirst,
                 'last_name' => $formLast,
@@ -104,6 +103,12 @@
 
             // Отправляем сообщение об успешной отправке
             $message_success = 'Заказа успешно отправлен';
+
+            // Отправляем сообщение на почту
+            $to = 'melnyk.cto.dev@gmail.com';
+            $subject = 'Новый заказ з сайта Tehcomfort';
+            $message = 'Hello my world!';
+            mail($to, $subject, $message);
 
             wp_send_json_success($message_success);
         }
