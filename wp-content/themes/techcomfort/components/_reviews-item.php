@@ -152,21 +152,19 @@
                     $mypost_Query->the_post();
                     // Показываем отзывы конкретного товара или отзыв магазина
                     if ($idUser || get_field('reviews_product') === $idGlobal) {
-                        $countProducts++ ?>
+                        $countProducts++; ?>
                         <div class='reviews-item'>
                             <div class='item-title'>
                                 <h5>
-                                    <?php
-                                        if ($idUser) {
-                                            if (get_field('reviews_product') === 'магазин') echo 'Отзыв о магазине';
-                                            else {
-                                                $_product = wc_get_product(get_field('reviews_product'));
-                                                echo $_product->get_title();
-                                            }
-                                        } else { ?>
-                                            <?php the_field('reviews_first-name') ?>
-                                            <?php the_field('reviews_last-name'); ?>
-                                        <?php } ?>
+                                    <?php if ($idUser) {
+                                        if (get_field('reviews_product') === 'магазин') echo 'Отзыв о магазине';
+                                        else {
+                                            echo get_the_title(get_field('reviews_product'));
+                                        }
+                                    } else { ?>
+                                        <?php the_field('reviews_first-name') ?>
+                                        <?php the_field('reviews_last-name'); ?>
+                                    <?php } ?>
                                 </h5>
                                 <?php
                                     $sumReviews = get_field('reviews_rating');
@@ -183,6 +181,13 @@
                                     <p class='reviews-title'>Недостатки</p>
                                     <p>• <?php the_field('reviews_disadvantages'); ?></p>
                                 <?php } ?>
+                            </div>
+                            <div class='actions'>
+                                <img data-id='<?php echo get_the_ID() ?>'
+                                     class='delete-review-js'
+                                     title='Удалить'
+                                     src='<?php echo get_template_directory_uri() ?>/assets/images/icons/delete.svg'
+                                     alt='edit'>
                             </div>
                         </div>
                     <?php }

@@ -12,6 +12,7 @@ jQuery(document).ready(function ($) {
   const options = {
     url: ajax_form_object.url,
     data: {
+      type: 'add',
       action: 'ajax_form_action_reviews',
       nonce: ajax_form_object.nonce
     },
@@ -46,4 +47,29 @@ jQuery(document).ready(function ($) {
   };
   // Отправка формы
   form.ajaxForm(options);
+
+  // Удаление отзыва
+  $('.delete-review-js').on('click', function () {
+    const element = $(this);
+    const options = {
+      url: ajax_form_object.url,
+      data: {
+        type: 'delete',
+        action: 'ajax_form_action_reviews',
+        nonce: ajax_form_object.nonce,
+        id: element.attr('data-id'),
+      },
+      type: 'POST',
+      dataType: 'json',
+      success: function ({data}) {
+        element.closest('.reviews-item').addClass('d-none');
+        new Noty({type: 'success', theme: 'relax', text: data, timeout: 3000}).show();
+      },
+      error: function () {
+        new Noty({type: 'error', theme: 'relax', text: 'Не удалось удалить', timeout: 3000}).show();
+      }
+    }
+    // Отправка формы
+    jQuery.ajax(options);
+  });
 });

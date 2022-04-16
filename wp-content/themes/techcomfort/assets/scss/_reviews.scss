@@ -16,7 +16,7 @@
     font-weight:    500;
   }
   &-list {
-    max-width: 1181px;
+    max-width: 768px;
   }
   &-item {
     padding-bottom: 20px;
@@ -53,6 +53,21 @@
         font-size: 14px;
       }
     }
+    .actions {
+      display:         flex;
+      align-items:     center;
+      justify-content: flex-start;
+      margin-top:      20px;
+      img {
+        margin-right: 15px;
+        width:        24px;
+        cursor:       pointer;
+        transition:   .3s linear;
+        &:hover, &:active {
+          opacity: .7;
+        }
+      }
+    }
   }
   .info {
     opacity: .4;
@@ -65,7 +80,7 @@
     margin-bottom:  64px;
   }
   &-form {
-    max-width:     1181px;
+    max-width:     768px;
     margin-bottom: 48px;
   }
   form {
@@ -97,7 +112,7 @@
     }
   }
   .notification_accept {
-    max-width: 1181px;
+    max-width: 768px;
     width:     60%;
   }
   .not-registered {
