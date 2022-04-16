@@ -93,17 +93,23 @@
                             </svg>
                             techcomfort@meta.ua
                         </a>
-                        <div class='call'>
-                            <svg xmlns="http://www.w3.org/2000/svg" width="18.081" height="18.081"
-                                 viewBox="0 0 18.081 18.081">
-                                <path id="Контур_135" data-name="Контур 135"
-                                      d="M16.63,11.868a10.266,10.266,0,0,1-3.224-.514,1.474,1.474,0,0,0-1.433.3L9.94,13.191a11.235,11.235,0,0,1-5.051-5.05l1.49-1.98a1.461,1.461,0,0,0,.36-1.481,10.281,10.281,0,0,1-.515-3.229A1.452,1.452,0,0,0,4.771,0H1.451A1.453,1.453,0,0,0,0,1.451a16.649,16.649,0,0,0,16.63,16.63,1.453,1.453,0,0,0,1.451-1.451V13.319A1.453,1.453,0,0,0,16.63,11.868Z" />
-                            </svg>
-                            <div class='call-description'>
-                                <a href='tel:<?php echo get_field('phone_1', 'option') ?>'><?php echo get_field('phone_1', 'option') ?></a>
-                                <a href='tel:<?php echo get_field('phone_2', 'option') ?>'><?php echo get_field('phone_2', 'option') ?></a>
+                        <?php if (get_field('phone_1', 'option') || get_field('phone_2', 'option')) { ?>
+                            <div class='call'>
+                                <svg xmlns="http://www.w3.org/2000/svg" width="18.081" height="18.081"
+                                     viewBox="0 0 18.081 18.081">
+                                    <path id="Контур_135" data-name="Контур 135"
+                                          d="M16.63,11.868a10.266,10.266,0,0,1-3.224-.514,1.474,1.474,0,0,0-1.433.3L9.94,13.191a11.235,11.235,0,0,1-5.051-5.05l1.49-1.98a1.461,1.461,0,0,0,.36-1.481,10.281,10.281,0,0,1-.515-3.229A1.452,1.452,0,0,0,4.771,0H1.451A1.453,1.453,0,0,0,0,1.451a16.649,16.649,0,0,0,16.63,16.63,1.453,1.453,0,0,0,1.451-1.451V13.319A1.453,1.453,0,0,0,16.63,11.868Z" />
+                                </svg>
+                                <div class='call-description'>
+                                    <?php if (get_field('phone_1', 'option')) { ?>
+                                        <a href='tel:<?php echo get_field('phone_1', 'option') ?>'><?php echo get_field('phone_1', 'option') ?></a>
+                                    <?php } ?>
+                                    <?php if (get_field('phone_2', 'option')) { ?>
+                                        <a href='tel:<?php echo get_field('phone_2', 'option') ?>'><?php echo get_field('phone_2', 'option') ?></a>
+                                    <?php } ?>
+                                </div>
                             </div>
-                        </div>
+                        <?php } ?>
                         <div class='address'>
                             <svg xmlns="http://www.w3.org/2000/svg" width="13.904" height="20" viewBox="0 0 13.904 20">
                                 <path id="placeholder_3_" data-name="placeholder (3)"

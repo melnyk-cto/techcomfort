@@ -46,8 +46,12 @@
                         <p><?php echo get_field('city', 'option') ?></p>
                     </div>
                     <div class='call'>
-                        <a href='tel:<?php echo get_field('phone_1', 'option') ?>'><?php echo get_field('phone_1', 'option') ?></a>
-                        <a href='tel:<?php echo get_field('phone_2', 'option') ?>'><?php echo get_field('phone_2', 'option') ?></a>
+                        <?php if (get_field('phone_1', 'option')) { ?>
+                            <a href='tel:<?php echo get_field('phone_1', 'option') ?>'><?php echo get_field('phone_1', 'option') ?></a>
+                        <?php } ?>
+                        <?php if (get_field('phone_2', 'option')) { ?>
+                            <a href='tel:<?php echo get_field('phone_2', 'option') ?>'><?php echo get_field('phone_2', 'option') ?></a>
+                        <?php } ?>
                     </div>
                     <div class='socials'>
                         <a href='https://t.me/' class='socials-image'>
