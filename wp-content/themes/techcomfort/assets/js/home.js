@@ -6,6 +6,9 @@ document.addEventListener("DOMContentLoaded", function () {
             768: {
                 slidesPerView: 2,
             },
+            1200: {
+                slidesPerView: 3,
+            },
         },
         pagination: {
             el: ".swiper-pagination",

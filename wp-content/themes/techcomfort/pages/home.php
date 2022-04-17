@@ -314,62 +314,59 @@
             </div>
         </div>
     </section>
-    <section class='reviews'>
-        <div class='container'>
-            <h2>ОТЗЫВЫ О МАГАЗИНЕ</h2>
-        </div>
-        <div class='reviews-slider'>
-            <div class='reviews-slider-inner'>
+    <?php
+        // Check rows exists.
+        $args = [
+            'post_type' => 'reviews', # тип записи
+            'post_status' => 'publish', # статус записи
+            'posts_per_page' => 5,        # количество
+        ];
+        $mypost_Query = new WP_Query($args);
+        $countProducts = 0;
+        if ($mypost_Query->have_posts()) { ?>
+            <section class='reviews'>
                 <div class='container'>
-                    <!-- Swiper -->
-                    <div class='swiper-container swiper-reviews'>
-                        <div class='swiper-wrapper'>
-                            <?php
-                                // Check rows exists.
-                                if (have_rows('store-reviews')):
-
-                                    // Loop through rows.
-                                    while (have_rows('store-reviews')) : the_row();
-                                        // Load sub field value.
-                                        $name = get_sub_field('store-reviews-name');
-                                        $text = get_sub_field('store-reviews-text');
-                                        ?>
-                                        <div class='swiper-slide'>
-                                            <div class='reviews-item'>
-                                                <div class='item-title'>
-                                                    <h3><?php echo $name ?></h3>
-                                                    <?php
-                                                        $starsArray = $countProducts[$_product->get_id()];
-                                                        $showCountsReviews = true;
-                                                        $sumReviews = 0;
-                                                        if ($starsArray) {
-                                                            if (count($starsArray) > 0) {
-                                                                $sumReviews = round((array_sum($starsArray) / count($starsArray)));
-                                                            }
-                                                        }
-                                                        include get_template_directory() . '/components/_rating.php'; ?>
+                    <h2>ОТЗЫВЫ О МАГАЗИНЕ</h2>
+                </div>
+                <div class='reviews-slider'>
+                    <div class='reviews-slider-inner'>
+                        <div class='container'>
+                            <!-- Swiper -->
+                            <div class='swiper-container swiper-reviews'>
+                                <div class='swiper-wrapper'>
+                                    <?php while ($mypost_Query->have_posts()) {
+                                        $mypost_Query->the_post();
+                                        if (get_field('reviews_rating') >= 5) { ?>
+                                            <div class='swiper-slide'>
+                                                <div class='reviews-item'>
+                                                    <div class='item-title'>
+                                                        <h3>
+                                                            <?php the_field('reviews_first-name') ?>
+                                                            <?php the_field('reviews_last-name'); ?>
+                                                        </h3>
+                                                        <?php
+                                                            $sumReviews = get_field('reviews_rating');
+                                                            $showCountsReviews = false;
+                                                            include get_template_directory() . '/components/_rating.php'; ?>
+                                                    </div>
+                                                    <p><?php the_content(); ?></p>
                                                 </div>
-                                                <p><?php echo $text ?></p>
                                             </div>
-                                        </div>
-                                    <?php endwhile;
-                                // No value.
-                                else :
-                                    // Do something...
-                                endif;
-                            ?>
+                                        <?php }
+                                    }
+                                        wp_reset_postdata(); // "сброс" ?>
+                                </div>
+                            </div>
+                            <div class='swiper-pagination'></div>
+                            <!-- Add Arrows -->
+                            <div class='swiper-button-next'></div>
+                            <div class='swiper-button-prev'></div>
                         </div>
                     </div>
-                    <div class='swiper-pagination'></div>
                 </div>
-                <!-- Add Arrows -->
-                <div class='swiper-button-next'></div>
-                <div class='swiper-button-prev'></div>
-            </div>
-        </div>
-        <!--            <a href='--><?php //echo home_url('/'); ?><!--reviews' class='btn'>Все отзывы</a>-->
-        </div>
-    </section>
+                <a href='<?php echo home_url('/'); ?>reviews' class='btn'>Все отзывы</a>
+            </section>
+        <?php } ?>
     <section class='contact'>
         <div class='container'>
             <?php include get_template_directory() . '/components/_contact-info.php'; ?>

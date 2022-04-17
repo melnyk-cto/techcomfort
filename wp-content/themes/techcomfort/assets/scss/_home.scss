@@ -34,7 +34,7 @@
       margin-left: auto;
       img {
         border-radius: 10px;
-        min-height:       inherit;
+        min-height:    inherit;
       }
       .swiper-button-prev {
         opacity:        1;
@@ -113,6 +113,7 @@
     }
   }
   .reviews {
+    text-align: center;
     h3 {
       color:         $primaryColor;
       margin-bottom: 8px;
@@ -244,6 +245,7 @@
       }
       h2 {
         margin-bottom: 20px;
+        text-align:    center;
       }
       p {
         line-height: 1.5;
