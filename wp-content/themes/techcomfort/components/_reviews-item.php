@@ -5,6 +5,7 @@
     global $addNewReviews;
     global $idUser;
     global $idGlobal;
+    global $deleteAction;
 ?>
 <?php
     // Обработка полей формы
@@ -182,13 +183,15 @@
                                     <p>• <?php the_field('reviews_disadvantages'); ?></p>
                                 <?php } ?>
                             </div>
-                            <div class='actions'>
-                                <img data-id='<?php echo get_the_ID() ?>'
-                                     class='delete-review-js'
-                                     title='Удалить'
-                                     src='<?php echo get_template_directory_uri() ?>/assets/images/icons/delete.svg'
-                                     alt='edit'>
-                            </div>
+                            <?php if ($deleteAction) { ?>
+                                <div class='actions'>
+                                    <img data-id='<?php echo get_the_ID() ?>'
+                                         class='delete-review-js'
+                                         title='Удалить'
+                                         src='<?php echo get_template_directory_uri() ?>/assets/images/icons/delete.svg'
+                                         alt='edit'>
+                                </div>
+                            <?php } ?>
                         </div>
                     <?php }
                 }

@@ -45,6 +45,7 @@
                                     $isDisadvantages = false;
                                     $title = 'МОИ ОТЗЫВЫ';
                                     $addNewReviews = false;
+                                    $deleteAction = true;
                                     $idUser = get_current_user_id();
                                     include get_template_directory() . '/components/_reviews-item.php'; ?>
                             </div>
