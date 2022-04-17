@@ -137,7 +137,7 @@
                             $filtersName = ['Тип охлаждения', 'Тип нагрева', 'Тип товара', 'Цвет'];
                             saveAttributes($separatedBySpaceAttributes, $loop->post, $globalAttributes, $filtersName);
                         } elseif ($parentCategoryNAme === 'Микроклимат') {
-                            $filtersName = ['Рекомендованная площадь ', 'Цвет', 'Тип товара'];
+                            $filtersName = ['Цвет', 'Тип товара'];
                             saveAttributes($separatedBySpaceAttributes, $loop->post, $globalAttributes, $filtersName);
                         } elseif ($parentCategoryNAme === 'Вентиляторы вытяжные') {
                             $filtersName = ['Размер патрубка(мм.)', 'Воздухообмен(м3/ч)', 'Монтаж', 'Цвет'];

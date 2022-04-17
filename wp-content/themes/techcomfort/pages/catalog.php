@@ -52,9 +52,10 @@
             if ($key === 'Цена') {
                 $explodeValue = explode(".", $values);
                 array_push($metaQuery, ['key' => '_price', 'value' => array($explodeValue[0], $explodeValue[1]), 'type' => 'numeric', 'compare' => 'BETWEEN']);
-
-                // Фильтрация по диапазону значений
             } else if (
+                // Фильтрация по диапазону значений
+                $key === str_replace(' ', '_', 'Макс_ к-во подключаемых внутренних блоков') ||
+                $key === str_replace(' ', '_', 'Расход воздуха, м3/ч') ||
                 $key === str_replace(' ', '_', 'Холодопроизводительность (кВт)') ||
                 $key === str_replace(' ', '_', 'Теплопроизводительность (кВт)') ||
                 $key === str_replace(' ', '_', 'Размеры внутреннего блока, Ш (мм)') ||
@@ -66,9 +67,21 @@
                 $key === str_replace(' ', '_', 'Минимальный уровень шума внутреннего блока, (ДБ)')
             ) {
                 $explodeValue = explode(".", $values);
-                array_push($metaQuery, ['key' => $key, 'value' => [$explodeValue[0], $explodeValue[1] - 1], 'type' => 'numeric', 'compare' => 'BETWEEN',]);
-                // Фильтрация по точному названию
+                if ($key === str_replace(' ', '_', 'Макс_ к-во подключаемых внутренних блоков')) {
+                    array_push($metaQuery, ['key' => "Макс._к-во_подключаемых_внутренних_блоков", 'value' => [$explodeValue[0], $explodeValue[1] - 1], 'type' => 'numeric', 'compare' => 'BETWEEN',]);
+                } else {
+                    array_push($metaQuery, ['key' => $key, 'value' => [$explodeValue[0], $explodeValue[1] - 1], 'type' => 'numeric', 'compare' => 'BETWEEN',]);
+                }
             } else if (
+                // Фильтрация по точному названию
+                $key === str_replace(' ', '_', 'Площадь комнаты №3(м2)') ||
+                $key === str_replace(' ', '_', 'Площадь комнаты №2(м2)') ||
+                $key === str_replace(' ', '_', 'Площадь комнаты №1(м2)') ||
+                $key === str_replace(' ', '_', 'Количество комнат') ||
+                $key === str_replace(' ', '_', 'Общая площадь помещений (м2)') ||
+                $key === str_replace(' ', '_', 'Монтаж') ||
+                $key === str_replace(' ', '_', 'Тип нагрева') ||
+                $key === str_replace(' ', '_', 'Тип охлаждения') ||
                 $key === str_replace(' ', '_', 'Тип работы') ||
                 $key === str_replace(' ', '_', 'Напряжение, частота, Фазы (В, Гц, ф)') ||
                 $key === str_replace(' ', '_', 'Тип хладагента') ||

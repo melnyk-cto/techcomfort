@@ -14,7 +14,10 @@ document.addEventListener("DOMContentLoaded", function () {
     const name = params[i].split('=');
     if (decodeURI(name[0]) !== '?category' && decodeURI(name[0]) !== 'type') {
       const div = document.createElement('div');
-      div.innerHTML = decodeURI(name[0].replaceAll('_', ' ').replaceAll('%2C', ','));
+      div.innerHTML = decodeURI(name[0]
+        .replaceAll('_', ' ')
+        .replaceAll('%2C', ',')
+        .replaceAll('%2F', '/'));
       div.className = 'selected-filter';
       div.setAttribute('data-name', decodeURI(name[0].replaceAll('%2C', ',')));
       selectedFilter.appendChild(div)
