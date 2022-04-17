@@ -53,16 +53,21 @@
         font-size: 14px;
       }
     }
+    .item-description {
+      display:         flex;
+      align-items:     center;
+      justify-content: space-between;
+    }
     .actions {
       display:         flex;
       align-items:     center;
       justify-content: flex-start;
-      margin-top:      20px;
+      margin-left:     20px;
       img {
-        margin-right: 15px;
-        width:        24px;
-        cursor:       pointer;
-        transition:   .3s linear;
+        width:      24px;
+        min-width:  24px;
+        cursor:     pointer;
+        transition: .3s linear;
         &:hover, &:active {
           opacity: .7;
         }

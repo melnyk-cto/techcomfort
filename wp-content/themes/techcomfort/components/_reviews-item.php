@@ -173,25 +173,27 @@
                                 <span class='data'><?php echo get_the_date('j.n.Y'); ?></span>
                             </div>
                             <div class='item-description'>
-                                <p><?php the_content(); ?></p>
-                                <?php if (get_field('reviews_disadvantages')) { ?>
-                                    <p class='reviews-title'>Достоинства</p>
-                                    <p>• <?php the_field('reviews_advantages'); ?></p>
-                                <?php } ?>
-                                <?php if (get_field('reviews_disadvantages')) { ?>
-                                    <p class='reviews-title'>Недостатки</p>
-                                    <p>• <?php the_field('reviews_disadvantages'); ?></p>
+                                <div>
+                                    <p><?php the_content(); ?></p>
+                                    <?php if (get_field('reviews_disadvantages')) { ?>
+                                        <p class='reviews-title'>Достоинства</p>
+                                        <p>• <?php the_field('reviews_advantages'); ?></p>
+                                    <?php } ?>
+                                    <?php if (get_field('reviews_disadvantages')) { ?>
+                                        <p class='reviews-title'>Недостатки</p>
+                                        <p>• <?php the_field('reviews_disadvantages'); ?></p>
+                                    <?php } ?>
+                                </div>
+                                <?php if ($deleteAction) { ?>
+                                    <div class='actions'>
+                                        <img data-id='<?php echo get_the_ID() ?>'
+                                             class='delete-review-js'
+                                             title='Удалить'
+                                             src='<?php echo get_template_directory_uri() ?>/assets/images/icons/delete.svg'
+                                             alt='edit'>
+                                    </div>
                                 <?php } ?>
                             </div>
-                            <?php if ($deleteAction) { ?>
-                                <div class='actions'>
-                                    <img data-id='<?php echo get_the_ID() ?>'
-                                         class='delete-review-js'
-                                         title='Удалить'
-                                         src='<?php echo get_template_directory_uri() ?>/assets/images/icons/delete.svg'
-                                         alt='edit'>
-                                </div>
-                            <?php } ?>
                         </div>
                     <?php }
                 }
