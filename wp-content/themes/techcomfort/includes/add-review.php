@@ -23,7 +23,7 @@
                 'post_author' => get_current_user_id(),  # нужно для фильтрации в личном кабинете
                 'post_status' => 'publish', # Статус создаваемой записи.
                 'post_type' => 'reviews',   # тип записи - «Отзывы»
-                'post_title' => $form_first . ' ' . $form_last . ', звезд - ' . $form_rating,   # заголовок отзыва
+                'post_title' => $form_first . ' ' . $form_last . ' (' . $form_tel . '), звезд - ' . $form_rating,   # заголовок отзыва
                 'post_content' => $form_message,   # текст отзыва
             );
 

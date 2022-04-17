@@ -338,7 +338,7 @@
           }
           .more {
             &:after {
-              transform: translate(0, -50%) rotate(0deg);
+              transform: translate(0, -50%) rotate(180deg);
             }
           }
         }
@@ -354,7 +354,7 @@
           font-size: 14px;
           display: inline-block;
           &:after {
-            transform: translate(0, -50%) rotate(180deg);
+            transform: translate(0, -50%) rotate(0deg);
           }
         }
       }
