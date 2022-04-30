@@ -1,5 +1,4 @@
 <?php
-    global $postId;
     $userID = get_user_meta(get_current_user_id());
     $favorites = $userID['favorite'];
     $compare = $userID['compare'];

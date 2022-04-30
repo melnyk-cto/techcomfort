@@ -1,7 +1,7 @@
 <?php
     //---------------create js ajax for search
     function my_enqueue() {
-        wp_register_script('loadajax-js', get_template_directory_uri() . '/assets/js/myloadmore.js', array(), 1, 1, 1);
+        wp_register_script('loadajax-js', get_template_directory_uri() . '/assets/js/main.js', array(), 1, 1);
         wp_enqueue_script('loadajax-js');
         wp_localize_script('loadajax-js', 'my_ajax_object',
             array('ajax_url' => admin_url('admin-ajax.php')));
@@ -22,7 +22,7 @@
             global $wp_query;
             $wp_query->in_the_loop = true;
             while ($getposts->have_posts()) : $getposts->the_post();
-                echo '<li><a href="' . home_url('/') . 'product/?uid=' . get_the_ID() . '">'. get_the_post_thumbnail() . get_the_title() . '</a></li>';
+                echo '<li><a href="' . home_url('/') . 'product/?uid=' . get_the_ID() . '">' . get_the_post_thumbnail() . get_the_title() . '</a></li>';
             endwhile;
             wp_reset_postdata();
             die();

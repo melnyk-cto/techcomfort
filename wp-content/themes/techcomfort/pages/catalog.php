@@ -10,20 +10,6 @@
 
 <!-- Get Products -->
 <?php
-    $args = array(
-        'post_type' => 'product',
-        'stock' => 1,
-        'orderby' => 'meta_value_num',
-        'product_cat' => $_GET['category'],
-    );
-
-    // Значения сортировки по умолчанию
-    if ($_GET['type']) {
-        $args['order'] = $_GET['type'];
-    } else {
-        $args['order'] = 'asc';
-    }
-
     $metaQuery = [];
     foreach ($_GET as $key => $values) {
         if (isset($key)) {
@@ -80,16 +66,15 @@
         }
     }
 
-    $args['meta_query'] = [
-        'relation' => 'AND',
-        $metaQuery
-    ];
+    //    $args['meta_query'] = [
+    //        'relation' => 'AND',
+    //        $metaQuery
+    //    ];
 
 ?>
 
 <div class="loading">
-    <img src='<?php echo get_template_directory_uri() ?>/assets/images/icons/loading.svg'
-         alt=''>
+    <img src='<?php echo get_template_directory_uri() ?>/assets/images/icons/loading.svg' alt=''>
 </div>
 <main class='catalog'>
     <section class='catalog-content'>
@@ -114,10 +99,21 @@
                             <p>Сортировка:</p>
                             <label>
                                 <select id="sorting">
-                                    <option value='default'>По умолчанию</option>
-                                    <option value="asc">От дешевых к дорогим</option>
-                                    <option value="desc">От дорогих к дешевым</option>
-                                    <option value="popularity">Популярные</option>
+                                    <option data-meta-key='_wc_review_count' data-order='desc' value='default' selected>
+                                        По умолчанию
+                                    </option>
+                                    <option data-meta-key='_price' data-order='asc' value="price">
+                                        От дешевых к дорогим
+                                    </option>
+                                    <option data-meta-key='_price' data-order='desc' value="price-desc">
+                                        От дорогих к дешевым
+                                    </option>
+                                    <option data-meta-key='_wc_review_count' data-order='desc' value="popularity">
+                                        Популярные
+                                    </option>
+                                    <option data-meta-key='_wc_average_rating' data-order='desc' value="rating">
+                                        По рейтингу
+                                    </option>
                                 </select>
                             </label>
                         </div>
@@ -141,34 +137,8 @@
                         </div>
                     </div>
                     <div class='products'>
-                        <div class='products-list'>
-                            <?php //  Обновление фильтров
-                                require_once get_stylesheet_directory() . '/includes/update-filter.php'; ?>
-                            <?php
-                                $paged = (get_query_var('paged')) ? absint(get_query_var('paged')) : 1;
-
-                                $args['posts_per_page'] = 48;
-                                $args['paged'] = $paged;
-
-                                // The Query
-                                $pQuery = new WP_Query($args);
-                                $big = 999999999; // need an unlikely integer
-
-                                $loop = new WP_Query($args);
-
-                                if ($loop->have_posts()) {
-                                    while ($loop->have_posts()) : $loop->the_post();
-                                        include get_stylesheet_directory() . '/components/catalog/_catalog-item.php';
-                                    endwhile;
-                                } else {
-                                    echo '<h3 class="no-products">Нет товар по указанном фильтре</h3>';
-                                }
-                            ?>
-                            <?php wp_reset_query(); ?>
-                            <div class="pagination">
-                                <?php echo paginate_links(array('base' => str_replace($big, '%#%', esc_url(get_pagenum_link($big))), 'format' => '?paged=%#%', 'current' => max(1, get_query_var('paged')), 'total' => $pQuery->max_num_pages));; ?>
-                            </div>
-                        </div>
+                        <!-- Товары -->
+                        <div class='products-list'></div>
                     </div>
                     <?php include get_template_directory() . '/components/_viewed-products.php'; ?>
                 </div>

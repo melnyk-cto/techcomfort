@@ -182,7 +182,7 @@
     require_once get_stylesheet_directory() . '/includes/order-form.php';
 
     //  Обновление фильтров
-    require_once get_stylesheet_directory() . '/includes/update-filter.php';
+    require_once get_stylesheet_directory() . '/includes/product-list.php';
 
     //  Добавление полей для комментариев в админке
     require_once get_stylesheet_directory() . '/includes/add-custom-fields.php';

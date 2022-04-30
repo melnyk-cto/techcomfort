@@ -1,9 +1,3 @@
-<?php
-    global $ratingCount;
-    global $showCountsReviews;
-    global $averageRating;
-?>
-
 <div class='rating'>
     <?php for ($r = 1; $r <= 5; $r++) { ?>
         <?php if ($averageRating < $r) { ?>

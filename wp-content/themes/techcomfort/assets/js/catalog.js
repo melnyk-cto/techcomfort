@@ -158,9 +158,4 @@ document.addEventListener("DOMContentLoaded", function () {
       }
     });
   }
-
-  const catalog = document.getElementsByClassName('catalog')[0];
-  const loading = document.getElementsByClassName('loading')[0];
-  catalog.style.opacity = '1';
-  loading.classList.add('d-none');
 });
