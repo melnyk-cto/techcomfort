@@ -4,27 +4,6 @@
     wp_enqueue_script('home-js', get_stylesheet_directory_uri() . '/assets/js/home.js');
 ?>
 
-<!-- Отзывы -->
-<?php
-    $argsReviews = [
-        'post_type' => 'reviews', # тип записи
-        'post_status' => 'publish', # статус записи
-        'posts_per_page' => -1,        # количество (-1 - все)
-    ];
-
-    $myPostReviews_Query = new WP_Query($argsReviews);
-    $countProducts = [];
-    if ($myPostReviews_Query->have_posts()) {
-        while ($myPostReviews_Query->have_posts()) :
-            $myPostReviews_Query->the_post();
-            if (get_field('reviews_product') !== 'магазин') {
-                $countProducts[get_field('reviews_product')][] = get_field('reviews_rating');
-            }
-        endwhile;
-        wp_reset_postdata(); // "сброс"
-    }
-?>
-
 <main class='home'>
     <section class='banner'>
         <div class='container'>
@@ -111,14 +90,9 @@
                                             </a>
                                             <div class='item-description'>
                                                 <?php
-                                                    $starsArray = $countProducts[$_product->get_id()];
+                                                    $averageRating = round($_product->get_average_rating());
+                                                    $ratingCount = $_product->get_rating_count();
                                                     $showCountsReviews = true;
-                                                    $sumReviews = 0;
-                                                    if ($starsArray) {
-                                                        if (count($starsArray) > 0) {
-                                                            $sumReviews = round((array_sum($starsArray) / count($starsArray)));
-                                                        }
-                                                    }
                                                     include get_template_directory() . '/components/_rating.php'; ?>
                                                 <a href='<?php echo home_url('/'); ?>product?uid=<?php echo $_product->get_id(); ?>'>
                                                     <?php echo $_product->get_title() ?>
@@ -179,14 +153,9 @@
                                             </a>
                                             <div class='item-description'>
                                                 <?php
-                                                    $starsArray = $countProducts[$_product->get_id()];
+                                                    $averageRating = round($_product->get_average_rating());
+                                                    $ratingCount = $_product->get_rating_count();
                                                     $showCountsReviews = true;
-                                                    $sumReviews = 0;
-                                                    if ($starsArray) {
-                                                        if (count($starsArray) > 0) {
-                                                            $sumReviews = round((array_sum($starsArray) / count($starsArray)));
-                                                        }
-                                                    }
                                                     include get_template_directory() . '/components/_rating.php'; ?>
                                                 <a href='<?php echo home_url('/'); ?>product?uid=<?php echo $_product->get_id(); ?>'>
                                                     <?php echo $_product->get_title() ?>
@@ -272,14 +241,9 @@
                                             </a>
                                             <div class='item-description'>
                                                 <?php
-                                                    $starsArray = $countProducts[$_product->get_id()];
+                                                    $averageRating = round($_product->get_average_rating());
+                                                    $ratingCount = $_product->get_rating_count();
                                                     $showCountsReviews = true;
-                                                    $sumReviews = 0;
-                                                    if ($starsArray) {
-                                                        if (count($starsArray) > 0) {
-                                                            $sumReviews = round((array_sum($starsArray) / count($starsArray)));
-                                                        }
-                                                    }
                                                     include get_template_directory() . '/components/_rating.php'; ?>
                                                 <a href='<?php echo home_url('/'); ?>product?uid=<?php echo $_product->get_id(); ?>'>
                                                     <?php echo $_product->get_title() ?>
@@ -315,15 +279,15 @@
         </div>
     </section>
     <?php
-        // Check rows exists.
+        $page_object = get_page_by_title('Отзывы');
+        $page_id = $page_object->ID;
+        $type = $page_id;
+
         $args = [
-            'post_type' => 'reviews', # тип записи
-            'post_status' => 'publish', # статус записи
-            'posts_per_page' => 5,        # количество
+            'post_id' => $type,
+            'number' => 10,
         ];
-        $mypost_Query = new WP_Query($args);
-        $countProducts = 0;
-        if ($mypost_Query->have_posts()) { ?>
+        if (get_comments($args)) { ?>
             <section class='reviews'>
                 <div class='container'>
                     <h2>ОТЗЫВЫ О МАГАЗИНЕ</h2>
@@ -334,22 +298,19 @@
                             <!-- Swiper -->
                             <div class='swiper-container swiper-reviews'>
                                 <div class='swiper-wrapper'>
-                                    <?php while ($mypost_Query->have_posts()) {
-                                        $mypost_Query->the_post();
-                                        if (get_field('reviews_rating') >= 5) { ?>
+                                    <?php foreach (get_comments($args) as $comment) {
+                                        $rating = get_comment_meta($comment->comment_ID, 'rating', true);
+                                        if ($rating >= 5) { ?>
                                             <div class='swiper-slide'>
                                                 <div class='reviews-item'>
                                                     <div class='item-title'>
-                                                        <h3>
-                                                            <?php the_field('reviews_first-name') ?>
-                                                            <?php the_field('reviews_last-name'); ?>
-                                                        </h3>
+                                                        <h3><?php echo $comment->comment_author ?></h3>
                                                         <?php
-                                                            $sumReviews = get_field('reviews_rating');
+                                                            $averageRating = $rating;
                                                             $showCountsReviews = false;
                                                             include get_template_directory() . '/components/_rating.php'; ?>
                                                     </div>
-                                                    <p><?php the_content(); ?></p>
+                                                    <p><?php echo $comment->comment_content; ?></p>
                                                 </div>
                                             </div>
                                         <?php }
@@ -366,7 +327,8 @@
                 </div>
                 <a href='<?php echo home_url('/'); ?>reviews' class='btn'>Все отзывы</a>
             </section>
-        <?php } ?>
+            <?php
+        } ?>
     <section class='contact'>
         <div class='container'>
             <?php include get_template_directory() . '/components/_contact-info.php'; ?>

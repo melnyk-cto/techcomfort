@@ -1,12 +1,12 @@
 <?php
-    global $starsArray;
+    global $ratingCount;
     global $showCountsReviews;
-    global $sumReviews;
+    global $averageRating;
 ?>
 
 <div class='rating'>
     <?php for ($r = 1; $r <= 5; $r++) { ?>
-        <?php if ($sumReviews < $r) { ?>
+        <?php if ($averageRating < $r) { ?>
             <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14"
                  viewBox="0 0 24 24">
                 <path style="fill:#DADADA"
@@ -21,9 +21,7 @@
         <?php } ?>
     <?php } ?>
     <?php
-        if ($starsArray) {
-            if ($showCountsReviews) { ?>
-                <div class='reviews-count'> <?php echo count($starsArray) ?> отзывов</div>
-            <?php }
-        } ?>
+        if ($ratingCount && $showCountsReviews) { ?>
+            <div class='reviews-count'> <?php echo $ratingCount ?> отзывов</div>
+        <?php } ?>
 </div>

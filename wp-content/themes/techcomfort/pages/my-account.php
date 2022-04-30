@@ -41,10 +41,9 @@
                             </div>
                             <div class='info-list reviews '>
                                 <?php
-                                    $isAdvantages = false;
-                                    $isDisadvantages = false;
                                     $title = 'МОИ ОТЗЫВЫ';
                                     $addNewReviews = false;
+                                    $showCountsReviews = false;
                                     $deleteAction = true;
                                     $idUser = get_current_user_id();
                                     include get_template_directory() . '/components/_reviews-item.php'; ?>

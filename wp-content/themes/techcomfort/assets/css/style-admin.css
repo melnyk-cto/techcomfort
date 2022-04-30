@@ -1,0 +1,19 @@
+.comment-field {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 16px;
+}
+
+.comment-field span {
+    margin-bottom: 4px;
+    display: block;
+}
+
+.comment-label-full {
+    width: 100%;
+}
+
+.comment-label-half {
+    width: 48%;
+}

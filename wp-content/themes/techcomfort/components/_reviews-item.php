@@ -1,11 +1,13 @@
 <?php
-    global $isAdvantages;
-    global $isDisadvantages;
     global $title;
     global $addNewReviews;
     global $idUser;
-    global $idGlobal;
     global $deleteAction;
+    global $type;
+
+    // Нужно, что бы обязательно была создана страница з названием "Отзывы"
+    $page_object = get_page_by_title('Отзывы');
+    $page_id = $page_object->ID;
 ?>
 <?php
     // Обработка полей формы
@@ -77,7 +79,7 @@
                                   class="form_message"
                                   placeholder='Введите ваш отзыв...'></textarea>
                     </label>
-                    <?php if ($isAdvantages) { ?>
+                    <?php if ($type !== $page_id) { ?>
                         <label class='textarea'>
                             <span class='label'>Достоинства</span>
                             <textarea required
@@ -85,8 +87,6 @@
                                       class="form_advantages"
                                       placeholder='Введите достоинства...'></textarea>
                         </label>
-                    <?php } ?>
-                    <?php if ($isDisadvantages) { ?>
                         <label class='textarea'>
                             <span class='label'>Недостатки</span>
                             <textarea required
@@ -110,18 +110,9 @@
                                    aria-label="Отлично" checked>
                         </div>
                     </div>
-                    <?php if ($idGlobal) { ?>
-                        <label class='d-none'>
-                            <span class='label'>Идентификатор</span>
-                            <input
-                                    required
-                                    name="form_product"
-                                    class="form_product"
-                                    placeholder=''
-                                    type='text'
-                                    value='<?php if ($idGlobal) echo $idGlobal; ?>'>
-                        </label>
-                    <?php } ?>
+                    <label class='d-none'>
+                        <input name="form_product" type='text' value='<?php echo $type; ?>'>
+                    </label>
                     <button type="submit" id="form_submit_reviews" class='btn form_button'>Отправить</button>
                 </form>
             <?php else : ?>
@@ -135,74 +126,72 @@
     <h2><?php echo $title ?></h2>
     <div class='reviews-list'>
         <?php
-            $args = [
-                'post_type' => 'reviews', # тип записи
-                'post_status' => 'publish', # статус записи
-                'posts_per_page' => -1,        # количество (-1 - все)
-            ];
+            $args = ['post_id' => $type];
 
             // Показываем отзывы конкретного пользователя
             if ($idUser) {
-                $args['author'] = $idUser;
+                $args['user_id'] = $idUser;
             }
 
-            $mypost_Query = new WP_Query($args);
-            $countProducts = 0;
-            if ($mypost_Query->have_posts()) {
-                while ($mypost_Query->have_posts()) {
-                    $mypost_Query->the_post();
-                    // Показываем отзывы конкретного товара или отзыв магазина
-                    if ($idUser || get_field('reviews_product') === $idGlobal) {
-                        $countProducts++; ?>
-                        <div class='reviews-item'>
-                            <div class='item-title'>
-                                <h5>
-                                    <?php if ($idUser) {
-                                        if (get_field('reviews_product') === 'магазин') echo 'Отзыв о магазине';
-                                        else {
-                                            echo get_the_title(get_field('reviews_product'));
+            if (get_comments($args)) {
+                foreach (get_comments($args) as $comment) {
+                    $_product = wc_get_product($comment->comment_post_ID);
+
+                    $phone = get_comment_meta($comment->comment_ID, 'phone', true);
+                    $advantages = get_comment_meta($comment->comment_ID, 'advantages', true);
+                    $disadvantages = get_comment_meta($comment->comment_ID, 'disadvantages', true);
+                    $rating = get_comment_meta($comment->comment_ID, 'rating', true); ?>
+                    <div class='reviews-item'>
+                        <div class='item-title'>
+                            <h5>
+                                <?php if ($idUser) {
+                                    if ($page_id === intval($comment->comment_post_ID)) {
+                                        echo 'Отзыв о магазине';
+                                    } else {
+                                        $_product = wc_get_product($comment->comment_post_ID);
+                                        if ($_product) {
+                                            echo $_product->get_title();
                                         }
-                                    } else { ?>
-                                        <?php the_field('reviews_first-name') ?>
-                                        <?php the_field('reviews_last-name'); ?>
-                                    <?php } ?>
-                                </h5>
-                                <?php
-                                    $sumReviews = get_field('reviews_rating');
-                                    include get_template_directory() . '/components/_rating.php'; ?>
-                                <span class='data'><?php echo get_the_date('j.n.Y'); ?></span>
-                            </div>
-                            <div class='item-description'>
-                                <div>
-                                    <p><?php the_content(); ?></p>
-                                    <?php if (get_field('reviews_disadvantages')) { ?>
-                                        <p class='reviews-title'>Достоинства</p>
-                                        <p>• <?php the_field('reviews_advantages'); ?></p>
-                                    <?php } ?>
-                                    <?php if (get_field('reviews_disadvantages')) { ?>
-                                        <p class='reviews-title'>Недостатки</p>
-                                        <p>• <?php the_field('reviews_disadvantages'); ?></p>
-                                    <?php } ?>
-                                </div>
-                                <?php if ($deleteAction) { ?>
-                                    <div class='actions'>
-                                        <img data-id='<?php echo get_the_ID() ?>'
-                                             class='delete-review-js'
-                                             title='Удалить'
-                                             src='<?php echo get_template_directory_uri() ?>/assets/images/icons/delete.svg'
-                                             alt='edit'>
-                                    </div>
+                                    }
+                                } else {
+                                    echo $comment->comment_author;
+                                } ?>
+                            </h5>
+                            <?php
+                                $averageRating = $rating;
+                                include get_template_directory() . '/components/_rating.php'; ?>
+                            <span class='data'>
+                                <?php echo date("j.n.Y", strtotime($comment->comment_date)) ?>
+                            </span>
+                        </div>
+                        <div class='item-description'>
+                            <div>
+                                <p><?php echo $comment->comment_content; ?></p>
+                                <?php if ($advantages) { ?>
+                                    <p class='reviews-title'>Достоинства</p>
+                                    <p>• <?php echo $advantages; ?></p>
+                                <?php } ?>
+                                <?php if ($disadvantages) { ?>
+                                    <p class='reviews-title'>Недостатки</p>
+                                    <p>• <?php echo $disadvantages; ?></p>
                                 <?php } ?>
                             </div>
+                            <?php if ($deleteAction) { ?>
+                                <div class='actions'>
+                                    <img data-id='<?php echo $comment->comment_ID ?>'
+                                         class='delete-review-js'
+                                         title='Удалить'
+                                         src='<?php echo get_template_directory_uri() ?>/assets/images/icons/delete.svg'
+                                         alt='edit'>
+                                </div>
+                            <?php } ?>
                         </div>
-                    <?php }
-                }
-                if ($countProducts === 0) {
-                    echo '<p>Извините, пока нет отзывов...</p>';
-                }
-                wp_reset_postdata(); // "сброс"
+                    </div>
+                <?php }
             } else {
                 echo '<p>Извините, пока нет отзывов...</p>';
-            } ?>
+            }
+            wp_reset_postdata(); // "сброс"
+        ?>
     </div>
 </div>

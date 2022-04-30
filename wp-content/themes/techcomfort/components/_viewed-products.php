@@ -1,23 +1,3 @@
-<!-- Отзывы -->
-<?php
-    $argsReviews = [
-        'post_type' => 'reviews', # тип записи
-        'post_status' => 'publish', # статус записи
-        'posts_per_page' => -1,        # количество (-1 - все)
-    ];
-    $myPostReviews_Query = new WP_Query($argsReviews);
-    $countProducts = [];
-    if ($myPostReviews_Query->have_posts()) {
-        while ($myPostReviews_Query->have_posts()) :
-            $myPostReviews_Query->the_post();
-            if (get_field('reviews_product') !== 'магазин') {
-                $countProducts[get_field('reviews_product')][] = get_field('reviews_rating');
-            }
-        endwhile;
-        wp_reset_postdata(); // "сброс"
-    }
-?>
-
 <?php $cookie = $_COOKIE['viewedProducts'];
     if ($cookie) {
         $viewedProducts = explode(',', $cookie); ?>
@@ -37,14 +17,9 @@
                                         </a>
                                         <div class='item-description'>
                                             <?php
-                                                $starsArray = $countProducts[$_product->get_id()];
+                                                $averageRating = round($_product->get_average_rating());
+                                                $ratingCount = $_product->get_rating_count();
                                                 $showCountsReviews = true;
-                                                $sumReviews = 0;
-                                                if ($starsArray) {
-                                                    if (count($starsArray) > 0) {
-                                                        $sumReviews = round((array_sum($starsArray) / count($starsArray)));
-                                                    }
-                                                }
                                                 include get_template_directory() . '/components/_rating.php'; ?>
                                             <a href='<?php echo home_url('/'); ?>product/?uid=<?php echo $product; ?>'>
                                                 <?php echo $_product->get_title() ?>

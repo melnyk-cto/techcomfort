@@ -5,11 +5,11 @@
     <section class='content'>
         <div class='container'>
             <?php
-                $isAdvantages = false;
-                $isDisadvantages = false;
                 $title = 'ВСЕ ОТЗЫВЫ О МАГАЗИНЕ';
                 $addNewReviews = true;
-                $idGlobal =  'магазин';
+                $page_object = get_page_by_title('Отзывы');
+                $page_id = $page_object->ID;
+                $type = $page_id;
                 include get_template_directory() . '/components/_reviews-item.php'; ?>
         </div>
     </section>
