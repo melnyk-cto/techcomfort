@@ -15,7 +15,7 @@
             }
             $formatKey = str_replace(' ', '_', $key);
             $formatValue = str_replace(' ', '_', $value); ?>
-            <div class='filter-label filter-label-js' data-key="<?php echo $formatKey ?>"
+            <div class='filter-label filter-button-js filter-label-js' data-key="<?php echo $formatKey ?>"
                  data-value=<?php echo $formatValue ?>>
                 <input type='checkbox' <?php if ($_GET[str_replace(' ', '_', $key)] === $formatValue) echo 'checked' ?>><?php echo $title ?>
             </div>

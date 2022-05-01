@@ -93,7 +93,7 @@
         $pagination = '';
         if ($the_query->have_posts()) {
             while ($the_query->have_posts()) : $the_query->the_post();
-                $response = include get_stylesheet_directory() . '/components/catalog/_catalog-item.php';
+                 include get_stylesheet_directory() . '/components/catalog/_catalog-item.php';
             endwhile;
             wp_reset_postdata(); // "сброс"
 

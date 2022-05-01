@@ -1,4 +1,48 @@
 jQuery(document).ready(function ($) {
+  const rangeSliderOnLoad = () => {
+    const keypressAll = $('.slider-keypress');
+    const rangeSlider = $('.filler-range-js');
+    const input0All = $('.input-with-keypress-0');
+    const input1All = $('.input-with-keypress-1');
+    for (let i = 0; i < keypressAll.length; i++) {
+
+      // При обновлении страницы показывать текущее значение фильтра
+      const from = parseInt(input0All[i].getAttribute('data-value-from'));
+      const to = parseInt(input1All[i].getAttribute('data-value-to'));
+      let startFrom;
+      let startTo;
+
+      const url = new URL(window.location.href);
+      let searchParams = url.searchParams.get(rangeSlider[i].getAttribute('data-key'));
+      if (searchParams) {
+        const range = searchParams.split('.');
+        startFrom = parseInt(range[0]);
+        startTo = parseInt(range[1]);
+      } else {
+        startFrom = from;
+        startTo = to;
+      }
+
+      noUiSlider.create(keypressAll[i], {
+        start: [startFrom, startTo],
+        connect: true,
+        step: 1,
+        range: {
+          min: [from],
+          max: [to]
+        },
+        format: {
+          to: (v) => parseFloat(v).toFixed(0),
+          from: (v) => parseFloat(v).toFixed(0)
+        }
+      });
+      const inputs = [input0All[i], input1All[i]];
+      keypressAll[i].noUiSlider.on("update", function (values, handle) {
+        inputs[handle].value = (values[handle]);
+      });
+    }
+  };
+  rangeSliderOnLoad();
 
   const updateUrl = (url) => {
     url.searchParams.delete('pagination-page');
@@ -64,7 +108,7 @@ jQuery(document).ready(function ($) {
           .replaceAll('%2C', ',')
           .replaceAll('%2F', '/'));
         div.className = 'selected-filter';
-        div.setAttribute('data-name', decodeURI(name[0].replaceAll('%2C', ',')));
+        div.setAttribute('data-key', decodeURI(name[0].replaceAll('%2C', ',')));
         wrapper.append(div);
         isHiddenClearSection();
       }
@@ -73,7 +117,32 @@ jQuery(document).ready(function ($) {
     // Удаляем выбранный фильтр
     $('.selected-filter').on('click', function () {
       const url = new URL(window.location.href);
-      const name = $(this).attr('data-name');
+      const name = $(this).attr('data-key');
+
+      // удаляем выбранное значение
+      const button = $(`.filter-button-js[data-key="${name}"]`);
+
+      let type = 'text';
+      if (button.hasClass('filler-range-js')) {
+        type = 'range';
+      }
+
+      // удаляем значение для слайдера
+      if (type === 'range') {
+        const parents = button.closest('.filter-item');
+        const input0 = parents.find('.input-with-keypress-0');
+        const input1 = parents.find('.input-with-keypress-1');
+        const keypress = parents.find('.slider-keypress');
+        const from = input0.attr('data-value-from');
+        const to = input1.attr('data-value-to');
+        input0.val(from);
+        input1.val(to);
+        keypress[0].noUiSlider.set([from, to]);
+      }
+      if (type === 'text') {
+        button.find('input').prop('checked', false);
+      }
+
       $(this).remove();
       url.searchParams.delete(name);
       isHiddenClearSection();
@@ -88,21 +157,44 @@ jQuery(document).ready(function ($) {
   }
   clearSection();
 
-
   // Очистка параметров фильтрации
   $('.clear-filters-js').on('click', function (e) {
     e.preventDefault();
+
     const url = new URL(window.location.href);
     const urlOrder = url.searchParams.get('order');
     const urlMetaKey = url.searchParams.get('meta-key');
     const urlCategory = url.searchParams.get('category');
+
     url.search = '';
+
     url.searchParams.set('category', urlCategory);
     url.searchParams.set('order', urlOrder);
     url.searchParams.set('meta-key', urlMetaKey);
 
+    // очистка секции фильтрации
     const wrapper = $('.selected-filter-wrapper-js');
     wrapper.children().remove();
+
+    // очистка input фильтрации
+    const buttonText = $(`.filter-label-js`);
+    buttonText.find('input').prop('checked', false);
+
+    // очистка range фильтрации
+    const buttonRange = $(`.filler-range-js`);
+    const parents = buttonRange.closest('.filter-item');
+    const input0 = parents.find('.input-with-keypress-0');
+    const input1 = parents.find('.input-with-keypress-1');
+    const keypress = parents.find('.slider-keypress');
+    for (let i = 0; i < keypress.length; i++) {
+      const from = input0[i].getAttribute('data-value-from');
+      const to = input1[i].getAttribute('data-value-to');
+      input0[i].value = from;
+      input1[i].value = to;
+      keypress[i].noUiSlider.set([from, to]);
+    }
+
+    // проверка на наличе элементов
     isHiddenClearSection();
 
     // Обновление данных
@@ -216,7 +308,7 @@ jQuery(document).ready(function ($) {
 
   // Фильтрация по цене при изменении ползунка
   $('.filler-range-js').on('click', function () {
-    const name = $(this).attr('data-name');
+    const name = $(this).attr('data-key');
     const value0 = $(this).parent().find('.input-with-keypress-0').val();
     const value1 = $(this).parent().find('.input-with-keypress-1').val();
 
@@ -233,4 +325,5 @@ jQuery(document).ready(function ($) {
 
     clearSection();
   });
+
 });
