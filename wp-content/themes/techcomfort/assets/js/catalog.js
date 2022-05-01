@@ -26,7 +26,7 @@ document.addEventListener("DOMContentLoaded", function () {
   const keypressSlider = document.getElementsByClassName("slider-keypress");
   const input0 = document.getElementsByClassName("input-with-keypress-0");
   const input1 = document.getElementsByClassName("input-with-keypress-1");
-  const button = document.getElementsByClassName("filler-price-js");
+  const button = document.getElementsByClassName("filler-range-js");
 
   const filterClose = document.getElementsByClassName("close-filter")[0];
   const filterPanel = document.getElementsByClassName("filter")[0];
