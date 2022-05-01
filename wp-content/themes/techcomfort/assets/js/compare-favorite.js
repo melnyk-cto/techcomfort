@@ -3,6 +3,7 @@ jQuery(document).ready(function () {
   // Отправка значений полей
   jQuery('body').on('click', '.submit-icon-js', function (e) {
     e.preventDefault();
+    const element = jQuery(this);
     const productsItem = jQuery(this).parents('.products-item');
     productsItem.addClass('loading-products');
 
@@ -43,7 +44,7 @@ jQuery(document).ready(function () {
         productsItem.removeClass('loading-products');
 
         // Удаление из списка желаний в личном кабинете
-        if (productsItem.hasClass('favorite-item')) {
+        if (productsItem.hasClass('favorite-item') && element.attr('data-name') === 'favorites') {
           const parent = productsItem.parent();
           productsItem.remove();
           if (jQuery('.products-item.favorite-item').length <= 0) parent.append(`<h3>Список желаний пуст</h3>`)
