@@ -426,6 +426,12 @@ form {
   }
 }
 
+.loading-products {
+  filter: opacity(0.5);
+  pointer-events: none;
+  user-select: none;
+}
+
 //noUi slider
 .noUi-origin {
   transition: none;

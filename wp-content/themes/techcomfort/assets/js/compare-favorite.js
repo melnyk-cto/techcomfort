@@ -3,6 +3,8 @@ jQuery(document).ready(function () {
   // Отправка значений полей
   jQuery('body').on('click', '.submit-icon-js', function (e) {
     e.preventDefault();
+    const productsItem = jQuery(this).parents('.products-item');
+    productsItem.addClass('loading-products');
 
     const dataName = jQuery(this).attr('data-name');
     const userID = jQuery(this).attr('data-userID');
@@ -38,6 +40,15 @@ jQuery(document).ready(function () {
         // При отправке формы меняем надпись на кнопке
       },
       success: function (request) {
+        productsItem.removeClass('loading-products');
+
+        // Удаление из списка желаний в личном кабинете
+        if (productsItem.hasClass('favorite-item')) {
+          const parent = productsItem.parent();
+          productsItem.remove();
+          if (jQuery('.products-item.favorite-item').length <= 0) parent.append(`<h3>Список желаний пуст</h3>`)
+        }
+
         if (request.success === true) {
           // Удача
           console.log('Отправлено');
@@ -73,6 +84,7 @@ jQuery(document).ready(function () {
         }
       },
       error: function () {
+        productsItem.removeClass('loading-products');
         console.error('Не удалось отправить, исправьте ошибки')
       }
     };
@@ -84,6 +96,8 @@ jQuery(document).ready(function () {
       // Отправка формы
       jQuery.ajax(options);
     } else {
+      productsItem.removeClass('loading-products');
+
       // Показываем notification
       new Noty({
         type: 'error',

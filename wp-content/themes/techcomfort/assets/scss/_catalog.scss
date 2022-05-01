@@ -10,11 +10,6 @@
 
 .catalog {
   opacity: 0;
-  .loading-products {
-    filter: opacity(0.5);
-    pointer-events: none;
-    user-select: none;
-  }
   &-content {
     padding: 6.2% 0;
     .container {
