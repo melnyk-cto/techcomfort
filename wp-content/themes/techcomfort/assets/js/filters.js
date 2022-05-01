@@ -1,4 +1,8 @@
 jQuery(document).ready(function ($) {
+  const containerProducts = $('.products-list');
+  const containerFilter = $('.filter-item');
+  const clearFilterButton = $('.clear-filters-js');
+
   const rangeSliderOnLoad = () => {
     const keypressAll = $('.slider-keypress');
     const rangeSlider = $('.filler-range-js');
@@ -63,8 +67,10 @@ jQuery(document).ready(function ($) {
     type: 'POST',
     dataType: 'html',
     success: function (res) {
-      $('.products-list').html(res);
-      new Noty({type: 'success', theme: 'relax', text: "Обновлено", timeout: 3000}).show();
+      containerProducts.html(res);
+      containerProducts.removeClass('loading-products');
+      containerFilter.removeClass('loading-products');
+      clearFilterButton.removeClass('loading-products');
     },
     error: function () {
       new Noty({type: 'error', theme: 'relax', text: 'Не удалось обновить', timeout: 3000}).show();
@@ -77,10 +83,10 @@ jQuery(document).ready(function ($) {
 
     if (selected.length <= 0) {
       $('.selected-filters').addClass('d-none');
-      $('.clear-filters-js').addClass('d-none');
+      clearFilterButton.addClass('d-none');
     } else {
       $('.selected-filters').removeClass('d-none');
-      $('.clear-filters-js').removeClass('d-none');
+      clearFilterButton.removeClass('d-none');
     }
   }
   isHiddenClearSection();
@@ -116,6 +122,10 @@ jQuery(document).ready(function ($) {
 
     // Удаляем выбранный фильтр
     $('.selected-filter').on('click', function () {
+      containerProducts.addClass('loading-products');
+      containerFilter.addClass('loading-products');
+      clearFilterButton.addClass('loading-products');
+
       const url = new URL(window.location.href);
       const name = $(this).attr('data-key');
 
@@ -158,8 +168,11 @@ jQuery(document).ready(function ($) {
   clearSection();
 
   // Очистка параметров фильтрации
-  $('.clear-filters-js').on('click', function (e) {
+  clearFilterButton.on('click', function (e) {
     e.preventDefault();
+    containerProducts.addClass('loading-products');
+    containerFilter.addClass('loading-products');
+    clearFilterButton.addClass('loading-products');
 
     const url = new URL(window.location.href);
     const urlOrder = url.searchParams.get('order');
@@ -251,6 +264,10 @@ jQuery(document).ready(function ($) {
 
     // Сортировка
     sorting.on('change', function () {
+      containerProducts.addClass('loading-products');
+      containerFilter.addClass('loading-products');
+      clearFilterButton.addClass('loading-products');
+
       const order = sorting.find(":selected").attr('data-order');
       const metaKey = sorting.find(":selected").attr('data-meta-key');
 
@@ -268,14 +285,18 @@ jQuery(document).ready(function ($) {
     });
 
     const catalog = $('.catalog');
-    const loading = $('.loading');
+    const loadingPage = $('.loading-page-js');
     catalog.css('opacity', '1');
-    loading.addClass('d-none');
+    loadingPage.addClass('d-none');
   }
   filterAnSortOnLoad();
 
   // Фильтрация для чекбокса
   $('.filter-label-js').on('click', function () {
+    containerProducts.addClass('loading-products');
+    containerFilter.addClass('loading-products');
+    clearFilterButton.addClass('loading-products');
+
     // Добавление и удаление чекбокса
     if ($(this).children('input').prop('checked')) {
       $(this).children('input').prop('checked', false);
@@ -303,11 +324,15 @@ jQuery(document).ready(function ($) {
     jQuery.ajax({...options, data: data});
 
     clearSection();
+    isHiddenClearSection();
   });
-
 
   // Фильтрация по цене при изменении ползунка
   $('.filler-range-js').on('click', function () {
+    containerProducts.addClass('loading-products');
+    containerFilter.addClass('loading-products');
+    clearFilterButton.addClass('loading-products');
+
     const name = $(this).attr('data-key');
     const value0 = $(this).parent().find('.input-with-keypress-0').val();
     const value1 = $(this).parent().find('.input-with-keypress-1').val();

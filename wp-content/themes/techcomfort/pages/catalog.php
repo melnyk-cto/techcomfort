@@ -7,7 +7,7 @@
     wp_enqueue_script('catalog-js', get_stylesheet_directory_uri() . '/assets/js/catalog.js');
     wp_enqueue_script('nouislider-js', get_stylesheet_directory_uri() . '/assets/lib/nouislider.js');
 ?>
-<div class="loading">
+<div class="loading loading-page-js">
     <img src='<?php echo get_template_directory_uri() ?>/assets/images/icons/loading.svg' alt=''>
 </div>
 <main class='catalog'>
@@ -72,7 +72,7 @@
                     </div>
                     <div class='products'>
                         <!-- Товары -->
-                        <div class='products-list'></div>
+                        <div class='products-list loading-products'></div>
                     </div>
                     <?php include get_template_directory() . '/components/_viewed-products.php'; ?>
                 </div>

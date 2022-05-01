@@ -10,6 +10,11 @@
 
 .catalog {
   opacity: 0;
+  .loading-products {
+    filter: opacity(0.5);
+    pointer-events: none;
+    user-select: none;
+  }
   &-content {
     padding: 6.2% 0;
     .container {
@@ -501,7 +506,7 @@
         position:   fixed;
         top:        56px;
         left:       0;
-        z-index:    11;
+        z-index:    111;
         width:      100%;
         height:     calc(100% - 56px);
         max-width:  initial;
@@ -734,7 +739,7 @@
         &.list {
           margin-bottom: 30px;
           .catalog-item {
-            padding:   15px 10px;
+            padding:   36px 10px 15px 10px;
             flex-wrap: wrap;
             max-width: 500px;
             .item-image {
