@@ -1,5 +1,7 @@
 jQuery(document).ready(function ($) {
   const submitButton = $('#order-form-submit');
+  if (!submitButton[0]) return;
+
   const form = $('#order-form');
   const basket = JSON.parse($('textarea[name="textarea-products"]').val());
 

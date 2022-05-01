@@ -1,7 +1,7 @@
 jQuery(document).ready(function () {
 
   // Отправка значений полей
-  jQuery('.submit-icon-js').on('click', function (e) {
+  jQuery('body').on('click', '.submit-icon-js', function (e) {
     e.preventDefault();
 
     const dataName = jQuery(this).attr('data-name');

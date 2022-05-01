@@ -106,11 +106,13 @@
       }
     }
     .icon {
-      cursor:       pointer;
-      z-index:      99;
-      width:        19px;
-      margin-right: 15px;
-      background:   transparent;
+      cursor:     pointer;
+      z-index:    99;
+      width:      19px;
+      background: transparent;
+      &:nth-child(1) {
+        margin-right: 15px;
+      }
       svg {
         width: 100%;
       }
@@ -270,8 +272,10 @@
         width:         calc(50% - 6px);
       }
       .icon {
-        width:        15px;
-        margin-right: 10px;
+        width: 15px;
+        &:nth-child(1) {
+          margin-right: 10px;
+        }
       }
       .hit, .discount {
         top:       3%;
