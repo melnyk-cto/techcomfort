@@ -46,6 +46,9 @@ jQuery(document).ready(function ($) {
   const servicesList = $("#services-list");
   const servicesDescription = $("#services-description");
 
+  // "Наши работы" страница
+  const galleryItem = $(".gallery-item");
+
   // animations for  "Каталог" страница
   const catalog = $('#catalog-content');
   setInterval(() => {
@@ -58,6 +61,11 @@ jQuery(document).ready(function ($) {
   $(window).on('load scroll', function () {
     // Header
     isVisible(header);
+
+    // "Наши работы" страница
+    for (let i = 0; i < galleryItem.length; i++) {
+      isVisible(galleryItem.eq(i));
+    }
 
     // "Сервис" страница
     isVisible(servicesList);

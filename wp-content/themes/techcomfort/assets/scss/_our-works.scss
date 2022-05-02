@@ -1,7 +1,5 @@
 @import "./variables";
-
-@media (any-hover: hover) {
-}
+@import "./animations";
 
 .our-works {
   opacity: 0;
@@ -75,6 +73,15 @@
     }
     .size-1of4 {
       width: 25%;
+    }
+  }
+}
+
+.our-works {
+  .gallery-item {
+    opacity: 0;
+    &.animation {
+      animation: $animationFromLeft;
     }
   }
 }
