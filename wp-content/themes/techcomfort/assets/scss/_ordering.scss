@@ -1,7 +1,5 @@
 @import "./variables";
-
-@media (any-hover: hover) {
-}
+@import "./animations";
 
 .ordering {
   .contact {
@@ -211,6 +209,23 @@
       span, bdi {
         color: $primaryColor;
       }
+    }
+  }
+}
+
+// animations
+.ordering {
+  .contact-form, .ordering-title, .ordering-basket {
+    opacity: 0;
+  }
+  .contact-form, .ordering-title {
+    &.animation {
+      animation: $animationFromLeft;
+    }
+  }
+  .ordering-basket {
+    &.animation {
+      animation: $animationFromRight;
     }
   }
 }

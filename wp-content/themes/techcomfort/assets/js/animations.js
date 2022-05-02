@@ -70,6 +70,11 @@ jQuery(document).ready(function ($) {
   const anchorReviews = $(".product-page #anchor-reviews");
   const viewedProducts = $(".product-page #viewed-products");
 
+  // "Оформление Заказа" страница
+  const contactFormOrdering = $(".ordering .contact-form");
+  const orderingTitle = $(".ordering .ordering-title");
+  const orderingBasket = $(".ordering .ordering-basket");
+
   // animations for  "Каталог" страница
   const catalog = $('#catalog-content');
   setInterval(() => {
@@ -81,6 +86,11 @@ jQuery(document).ready(function ($) {
   const runAnimations = () => {
     // Header
     isVisible(header);
+
+    // "Оформление Заказа" страница
+    isVisible(contactFormOrdering);
+    isVisible(orderingTitle);
+    isVisible(orderingBasket);
 
     // "Продукта" страница
     isVisible(productInfoSlider);

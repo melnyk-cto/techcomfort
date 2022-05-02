@@ -14,7 +14,7 @@
 <main class='ordering'>
     <section class='contact'>
         <div class='container'>
-            <h2>Оформление заказа</h2>
+            <h2 class='ordering-title'>Оформление заказа</h2>
             <div class='contact-inner'>
                 <div class='contact-form'>
                     <form action='' id='order-form'>
