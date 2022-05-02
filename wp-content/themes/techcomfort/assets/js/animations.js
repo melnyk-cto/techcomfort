@@ -27,10 +27,10 @@ jQuery(document).ready(function ($) {
 
   // "Главная" страница
   const banner = $('#banner');
-  const recommended = $('#recommended');
-  const popular = $('#popular');
+  const recommended = $('#anchor-recommended');
+  const popular = $('#anchor-popular');
   const advantage = $('#advantage');
-  const mostViewed = $('#most-viewed');
+  const mostViewed = $('#anchor-most-viewed');
   const contact = $('#contact');
 
   // "Установка и монтаж" страница
@@ -53,6 +53,15 @@ jQuery(document).ready(function ($) {
   const payment = $("#payment");
   const delivery = $("#delivery");
 
+  // "Отзывы" страница
+  const reviewsInner = $(".reviews-page .reviews-inner");
+  const reviewsList = $(".reviews-page .reviews-list");
+
+  // "Контакты" страница
+  const contactForm = $(".contacts .contact-form");
+  const contactInfo = $(".contacts .contact-info");
+  const map = $(".contacts .map");
+
   // animations for  "Каталог" страница
   const catalog = $('#catalog-content');
   setInterval(() => {
@@ -61,10 +70,18 @@ jQuery(document).ready(function ($) {
     }
   }, 1000);
 
-  // animations on scroll
-  $(window).on('load scroll', function () {
+  const runAnimations = () => {
     // Header
     isVisible(header);
+
+    // "Контакты" страница
+    isVisible(contactForm);
+    isVisible(contactInfo);
+    isVisible(map);
+
+    // "Отзывы" страница
+    isVisible(reviewsInner);
+    isVisible(reviewsList);
 
     // "Оплата и доставка" страница
     isVisible(payment);
@@ -98,6 +115,12 @@ jQuery(document).ready(function ($) {
 
     // Footer
     isVisible(footer);
+  }
+  runAnimations();
+
+  // animations on scroll
+  $(window).on('scroll', function () {
+    runAnimations();
   });
 
 });

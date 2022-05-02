@@ -180,13 +180,13 @@
       animation: $animationFadeIn;
     }
   }
-  #recommended, #advantage {
+  #anchor-recommended, #advantage {
     opacity: 0;
     &.animation {
       animation: $animationFromLeft;
     }
   }
-  #popular, #most-viewed {
+  #anchor-popular, #anchor-most-viewed {
     opacity: 0;
     &.animation {
       animation: $animationFromRight;

@@ -1,7 +1,5 @@
 @import "./variables";
-
-@media (any-hover: hover) {
-}
+@import "./animations";
 
 .contacts {
   .contact {
@@ -13,6 +11,28 @@
   .map {
     iframe {
       width: 100%;
+    }
+  }
+}
+
+// animations
+.contacts {
+  .contact-form {
+    opacity: 0;
+    &.animation {
+      animation: $animationFromLeft;
+    }
+  }
+  .contact-info {
+    opacity: 0;
+    &.animation {
+      animation: $animationFromRight;
+    }
+  }
+  .map {
+    opacity: 0;
+    &.animation {
+      animation: $animationFadeIn;
     }
   }
 }

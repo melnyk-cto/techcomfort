@@ -61,12 +61,12 @@
             </div>
         </div>
     </section>
-    <section id='recommended' class='products'>
+    <section id='anchor-recommended' class='products'>
         <div class='container'>
             <div class='products-buttons buttons-container-js'>
-                <a href='#recommended' class='btn-contour active'>Рекомендуемые</a>
-                <a href='#popular' class='btn-contour'>Популярные</a>
-                <a href='#most-viewed' class='btn-contour'>Самые Просматриваемые</a>
+                <a href='#anchor-recommended' class='btn-contour active'>Рекомендуемые</a>
+                <a href='#anchor-popular' class='btn-contour'>Популярные</a>
+                <a href='#anchor-most-viewed' class='btn-contour'>Самые Просматриваемые</a>
             </div>
             <h2>Рекомендуемые</h2>
             <div class='products-slider'>
@@ -128,9 +128,9 @@
             </div>
         </div>
     </section>
-    <section id='popular' class='products bestsellers'>
+    <section id='anchor-popular' class='products bestsellers'>
         <div class='container'>
-            <h2>ХИТЫ ПРОДАЖ</h2>
+            <h2>Популярные</h2>
             <div class='products-slider'>
                 <div class='swiper-container swiper-products'>
                     <div class='swiper-wrapper'>
@@ -216,7 +216,7 @@
             </div>
         </div>
     </section>
-    <section id='most-viewed' class='products conditioners'>
+    <section id='anchor-most-viewed' class='products conditioners'>
         <div class='container'>
             <h2>Самые Просматриваемые</h2>
             <div class='products-slider'>

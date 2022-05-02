@@ -123,8 +123,8 @@
             <?php endif; ?>
         </div>
     <?php } ?>
-    <h2><?php echo $title ?></h2>
     <div class='reviews-list'>
+        <h2><?php echo $title ?></h2>
         <?php
             $args = ['post_id' => $type];
 

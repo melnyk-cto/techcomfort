@@ -19,7 +19,7 @@ document.addEventListener("DOMContentLoaded", function () {
   const plusBtn = document.getElementsByClassName("enlarge");
 
   // Плавная прокрутка
-  const anchors = document.querySelectorAll('a[href*="#"]')
+  const anchors = document.querySelectorAll('a[href*="#anchor-"]')
   for (let anchor of anchors) {
     anchor.addEventListener('click', function (e) {
       e.preventDefault()
