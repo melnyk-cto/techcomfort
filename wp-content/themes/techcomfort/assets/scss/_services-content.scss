@@ -1,7 +1,5 @@
 @import "./variables";
-
-@media (any-hover: hover) {
-}
+@import "./animations";
 
 .services-content {
   p, span {
@@ -54,6 +52,16 @@
       &:last-child {
         margin-bottom: 0;
       }
+    }
+  }
+}
+
+// animations
+.services-content {
+  #services-list, #services-description {
+    opacity: 0;
+    &.animation {
+      animation: $animationFromLeft;
     }
   }
 }

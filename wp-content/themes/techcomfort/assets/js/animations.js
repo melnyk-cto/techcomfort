@@ -42,6 +42,10 @@ jQuery(document).ready(function ($) {
   const servicesContent6 = $("#services-content-6");
   const installation = $("#installation");
 
+  // "Сервис" страница
+  const servicesList = $("#services-list");
+  const servicesDescription = $("#services-description");
+
   // animations for  "Каталог" страница
   const catalog = $('#catalog-content');
   setInterval(() => {
@@ -54,6 +58,10 @@ jQuery(document).ready(function ($) {
   $(window).on('load scroll', function () {
     // Header
     isVisible(header);
+
+    // "Сервис" страница
+    isVisible(servicesList);
+    isVisible(servicesDescription);
 
     // "Главная" page
     isVisible(banner);

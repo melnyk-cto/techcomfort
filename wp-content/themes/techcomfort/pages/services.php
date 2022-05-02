@@ -3,7 +3,7 @@
 <main class='services'>
     <section class='services-content'>
         <div class='container'>
-            <div class='services-list'>
+            <div id='services-list' class='services-list'>
                 <h2>сервис</h2>
                 <div class='services-list-title'>
                     <span>Виды работ</span>
@@ -36,7 +36,7 @@
                     </div>
                 </div>
             </div>
-            <div class='services-description'>
+            <div id='services-description' class='services-description'>
                 <p>
                     "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore
                     et
