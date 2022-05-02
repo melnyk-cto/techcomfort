@@ -11,7 +11,7 @@
     <img src='<?php echo get_template_directory_uri() ?>/assets/images/icons/loading.svg' alt=''>
 </div>
 <main class='catalog'>
-    <section class='catalog-content'>
+    <section id='catalog-content' class='catalog-content'>
         <div class='container'>
             <!-- TODO: need delete -->
             <a href='?update_attributes=true' class="btn d-none">Update Attributes</a>

@@ -1,4 +1,5 @@
 @import "./variables";
+@import "./animations";
 
 @media (any-hover: hover) {
   .catalog-content .catalog-list .catalog-buttons {
@@ -352,7 +353,7 @@
         }
         .more {
           font-size: 14px;
-          display: inline-block;
+          display:   inline-block;
           &:after {
             transform: translate(0, -50%) rotate(0deg);
           }
@@ -488,6 +489,26 @@
             display: none;
           }
         }
+      }
+    }
+  }
+}
+
+// animations
+.catalog {
+  #catalog-content {
+    .filter {
+      opacity: 0;
+    }
+    .catalog-list {
+      opacity: 0;
+    }
+    &.animation {
+      .filter {
+        animation: $animationFromLeft;
+      }
+      .catalog-list {
+        animation: $animationFromRight;
       }
     }
   }

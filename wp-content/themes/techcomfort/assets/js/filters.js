@@ -71,6 +71,11 @@ jQuery(document).ready(function ($) {
       containerProducts.removeClass('loading-products');
       containerFilter.removeClass('loading-products');
       clearFilterButton.removeClass('loading-products');
+
+      const catalog = $('.catalog');
+      const loadingPage = $('.loading-page-js');
+      catalog.css('opacity', '1');
+      loadingPage.addClass('d-none');
     },
     error: function () {
       new Noty({type: 'error', theme: 'relax', text: 'Не удалось обновить', timeout: 3000}).show();
@@ -283,11 +288,6 @@ jQuery(document).ready(function ($) {
       // Отправка формы
       jQuery.ajax({...options, data: data});
     });
-
-    const catalog = $('.catalog');
-    const loadingPage = $('.loading-page-js');
-    catalog.css('opacity', '1');
-    loadingPage.addClass('d-none');
   }
   filterAnSortOnLoad();
 

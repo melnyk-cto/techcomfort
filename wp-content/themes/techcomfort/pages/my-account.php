@@ -31,15 +31,15 @@
                                 <h2>Мои заказы</h2>
                                 <?php include get_template_directory() . '/components/account/_ordering.php'; ?>
                             </div>
-                            <div class='info-list favorites '>
+                            <div class='info-list favorites'>
                                 <h2>Список желаний</h2>
                                 <?php include get_template_directory() . '/components/account/_favorites.php'; ?>
                             </div>
-                            <div class='info-list viewed-products '>
+                            <div class='info-list viewed-products'>
                                 <h2>Просмотренные товары</h2>
                                 <?php include get_template_directory() . '/components/account/_products-viewed.php'; ?>
                             </div>
-                            <div class='info-list reviews '>
+                            <div class='info-list reviews'>
                                 <?php
                                     $title = 'МОИ ОТЗЫВЫ';
                                     $addNewReviews = false;
