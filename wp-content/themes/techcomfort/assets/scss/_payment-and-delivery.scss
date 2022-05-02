@@ -1,7 +1,5 @@
 @import "./variables";
-
-@media (any-hover: hover) {
-}
+@import "./animations";
 
 .payment-and-delivery {
   h2 {
@@ -107,6 +105,16 @@
           }
         }
       }
+    }
+  }
+}
+
+// animations
+.payment-and-delivery {
+  #payment, #delivery {
+    opacity: 0;
+    &.animation {
+      animation: $animationFromLeft;
     }
   }
 }

@@ -1,7 +1,7 @@
 <?php /* Template Name: Page - Payment And Delivery */ ?>
 <?php get_header(); ?>
 <main class='payment-and-delivery'>
-    <section class='payment'>
+    <section id='payment' class='payment'>
         <div class='container'>
             <h2>Оплата</h2>
             <div class='payment-and-delivery-list'>
@@ -58,7 +58,7 @@
             </div>
         </div>
     </section>
-    <section class='delivery'>
+    <section id='delivery' class='delivery'>
         <div class='container'>
             <h2>Доставка</h2>
             <div class='payment-and-delivery-list'>

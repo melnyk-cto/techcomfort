@@ -49,6 +49,10 @@ jQuery(document).ready(function ($) {
   // "Наши работы" страница
   const galleryItem = $(".gallery-item");
 
+  // "Оплата и доставка" страница
+  const payment = $("#payment");
+  const delivery = $("#delivery");
+
   // animations for  "Каталог" страница
   const catalog = $('#catalog-content');
   setInterval(() => {
@@ -61,6 +65,10 @@ jQuery(document).ready(function ($) {
   $(window).on('load scroll', function () {
     // Header
     isVisible(header);
+
+    // "Оплата и доставка" страница
+    isVisible(payment);
+    isVisible(delivery);
 
     // "Наши работы" страница
     for (let i = 0; i < galleryItem.length; i++) {
