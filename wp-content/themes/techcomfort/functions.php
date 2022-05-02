@@ -7,9 +7,11 @@
         wp_enqueue_style('relax-noty-css', get_stylesheet_directory_uri() . '/assets/lib/noty/relax.css');
 
         wp_enqueue_script("jquery");
+        wp_enqueue_script('visible-js', get_stylesheet_directory_uri() . '/assets/lib/jquery.visible.min.js');
         wp_enqueue_script('noty-js', get_stylesheet_directory_uri() . '/assets/lib/noty/noty.min.js');
         wp_enqueue_script('swiper-js', get_stylesheet_directory_uri() . '/assets/lib/swiper.js');
         wp_enqueue_script('main-js', get_stylesheet_directory_uri() . '/assets/js/main.js');
+        wp_enqueue_script('animation-js', get_stylesheet_directory_uri() . '/assets/js/animations.js');
     }
 
     //     ACF

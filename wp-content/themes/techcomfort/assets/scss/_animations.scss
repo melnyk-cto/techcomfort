@@ -1,0 +1,64 @@
+$direction:           1s;
+$function:            ease;
+$distance:            300px;
+
+$animationFromTop:    fadeInFromTop $direction $function 0s forwards;
+$animationFromBottom: fadeInFromBottom $direction $function 0s forwards;
+$animationFromLeft:   fadeInFromLeft $direction $function 0s forwards;
+$animationFromRight:  fadeInFromRight $direction $function 0s forwards;
+$animationFadeIn:     fadeIn $direction $function 0s forwards;
+
+// animation
+@keyframes fadeInFromLeft {
+  from {
+    opacity:   0;
+    transform: translate(-$distance, 0);
+  }
+  to {
+    opacity:   1;
+    transform: translate(0, 0);
+  }
+}
+
+@keyframes fadeInFromRight {
+  from {
+    opacity:   0;
+    transform: translate($distance, 0);
+  }
+  to {
+    opacity:   1;
+    transform: translate(0, 0);
+  }
+}
+
+@keyframes fadeInFromTop {
+  from {
+    opacity:   0;
+    transform: translate(0, -$distance);
+  }
+  to {
+    opacity:   1;
+    transform: translate(0, 0);
+  }
+}
+
+
+@keyframes fadeInFromBottom {
+  from {
+    opacity:   0;
+    transform: translate(0, $distance);
+  }
+  to {
+    opacity:   1;
+    transform: translate(0, 0);
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}

@@ -1,4 +1,5 @@
 @import "./variables";
+@import "./animations";
 
 @media (any-hover: hover) {
   .header {
@@ -569,6 +570,14 @@
   }
 }
 
+
+// animations
+#header {
+  opacity: 0;
+  &.animation {
+    animation: $animationFromTop;
+  }
+}
 
 @media screen and (max-width: 1150px) {
   .header {

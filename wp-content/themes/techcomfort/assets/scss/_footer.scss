@@ -1,4 +1,5 @@
 @import "variables";
+@import "./animations";
 
 @media (any-hover: hover) {
   .footer {
@@ -64,6 +65,19 @@
     padding:    20px 0;
     p {
       font-size: 14px;
+    }
+  }
+}
+
+// animations
+#footer {
+  overflow: hidden;
+  .inner {
+    opacity: 0;
+  }
+  &.animation {
+    .inner {
+      animation: $animationFromBottom;
     }
   }
 }

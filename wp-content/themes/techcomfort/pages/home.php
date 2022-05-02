@@ -5,7 +5,7 @@
 ?>
 
 <main class='home'>
-    <section class='banner'>
+    <section id='banner' class='banner'>
         <div class='container'>
             <div class='banner-slider'>
                 <div class='slider-top'>
@@ -190,7 +190,7 @@
             </div>
         </div>
     </section>
-    <section class='advantage'>
+    <section id='advantage' class='advantage'>
         <div class='container'>
             <h2>преимущество</h2>
             <div class='advantage-list'>
@@ -329,7 +329,7 @@
             </section>
             <?php
         } ?>
-    <section class='contact'>
+    <section id='contact' class='contact'>
         <div class='container'>
             <?php include get_template_directory() . '/components/_contact-info.php'; ?>
         </div>

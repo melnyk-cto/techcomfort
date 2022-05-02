@@ -29,10 +29,6 @@
   }
 }
 
-html {
-  scroll-behavior: smooth;
-}
-
 html,
 body {
   height: 100%;
@@ -44,12 +40,14 @@ body {
   flex-direction: column;
   min-height:     100%;
   background:     #F8F8FA;
+  opacity: 0;
 }
 
 main {
   flex:        1 0 auto;
   position:    relative;
   padding-top: 200px;
+  overflow:    hidden;
 }
 
 section {
@@ -427,9 +425,9 @@ form {
 }
 
 .loading-products {
-  filter: opacity(0.5);
+  filter:         opacity(0.5);
   pointer-events: none;
-  user-select: none;
+  user-select:    none;
 }
 
 //noUi slider
