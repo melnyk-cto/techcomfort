@@ -3,7 +3,7 @@
 <main class='installation-and-assembly'>
     <section class='assembly'>
         <div class='container'>
-            <div class='services-content'>
+            <div id='services-content-1' class='services-content'>
                 <div class='services-list'>
                     <h2>Цены на монтаж кондиционеров настенного типа до 3-х м/п магистрали</h2>
                     <div class='services-list-title'>
@@ -34,7 +34,7 @@
                     </div>
                 </div>
             </div>
-            <div class='services-content'>
+            <div id='services-content-2' class='services-content'>
                 <div class='services-list'>
                     <h2>Цены на монтаж канальных, кассетных и консольных кондиционеров до 3-х м/п магистрали</h2>
                     <div class='services-list-title'>
@@ -57,7 +57,7 @@
                     </div>
                 </div>
             </div>
-            <div class='services-content'>
+            <div id='services-content-3' class='services-content'>
                 <div class='services-list'>
                     <h2>Дополнительные расходные материалы и монтажные работы за 1м/п</h2>
                     <div class='services-list-title'>
@@ -108,7 +108,7 @@
                     </div>
                 </div>
             </div>
-            <div class='services-content'>
+            <div id='services-content-4' class='services-content'>
                 <div class='services-list'>
                     <h2>Стоимость работ по штроблению за 1м/п</h2>
                     <div class='services-list-title'>
@@ -151,7 +151,7 @@
                     </div>
                 </div>
             </div>
-            <div class='services-content'>
+            <div id='services-content-5' class='services-content'>
                 <div class='services-list'>
                     <h2>Другие дополнительные услуги</h2>
                     <div class='services-list-title'>
@@ -234,7 +234,7 @@
                     </div>
                 </div>
             </div>
-            <div class='services-content'>
+            <div id='services-content-6' class='services-content'>
                 <div class='services-list'>
                     <h2>Стоимость демонтажных и монтажных работ внутренних и внешних блоков</h2>
                     <div class='services-list-title'>
@@ -295,7 +295,7 @@
             </div>
         </div>
     </section>
-    <section class='installation'>
+    <section id='installation' class='installation'>
         <div class='container'>
             <div class='installation-inner'>
                 <div class='installation-description'>

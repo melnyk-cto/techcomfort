@@ -1,7 +1,5 @@
 @import "./variables";
-
-@media (any-hover: hover) {
-}
+@import "./animations";
 
 .installation-and-assembly {
   .assembly {
@@ -43,6 +41,30 @@
       width:     48%;
       img {
         border-radius: 10px;
+      }
+    }
+  }
+}
+
+// animations
+.installation-and-assembly {
+  #services-content-1, #services-content-2, #services-content-3,
+  #services-content-4, #services-content-5, #services-content-6 {
+    opacity: 0;
+    &.animation {
+      animation: $animationFromLeft;
+    }
+  }
+  #installation {
+    .installation-description, .installation-image {
+      opacity: 0;
+    }
+    &.animation {
+      .installation-description {
+        animation: $animationFromLeft;
+      }
+      .installation-image {
+        animation: $animationFromRight;
       }
     }
   }

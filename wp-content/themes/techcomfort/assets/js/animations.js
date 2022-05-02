@@ -25,7 +25,7 @@ jQuery(document).ready(function ($) {
   // Footer
   const footer = $('#footer');
 
-  // "Home" page
+  // "Главная" страница
   const banner = $('#banner');
   const recommended = $('#recommended');
   const popular = $('#popular');
@@ -33,7 +33,16 @@ jQuery(document).ready(function ($) {
   const mostViewed = $('#most-viewed');
   const contact = $('#contact');
 
-  // animations for  "Catalog" page
+  // "Установка и монтаж" страница
+  const servicesContent1 = $("#services-content-1");
+  const servicesContent2 = $("#services-content-2");
+  const servicesContent3 = $("#services-content-3");
+  const servicesContent4 = $("#services-content-4");
+  const servicesContent5 = $("#services-content-5");
+  const servicesContent6 = $("#services-content-6");
+  const installation = $("#installation");
+
+  // animations for  "Каталог" страница
   const catalog = $('#catalog-content');
   setInterval(() => {
     if ($(".loading-page-js").hasClass("d-none")) {
@@ -46,13 +55,22 @@ jQuery(document).ready(function ($) {
     // Header
     isVisible(header);
 
-    // "Home" page
+    // "Главная" page
     isVisible(banner);
     isVisible(recommended);
     isVisible(popular);
     isVisible(advantage);
     isVisible(mostViewed);
     isVisible(contact);
+
+    // "Установка и монтаж" страница
+    isVisible(servicesContent1);
+    isVisible(servicesContent2);
+    isVisible(servicesContent3);
+    isVisible(servicesContent4);
+    isVisible(servicesContent5);
+    isVisible(servicesContent6);
+    isVisible(installation);
 
     // Footer
     isVisible(footer);
