@@ -1,7 +1,5 @@
 @import "./variables";
-
-@media (any-hover: hover) {
-}
+@import "./animations";
 
 .comparison {
   h2 {
@@ -116,6 +114,14 @@
         border-bottom:  none;
       }
     }
+  }
+}
+
+// animations
+.comparison {
+  .comparison-content {
+    opacity:   0;
+    animation: $animationFromRight;
   }
 }
 

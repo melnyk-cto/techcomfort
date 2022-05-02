@@ -62,6 +62,14 @@ jQuery(document).ready(function ($) {
   const contactInfo = $(".contacts .contact-info");
   const map = $(".contacts .map");
 
+  // "Продукта" страница
+  const productInfoSlider = $(".product-page .product-info-slider");
+  const productTitle = $(".product-page .product-title");
+  const productInfoDescription = $(".product-page .product-info-description");
+  const anchorCharacteristics = $(".product-page #anchor-characteristics");
+  const anchorReviews = $(".product-page #anchor-reviews");
+  const viewedProducts = $(".product-page #viewed-products");
+
   // animations for  "Каталог" страница
   const catalog = $('#catalog-content');
   setInterval(() => {
@@ -73,6 +81,14 @@ jQuery(document).ready(function ($) {
   const runAnimations = () => {
     // Header
     isVisible(header);
+
+    // "Продукта" страница
+    isVisible(productInfoSlider);
+    isVisible(productTitle);
+    isVisible(productInfoDescription);
+    isVisible(anchorCharacteristics);
+    isVisible(anchorReviews);
+    isVisible(viewedProducts);
 
     // "Контакты" страница
     isVisible(contactForm);

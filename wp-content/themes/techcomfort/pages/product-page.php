@@ -13,7 +13,7 @@
 <main class='product-page'>
     <section class='product-info'>
         <div class='container'>
-            <h2>
+            <h2 class='product-title'>
                 <?php echo $_product->get_title() ?>
                 <div class='clipboard'>
                     <img class='clipboard' src='<?php echo get_template_directory_uri() ?>/assets/images/icons/share.svg'
@@ -96,14 +96,14 @@
             <div class='general-information-inner'>
                 <div class='tabs buttons-container-js'>
                     <!--                    <a href='#description' class='btn btn-contour active'>Описание</a>-->
-                    <a href='#characteristics' class='btn btn-contour'>Характеристики</a>
-                    <a href='#reviews' class='btn btn-contour'>Отзывы</a>
+                    <a href='#anchor-characteristics' class='btn btn-contour'>Характеристики</a>
+                    <a href='#anchor-reviews' class='btn btn-contour'>Отзывы</a>
                 </div>
                 <!--                <div id='description' class='description'>-->
                 <!--                    <h5>Описание</h5>-->
                 <!--                    <p>?????????</p>-->
                 <!--                </div>-->
-                <div id='characteristics' class='characteristics'>
+                <div id='anchor-characteristics' class='characteristics'>
                     <h5 class='product-title'>характеристики</h5>
                     <ul id="characteristics-list" class='characteristics-list'>
                         <li class='characteristics-item'>
@@ -112,7 +112,7 @@
                         </li>
                     </ul>
                 </div>
-                <div id='reviews'>
+                <div id='anchor-reviews'>
                     <?php
                         $title = 'Все Отзывы о продукте';
                         $addNewReviews = true;
