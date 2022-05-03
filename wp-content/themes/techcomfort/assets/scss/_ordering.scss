@@ -144,10 +144,6 @@
     h2 {
       margin-bottom: 0;
     }
-    span {
-      font-size:      20px;
-      text-transform: uppercase;
-    }
     &-item {
       border-radius: 10px;
       box-shadow:    0 3px 10px 0 rgba(56, 69, 249, 0.14);
@@ -208,6 +204,39 @@
       margin-right: 4.8%;
       span, bdi {
         color: $primaryColor;
+      }
+    }
+    .basket-container {
+      .basket-close {
+        display: none;
+      }
+      .basket-list {
+        background:    #fff;
+        padding:       0;
+        border-bottom: none;
+      }
+      .basket-item {
+        padding:       4.8% 5%;
+        border-bottom: 10px solid #f8f8fa;
+        .item-image {
+          min-width: 50px;
+        }
+        .item-description {
+          h5 {
+            margin-bottom: 0;
+            word-break:    break-word;
+          }
+        }
+        .item-close {
+          top:   14px;
+          right: 14px;
+        }
+      }
+      .basket-bottom-description {
+        margin-left: auto;
+      }
+      .btn {
+        display: none;
       }
     }
   }
@@ -319,9 +348,6 @@
         font-size:     20px;
         margin-bottom: 0;
       }
-      span {
-        font-size: 18px;
-      }
       &-item {
         border-radius: 8px;
         margin-bottom: 25px;
@@ -338,6 +364,34 @@
         .item-inner {
           padding:       4% 4.5%;
           border-radius: 0 0 8px 8px;
+        }
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 992px) {
+  .ordering {
+    .ordering-basket {
+      .basket-container {
+        .basket-item {
+          padding: 10px;
+          .quantity {
+            width:     30%;
+            min-width: 80px;
+          }
+          .item-price {
+            min-width: 90px;
+            font-size: 18px;
+          }
+          .item-description {
+            flex-wrap:    wrap;
+            padding-left: 10px;
+            h5 {
+              font-size:     16px;
+              margin-bottom: 16px;
+            }
+          }
         }
       }
     }
@@ -437,15 +491,12 @@
       }
     }
     .ordering-basket {
-      max-width: 400px;
+      max-width: 600px;
       width:     100%;
       margin:    0 auto;
       h2 {
         font-size:     16px;
         margin-bottom: 0;
-      }
-      span {
-        font-size: 16px;
       }
       &-item {
         margin-bottom: 20px;

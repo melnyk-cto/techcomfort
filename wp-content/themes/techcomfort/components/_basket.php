@@ -43,6 +43,23 @@
                         <span class='item-price'><?php echo $price_excl_tax; ?> ₴</span>
                     </div>
                 </div>
+                <script>
+                  products.push({
+                    ID: "<?php echo $_product->get_id(); ?>",
+                    Count: "<?php echo $values['quantity']; ?>",
+                    Name: "<?php echo $_product->get_title(); ?>",
+                    Price: "<?php echo $price_excl_tax; ?>",
+                    Link: "https://techcomfort.com.ua/product/?uid=<?php echo $_product->get_id(); ?>"
+                  })
+                </script>
+
+
+                <script>
+                  const item = document.getElementsByClassName('products-js')[0];
+                  console.log(item,'item')
+                  console.log(JSON.stringify(products),'products')
+                  item.value = JSON.stringify(products);
+                </script>
             <?php }
         } else {
             echo "<h4 class='no-products'>Корзина пуста</h4>";
@@ -50,7 +67,6 @@
 </div>
 <div class='basket-bottom'>
     <div class='basket-bottom-description'>
-        <p>Доставка:<span class='total-info'>0 ₴</span></p>
         <p>Сумма товара:<span class='total-info'><?php echo $woocommerce->cart->get_cart_total() ?></span></p>
     </div>
     <a href='<?php echo home_url('/'); ?>ordering' class='btn'>Заказать</a>
