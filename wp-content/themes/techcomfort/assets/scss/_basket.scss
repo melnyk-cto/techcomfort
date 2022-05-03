@@ -81,7 +81,11 @@
       align-items:     center;
     }
     .quantity {
-      min-width: 80px;
+      min-width: 100px;
+      button {
+        min-width: 20px;
+        max-width: 20px;
+      }
       input {
         background: #e2e6ea;
       }
@@ -90,9 +94,6 @@
         margin:        0 10px;
         background:    #e2e6ea;
         border-radius: 4px;
-      }
-      .reduce {
-        font-size: 31px;
       }
     }
     .item-price {
@@ -162,11 +163,6 @@
       h5 {
         font-size: 16px;
       }
-      .quantity {
-        .reduce {
-          font-size: 22px;
-        }
-      }
       .item-price {
         min-width: 100px;
         font-size: 18px;
@@ -220,12 +216,14 @@
         font-weight: 500;
       }
       .quantity {
-        width: 30%;
+        width:     30%;
+        min-width: 80px;
+        button {
+          min-width: 14px;
+          max-width: 14px;
+        }
         label {
           max-width: 36px;
-        }
-        .reduce {
-          font-size: 18px;
         }
       }
       span {

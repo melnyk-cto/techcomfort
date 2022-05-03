@@ -23,7 +23,8 @@
                                     data-product-id="<?php echo $_product->get_id(); ?>"
                                     type='button'
                                     class='reduce'>
-                                -
+                                <img src='<?php echo get_template_directory_uri() ?>/assets/images/icons/minus.svg'
+                                     alt=''>
                             </button>
                             <label>
                                 <input type='text'
@@ -35,7 +36,8 @@
                                     data-product-quantity="<?php echo $values['quantity'] + 1; ?>"
                                     type='button'
                                     class='enlarge'>
-                                +
+                                <img src='<?php echo get_template_directory_uri() ?>/assets/images/icons/plus.svg'
+                                     alt=''>
                             </button>
                         </div>
                         <span class='item-price'><?php echo $price_excl_tax; ?> ₴</span>
@@ -49,7 +51,7 @@
 <div class='basket-bottom'>
     <div class='basket-bottom-description'>
         <p>Доставка:<span class='total-info'>0 ₴</span></p>
-        <p>Сумма товара:<span  class='total-info'><?php echo $woocommerce->cart->get_cart_total() ?></span></p>
+        <p>Сумма товара:<span class='total-info'><?php echo $woocommerce->cart->get_cart_total() ?></span></p>
     </div>
     <a href='<?php echo home_url('/'); ?>ordering' class='btn'>Заказать</a>
 </div>
