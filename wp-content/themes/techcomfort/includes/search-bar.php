@@ -1,7 +1,7 @@
 <?php
     //---------------create js ajax for search
     function my_enqueue() {
-        wp_register_script('loadajax-js', get_template_directory_uri() . '/assets/js/main.js', array(), 1, 1);
+        wp_register_script('loadajax-js', get_template_directory_uri() . '/assets/js/search-bar.js', array(), 1, 1);
         wp_enqueue_script('loadajax-js');
         wp_localize_script('loadajax-js', 'my_ajax_object',
             array('ajax_url' => admin_url('admin-ajax.php')));
