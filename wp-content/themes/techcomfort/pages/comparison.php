@@ -44,9 +44,9 @@
                                                 </span>
                                                     </div>
                                                     <a data-quantity="1"
-                                                       data-product_id="<?php echo $_product->get_id() ?>"
+                                                       data-product-id="<?php echo $_product->get_id() ?>"
                                                        href='<?php echo home_url('/'); ?>?add-to-cart=<?php echo $_product->get_id(); ?>'
-                                                       class='btn product_type_simple add_to_cart_button ajax_add_to_cart'>
+                                                       class='btn add-product-to-cart'>
                                                         В Корзину
                                                     </a>
                                                 </div>

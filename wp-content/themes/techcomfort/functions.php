@@ -11,6 +11,7 @@
         wp_enqueue_script('swiper-js', get_stylesheet_directory_uri() . '/assets/lib/swiper.js');
         wp_enqueue_script('main-js', get_stylesheet_directory_uri() . '/assets/js/main.js');
         wp_enqueue_script('animation-js', get_stylesheet_directory_uri() . '/assets/js/animations.js');
+        wp_enqueue_script('add-to-cart-js', get_stylesheet_directory_uri() . '/assets/js/add-to-cart.js');
     }
 
     //     ACF
@@ -187,3 +188,6 @@
 
     //  Добавление полей для комментариев в админке
     require_once get_stylesheet_directory() . '/includes/add-custom-fields.php';
+
+    //  Добавление продукта в корзину
+    require_once get_stylesheet_directory() . '/includes/add-product-to-cart.php';

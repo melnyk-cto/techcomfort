@@ -29,7 +29,7 @@
                     </div>
                     <div class='order-price'>
                         <span>Сумма заказа</span>
-                        <p><?php echo $price ?> UAH</p>
+                        <p><?php echo $price ?> ₴</p>
                     </div>
                 </div>
                 <div class='order-history'>
@@ -83,7 +83,7 @@
                                     </div>
                                     <div class='data-title'>
                                         <h5><?php echo $item->get_name(); ?></h5>
-                                        <span class='data-title-price'>Цена: <span><?php echo $priceItem; ?> UAH</span></span>
+                                        <span class='data-title-price'>Цена: <span><?php echo $priceItem; ?> ₴</span></span>
                                     </div>
                                     <div class='data-amount'>
                                         <span>Количество</span>
@@ -91,7 +91,7 @@
                                     </div>
                                     <div class='data-price'>
                                         <span>Сумма заказа</span>
-                                        <p><?php echo $priceItemTotal; ?> UAH</p>
+                                        <p><?php echo $priceItemTotal; ?> ₴</p>
                                     </div>
                                 </div>
                             <?php } ?>
@@ -108,7 +108,7 @@
                             </div>
                             <div class='delivery-item'>
                                 <span>Вместе</span>
-                                <span class='price'><?php echo $price ?> UAH</span>
+                                <span class='price'><?php echo $price ?> ₴</span>
                             </div>
                         </div>
                     </div>

@@ -283,4 +283,8 @@
         </div>
     </div>
 </header>
-<?php include get_template_directory() . '/components/_basket.php'; ?>
+<div id='basket' class='popup basket'>
+    <div class='popup-inner basket-inner'>
+        <div class='basket-container'></div>
+    </div>
+</div>

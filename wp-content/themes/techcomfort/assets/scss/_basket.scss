@@ -4,21 +4,17 @@
 }
 
 .basket {
-
   h4 {
-    text-align:  center;
-    font-weight: 400;
-    display:     none;
-    width:       100%;
+    text-align: center;
+    width:      100%;
+    margin:     32px 0;
   }
   span {
     font-size:      24px;
     text-transform: uppercase;
   }
   &-inner {
-    min-height:      407px;
-    max-height:      90%;
-    justify-content: space-between;
+    max-height: 90%;
   }
   &-title {
     padding: 25px 4.7%;
@@ -66,8 +62,10 @@
       }
     }
     h5 {
-      font-size:   20px;
-      font-weight: 500;
+      width:        100%;
+      font-size:    20px;
+      font-weight:  500;
+      margin-right: 20px;
     }
     .item-image {
       width: 100px;
@@ -83,9 +81,24 @@
       align-items:     center;
     }
     .quantity {
+      min-width: 80px;
+      input {
+        background: #e2e6ea;
+      }
+      label {
+        padding:       5px;
+        margin:        0 10px;
+        background:    #e2e6ea;
+        border-radius: 4px;
+      }
       .reduce {
         font-size: 31px;
       }
+    }
+    .item-price {
+      text-align: right;
+      min-width:  150px;
+      font-size:  20px;
     }
   }
   &-bottom {
@@ -102,10 +115,14 @@
         margin-bottom: 0;
       }
     }
-    span {
-      font-size:   20px;
+    .total-info {
+      font-size:   18px;
       font-weight: 700;
       margin-left: 10px;
+      span {
+        font-size:   18px;
+        font-weight: 700;
+      }
     }
     .btn {
       max-width: 172px;
@@ -122,8 +139,8 @@
       font-size: 24px;
     }
     &-inner {
-      max-width: 700px;
-      height:    280px;
+      max-width:  700px;
+      min-height: 300px;
     }
     &-title {
       padding: 15px 4.7%;
@@ -150,14 +167,21 @@
           font-size: 22px;
         }
       }
+      .item-price {
+        min-width: 100px;
+        font-size: 18px;
+      }
     }
     &-bottom {
       padding: 2.2% 4.7%;
       p {
         font-size: 16px;
       }
-      span {
+      .total-info {
         font-size: 16px;
+        span {
+          font-size: 16px;
+        }
       }
       .btn {
         max-width: 125px;
@@ -179,7 +203,8 @@
       margin-bottom: 10px;
     }
     &-inner {
-      min-height: 300px;
+      max-width: 500px;
+      height:    initial;
     }
     &-list {
       padding: 15px 4.9%;
@@ -195,9 +220,9 @@
         font-weight: 500;
       }
       .quantity {
-        width: 50%;
-        input {
-          background: #F8F8FA;
+        width: 30%;
+        label {
+          max-width: 36px;
         }
         .reduce {
           font-size: 18px;
@@ -219,9 +244,11 @@
         font-size:     12px;
         margin-bottom: 5px;
       }
-      span {
-        font-size:   14px;
-        font-weight: 500;
+      .total-info {
+        font-size: 14px;
+        span {
+          font-size: 14px;
+        }
       }
       &-description {
         width:         100%;
