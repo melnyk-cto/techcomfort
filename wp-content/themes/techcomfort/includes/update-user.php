@@ -27,7 +27,7 @@
         }
 
         $form_patronymic = sanitize_text_field($_POST['form_patronymic']);
-
+        $form_address = sanitize_text_field($_POST['form_address']);
 
         // Проверяем поле Телефона, если пустое, то пишем сообщение в массив ошибок
         if (empty($_POST['form_tel']) || !isset($_POST['form_tel'])) {
@@ -43,17 +43,9 @@
             $form_email = sanitize_text_field($_POST['form_email']);
         }
 
-        // Проверяем поле email, если пустое, то пишем сообщение в массив ошибок
-        if (empty($_POST['form_address']) || !isset($_POST['form_address'])) {
-            $errors['address'] = 'Пожалуйста, введите ваш адрес.';
-        } else {
-            $form_address = sanitize_text_field($_POST['form_address']);
-        }
-
         // Проверяем массив ошибок, если не пустой, то передаем сообщение. Иначе отправляем письмо
         if ($errors) {
             wp_send_json_error($errors);
-
         } else {
             $user_id = get_current_user_id();
             delete_user_meta($user_id, 'user_registration_patronymic');
@@ -63,17 +55,12 @@
             add_user_meta($user_id, 'user_registration_address', $form_address, true);
             add_user_meta($user_id, 'user_registration_phone', $form_tel, true);
 
-            $user_id = wp_update_user([
+            wp_update_user([
                 'ID' => $user_id,
                 'first_name' => $form_first,
                 'last_name' => $form_last,
                 'user_email' => $form_email,
             ]);
-            if (is_wp_error($user_id)) {
-                // Произошла ошибка, возможно такого пользователя не существует.
-            } else {
-                // is OK
-            }
 
             // Отправляем сообщение об успешной отправке
             $message_success = 'Ваши данные успешно обновлены';

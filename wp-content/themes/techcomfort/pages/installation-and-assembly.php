@@ -300,14 +300,13 @@
             <div class='installation-inner'>
                 <div class='installation-description'>
                     <h2>Установка</h2>
-                    <p>Установка кондиционеров в Киеве: последовательность действий при заказе</p>
                     <p>
                         Заказывать услуги в нашей компании для Вас легко и просто, так как во главу угла мы ставим
                         качество сервиса и доступность цен. Установка кондиционеров в Киеве компанией «Техкомфорт»
                         производится быстро и с гарантией качества вне зависимости от того был он куплен в нашем
                         магазине или нет.
                     </p>
-                    <span class='more'>Подробнее</span>
+                    <!-- <span class='more'>Подробнее</span> -->
                 </div>
                 <div class='installation-image'>
                     <img src='<?php echo get_template_directory_uri() ?>/assets/images/installation-image.jpg'

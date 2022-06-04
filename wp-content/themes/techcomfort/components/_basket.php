@@ -44,21 +44,19 @@
                     </div>
                 </div>
                 <script>
-                  products.push({
-                    ID: "<?php echo $_product->get_id(); ?>",
-                    Count: "<?php echo $values['quantity']; ?>",
-                    Name: "<?php echo $_product->get_title(); ?>",
-                    Price: "<?php echo $price_excl_tax; ?>",
-                    Link: "https://techcomfort.com.ua/product/?uid=<?php echo $_product->get_id(); ?>"
-                  })
-                </script>
+                  const orderForm = document.getElementById('order-form');
+                  if (orderForm) {
+                    products.push({
+                      ID: "<?php echo $_product->get_id(); ?>",
+                      Count: "<?php echo $values['quantity']; ?>",
+                      Name: "<?php echo $_product->get_title(); ?>",
+                      Price: "<?php echo $price_excl_tax; ?>",
+                      Link: "https://techcomfort.com.ua/product/?uid=<?php echo $_product->get_id(); ?>"
+                    })
 
-
-                <script>
-                  const item = document.getElementsByClassName('products-js')[0];
-                  console.log(item,'item')
-                  console.log(JSON.stringify(products),'products')
-                  item.value = JSON.stringify(products);
+                    const item = document.getElementsByClassName('products-js')[0];
+                    item.value = JSON.stringify(products);
+                  }
                 </script>
             <?php }
         } else {

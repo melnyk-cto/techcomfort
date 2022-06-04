@@ -41,7 +41,7 @@
                                 class="form_first"
                                 placeholder='Не указано'
                                 type='text'
-                                value='<?php if ($last_name) echo $last_name; ?>'>
+                                value='<?php if ($first_name) echo $first_name; ?>'>
                     </label>
                     <p></p>
                 </div>
@@ -54,14 +54,13 @@
                                 class="form_last"
                                 placeholder='Не указано'
                                 type='text'
-                                value='<?php if ($first_name) echo $first_name; ?>'>
+                                value='<?php if ($last_name) echo $last_name; ?>'>
                     </label>
                 </div>
                 <div class='description-item'>
                     <label>
                         <span>Отчество</span>
                         <input
-                                required
                                 name="form_patronymic"
                                 class="form_patronymic"
                                 placeholder='Не указано'
@@ -107,7 +106,6 @@
                     <label>
                         <span>Адрес</span>
                         <input
-                                required
                                 name="form_address"
                                 class="form_address"
                                 placeholder='Не указано'

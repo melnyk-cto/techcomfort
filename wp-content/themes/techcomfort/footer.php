@@ -28,9 +28,6 @@
                                     <a href='<?php echo home_url('/'); ?>'>Главная</a>
                                 </li>
                                 <li>
-                                    <a href='<?php echo home_url('/'); ?>catalog'>Каталог</a>
-                                </li>
-                                <li>
                                     <a href='<?php echo home_url('/'); ?>installation-and-assembly'>Установка и монтаж</a>
                                 </li>
                                 <li>

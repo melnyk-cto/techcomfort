@@ -30,7 +30,6 @@ jQuery(document).ready(function ($) {
         form.addClass('d-none');
       } else {
         // Если поля не заполнены, выводим сообщения и меняем надпись на кнопке
-        // Если поля не заполнены, выводим сообщения и меняем надпись на кнопке
         $.each(request.data, function (key, val) {
           const name = $('[name="' + key + '"]');
           name.addClass('error');

@@ -103,7 +103,7 @@
                     'total' => $the_query->max_num_pages
                 ]) . '</div>';
         } else {
-            $response .= '<h3 class="no-products">Нет товар по указанном фильтре</h3>';
+            $response .= '<h3 class="no-products">Нет товара по указанном фильтре</h3>';
             $pagination .= '';
         }
         echo $response;
