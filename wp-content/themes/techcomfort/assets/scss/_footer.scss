@@ -18,6 +18,12 @@
   a, p {
     color: $black;
   }
+  a:not(.footer-logo):active {
+    opacity: .7;
+  }
+  .socials .socials-image:active {
+    opacity: .7;
+  }
   h5 {
     margin-bottom:  20px;
     text-transform: uppercase;

@@ -40,7 +40,11 @@ body {
   flex-direction: column;
   min-height:     100%;
   background:     #F8F8FA;
-  opacity: 0;
+  opacity:        0;
+}
+
+* {
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
 }
 
 main {
@@ -130,6 +134,10 @@ input.btn, .btn {
     background: $primaryColor;
     color:      $white;
     border:     2px solid $primaryColor;
+  }
+  &:not(.active):active {
+    color:  $primaryColor;
+    border: 2px solid $primaryColor;
   }
 }
 
@@ -461,11 +469,7 @@ form {
   }
   .btn-contour {
     border-radius: 5px;
-    border:        1px solid #464646;
     padding:       9px 23px;
-    &.active {
-      border: 1px solid $primaryColor;
-    }
   }
   .email, .call {
     svg {
