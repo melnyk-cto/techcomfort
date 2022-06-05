@@ -53,20 +53,7 @@
                             <a href='tel:<?php echo get_field('phone_2', 'option') ?>'><?php echo get_field('phone_2', 'option') ?></a>
                         <?php } ?>
                     </div>
-                    <div class='socials'>
-                        <a href='https://t.me/' class='socials-image'>
-                            <img src='<?php echo get_template_directory_uri() ?>/assets/images/icons/telegram.svg'
-                                 alt='Telegram'>
-                        </a>
-                        <a href='#' class='socials-image'>
-                            <img src='<?php echo get_template_directory_uri() ?>/assets/images/icons/viber.svg'
-                                 alt='Viber'>
-                        </a>
-                        <a href='#' class='socials-image'>
-                            <img src='<?php echo get_template_directory_uri() ?>/assets/images/icons/whatsapp.svg'
-                                 alt='WhatsApp'>
-                        </a>
-                    </div>
+                    <?php include get_template_directory() . '/components/_socials.php'; ?>
                     <!--                    <select name='' id='' class='language'>-->
                     <!--                        <option value=''>Ru</option>-->
                     <!--                        <option value=''>En</option>-->
@@ -261,22 +248,7 @@
                             <a href='tel:<?php echo get_field('phone_1', 'option') ?>'><?php echo get_field('phone_1', 'option') ?></a>
                             <a href='tel:<?php echo get_field('phone_2', 'option') ?>'><?php echo get_field('phone_2', 'option') ?></a>
                         </div>
-                        <div class='socials'>
-                            <div class='socials-images'>
-                                <a href='#' class='socials-image'>
-                                    <img src='<?php echo get_template_directory_uri() ?>/assets/images/icons/telegram.svg'
-                                         alt='Telegram'>
-                                </a>
-                                <a href='#' class='socials-image'>
-                                    <img src='<?php echo get_template_directory_uri() ?>/assets/images/icons/viber.svg'
-                                         alt='Viber'>
-                                </a>
-                                <a href='#' class='socials-image'>
-                                    <img src='<?php echo get_template_directory_uri() ?>/assets/images/icons/whatsapp.svg'
-                                         alt='WhatsApp'>
-                                </a>
-                            </div>
-                        </div>
+                        <?php include get_template_directory() . '/components/_socials.php'; ?>
                     </div>
                 </div>
             </div>

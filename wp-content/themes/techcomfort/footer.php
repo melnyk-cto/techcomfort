@@ -117,23 +117,7 @@
                                 <p><?php echo get_field('city', 'option') ?></p>
                             </div>
                         </div>
-                        <div class='socials'>
-                            <h5>Соц. сети</h5>
-                            <div class='socials-images'>
-                                <a href='#' class='socials-image'>
-                                    <img src='<?php echo get_template_directory_uri() ?>/assets/images/icons/telegram.svg'
-                                         alt='Telegram'>
-                                </a>
-                                <a href='#' class='socials-image'>
-                                    <img src='<?php echo get_template_directory_uri() ?>/assets/images/icons/viber.svg'
-                                         alt='Viber'>
-                                </a>
-                                <a href='#' class='socials-image'>
-                                    <img src='<?php echo get_template_directory_uri() ?>/assets/images/icons/whatsapp.svg'
-                                         alt='WhatsApp'>
-                                </a>
-                            </div>
-                        </div>
+                        <?php include get_template_directory() . '/components/_socials.php'; ?>
                     </div>
                 </div>
             </div>

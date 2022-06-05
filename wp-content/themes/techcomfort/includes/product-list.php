@@ -19,7 +19,7 @@
         $args = [
             'post_type' => 'product',
             'stock' => 1,
-            'posts_per_page' => 9,
+            'posts_per_page' => 33,
             'paged' => $page,
             'orderby' => 'meta_value_num',
             'meta_key' => $meta_key,
