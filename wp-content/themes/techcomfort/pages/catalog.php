@@ -13,11 +13,6 @@
 <main class='catalog'>
     <section id='catalog-content' class='catalog-content'>
         <div class='container'>
-            <!-- TODO: need delete -->
-            <a href='?update_attributes=true' class="btn d-none">Update Attributes</a>
-            <?php if (isset($_GET['update_attributes'])) {
-                createAttributes();
-            } ?>
             <?php $category = get_term_by('slug', $_GET['category'], 'product_cat'); ?>
             <h2 class="category-name"> <?php echo $category->name ?></h2>
             <div class='catalog-inner'>

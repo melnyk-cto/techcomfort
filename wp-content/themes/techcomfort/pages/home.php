@@ -4,6 +4,11 @@
     wp_enqueue_script('home-js', get_stylesheet_directory_uri() . '/assets/js/home.js');
 ?>
 
+<!-- TODO: need delete -->
+<?php if (isset($_GET['update_attributes'])) {
+    createAttributes();
+} ?>
+
 <main class='home'>
     <section id='banner' class='banner'>
         <div class='container'>
