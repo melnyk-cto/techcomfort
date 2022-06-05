@@ -24,6 +24,7 @@
         width:      100%;
         height:     100%;
         text-align: center;
+        transition: none;
         &:hover, &:active {
           opacity: 1;
         }
@@ -37,6 +38,7 @@
           max-height: 100%;
           width:      auto;
           max-width:  100%;
+          transition: none;
         }
       }
     }
@@ -45,7 +47,7 @@
       position:        absolute;
       left:            50%;
       bottom:          70px;
-      transform:       translate(-100%, 0) rotate(180deg);
+      transform:       translate(-150%, 0) rotate(180deg);
       background:      #fff;
       width:           50px;
       height:          50px;
@@ -57,7 +59,7 @@
       }
     }
     .next {
-      transform: translate(100%, 0);
+      transform: translate(50%, 0);
     }
     &-close {
       content:    '';
